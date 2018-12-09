@@ -1,0 +1,9 @@
+[book]
+authors = ["Jane"]
+multilingual = false
+src = "src"
+title = "Rust Programming Language Primer - Rust 编程语言入门"
+
+[output.html]
+additional-css = ["ferris.css", "theme/edition.css"]
+additional-js = ["ferris.js"]

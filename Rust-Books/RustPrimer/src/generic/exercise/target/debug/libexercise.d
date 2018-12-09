@@ -1,0 +1,1 @@
+e:\james_works\Github\lauer3912\LoveYourBooks\Rust-Books\RustPrimer\generic\exercise\target\debug\libexercise.rmeta: e:\james_works\Github\lauer3912\LoveYourBooks\Rust-Books\RustPrimer\generic\exercise\src\main.rs e:\james_works\Github\lauer3912\LoveYourBooks\Rust-Books\RustPrimer\generic\exercise\src\problem1.rs
