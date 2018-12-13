@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/caller_for_serde_json/src/sample.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/caller_for_serde_json/src/value_json.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/.rustc_info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.cargo-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/Test-cc21b8a09321e52f/bin-Test-cc21b8a09321e52f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/Test-cc21b8a09321e52f/bin-Test-cc21b8a09321e52f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/Test-cc21b8a09321e52f/dep-bin-Test-cc21b8a09321e52f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-1dd65b8f081f80cb/bin-test-1dd65b8f081f80cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-1dd65b8f081f80cb/bin-test-1dd65b8f081f80cb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-1dd65b8f081f80cb/dep-bin-test-1dd65b8f081f80cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-4f04f009aeb16980/bin-test-4f04f009aeb16980" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-4f04f009aeb16980/bin-test-4f04f009aeb16980.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-4f04f009aeb16980/dep-bin-test-4f04f009aeb16980" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-6c25cc2caf01c5b7/bin-test-6c25cc2caf01c5b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-6c25cc2caf01c5b7/bin-test-6c25cc2caf01c5b7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-6c25cc2caf01c5b7/dep-bin-test-6c25cc2caf01c5b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-74a57a6961dd45ca/dep-test-bin-test-74a57a6961dd45ca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-74a57a6961dd45ca/test-bin-test-74a57a6961dd45ca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-74a57a6961dd45ca/test-bin-test-74a57a6961dd45ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-ae3ccd53ab0dbe3e/dep-test-bin-test-ae3ccd53ab0dbe3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-ae3ccd53ab0dbe3e/test-bin-test-ae3ccd53ab0dbe3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/.fingerprint/test-ae3ccd53ab0dbe3e/test-bin-test-ae3ccd53ab0dbe3e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/Test.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/Test-cc21b8a09321e52f.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/Test-cc21b8a09321e52f.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/Test-cc21b8a09321e52f.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/libtest-1dd65b8f081f80cb.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/libtest-74a57a6961dd45ca.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/libtest-ae3ccd53ab0dbe3e.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-1dd65b8f081f80cb.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-4f04f009aeb16980.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-4f04f009aeb16980.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-4f04f009aeb16980.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-6c25cc2caf01c5b7.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-6c25cc2caf01c5b7.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-6c25cc2caf01c5b7.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-74a57a6961dd45ca.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/deps/test-ae3ccd53ab0dbe3e.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/15y3ycehrhc6w141.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/1mitrpi4srsegvej.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/23eidpgoqlk7dvgd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/2andqdxvyrovdsbx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/2x1wd4m0cgrj7h74.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/2ym2hael5g1i4df1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/31op7j40856ctd27.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3378t504ikmdwvrj.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/36m1ab0ei0vanbua.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3h7m3ogbdtd5rxp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3hq428hqdyhen4tt.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3kavmysfe6nbct3b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3o4domplq104n3d7.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3oslx3dv0650gord.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3usyrezm9bu00j50.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/3w12uaqkh76bv1wo.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/41hh35l8cxzhlfe9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/473iiy975hfso5i7.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/4gvnbtlgekyozj56.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/4oai2og5jctz1ssk.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/4ykie94zyh4plft5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/57e9ugpv7l5j81ga.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/5dsts198g4nb6c09.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/5dtf1egpwtx411m1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/egsshdf6cvmj1hl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/lo10jjg0zxdb1aa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/mht0w82lvixv5m4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/p44oewr7dld5tkk.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/w7o7u6wiqa1qxbf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j-2ycjrla5ed9yv/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/Test-3g9sr5m2zqav2/s-f7c78sxxk6-qs8q2j.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-27vttknzg0tii/s-f7dvdij8oi-u5p93o-2o8ht5o0bu4yp/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-27vttknzg0tii/s-f7dvdij8oi-u5p93o-2o8ht5o0bu4yp/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-27vttknzg0tii/s-f7dvdij8oi-u5p93o-2o8ht5o0bu4yp/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-27vttknzg0tii/s-f7dvdij8oi-u5p93o.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/13mg6uqkkfae4y33.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/1cvbrscjoox8ztji.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/1ktlnbkdzd27u691.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/1yc1dicc0vp00uw6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/2qq9k9d9mowhj5m.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/33t696atd717jm2z.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/3yltnpcevhe8o1dq.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj-vw3cno2nlj31/xwc51n867zr66cl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d26khz5p-16whjwj.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/13mg6uqkkfae4y33.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/1cvbrscjoox8ztji.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/1ktlnbkdzd27u691.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/1yc1dicc0vp00uw6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/2qq9k9d9mowhj5m.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/33t696atd717jm2z.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/3yltnpcevhe8o1dq.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32-working/xwc51n867zr66cl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-30hlncb7fybf6/s-f7d2fgcuuh-1ln2d32.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/1onit1a0ovzl3o7s.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/223yqj5zuy8i7qgm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/2sfbz94tvm339upe.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/2z3p3699wgjn9ijh.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/3jcqxhgflzj9qe82.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/40bkhjk251ek3b6i.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/4kmr9xq65607dbdu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/51l4c901eur8rqah.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo-1yvc9urtld1a2/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6bcztkh-114c2xo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/1onit1a0ovzl3o7s.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/223yqj5zuy8i7qgm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/2sfbz94tvm339upe.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/2z3p3699wgjn9ijh.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/3jcqxhgflzj9qe82.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/40bkhjk251ek3b6i.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/4kmr9xq65607dbdu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/51l4c901eur8rqah.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-4busl5g5ppec/s-f7e6xv0c7u-nnv27j.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2bkhwu8-1ovg7w-1tdzzieyeajxd/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2bkhwu8-1ovg7w-1tdzzieyeajxd/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2bkhwu8-1ovg7w-1tdzzieyeajxd/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2bkhwu8-1ovg7w.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2k6snds-872whj-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2k6snds-872whj-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2k6snds-872whj-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-72dopijmbwlp/s-f7d2k6snds-872whj.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6pjvgve-151yp9w-pr4u4uzm67zs/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6pjvgve-151yp9w-pr4u4uzm67zs/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6pjvgve-151yp9w-pr4u4uzm67zs/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6pjvgve-151yp9w.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xonu7v-78o23y-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xonu7v-78o23y-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xonu7v-78o23y-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xonu7v-78o23y.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xt6wxs-1x9oek6-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xt6wxs-1x9oek6-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xt6wxs-1x9oek6-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/incremental/test-psgj9cgugxw7/s-f7e6xt6wxs-1x9oek6.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest-74a57a6961dd45ca.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest-74a57a6961dd45ca.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest-ae3ccd53ab0dbe3e.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest-ae3ccd53ab0dbe3e.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/libtest.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/test.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code-test/test/target/debug/test.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/db/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/db/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/db/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/db/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/json_data/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/json_data/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/json_data/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/mysite/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/mysite/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/mysite/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/mysite/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/action/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/any/any.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/appendix/glossary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/attr-and-compiler-arg/attribute.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/attr-and-compiler-arg/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/attr-and-compiler-arg/rustc-option.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/cargo-detailed-cfg/cargo-detailed-cfg.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/cargo-detailed-cfg/semver-ver-2.0-zh.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/cargo-projects-manager/cargo-projects-manager.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/closure/as_argument_return_value.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/closure/implementation.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/closure/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/closure/syntax.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/coding-style/style.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/collections/hashmap.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/collections/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/collections/vec.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/message-passing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/parallel.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/share-memory.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/synchronize.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/concurrency-parallel-thread/thread.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/cover/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/cover/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/binary_tree.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/graph.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/linked_list.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/priority_queue.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/queue.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/data-structure/stack.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/editors/before.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/editors/before.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/error-handling/option-result.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ffi/calling-ffi-function.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ffi/compiling-rust-to-lib.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ffi/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/flow/comment.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/flow/condition.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/flow/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/flow/repetition.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/function/arguement.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/function/higher_order_function.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/function/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/function/return_value.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/function/statement_expression.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/src/problem1.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/.rustc_info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.cargo-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-3161928a7392b68f/bin-exercise-3161928a7392b68f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-3161928a7392b68f/bin-exercise-3161928a7392b68f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-3161928a7392b68f/dep-bin-exercise-3161928a7392b68f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-6ee8674c8eb9621a/dep-test-bin-exercise-6ee8674c8eb9621a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-6ee8674c8eb9621a/test-bin-exercise-6ee8674c8eb9621a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/.fingerprint/exercise-6ee8674c8eb9621a/test-bin-exercise-6ee8674c8eb9621a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/deps/exercise-3161928a7392b68f.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/deps/exercise-6ee8674c8eb9621a.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/deps/libexercise-3161928a7392b68f.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/deps/libexercise-6ee8674c8eb9621a.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-1l7bk82p0l9l5/s-f7atra0toz-62jedc-3u9a61uxo1h4c/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-1l7bk82p0l9l5/s-f7atra0toz-62jedc-3u9a61uxo1h4c/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-1l7bk82p0l9l5/s-f7atra0toz-62jedc-3u9a61uxo1h4c/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-1l7bk82p0l9l5/s-f7atra0toz-62jedc.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-g2r53f41h3rg/s-f7atra0toz-1m6e91v-1np7zcbfhw813/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-g2r53f41h3rg/s-f7atra0toz-1m6e91v-1np7zcbfhw813/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-g2r53f41h3rg/s-f7atra0toz-1m6e91v-1np7zcbfhw813/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/incremental/exercise-g2r53f41h3rg/s-f7atra0toz-1m6e91v.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/libexercise-6ee8674c8eb9621a.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/libexercise-6ee8674c8eb9621a.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/libexercise.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/exercise/target/debug/libexercise.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/generic/generic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/heap-stack/heap-stack.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/asref.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/borrow.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/cow.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/deref.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/into.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/intoborrow/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/io/file-io.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/io/io.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/io/output.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/io/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/iterator/iterator.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/iterator/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/macro/macro.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/marker/sendsync.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/match/match.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/match/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/match/pattern.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/module/module.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/module/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/module/prelude.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/module/pub-restricted.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/operator-overloading/operator.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ownership-system/borrowing_reference.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ownership-system/lifetime.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ownership-system/ownership.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/ownership-system/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/array-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/bool-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/char-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/function-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/meta-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/number-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/raw-point-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/slice-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/string-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive-type/tuple-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/quickstart/primitive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/rcarc/cell.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/rcarc/mutex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/rcarc/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/rcarc/rcarc.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/safe/safety.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/std/fs-and-path.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/std/net.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/std/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/std/process.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/testing/bench.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/testing/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/testing/threearchtest.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/trait/overview.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/trait/trait-object.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/trait/trait.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/type/compound-types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/type/operator-and-formatting.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/type/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/type/string.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/type/types.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/unsafe-rawpointer/preface.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/unsafe-rawpointer/raw-pointer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/unsafe-rawpointer/unsafe.md" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="46" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/lib.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cargo.toml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/value_json.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#650#651#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_json-1.0.33/src/lib.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6681">
+              <caret line="393" selection-start-line="393" selection-end-line="393" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>//!</find>
+      <find>//!</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/call_serde_json_crate.rs" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/Cargo.toml" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/src/sample.rs" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/src/macro_json.rs" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs" />
+        <option value="$PROJECT_DIR$/caller_for_rustc-serialize/Cargo.toml" />
+        <option value="$PROJECT_DIR$/caller_for_rustc-serialize/src/lib.rs" />
+        <option value="$PROJECT_DIR$/caller_for_rustc_serialize/src/lib.rs" />
+        <option value="$PROJECT_DIR$/caller_for_rustc_serialize/Cargo.toml" />
+        <option value="$PROJECT_DIR$/caller-for-rustc-serialize/Cargo.toml" />
+        <option value="$PROJECT_DIR$/caller-for-rustc-serialize/src/lib.rs" />
+        <option value="$PROJECT_DIR$/src/main.rs" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/src/lib.rs" />
+        <option value="$PROJECT_DIR$/Cargo.toml" />
+        <option value="$PROJECT_DIR$/config" />
+        <option value="$PROJECT_DIR$/caller_for_serde_json/src/value_json.rs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="238" />
+    <option name="y" value="209" />
+    <option name="width" value="1260" />
+    <option name="height" value="869" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="001_json_process_compare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="001_json_process_compare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="001_json_process_compare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="001_json_process_compare" type="462c0819:PsiDirectoryNode" />
+              <item name="caller_for_serde_json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="001_json_process_compare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="001_json_process_compare" type="462c0819:PsiDirectoryNode" />
+              <item name="caller_for_serde_json" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run" />
+      <option name="allFeatures" value="false" />
+      <option name="nocapture" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo Command.run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="" />
+      <created>1544510956335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544510956335</updated>
+      <workItem from="1544510973206" duration="10508000" />
+      <workItem from="1544573061473" duration="1099000" />
+      <workItem from="1544574303119" duration="7144000" />
+      <workItem from="1544614953803" duration="597000" />
+      <workItem from="1544616099800" duration="130000" />
+      <workItem from="1544662032890" duration="825000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20303000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="238" y="209" width="1260" height="869" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1825" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32901555" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993804" weight="0.39896372" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006196" side_tool="true" visible="true" weight="0.18424754" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="3" weight="0.32961586" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/call_serde_json_crate.rs" />
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_json-1.0.33/src/macros.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-gnu/lib/rustlib/src/rust/src/libcore/result.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="808" column="9" lean-forward="true" selection-start-line="808" selection-start-column="9" selection-end-line="808" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde-1.0.82/src/export.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-gnu/lib/rustlib/src/rust/src/libcore/mem.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde-1.0.82/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde-1.0.82/src/macros.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-0.4.24/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-0.4.24/build.rs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-0.4.24/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1122" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller-for-rustc-serialize/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller-for-rustc-serialize/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/rustycrate-ru-0.1.2/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/rustycrate-ru-0.1.2/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#15#16#0" expanded="true" />
+            <element signature="e#59#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_json-1.0.33/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6681">
+          <caret line="393" selection-start-line="393" selection-end-line="393" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/value_json.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

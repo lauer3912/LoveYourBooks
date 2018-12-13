@@ -1,0 +1,8 @@
+[package]
+name = "caller-for-rustc-serialize"
+version = "0.1.0"
+authors = ["lauer3912 <lauer3912@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rustycrate-ru = "0.1.2"

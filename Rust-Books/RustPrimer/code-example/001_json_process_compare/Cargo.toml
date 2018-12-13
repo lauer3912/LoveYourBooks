@@ -1,0 +1,15 @@
+[package]
+name = "json_process_compare"
+version = "0.1.0"
+authors = ["lauer3912 <lauer3912@gmail.com>"]
+edition = "2018"
+
+[workspace]
+members = [
+    "caller_for_serde_json",
+    "caller-for-rustc-serialize",
+]
+
+[dependencies]
+caller_for_serde_json = { path = "./caller_for_serde_json", version = "0.1.0"}
+caller-for-rustc-serialize = { path = "./caller-for-rustc-serialize", as = "caller-std-json"}

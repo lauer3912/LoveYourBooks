@@ -1,0 +1,5 @@
+# See *** Overriding with local dependencies ***
+# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
+# https://doc.rust-lang.org/cargo/reference/config.html
+
+[features]

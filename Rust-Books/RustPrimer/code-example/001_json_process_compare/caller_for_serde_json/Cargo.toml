@@ -1,0 +1,10 @@
+[package]
+name = "caller_for_serde_json"
+version = "0.1.0"
+authors = ["lauer3912 <lauer3912@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+serde = "1.0.82"
+serde_json = "1.0.33"
+serde_derive = "1.0.82"
