@@ -1,0 +1,5 @@
+[book]
+authors = ["lauer3912"]
+multilingual = false
+src = "src"
+title = "MinGW Primer"

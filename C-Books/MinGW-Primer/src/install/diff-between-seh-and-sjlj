@@ -1,0 +1,123 @@
+# What is the difference between MinGW SEH and MinGW SJLJ?
+
+[see](https://stackoverflow.com/questions/30739099/what-is-the-difference-between-mingw-seh-and-mingw-sjlj)
+
+SJLJ and SEH are two different exception handling systems.
+
+For the specific differences, the resources you've already seen cover everything.
+
+However, as for which one is better to install, go with SJLJ unless you know that you need SEH.
+
+SJLJ
+SJLJ is more widely supported across architectures, and is more robust. Also, SJLJ exceptions can be thrown through libraries that use other exception handling systems, including C libraries. However, it has a performance penalty.
+
+SEH
+SEH is much more efficient (no performance penalty), but unfortunately is not well-supported. SEH exceptions will cause bad things to happen when thrown through libraries that do not also use SEH.
+
+As far as your code is concerned, there are no real differences. You can always switch compilers later if you need to.
+
+
+## 结构化异常处理(SEH)在MSVC和MinGW上的使用
+
+SEH 即 Structured Exception Handling，结构化异常处理。是 M$ 在 Windows 下实现的一套异常处理机制，用于支持软件和硬件异常处理。SEH 作为 Windows 特有的机制，同时也是 Windows 溢出攻击中常见的利用的途径之一。
+
+关于SEH的详细分析，请看Matt Pietrek的文章（原文是发布在MSDN上的，但似乎已经被删除了，这是别处转载的链接）：
+
+英语原文：[A Crash Course on the Depths of Win32 Structured Exception Handling](https://www.microsoft.com/msj/0197/exception/exception.aspx)
+英语转载：[A Crash Course on the Depths of Win32 Structured Exception Handling](http://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm) 
+译文：[深入解析结构化异常处理(SEH)](https://blog.csdn.net/aa13058219642/article/details/80253609)
+
+在MSVC上试用的代码实例：
+
+```c++
+#include <windows.h>
+#include <Dbghelp.h>
+
+//崩溃函数
+int crashFunc()
+{
+    printf("crashFunc\n");
+    int *p = NULL;
+    *p = 1;
+    return *p;
+}
+
+LONG WINAPI UnhandledExceptionFilterEx(struct _EXCEPTION_POINTERS *pException)
+{
+    printf("UnhandledExceptionFilterEx call\n");
+
+    return EXCEPTION_CONTINUE_SEARCH;
+    //return EXCEPTION_EXECUTE_HANDLER;
+}
+
+int main(int argc, char** argv)
+{
+
+    //方式1 调用winapi，把崩溃处理函数挂载在顶层异常处理中
+    SetUnhandledExceptionFilter(UnhandledExceptionFilterEx);
+    crashFunc();
+
+
+    //方式2 使用__try/__except拦截异常
+    __try
+    {
+        crashFunc();
+    }
+    __except(UnhandledExceptionFilterEx(GetExceptionInformation()))
+    {
+        printf("crash __except\n");
+    }
+}
+
+```
+
+在mingw上使用：
+
+```c++
+#include <windows.h>
+#include <Dbghelp.h>
+
+//崩溃函数
+int crashFunc()
+{
+    printf("crashFunc\n");
+    int *p = NULL;
+    *p = 1;
+    return *p;
+}
+
+LONG WINAPI UnhandledExceptionFilterEx(struct _EXCEPTION_POINTERS *pException)
+{
+    printf("UnhandledExceptionFilterEx call\n");
+
+    return EXCEPTION_CONTINUE_SEARCH;
+    //return EXCEPTION_EXECUTE_HANDLER;
+}
+
+int exceptEx(_In_ EXCEPTION_POINTERS *lpEP)
+{
+    return UnhandledExceptionFilterEx(lpEP);
+}
+
+
+int main(int argc, char** argv)
+{
+
+    //方式1 和msvc一样，都是调用winapi
+    SetUnhandledExceptionFilter(UnhandledExceptionFilterEx);
+    crashFunc();
+
+
+    //方式2 __try1/__except1拦截异常
+    __try1(exceptEx)
+    {
+        crashFunc();
+    }
+    __except1
+    {
+        printf("crash __except1\n");
+    }
+}
+
+```
+
