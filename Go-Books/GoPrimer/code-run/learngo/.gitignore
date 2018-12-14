@@ -9,6 +9,7 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -89,4 +90,3 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-
