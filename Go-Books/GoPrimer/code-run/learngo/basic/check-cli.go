@@ -1,11 +1,10 @@
 package main
 
 import (
+	"./git_helper"
 	"fmt"
 	"golang.org/x/tools/container/intsets"
-	"./git_helper"
 )
-
 
 func testSparse() {
 	s := intsets.Sparse{}
@@ -25,12 +24,8 @@ func testGitHelper() {
 	fmt.Println(docs)
 }
 
-
 func main() {
 	fmt.Println("Hello! Check-CLI")
-
 	testSparse()
-
 	testGitHelper()
-
 }
