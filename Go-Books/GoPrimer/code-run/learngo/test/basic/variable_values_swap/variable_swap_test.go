@@ -1,4 +1,4 @@
-package basic
+package variable_values_swap
 
 import (
 	"math/rand"
@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-import vvs "../../basic/variable_value_swap"
+import vvs "../../../basic/variable_value_swap"
 
 // NOTE:
 // ```bash
@@ -111,6 +111,26 @@ func BenchmarkSwap(b *testing.B) {
 
 	// Core operation
 	for _, curFun := range funcArray {
+		if actualA, actualB := curFun(ele.A1, ele.B1); actualA != ele.A2 || actualB != ele.B2 {
+			funcName := runtime.FuncForPC(reflect.ValueOf(curFun).Pointer()).Name()
+			b.Errorf("%v (%d, %d); "+
+				"got (%d, %d); expected (%d, %d)",
+				funcName,
+				ele.A1, ele.B1,
+				actualA, actualB,
+				ele.A2, ele.B2)
+		}
+	}
+}
+
+func BenchmarkSwapUseGeneralWay(b *testing.B) {
+	bigData := getBigData()
+	curFun := vvs.SwapUseGoFuncWay
+
+	// Don't contains the prepare data time
+	b.ResetTimer()
+
+	for _, ele := range bigData {
 		if actualA, actualB := curFun(ele.A1, ele.B1); actualA != ele.A2 || actualB != ele.B2 {
 			funcName := runtime.FuncForPC(reflect.ValueOf(curFun).Pointer()).Name()
 			b.Errorf("%v (%d, %d); "+

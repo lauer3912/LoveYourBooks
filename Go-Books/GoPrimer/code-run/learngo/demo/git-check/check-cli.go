@@ -1,4 +1,4 @@
-package main
+package git_check
 
 import (
 	"./git_helper"
