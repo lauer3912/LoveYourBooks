@@ -7,6 +7,10 @@ type GitHelper struct {
 	docs    []string
 }
 
+type IHelper interface {
+	GetDoc() string
+}
+
 func (helper *GitHelper) String() string {
 	return fmt.Sprintf("implement me")
 }

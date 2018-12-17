@@ -19,3 +19,9 @@ func SwapUseLikeCWay(a, b int) (int, int) {
 
 	return a, b
 }
+
+// Other methods like go functions, see 'for_go.go' file.
+// ```go
+// SwapUseGoDisplacementWay
+// SwapUseGoPointerWay
+// ```

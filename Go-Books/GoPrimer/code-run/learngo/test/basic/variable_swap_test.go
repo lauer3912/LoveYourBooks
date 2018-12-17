@@ -48,15 +48,38 @@ func getBigData() []TestDataTable {
 }
 
 var funcArray = []func(int, int) (int, int){
+	// Go function
 	vvs.SwapUseGoFuncWay,
+	vvs.SwapUseGoDisplacementWay,
+	// Like C function
 	vvs.SwapUseLikeCWay,
 }
 
-// TestXxx
+var funcArray2 = []func(*int, *int) (int, int){
+	vvs.SwapUseGoPointerWay,
+}
+
+// NOTE: TestXxx, Format:  Like "TestXxx", It's a Test function
 func TestSwap(t *testing.T) {
 	for _, curFun := range funcArray {
 		for _, ele := range getStandData() {
 			if actualA, actualB := curFun(ele.A1, ele.B1); actualA != ele.A2 || actualB != ele.B2 {
+				funcName := runtime.FuncForPC(reflect.ValueOf(curFun).Pointer()).Name()
+				t.Errorf("%v (%d, %d); "+
+					"got (%d, %d); expected (%d, %d)",
+					funcName,
+					ele.A1, ele.B1,
+					actualA, actualB,
+					ele.A2, ele.B2)
+			}
+		}
+	}
+}
+
+func TestSwapUsePointer(t *testing.T) {
+	for _, curFun := range funcArray2 {
+		for _, ele := range getStandData() {
+			if actualA, actualB := curFun(&ele.A1, &ele.B1); actualA != ele.A2 || actualB != ele.B2 {
 				funcName := runtime.FuncForPC(reflect.ValueOf(curFun).Pointer()).Name()
 				t.Errorf("%v (%d, %d); "+
 					"got (%d, %d); expected (%d, %d)",
