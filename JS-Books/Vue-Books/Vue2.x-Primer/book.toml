@@ -3,3 +3,8 @@ authors = ["lauer3912"]
 multilingual = false
 src = "src"
 title = "Vue2.x Code Primer"
+
+[output.html]
+additional-css = []
+additional-js = []
+mathjax-support = true

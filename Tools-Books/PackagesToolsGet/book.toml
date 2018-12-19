@@ -2,7 +2,7 @@
 authors = ["lauer3912"]
 multilingual = false
 src = "src"
-title = "Go Primer"
+title = "Packages Tools Get Start"
 
 [output.html]
 additional-css = []

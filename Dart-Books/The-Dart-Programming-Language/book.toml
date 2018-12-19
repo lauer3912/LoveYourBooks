@@ -3,3 +3,8 @@ authors = ["lauer3912 (lauer3912@gmail.com)", "Ian-Sun", "JamesSun(34314687@qq.c
 multilingual = false
 src = "src"
 title = "Dart编程语言"
+
+[output.html]
+additional-css = []
+additional-js = []
+mathjax-support = true

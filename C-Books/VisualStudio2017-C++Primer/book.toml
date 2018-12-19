@@ -3,3 +3,8 @@ authors = ["Jane"]
 multilingual = false
 src = "src"
 title = "Visual Studio 2017 C++ Primer"
+
+[output.html]
+additional-css = []
+additional-js = []
+mathjax-support = true

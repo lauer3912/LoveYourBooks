@@ -2,7 +2,7 @@
 authors = ["lauer3912"]
 multilingual = false
 src = "src"
-title = "Go Primer"
+title = "My Math Book"
 
 [output.html]
 additional-css = []
