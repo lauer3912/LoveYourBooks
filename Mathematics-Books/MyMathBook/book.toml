@@ -6,5 +6,5 @@ title = "My Math Book"
 
 [output.html]
 additional-css = []
-additional-js = []
+additional-js = ["for-mathjax-config.js"]
 mathjax-support = true

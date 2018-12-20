@@ -10,6 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/book.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/book.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/src/chapter_1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/src/chapter_1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../book.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../book.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="272">
+              <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -151,7 +154,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -211,12 +214,12 @@
       <workItem from="1544662032890" duration="825000" />
       <workItem from="1545196292546" duration="253000" />
       <workItem from="1545196801736" duration="287000" />
-      <workItem from="1545197112858" duration="2497000" />
+      <workItem from="1545197112858" duration="5166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23340000" />
+    <option name="totallyTimeSpent" value="26009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="86" y="47" width="1260" height="869" extended-state="0" />
@@ -227,7 +230,7 @@
       <window_info anchor="bottom" id="Tail" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54841405" visible="true" weight="0.47626114" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54841405" weight="0.47626114" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993804" weight="0.39896372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -398,8 +401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="272">
+          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
     </entry>

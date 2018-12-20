@@ -8,3 +8,6 @@ title = "Rust Programming Language Primer - Rust 编程语言入门"
 additional-css = ["ferris.css", "theme/edition.css"]
 additional-js = ["ferris.js"]
 mathjax-support = true
+
+[output.html.playpen]
+editable = true
