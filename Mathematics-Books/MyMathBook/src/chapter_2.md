@@ -73,39 +73,55 @@ $_{\stackrel{y}{_\phantom{x}\triangle_{z}}}\hspace{-.25pc}\stackrel{y}{\triangle
 Having **3** variables, I was sure that there must be 3! identities, but at first I could only come up with these four. Then I noticed the similarities in structure that these four have: in each case, the larger $\triangle$ uses one vertex (say vertex A) for a simple variable. A second vertex (say vertex B) has a smaller $\triangle$ with the same simple variable in its vertex A. The smaller $\triangle$ leaves vertex B empty and makes use of vertex C.
 
 <p>
-<ul>
-    <li>
+<ul class="CustomMathTextLeftAlgin_Display">
+    <li><strong>
 $$\stackrel{a}{_x\triangle_{\phantom{z}}}\cdot\stackrel{b}{_x\triangle_{\phantom{z}}}={}\stackrel{a+b}{_x\triangle_{\phantom{z}}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\frac{\stackrel{a}{_x\triangle_{\phantom{z}}}}{\stackrel{b}{_x\triangle_{\phantom{z}}}}={}\stackrel{a-b}{_x\triangle_{\phantom{z}}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$_{\stackrel{a}{_x\triangle_{\phantom{z}}}}\hspace{-.25pc}\stackrel{b}{\triangle}={}\stackrel{ab}{_x\triangle_{\phantom{z}}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_x\triangle_{ab}}={}\stackrel{}{_x\triangle_{a}}+\stackrel{}{_x\triangle_{b}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_x\triangle_{a/b}}={}\stackrel{}{_x\triangle_{a}}-\stackrel{}{_x\triangle_{b}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_x\triangle}_{\stackrel{b}{_a\triangle_{\phantom{z}}}}=b\cdot\stackrel{}{_x\triangle}_{a}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{-a}{_x\triangle_{\phantom{z}}}=\frac{1}{\stackrel{a}{_x\triangle_{\phantom{z}}}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{1/y}{_x\triangle_{\phantom{z}}}=\stackrel{y}{_\phantom{x}\triangle_{x}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_x\triangle_{1/a}}=-\mathord{\stackrel{}{_x\triangle_{a}}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_a\triangle_{b}}\cdot\stackrel{}{_b\triangle_{c}}=\stackrel{}{_a\triangle_{c}}$$
-    </li>
-    <li>
+    </strong></li>
+    <li><strong>
 $$\stackrel{}{_a\triangle_{c}}=\frac{\stackrel{}{_b\triangle_{c}}}{\stackrel{}{_b\triangle_{a}}}$$
-    </li>
+    </strong></li>
 </ul>
 </p>
+
+## 代码演练
+
+### C++
+
+#### 使用C++ STL标准库
+
+#### 使用C++ Boost库
+
+
+### Rust
+
+
+
+### Go
+
