@@ -1,7 +1,7 @@
 [book]
 authors = ["lauer3912"]
 multilingual = false
-src = "src"
+src = ["src", "src/**/*"]
 title = "Packages Tools Get Start"
 
 [output.html]

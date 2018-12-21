@@ -1,0 +1,10 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "CLion C++ Primer"
+
+[output.html]
+additional-css = ["for-math-theme.css"]
+additional-js = ["for-mathjax-config.js"]
+mathjax-support = true
