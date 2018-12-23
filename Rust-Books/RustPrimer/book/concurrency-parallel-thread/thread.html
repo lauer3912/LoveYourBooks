@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>线程 - Rust Programming Language Primer - Rust 编程语言入门</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/edition.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../1st-glance/index.html"><strong aria-hidden="true">1.</strong> 初识Rust</a></li><li><a href="../install/preface.html"><strong aria-hidden="true">2.</strong> 安装Rust</a></li><li><ol class="section"><li><a href="../install/install_rust_on_linux.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="../install/install_rust_on_mac_os.html"><strong aria-hidden="true">2.2.</strong> Mac</a></li><li><a href="../install/install_rust_on_windows.html"><strong aria-hidden="true">2.3.</strong> Windows</a></li><li><a href="../install/use_mirrors_quickly.html"><strong aria-hidden="true">2.4.</strong> 利用科大镜像源提速</a></li><li><a href="../install/rustup.html"><strong aria-hidden="true">2.5.</strong> 版本管理工具: rustup</a></li></ol></li><li><a href="../editors/preface.html"><strong aria-hidden="true">3.</strong> 编辑器</a></li><li><ol class="section"><li><a href="../editors/before.html"><strong aria-hidden="true">3.1.</strong> 前期准备</a></li><li><a href="../editors/vim.html"><strong aria-hidden="true">3.2.</strong> vim</a></li><li><a href="../editors/emacs.html"><strong aria-hidden="true">3.3.</strong> emacs</a></li><li><a href="../editors/vscode.html"><strong aria-hidden="true">3.4.</strong> vscode</a></li><li><a href="../editors/atom.html"><strong aria-hidden="true">3.5.</strong> atom</a></li><li><a href="../editors/sublime.html"><strong aria-hidden="true">3.6.</strong> sublime</a></li><li><a href="../editors/visualstudio.html"><strong aria-hidden="true">3.7.</strong> visual studio</a></li><li><a href="../editors/spacemacs.html"><strong aria-hidden="true">3.8.</strong> spacemacs</a></li></ol></li><li><a href="../quickstart/quickstart.html"><strong aria-hidden="true">4.</strong> Rust快速入门</a></li><li><ol class="section"><li><a href="../quickstart/rust-travel.html"><strong aria-hidden="true">4.1.</strong> Rust旅程</a></li><li><a href="../quickstart/let.html"><strong aria-hidden="true">4.2.</strong> 变量绑定</a></li><li><a href="../quickstart/primitive.html"><strong aria-hidden="true">4.3.</strong> 原生类型</a></li><li><ol class="section"><li><a href="../quickstart/primitive-type/bool-types.html"><strong aria-hidden="true">4.3.1.</strong> 布尔类型</a></li><li><a href="../quickstart/primitive-type/number-types.html"><strong aria-hidden="true">4.3.2.</strong> 数值类型</a></li><li><a href="../quickstart/primitive-type/char-types.html"><strong aria-hidden="true">4.3.3.</strong> 字符类型</a></li><li><a href="../quickstart/primitive-type/string-types.html"><strong aria-hidden="true">4.3.4.</strong> 字符串类型</a></li><li><a href="../quickstart/primitive-type/array-types.html"><strong aria-hidden="true">4.3.5.</strong> 数组类型</a></li><li><a href="../quickstart/primitive-type/-types.html"><strong aria-hidden="true">4.3.6.</strong> 切片类型</a></li></ol></li><li><a href="../quickstart/vector-string.html"><strong aria-hidden="true">4.4.</strong> 数组、动态数组和字符串</a></li><li><a href="../quickstart/struct-enum.html"><strong aria-hidden="true">4.5.</strong> 结构体与枚举</a></li><li><a href="../quickstart/control-flow.html"><strong aria-hidden="true">4.6.</strong> 控制流</a></li><li><a href="../quickstart/function-method.html"><strong aria-hidden="true">4.7.</strong> 函数与方法</a></li><li><a href="../quickstart/trait.html"><strong aria-hidden="true">4.8.</strong> 特性</a></li><li><a href="../quickstart/comments-document.html"><strong aria-hidden="true">4.9.</strong> 注释与文档</a></li><li><a href="../quickstart/io-stream.html"><strong aria-hidden="true">4.10.</strong> 输入输出流</a></li></ol></li><li><a href="../cargo-projects-manager/cargo-projects-manager.html"><strong aria-hidden="true">5.</strong> Cargo项目管理器</a></li><li><a href="../flow/preface.html"><strong aria-hidden="true">6.</strong> 基本程序结构</a></li><li><ol class="section"><li><a href="../flow/comment.html"><strong aria-hidden="true">6.1.</strong> 注释</a></li><li><a href="../flow/condition.html"><strong aria-hidden="true">6.2.</strong> 条件</a></li><li><a href="../flow/repetition.html"><strong aria-hidden="true">6.3.</strong> 循环</a></li></ol></li><li><a href="../type/preface.html"><strong aria-hidden="true">7.</strong> 类型、运算符和字符串</a></li><li><ol class="section"><li><a href="../type/types.html"><strong aria-hidden="true">7.1.</strong> 基础类型</a></li><li><a href="../type/compound-types.html"><strong aria-hidden="true">7.2.</strong> 复合类型</a></li><li><a href="../type/string.html"><strong aria-hidden="true">7.3.</strong> 字符串类</a></li><li><a href="../type/operator-and-formatting.html"><strong aria-hidden="true">7.4.</strong> 基础运算符和字符串格式化</a></li></ol></li><li><a href="../function/overview.html"><strong aria-hidden="true">8.</strong> 函数</a></li><li><ol class="section"><li><a href="../function/arguement.html"><strong aria-hidden="true">8.1.</strong> 函数参数</a></li><li><a href="../function/return_value.html"><strong aria-hidden="true">8.2.</strong> 函数返回值</a></li><li><a href="../function/statement_expression.html"><strong aria-hidden="true">8.3.</strong> 语句和表达式</a></li><li><a href="../function/higher_order_function.html"><strong aria-hidden="true">8.4.</strong> 高阶函数</a></li></ol></li><li><a href="../match/overview.html"><strong aria-hidden="true">9.</strong> 模式匹配</a></li><li><ol class="section"><li><a href="../match/match.html"><strong aria-hidden="true">9.1.</strong> match关键字</a></li><li><a href="../match/pattern.html"><strong aria-hidden="true">9.2.</strong> 模式 pattern</a></li></ol></li><li><a href="../trait/overview.html"><strong aria-hidden="true">10.</strong> 特征 Trait</a></li><li><ol class="section"><li><a href="../trait/trait.html"><strong aria-hidden="true">10.1.</strong> trait关键字</a></li><li><a href="../trait/trait-object.html"><strong aria-hidden="true">10.2.</strong> trait对象</a></li></ol></li><li><a href="../generic/generic.html"><strong aria-hidden="true">11.</strong> 泛型</a></li><li><a href="../ownership-system/preface.html"><strong aria-hidden="true">12.</strong> 可变性、所有权、租借和生命期</a></li><li><ol class="section"><li><a href="../ownership-system/ownership.html"><strong aria-hidden="true">12.1.</strong> 所有权</a></li><li><a href="../ownership-system/borrowing_reference.html"><strong aria-hidden="true">12.2.</strong> 引用和借用</a></li><li><a href="../ownership-system/lifetime.html"><strong aria-hidden="true">12.3.</strong> 生命周期</a></li></ol></li><li><a href="../closure/overview.html"><strong aria-hidden="true">13.</strong> 闭包</a></li><li><ol class="section"><li><a href="../closure/syntax.html"><strong aria-hidden="true">13.1.</strong> 闭包的语法</a></li><li><a href="../closure/implementation.html"><strong aria-hidden="true">13.2.</strong> 闭包的实现</a></li><li><a href="../closure/as_argument_return_value.html"><strong aria-hidden="true">13.3.</strong> 闭包作为参数和返回值</a></li></ol></li><li><a href="../collections/overview.html"><strong aria-hidden="true">14.</strong> 集合类型 Collections</a></li><li><ol class="section"><li><a href="../collections/vec.html"><strong aria-hidden="true">14.1.</strong> 动态数组 Vec</a></li><li><a href="../collections/hashmap.html"><strong aria-hidden="true">14.2.</strong> 哈希表 HashMap</a></li></ol></li><li><a href="../iterator/overview.html"><strong aria-hidden="true">15.</strong> 迭代器</a></li><li><ol class="section"><li><a href="../iterator/iterator.html"><strong aria-hidden="true">15.1.</strong> 迭代器、适配器、消费者</a></li></ol></li><li><a href="../module/preface.html"><strong aria-hidden="true">16.</strong> 模块和包系统、Prelude</a></li><li><ol class="section"><li><a href="../module/module.html"><strong aria-hidden="true">16.1.</strong> 模块 module 和包 crate</a></li><li><a href="../module/prelude.html"><strong aria-hidden="true">16.2.</strong> Prelude</a></li><li><a href="../module/pub-restricted.html"><strong aria-hidden="true">16.3.</strong> pub restricted</a></li></ol></li><li><a href="../error-handling/option-result.html"><strong aria-hidden="true">17.</strong> Option、Result与错误处理</a></li><li><a href="../io/preface.html"><strong aria-hidden="true">18.</strong> 输入与输出</a></li><li><ol class="section"><li><a href="../io/io.html"><strong aria-hidden="true">18.1.</strong> 标准输入输出</a></li><li><a href="../io/output.html"><strong aria-hidden="true">18.2.</strong> print! 宏</a></li><li><a href="../io/file-io.html"><strong aria-hidden="true">18.3.</strong> 文件输入输出</a></li></ol></li><li><a href="../macro/macro.html"><strong aria-hidden="true">19.</strong> 宏系统</a></li><li><a href="../heap-stack/heap-stack.html"><strong aria-hidden="true">20.</strong> 堆、栈与Box</a></li><li><a href="../rcarc/preface.html"><strong aria-hidden="true">21.</strong> 几种智能指针</a></li><li><ol class="section"><li><a href="../rcarc/rcarc.html"><strong aria-hidden="true">21.1.</strong> Rc, Arc</a></li><li><a href="../rcarc/mutex.html"><strong aria-hidden="true">21.2.</strong> Mutex, RwLock</a></li><li><a href="../rcarc/cell.html"><strong aria-hidden="true">21.3.</strong> Cell, RefCell</a></li></ol></li><li><a href="../intoborrow/preface.html"><strong aria-hidden="true">22.</strong> 类型系统中的几个常见 Trait</a></li><li><ol class="section"><li><a href="../intoborrow/into.html"><strong aria-hidden="true">22.1.</strong> Into/From 及其在 String 和 &amp;str 互转上的应用</a></li><li><a href="../intoborrow/asref.html"><strong aria-hidden="true">22.2.</strong> AsRef, AsMut</a></li><li><a href="../intoborrow/borrow.html"><strong aria-hidden="true">22.3.</strong> Borrow, BorrowMut, ToOwned</a></li><li><a href="../intoborrow/deref.html"><strong aria-hidden="true">22.4.</strong> Deref 与 Deref coercions</a></li><li><a href="../intoborrow/cow.html"><strong aria-hidden="true">22.5.</strong> Cow 及其在 String 和 &amp;str 上的应用</a></li></ol></li><li><a href="../marker/sendsync.html"><strong aria-hidden="true">23.</strong> Send 和 Sync</a></li><li><a href="../concurrency-parallel-thread/preface.html"><strong aria-hidden="true">24.</strong> 并发，并行，多线程编程</a></li><li><ol class="section"><li><a href="../concurrency-parallel-thread/thread.html" class="active"><strong aria-hidden="true">24.1.</strong> 线程</a></li><li><a href="../concurrency-parallel-thread/message-passing.html"><strong aria-hidden="true">24.2.</strong> 消息传递</a></li><li><a href="../concurrency-parallel-thread/share-memory.html"><strong aria-hidden="true">24.3.</strong> 共享内存</a></li><li><a href="../concurrency-parallel-thread/synchronize.html"><strong aria-hidden="true">24.4.</strong> 同步</a></li><li><a href="../concurrency-parallel-thread/parallel.html"><strong aria-hidden="true">24.5.</strong> 并行</a></li></ol></li><li><a href="../unsafe-rawpointer/preface.html"><strong aria-hidden="true">25.</strong> Unsafe、原始指针</a></li><li><ol class="section"><li><a href="../unsafe-rawpointer/unsafe.html"><strong aria-hidden="true">25.1.</strong> Unsafe</a></li><li><a href="../unsafe-rawpointer/raw-pointer.html"><strong aria-hidden="true">25.2.</strong> 原始指针</a></li></ol></li><li><a href="../ffi/preface.html"><strong aria-hidden="true">26.</strong> FFI</a></li><li><ol class="section"><li><a href="../ffi/calling-ffi-function.html"><strong aria-hidden="true">26.1.</strong> rust调用ffi函数</a></li><li><a href="../ffi/compiling-rust-to-lib.html"><strong aria-hidden="true">26.2.</strong> 将rust编译成库</a></li></ol></li><li><a href="../operator-overloading/operator.html"><strong aria-hidden="true">27.</strong> 运算符重载</a></li><li><a href="../attr-and-compiler-arg/preface.html"><strong aria-hidden="true">28.</strong> 属性和编译器参数</a></li><li><ol class="section"><li><a href="../attr-and-compiler-arg/attribute.html"><strong aria-hidden="true">28.1.</strong> 属性</a></li><li><a href="../attr-and-compiler-arg/rustc-option.html"><strong aria-hidden="true">28.2.</strong> 编译器参数</a></li></ol></li><li><a href="../cargo-detailed-cfg/cargo-detailed-cfg.html"><strong aria-hidden="true">29.</strong> Cargo参数配置</a></li><li><a href="../testing/preface.html"><strong aria-hidden="true">30.</strong> 测试与评测</a></li><li><ol class="section"><li><a href="../testing/threearchtest.html"><strong aria-hidden="true">30.1.</strong> 测试 (testing)</a></li><li><a href="../testing/bench.html"><strong aria-hidden="true">30.2.</strong> 评测 (benchmark)</a></li></ol></li><li><a href="../coding-style/style.html"><strong aria-hidden="true">31.</strong> 代码风格</a></li><li><a href="../any/any.html"><strong aria-hidden="true">32.</strong> Any与反射</a></li><li><a href="../safe/safety.html"><strong aria-hidden="true">33.</strong> 安全</a></li><li><a href="../data-structure/preface.html"><strong aria-hidden="true">34.</strong> 常用数据结构实现</a></li><li><ol class="section"><li><a href="../data-structure/stack.html"><strong aria-hidden="true">34.1.</strong> 栈结构</a></li><li><a href="../data-structure/queue.html"><strong aria-hidden="true">34.2.</strong> 队列</a></li><li><a href="../data-structure/binary_tree.html"><strong aria-hidden="true">34.3.</strong> 二叉树</a></li><li><a href="../data-structure/priority_queue.html"><strong aria-hidden="true">34.4.</strong> 优先队列</a></li><li><a href="../data-structure/linked_list.html"><strong aria-hidden="true">34.5.</strong> 链表</a></li><li><a href="../data-structure/graph.html"><strong aria-hidden="true">34.6.</strong> 图结构</a></li></ol></li><li><a href="../std/overview.html"><strong aria-hidden="true">35.</strong> 标准库介绍</a></li><li><ol class="section"><li><a href="../std/process.html"><strong aria-hidden="true">35.1.</strong> 系统命令:调用grep</a></li><li><a href="../std/fs-and-path.html"><strong aria-hidden="true">35.2.</strong> 目录操作:简单grep</a></li><li><a href="../std/net.html"><strong aria-hidden="true">35.3.</strong> 网络模块:W回音</a></li></ol></li><li><a href="../action/preface.html"><strong aria-hidden="true">36.</strong> 实战篇</a></li><li><ol class="section"><li><a href="../action/json_data/index.html"><strong aria-hidden="true">36.1.</strong> 实战：Json处理</a></li><li><a href="../action/mysite/index.html"><strong aria-hidden="true">36.2.</strong> 实战：Web 应用开发入门</a></li><li><a href="../action/db/index.html"><strong aria-hidden="true">36.3.</strong> 实战：使用Postgresql数据库</a></li></ol></li><li><a href="../appendix/glossary.html"><strong aria-hidden="true">37.</strong> 附录-术语表</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Rust Programming Language Primer - Rust 编程语言入门</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#a并发编程" id="a并发编程"><h1>并发编程</h1></a>
+<p>并发是什么？引用Rob Pike的经典描述:</p>
+<blockquote>
+<p>并发是同一时间应对多件事情的能力</p>
+</blockquote>
+<p>其实在我们身边就有很多并发的事情，比如一边上课，一边发短信；一边给小孩喂奶，一边看电视，只要你细心留意，就会发现许多类似的事。相应地，在软件的世界里，我们也会发现这样的事，比如一边写博客，一边听音乐；一边看网页，一边下载软件等等。显而易见这样会节约不少时间，干更多的事。然而一开始计算机系统并不能同时处理两件事，这明显满足不了我们的需要，后来慢慢提出了多进程，多线程的解决方案，再后来，硬件也发展到了多核多CPU的地步。在硬件和系统底层对并发的支持也来越多，相应地，各大编程语言也对并发处理提供了强力的支持，作为新兴语言的Rust，自然也支持并发编程。那么本章就将引领大家一览Rust并发编程的相关知识，从线程开始，逐步尝试进行数据交互，同步协作，最后进入到并行实现，一步一步揭开Rust并发编程的神秘面纱。由于本书主要介绍的是Rust语言的使用，所以本章不会对并发编程相关理论知识进行全面而深入地探讨——要真那样地话，一本书都不够介绍的，而是更侧重于介绍用Rust语言怎么实现基本的并发。</p>
+<p>首先我们会介绍线程的使用，线程是基本的执行单元，其重要性不言而喻，Rust程序就是由一堆线程组成的。在当今多核多CPU已经普及的情况下，各种大数据分析和并行计算又让线程焕发出了更耀眼的光芒。如果对线程不甚了解，请先参阅操作系统相关的书籍，此处不过多介绍。然后介绍一些在解决并发问题时，需要处理的数据传递和协作的实现，比如消息传递，同步和共享内存。最后简要介绍Rust中并行的实现。</p>
+<a class="header" href="#a241-线程创建与结束" id="a241-线程创建与结束"><h2>24.1 线程创建与结束</h2></a>
+<p>相信线程对大家而言，一点也不陌生，在当今多CPU多核已经普及的情况下，大数据分析与并行计算都离不开它，几乎所有的语言都支持它，所有的进程都是由一个或多个线程所组成的。既然如此重要，接下来我们就先来看一下在Rust中如何创建一个线程，然后线程又是如何结束的。</p>
+<p>Rust对于线程的支持，和<code>C++11</code>一样，都是放在标准库中来实现的，详情请参见<a href="https://doc.rust-lang.org/std/thread/index.html"><code>std::thread</code></a>，好在Rust从一开始就这样做了，不用像C++那样等呀等。在语言层面支持后，开发者就不用那么苦兮兮地处理各平台的移植问题。通过Rust的源码可以看到，<code>std::thread</code>其实就是对不同平台的线程操作的封装，相关API的实现都是调用操作系统的API来实现的，从而提供了线程操作的统一接口。对于我而言，能够这样简单快捷地操作原生线程，身上的压力一下轻了不少。</p>
+<a class="header" href="#a创建线程" id="a创建线程"><h3>创建线程</h3></a>
+<p>首先，我们看一下在Rust中如何创建一个原生线程(native thread)。<code>std::thread</code>提供了两种创建方式，都非常简单，第一种方式是通过<code>spawn</code>函数来创建，参见下面的示例代码：</p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    // 创建一个线程
+    let new_thread = thread::spawn(move || {
+        println!(&quot;I am a new thread.&quot;);
+    });
+    // 等待新建线程执行完成
+    new_thread.join().unwrap();
+}
+</code></pre></pre>
+<p>执行上面这段代码，将会看到下面的输出结果：</p>
+<pre><code>I am a new thread.
+</code></pre>
+<p>就5行代码，少得不能再少，最关键的当然就是调用<code>spawn</code>函数的那行代码。使用这个函数，记得要先<code>use std::thread</code>。注意<code>spawn</code>函数需要一个函数作为参数，且是<code>FnOnce</code>类型，如果已经忘了这种类型的函数，请学习或回顾一下函数和闭包章节。<code>main</code>函数最后一行代码即使不要，也能创建线程（关于<code>join</code>函数的作用和使用在后续小节详解，此处你只要知道它可以用来等待线程执行完成即可），可以去掉或者注释该行代码试试。这样的话，运行结果可能没有任何输出，具体原因后面详解。</p>
+<p>接下来我们使用第二种方式创建线程，它比第一种方式稍微复杂一点，因为功能强大一点，可以在创建之前设置线程的名称和堆栈大小，参见下面的代码：</p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    // 创建一个线程，线程名称为 thread1, 堆栈大小为4k
+    let new_thread_result = thread::Builder::new()
+                            .name(&quot;thread1&quot;.to_string())
+                            .stack_size(4*1024*1024).spawn(move || {
+        println!(&quot;I am thread1.&quot;);
+    });
+    // 等待新创建的线程执行完成
+    new_thread_result.unwrap().join().unwrap();
+}
+</code></pre></pre>
+<p>执行上面这段代码，将会看到下面的输出结果：</p>
+<pre><code>I am thread1.
+</code></pre>
+<p>通过和第一种方式的实现代码比较可以发现，这种方式借助了一个<code>Builder</code>类来设置线程名称和堆栈大小，除此之外，<code>Builder</code>的<code>spawn</code>函数的返回值是一个<code>Result</code>，在正式的代码编写中，可不能像上面这样直接<code>unwrap.join</code>，应该判定一下。后面也会有很多类似的演示代码，为了简单说明不会做的很严谨。</p>
+<p>以上就是Rust创建原生线程的两种不同方式，示例代码有点然并卵的意味，但是你可以稍加修改，就可以变得更加有用，试试吧。</p>
+<a class="header" href="#a线程结束" id="a线程结束"><h3>线程结束</h3></a>
+<p>此时，我们已经知道如何创建一个新线程了，创建后，不管你见或者不见，它就在那里，那么它什么时候才会消亡呢？自生自灭，亦或者被干掉？如果接触过一些系统编程，应该知道有些操作系统提供了粗暴地干掉线程的接口，看它不爽，直接干掉，完全可以不理会新建线程的感受。是否感觉很爽，但是Rust不会再让这样爽了，因为<code>std::thread</code>并没有提供这样的接口，为什么呢？如果深入接触过并发编程或多线程编程，就会知道强制终止一个运行中的线程，会出现诸多问题。比如资源没有释放，引起状态混乱，结果不可预期。强制干掉那一刻，貌似很爽地解决问题了，然而可能后患无穷。Rust语言的一大特性就是安全，是绝对不允许这样不负责任的做法的。即使在其他语言提供了类似的接口，也不应该滥用。</p>
+<p>那么在Rust中，新建的线程就只能让它自身自灭了吗？其实也有两种方式，首先介绍大家都知道的自生自灭的方式，线程执行体执行完成，线程就结束了。比如上面创建线程的第一种方式，代码执行完<code>println!(&quot;I am a new thread.&quot;);</code>就结束了。 如果像下面这样：</p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    // 创建一个线程
+    let new_thread = thread::spawn(move || {
+        loop {
+            println!(&quot;I am a new thread.&quot;);
+        }
+    });
+    // 等待新创建的线程执行完成
+    new_thread.join().unwrap();
+}
+</code></pre></pre>
+<p>线程就永远都不会结束，如果你用的还是古董电脑，运行上面的代码之前，请做好心理准备。在实际代码中，要时刻警惕该情况的出现（单核情况下，CPU占用率会飙升到100%），除非你是故意为之。</p>
+<p>线程结束的另一种方式就是，线程所在进程结束了。我们把上面这个例子稍作修改：</p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    // 创建一个线程
+    thread::spawn(move || {
+        loop {
+            println!(&quot;I am a new thread.&quot;);
+        }
+    });
+
+    // 不等待新创建的线程执行完成
+    // new_thread.join().unwrap();
+}
+</code></pre></pre>
+<p>同上面的代码相比，唯一的差别在于<code>main</code>函数的最后一行代码被注释了，这样主线程就不用等待新建线程了，在创建线程之后就执行完了，其所在进程也就结束了，从而新建的线程也就结束了。此处，你可能有疑问：为什么一定是进程结束导致新建线程结束？也可能是创建新线程的主线程结束而导致的？事实到底如何，我们不妨验证一下：</p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    // 创建一个线程
+    let new_thread = thread::spawn(move || {
+        // 再创建一个线程
+        thread::spawn(move || {
+            loop {
+                println!(&quot;I am a new thread.&quot;);
+            }
+        })
+    });
+
+    // 等待新创建的线程执行完成
+    new_thread.join().unwrap();
+    println!(&quot;Child thread is finish!&quot;);
+
+    // 睡眠一段时间，看子线程创建的子线程是否还在运行
+    thread::sleep_ms(100);
+}
+</code></pre></pre>
+<p>这次我们在新建线程中还创建了一个线程，从而第一个新建线程是父线程，主线程在等待该父线程结束后，主动睡眠一段时间。这样做有两个目的，一是确保整个程序不会马上结束；二是如果子线程还存在，应该会获得执行机会，以此来检验子线程是否还在运行，下面是输出结果：</p>
+<pre><code>Child thread is finish!
+I am a new thread.
+I am a new thread.
+......
+</code></pre>
+<p>结果表明，在父线程结束后，其创建的子线程还活着，这并不会因为父线程结束而结束。这个还是比较符合自然规律的，要不然真会断子绝孙，人类灭绝。所以导致线程结束的第二种方式，是结束其所在进程。到此为止，我们已经把线程的创建和结束都介绍完了，那么接下来我们会介绍一些更有趣的东西。但是在此之前，请先考虑一下下面的练习题。</p>
+<p><strong>练习题：</strong></p>
+<p>有一组学生的成绩，我们需要对它们评分，90分及以上是A，80分及以上是B，70分及以上是C，60分及以上为D,60分以下为E。现在要求用Rust语言编写一个程序来评分，且评分由新建的线程来做，最终输出每个学生的学号，成绩，评分。学生成绩单随机产生，学生人数100位，成绩范围为[0,100]，学号依次从1开始，直到100。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concurrency-parallel-thread/preface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../concurrency-parallel-thread/message-passing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concurrency-parallel-thread/preface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../concurrency-parallel-thread/message-passing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

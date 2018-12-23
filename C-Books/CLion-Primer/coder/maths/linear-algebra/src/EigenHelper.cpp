@@ -1,7 +1,6 @@
 //
 // Created by ian on 2018-12-21.
 //
-
 #include "EigenHelper.h"
 
 #include <iostream>

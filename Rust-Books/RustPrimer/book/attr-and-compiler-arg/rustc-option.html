@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>编译器参数 - Rust Programming Language Primer - Rust 编程语言入门</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/edition.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../1st-glance/index.html"><strong aria-hidden="true">1.</strong> 初识Rust</a></li><li><a href="../install/preface.html"><strong aria-hidden="true">2.</strong> 安装Rust</a></li><li><ol class="section"><li><a href="../install/install_rust_on_linux.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="../install/install_rust_on_mac_os.html"><strong aria-hidden="true">2.2.</strong> Mac</a></li><li><a href="../install/install_rust_on_windows.html"><strong aria-hidden="true">2.3.</strong> Windows</a></li><li><a href="../install/use_mirrors_quickly.html"><strong aria-hidden="true">2.4.</strong> 利用科大镜像源提速</a></li><li><a href="../install/rustup.html"><strong aria-hidden="true">2.5.</strong> 版本管理工具: rustup</a></li></ol></li><li><a href="../editors/preface.html"><strong aria-hidden="true">3.</strong> 编辑器</a></li><li><ol class="section"><li><a href="../editors/before.html"><strong aria-hidden="true">3.1.</strong> 前期准备</a></li><li><a href="../editors/vim.html"><strong aria-hidden="true">3.2.</strong> vim</a></li><li><a href="../editors/emacs.html"><strong aria-hidden="true">3.3.</strong> emacs</a></li><li><a href="../editors/vscode.html"><strong aria-hidden="true">3.4.</strong> vscode</a></li><li><a href="../editors/atom.html"><strong aria-hidden="true">3.5.</strong> atom</a></li><li><a href="../editors/sublime.html"><strong aria-hidden="true">3.6.</strong> sublime</a></li><li><a href="../editors/visualstudio.html"><strong aria-hidden="true">3.7.</strong> visual studio</a></li><li><a href="../editors/spacemacs.html"><strong aria-hidden="true">3.8.</strong> spacemacs</a></li></ol></li><li><a href="../quickstart/quickstart.html"><strong aria-hidden="true">4.</strong> Rust快速入门</a></li><li><ol class="section"><li><a href="../quickstart/rust-travel.html"><strong aria-hidden="true">4.1.</strong> Rust旅程</a></li><li><a href="../quickstart/let.html"><strong aria-hidden="true">4.2.</strong> 变量绑定</a></li><li><a href="../quickstart/primitive.html"><strong aria-hidden="true">4.3.</strong> 原生类型</a></li><li><ol class="section"><li><a href="../quickstart/primitive-type/bool-types.html"><strong aria-hidden="true">4.3.1.</strong> 布尔类型</a></li><li><a href="../quickstart/primitive-type/number-types.html"><strong aria-hidden="true">4.3.2.</strong> 数值类型</a></li><li><a href="../quickstart/primitive-type/char-types.html"><strong aria-hidden="true">4.3.3.</strong> 字符类型</a></li><li><a href="../quickstart/primitive-type/string-types.html"><strong aria-hidden="true">4.3.4.</strong> 字符串类型</a></li><li><a href="../quickstart/primitive-type/array-types.html"><strong aria-hidden="true">4.3.5.</strong> 数组类型</a></li><li><a href="../quickstart/primitive-type/-types.html"><strong aria-hidden="true">4.3.6.</strong> 切片类型</a></li></ol></li><li><a href="../quickstart/vector-string.html"><strong aria-hidden="true">4.4.</strong> 数组、动态数组和字符串</a></li><li><a href="../quickstart/struct-enum.html"><strong aria-hidden="true">4.5.</strong> 结构体与枚举</a></li><li><a href="../quickstart/control-flow.html"><strong aria-hidden="true">4.6.</strong> 控制流</a></li><li><a href="../quickstart/function-method.html"><strong aria-hidden="true">4.7.</strong> 函数与方法</a></li><li><a href="../quickstart/trait.html"><strong aria-hidden="true">4.8.</strong> 特性</a></li><li><a href="../quickstart/comments-document.html"><strong aria-hidden="true">4.9.</strong> 注释与文档</a></li><li><a href="../quickstart/io-stream.html"><strong aria-hidden="true">4.10.</strong> 输入输出流</a></li></ol></li><li><a href="../cargo-projects-manager/cargo-projects-manager.html"><strong aria-hidden="true">5.</strong> Cargo项目管理器</a></li><li><a href="../flow/preface.html"><strong aria-hidden="true">6.</strong> 基本程序结构</a></li><li><ol class="section"><li><a href="../flow/comment.html"><strong aria-hidden="true">6.1.</strong> 注释</a></li><li><a href="../flow/condition.html"><strong aria-hidden="true">6.2.</strong> 条件</a></li><li><a href="../flow/repetition.html"><strong aria-hidden="true">6.3.</strong> 循环</a></li></ol></li><li><a href="../type/preface.html"><strong aria-hidden="true">7.</strong> 类型、运算符和字符串</a></li><li><ol class="section"><li><a href="../type/types.html"><strong aria-hidden="true">7.1.</strong> 基础类型</a></li><li><a href="../type/compound-types.html"><strong aria-hidden="true">7.2.</strong> 复合类型</a></li><li><a href="../type/string.html"><strong aria-hidden="true">7.3.</strong> 字符串类</a></li><li><a href="../type/operator-and-formatting.html"><strong aria-hidden="true">7.4.</strong> 基础运算符和字符串格式化</a></li></ol></li><li><a href="../function/overview.html"><strong aria-hidden="true">8.</strong> 函数</a></li><li><ol class="section"><li><a href="../function/arguement.html"><strong aria-hidden="true">8.1.</strong> 函数参数</a></li><li><a href="../function/return_value.html"><strong aria-hidden="true">8.2.</strong> 函数返回值</a></li><li><a href="../function/statement_expression.html"><strong aria-hidden="true">8.3.</strong> 语句和表达式</a></li><li><a href="../function/higher_order_function.html"><strong aria-hidden="true">8.4.</strong> 高阶函数</a></li></ol></li><li><a href="../match/overview.html"><strong aria-hidden="true">9.</strong> 模式匹配</a></li><li><ol class="section"><li><a href="../match/match.html"><strong aria-hidden="true">9.1.</strong> match关键字</a></li><li><a href="../match/pattern.html"><strong aria-hidden="true">9.2.</strong> 模式 pattern</a></li></ol></li><li><a href="../trait/overview.html"><strong aria-hidden="true">10.</strong> 特征 Trait</a></li><li><ol class="section"><li><a href="../trait/trait.html"><strong aria-hidden="true">10.1.</strong> trait关键字</a></li><li><a href="../trait/trait-object.html"><strong aria-hidden="true">10.2.</strong> trait对象</a></li></ol></li><li><a href="../generic/generic.html"><strong aria-hidden="true">11.</strong> 泛型</a></li><li><a href="../ownership-system/preface.html"><strong aria-hidden="true">12.</strong> 可变性、所有权、租借和生命期</a></li><li><ol class="section"><li><a href="../ownership-system/ownership.html"><strong aria-hidden="true">12.1.</strong> 所有权</a></li><li><a href="../ownership-system/borrowing_reference.html"><strong aria-hidden="true">12.2.</strong> 引用和借用</a></li><li><a href="../ownership-system/lifetime.html"><strong aria-hidden="true">12.3.</strong> 生命周期</a></li></ol></li><li><a href="../closure/overview.html"><strong aria-hidden="true">13.</strong> 闭包</a></li><li><ol class="section"><li><a href="../closure/syntax.html"><strong aria-hidden="true">13.1.</strong> 闭包的语法</a></li><li><a href="../closure/implementation.html"><strong aria-hidden="true">13.2.</strong> 闭包的实现</a></li><li><a href="../closure/as_argument_return_value.html"><strong aria-hidden="true">13.3.</strong> 闭包作为参数和返回值</a></li></ol></li><li><a href="../collections/overview.html"><strong aria-hidden="true">14.</strong> 集合类型 Collections</a></li><li><ol class="section"><li><a href="../collections/vec.html"><strong aria-hidden="true">14.1.</strong> 动态数组 Vec</a></li><li><a href="../collections/hashmap.html"><strong aria-hidden="true">14.2.</strong> 哈希表 HashMap</a></li></ol></li><li><a href="../iterator/overview.html"><strong aria-hidden="true">15.</strong> 迭代器</a></li><li><ol class="section"><li><a href="../iterator/iterator.html"><strong aria-hidden="true">15.1.</strong> 迭代器、适配器、消费者</a></li></ol></li><li><a href="../module/preface.html"><strong aria-hidden="true">16.</strong> 模块和包系统、Prelude</a></li><li><ol class="section"><li><a href="../module/module.html"><strong aria-hidden="true">16.1.</strong> 模块 module 和包 crate</a></li><li><a href="../module/prelude.html"><strong aria-hidden="true">16.2.</strong> Prelude</a></li><li><a href="../module/pub-restricted.html"><strong aria-hidden="true">16.3.</strong> pub restricted</a></li></ol></li><li><a href="../error-handling/option-result.html"><strong aria-hidden="true">17.</strong> Option、Result与错误处理</a></li><li><a href="../io/preface.html"><strong aria-hidden="true">18.</strong> 输入与输出</a></li><li><ol class="section"><li><a href="../io/io.html"><strong aria-hidden="true">18.1.</strong> 标准输入输出</a></li><li><a href="../io/output.html"><strong aria-hidden="true">18.2.</strong> print! 宏</a></li><li><a href="../io/file-io.html"><strong aria-hidden="true">18.3.</strong> 文件输入输出</a></li></ol></li><li><a href="../macro/macro.html"><strong aria-hidden="true">19.</strong> 宏系统</a></li><li><a href="../heap-stack/heap-stack.html"><strong aria-hidden="true">20.</strong> 堆、栈与Box</a></li><li><a href="../rcarc/preface.html"><strong aria-hidden="true">21.</strong> 几种智能指针</a></li><li><ol class="section"><li><a href="../rcarc/rcarc.html"><strong aria-hidden="true">21.1.</strong> Rc, Arc</a></li><li><a href="../rcarc/mutex.html"><strong aria-hidden="true">21.2.</strong> Mutex, RwLock</a></li><li><a href="../rcarc/cell.html"><strong aria-hidden="true">21.3.</strong> Cell, RefCell</a></li></ol></li><li><a href="../intoborrow/preface.html"><strong aria-hidden="true">22.</strong> 类型系统中的几个常见 Trait</a></li><li><ol class="section"><li><a href="../intoborrow/into.html"><strong aria-hidden="true">22.1.</strong> Into/From 及其在 String 和 &amp;str 互转上的应用</a></li><li><a href="../intoborrow/asref.html"><strong aria-hidden="true">22.2.</strong> AsRef, AsMut</a></li><li><a href="../intoborrow/borrow.html"><strong aria-hidden="true">22.3.</strong> Borrow, BorrowMut, ToOwned</a></li><li><a href="../intoborrow/deref.html"><strong aria-hidden="true">22.4.</strong> Deref 与 Deref coercions</a></li><li><a href="../intoborrow/cow.html"><strong aria-hidden="true">22.5.</strong> Cow 及其在 String 和 &amp;str 上的应用</a></li></ol></li><li><a href="../marker/sendsync.html"><strong aria-hidden="true">23.</strong> Send 和 Sync</a></li><li><a href="../concurrency-parallel-thread/preface.html"><strong aria-hidden="true">24.</strong> 并发，并行，多线程编程</a></li><li><ol class="section"><li><a href="../concurrency-parallel-thread/thread.html"><strong aria-hidden="true">24.1.</strong> 线程</a></li><li><a href="../concurrency-parallel-thread/message-passing.html"><strong aria-hidden="true">24.2.</strong> 消息传递</a></li><li><a href="../concurrency-parallel-thread/share-memory.html"><strong aria-hidden="true">24.3.</strong> 共享内存</a></li><li><a href="../concurrency-parallel-thread/synchronize.html"><strong aria-hidden="true">24.4.</strong> 同步</a></li><li><a href="../concurrency-parallel-thread/parallel.html"><strong aria-hidden="true">24.5.</strong> 并行</a></li></ol></li><li><a href="../unsafe-rawpointer/preface.html"><strong aria-hidden="true">25.</strong> Unsafe、原始指针</a></li><li><ol class="section"><li><a href="../unsafe-rawpointer/unsafe.html"><strong aria-hidden="true">25.1.</strong> Unsafe</a></li><li><a href="../unsafe-rawpointer/raw-pointer.html"><strong aria-hidden="true">25.2.</strong> 原始指针</a></li></ol></li><li><a href="../ffi/preface.html"><strong aria-hidden="true">26.</strong> FFI</a></li><li><ol class="section"><li><a href="../ffi/calling-ffi-function.html"><strong aria-hidden="true">26.1.</strong> rust调用ffi函数</a></li><li><a href="../ffi/compiling-rust-to-lib.html"><strong aria-hidden="true">26.2.</strong> 将rust编译成库</a></li></ol></li><li><a href="../operator-overloading/operator.html"><strong aria-hidden="true">27.</strong> 运算符重载</a></li><li><a href="../attr-and-compiler-arg/preface.html"><strong aria-hidden="true">28.</strong> 属性和编译器参数</a></li><li><ol class="section"><li><a href="../attr-and-compiler-arg/attribute.html"><strong aria-hidden="true">28.1.</strong> 属性</a></li><li><a href="../attr-and-compiler-arg/rustc-option.html" class="active"><strong aria-hidden="true">28.2.</strong> 编译器参数</a></li></ol></li><li><a href="../cargo-detailed-cfg/cargo-detailed-cfg.html"><strong aria-hidden="true">29.</strong> Cargo参数配置</a></li><li><a href="../testing/preface.html"><strong aria-hidden="true">30.</strong> 测试与评测</a></li><li><ol class="section"><li><a href="../testing/threearchtest.html"><strong aria-hidden="true">30.1.</strong> 测试 (testing)</a></li><li><a href="../testing/bench.html"><strong aria-hidden="true">30.2.</strong> 评测 (benchmark)</a></li></ol></li><li><a href="../coding-style/style.html"><strong aria-hidden="true">31.</strong> 代码风格</a></li><li><a href="../any/any.html"><strong aria-hidden="true">32.</strong> Any与反射</a></li><li><a href="../safe/safety.html"><strong aria-hidden="true">33.</strong> 安全</a></li><li><a href="../data-structure/preface.html"><strong aria-hidden="true">34.</strong> 常用数据结构实现</a></li><li><ol class="section"><li><a href="../data-structure/stack.html"><strong aria-hidden="true">34.1.</strong> 栈结构</a></li><li><a href="../data-structure/queue.html"><strong aria-hidden="true">34.2.</strong> 队列</a></li><li><a href="../data-structure/binary_tree.html"><strong aria-hidden="true">34.3.</strong> 二叉树</a></li><li><a href="../data-structure/priority_queue.html"><strong aria-hidden="true">34.4.</strong> 优先队列</a></li><li><a href="../data-structure/linked_list.html"><strong aria-hidden="true">34.5.</strong> 链表</a></li><li><a href="../data-structure/graph.html"><strong aria-hidden="true">34.6.</strong> 图结构</a></li></ol></li><li><a href="../std/overview.html"><strong aria-hidden="true">35.</strong> 标准库介绍</a></li><li><ol class="section"><li><a href="../std/process.html"><strong aria-hidden="true">35.1.</strong> 系统命令:调用grep</a></li><li><a href="../std/fs-and-path.html"><strong aria-hidden="true">35.2.</strong> 目录操作:简单grep</a></li><li><a href="../std/net.html"><strong aria-hidden="true">35.3.</strong> 网络模块:W回音</a></li></ol></li><li><a href="../action/preface.html"><strong aria-hidden="true">36.</strong> 实战篇</a></li><li><ol class="section"><li><a href="../action/json_data/index.html"><strong aria-hidden="true">36.1.</strong> 实战：Json处理</a></li><li><a href="../action/mysite/index.html"><strong aria-hidden="true">36.2.</strong> 实战：Web 应用开发入门</a></li><li><a href="../action/db/index.html"><strong aria-hidden="true">36.3.</strong> 实战：使用Postgresql数据库</a></li></ol></li><li><a href="../appendix/glossary.html"><strong aria-hidden="true">37.</strong> 附录-术语表</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Rust Programming Language Primer - Rust 编程语言入门</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#a编译器参数" id="a编译器参数"><h1>编译器参数</h1></a>
+<p>本章将介绍Rust编译器的参数。</p>
+<p>Rust编译器程序的名字是<code>rustc</code>，使用它的方法很简单：</p>
+<pre><code class="language-bash">$ rustc [OPTIONS] INPUT
+</code></pre>
+<p>其中，<code>[OPTIONS]</code>表示编译参数，而<code>INPUT</code>则表示输入文件。而编译参数有以下可选：</p>
+<ul>
+<li>
+<p><code>-h, --help</code> - 输出帮助信息到标准输出；</p>
+</li>
+<li>
+<p><code>--cfg SPEC</code> - 传入自定义的条件编译参数，使用方法如</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    if cfg!(hello) {
+        println!(&quot;world!&quot;);
+    }
+}
+</code></pre></pre>
+<p>如上例所示，若<code>cfg!(hello)</code>成立，则运行程序就会输出<code>&quot;world&quot;</code>到标准输出。我们把这个文件保存为<code>hello.rs</code>然后编译它</p>
+<pre><code class="language-bash">$ rustc --cfg hello hello.rs
+</code></pre>
+<p>运行它就会看到屏幕中输出了<code>world!</code>。</p>
+</li>
+<li>
+<p><code>-L [KIND=]PATH</code> - 往链接路径中加入一个文件夹，并且可以指定这个路径的类型（Kind），这些类型包括</p>
+<ul>
+<li><code>dependency</code> - 在这个路径下找依赖的文件，比如说<code>mod</code>；</li>
+<li><code>crate</code> - 只在这个路径下找<code>extern crate</code>中定义的库；</li>
+<li><code>native</code> - 只在这个路径下找Native库；</li>
+<li><code>framework</code> - 只在OS X下有用，只在这个路径下找Framework；</li>
+<li><code>all</code> - 默认选项。</li>
+</ul>
+</li>
+<li>
+<p><code>-l [KIND=]NAME</code> - 链接一个库，这个库可以指定类型（Kind）</p>
+<ul>
+<li><code>static</code> - 静态库；</li>
+<li><code>dylib</code> - 动态库；</li>
+<li><code>framework</code> - OS X的Framework。</li>
+</ul>
+<p>如果不传，默认为<code>dylib</code>。</p>
+<p>此处举一个例子如何手动链接一个库，我们先创建一个文件叫<code>myhello.rs</code>，在里面写一个函数</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// myhello.rs
+
+/// 这个函数仅仅向标签输出打印 Hello World!
+/// 不要忘记要把它标记为 pub 哦。
+pub fn print_hello() {
+    println!(&quot;Hello World!&quot;);
+}
+#}</code></pre></pre>
+<p>然后把这个文件编译成一个静态库，<code>libmyhello.a</code></p>
+<pre><code class="language-bash">$ rustc --crate-type staticlib myhello.rs
+</code></pre>
+<p>然后再创建一个<code>main.rs</code>，链接这个库并打印出&quot;Hello World!&quot;</p>
+<pre><pre class="playpen"><code class="language-rust">// main.rs
+
+// 指定链接库 myhello
+extern crate myhello;
+
+fn main() {
+    // 调用库函数
+    myhello::print_hello();
+}
+</code></pre></pre>
+<p>编译<code>main.rs</code></p>
+<pre><code class="language-bash">$ rustc -L. -lmyhello main.rs
+</code></pre>
+<p>运行<code>main</code>，就会看到屏幕输出&quot;Hello World!&quot;啦。</p>
+</li>
+<li>
+<p><code>--crate-type</code> - 指定编译输出类型，它的参数包括</p>
+<ul>
+<li><code>bin</code> - 二进行可执行文件</li>
+<li><code>lib</code> - 编译为库</li>
+<li><code>rlib</code> - Rust库</li>
+<li><code>dylib</code> - 动态链接库</li>
+<li><code>staticlib</code> - 静态链接库</li>
+</ul>
+</li>
+<li>
+<p><code>--crate-name</code> - 指定这个Crate的名字，默认是文件名，如<code>main.rs</code>编译成可执行文件时默认是<code>main</code>，但你可以指定它为<code>foo</code></p>
+<pre><code class="language-bash">$ rustc --crate-name foo main.rs
+</code></pre>
+<p>则会输出<code>foo</code>可执行文件。</p>
+</li>
+<li>
+<p><code>--emit</code> - 指定编译器的输出。编译器默认是输出一个可执行文件或库文件，但你可以选择输出一些其它的东西用于Debug</p>
+<ul>
+<li><code>asm</code> - 输出汇编</li>
+<li><code>llvm-bc</code> - <a href="http://llvm.org/docs/BitCodeFormat.html">LLVM Bitcode</a>；</li>
+<li><code>llvm-ir</code> - <a href="http://llvm.org/docs/LangRef.html">LLVM IR</a>，即LLVM中间码（LLVM Intermediate Representation）；</li>
+<li><code>obj</code> - Object File（就是<code>*.o</code>文件）；</li>
+<li><code>link</code> - 这个是要结合其它<code>--emit</code>参数使用，会执行Linker再输出结果；</li>
+<li><code>dep-info</code> - 文件依赖关系（Debug用，类似于Makefile一样的依赖）。</li>
+</ul>
+<p>以上参数可以同时使用，使用逗号分割，如</p>
+<pre><code class="language-bash">$ rustc --emit asm,llvm-ir,obj main.rs
+</code></pre>
+<p>同时，在最后可以加一个<code>=PATH</code>来指定输出到一个特定文件，如</p>
+<pre><code class="language-bash">$ rustc --emit asm=output.S,llvm-ir=output.ir main.rs
+</code></pre>
+<p>这样会把汇编生成到<code>output.S</code>文件中，把LLVM中间码输出到<code>output.ir</code>中。</p>
+</li>
+<li>
+<p><code>--print</code> - 打印一些信息，参数有</p>
+<ul>
+<li><code>crate-name</code> - 编译目标名；</li>
+<li><code>file-names</code> - 编译的文件名；</li>
+<li><code>sysroot</code> - 打印Rust工具链的根目录地址。</li>
+</ul>
+</li>
+<li>
+<p><code>-g</code> - 在目标文件中保存符号，这个参数等同于<code>-C debuginfo=2</code>。</p>
+</li>
+<li>
+<p><code>-O</code> - 开启优化，这个参数等同于<code>-C opt-level=2</code>。</p>
+</li>
+<li>
+<p><code>-o FILENAME</code> - 指定输出文件名，同样适用于<code>--emit</code>的输出。</p>
+</li>
+<li>
+<p><code>--out-dir DIR</code> - 指定输出的文件夹，默认是当前文件夹，且会忽略<code>-o</code>配置。</p>
+</li>
+<li>
+<p><code>--explain OPT</code> - 解释某一个编译错误，比如</p>
+<p>若你写了一个<code>main.rs</code>，使用了一个未定义变量<code>f</code></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    f
+}
+</code></pre></pre>
+<p>编译它时编译器会报错：</p>
+<pre><code>main.rs:2:5: 2:6 error: unresolved name `f` [E0425]
+main.rs:2     f
+              ^
+main.rs:2:5: 2:6 help: run `rustc --explain E0425` to see a detailed explanation
+error: aborting due to previous error
+</code></pre>
+<p>虽然错误已经很明显，但是你也可以让编译器解释一下，什么是<code>E0425</code>错误：</p>
+<pre><code class="language-bash">$ rustc --explain E0425
+// 编译器打印的说明
+</code></pre>
+</li>
+<li>
+<p><code>--test</code> - 编译成一个单元测试可执行文件</p>
+</li>
+<li>
+<p><code>--target TRIPLE</code> - 指定目标平台，基本格式是<code>cpu-manufacturer-kernel[-os]</code>，例如</p>
+<pre><code class="language-bash">## 64位OS X
+$ rustc --target x86_64-apple-darwin
+</code></pre>
+</li>
+<li>
+<p><code>-W help</code> - 打印Linter的所有可配置选项和默认值。</p>
+</li>
+<li>
+<p><code>-W OPT, --warn OPT</code> - 设置某一个Linter选项为Warning。</p>
+</li>
+<li>
+<p><code>-A OPT, --allow OPT</code> - 设置某一个Linter选项为Allow。</p>
+</li>
+<li>
+<p><code>-D OPT, --deny OPT</code> - 设置某一个Linter选项为Deny。</p>
+</li>
+<li>
+<p><code>-F OPT, --forbit OPT</code> - 设置某一个Linter选项为Forbit。</p>
+</li>
+<li>
+<p><code>-C FLAG[=VAL], --codegen FLAG[=VAL]</code> - 目标代码生成的的相关参数，可以用<code>-C help</code>来查看配置，值得关注的几个是</p>
+<ul>
+<li><code>linker=val</code> - 指定链接器；</li>
+<li><code>linker-args=val</code> - 指定链接器的参数；</li>
+<li><code>prefer-dynamic</code> - 默认Rust编译是静态链接，选择这个配置将改为动态链接；</li>
+<li><code>debug-info=level</code> - Debug信息级数，<code>0</code> = 不生成，<code>1</code> = 只生成文件行号表，<code>2</code> = 全部生成；</li>
+<li><code>opt-level=val</code> - 优化级数，可选<code>0-3</code>；</li>
+<li><code>debug_assertion</code> - 显式开启<code>cfg(debug_assertion)</code>条件。</li>
+</ul>
+</li>
+<li>
+<p><code>-V, --version</code> - 打印编译器版本号。</p>
+</li>
+<li>
+<p><code>-v, --verbose</code> - 开启啰嗦模式（打印编译器执行的日志）。</p>
+</li>
+<li>
+<p><code>--extern NAME=PATH</code> - 用来指定外部的Rust库（<code>*.rlib</code>）名字和路径，名字应该与<code>extern crate</code>中指定的一样。</p>
+</li>
+<li>
+<p><code>--sysroot PATH</code> - 指定工具链根目录。</p>
+</li>
+<li>
+<p><code>-Z flag</code> - 编译器Debug用的参数，可以用<code>-Z help</code>来查看可用参数。</p>
+</li>
+<li>
+<p><code>--color auto|always|never</code> - 输出时对日志加颜色</p>
+<ul>
+<li><code>auto</code> - 自动选择加还是不加，如果输出目标是虚拟终端（TTY）的话就加，否则就不加；</li>
+<li><code>always</code> - 给我加！</li>
+<li><code>never</code> - 你敢加？</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../attr-and-compiler-arg/attribute.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../cargo-detailed-cfg/cargo-detailed-cfg.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../attr-and-compiler-arg/attribute.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../cargo-detailed-cfg/cargo-detailed-cfg.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

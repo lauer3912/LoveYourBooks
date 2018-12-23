@@ -3,19 +3,19 @@
 If we have
 
 \\[
-    x^y = z
+x^y = z
 \\]
 
 then we know that
 
 \\[
-    \sqrt[y]{z} = x
+\sqrt[y]{z} = x
 \\]
 
 and
 
 \\[
-    \log_x{z} = y .
+\log_x{z} = y .
 \\]
 
 ## Maybe
@@ -109,19 +109,3 @@ $$\stackrel{}{_a\triangle_{c}}=\frac{\stackrel{}{_b\triangle_{c}}}{\stackrel{}{_
     </strong></li>
 </ul>
 </p>
-
-## 代码演练
-
-### C++
-
-#### 使用C++ STL标准库
-
-#### 使用C++ Boost库
-
-
-### Rust
-
-
-
-### Go
-

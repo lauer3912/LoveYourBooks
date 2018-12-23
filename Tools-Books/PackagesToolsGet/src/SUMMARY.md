@@ -32,4 +32,4 @@
       - [Armadillo](./brew/formulas/armadillo.md)
       - [Eigen](./brew/formulas/eigen.md)
       - [OpenCV](./brew/formulas/opencv.md)
-      - [PETSc](./brew/formulas/petsc.md)
+      - [\*PETSc](./brew/formulas/petsc.md)

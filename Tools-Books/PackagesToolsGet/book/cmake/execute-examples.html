@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>例子: 可执行程序 - Packages Tools Get Start</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="../vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="../vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="../vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="../chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="../cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="../cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="../cmake/execute-examples.html" class="active"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="../cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="../cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="../cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="../chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="../brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="../brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="../brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="../brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="../brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="../brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="../brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="../brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="../brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="../brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="../brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="../brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Packages Tools Get Start</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#a可执行文件的配置-cmakeliststxt" id="a可执行文件的配置-cmakeliststxt"><h1>可执行文件的配置 CMakeLists.txt</h1></a>
+<p>明确要构建的是一个可执行文件，需要通过<code>add_executable</code>来指定。</p>
+<a class="header" href="#a构建方式" id="a构建方式"><h2>构建方式</h2></a>
+<pre><code class="language-bash"># 定位到C++工程目录
+cd ~/linear-algebra
+
+# 先删除生成的cmake-build-*. 这里包括cmake-build-debug 和 cmake-build-release
+rm -fr ./cmake-build-*
+
+# 先生成makefile
+# -S 用来指定CMakeLists.txt的位置; -B 说明构建输出, 相对于输出来说:
+# 以下两种做法都可以得到：
+# 做法1：进入~/linear-algebra/cmake-build-debug 目录，然后再执行
+mkdir cmake-build-debug &amp;&amp; cd cmake-build-debug
+cmake -DCMAKE_BUILD_TYPE=Debug -G &quot;CodeBlocks - Unix Makefiles&quot; -S ../ -B ../cmake-build-debug
+
+# 做法2：进入~/linear-algebra目录
+cd ~/linear-algebra
+cmake -DCMAKE_BUILD_TYPE=Debug -G &quot;CodeBlocks - Unix Makefiles&quot; -S ./ -B ./cmake-build-debug
+
+# 再执行构建命令
+cmake --build ./cmake-build-debug --target linear_algebra -- -j 2
+
+# 如果构建没有问题，尝试测试执行情况
+./cmake-build-debug/linear_algebra
+
+# 以上内容完毕
+</code></pre>
+<a class="header" href="#a最优例子" id="a最优例子"><h2>最优例子</h2></a>
+<pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
+
+####################################################
+# Use brew? or use vcpkg?
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
+
+if(UD_USE_VCPKG)
+    # https://vcpkg.readthedocs.io/en/latest/users/integration/
+    #if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    if(DEFINED ENV{VCPKG_ROOT})
+        set(VCPKG_ROOT &quot;$ENV{VCPKG_ROOT}&quot;)
+        message(STATUS &quot;VCPKG_ROOT=${VCPKG_ROOT}&quot;)
+        set(CMAKE_TOOLCHAIN_FILE &quot;${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&quot; CACHE FILEPATH &quot;&quot;)
+
+        message(STATUS &quot;VCPKG_TARGET_ARCHITECTURE=${VCPKG_TARGET_ARCHITECTURE}&quot;)
+        message(STATUS &quot;VCPKG_PLATFORM_TOOLSET=${VCPKG_PLATFORM_TOOLSET}&quot;)
+    endif()
+endif()
+
+####################################################
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
+
+message(STATUS &quot;CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}&quot;)
+
+# project
+project(linear_algebra)
+
+####################################################
+if(UD_USE_BREW)
+    message(STATUS &quot;Using Homebrew ...&quot;)
+    set(ARMADILLO_LIBRARY &quot;$(brew --prefix armadillo)/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;$(brew --prefix armadillo)/include&quot;)
+
+    set(EIGEN_LIBRARY &quot;$(brew --prefix eigen)/lib&quot;)
+    set(EIGEN_INCLUDE_DIR &quot;$(brew --prefix eigen)/include&quot;)
+else()
+    message(STATUS &quot;XXXX Not Using Homebrew ...&quot;)
+endif()
+
+if(UD_USE_VCPKG)
+    message(STATUS &quot;Using vcpkg ...&quot;)
+    set(ARMADILLO_LIBRARY &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/include&quot;)
+
+    include_directories(${VCPKG_ROOT}/installed/x64-osx/include)
+else()
+    message(STATUS &quot;XXXX Not Using vcpkg ...&quot;)
+endif()
+
+####################################################
+# Includes
+include_directories(${ARMADILLO_INCLUDE_DIR})
+
+# Get packages
+find_package(Armadillo REQUIRED)
+
+# Setting the source code directories
+aux_source_directory(./src/ DIR_SRCS)
+
+# Setting the executable
+add_executable(${PROJECT_NAME} ${DIR_SRCS})
+
+# Adding the link libraries
+target_link_libraries(${PROJECT_NAME} ${ARMADILLO_LIBRARIES})
+</code></pre>
+<a class="header" href="#a例子-1" id="a例子-1"><h2>例子 1</h2></a>
+<pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
+
+# https://vcpkg.readthedocs.io/en/latest/users/integration/
+#if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+if(DEFINED ENV{VCPKG_ROOT})
+    set(VCPKG_ROOT &quot;$ENV{VCPKG_ROOT}&quot;)
+    message(STATUS &quot;VCPKG_ROOT=${VCPKG_ROOT}&quot;)
+    set(CMAKE_TOOLCHAIN_FILE &quot;${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&quot; CACHE FILEPATH &quot;&quot;)
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED OFF)
+#set(CMAKE_CXX_EXTENSIONS OFF)
+
+message(STATUS &quot;CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}&quot;)
+message(STATUS &quot;VCPKG_TARGET_ARCHITECTURE=${VCPKG_TARGET_ARCHITECTURE}&quot;)
+message(STATUS &quot;VCPKG_PLATFORM_TOOLSET=${VCPKG_PLATFORM_TOOLSET}&quot;)
+
+# project
+project(linear_algebra)
+
+
+# Use brew? or use vcpkg?
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
+
+if(${UD_USE_BREW})
+    set(ARMADILLO_LIBRARY &quot;$(brew --prefix armadillo)/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;$(brew --prefix armadillo)/include&quot;)
+endif()
+
+if(${UD_USE_VCPKG})
+    set(ARMADILLO_LIBRARY &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/include&quot;)
+
+    include_directories(${VCPKG_ROOT}/installed/x64-osx/include)
+endif()
+
+# Includes
+include_directories(${ARMADILLO_INCLUDE_DIR})
+
+# Get packages
+find_package(armadillo REQUIRED)
+
+# Setting the executable
+add_executable(${PROJECT_NAME} main.cpp)
+
+# Adding the link libraries
+target_link_libraries(${PROJECT_NAME} armadillo)
+
+</code></pre>
+<a class="header" href="#a例子-2" id="a例子-2"><h2>例子 2</h2></a>
+<pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
+
+# https://vcpkg.readthedocs.io/en/latest/users/integration/
+#if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+if(DEFINED ENV{VCPKG_ROOT})
+    set(VCPKG_ROOT &quot;$ENV{VCPKG_ROOT}&quot;)
+    message(STATUS &quot;VCPKG_ROOT=${VCPKG_ROOT}&quot;)
+    set(CMAKE_TOOLCHAIN_FILE &quot;${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&quot; CACHE FILEPATH &quot;&quot;)
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED OFF)
+#set(CMAKE_CXX_EXTENSIONS OFF)
+
+message(STATUS &quot;CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}&quot;)
+message(STATUS &quot;VCPKG_TARGET_ARCHITECTURE=${VCPKG_TARGET_ARCHITECTURE}&quot;)
+message(STATUS &quot;VCPKG_PLATFORM_TOOLSET=${VCPKG_PLATFORM_TOOLSET}&quot;)
+
+# project
+project(linear_algebra)
+
+# Use brew? or use vcpkg?
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
+
+if(${UD_USE_BREW})
+    set(ARMADILLO_LIBRARY &quot;$(brew --prefix armadillo)/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;$(brew --prefix armadillo)/include&quot;)
+endif()
+
+if(${UD_USE_VCPKG})
+    set(ARMADILLO_LIBRARY &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/include&quot;)
+
+    include_directories(${VCPKG_ROOT}/installed/x64-osx/include)
+endif()
+
+# Includes
+include_directories(${ARMADILLO_INCLUDE_DIR})
+
+# Get packages
+find_package(armadillo REQUIRED)
+
+# Setting the source code directories
+aux_source_directory(./src DIR_SRCS)
+
+# Setting the executable
+add_executable(${PROJECT_NAME} ${DIR_SRCS})
+
+# Adding the link libraries
+target_link_libraries(${PROJECT_NAME} armadillo)
+</code></pre>
+<p>例子 3：</p>
+<pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
+
+####################################################
+# Use brew? or use vcpkg?
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
+
+if(UD_USE_VCPKG)
+    # https://vcpkg.readthedocs.io/en/latest/users/integration/
+    #if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    if(DEFINED ENV{VCPKG_ROOT})
+        set(VCPKG_ROOT &quot;$ENV{VCPKG_ROOT}&quot;)
+        message(STATUS &quot;VCPKG_ROOT=${VCPKG_ROOT}&quot;)
+        set(CMAKE_TOOLCHAIN_FILE &quot;${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&quot; CACHE FILEPATH &quot;&quot;)
+    endif()
+endif()
+
+####################################################
+set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED OFF)
+#set(CMAKE_CXX_EXTENSIONS OFF)
+
+message(STATUS &quot;CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}&quot;)
+message(STATUS &quot;VCPKG_TARGET_ARCHITECTURE=${VCPKG_TARGET_ARCHITECTURE}&quot;)
+message(STATUS &quot;VCPKG_PLATFORM_TOOLSET=${VCPKG_PLATFORM_TOOLSET}&quot;)
+
+# project
+project(linear_algebra)
+
+# setting the target output path
+set(executable_output_path ${PROJECT_SOURCE_DIR}/build/bin)
+set(library_output_path ${PROJECT_SOURCE_DIR}/build/lib)
+
+####################################################
+if(UD_USE_BREW)
+    message(STATUS &quot;Using Homebrew ...&quot;)
+    set(ARMADILLO_LIBRARY &quot;$(brew --prefix armadillo)/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;$(brew --prefix armadillo)/include&quot;)
+
+    set(EIGEN_LIBRARY &quot;$(brew --prefix eigen)/lib&quot;)
+    set(EIGEN_INCLUDE_DIR &quot;$(brew --prefix eigen)/include&quot;)
+else()
+    message(STATUS &quot;XXXX Not Using Homebrew ...&quot;)
+endif()
+
+if(UD_USE_VCPKG)
+    message(STATUS &quot;Using vcpkg ...&quot;)
+    set(ARMADILLO_LIBRARY &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/lib&quot;)
+    set(ARMADILLO_INCLUDE_DIR &quot;${VCPKG_ROOT}/packages/armadillo_x64-osx/include&quot;)
+
+    include_directories(${VCPKG_ROOT}/installed/x64-osx/include)
+else()
+    message(STATUS &quot;XXXX Not Using vcpkg ...&quot;)
+endif()
+
+####################################################
+# Includes
+# include_directories(${ARMADILLO_INCLUDE_DIR})
+
+# Get packages
+find_package(armadillo REQUIRED)
+#find_package(eigen REQUIRED)
+
+# Setting the source code directories
+aux_source_directory(./src/ DIR_SRCS)
+
+# Setting the executable
+#add_executable(${PROJECT_NAME} ${DIR_SRCS})
+add_executable(${PROJECT_NAME} ./src/main.cpp ./src/ArmadilloHelper.cpp ./src/EigenHelper.cpp)
+
+# Adding the link libraries
+target_link_libraries(${PROJECT_NAME} armadillo)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../cmake/CMakeLists-syntax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../cmake/static-lib-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../cmake/CMakeLists-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../cmake/static-lib-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

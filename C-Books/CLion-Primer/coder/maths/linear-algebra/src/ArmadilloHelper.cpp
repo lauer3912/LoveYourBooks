@@ -3,6 +3,7 @@
 //
 
 #include "ArmadilloHelper.h"
+
 #include <armadillo>
 
 void ArmadilloHelper::RunTest() {
