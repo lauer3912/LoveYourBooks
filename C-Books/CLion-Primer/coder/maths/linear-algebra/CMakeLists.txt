@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 ####################################################
 # Use brew? or use vcpkg?
-option(UD_USE_VCPKG "use vcpkg toolchain" OFF)
-option(UD_USE_BREW "use brew toolchain" ON)
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
 
 if(UD_USE_VCPKG)
     # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -20,13 +20,19 @@ endif()
 
 ####################################################
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS ON)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_CXX_EXTENSIONS ON)
 
 message(STATUS "CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}")
 
 # project
 project(linear_algebra)
+
+# cofigure
+configure_file(
+    "${PROJECT_SOURCE_DIR}/config.h.in"
+    "${PROJECT_BINARY_DIR}/config.h"
+)
 
 ####################################################
 if(UD_USE_BREW)
@@ -34,7 +40,10 @@ if(UD_USE_BREW)
     set(ARMADILLO_LIBRARY "$(brew --prefix armadillo)/lib")
     set(ARMADILLO_INCLUDE_DIR "$(brew --prefix armadillo)/include")
 
-    set(EIGEN_LIBRARY "$(brew --prefix eigen)/lib")
+    # About eigen (http://eigen.tuxfamily.org)
+    # Eigen is a pure template library defined in the headers
+    # If you just want to use Eigen, you can use the header files right away.
+    # There is no binary library to link to, and no configured header file.
     set(EIGEN_INCLUDE_DIR "$(brew --prefix eigen)/include")
 else()
     message(STATUS "XXXX Not Using Homebrew ...")
@@ -51,11 +60,12 @@ else()
 endif()
 
 ####################################################
+# Get packages
+find_package(armadillo REQUIRED)
+find_package(eigen3 REQUIRED)
+
 # Includes
 include_directories(${ARMADILLO_INCLUDE_DIR})
-
-# Get packages
-find_package(Armadillo REQUIRED)
 
 # Setting the source code directories
 aux_source_directory(./src/ DIR_SRCS)
@@ -64,4 +74,4 @@ aux_source_directory(./src/ DIR_SRCS)
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
 
 # Adding the link libraries
-target_link_libraries(${PROJECT_NAME} ${ARMADILLO_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} armadillo)

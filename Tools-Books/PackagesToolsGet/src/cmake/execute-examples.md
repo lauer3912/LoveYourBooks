@@ -38,8 +38,8 @@ cmake_minimum_required(VERSION 3.13)
 
 ####################################################
 # Use brew? or use vcpkg?
-option(UD_USE_VCPKG "use vcpkg toolchain" OFF)
-option(UD_USE_BREW "use brew toolchain" ON)
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
 
 if(UD_USE_VCPKG)
     # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -221,8 +221,8 @@ cmake_minimum_required(VERSION 3.13)
 
 ####################################################
 # Use brew? or use vcpkg?
-option(UD_USE_VCPKG "use vcpkg toolchain" OFF)
-option(UD_USE_BREW "use brew toolchain" OFF)
+set(UD_USE_VCPKG false)
+set(UD_USE_BREW true)
 
 if(UD_USE_VCPKG)
     # https://vcpkg.readthedocs.io/en/latest/users/integration/

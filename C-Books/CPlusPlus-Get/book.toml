@@ -1,8 +1,8 @@
 [book]
-authors = ["lauer3912"]
+authors = ["Ian sun"]
 multilingual = false
 src = "src"
-title = "My Math Book"
+title = "C++ Get Primer"
 
 [build]
 build-dir = "book"
