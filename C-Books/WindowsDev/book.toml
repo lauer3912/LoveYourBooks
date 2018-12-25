@@ -1,0 +1,10 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "Windows OS Dev"
+
+[build]
+build-dir = "book"
+create-missing = true
+preprocess = ["links", "index"]

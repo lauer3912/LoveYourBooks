@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Linear Algebra 线性代数方程组 - My Math Book</title>
+        <title>解 LinearAlgebra 线性代数方程组 - My Math Book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +77,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> About exponents, logs and roots</a></li><li><a href="chapter_3.html" class="active"><strong aria-hidden="true">3.</strong> Linear Algebra 线性代数方程组</a></li></ol>
+            <ol class="chapter"><li><a href="math_tools.html"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="exponents_logs_roots.html"><strong aria-hidden="true">2.</strong> 关于指数、对数、方根新的解题思路</a></li><li><a href="linear_algebra.html" class="active"><strong aria-hidden="true">3.</strong> 解 LinearAlgebra 线性代数方程组</a></li><li><a href="matrix/index.html"><strong aria-hidden="true">4.</strong> 关于矩阵运算</a></li><li><ol class="section"><li><a href="matrix/2d_object_scale.html"><strong aria-hidden="true">4.1.</strong> 2D 图像的缩放矩阵算法思路</a></li><li><a href="matrix/2d_object_rotate.html"><strong aria-hidden="true">4.2.</strong> 2D 图像的旋转矩阵算法思路</a></li><li><a href="matrix/2d_object_translate.html"><strong aria-hidden="true">4.3.</strong> 2D 图像的平移矩阵算法思路</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -143,6 +143,13 @@
                     <main>
                         <a class="header" href="#linear-algebra-线性代数方程组" id="linear-algebra-线性代数方程组"><h1>Linear Algebra 线性代数方程组</h1></a>
 <p>关于这方面的内容，请参考《线性代数及其应用》原书第 3 版，(美) David C. Lay 编写。</p>
+<a class="header" href="#a线性方程组" id="a线性方程组"><h2>线性方程组</h2></a>
+<pre><code class="language-text">    线性代数方程组：
+    （1） x + y + z = 6
+    （2） 2y + 5z = -4
+    （3） 2x + 5y - z = 27
+    求解：x，y，z
+</code></pre>
 <a class="header" href="#python-中实际的计算方式" id="python-中实际的计算方式"><h2>Python 中实际的计算方式</h2></a>
 <ol>
 <li><a href="http://www.sagemath.org">SageMath</a> <strong>“这款开源软件的支持者称 Sage 能够完成从 12 维物体到计算全球变暖效应数学模型中的降雨量的任何事情。”Sage 包含了从线性代数、微积分，到密码学、数值计算、组合数学、群论、图论、数论等各种初高等数学的计算功能。</strong></li>
@@ -203,11 +210,15 @@ std::cout &lt;&lt; &quot;The solution is:\n&quot; &lt;&lt; x &lt;&lt; std::endl;
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="exponents_logs_roots.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="matrix/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -217,11 +228,15 @@ std::cout &lt;&lt; &quot;The solution is:\n&quot; &lt;&lt; x &lt;&lt; std::endl;
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="exponents_logs_roots.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
+                
+                    <a href="matrix/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 

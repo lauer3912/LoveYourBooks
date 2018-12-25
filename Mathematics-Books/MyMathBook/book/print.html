@@ -77,7 +77,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> About exponents, logs and roots</a></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Linear Algebra 线性代数方程组</a></li></ol>
+            <ol class="chapter"><li><a href="math_tools.html"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="exponents_logs_roots.html"><strong aria-hidden="true">2.</strong> 关于指数、对数、方根新的解题思路</a></li><li><a href="linear_algebra.html"><strong aria-hidden="true">3.</strong> 解 LinearAlgebra 线性代数方程组</a></li><li><a href="matrix/index.html"><strong aria-hidden="true">4.</strong> 关于矩阵运算</a></li><li><ol class="section"><li><a href="matrix/2d_object_scale.html"><strong aria-hidden="true">4.1.</strong> 2D 图像的缩放矩阵算法思路</a></li><li><a href="matrix/2d_object_rotate.html"><strong aria-hidden="true">4.2.</strong> 2D 图像的旋转矩阵算法思路</a></li><li><a href="matrix/2d_object_translate.html"><strong aria-hidden="true">4.3.</strong> 2D 图像的平移矩阵算法思路</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -142,9 +142,14 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#texstudio---开源产品" id="texstudio---开源产品"><h1>TeXstudio - 开源产品</h1></a>
-<p>网址: <a href="http://texstudio.sourceforge.net/">http://texstudio.sourceforge.net/</a></p>
-<p><a href="http://texstudio.sourceforge.net/images/title.png"></a></p>
-<a class="header" href="#a需要miktex" id="a需要miktex"><h2>需要MikTeX</h2></a>
+<a class="header" href="#a在线数学学习工具" id="a在线数学学习工具"><h2>在线数学学习工具</h2></a>
+<a class="header" href="#a数学公式编辑工具" id="a数学公式编辑工具"><h2>数学公式编辑工具</h2></a>
+<ul>
+<li><a href="https://www.latex4technics.com/">latex4technics</a></li>
+<li><a href="https://www.mathjax.org">在线 MathJax</a></li>
+<li><a href="http://texstudio.sourceforge.net/">离线 Texstudio</a></li>
+</ul>
+<a class="header" href="#a需要-miktex" id="a需要-miktex"><h2>需要 MikTeX</h2></a>
 <a class="header" href="#a设置环境变量" id="a设置环境变量"><h2>设置环境变量</h2></a>
 <a class="header" href="#alternative-notation-for-exponents-logs-and-roots" id="alternative-notation-for-exponents-logs-and-roots"><h1>Alternative notation for exponents, logs and roots?</h1></a>
 <p>If we have</p>
@@ -245,14 +250,15 @@ $$\stackrel{}{_a\triangle_{c}}=\frac{\stackrel{}{_b\triangle_{c}}}{\stackrel{}{_
     </strong></li>
 </ul>
 </p>
-<a class="header" href="#a代码演练" id="a代码演练"><h2>代码演练</h2></a>
-<a class="header" href="#c" id="c"><h3>C++</h3></a>
-<a class="header" href="#a使用c-stl标准库" id="a使用c-stl标准库"><h4>使用C++ STL标准库</h4></a>
-<a class="header" href="#a使用c-boost库" id="a使用c-boost库"><h4>使用C++ Boost库</h4></a>
-<a class="header" href="#rust" id="rust"><h3>Rust</h3></a>
-<a class="header" href="#go" id="go"><h3>Go</h3></a>
 <a class="header" href="#linear-algebra-线性代数方程组" id="linear-algebra-线性代数方程组"><h1>Linear Algebra 线性代数方程组</h1></a>
 <p>关于这方面的内容，请参考《线性代数及其应用》原书第 3 版，(美) David C. Lay 编写。</p>
+<a class="header" href="#a线性方程组" id="a线性方程组"><h2>线性方程组</h2></a>
+<pre><code class="language-text">    线性代数方程组：
+    （1） x + y + z = 6
+    （2） 2y + 5z = -4
+    （3） 2x + 5y - z = 27
+    求解：x，y，z
+</code></pre>
 <a class="header" href="#python-中实际的计算方式" id="python-中实际的计算方式"><h2>Python 中实际的计算方式</h2></a>
 <ol>
 <li><a href="http://www.sagemath.org">SageMath</a> <strong>“这款开源软件的支持者称 Sage 能够完成从 12 维物体到计算全球变暖效应数学模型中的降雨量的任何事情。”Sage 包含了从线性代数、微积分，到密码学、数值计算、组合数学、群论、图论、数论等各种初高等数学的计算功能。</strong></li>
@@ -277,8 +283,8 @@ def main():
 if __name__ == '__main__':
     main()
 </code></pre>
-<a class="header" href="#rust-1" id="rust-1"><h2>Rust</h2></a>
-<a class="header" href="#go-1" id="go-1"><h2>Go</h2></a>
+<a class="header" href="#rust" id="rust"><h2>Rust</h2></a>
+<a class="header" href="#go" id="go"><h2>Go</h2></a>
 <a class="header" href="#c-利用第三方库计算方式" id="c-利用第三方库计算方式"><h2>C++ 利用第三方库计算方式</h2></a>
 <p>C++ 可以使用的第三方库来计算，一般有如下几种：</p>
 <ol>
@@ -307,6 +313,16 @@ std::cout &lt;&lt; &quot;The solution is:\n&quot; &lt;&lt; x &lt;&lt; std::endl;
 </code></pre>
 </li>
 </ol>
+<a class="header" href="#a关于矩阵运算" id="a关于矩阵运算"><h1>关于矩阵运算</h1></a>
+<a class="header" href="#a2d-图像的缩放矩阵算法思路" id="a2d-图像的缩放矩阵算法思路"><h1>2D 图像的缩放矩阵算法思路</h1></a>
+<p>游戏中常用的缩放（S）、旋转（R）、平移（T）三种，都是通过矩阵变换实现的。</p>
+<p>
+M = \begin{vmatrix}
+eM_{11}&eM_{12}\\eM_{21}&eM_{22}\\eD_{x}&eD_{y}
+\end{vmatrix} 
+<p>
+<a class="header" href="#a2d-图像的旋转矩阵算法思路" id="a2d-图像的旋转矩阵算法思路"><h1>2D 图像的旋转矩阵算法思路</h1></a>
+<a class="header" href="#a2d-图像的平移矩阵算法思路" id="a2d-图像的平移矩阵算法思路"><h1>2D 图像的平移矩阵算法思路</h1></a>
 
                     </main>
 
