@@ -4,3 +4,6 @@
 [submodule "Rust-Books/rust-reference-by-nursery"]
 	path = Rust-Books/rust-reference-by-nursery
 	url = https://github.com/rust-lang-nursery/reference.git
+[submodule "Rust-Books/rust-reference-by-offial"]
+	path = Rust-Books/rust-reference-by-offial
+	url = https://github.com/rust-lang/book.git

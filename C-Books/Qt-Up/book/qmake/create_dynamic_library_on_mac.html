@@ -138,7 +138,12 @@
                     <main>
                         <a class="header" href="qmake/create_dynamic_library_on_mac.html#macos-如何使用-qt-创建动态库" id="macos-如何使用-qt-创建动态库"><h1>MacOS 如何使用 Qt 创建动态库?</h1></a>
 <a class="header" href="qmake/create_dynamic_library_on_mac.html#a使用-qt-creator-创建动态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建动态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建动态 library, 我们得到最初的<code>pro</code>文件</h2></a>
-<p><img src="./images/%08mac-create-dynamic-library-01.png" alt="" /></p>
+<p><img src="qmake/images/mac-create-dynamic-library-01.png" alt="" />
+<img src="qmake/images/mac-create-dynamic-library-02.png" alt="" />
+<img src="qmake/images/mac-create-dynamic-library-03.png" alt="" />
+<img src="qmake/images/mac-create-dynamic-library-04.png" alt="" />
+<img src="qmake/images/mac-create-dynamic-library-05.png" alt="" /></p>
+<p><code>/code-src/for_mac/dynamic_link_library/linear/linearRef/linearRef.pro</code> 文件内容</p>
 <pre><code class="language-pro">#-------------------------------------------------
 #
 # Project created by QtCreator 2018-12-27T08:58:42
@@ -174,6 +179,139 @@ unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+</code></pre>
+<a class="header" href="qmake/create_dynamic_library_on_mac.html#a使用-qt-creator-创建一个桌面应用-我们得到最初的pro文件" id="a使用-qt-creator-创建一个桌面应用-我们得到最初的pro文件"><h2>使用 Qt Creator 创建一个桌面应用, 我们得到最初的<code>pro</code>文件</h2></a>
+<p>查看 <code>/code-src/for_mac/dynamic_link_library/linear/linearApp/linearApp.pro</code> 文件内容</p>
+<pre><code class="language-toml">#-------------------------------------------------
+#
+# Project created by QtCreator 2018-12-27T09:06:42
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = linearApp
+TEMPLATE = app
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+CONFIG += c++11
+
+SOURCES += \
+        main.cpp \
+        mainwindow.cpp
+
+HEADERS += \
+        mainwindow.h
+
+FORMS += \
+        mainwindow.ui
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+</code></pre>
+<a class="header" href="qmake/create_dynamic_library_on_mac.html#a加入引用动态库的代码" id="a加入引用动态库的代码"><h2>加入引用动态库的代码</h2></a>
+<p>现在在观察一下<code>/code-src/for_mac/dynamic_link_library/linear/linearApp/linearApp.pro</code> 文件内容</p>
+<pre><code class="language-Pro">#-------------------------------------------------
+#
+# Project created by QtCreator 2018-12-27T09:06:42
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = linearApp
+TEMPLATE = app
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+CONFIG += c++11
+
+SOURCES += \
+        main.cpp \
+        mainwindow.cpp
+
+HEADERS += \
+        mainwindow.h
+
+FORMS += \
+        mainwindow.ui
+
+# 链接外部库
+macx {
+    LIBS += -L$$PWD/../build-linearRef-Desktop_Qt_5_12_0_clang_64bit2-Debug/ -llinearRef.1.0.0
+    INCLUDEPATH += $$PWD/../linearRef
+    DEPENDPATH += $$PWD/../linearRef
+}
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+
+
+</code></pre>
+<a class="header" href="qmake/create_dynamic_library_on_mac.html#a现在查看代码的变化" id="a现在查看代码的变化"><h2>现在查看代码的变化</h2></a>
+<p><code>code-src/for_mac/dynamic_link_library/linear/linearRef/linearref_global.h</code></p>
+<pre><code class="language-h">#ifndef LINEARREF_GLOBAL_H
+#define LINEARREF_GLOBAL_H
+
+#include &lt;QtCore/qglobal.h&gt;
+
+#if defined(LINEARREF_LIBRARY)
+#  define LINEARREFSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define LINEARREFSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // LINEARREF_GLOBAL_H
+</code></pre>
+<p><strong>注意：新建了 LINEARREFSHARED_EXPORT 宏</strong></p>
+<p><code>code-src/for_mac/dynamic_link_library/linear/linearRef/linearref.h</code></p>
+<pre><code class="language-h">#ifndef LINEARREF_H
+#define LINEARREF_H
+
+#include &quot;linearref_global.h&quot;
+
+namespace TechiDaily{
+class LINEARREFSHARED_EXPORT LinearRef
+{
+
+public:
+    LinearRef();
+    const char* getName();
+};
+}
+
+
+#endif // LINEARREF_H
 
 </code></pre>
 
