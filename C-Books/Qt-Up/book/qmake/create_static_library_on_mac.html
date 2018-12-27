@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>(MacOS)创建静态库? - Qt 技能提升</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="../qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="../qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="../qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="../qmake/advanced-useful-contents.html"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="../qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="../qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="../qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="../qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="../qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="../qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="../qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="../qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="../qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="../qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="../qmake/create_static_library_on_mac.html" class="active"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="../qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="../qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="../qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="../qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="../qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="../qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="../dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="../dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="../dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="../dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="../dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="../dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="../make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="../make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="../make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="../make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="../submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="../submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="../submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Qt 技能提升</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#macos-如何使用-qt-创建静态库" id="macos-如何使用-qt-创建静态库"><h1>MacOS 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="#a使用-qt-creator-创建静态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建静态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建静态 library, 我们得到最初的<code>pro</code>文件</h2></a>
+<p><code>/code-src/for_mac/static_link_library/matrix/matrixref/matrixref.pro</code></p>
+<pre><code class="language-qt.pro">#-------------------------------------------------
+#
+# Project created by QtCreator 2018-12-26T15:05:13
+#
+#-------------------------------------------------
+
+# 仅依赖QtCore
+QT       -= gui
+
+TARGET = matrixref
+TEMPLATE = lib
+CONFIG += staticlib
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        matrixref.cpp
+
+HEADERS += \
+        matrixref.h
+unix {
+    target.path = /usr/lib
+    INSTALLS += target
+}
+
+</code></pre>
+<a class="header" href="#a使用-qt-creator-创建一个控制台-我们得到最初的pro文件" id="a使用-qt-creator-创建一个控制台-我们得到最初的pro文件"><h2>使用 Qt Creator 创建一个控制台, 我们得到最初的<code>pro</code>文件</h2></a>
+<p><code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code></p>
+<pre><code class="language-pro">QT -= gui
+
+CONFIG += c++11 console
+CONFIG -= app_bundle
+
+# The following define makes your compiler emit warnings if you use
+# any Qt feature that has been marked deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        main.cpp
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+</code></pre>
+<a class="header" href="#a修改-matrxref_consolepro-文件增加外部库的引用说明" id="a修改-matrxref_consolepro-文件增加外部库的引用说明"><h2>修改 <code>matrxref_console.pro</code> 文件，增加外部库的引用说明</h2></a>
+<p>修改 <code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code> 文件</p>
+<p>增加如下代码：</p>
+<pre><code class="language-pro"># 使用外部库
+macx{
+    LIBS += -L$$PWD/../build-matrixref-Desktop_Qt_5_12_0_clang_64bit2-Debug/ -lmatrixref
+    INCLUDEPATH += $$PWD/../matrixref
+    DEPENDPATH += $$PWD/../matrixref
+    PRE_TARGETDEPS += $$PWD/../build-matrixref-Desktop_Qt_5_12_0_clang_64bit2-Debug/libmatrixref.a
+}
+</code></pre>
+<a class="header" href="#a看看源码的调用" id="a看看源码的调用"><h2>看看源码的调用</h2></a>
+<pre><code class="language-C++">#if defined __cplusplus
+    #include &lt;iostream&gt;
+#endif
+
+#include &lt;QCoreApplication&gt;
+#include &quot;matrixref.h&quot; // 引用静态库的头文件
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    TechiDaily::Matrixref ref;
+
+#if defined __cplusplus
+    std::cout &lt;&lt; ref.hi() &lt;&lt; std::endl;
+#endif
+
+    return a.exec();
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../qmake/create_plugin.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../qmake/create_dynamic_library_on_mac.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../qmake/create_plugin.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../qmake/create_dynamic_library_on_mac.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

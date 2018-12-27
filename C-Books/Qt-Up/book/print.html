@@ -1,0 +1,1263 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Qt 技能提升</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Qt 技能提升</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#qmake" id="qmake"><h1>QMake</h1></a>
+<a class="header" href="#a简介" id="a简介"><h2>简介</h2></a>
+<p><code>qmake</code> 是 Qt 附带的工具之一 。</p>
+<p><code>qmake</code>工具有助于简化跨不同平台的开发项目的构建过程。它自动生成<code>Makefile</code>，因此只需要几行信息就可以创建每个<code>Makefile</code>。您可以在任何软件项目中使用<code>qmake</code>，<strong>不管它是用 Qt 编写的还是不用 Qt 编写的</strong>。</p>
+<p>如何使用 qmake?</p>
+<a class="header" href="#a特点" id="a特点"><h2>特点</h2></a>
+<p>手写 <code>Makefile</code> 是比较困难而且容易出错，尤其在进行跨平台开发时必须针对不同平台分别撰写 <code>Makefile</code>，会增加跨平台开发复杂性与困难度。<code>qmake</code> 会根据专案文件（<code>.pro</code>）里面的信息自动生成适合平台的 <code>Makefile</code>。开发者能够自行撰写专案文件或是由 <code>qmake</code> 本身产生。<code>qmake</code> 包含额外的功能来方便 Qt 开发，如自动的包含 <code>moc</code> 和 <code>uic</code> 的编译规则。</p>
+<a class="header" href="#qt-的-pro-文件如何编写" id="qt-的-pro-文件如何编写"><h1>Qt 的 Pro 文件如何编写？</h1></a>
+<a class="header" href="#a快速入门" id="a快速入门"><h1>快速入门</h1></a>
+<p><a href="http://doc.qt.io/qt-5/qmake-tutorial.html">http://doc.qt.io/qt-5/qmake-tutorial.html</a></p>
+<p>Getting Started</p>
+<p>This tutorial teaches you the basics of qmake. The other topics in this manual contain more detailed information about using qmake.
+Starting Off Simple</p>
+<p>Let's assume that you have just finished a basic implementation of your application, and you have created the following files:</p>
+<pre><code class="language-text">    hello.cpp
+    hello.h
+    main.cpp
+</code></pre>
+<p>You will find these files in the examples/qmake/tutorial directory of the Qt distribution. The only other thing you know about the setup of the application is that it's written in Qt. First, using your favorite plain text editor, create a file called hello.pro in examples/qmake/tutorial. The first thing you need to do is add the lines that tell qmake about the source and header files that are part of your development project.</p>
+<p>We'll add the source files to the project file first. To do this you need to use the SOURCES variable. Just start a new line with SOURCES += and put hello.cpp after it. You should have something like this:</p>
+<pre><code class="language-pro">SOURCES += hello.cpp
+</code></pre>
+<p>We repeat this for each source file in the project, until we end up with the following:</p>
+<pre><code class="language-pro">SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>If you prefer to use a Make-like syntax, with all the files listed in one go you can use the newline escaping like this:</p>
+<pre><code class="language-pro">SOURCES = hello.cpp \
+          main.cpp
+</code></pre>
+<p>Now that the source files are listed in the project file, the header files must be added. These are added in exactly the same way as source files, except that the variable name we use is HEADERS.</p>
+<p>Once you have done this, your project file should look something like this:</p>
+<pre><code class="language-pro">HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>The target name is set automatically. It is the same as the project filename, but with the suffix appropriate for the platform. For example, if the project file is called hello.pro, the target will be hello.exe on Windows and hello on Unix. If you want to use a different name you can set it in the project file:</p>
+<pre><code class="language-pro">TARGET = helloworld
+</code></pre>
+<p>The finished project file should look like this:</p>
+<pre><code class="language-pro">HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>You can now use qmake to generate a Makefile for your application. On the command line, in your project directory, type the following:</p>
+<pre><code class="language-bash">qmake -o Makefile hello.pro
+</code></pre>
+<p>Then type make or nmake depending on the compiler you use.</p>
+<p>For Visual Studio users, qmake can also generate Visual Studio project files. For example:</p>
+<pre><code class="language-bash">qmake -tp vc hello.pro
+</code></pre>
+<p>Making an Application Debuggable</p>
+<p>The release version of an application does not contain any debugging symbols or other debugging information. During development, it is useful to produce a debugging version of the application that has the relevant information. This is easily achieved by adding debug to the CONFIG variable in the project file.</p>
+<p>For example:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>Use qmake as before to generate a Makefile. You will now obtain useful information about your application when running it in a debugging environment.
+Adding Platform-Specific Source Files</p>
+<p>After a few hours of coding, you might have made a start on the platform-specific part of your application, and decided to keep the platform-dependent code separate. So you now have two new files to include into your project file: hellowin.cpp and hellounix.cpp. We cannot just add these to the SOURCES variable since that would place both files in the Makefile. So, what we need to do here is to use a scope which will be processed depending on which platform we are building for.</p>
+<p>A simple scope that adds the platform-dependent file for Windows looks like this:</p>
+<pre><code class="language-pro">win32 {
+    SOURCES += hellowin.cpp
+}
+</code></pre>
+<p>When building for Windows, qmake adds hellowin.cpp to the list of source files. When building for any other platform, qmake simply ignores it. Now all that is left to be done is to create a scope for the Unix-specific file.</p>
+<p>When you have done that, your project file should look something like this:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+</code></pre>
+<p>Use qmake as before to generate a Makefile.
+Stopping qmake If a File Does Not Exist</p>
+<p>You may not want to create a Makefile if a certain file does not exist. We can check if a file exists by using the exists() function. We can stop qmake from processing by using the error() function. This works in the same way as scopes do. Simply replace the scope condition with the function. A check for a file called main.cpp looks like this:</p>
+<pre><code class="language-pro">!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>The ! symbol is used to negate the test. That is, exists( main.cpp ) is true if the file exists, and !exists( main.cpp ) is true if the file does not exist.</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+```pro
+
+Use qmake as before to generate a makefile. If you rename main.cpp temporarily, you will see the message and qmake will stop processing.
+Checking for More than One Condition
+
+Suppose you use Windows and you want to be able to see statement output with qDebug() when you run your application on the command line. To see the output, you must build your application with the appropriate console setting. We can easily put console on the CONFIG line to include this setting in the Makefile on Windows. However, let's say that we only want to add the CONFIG line when we are running on Windows and when debug is already on the CONFIG line. This requires using two nested scopes. First create one scope, then create the other inside it. Put the settings to be processed inside the second scope, like this:
+
+```pro
+win32 {
+    debug {
+        CONFIG += console
+    }
+}
+</code></pre>
+<p>Nested scopes can be joined together using colons, so the final project file looks like this:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+win32:debug {
+    CONFIG += console
+}
+</code></pre>
+<p>That's it! You have now completed the tutorial for qmake, and are ready to write project files for your development projects.</p>
+<p>qmake 教程介绍
+这个教程可以教会你如何使用 qmake。我们建议你看完这个教程之后读一下 qmake 手册。</p>
+<p>开始很简单
+让我们假设你已经完成了你的应用程序的一个基本实现，并且你已经创建了下述文件：</p>
+<p>hello.cpp</p>
+<p>hello.h</p>
+<p>main.cpp</p>
+<p>你可以在 qt/qmake/example 中发现这些文件。你对这个应用程序的配置仅仅知道的另一件事是它是用 Qt 写的。首先，使用你所喜欢的纯文本编辑器，在 qt/qmake/tutorial 中创建一个叫做 hello.pro 的文件。你所要做的第一件事是添加一些行来告诉 qmake 关于你所开发的项目中的源文件和头文件这一部分。</p>
+<p>我们先把源文件添加到项目文件中。为了做到这点，你需要使用 SOURCES 变量。只要用 SOURCES +=来开始一行，并且把 hello.cpp 放到它后面。你需要写成这样：</p>
+<pre><code>SOURCES += hello.cpp
+</code></pre>
+<p>我们对项目中的每一个源文件都这样做，直到结束：</p>
+<pre><code>SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>如果你喜欢使用像 Make 一样风格的语法，你也可以写成这样，一行写一个源文件，并用反斜线结尾，然后再起新的一行：</p>
+<pre><code>SOURCES = hello.cpp \
+      main.cpp
+</code></pre>
+<p>现在源文件已经被列到项目文件中了，头文件也必须添加。添加的方式和源文件一样，除了变量名是 HEADERS。</p>
+<p>当你做完这些时，你的项目文件就像现在这样：</p>
+<pre><code>HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>目标名称是自动设置的，它被设置为和项目文件一样的名称，但是为了适合平台所需要的后缀。举例来说，加入项目文件叫做“hello.pro”，在 Windows 上的目标名称应该是“hello.exe”，在 Unix 上应该是“hello”。如果你想设置一个不同的名字，你可以在项目文件中设置它：</p>
+<pre><code>TARGET = helloworld
+</code></pre>
+<p>最后一步是设置 CONFIG 变量。因为这是一个 Qt 应用程序，我们需要把“qt”放到 CONFIG 这一行中，这样 qmake 才会在连接的时候添加相关的库，并且保证 moc 和 uic 的连编行也被包含到 Makefile 中。</p>
+<p>最终完成的项目文件应该是这样的：</p>
+<pre><code>CONFIG += qt
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>你现在可以使用 qmake 来为你的应用程序生成 Makefile。在你的应用程序目录中，在命令行下输入：</p>
+<pre><code>qmake -o Makefile hello.pro
+</code></pre>
+<p>然后根据你所使用的编译器输入 make 或者 nmake。</p>
+<p>使应用程序可以调试
+应用程序的发布版本不包含任何调试符号或者其它调试信息。在开发过程中，生成一个含有相关信息的应用程序的调试版本是很有用处的。通过在项目文件的 CONFIG 变量中添加“debug”就可以很简单地实现。</p>
+<p>例如：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>像前面一样使用 qmake 来生成一个 Makefile 并且你就能够调试你的应用程序了。</p>
+<p>添加特定平台的源文件
+在编了几个小时的程序之后，你也许开始为你的应用程序编写与平台相关的部分，并且决定根据平台的不同编写不同的代码。所以现在你有两个信文件要包含到你的项目文件中－hello_win.cpp 和 hello_x11.cpp。我们不能仅仅把这两个文件放到 SOURCES 变量中，因为那样的话会把这两个文件都加到 Makefile 中。所以我们在这里需要做的是根据 qmake 所运行的平台来使用相应的作用域来进行处理。</p>
+<p>为 Windows 平台添加的依赖平台的文件的简单的作用域看起来就像这样：</p>
+<pre><code>win32 {
+SOURCES += hello_win.cpp
+}
+</code></pre>
+<p>所以如果 qmake 运行在 Windows 上的时候，它就会把 hello_win.cpp 添加到源文件列表中。如果 qmake 运行在其它平台上的时候，它会很简单地把这部分忽略。现在接下来我们要做的就是添加一个 X11 依赖文件的作用域。</p>
+<p>当你做完了这部分，你的项目文件应该和这样差不多：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+</code></pre>
+<p>像前面一样使用 qmake 来生成 Makefile。</p>
+<p>如果一个文件不存在，停止 qmake
+如果某一个文件不存在的时候，你也许不想生成一个 Makefile。我们可以通过使用 exists()函数来检查一个文件是否存在。我们可以通过使用 error()函数把正在运行的 qmake 停下来。这和作用域的工作方式一样。只要很简单地用这个函数来替换作用域条件。对 main.cpp 文件的检查就像这样：</p>
+<pre><code>!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>“!”用来否定这个测试，比如，如果文件存在，exists( main.cpp )是真，如果文件不存在，!exists( main.cpp )是真。</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>像前面一样使用 qmake 来生成 Makefile。如果你临时改变 main.cpp 的名称，你会看到信息，并且 qmake 会停止处理。</p>
+<p>检查多于一个的条件
+假设你使用 Windows 并且当你在命令行运行你的应用程序的时候你想能够看到 qDebug()语句。除非你在连编你的程序的时候使用 console 设置，你不会看到输出。我们可以很容易地把 console 添加到 CONFIG 行中，这样在 Windows 下，Makefile 就会有这个设置。但是如果告诉你我们只是想在当我们的应用程序运行在 Windows 下并且当 debug 已经在 CONFIG 行中的时候，添加 console。这需要两个嵌套的作用域；只要生成一个作用域，然后在它里面再生成另一个。把设置放在最里面的作用域里，就像这样：</p>
+<pre><code>win32 {
+debug {
+    CONFIG += console
+}
+}
+</code></pre>
+<p>嵌套的作用域可以使用冒号连接起来，所以最终的项目文件看起来像这样：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+win32:debug {
+CONFIG += console
+}
+</code></pre>
+<p>就这些了！你现在已经完成了 qmake 的教程，并且已经准备好为你的开发项目写项目文件了。</p>
+<a class="header" href="#pro-工程模板" id="pro-工程模板"><h1>Pro 工程模板</h1></a>
+<p>模板文件，用于更明确的说明，编码用途</p>
+<table><thead><tr><th> Template  </th><th> qmake Output                                                      </th></tr></thead><tbody>
+<tr><td> app       </td><td> Makefile to build an application.                                 </td></tr>
+<tr><td> lib       </td><td> Makefile to build a library.                                      </td></tr>
+<tr><td> vcapp     </td><td> Visual Studio Project file to build an application.               </td></tr>
+<tr><td> vclib     </td><td> Visual Studio Project file to build a library.                    </td></tr>
+<tr><td> vcsubdirs </td><td> Visual Studio Solution file to build projects in sub-directories. </td></tr>
+</tbody></table>
+<p>具体详细部分：参照 <a href="http://doc.qt.io/qt-5/qmake-project-files.html">doc.qt.io/qt-5/qmake-project-files.html</a></p>
+<p>关于以 QT 为前缀的变量有</p>
+<p>具体详细部分：参照 <a href="http://doc.qt.io/qt-5/qmake-variable-reference.html#qt">http://doc.qt.io/qt-5/qmake-variable-reference.html#qt</a></p>
+<p>介绍 qmake
+qmake 是用来为不同的平台的开发项目创建 makefile 的 Trolltech 开发一个易于使用的工具。qmake 简化了 makefile 的生成，所以为了创建一个 makefile 只需要一个只有几行信息的文件。qmake 可以供任何一个软件项目使用，而不用管它是不是用 Qt 写的，尽管它包含了为支持 Qt 开发所拥有的额外的特征。</p>
+<p>qmake 基于一个项目文件这样的信息来生成 makefile。项目文件可以由开发者生成。项目文件通常很简单，但是如果需要它是非常完善的。不用修改项目文件，qmake 也可以为为 Microsoft Visual Studio 生成项目。</p>
+<p>qmake 的概念
+QMAKESPEC 环境变量
+举例来说，如果你在 Windows 下使用 Microsoft Visual Studio，然后你需要把 QMAKESPEC 环境变量设置为 win32-msvc。如果你在 Solaris 上使用 gcc，你需要把 QMAKESPEC 环境变量设置为 solaris-g++。</p>
+<p>在 qt/mkspecs 中的每一个目录里面，都有一个包含了平台和编译器特定信息的 qmake.conf 文件。这些设置适用于你要使用 qmake 的任何项目，请不要修改它，除非你是一个专家。例如，假如你所有的应用程序都必须和一个特定的库连接，你可以把这个信息添加到相应的 qmake.conf 文件中。</p>
+<p>项目(.pro)文件
+一个项目文件是用来告诉 qmake 关于为这个应用程序创建 makefile 所需要的细节。例如，一个源文件和头文件的列表、任何应用程序特定配置、例如一个必需要连接的额外库、或者一个额外的包含路径，都应该放到项目文件中。</p>
+<p>“#”注释
+你可以为项目文件添加注释。注释由“#”符号开始，一直到这一行的结束。</p>
+<p>模板
+模板变量告诉 qmake 为这个应用程序生成哪种 makefile。下面是可供使用的选择：</p>
+<p>app - 建立一个应用程序的 makefile。这是默认值，所以如果模板没有被指定，这个将被使用。</p>
+<p>lib - 建立一个库的 makefile。</p>
+<p>vcapp - 建立一个应用程序的 Visual Studio 项目文件。</p>
+<p>vclib - 建立一个库的 Visual Studio 项目文件。</p>
+<p>subdirs - 这是一个特殊的模板，它可以创建一个能够进入特定目录并且为一个项目文件生成 makefile 并且为它调用 make 的 makefile。</p>
+<p>“app”模板
+“app”模板告诉 qmake 为建立一个应用程序生成一个 makefile。当使用这个模板时，下面这些 qmake 系统变量是被承认的。你应该在你的.pro 文件中使用它们来为你的应用程序指定特定信息。</p>
+<p>HEADERS - 应用程序中的所有头文件的列表。</p>
+<p>SOURCES - 应用程序中的所有源文件的列表。</p>
+<p>FORMS - 应用程序中的所有.ui 文件（由 Qt 设计器生成）的列表。</p>
+<p>LEXSOURCES - 应用程序中的所有 lex 源文件的列表。</p>
+<p>YACCSOURCES - 应用程序中的所有 yacc 源文件的列表。</p>
+<p>TARGET - 可执行应用程序的名称。默认值为项目文件的名称。（如果需要扩展名，会被自动加上。）</p>
+<p>DESTDIR - 放置可执行程序目标的目录。</p>
+<p>DEFINES - 应用程序所需的额外的预处理程序定义的列表。</p>
+<p>INCLUDEPATH - 应用程序所需的额外的包含路径的列表。</p>
+<p>DEPENDPATH - 应用程序所依赖的搜索路径。</p>
+<p>VPATH - 寻找补充文件的搜索路径。</p>
+<p>DEF_FILE - 只有 Windows 需要：应用程序所要连接的.def 文件。</p>
+<p>RC_FILE - 只有 Windows 需要：应用程序的资源文件。</p>
+<p>RES_FILE - 只有 Windows 需要：应用程序所要连接的资源文件。</p>
+<p>你只需要使用那些你已经有值的系统变量，例如，如果你不需要任何额外的 INCLUDEPATH，那么你就不需要指定它，qmake 会为所需的提供默认值。例如，一个实例项目文件也许就像这样：</p>
+<p>TEMPLATE = app
+DESTDIR = c:\helloapp
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+DEFINES += QT_DLL
+CONFIG += qt warn_on release
+如果条目是单值的，比如 template 或者目的目录，我们是用“=”，但如果是多值条目，我们使用“+=”来为这个类型添加现有的条目。使用“=”会用新值替换原有的值，例如，如果我们写了 DEFINES=QT_DLL，其它所有的定义都将被删除。</p>
+<p>“lib”模板
+“lib”模板告诉 qmake 为建立一个库而生成 makefile。当使用这个模板时，除了“app”模板中提到系统变量，还有一个 VERSION 是被支持的。你需要在为库指定特定信息的.pro 文件中使用它们。</p>
+<p>VERSION - 目标库的版本号，比如，2.3.1。</p>
+<p>“subdirs”模板
+“subdirs”模板告诉 qmake 生成一个 makefile，它可以进入到特定子目录并为这个目录中的项目文件生成 makefile 并且为它调用 make。</p>
+<p>在这个模板中只有一个系统变量 SUBDIRS 可以被识别。这个变量中包含了所要处理的含有项目文件的子目录的列表。这个项目文件的名称是和子目录同名的，这样 qmake 就可以发现它。例如，如果子目里是“myapp”，那么在这个目录中的项目文件应该被叫做 myapp.pro。</p>
+<p>CONFIG 变量
+配置变量指定了编译器所要使用的选项和所需要被连接的库。配置变量中可以添加任何东西，但只有下面这些选项可以被 qmake 识别。</p>
+<p>下面这些选项控制着使用哪些编译器标志：</p>
+<p>release - 应用程序将以 release 模式连编。如果“debug”被指定，它将被忽略。</p>
+<p>debug - 应用程序将以 debug 模式连编。</p>
+<p>warn_on - 编译器会输出尽可能多的警告信息。如果“warn_off”被指定，它将被忽略。</p>
+<p>warn_off - 编译器会输出尽可能少的警告信息。</p>
+<p>下面这些选项定义了所要连编的库/应用程序的类型：</p>
+<p>qt - 应用程序是一个 Qt 应用程序，并且 Qt 库将会被连接。</p>
+<p>thread - 应用程序是一个多线程应用程序。</p>
+<p>x11 - 应用程序是一个 X11 应用程序或库。</p>
+<p>windows - 只用于“app”模板：应用程序是一个 Windows 下的窗口应用程序。</p>
+<p>console - 只用于“app”模板：应用程序是一个 Windows 下的控制台应用程序。</p>
+<p>dll - 只用于“lib”模板：库是一个共享库（dll）。</p>
+<p>staticlib - 只用于“lib”模板：库是一个静态库。</p>
+<p>plugin - 只用于“lib”模板：库是一个插件，这将会使 dll 选项生效。</p>
+<p>例如，如果你的应用程序使用 Qt 库，并且你想把它连编为一个可调试的多线程的应用程序，你的项目文件应该会有下面这行：</p>
+<pre><code>CONFIG += qt thread debug
+</code></pre>
+<p>注意，你必须使用“+=”，不要使用“=”，否则 qmake 就不能正确使用连编 Qt 的设置了，比如没法获得所编译的 Qt 库的类型了。</p>
+<a class="header" href="#qmake-高级概念" id="qmake-高级概念"><h1>Qmake 高级概念</h1></a>
+<p><a href="http://doc.qt.io/qt-5/qmake-language.html">英文部分 http://doc.qt.io/qt-5/qmake-language.html</a>
+qmake 高级概念
+迄今为止，我们见到的 qmake 项目文件都非常简单，仅仅是一些 name = value 和 name += value 的列表行。qmake 提供了很多更强大的功能，比如你可以使用一个简单的项目文件来为多个平台生成 makefile。</p>
+<p>操作符
+到目前为止，你已经看到在项目文件中使用的=操作符和+=操作符。这里能够提供更多的可供使用的操作符，但是其中的一些需要谨慎地使用，因为它们也许会比你期待的改变的更多。</p>
+<p>“=”操作符
+这个操作符简单分配一个值给一个变量。使用方法如下：</p>
+<pre><code>TARGET = myapp
+</code></pre>
+<p>这将会设置 TARGET 变量为 myapp。这将会删除原来对 TARGET 的任何设置。</p>
+<p>“+=”操作符
+这个操作符将会向一个变量的值的列表中添加一个值。使用方法如下：</p>
+<pre><code>DEFINES += QT_DLL
+</code></pre>
+<p>这将会把 QT_DLL 添加到被放到 makefile 中的预处理定义的列表中。</p>
+<p>“-=”操作符
+这个操作符将会从一个变量的值的列表中移去一个值。使用方法如下：</p>
+<pre><code>DEFINES -= QT_DLL
+</code></pre>
+<p>这将会从被放到 makefile 中的预处理定义的列表中移去 QT_DLL。</p>
+<p>“*=”操作符
+这个操作符仅仅在一个值不存在于一个变量的值的列表中的时候，把它添加进去。使用方法如下：</p>
+<pre><code>DEFINES *= QT_DLL
+</code></pre>
+<p>只用在 QT_DLL 没有被定义在预处理定义的列表中时，它才会被添加进去。</p>
+<p>“~=”操作符
+这个操作符将会替换任何与指定的值的正则表达式匹配的任何值。使用方法如下：</p>
+<pre><code>DEFINES ~= s/QT_[DT].+/QT
+</code></pre>
+<p>这将会用 QT 来替代任何以 QT_D 或 QT_T 开头的变量中的 QT_D 或 QT_T。</p>
+<p>作用域
+作用域和“if”语句很相似，如果某个条件为真，作用域中的设置就会被处理。作用域使用方法如下：</p>
+<pre><code>win32 {
+    DEFINES += QT_DLL
+}
+</code></pre>
+<p>上面的代码的作用是，如果在 Windows 平台上使用 qmake，QT_DLL 定义就会被添加到 makefile 中。如果在 Windows 平台以外的平台上使用 qmake，这个定义就会被忽略。你也可以使用 qmake 执行一个单行的条件/任务，就像这样：</p>
+<pre><code>win32:DEFINES += QT_DLL
+</code></pre>
+<p>比如，假设我们想在除了 Windows 平台意外的所有平台处理些什么。我们想这样使用作用域来达到这种否定效果：</p>
+<pre><code>!win32 {
+    DEFINES += QT_DLL
+}
+</code></pre>
+<p>CONFIG 行中的任何条目也都是一个作用域。比如，你这样写：</p>
+<pre><code>CONFIG += warn_on
+</code></pre>
+<p>你将会得到一个称作“warn_on”的作用域。这样将会使在不丢失特定条件下可能所需的所有自定义设置的条件下，很容易地修改项目中的配置。因为你可能把你自己的值放到 CONFIG 行中，这将会为你的 makefile 而提供给你一个非常强大的配置工具。比如：</p>
+<pre><code>CONFIG += qt warn_on debug
+debug {
+    TARGET = myappdebug
+}
+release {
+    TARGET = myapp
+}
+</code></pre>
+<p>在上面的代码中，两个作用域被创建，它们依赖于 CONFIG 行中设置的是什么。在这个例子中，debug 在 CONFIG 行中，所以 TARGET 变量被设置为 myappdebug。如果 release 在 CONFIG 行中，那么 TARGET 变量将会被设置为 myapp。</p>
+<p>当然也可以在处理一些设置之前检查两个事物。例如，如果你想检查平台是否是 Windows 并且线程设置是否被设定，你可以这样写：</p>
+<pre><code>win32 {
+    thread {
+        DEFINES += QT_THREAD_SUPPORT
+    }
+}
+</code></pre>
+<p>为了避免写出许多嵌套作用域，你可以这样使用冒号来嵌套作用域：</p>
+<pre><code>win32:thread {
+    DEFINES += QT_THREAD_SUPPORT
+}
+</code></pre>
+<p>一旦一个测试被执行，你也许也要做 else/elseif 操作。这种情况下，你可以很容易地写出复杂的测试。这需要使用特殊的“else”作用域，它可以和其它作用域进行组合（也可以向上面一样使用冒号），比如：</p>
+<pre><code>win32:thread {
+    DEFINES += QT_THREAD_SUPPORT
+} else:debug {
+    DEFINES += QT_NOTHREAD_DEBUG
+} else {
+    warning(&quot;Unknown configuration&quot;)
+}
+</code></pre>
+<p>变量
+到目前为止我们遇到的变量都是系统变量，比如 DEFINES、SOURCES 和 HEADERS。你也可以为你自己创建自己的变量，这样你就可以在作用域中使用它们了。创建自己的变量很容易，只要命名它并且分配一些东西给它。比如：</p>
+<pre><code>MY_VARIABLE = value
+</code></pre>
+<p>现在你对你自己的变量做什么是没有限制的，同样地，qmake 将会忽略它们，除非需要在一个作用域中考虑它们。</p>
+<p>你也可以通过在其它任何一个变量的变量名前加$$来把这个变量的值分配给当前的变量。例如：</p>
+<pre><code>MY_DEFINES = $$DEFINES
+</code></pre>
+<p>现在 MY_DEFINES 变量包含了项目文件在这点时 DEFINES 变量的值。这也和下面的语句一样：</p>
+<pre><code>MY_DEFINES = $${DEFINES}
+</code></pre>
+<p>第二种方法允许你把一个变量和其它变量连接起来，而不用使用空格。qmake 将允许一个变量包含任何东西（包括$(VALUE)，可以直接在makefile中直接放置，并且允许它适当地扩张，通常是一个环境变量）。无论如何，如果你需要立即设置一个环境变量，然后你就可以使用$$()方法。比如：</p>
+<pre><code>MY_DEFINES = $$(ENV_DEFINES)
+</code></pre>
+<p>这将会设置 MY_DEFINES 为环境变量 ENV_DEFINES 传递给.pro 文件地值。另外你可以在替换的变量里调用内置函数。这些函数（不会和下一节中列举的测试函数混淆）列出如下：</p>
+<p>join( variablename, glue, before, after )
+这将会在 variablename 的各个值中间加入 glue。如果这个变量的值为非空，那么就会在值的前面加一个前缀 before 和一个后缀 after。只有 variablename 是必须的字段，其它默认情况下为空串。如果你需要在 glue、before 或者 after 中使用空格的话，你必须提供它们。</p>
+<p>member( variablename, position )
+这将会放置 variablename 的列表中的 position 位置的值。如果 variablename 不够长，这将会返回一个空串。variablename 是唯一必须的字段，如果没有指定位置，则默认为列表中的第一个值。</p>
+<p>find( variablename, substr )
+这将会放置 variablename 中所有匹配 substr 的值。substr 也可以是正则表达式，而因此将被匹配。</p>
+<pre><code>MY_VAR = one two three four
+MY_VAR2 = $$join(MY_VAR, &quot; -L&quot;, -L) -Lfive
+MY_VAR3 = $$member(MY_VAR, 2) $$find(MY_VAR, t.*)
+</code></pre>
+<p>MY_VAR2 将会包含“-Lone -Ltwo -Lthree -Lfour -Lfive”，并且 MYVAR3 将会包含“three two three”。</p>
+<p>system( program_and_args )
+这将会返回程序执行在标准输出/标准错误输出的内容，并且正像平时所期待地分析它。比如你可以使用这个来询问有关平台的信息。</p>
+<pre><code>UNAME = $$system(uname -s)
+contains( UNAME, [lL]inux ):message( This looks like Linux ($$UNAME) to me )
+</code></pre>
+<p>测试函数
+qmake 提供了可以简单执行，但强大测试的内置函数。这些测试也可以用在作用域中（就像上面一样），在一些情况下，忽略它的测试值，它自己使用测试函数是很有用的。</p>
+<p>contains( variablename, value )
+如果 value 存在于一个被叫做 variablename 的变量的值的列表中，那么这个作用域中的设置将会被处理。例如：</p>
+<pre><code>contains( CONFIG, thread ) {
+    DEFINES += QT_THREAD_SUPPORT
+}
+</code></pre>
+<p>如果 thread 存在于 CONFIG 变量的值的列表中时，那么 QT_THREAD_SUPPORT 将会被加入到 DEFINES 变量的值的列表中。</p>
+<p>count( variablename, number )
+如果 number 与一个被叫做 variablename 的变量的值的数量一致，那么这个作用域中的设置将会被处理。例如：</p>
+<pre><code>count( DEFINES, 5 ) {
+    CONFIG += debug
+}
+</code></pre>
+<p>error( string )
+这个函数输出所给定的字符串，然后会使 qmake 退出。例如：</p>
+<pre><code>error( &quot;An error has occured&quot; )
+</code></pre>
+<p>文本“An error has occured”将会被显示在控制台上并且 qmake 将会退出。</p>
+<p>exists( filename )
+如果指定文件存在，那么这个作用域中的设置将会被处理。例如：</p>
+<pre><code>exists( /local/qt/qmake/main.cpp ) {
+    SOURCES += main.cpp
+}
+</code></pre>
+<p>如果/local/qt/qmake/main.cpp 存在，那么 main.cpp 将会被添加到源文件列表中。</p>
+<p>注意可以不用考虑平台使用“/”作为目录的分隔符。</p>
+<p>include( filename )
+项目文件在这一点时包含这个文件名的内容，所以指定文件中的任何设置都将会被处理。例如：</p>
+<pre><code>include( myotherapp.pro )
+</code></pre>
+<p>myotherapp.pro 项目文件中的任何设置现在都会被处理。</p>
+<p>isEmpty( variablename )
+这和使用 count( variablename, 0 )是一样的。如果叫做 variablename 的变量没有任何元素，那么这个作用域中的设置将会被处理。例如：</p>
+<pre><code>isEmpty( CONFIG ) {
+    CONFIG += qt warn_on debug
+}
+</code></pre>
+<p>message( string )
+这个函数只是简单地在控制台上输出消息。</p>
+<pre><code>message( &quot;This is a message&quot; )
+</code></pre>
+<p>文本“This is a message”被输出到控制台上并且对于项目文件的处理将会继续进行。</p>
+<p>system( command )
+特定指令被执行并且如果它返回一个 1 的退出值，那么这个作用域中的设置将会被处理。例如：</p>
+<pre><code>system( ls /bin ) {
+    SOURCES += bin/main.cpp
+    HEADERS += bin/main.h
+}
+</code></pre>
+<p>所以如果命令 ls /bin 返回 1，那么 bin/main.cpp 将被添加到源文件列表中并且 bin/main.h 将被添加到头文件列表中。</p>
+<p>infile( filename, var, val )
+如果 filename 文件（当它被 qmake 自己解析时）包含一个值为 val 的变量 var，那么这个函数将会返回成功。你也可以不传递第三个参数（val），这时函数将只测试文件中是否分配有这样一个变量 var。</p>
+<a class="header" href="#qmake-变量大全" id="qmake-变量大全"><h1>Qmake 变量大全</h1></a>
+<p>具体内容：<a href="http://doc.qt.io/qt-5/qmake-variable-reference.html#">doc.qt.io/qt-5/qmake-variable-reference.html#</a></p>
+<a class="header" href="#qmake-函数大全" id="qmake-函数大全"><h1>Qmake 函数大全</h1></a>
+<p>参见：<a href="http://doc.qt.io/qt-5/qmake-function-reference.html">doc.qt.io/qt-5/qmake-function-reference.html</a></p>
+<a class="header" href="#qmake-测试函数" id="qmake-测试函数"><h1>Qmake 测试函数</h1></a>
+<p>参见：<a href="http://doc.qt.io/qt-5/qmake-test-function-reference.html">doc.qt.io/qt-5/qmake-test-function-reference.html</a></p>
+<a class="header" href="#qmake-命令行" id="qmake-命令行"><h1>Qmake 命令行</h1></a>
+<p><a href="http://doc.qt.io/qt-5/qmake-running.html">http://doc.qt.io/qt-5/qmake-running.html</a></p>
+<p>Running qmake</p>
+<p>The behavior of qmake can be customized when it is run by specifying various options on the command line. These allow the build process to be fine-tuned, provide useful diagnostic information, and can be used to specify the target platform for your project.
+Command Syntax</p>
+<p>The syntax used to run qmake takes the following simple form:</p>
+<p>qmake [mode][options] files</p>
+<p>Operating Modes</p>
+<p>qmake supports two different modes of operation. In the default mode, qmake uses the information in a project file to generate a Makefile, but it is also possible to use qmake to generate project files. If you want to explicitly set the mode, you must specify it before all other options. The mode can be either of the following two values:</p>
+<pre><code>-makefile
+qmake output will be a Makefile.
+-project
+qmake output will be a project file.
+
+Note: It is likely that the created file will need to be edited. For example, adding the QT variable to suit what modules are required for the project.
+</code></pre>
+<p>You can use the options to specify both general and mode-specific settings. Options that only apply to the Makefile mode are described in the Makefile Mode Options section, whereas options that influence the creation of project files are described in the Project Mode Options section.
+Files</p>
+<p>The files argument represents a list of one or more project files, separated by spaces.
+General Options</p>
+<p>A wide range of options can be specified on the command line to qmake in order to customize the build process, and to override default settings for your platform. The following basic options provide help on using qmake, specify where qmake writes the output file, and control the level of debugging information that will be written to the console:</p>
+<pre><code>-help
+qmake will go over these features and give some useful help.
+-o file
+qmake output will be directed to file. If this option is not specified, qmake will try to use a suitable file name for its output, depending on the mode it is running in.
+If '-' is specified, output is directed to stdout.
+-d
+qmake will output debugging information. Adding -d more than once increases verbosity.
+</code></pre>
+<p>The template used for the project is usually specified by the TEMPLATE variable in the project file. You can override or modify this by using the following options:</p>
+<pre><code>-t tmpl
+qmake will override any set TEMPLATE variables with tmpl, but only after the .pro file has been processed.
+-tp prefix
+qmake will add prefix to the TEMPLATE variable.
+</code></pre>
+<p>The level of warning information can be fine-tuned to help you find problems in your project file:</p>
+<pre><code>-Wall
+qmake will report all known warnings.
+-Wnone
+No warning information will be generated by qmake.
+-Wparser
+qmake will only generate parser warnings. This will alert you to common pitfalls and potential problems in the parsing of your project files.
+-Wlogic
+qmake will warn of common pitfalls and potential problems in your project file. For example, qmake will report multiple occurrences of files in lists and missing files.
+</code></pre>
+<p>Makefile Mode Options</p>
+<p>qmake -makefile [options] files</p>
+<p>In Makefile mode, qmake will generate a Makefile that is used to build the project. Additionally, the following options may be used in this mode to influence the way the project file is generated:</p>
+<pre><code>-after
+qmake will process assignments given on the command line after the specified files.
+-nocache
+qmake will ignore the .qmake.cache file.
+-nodepend
+qmake will not generate any dependency information.
+-cache file
+qmake will use file as the cache file, ignoring any other .qmake.cache files found.
+-spec spec
+qmake will use spec as a path to platform and compiler information, and ignore the value of QMAKESPEC.
+</code></pre>
+<p>You may also pass qmake assignments on the command line. They are processed before all of the files specified. For example, the following command generates a Makefile from test.pro:</p>
+<p>qmake -makefile -o Makefile &quot;CONFIG+=test&quot; test.pro</p>
+<p>However, some of the specified options can be omitted as they are default values:</p>
+<p>qmake &quot;CONFIG+=test&quot; test.pro</p>
+<p>If you are certain you want your variables processed after the files specified, then you may pass the -after option. When this is specified, all assignments on the command line after the -after option will be postponed until after the specified files are parsed.
+Project Mode Options</p>
+<p>qmake -project [options] files</p>
+<p>In project mode, qmake will generate a project file. Additionally, you may supply the following options in this mode:</p>
+<pre><code>-r
+qmake will look through supplied directories recursively.
+-nopwd
+qmake will not look in your current working directory for source code. It will only use the specified files.
+</code></pre>
+<p>In this mode, the files argument can be a list of files or directories. If a directory is specified, it will be included in the DEPENDPATH variable, and relevant code from there will be included in the generated project file. If a file is given, it will be appended to the correct variable, depending on its extension. For example, UI files are added to FORMS, and C++ files are added to SOURCES.</p>
+<p>You may also pass assignments on the command line in this mode. When doing so, these assignments will be placed last in the generated project file.</p>
+<a class="header" href="#pro-示例-1" id="pro-示例-1"><h1>Pro 示例 1</h1></a>
+<pre><code class="language-pro">#-------------------------------------------------
+#
+# Project created by QtCreator 2013-05-20T13:22:23
+#
+#-------------------------------------------------
+
+##
+## Pre-defined global variables
+##
+
+CONFIG(debug, debug|release) {
+    DIR_SUFFIX = d
+} else {
+    DIR_SUFFIX =
+}
+
+!contains(QMAKE_HOST.arch, x86_64) {
+    X64_BIN_DIR = ../../bin/x32$${DIR_SUFFIX}      # Relative BIN path, 32-bit
+    X64_GEN_DIR = ../gui_build/out32$${DIR_SUFFIX} # QMake temporary generated files, placed inside the build folder. (OBJ, UI, MOC)
+    TARGET = x32gui                  # Build x32gui
+} else {
+    X64_BIN_DIR = ../../bin/x64$${DIR_SUFFIX}      # Relative BIN path, 64-bit
+    X64_GEN_DIR = ../gui_build/out64$${DIR_SUFFIX} # QMake temporary generated files, placed inside the build folder. (OBJ, UI, MOC)
+    TARGET = x64gui                  # Build x64gui
+}
+
+##
+## QMake output directories
+##
+DESTDIR = $${X64_BIN_DIR}
+OBJECTS_DIR = $${X64_GEN_DIR}
+MOC_DIR = $${X64_GEN_DIR}
+RCC_DIR = $${X64_GEN_DIR}
+UI_DIR = $${X64_GEN_DIR}
+
+##
+## QT libraries
+##
+QT += core gui network
+
+# QT5 requires widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+##
+## Build flags
+##
+# Generate debug symbols in release mode
+QMAKE_CXXFLAGS_RELEASE += -Zi   # Compiler
+QMAKE_LFLAGS_RELEASE += /DEBUG  # Linker
+
+# Build as a library
+DEFINES += BUILD_LIB NOMINMAX
+TEMPLATE = lib
+
+##
+## Includes
+##
+INCLUDEPATH += \
+    ../ \
+    Src \
+    Src/Gui \
+    Src/BasicView \
+    Src/Disassembler \
+    Src/Memory \
+    Src/Bridge \
+    Src/Global \
+    Src/Utils \
+    Src/ThirdPartyLibs/snowman \
+    Src/ThirdPartyLibs/ldconvert \
+    ../zydis_wrapper \
+    ../zydis_wrapper/zydis/include
+
+# Resources, sources, headers, and forms
+RESOURCES += \
+    resource.qrc
+
+SOURCES += \
+    Src/main.cpp \
+    Src/Gui/MainWindow.cpp \
+    Src/Gui/CPUWidget.cpp \
+    Src/Gui/CommandLineEdit.cpp \
+    Src/BasicView/Disassembly.cpp \
+    Src/BasicView/HexDump.cpp \
+    Src/BasicView/AbstractTableView.cpp \
+    Src/Disassembler/QBeaEngine.cpp \
+    Src/Disassembler/ZydisTokenizer.cpp \
+    Src/Memory/MemoryPage.cpp \
+    Src/Bridge/Bridge.cpp \
+    Src/BasicView/StdTable.cpp \
+    Src/Gui/MemoryMapView.cpp \
+    Src/Gui/LogView.cpp \
+    Src/Gui/GotoDialog.cpp \
+    Src/Gui/WordEditDialog.cpp \
+    Src/Gui/CPUDisassembly.cpp \
+    Src/Gui/LineEditDialog.cpp \
+    Src/Gui/BreakpointsView.cpp \
+    Src/Utils/Breakpoints.cpp \
+    Src/Gui/CPUInfoBox.cpp \
+    Src/Gui/CPUDump.cpp \
+    Src/Gui/ScriptView.cpp \
+    Src/Gui/CPUStack.cpp \
+    Src/Gui/SymbolView.cpp \
+    Src/Gui/RegistersView.cpp \
+    Src/BasicView/SearchListView.cpp \
+    Src/BasicView/ReferenceView.cpp \
+    Src/Gui/ThreadView.cpp \
+    Src/Gui/SettingsDialog.cpp \
+    Src/Gui/ExceptionRangeDialog.cpp \
+    Src/Utils/RichTextPainter.cpp \
+    Src/Gui/TabBar.cpp \
+    Src/Gui/TabWidget.cpp \
+    Src/BasicView/HistoryLineEdit.cpp \
+    Src/Utils/Configuration.cpp \
+    Src/Gui/CPUSideBar.cpp \
+    Src/Gui/AppearanceDialog.cpp \
+    Src/Gui/CloseDialog.cpp \
+    Src/Gui/HexEditDialog.cpp \
+    Src/Gui/HexLineEdit.cpp \
+    Src/QHexEdit/ArrayCommand.cpp \
+    Src/QHexEdit/QHexEdit.cpp \
+    Src/QHexEdit/QHexEditPrivate.cpp \
+    Src/QHexEdit/XByteArray.cpp \
+    Src/Gui/PatchDialog.cpp \
+    Src/Gui/PatchDialogGroupSelector.cpp \
+    Src/Utils/UpdateChecker.cpp \
+    Src/Gui/CallStackView.cpp \
+    Src/Gui/ShortcutsDialog.cpp \
+    Src/BasicView/ShortcutEdit.cpp \
+    Src/Gui/CalculatorDialog.cpp \
+    Src/Gui/AttachDialog.cpp \
+    Src/Gui/PageMemoryRights.cpp \
+    Src/Gui/SelectFields.cpp \
+    Src/Gui/ReferenceManager.cpp \
+    Src/Bridge/BridgeResult.cpp \
+    Src/Gui/YaraRuleSelectionDialog.cpp \
+    Src/Gui/SourceViewerManager.cpp \
+    Src/Gui/SourceView.cpp \
+    Src/Utils/ValidateExpressionThread.cpp \
+    Src/Utils/MainWindowCloseThread.cpp \
+    Src/Gui/TimeWastedCounter.cpp \
+    Src/Utils/FlickerThread.cpp \
+    Src/QEntropyView/QEntropyView.cpp \
+    Src/Gui/EntropyDialog.cpp \
+    Src/Gui/NotesManager.cpp \
+    Src/Gui/NotepadView.cpp \
+    Src/Gui/CPUMultiDump.cpp \
+    Src/Gui/AssembleDialog.cpp \
+    Src/Utils/StringUtil.cpp \
+    Src/Gui/SEHChainView.cpp \
+    Src/Gui/EditBreakpointDialog.cpp \
+    Src/Gui/CPUArgumentWidget.cpp \
+    Src/Gui/HandlesView.cpp \
+    Src/Gui/EditFloatRegister.cpp \
+    Src/Utils/HexValidator.cpp \
+    Src/Utils/LongLongValidator.cpp \
+    Src/Utils/MiscUtil.cpp \
+    Src/Gui/XrefBrowseDialog.cpp \
+    Src/Gui/CodepageSelectionDialog.cpp \
+    Src/Gui/ColumnReorderDialog.cpp \
+    Src/Utils/EncodeMap.cpp \
+    Src/Utils/CodeFolding.cpp \
+    Src/Gui/WatchView.cpp \
+    Src/Gui/FavouriteTools.cpp \
+    Src/Gui/BrowseDialog.cpp \
+    Src/Gui/DisassemblerGraphView.cpp \
+    Src/Gui/DisassemblyPopup.cpp \
+    Src/Gui/VirtualModDialog.cpp \
+    Src/BasicView/LabeledSplitter.cpp \
+    Src/BasicView/LabeledSplitterDetachedWindow.cpp \
+    Src/Gui/LogStatusLabel.cpp \
+    Src/Gui/DebugStatusLabel.cpp \
+    Src/Utils/MenuBuilder.cpp \
+    Src/Gui/StructWidget.cpp \
+    Src/Gui/CustomizeMenuDialog.cpp \
+    Src/Gui/SimpleTraceDialog.cpp \
+    Src/Utils/MRUList.cpp \
+    Src/Gui/LocalVarsView.cpp \
+    Src/Gui/MessagesBreakpoints.cpp \
+    Src/Gui/AboutDialog.cpp \
+    Src/Gui/BreakpointMenu.cpp \
+    Src/Gui/ComboBoxDialog.cpp \
+    Src/Utils/SymbolAutoCompleteModel.cpp \
+    Src/Tracer/TraceBrowser.cpp \
+    Src/Tracer/TraceFileReader.cpp \
+    Src/Tracer/TraceFileSearch.cpp \
+    Src/Gui/MultiItemsSelectWindow.cpp \
+    Src/BasicView/AbstractStdTable.cpp \
+    Src/Gui/ZehSymbolTable.cpp \
+    Src/BasicView/StdSearchListView.cpp
+
+
+HEADERS += \
+    Src/main.h \
+    Src/Gui/MainWindow.h \
+    Src/Gui/CPUWidget.h \
+    Src/Gui/CommandLineEdit.h \
+    Src/BasicView/Disassembly.h \
+    Src/BasicView/HexDump.h \
+    Src/BasicView/AbstractTableView.h \
+    Src/Disassembler/QBeaEngine.h \
+    Src/Disassembler/ZydisTokenizer.h \
+    Src/Memory/MemoryPage.h \
+    Src/Bridge/Bridge.h \
+    Src/Exports.h \
+    Src/Imports.h \
+    Src/BasicView/StdTable.h \
+    Src/Gui/MemoryMapView.h \
+    Src/Gui/LogView.h \
+    Src/Gui/GotoDialog.h \
+    Src/Gui/RegistersView.h \
+    Src/Gui/WordEditDialog.h \
+    Src/Gui/CPUDisassembly.h \
+    Src/Gui/LineEditDialog.h \
+    Src/Gui/BreakpointsView.h \
+    Src/Utils/Breakpoints.h \
+    Src/Gui/CPUInfoBox.h \
+    Src/Gui/CPUDump.h \
+    Src/Gui/ScriptView.h \
+    Src/Gui/CPUStack.h \
+    Src/Gui/SymbolView.h \
+    Src/BasicView/SearchListView.h \
+    Src/BasicView/ReferenceView.h \
+    Src/Gui/ThreadView.h \
+    Src/Gui/SettingsDialog.h \
+    Src/Gui/ExceptionRangeDialog.h \
+    Src/Utils/RichTextPainter.h \
+    Src/Gui/TabBar.h \
+    Src/Gui/TabWidget.h \
+    Src/BasicView/HistoryLineEdit.h \
+    Src/Utils/Configuration.h \
+    Src/Gui/CPUSideBar.h \
+    Src/Gui/AppearanceDialog.h \
+    Src/Gui/CloseDialog.h \
+    Src/Gui/HexEditDialog.h \
+    Src/Gui/HexLineEdit.h \
+    Src/QHexEdit/ArrayCommand.h \
+    Src/QHexEdit/QHexEdit.h \
+    Src/QHexEdit/QHexEditPrivate.h \
+    Src/QHexEdit/XByteArray.h \
+    Src/Gui/PatchDialog.h \
+    Src/Gui/PatchDialogGroupSelector.h \
+    Src/Utils/UpdateChecker.h \
+    Src/Gui/CallStackView.h \
+    Src/Gui/ShortcutsDialog.h \
+    Src/BasicView/ShortcutEdit.h \
+    Src/Gui/CalculatorDialog.h \
+    Src/Gui/AttachDialog.h \
+    Src/Gui/PageMemoryRights.h \
+    Src/Gui/SelectFields.h \
+    Src/Gui/ReferenceManager.h \
+    Src/Bridge/BridgeResult.h \
+    Src/Gui/YaraRuleSelectionDialog.h \
+    Src/Gui/SourceViewerManager.h \
+    Src/Gui/SourceView.h \
+    Src/Utils/StringUtil.h \
+    Src/Utils/ValidateExpressionThread.h \
+    Src/Utils/MainWindowCloseThread.h \
+    Src/Gui/TimeWastedCounter.h \
+    Src/Utils/FlickerThread.h \
+    Src/QEntropyView/Entropy.h \
+    Src/QEntropyView/QEntropyView.h \
+    Src/Gui/EntropyDialog.h \
+    Src/Gui/NotesManager.h \
+    Src/Gui/NotepadView.h \
+    Src/Utils/MenuBuilder.h \
+    Src/Gui/CPUMultiDump.h \
+    Src/Gui/AssembleDialog.h \
+    Src/Gui/SEHChainView.h \
+    Src/Gui/EditBreakpointDialog.h \
+    Src/Gui/CPUArgumentWidget.h \
+    Src/Gui/HandlesView.h \
+    Src/Gui/EditFloatRegister.h \
+    Src/Utils/HexValidator.h \
+    Src/Utils/LongLongValidator.h \
+    Src/Utils/MiscUtil.h \
+    Src/Gui/XrefBrowseDialog.h \
+    Src/Gui/CodepageSelectionDialog.h \
+    Src/Utils/CachedFontMetrics.h \
+    Src/Gui/ColumnReorderDialog.h \
+    Src/Utils/EncodeMap.h \
+    Src/Utils/CodeFolding.h \
+    Src/Gui/WatchView.h \
+    Src/Gui/FavouriteTools.h \
+    Src/Gui/BrowseDialog.h \
+    Src/Gui/DisassemblerGraphView.h \
+    Src/Utils/ActionHelpers.h \
+    Src/Gui/DisassemblyPopup.h \
+    Src/Gui/VirtualModDialog.h \
+    Src/BasicView/LabeledSplitter.h \
+    Src/BasicView/LabeledSplitterDetachedWindow.h \
+    Src/Gui/LogStatusLabel.h \
+    Src/Gui/DebugStatusLabel.h \
+    Src/Gui/CustomizeMenuDialog.h \
+    Src/Gui/StructWidget.h \
+    Src/Gui/SimpleTraceDialog.h \
+    Src/Utils/MRUList.h \
+    Src/Gui/LocalVarsView.h \
+    Src/Gui/MessagesBreakpoints.h \
+    Src/Gui/AboutDialog.h \
+    Src/Gui/BreakpointMenu.h \
+    Src/Gui/ComboBoxDialog.h \
+    Src/Utils/VaHistory.h \
+    Src/Utils/SymbolAutoCompleteModel.h \
+    Src/Tracer/TraceBrowser.h \
+    Src/Tracer/TraceFileReader.h \
+    Src/Tracer/TraceFileReaderInternal.h \
+    Src/Tracer/TraceFileSearch.h \
+    Src/Gui/MultiItemsSelectWindow.h \
+    Src/BasicView/AbstractStdTable.h \
+    Src/Gui/ZehSymbolTable.h \
+    Src/BasicView/AbstractSearchList.h \
+    Src/BasicView/StdSearchListView.h
+
+
+FORMS += \
+    Src/Gui/MainWindow.ui \
+    Src/Gui/CPUWidget.ui \
+    Src/Gui/GotoDialog.ui \
+    Src/Gui/WordEditDialog.ui \
+    Src/Gui/LineEditDialog.ui \
+    Src/Gui/SymbolView.ui \
+    Src/Gui/SettingsDialog.ui \
+    Src/Gui/ExceptionRangeDialog.ui \
+    Src/Gui/AppearanceDialog.ui \
+    Src/Gui/CloseDialog.ui \
+    Src/Gui/HexEditDialog.ui \
+    Src/Gui/HexLineEdit.ui \
+    Src/Gui/PatchDialog.ui \
+    Src/Gui/PatchDialogGroupSelector.ui \
+    Src/Gui/ShortcutsDialog.ui \
+    Src/Gui/CalculatorDialog.ui \
+    Src/Gui/AttachDialog.ui \
+    Src/Gui/PageMemoryRights.ui \
+    Src/Gui/SelectFields.ui \
+    Src/Gui/YaraRuleSelectionDialog.ui \
+    Src/Gui/EntropyDialog.ui \
+    Src/Gui/AssembleDialog.ui \
+    Src/Gui/EditBreakpointDialog.ui \
+    Src/Gui/CPUArgumentWidget.ui \
+    Src/Gui/EditFloatRegister.ui \
+    Src/Gui/XrefBrowseDialog.ui \
+    Src/Gui/CodepageSelectionDialog.ui \
+    Src/Gui/ColumnReorderDialog.ui \
+    Src/Gui/FavouriteTools.ui \
+    Src/Gui/BrowseDialog.ui \
+    Src/Gui/VirtualModDialog.ui \
+    Src/Gui/CustomizeMenuDialog.ui \
+    Src/Gui/StructWidget.ui \
+    Src/Gui/SimpleTraceDialog.ui \
+    Src/Gui/MessagesBreakpoints.ui \
+    Src/Gui/AboutDialog.ui \
+    Src/Gui/ComboBoxDialog.ui
+
+##
+## Libraries
+##
+LIBS += -luser32 -ladvapi32 -lwinmm -lshell32
+
+!contains(QMAKE_HOST.arch, x86_64) {
+    # Windows x86 (32bit) specific build
+    LIBS += -L&quot;$$PWD/../zydis_wrapper/bin/x32$${DIR_SUFFIX}&quot; -lzydis_wrapper
+    LIBS += -L&quot;$$PWD/Src/ThirdPartyLibs/snowman&quot; -lsnowman_x86
+    LIBS += -L&quot;$$PWD/Src/ThirdPartyLibs/ldconvert&quot; -lldconvert_x86
+    LIBS += -L&quot;$${X64_BIN_DIR}&quot; -lx32bridge
+} else {
+    # Windows x64 (64bit) specific build
+    LIBS += -L&quot;$$PWD/../zydis_wrapper/bin/x64$${DIR_SUFFIX}&quot; -lzydis_wrapper
+    LIBS += -L&quot;$$PWD/Src/ThirdPartyLibs/snowman&quot; -lsnowman_x64
+    LIBS += -L&quot;$$PWD/Src/ThirdPartyLibs/ldconvert&quot; -lldconvert_x64
+    LIBS += -L&quot;$${X64_BIN_DIR}&quot; -lx64bridge
+}
+
+</code></pre>
+<a class="header" href="#pro-示例-2" id="pro-示例-2"><h1>Pro 示例 2</h1></a>
+<a class="header" href="#static-library" id="static-library"><h1>static library</h1></a>
+<a class="header" href="#dynamic-library" id="dynamic-library"><h1>dynamic library</h1></a>
+<a class="header" href="#framework" id="framework"><h1>framework</h1></a>
+<a class="header" href="#a创建-plugin" id="a创建-plugin"><h1>创建 Plugin</h1></a>
+<a class="header" href="#macos-如何使用-qt-创建静态库" id="macos-如何使用-qt-创建静态库"><h1>MacOS 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="#a使用-qt-creator-创建静态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建静态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建静态 library, 我们得到最初的<code>pro</code>文件</h2></a>
+<p><code>/code-src/for_mac/static_link_library/matrix/matrixref/matrixref.pro</code></p>
+<pre><code class="language-qt.pro">#-------------------------------------------------
+#
+# Project created by QtCreator 2018-12-26T15:05:13
+#
+#-------------------------------------------------
+
+# 仅依赖QtCore
+QT       -= gui
+
+TARGET = matrixref
+TEMPLATE = lib
+CONFIG += staticlib
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        matrixref.cpp
+
+HEADERS += \
+        matrixref.h
+unix {
+    target.path = /usr/lib
+    INSTALLS += target
+}
+
+</code></pre>
+<a class="header" href="#a使用-qt-creator-创建一个控制台-我们得到最初的pro文件" id="a使用-qt-creator-创建一个控制台-我们得到最初的pro文件"><h2>使用 Qt Creator 创建一个控制台, 我们得到最初的<code>pro</code>文件</h2></a>
+<p><code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code></p>
+<pre><code class="language-pro">QT -= gui
+
+CONFIG += c++11 console
+CONFIG -= app_bundle
+
+# The following define makes your compiler emit warnings if you use
+# any Qt feature that has been marked deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        main.cpp
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+</code></pre>
+<a class="header" href="#a修改-matrxref_consolepro-文件增加外部库的引用说明" id="a修改-matrxref_consolepro-文件增加外部库的引用说明"><h2>修改 <code>matrxref_console.pro</code> 文件，增加外部库的引用说明</h2></a>
+<p>修改 <code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code> 文件</p>
+<p>增加如下代码：</p>
+<pre><code class="language-pro"># 使用外部库
+macx{
+    LIBS += -L$$PWD/../build-matrixref-Desktop_Qt_5_12_0_clang_64bit2-Debug/ -lmatrixref
+    INCLUDEPATH += $$PWD/../matrixref
+    DEPENDPATH += $$PWD/../matrixref
+    PRE_TARGETDEPS += $$PWD/../build-matrixref-Desktop_Qt_5_12_0_clang_64bit2-Debug/libmatrixref.a
+}
+</code></pre>
+<a class="header" href="#a看看源码的调用" id="a看看源码的调用"><h2>看看源码的调用</h2></a>
+<pre><code class="language-C++">#if defined __cplusplus
+    #include &lt;iostream&gt;
+#endif
+
+#include &lt;QCoreApplication&gt;
+#include &quot;matrixref.h&quot; // 引用静态库的头文件
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    TechiDaily::Matrixref ref;
+
+#if defined __cplusplus
+    std::cout &lt;&lt; ref.hi() &lt;&lt; std::endl;
+#endif
+
+    return a.exec();
+}
+</code></pre>
+<a class="header" href="#macos-如何使用-qt-创建动态库" id="macos-如何使用-qt-创建动态库"><h1>MacOS 如何使用 Qt 创建动态库?</h1></a>
+<a class="header" href="#macos-如何使用-qt-创建-framework" id="macos-如何使用-qt-创建-framework"><h1>MacOS 如何使用 Qt 创建 Framework?</h1></a>
+<a class="header" href="#linux-如何使用-qt-创建静态库" id="linux-如何使用-qt-创建静态库"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="#linux-如何使用-qt-创建动态库" id="linux-如何使用-qt-创建动态库"><h1>Linux 如何使用 Qt 创建动态库?</h1></a>
+<a class="header" href="#linux-如何使用-qt-创建静态库-1" id="linux-如何使用-qt-创建静态库-1"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="#linux-如何使用-qt-创建动态库-1" id="linux-如何使用-qt-创建动态库-1"><h1>Linux 如何使用 Qt 创建动态库?</h1></a>
+<a class="header" href="#qt-库依赖如何导出" id="qt-库依赖如何导出"><h1>Qt 库依赖如何导出</h1></a>
+<a class="header" href="#qt-库的用途" id="qt-库的用途"><h1>Qt 库的用途</h1></a>
+<a class="header" href="#qt-插件的用途" id="qt-插件的用途"><h1>Qt 插件的用途</h1></a>
+<a class="header" href="#qt-windows-开发导出依赖" id="qt-windows-开发导出依赖"><h1>Qt Windows 开发，导出依赖</h1></a>
+<a class="header" href="#qt-linux-开发导出依赖" id="qt-linux-开发导出依赖"><h1>Qt Linux 开发，导出依赖</h1></a>
+<a class="header" href="#qt-mac-开发导出依赖" id="qt-mac-开发导出依赖"><h1>Qt Mac 开发，导出依赖</h1></a>
+<a class="header" href="#qt-制作安装包" id="qt-制作安装包"><h1>Qt 制作安装包</h1></a>
+<a class="header" href="#qt-windows-安装包制作" id="qt-windows-安装包制作"><h1>Qt Windows 安装包制作</h1></a>
+<a class="header" href="#qt-mac-安装包制作" id="qt-mac-安装包制作"><h1>Qt Mac 安装包制作</h1></a>
+<a class="header" href="#qt-mac-安装包制作-1" id="qt-mac-安装包制作-1"><h1>Qt Mac 安装包制作</h1></a>
+<a class="header" href="#qt-产品提交到应用商店" id="qt-产品提交到应用商店"><h1>Qt 产品提交到应用商店</h1></a>
+<a class="header" href="#windows-应用商店" id="windows-应用商店"><h1>Windows 应用商店</h1></a>
+<a class="header" href="#a苹果-macos-应用-商店" id="a苹果-macos-应用-商店"><h1>苹果 MacOS 应用 商店</h1></a>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
