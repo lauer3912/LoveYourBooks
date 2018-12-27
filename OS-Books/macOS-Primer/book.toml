@@ -1,0 +1,5 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "macOS Primer"
