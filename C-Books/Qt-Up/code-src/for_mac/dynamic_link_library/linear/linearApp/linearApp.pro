@@ -1,22 +1,15 @@
-# MacOS 如何使用 Qt 创建动态库?
-
-## 使用 Qt Creator 创建动态 library, 我们得到最初的`pro`文件
-
-![](./images/mac-create-dynamic-library-01.png)
-
-```pro
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-12-27T08:58:42
+# Project created by QtCreator 2018-12-27T09:06:42
 #
 #-------------------------------------------------
 
-QT       -= gui
+QT       += core gui
 
-TARGET = linearRef
-TEMPLATE = lib
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-DEFINES += LINEARREF_LIBRARY
+TARGET = linearApp
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -29,16 +22,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+CONFIG += c++11
+
 SOURCES += \
-        linearref.cpp
+        main.cpp \
+        mainwindow.cpp
 
 HEADERS += \
-        linearref.h \
-        linearref_global.h
+        mainwindow.h
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
+FORMS += \
+        mainwindow.ui
+
+# 链接外部库
+macx {
+    LIBS += -L$$PWD/../build-linearRef-Desktop_Qt_5_12_0_clang_64bit2-Debug/ -llinearRef.1.0.0
+    INCLUDEPATH += $$PWD/../linearRef
+    DEPENDPATH += $$PWD/../linearRef
 }
 
-```
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+

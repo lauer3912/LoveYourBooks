@@ -1,10 +1,3 @@
-# MacOS 如何使用 Qt 创建动态库?
-
-## 使用 Qt Creator 创建动态 library, 我们得到最初的`pro`文件
-
-![](./images/mac-create-dynamic-library-01.png)
-
-```pro
 #-------------------------------------------------
 #
 # Project created by QtCreator 2018-12-27T08:58:42
@@ -34,11 +27,9 @@ SOURCES += \
 
 HEADERS += \
         linearref.h \
-        linearref_global.h
+        linearref_global.h 
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
-
-```

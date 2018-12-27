@@ -9,18 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -29,11 +28,12 @@
         
 
         
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -136,15 +136,15 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#qmake" id="qmake"><h1>QMake</h1></a>
-<a class="header" href="#a简介" id="a简介"><h2>简介</h2></a>
+                        <a class="header" href="print.html#qmake" id="qmake"><h1>QMake</h1></a>
+<a class="header" href="print.html#a简介" id="a简介"><h2>简介</h2></a>
 <p><code>qmake</code> 是 Qt 附带的工具之一 。</p>
 <p><code>qmake</code>工具有助于简化跨不同平台的开发项目的构建过程。它自动生成<code>Makefile</code>，因此只需要几行信息就可以创建每个<code>Makefile</code>。您可以在任何软件项目中使用<code>qmake</code>，<strong>不管它是用 Qt 编写的还是不用 Qt 编写的</strong>。</p>
 <p>如何使用 qmake?</p>
-<a class="header" href="#a特点" id="a特点"><h2>特点</h2></a>
+<a class="header" href="print.html#a特点" id="a特点"><h2>特点</h2></a>
 <p>手写 <code>Makefile</code> 是比较困难而且容易出错，尤其在进行跨平台开发时必须针对不同平台分别撰写 <code>Makefile</code>，会增加跨平台开发复杂性与困难度。<code>qmake</code> 会根据专案文件（<code>.pro</code>）里面的信息自动生成适合平台的 <code>Makefile</code>。开发者能够自行撰写专案文件或是由 <code>qmake</code> 本身产生。<code>qmake</code> 包含额外的功能来方便 Qt 开发，如自动的包含 <code>moc</code> 和 <code>uic</code> 的编译规则。</p>
-<a class="header" href="#qt-的-pro-文件如何编写" id="qt-的-pro-文件如何编写"><h1>Qt 的 Pro 文件如何编写？</h1></a>
-<a class="header" href="#a快速入门" id="a快速入门"><h1>快速入门</h1></a>
+<a class="header" href="print.html#qt-的-pro-文件如何编写" id="qt-的-pro-文件如何编写"><h1>Qt 的 Pro 文件如何编写？</h1></a>
+<a class="header" href="print.html#a快速入门" id="a快速入门"><h1>快速入门</h1></a>
 <p><a href="http://doc.qt.io/qt-5/qmake-tutorial.html">http://doc.qt.io/qt-5/qmake-tutorial.html</a></p>
 <p>Getting Started</p>
 <p>This tutorial teaches you the basics of qmake. The other topics in this manual contain more detailed information about using qmake.
@@ -388,7 +388,7 @@ CONFIG += console
 }
 </code></pre>
 <p>就这些了！你现在已经完成了 qmake 的教程，并且已经准备好为你的开发项目写项目文件了。</p>
-<a class="header" href="#pro-工程模板" id="pro-工程模板"><h1>Pro 工程模板</h1></a>
+<a class="header" href="print.html#pro-工程模板" id="pro-工程模板"><h1>Pro 工程模板</h1></a>
 <p>模板文件，用于更明确的说明，编码用途</p>
 <table><thead><tr><th> Template  </th><th> qmake Output                                                      </th></tr></thead><tbody>
 <tr><td> app       </td><td> Makefile to build an application.                                 </td></tr>
@@ -469,7 +469,7 @@ CONFIG += qt warn_on release
 <pre><code>CONFIG += qt thread debug
 </code></pre>
 <p>注意，你必须使用“+=”，不要使用“=”，否则 qmake 就不能正确使用连编 Qt 的设置了，比如没法获得所编译的 Qt 库的类型了。</p>
-<a class="header" href="#qmake-高级概念" id="qmake-高级概念"><h1>Qmake 高级概念</h1></a>
+<a class="header" href="print.html#qmake-高级概念" id="qmake-高级概念"><h1>Qmake 高级概念</h1></a>
 <p><a href="http://doc.qt.io/qt-5/qmake-language.html">英文部分 http://doc.qt.io/qt-5/qmake-language.html</a>
 qmake 高级概念
 迄今为止，我们见到的 qmake 项目文件都非常简单，仅仅是一些 name = value 和 name += value 的列表行。qmake 提供了很多更强大的功能，比如你可以使用一个简单的项目文件来为多个平台生成 makefile。</p>
@@ -633,13 +633,13 @@ qmake 提供了可以简单执行，但强大测试的内置函数。这些测�
 <p>所以如果命令 ls /bin 返回 1，那么 bin/main.cpp 将被添加到源文件列表中并且 bin/main.h 将被添加到头文件列表中。</p>
 <p>infile( filename, var, val )
 如果 filename 文件（当它被 qmake 自己解析时）包含一个值为 val 的变量 var，那么这个函数将会返回成功。你也可以不传递第三个参数（val），这时函数将只测试文件中是否分配有这样一个变量 var。</p>
-<a class="header" href="#qmake-变量大全" id="qmake-变量大全"><h1>Qmake 变量大全</h1></a>
+<a class="header" href="print.html#qmake-变量大全" id="qmake-变量大全"><h1>Qmake 变量大全</h1></a>
 <p>具体内容：<a href="http://doc.qt.io/qt-5/qmake-variable-reference.html#">doc.qt.io/qt-5/qmake-variable-reference.html#</a></p>
-<a class="header" href="#qmake-函数大全" id="qmake-函数大全"><h1>Qmake 函数大全</h1></a>
+<a class="header" href="print.html#qmake-函数大全" id="qmake-函数大全"><h1>Qmake 函数大全</h1></a>
 <p>参见：<a href="http://doc.qt.io/qt-5/qmake-function-reference.html">doc.qt.io/qt-5/qmake-function-reference.html</a></p>
-<a class="header" href="#qmake-测试函数" id="qmake-测试函数"><h1>Qmake 测试函数</h1></a>
+<a class="header" href="print.html#qmake-测试函数" id="qmake-测试函数"><h1>Qmake 测试函数</h1></a>
 <p>参见：<a href="http://doc.qt.io/qt-5/qmake-test-function-reference.html">doc.qt.io/qt-5/qmake-test-function-reference.html</a></p>
-<a class="header" href="#qmake-命令行" id="qmake-命令行"><h1>Qmake 命令行</h1></a>
+<a class="header" href="print.html#qmake-命令行" id="qmake-命令行"><h1>Qmake 命令行</h1></a>
 <p><a href="http://doc.qt.io/qt-5/qmake-running.html">http://doc.qt.io/qt-5/qmake-running.html</a></p>
 <p>Running qmake</p>
 <p>The behavior of qmake can be customized when it is run by specifying various options on the command line. These allow the build process to be fine-tuned, provide useful diagnostic information, and can be used to specify the target platform for your project.
@@ -713,7 +713,7 @@ qmake will not look in your current working directory for source code. It will o
 </code></pre>
 <p>In this mode, the files argument can be a list of files or directories. If a directory is specified, it will be included in the DEPENDPATH variable, and relevant code from there will be included in the generated project file. If a file is given, it will be appended to the correct variable, depending on its extension. For example, UI files are added to FORMS, and C++ files are added to SOURCES.</p>
 <p>You may also pass assignments on the command line in this mode. When doing so, these assignments will be placed last in the generated project file.</p>
-<a class="header" href="#pro-示例-1" id="pro-示例-1"><h1>Pro 示例 1</h1></a>
+<a class="header" href="print.html#pro-示例-1" id="pro-示例-1"><h1>Pro 示例 1</h1></a>
 <pre><code class="language-pro">#-------------------------------------------------
 #
 # Project created by QtCreator 2013-05-20T13:22:23
@@ -1087,13 +1087,13 @@ LIBS += -luser32 -ladvapi32 -lwinmm -lshell32
 }
 
 </code></pre>
-<a class="header" href="#pro-示例-2" id="pro-示例-2"><h1>Pro 示例 2</h1></a>
-<a class="header" href="#static-library" id="static-library"><h1>static library</h1></a>
-<a class="header" href="#dynamic-library" id="dynamic-library"><h1>dynamic library</h1></a>
-<a class="header" href="#framework" id="framework"><h1>framework</h1></a>
-<a class="header" href="#a创建-plugin" id="a创建-plugin"><h1>创建 Plugin</h1></a>
-<a class="header" href="#macos-如何使用-qt-创建静态库" id="macos-如何使用-qt-创建静态库"><h1>MacOS 如何使用 Qt 创建静态库?</h1></a>
-<a class="header" href="#a使用-qt-creator-创建静态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建静态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建静态 library, 我们得到最初的<code>pro</code>文件</h2></a>
+<a class="header" href="print.html#pro-示例-2" id="pro-示例-2"><h1>Pro 示例 2</h1></a>
+<a class="header" href="print.html#static-library" id="static-library"><h1>static library</h1></a>
+<a class="header" href="print.html#dynamic-library" id="dynamic-library"><h1>dynamic library</h1></a>
+<a class="header" href="print.html#framework" id="framework"><h1>framework</h1></a>
+<a class="header" href="print.html#a创建-plugin" id="a创建-plugin"><h1>创建 Plugin</h1></a>
+<a class="header" href="print.html#macos-如何使用-qt-创建静态库" id="macos-如何使用-qt-创建静态库"><h1>MacOS 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="print.html#a使用-qt-creator-创建静态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建静态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建静态 library, 我们得到最初的<code>pro</code>文件</h2></a>
 <p><code>/code-src/for_mac/static_link_library/matrix/matrixref/matrixref.pro</code></p>
 <pre><code class="language-qt.pro">#-------------------------------------------------
 #
@@ -1130,7 +1130,7 @@ unix {
 }
 
 </code></pre>
-<a class="header" href="#a使用-qt-creator-创建一个控制台-我们得到最初的pro文件" id="a使用-qt-creator-创建一个控制台-我们得到最初的pro文件"><h2>使用 Qt Creator 创建一个控制台, 我们得到最初的<code>pro</code>文件</h2></a>
+<a class="header" href="print.html#a使用-qt-creator-创建一个控制台-我们得到最初的pro文件" id="a使用-qt-creator-创建一个控制台-我们得到最初的pro文件"><h2>使用 Qt Creator 创建一个控制台, 我们得到最初的<code>pro</code>文件</h2></a>
 <p><code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code></p>
 <pre><code class="language-pro">QT -= gui
 
@@ -1157,7 +1157,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 </code></pre>
-<a class="header" href="#a修改-matrxref_consolepro-文件增加外部库的引用说明" id="a修改-matrxref_consolepro-文件增加外部库的引用说明"><h2>修改 <code>matrxref_console.pro</code> 文件，增加外部库的引用说明</h2></a>
+<a class="header" href="print.html#a修改-matrxref_consolepro-文件增加外部库的引用说明" id="a修改-matrxref_consolepro-文件增加外部库的引用说明"><h2>修改 <code>matrxref_console.pro</code> 文件，增加外部库的引用说明</h2></a>
 <p>修改 <code>/code-src/for_mac/static_link_library/matrix/matrxref_console/matrxref_console.pro</code> 文件</p>
 <p>增加如下代码：</p>
 <pre><code class="language-pro"># 使用外部库
@@ -1168,7 +1168,9 @@ macx{
     PRE_TARGETDEPS += $$PWD/../build-matrixref-Desktop_Qt_5_12_0_clang_64bit2-Debug/libmatrixref.a
 }
 </code></pre>
-<a class="header" href="#a看看源码的调用" id="a看看源码的调用"><h2>看看源码的调用</h2></a>
+<a class="header" href="print.html#a看看源码的调用" id="a看看源码的调用"><h2>看看源码的调用</h2></a>
+<p>发现几个有意思的问题：
+（1）Mac 版本的静态库 matrixref 没有显示定义任何一个导出函数，不知道 Windows 版本上如何？</p>
 <pre><code class="language-C++">#if defined __cplusplus
     #include &lt;iostream&gt;
 #endif
@@ -1189,25 +1191,62 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 </code></pre>
-<a class="header" href="#macos-如何使用-qt-创建动态库" id="macos-如何使用-qt-创建动态库"><h1>MacOS 如何使用 Qt 创建动态库?</h1></a>
-<a class="header" href="#macos-如何使用-qt-创建-framework" id="macos-如何使用-qt-创建-framework"><h1>MacOS 如何使用 Qt 创建 Framework?</h1></a>
-<a class="header" href="#linux-如何使用-qt-创建静态库" id="linux-如何使用-qt-创建静态库"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
-<a class="header" href="#linux-如何使用-qt-创建动态库" id="linux-如何使用-qt-创建动态库"><h1>Linux 如何使用 Qt 创建动态库?</h1></a>
-<a class="header" href="#linux-如何使用-qt-创建静态库-1" id="linux-如何使用-qt-创建静态库-1"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
-<a class="header" href="#linux-如何使用-qt-创建动态库-1" id="linux-如何使用-qt-创建动态库-1"><h1>Linux 如何使用 Qt 创建动态库?</h1></a>
-<a class="header" href="#qt-库依赖如何导出" id="qt-库依赖如何导出"><h1>Qt 库依赖如何导出</h1></a>
-<a class="header" href="#qt-库的用途" id="qt-库的用途"><h1>Qt 库的用途</h1></a>
-<a class="header" href="#qt-插件的用途" id="qt-插件的用途"><h1>Qt 插件的用途</h1></a>
-<a class="header" href="#qt-windows-开发导出依赖" id="qt-windows-开发导出依赖"><h1>Qt Windows 开发，导出依赖</h1></a>
-<a class="header" href="#qt-linux-开发导出依赖" id="qt-linux-开发导出依赖"><h1>Qt Linux 开发，导出依赖</h1></a>
-<a class="header" href="#qt-mac-开发导出依赖" id="qt-mac-开发导出依赖"><h1>Qt Mac 开发，导出依赖</h1></a>
-<a class="header" href="#qt-制作安装包" id="qt-制作安装包"><h1>Qt 制作安装包</h1></a>
-<a class="header" href="#qt-windows-安装包制作" id="qt-windows-安装包制作"><h1>Qt Windows 安装包制作</h1></a>
-<a class="header" href="#qt-mac-安装包制作" id="qt-mac-安装包制作"><h1>Qt Mac 安装包制作</h1></a>
-<a class="header" href="#qt-mac-安装包制作-1" id="qt-mac-安装包制作-1"><h1>Qt Mac 安装包制作</h1></a>
-<a class="header" href="#qt-产品提交到应用商店" id="qt-产品提交到应用商店"><h1>Qt 产品提交到应用商店</h1></a>
-<a class="header" href="#windows-应用商店" id="windows-应用商店"><h1>Windows 应用商店</h1></a>
-<a class="header" href="#a苹果-macos-应用-商店" id="a苹果-macos-应用-商店"><h1>苹果 MacOS 应用 商店</h1></a>
+<a class="header" href="print.html#macos-如何使用-qt-创建动态库" id="macos-如何使用-qt-创建动态库"><h1>MacOS 如何使用 Qt 创建动态库?</h1></a>
+<a class="header" href="print.html#a使用-qt-creator-创建动态-library-我们得到最初的pro文件" id="a使用-qt-creator-创建动态-library-我们得到最初的pro文件"><h2>使用 Qt Creator 创建动态 library, 我们得到最初的<code>pro</code>文件</h2></a>
+<p><img src="./images/%08mac-create-dynamic-library-01.png" alt="" /></p>
+<pre><code class="language-pro">#-------------------------------------------------
+#
+# Project created by QtCreator 2018-12-27T08:58:42
+#
+#-------------------------------------------------
+
+QT       -= gui
+
+TARGET = linearRef
+TEMPLATE = lib
+
+DEFINES += LINEARREF_LIBRARY
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+        linearref.cpp
+
+HEADERS += \
+        linearref.h \
+        linearref_global.h
+
+unix {
+    target.path = /usr/lib
+    INSTALLS += target
+}
+
+</code></pre>
+<a class="header" href="print.html#macos-如何使用-qt-创建-framework" id="macos-如何使用-qt-创建-framework"><h1>MacOS 如何使用 Qt 创建 Framework?</h1></a>
+<a class="header" href="print.html#linux-如何使用-qt-创建静态库" id="linux-如何使用-qt-创建静态库"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="print.html#linux-如何使用-qt-创建静态库-1" id="linux-如何使用-qt-创建静态库-1"><h1>Linux 如何使用 Qt 创建静态库?</h1></a>
+<a class="header" href="print.html#qt-库依赖如何导出" id="qt-库依赖如何导出"><h1>Qt 库依赖如何导出</h1></a>
+<a class="header" href="print.html#qt-库的用途" id="qt-库的用途"><h1>Qt 库的用途</h1></a>
+<a class="header" href="print.html#qt-插件的用途" id="qt-插件的用途"><h1>Qt 插件的用途</h1></a>
+<a class="header" href="print.html#qt-windows-开发导出依赖" id="qt-windows-开发导出依赖"><h1>Qt Windows 开发，导出依赖</h1></a>
+<a class="header" href="print.html#qt-linux-开发导出依赖" id="qt-linux-开发导出依赖"><h1>Qt Linux 开发，导出依赖</h1></a>
+<a class="header" href="print.html#qt-mac-开发导出依赖" id="qt-mac-开发导出依赖"><h1>Qt Mac 开发，导出依赖</h1></a>
+<a class="header" href="print.html#qt-制作安装包" id="qt-制作安装包"><h1>Qt 制作安装包</h1></a>
+<a class="header" href="print.html#qt-windows-安装包制作" id="qt-windows-安装包制作"><h1>Qt Windows 安装包制作</h1></a>
+<a class="header" href="print.html#qt-mac-安装包制作" id="qt-mac-安装包制作"><h1>Qt Mac 安装包制作</h1></a>
+<a class="header" href="print.html#qt-mac-安装包制作-1" id="qt-mac-安装包制作-1"><h1>Qt Mac 安装包制作</h1></a>
+<a class="header" href="print.html#qt-产品提交到应用商店" id="qt-产品提交到应用商店"><h1>Qt 产品提交到应用商店</h1></a>
+<a class="header" href="print.html#windows-应用商店" id="windows-应用商店"><h1>Windows 应用商店</h1></a>
+<a class="header" href="print.html#a苹果-macos-应用-商店" id="a苹果-macos-应用-商店"><h1>苹果 MacOS 应用 商店</h1></a>
 
                     </main>
 
@@ -1237,6 +1276,9 @@ int main(int argc, char *argv[])
         
 
         
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
@@ -1253,7 +1295,9 @@ int main(int argc, char *argv[])
         
         <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
         
