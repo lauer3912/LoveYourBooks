@@ -1,3 +1,6 @@
 [submodule "Rust-Books/rust-cookbook-by-nursery"]
 	path = Rust-Books/rust-cookbook-by-nursery
 	url = https://github.com/rust-lang-nursery/rust-cookbook.git
+[submodule "Rust-Books/rust-reference-by-nursery"]
+	path = Rust-Books/rust-reference-by-nursery
+	url = https://github.com/rust-lang-nursery/reference.git
