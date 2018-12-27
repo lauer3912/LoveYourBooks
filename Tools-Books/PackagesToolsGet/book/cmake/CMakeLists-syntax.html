@@ -9,21 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <base href="../">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -32,11 +31,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "../";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="../vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="../vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="../vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="../chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="../cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="../cmake/CMakeLists-syntax.html" class="active"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="../cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="../cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="../cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="../cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="../chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="../brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="../brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="../brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="../brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="../brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="../brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="../brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="../brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="../brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="../brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="../brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="../brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html" class="active"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> *PETSc</a></li></ol></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -108,7 +105,7 @@
                         <h1 class="menu-title">Packages Tools Get Start</h1> 
 
                         <div class="right-buttons">
-                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
                         </div>
@@ -139,76 +136,76 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#cmakeliststxt-语法" id="cmakeliststxt-语法"><h1>CMakeLists.txt 语法</h1></a>
-<a class="header" href="#project" id="project"><h2>project</h2></a>
+                        <a class="header" href="cmake/CMakeLists-syntax.html#cmakeliststxt-语法" id="cmakeliststxt-语法"><h1>CMakeLists.txt 语法</h1></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#project" id="project"><h2>project</h2></a>
 <pre><code>语句 : project(&lt;projectname&gt; [languageName1 languageName2 … ] )
 作用 : 指定项目名
 </code></pre>
-<a class="header" href="#cmake_minimum_required" id="cmake_minimum_required"><h2>cmake_minimum_required</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#cmake_minimum_required" id="cmake_minimum_required"><h2>cmake_minimum_required</h2></a>
 <pre><code>语句 : cmake_minimum_required(VERSION major[.minor[.patch[.tweak]]] [FATAL_ERROR])
 作用 : 指定cmake需要的最小版本
 </code></pre>
-<a class="header" href="#aux_source_directory" id="aux_source_directory"><h2>aux_source_directory</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#aux_source_directory" id="aux_source_directory"><h2>aux_source_directory</h2></a>
 <pre><code>语句 : aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
 作用 : 获取指定目录下的所有文件,保存到variable中,包括 .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp .hxx .in .txx文件
 示例 : aux_source_directory(. var)#获取当前目录中源文件
 </code></pre>
-<a class="header" href="#add_executable" id="add_executable"><h2>add_executable</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#add_executable" id="add_executable"><h2>add_executable</h2></a>
 <pre><code>语句 : add_executable(&lt;name&gt; [WIN32] [MACOSX_BUNDLE] [EXCLUDE_FROM_ALL] source1 source2 … sourceN)
 作用 : 将指定文件source编译成可执行文件,命名位name
 示例 : add_executable(hello hello.cpp)
 </code></pre>
-<a class="header" href="#add_library" id="add_library"><h2>add_library</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#add_library" id="add_library"><h2>add_library</h2></a>
 <pre><code>语句 : add_library([STATIC | SHARED | MODULE] [EXCLUDE_FROM_ALL] source1 source2 … sourceN)
 作用 : 添加一个名为&lt;name&gt;的库文件，指定STATIC，SHARED，或者MODULE参数用来指定要创建的库的类型。STATIC库是目标文件的归档文件，在链接其它目标的时候使用。SHARED库会被动态链接，在运行时被加载。MODULE库是不会被链接到其它目标中的插件，但是可能会在运行时使用dlopen-系列的函数动态链接。如果没有类型被显式指定，这个选项将会根据变量BUILD_SHARED_LIBS的当前值是否为真决定是STATIC还是SHARED
 示例 : add_library(Lib ${DIR_SRCS})
 </code></pre>
-<a class="header" href="#add_dependencies" id="add_dependencies"><h2>add_dependencies</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#add_dependencies" id="add_dependencies"><h2>add_dependencies</h2></a>
 <pre><code>语句 : add_dependencies(target-name depend-target1 depend-target2 …)
 作用 : 用于指定某个目标（可执行文件或者库文件）依赖于其他的目标。这里的目标必须是 add_executable、add_library、add_custom_target 命令创建的目标
 </code></pre>
-<a class="header" href="#add_subdirectory" id="add_subdirectory"><h2>add_subdirectory</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#add_subdirectory" id="add_subdirectory"><h2>add_subdirectory</h2></a>
 <pre><code>语句 : add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 作用 : 用于添加一个需要进行构建的子目录
 示例 : add_subdirectory(directory)
 </code></pre>
-<a class="header" href="#target_link_libraries" id="target_link_libraries"><h2>target_link_libraries</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#target_link_libraries" id="target_link_libraries"><h2>target_link_libraries</h2></a>
 <pre><code>语句 : target_link_libraries(&lt;target&gt; [item1 [item2 […]]] [[debug|optimized|general] ] …)
 作用 : 用于指定 target 需要链接 item1 item2 …。这里 target 必须已经被创建，链接的 item 可以是已经存在的 target（依赖关系会自动添加）
 示例 : target_link_libraries(Main Lib)
 </code></pre>
-<a class="header" href="#set" id="set"><h2>set</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#set" id="set"><h2>set</h2></a>
 <pre><code>语句 : set(&lt;variable&gt; &lt;value&gt; [[CACHE &lt;type&gt; &lt;docstring&gt; [FORCE]] | PARENT_SCOPE])
 作用 : 用于设定变量 variable 的值为 value。variable可以自己定义
 示例 : set(var &quot;${list}_exe&quot;)
 </code></pre>
-<a class="header" href="#unset" id="unset"><h2>unset</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#unset" id="unset"><h2>unset</h2></a>
 <pre><code>语句 : unset(&lt;variable&gt; [CACHE])
 
 作用 : 用于移除变量 variable。如果指定了 CACHE 变量将被从 Cache 中移除。
 
 示例 : unset(VAR CACHE)
 </code></pre>
-<a class="header" href="#message" id="message"><h2>message</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#message" id="message"><h2>message</h2></a>
 <pre><code>语句 : message([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERROR] “message to display” …)
 作用 : 输出信息
 示例 : message(&quot;hello world&quot;)
 </code></pre>
-<a class="header" href="#include_directories" id="include_directories"><h2>include_directories</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#include_directories" id="include_directories"><h2>include_directories</h2></a>
 <pre><code>语句 : include_directories([AFTER|BEFORE] [SYSTEM] dir1 dir2 …)
 作用 : 用于设定目录，这些设定的目录将被编译器用来查找 include 文件
 示例 : include_directories(${PROJECT_SOURCE_DIR}/lib)
 </code></pre>
-<a class="header" href="#find_path" id="find_path"><h2>find_path</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#find_path" id="find_path"><h2>find_path</h2></a>
 <pre><code>语句 : find_path(&lt;VAR&gt; name1 [path1 path2 …])
 作用 : 用于查找包含文件 name1 的路径，如果找到则将路径保存在 VAR 中（此路径为一个绝对路径），如果没有找到则结果为 &lt;VAR&gt;-NOTFOUND。默认的情况下，VAR 会被保存在 Cache 中，这时候我们需要清除 VAR 才可以进行下一次查询（使用 unset 命令）
 </code></pre>
-<a class="header" href="#add_definitions" id="add_definitions"><h2>add_definitions</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#add_definitions" id="add_definitions"><h2>add_definitions</h2></a>
 <pre><code>语句 : find_library(&lt;VAR&gt; name1 [path1 path2 …])
 作用 : 用于添加编译器命令行标志（选项），通常的情况下我们使用其来添加预处理器定义
 示例 : add_definitions(-D_UNICODE -DUNICODE)
 </code></pre>
-<a class="header" href="#execute_process" id="execute_process"><h2>execute_process</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#execute_process" id="execute_process"><h2>execute_process</h2></a>
 <pre><code>语句 : execute_process(COMMAND &lt;cmd1&gt; [args1...]]  [COMMAND &lt;cmd2&gt; [args2...] [...]]
                                         [WORKING_DIRECTORY &lt;directory&gt;]
                                         [TIMEOUT &lt;seconds&gt;]
@@ -225,7 +222,7 @@
 作用 : 用于执行一个或者多个外部命令。每一个命令的标准输出通过管道转为下一个命令的标准输入。WORKING_DIRECTORY 用于指定外部命令的工作目录，RESULT_VARIABLE 用于指定一个变量保存外部命令执行的结果，这个结果可能是最后一个执行的外部命令的退出码或者是一个描述错误条件的字符串，OUTPUT_VARIABLE 或者 ERROR_VARIABLE 用于指定一个变量保存标准输出或者标准错误，OUTPUT_QUIET 或者 ERROR_QUIET 用于忽略标准输出和标准错误。
 示例 : execute_process(COMMAND ls)
 </code></pre>
-<a class="header" href="#file" id="file"><h2>file</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#file" id="file"><h2>file</h2></a>
 <pre><code>语句 : file(WRITE filename &quot;message to write&quot;... )
 作用 : WRITE选项将会写一条消息到名为filename的文件中。如果文件已经存在，该命令会覆盖已有的文件；如果文件不存在，它将创建该文件。
 
@@ -287,8 +284,8 @@
 语句 : file(DOWNLOAD url file [TIMEOUT timeout] [STATUS status] [LOG log] [EXPECTED_MD5 sum] [SHOW_PROGRESS])
 作用 : DOWNLOAD 将给定的URL下载到指定的文件中。如果指定了LOG var选项，下载日志将会被输出到var中。如果指定了STATUS var选项，下载操作的状态会被输出到var中。该状态返回值是一个长度为2的list。list的第一个元素是操作的数字返回值，第二个返回值是错误的字符串值。错误信息如果是数字0，操作中没有发生错误。如果指定了TIMEOUT time选项，在time秒之后，操作会超时退出；time应该是整数。如果指定了EXPECTED_MD5 sum选项，下载操作会认证下载的文件的实际MD5和是否与期望值匹配。如果不匹配，操作将返回一个错误。如果指定了SHOW_PROGRESS选项，进度信息会以状态信息的形式被打印出来，直到操作完成。
 </code></pre>
-<a class="header" href="#cmake-常用语句" id="cmake-常用语句"><h2>cmake 常用语句</h2></a>
-<a class="header" href="#a条件控制" id="a条件控制"><h3>条件控制</h3></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#cmake-常用语句" id="cmake-常用语句"><h2>cmake 常用语句</h2></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a条件控制" id="a条件控制"><h3>条件控制</h3></a>
 <pre><code class="language-bash">if(expression)
 # ...
 elseif(expression2)
@@ -302,7 +299,7 @@ endif()
 如果 string 为（不区分大小写）0、OFF、NO、FALSE、N、IGNORE、空字符串、以 -NOTFOUND 结尾的字符串则表示假
 如果 string 不符合上面两种情况，则 string 被认为是一个变量的名字。变量的值为第二条所述的各值则表示假，否则表示真</p>
 <p>===========================================================</p>
-<a class="header" href="#if-中的语句" id="if-中的语句"><h4>if 中的语句</h4></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#if-中的语句" id="if-中的语句"><h4>if 中的语句</h4></a>
 <ul>
 <li>
 <p>if(NOT expression) 为真的前提是 expression 为假</p>
@@ -344,22 +341,22 @@ if(variable|string STREQUAL variable|string)
 <p>if(DEFINED variable) 为真的前提是 variable 表示的变量被定义了</p>
 </li>
 </ul>
-<a class="header" href="#a循环结构" id="a循环结构"><h4>循环结构</h4></a>
-<a class="header" href="#foreach-循环" id="foreach-循环"><h5>foreach 循环</h5></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a循环结构" id="a循环结构"><h4>循环结构</h4></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#foreach-循环" id="foreach-循环"><h5>foreach 循环</h5></a>
 <pre><code class="language-bash">set(VAR a b c)
 foreach(f ${VAR})
     message(${f})
 endforeach()
 </code></pre>
-<a class="header" href="#while-循环" id="while-循环"><h5>while 循环</h5></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#while-循环" id="while-循环"><h5>while 循环</h5></a>
 <pre><code class="language-bash">set(VAR 5)
 while(${VAR} GREATER 0)
     message(${VAR})
     math(EXPR VAR &quot;${VAR} - 1&quot;)
 endwhile()
 </code></pre>
-<a class="header" href="#a宏定义" id="a宏定义"><h5>宏定义</h5></a>
-<a class="header" href="#macro-循环" id="macro-循环"><h6>macro 循环</h6></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a宏定义" id="a宏定义"><h5>宏定义</h5></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#macro-循环" id="macro-循环"><h6>macro 循环</h6></a>
 <pre><code class="language-bash"># 定义一个宏 hello
 macro(hello MESSAGE)
     message(${MESSAGE})
@@ -371,7 +368,7 @@ function(hello MESSAGE)
     message(${MESSAGE})
 endfunction()
 </code></pre>
-<a class="header" href="#a函数定义" id="a函数定义"><h6>函数定义</h6></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a函数定义" id="a函数定义"><h6>函数定义</h6></a>
 <pre><code class="language-bash">function(get_func RESULT)
     # RESULT 的值为实参的值，因此需要使用 ${RESULT}
     # 这里使用 PARENT_SCOPE 是因为函数会构建一个局部作用域
@@ -389,7 +386,7 @@ get_macro(V2)
 # 输出 Hello Macro
 message(${V2})
 </code></pre>
-<a class="header" href="#a字符串控制" id="a字符串控制"><h3>字符串控制</h3></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a字符串控制" id="a字符串控制"><h3>字符串控制</h3></a>
 <ul>
 <li>string(REGEX MATCH (regular_expression) (output variable) (input) [(input)...])</li>
 <li>string(REGEX MATCHALL (regular_expression) (output variable) (input) [(input)...])</li>
@@ -408,7 +405,7 @@ message(${V2})
 <li>string(STRIP (string) (output variable))</li>
 <li>string(RANDOM [LENGTH (length)][alphabet (alphabet)] (output variable))</li>
 </ul>
-<a class="header" href="#cmake-常用变量" id="cmake-常用变量"><h3>cmake 常用变量</h3></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#cmake-常用变量" id="cmake-常用变量"><h3>cmake 常用变量</h3></a>
 <ol>
 <li>UNIX 如果为真，表示为 UNIX-like 的系统，包括 Apple OS X 和 CygWin</li>
 <li>WIN32 如果为真，表示为 Windows 系统，包括 CygWin</li>
@@ -419,8 +416,8 @@ message(${V2})
 <li>CMAKE_LIBRARY_OUTPUT_DIRECTORY 用于设置 LIBRARY 目标的输出路径</li>
 <li>CMAKE_RUNTIME_OUTPUT_DIRECTORY 用于设置 RUNTIME 目标的输出路径</li>
 </ol>
-<a class="header" href="#a可能会用到的一些命令" id="a可能会用到的一些命令"><h4>可能会用到的一些命令</h4></a>
-<a class="header" href="#get_property-获取一个属性值" id="get_property-获取一个属性值"><h5>get_property 获取一个属性值</h5></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#a可能会用到的一些命令" id="a可能会用到的一些命令"><h4>可能会用到的一些命令</h4></a>
+<a class="header" href="cmake/CMakeLists-syntax.html#get_property-获取一个属性值" id="get_property-获取一个属性值"><h5>get_property 获取一个属性值</h5></a>
 <p>get_property(<variable>
 &lt;GLOBAL |
 DIRECTORY [dir] |
@@ -451,13 +448,13 @@ get_directory_property(<variable> [DIRECTORY <dir>] &lt;prop-name&gt;)</p>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../cmake/cmake-commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="cmake/cmake-commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../cmake/execute-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="cmake/execute-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -469,13 +466,13 @@ get_directory_property(<variable> [DIRECTORY <dir>] &lt;prop-name&gt;)</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../cmake/cmake-commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="cmake/cmake-commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../cmake/execute-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="cmake/execute-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -490,14 +487,17 @@ get_directory_property(<variable> [DIRECTORY <dir>] &lt;prop-name&gt;)</p>
         
 
         
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

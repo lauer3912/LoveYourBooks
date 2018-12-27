@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>引用和借用 - Rust Programming Language Primer - Rust 编程语言入门</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="ferris.css">
+        
+        <link rel="stylesheet" href="theme/edition.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="1st-glance/index.html"><strong aria-hidden="true">1.</strong> 初识Rust</a></li><li><a href="install/preface.html"><strong aria-hidden="true">2.</strong> 安装Rust</a></li><li><ol class="section"><li><a href="install/install_rust_on_linux.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="install/install_rust_on_mac_os.html"><strong aria-hidden="true">2.2.</strong> Mac</a></li><li><a href="install/install_rust_on_windows.html"><strong aria-hidden="true">2.3.</strong> Windows</a></li><li><a href="install/use_mirrors_quickly.html"><strong aria-hidden="true">2.4.</strong> 利用科大镜像源提速</a></li><li><a href="install/rustup.html"><strong aria-hidden="true">2.5.</strong> 版本管理工具: rustup</a></li></ol></li><li><a href="editors/preface.html"><strong aria-hidden="true">3.</strong> 编辑器</a></li><li><ol class="section"><li><a href="editors/before.html"><strong aria-hidden="true">3.1.</strong> 前期准备</a></li><li><a href="editors/vim.html"><strong aria-hidden="true">3.2.</strong> Vim</a></li><li><a href="editors/emacs.html"><strong aria-hidden="true">3.3.</strong> Emacs</a></li><li><a href="editors/vscode.html"><strong aria-hidden="true">3.4.</strong> VS Code</a></li><li><a href="editors/atom.html"><strong aria-hidden="true">3.5.</strong> Atom</a></li><li><a href="editors/sublime.html"><strong aria-hidden="true">3.6.</strong> Sublime Text</a></li><li><a href="editors/visualstudio.html"><strong aria-hidden="true">3.7.</strong> Visual Studio</a></li><li><a href="editors/intellij-idea.html"><strong aria-hidden="true">3.8.</strong> Intellij IDEA</a></li><li><a href="editors/spacemacs.html"><strong aria-hidden="true">3.9.</strong> Spacemacs</a></li></ol></li><li><a href="quickstart/quickstart.html"><strong aria-hidden="true">4.</strong> 快速入门</a></li><li><ol class="section"><li><a href="quickstart/rust-travel.html"><strong aria-hidden="true">4.1.</strong> Rust旅程</a></li><li><a href="quickstart/let.html"><strong aria-hidden="true">4.2.</strong> 变量绑定</a></li><li><a href="quickstart/data-types.html"><strong aria-hidden="true">4.3.</strong> 数据类型</a></li><li><a href="quickstart/vector-string.html"><strong aria-hidden="true">4.4.</strong> 数组、动态数组和字符串</a></li><li><a href="quickstart/struct-enum.html"><strong aria-hidden="true">4.5.</strong> 结构体与枚举</a></li><li><a href="quickstart/control-flow.html"><strong aria-hidden="true">4.6.</strong> 控制流</a></li><li><a href="quickstart/function-method.html"><strong aria-hidden="true">4.7.</strong> 函数与方法</a></li><li><a href="quickstart/trait.html"><strong aria-hidden="true">4.8.</strong> 特性</a></li><li><a href="quickstart/comments-document.html"><strong aria-hidden="true">4.9.</strong> 注释与文档</a></li><li><a href="quickstart/io-stream.html"><strong aria-hidden="true">4.10.</strong> 输入输出流</a></li></ol></li><li><a href="core/overview.html"><strong aria-hidden="true">5.</strong> 深入学习</a></li><li><ol class="section"><li><a href="core/cargo-projects-manager/cargo-projects-manager.html"><strong aria-hidden="true">5.1.</strong> Cargo 项目管理</a></li><li><ol class="section"><li><a href="core/cargo-detailed-cfg/cargo-detailed-cfg.html"><strong aria-hidden="true">5.1.1.</strong> 高级参数配置</a></li></ol></li><li><a href="core/cargo-io/overview.html"><strong aria-hidden="true">5.2.</strong> Cargo.io</a></li><li><a href="core/comments/overview.html"><strong aria-hidden="true">5.3.</strong> 注释</a></li><li><a href="core/keywords/overview.html"><strong aria-hidden="true">5.4.</strong> 关键字</a></li><li><a href="core/heap-stack/overview.html"><strong aria-hidden="true">5.5.</strong> 栈(Stack)与堆(Heap)</a></li><li><a href="core/type/preface.html"><strong aria-hidden="true">5.6.</strong> 数据类型</a></li><li><ol class="section"><li><a href="core/type/primitives-types.html"><strong aria-hidden="true">5.6.1.</strong> 内置类型&lt;原生&gt;</a></li><li><ol class="section"><li><a href="core/type/bool.html"><strong aria-hidden="true">5.6.1.1.</strong> 布尔类型 (boolean)</a></li><li><a href="core/type/char.html"><strong aria-hidden="true">5.6.1.2.</strong> 字符类型 (char)</a></li><li><a href="core/type/integer.html"><strong aria-hidden="true">5.6.1.3.</strong> 整型 (integer)</a></li><li><a href="core/type/float.html"><strong aria-hidden="true">5.6.1.4.</strong> 浮点型 (float)</a></li><li><a href="core/type/array.html"><strong aria-hidden="true">5.6.1.5.</strong> 数组类型 (array)</a></li><li><a href="core/type/tuple.html"><strong aria-hidden="true">5.6.1.6.</strong> 元组类型 (tuple)</a></li></ol></li><li><a href="core/type/compound-types.html"><strong aria-hidden="true">5.6.2.</strong> 复合类型&lt;自定义&gt;</a></li><li><ol class="section"><li><a href="core/enums/overview.html"><strong aria-hidden="true">5.6.2.1.</strong> 枚举 (Enums)</a></li><li><a href="core/structs/overview.html"><strong aria-hidden="true">5.6.2.2.</strong> 结构体 (Struct)</a></li></ol></li><li><a href="core/type/macro-kernel-types.html"><strong aria-hidden="true">5.6.3.</strong> 微内核类型</a></li><li><ol class="section"><li><a href="core/type/unit.html"><strong aria-hidden="true">5.6.3.1.</strong> ☆元类型 (unit)☆</a></li><li><a href="core/type/raw-point.html"><strong aria-hidden="true">5.6.3.2.</strong> 指针类型 (raw point)</a></li><li><a href="core/type/fn.html"><strong aria-hidden="true">5.6.3.3.</strong> 函数指针类型 (reference)</a></li><li><a href="core/type/ref.html"><strong aria-hidden="true">5.6.3.4.</strong> 引用类型 (reference)</a></li></ol></li></ol></li><li><a href="core/collections/overview.html"><strong aria-hidden="true">5.7.</strong> 常用集合类型</a></li><li><ol class="section"><li><a href="core/collections/vec.html"><strong aria-hidden="true">5.7.1.</strong> 向量 Vector</a></li><li><a href="core/collections/string.html"><strong aria-hidden="true">5.7.2.</strong> 字符串 String</a></li><li><a href="core/collections/hashmap.html"><strong aria-hidden="true">5.7.3.</strong> 哈希表 Hash Map</a></li></ol></li><li><a href="core/data-structure/preface.html"><strong aria-hidden="true">5.8.</strong> 常用数据结构实现</a></li><li><ol class="section"><li><a href="core/data-structure/stack.html"><strong aria-hidden="true">5.8.1.</strong> 栈结构</a></li><li><a href="core/data-structure/queue.html"><strong aria-hidden="true">5.8.2.</strong> 队列</a></li><li><a href="core/data-structure/binary_tree.html"><strong aria-hidden="true">5.8.3.</strong> 二叉树</a></li><li><a href="core/data-structure/priority_queue.html"><strong aria-hidden="true">5.8.4.</strong> 优先队列</a></li><li><a href="core/data-structure/linked_list.html"><strong aria-hidden="true">5.8.5.</strong> 链表</a></li><li><a href="core/data-structure/graph.html"><strong aria-hidden="true">5.8.6.</strong> 图结构</a></li></ol></li><li><a href="core/variable/overview.html"><strong aria-hidden="true">5.9.</strong> 变量</a></li><li><ol class="section"><li><a href="core/variable/what-is-variable.html"><strong aria-hidden="true">5.9.1.</strong> 变量声明</a></li><li><a href="core/variable/bindings.html"><strong aria-hidden="true">5.9.2.</strong> 变量绑定</a></li><li><a href="core/variable/mutability.html"><strong aria-hidden="true">5.9.3.</strong> 变量可变性</a></li><li><a href="core/variable/scope.html"><strong aria-hidden="true">5.9.4.</strong> 变量作用域</a></li><li><a href="core/ownership-system/preface.html"><strong aria-hidden="true">5.9.5.</strong> 可变性、所有权、租借和生命期</a></li><li><ol class="section"><li><a href="core/ownership-system/what-is-ownership.html"><strong aria-hidden="true">5.9.5.1.</strong> 什么是所有权？</a></li><li><a href="core/ownership-system/example-ownership.html"><strong aria-hidden="true">5.9.5.2.</strong> 所有权练习</a></li><li><a href="core/ownership-system/borrowing_reference.html" class="active"><strong aria-hidden="true">5.9.5.3.</strong> 引用和借用</a></li><li><a href="core/ownership-system/lifetime.html"><strong aria-hidden="true">5.9.5.4.</strong> 生命周期</a></li></ol></li></ol></li><li><a href="core/constants/overview.html"><strong aria-hidden="true">5.10.</strong> 常量</a></li><li><ol class="section"><li><a href="core/constants/const-value.html"><strong aria-hidden="true">5.10.1.</strong> 常量值</a></li><li><a href="core/constants/const-function.html"><strong aria-hidden="true">5.10.2.</strong> ☆常量函数☆</a></li></ol></li><li><a href="core/operator/overview.html"><strong aria-hidden="true">5.11.</strong> 运算符</a></li><li><ol class="section"><li><a href="core/operator/base.html"><strong aria-hidden="true">5.11.1.</strong> 基础运算符</a></li><li><a href="core/operator/as.html"><strong aria-hidden="true">5.11.2.</strong> 类型转换 as 运算符</a></li><li><a href="core/operator/overloading/operator.html"><strong aria-hidden="true">5.11.3.</strong> ☆运算符重载☆</a></li></ol></li><li><a href="core/flow-control/overview.html"><strong aria-hidden="true">5.12.</strong> 流程控制</a></li><li><ol class="section"><li><a href="core/flow-control/condition/overview.html"><strong aria-hidden="true">5.12.1.</strong> 判断/条件</a></li><li><a href="core/flow-control/loop/overview.html"><strong aria-hidden="true">5.12.2.</strong> 循环</a></li></ol></li><li><a href="core/function/overview.html"><strong aria-hidden="true">5.13.</strong> 函数</a></li><li><ol class="section"><li><a href="core/function/arguement.html"><strong aria-hidden="true">5.13.1.</strong> 函数参数</a></li><li><a href="core/function/return_value.html"><strong aria-hidden="true">5.13.2.</strong> 函数返回值</a></li><li><a href="core/function/statement_expression.html"><strong aria-hidden="true">5.13.3.</strong> 语句和表达式</a></li><li><a href="core/function/higher_order_function.html"><strong aria-hidden="true">5.13.4.</strong> 高阶函数</a></li></ol></li><li><a href="core/closure/overview.html"><strong aria-hidden="true">5.14.</strong> 闭包</a></li><li><ol class="section"><li><a href="core/closure/syntax.html"><strong aria-hidden="true">5.14.1.</strong> 闭包的语法</a></li><li><a href="core/closure/implementation.html"><strong aria-hidden="true">5.14.2.</strong> 闭包的实现</a></li><li><a href="core/closure/as_argument_return_value.html"><strong aria-hidden="true">5.14.3.</strong> 闭包作为参数和返回值</a></li></ol></li><li><a href="core/match/overview.html"><strong aria-hidden="true">5.15.</strong> 模式匹配</a></li><li><ol class="section"><li><a href="core/match/match.html"><strong aria-hidden="true">5.15.1.</strong> match关键字</a></li><li><a href="core/match/pattern.html"><strong aria-hidden="true">5.15.2.</strong> 模式 pattern</a></li></ol></li><li><a href="core/iterator/overview.html"><strong aria-hidden="true">5.16.</strong> 迭代器</a></li><li><ol class="section"><li><a href="core/iterator/iterator.html"><strong aria-hidden="true">5.16.1.</strong> 迭代器、适配器、消费者</a></li></ol></li><li><a href="core/macro/macro.html"><strong aria-hidden="true">5.17.</strong> 宏 (macro)</a></li><li><a href="core/format/overview.html"><strong aria-hidden="true">5.18.</strong> 格式化</a></li><li><a href="core/oop/overview.html"><strong aria-hidden="true">5.19.</strong> 面向对象编程</a></li><li><ol class="section"><li><a href="core/oop/what-is-oo.html"><strong aria-hidden="true">5.19.1.</strong> Rust 面向对象语言特点</a></li><li><a href="core/oop/trait/overview.html"><strong aria-hidden="true">5.19.2.</strong> 特性/接口 (Trait)</a></li><li><ol class="section"><li><a href="core/oop/trait/trait.html"><strong aria-hidden="true">5.19.2.1.</strong> trait关键字</a></li><li><a href="core/oop/trait/trait-object.html"><strong aria-hidden="true">5.19.2.2.</strong> trait对象</a></li></ol></li><li><a href="core/oop/oo-design-patterns.html"><strong aria-hidden="true">5.19.3.</strong> 设计模式</a></li></ol></li><li><a href="core/generic-program/generic.html"><strong aria-hidden="true">5.20.</strong> 泛型编程</a></li><li><ol class="section"><li><a href="core/generic-program/what-is-generic.html"><strong aria-hidden="true">5.20.1.</strong> 什么是泛型?</a></li><li><a href="core/generic-program/generic-function.html"><strong aria-hidden="true">5.20.2.</strong> 泛型函数</a></li><li><a href="core/generic-program/generic-data-struct.html"><strong aria-hidden="true">5.20.3.</strong> 泛型数据结构</a></li></ol></li><li><a href="core/module/preface.html"><strong aria-hidden="true">5.21.</strong> 模块和包系统、Prelude</a></li><li><ol class="section"><li><a href="core/module/module.html"><strong aria-hidden="true">5.21.1.</strong> 模块 module 和包 crate</a></li><li><a href="core/module/prelude.html"><strong aria-hidden="true">5.21.2.</strong> Prelude</a></li><li><a href="core/module/pub-restricted.html"><strong aria-hidden="true">5.21.3.</strong> pub restricted</a></li></ol></li><li><a href="core/error-handling/option-result.html"><strong aria-hidden="true">5.22.</strong> 错误处理 Error Handling</a></li><li><ol class="section"><li><a href="core/error-handling/option.html"><strong aria-hidden="true">5.22.1.</strong> Option 类型</a></li><li><a href="core/error-handling/result.html"><strong aria-hidden="true">5.22.2.</strong> Result 类型</a></li></ol></li><li><a href="core/io/preface.html"><strong aria-hidden="true">5.23.</strong> 输入与输出</a></li><li><ol class="section"><li><a href="core/io/io.html"><strong aria-hidden="true">5.23.1.</strong> 标准输入输出</a></li><li><a href="core/io/output.html"><strong aria-hidden="true">5.23.2.</strong> print! 宏</a></li><li><a href="core/io/file-io.html"><strong aria-hidden="true">5.23.3.</strong> 文件输入输出</a></li></ol></li><li><a href="core/heap-stack/heap-stack.html"><strong aria-hidden="true">5.24.</strong> Rust 堆、栈与Box</a></li><li><a href="core/smart-pointers/preface.html"><strong aria-hidden="true">5.25.</strong> 智能指针</a></li><li><ol class="section"><li><a href="core/smart-pointers/rcarc.html"><strong aria-hidden="true">5.25.1.</strong> Rc, Arc</a></li><li><a href="core/smart-pointers/mutex.html"><strong aria-hidden="true">5.25.2.</strong> Mutex, RwLock</a></li><li><a href="core/smart-pointers/cell.html"><strong aria-hidden="true">5.25.3.</strong> Cell, RefCell</a></li></ol></li><li><a href="core/intoborrow/preface.html"><strong aria-hidden="true">5.26.</strong> 类型系统中的几个常见 Trait</a></li><li><ol class="section"><li><a href="core/intoborrow/into.html"><strong aria-hidden="true">5.26.1.</strong> Into/From 及其在 String 和 &amp;str 互转上的应用</a></li><li><a href="core/intoborrow/asref.html"><strong aria-hidden="true">5.26.2.</strong> AsRef, AsMut</a></li><li><a href="core/intoborrow/borrow.html"><strong aria-hidden="true">5.26.3.</strong> Borrow, BorrowMut, ToOwned</a></li><li><a href="core/intoborrow/deref.html"><strong aria-hidden="true">5.26.4.</strong> Deref 与 Deref coercions</a></li><li><a href="core/intoborrow/cow.html"><strong aria-hidden="true">5.26.5.</strong> Cow 及其在 String 和 &amp;str 上的应用</a></li></ol></li><li><a href="core/marker/sendsync.html"><strong aria-hidden="true">5.27.</strong> Send 和 Sync</a></li><li><a href="core/concurrency-parallel-thread/preface.html"><strong aria-hidden="true">5.28.</strong> 并发编程</a></li><li><ol class="section"><li><a href="core/concurrency-parallel-thread/thread.html"><strong aria-hidden="true">5.28.1.</strong> 线程</a></li><li><a href="core/concurrency-parallel-thread/message-passing.html"><strong aria-hidden="true">5.28.2.</strong> 消息传递</a></li><li><a href="core/concurrency-parallel-thread/share-memory.html"><strong aria-hidden="true">5.28.3.</strong> 共享内存</a></li><li><a href="core/concurrency-parallel-thread/synchronize.html"><strong aria-hidden="true">5.28.4.</strong> 同步</a></li><li><a href="core/concurrency-parallel-thread/parallel.html"><strong aria-hidden="true">5.28.5.</strong> 并行</a></li></ol></li><li><a href="core/unsafe-rawpointer/preface.html"><strong aria-hidden="true">5.29.</strong> Unsafe、原始指针</a></li><li><ol class="section"><li><a href="core/unsafe-rawpointer/unsafe.html"><strong aria-hidden="true">5.29.1.</strong> Unsafe</a></li><li><a href="core/unsafe-rawpointer/raw-pointer.html"><strong aria-hidden="true">5.29.2.</strong> 原始指针</a></li></ol></li><li><a href="core/ffi/preface.html"><strong aria-hidden="true">5.30.</strong> FFI</a></li><li><ol class="section"><li><a href="core/ffi/calling-ffi-function.html"><strong aria-hidden="true">5.30.1.</strong> rust调用ffi函数</a></li><li><a href="core/ffi/compiling-rust-to-lib.html"><strong aria-hidden="true">5.30.2.</strong> 将rust编译成库</a></li></ol></li><li><a href="core/attr-and-compiler-arg/preface.html"><strong aria-hidden="true">5.31.</strong> 属性和编译器参数</a></li><li><ol class="section"><li><a href="core/attr-and-compiler-arg/attribute.html"><strong aria-hidden="true">5.31.1.</strong> 属性</a></li><li><a href="core/attr-and-compiler-arg/rustc-option.html"><strong aria-hidden="true">5.31.2.</strong> 编译器参数</a></li></ol></li><li><a href="core/testing/preface.html"><strong aria-hidden="true">5.32.</strong> 测试与评测</a></li><li><ol class="section"><li><a href="core/testing/threearchtest.html"><strong aria-hidden="true">5.32.1.</strong> 测试 (testing)</a></li><li><a href="core/testing/bench.html"><strong aria-hidden="true">5.32.2.</strong> 评测 (benchmark)</a></li></ol></li><li><a href="core/coding-style/style.html"><strong aria-hidden="true">5.33.</strong> 代码风格</a></li><li><a href="core/any/any.html"><strong aria-hidden="true">5.34.</strong> Any与反射</a></li><li><a href="core/safe/safety.html"><strong aria-hidden="true">5.35.</strong> 安全</a></li><li><a href="core/std/overview.html"><strong aria-hidden="true">5.36.</strong> 标准库介绍</a></li><li><ol class="section"><li><a href="core/std/process.html"><strong aria-hidden="true">5.36.1.</strong> 系统命令:调用grep</a></li><li><a href="core/std/fs-and-path.html"><strong aria-hidden="true">5.36.2.</strong> 目录操作:简单grep</a></li><li><a href="core/std/net.html"><strong aria-hidden="true">5.36.3.</strong> 网络模块:W回音</a></li></ol></li><li><a href="core/action/preface.html"><strong aria-hidden="true">5.37.</strong> 实战篇</a></li><li><ol class="section"><li><a href="core/action/json_data/index.html"><strong aria-hidden="true">5.37.1.</strong> 实战：Json处理</a></li><li><a href="core/action/mysite/index.html"><strong aria-hidden="true">5.37.2.</strong> 实战：Web 应用开发入门</a></li><li><a href="core/action/db/index.html"><strong aria-hidden="true">5.37.3.</strong> 实战：使用Postgresql数据库</a></li></ol></li><li><a href="core/appendix/glossary.html"><strong aria-hidden="true">5.38.</strong> 附录-术语表</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Rust Programming Language Primer - Rust 编程语言入门</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="core/ownership-system/borrowing_reference.html#a引用借用referencesborrowing" id="a引用借用referencesborrowing"><h1><strong>引用&amp;借用（References&amp;Borrowing）</strong></h1></a>
+<p>例子：</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    {
+        let mut some_closure = |c: char| x.push(c);
+        some_closure('d');
+    }
+    println!(&quot;x={:?}&quot;, x);  //成功打印：x=&quot;abcd&quot;
+}
+</code></pre></pre>
+<p>我们只是去掉了<code>move</code> 关键字，去掉<code>move</code> 关键字后，<strong>闭包包体内</strong> 就会对 <code>x</code> 进行了<strong>可变借用</strong>，而不是“剥夺”<code>x</code>的所有权，细心的同学还注意到我们在前后还加了<code>{}</code>大括号作用域，是为了作用域结束后让<strong>可变借用</strong>失效，这样<code>println</code>才可以成功访问并打印我们期待的内容。</p>
+<hr />
+<p>如上所示，<code>Owership</code> 让我们改变一个变量的值变得“复杂”，那能否像其他编程语言那样随意改变变量的值呢？</p>
+<p>答案是有的。</p>
+<p><strong>所有权系统</strong>允许我们通过<code>“Borrowing”</code>的方式达到这个目的。
+这个机制非常像其他编程语言中的“读写锁”，即同一时刻，只能拥有一个“写锁”，或只能拥有多个“读锁”，不允许“写锁”和“读锁”在同一时刻同时出现。当然这也是数据读写过程中保障一致性的典型做法。只不过Rust是在编译中完成这个(Borrowing)检查的，而不是在运行时，这也就是为什么其他语言程序在运行过程中，容易出现死锁或者野指针的问题。</p>
+<p>通过 <code>&amp;</code> 符号完成<code>Borrowing</code>：</p>
+<p>在继续说明之前，我们先把上面的例子做几个大胆尝试。可能，会让你大吃一惊。</p>
+<ol>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = |c: char| &amp;x.push(c);
+    some_closure('E');
+    println!(&quot;x={:?}&quot;, x); // BIG PROBLEM
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = |c: char| &amp;x.push(c);
+    some_closure('E');
+    println!(&quot;x={:?}&quot;, &amp;x); // BIG PROBLEM
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = |c: char| mut &amp;x.push(c);
+    some_closure('E');
+    println!(&quot;x={:?}&quot;, x);
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = |c: char| &amp;mut x.push(c);
+    some_closure('E');
+    println!(&quot;x={:?}&quot;, x);
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = move |c: char| x.push(c);
+    some_closure('F');
+    println!(&quot;x={:?}&quot;, x);
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = move |c: char| &amp;x.push(c);
+    some_closure('F');
+    println!(&quot;x={:?}&quot;, x);
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = move |c: char| &amp;x.push(c);
+    some_closure('F');
+    println!(&quot;x={:?}&quot;, &amp;x);
+}
+</code></pre></pre>
+</li>
+<li>
+<p>代码</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: String = String::from(&quot;abc&quot;);
+    let mut some_closure = move |c: char| x.push(c);
+    some_closure('F');
+    x = String::from(&quot;246654&quot;);
+    println!(&quot;x={:?}&quot;, x);
+}
+</code></pre></pre>
+</li>
+</ol>
+<p>关键要理解：</p>
+<ul>
+<li>
+<p>没有<code>move</code> 关键字的时候，<strong>闭包包体内</strong> 就会对 <code>x</code> 进行了<strong>可变借用</strong>，而不是“剥夺”<code>x</code>的所有权。</p>
+</li>
+<li>
+<p>有<code>move</code>关键字的时候，<code>x</code>所绑定的资源，发生了<code>所有权</code>移动，转移到了<strong>闭包包体内</strong>，这是作用域的变化，跳出该<strong>闭包包体内</strong>的作用域之外，就无法通过 <code>x</code> 获得该资源的所有权。</p>
+</li>
+</ul>
+<hr />
+<p>现在，我们继续来说明<code>“Borrowing”</code>的方式。</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+    let y = &amp;x;
+    println!(&quot;x={:?}, y={:?}&quot;, x, y);
+}
+</code></pre></pre>
+<p><code>Borrowing(&amp;x)</code> 并不会发生<code>所有权</code> moved (移动语义)，所以<code>println!</code>可以同时访问x和y。
+通过引用，就可以对普通类型完成修改。</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: i32 = 100;
+    {
+        let y: &amp;mut i32 = &amp;mut x;
+        *y += 2;
+    }
+    println!(&quot;{}&quot;, x);
+}
+</code></pre></pre>
+<a class="header" href="core/ownership-system/borrowing_reference.html#a借用与引用的区别" id="a借用与引用的区别"><h2>借用与引用的区别</h2></a>
+<p>借用与引用是一种相辅相成的关系，说白了，就是一个意思。若B是对A的引用，也可称之为B借用了A。</p>
+<p>很相近对吧，但是借用一词本意为要归还。所以在Rust用引用时，一定要注意应该在何处何时正确的“归回”借用/引用。
+最后面的“高级”小节会详细举例。</p>
+<a class="header" href="core/ownership-system/borrowing_reference.html#a规则" id="a规则"><h3>规则</h3></a>
+<ol>
+<li>同一时刻，可变变量绑定，最多只有一个可变借用（&amp;mut T）。</li>
+<li>同一时刻，不可变变量绑定，可有0个或多个不可变借用（&amp;T）但不能有任何可变借用。</li>
+<li>借用在离开作用域后释放。</li>
+<li>在可变借用释放前不可访问源变量。</li>
+</ol>
+<a class="header" href="core/ownership-system/borrowing_reference.html#a可变性" id="a可变性"><h3>可变性</h3></a>
+<p><code>Borrowing</code>也分“不可变借用”（默认，<code>&amp;T</code>）和“可变借用”（<code>&amp;mut T</code>）。</p>
+<p>顾名思义，“不可变借用”是只读的，不可更新被引用的内容。</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    //可同时有多个不可变借用
+    let y = &amp;x;
+    let z = &amp;x;
+    let m = &amp;x;
+
+    //ok
+    println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, x, y, z, m);
+}
+</code></pre></pre>
+<p>再次强调下，同一时刻只能有一个可变借用(&amp;mut T)，且被借用的变量本身必须有可变性 :</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // 源变量x为可变性
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    // 只能有一个可变借用
+    let y = &amp;mut x; // ok
+    // let z = &amp;mut x; //错误
+    y.push(100);
+
+    //ok
+    println!(&quot;{:?}&quot;, y);
+
+    // 错误，可变借用未释放，源变量不可访问
+    // println!(&quot;{:?}&quot;, x);
+
+} //y在此处销毁
+</code></pre></pre>
+<a class="header" href="core/ownership-system/borrowing_reference.html#a高级例子" id="a高级例子"><h3>高级例子</h3></a>
+<p>下面的复杂例子，进行了详细的注释，即使看不懂也没关系，可以在完成Lifetimes（生命周期）的学习后再仔细思考本例子。</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    //更新数组
+    //push中对数组进行了可变借用，并在push函数退出时销毁这个借用
+    x.push(10);
+
+    // 构建新的作用域
+    {
+        //可变借用(1)
+        let mut y = &amp;mut x; //ok. 不在同一时刻.
+        //这个时候，可以理解x 没有任何资源，不能借用、使用
+        y.push(100);
+        println!(&quot;{:?}&quot;, y); //打印: [1, 2, 3, 10, 100]
+
+        // println!(&quot;{:?}&quot;, x); //[err] 因为，资源所有权已经被“可变借用”给了y, 不能再不可变借用给x
+
+        //可变借用(2)，注意：此处是对y的借用，不可再对x进行借用，
+        //因为y在此时依然存活。
+        let z = &amp;mut y;
+        //这个时候，可以理解y 没有任何资源，不能借用、使用
+        z.push(1000);
+
+        println!(&quot;{:?}&quot;, z); //打印: [1, 2, 3, 10, 100, 1000]
+
+        // println!(&quot;{:?}&quot;, y); //[err] 因为，资源所有权已经被“可变借用”给了z, 不能再不可变借用给x
+    } //y和z在此处被销毁，并释放借用, 还给 x
+
+
+    //访问x正常
+    println!(&quot;{:?}&quot;, x); //打印: [1, 2, 3, 10, 100, 1000]
+}
+
+</code></pre></pre>
+<a class="header" href="core/ownership-system/borrowing_reference.html#a总结" id="a总结"><h3>总结</h3></a>
+<ol>
+<li>借用不改变内存的所有者（Owner），借用只是对源内存的临时引用。</li>
+<li>在借用周期内，借用方可以读写这块内存，所有者被禁止读写内存；且所有者保证在有“借用”存在的情况下，不会释放或转移内存。</li>
+<li>失去所有权的变量不可以被借用（访问）。</li>
+<li>在租借期内，内存所有者保证不会释放/转移/可变租借这块内存，但如果是在<strong>非可变租借</strong>的情况下，所有者是允许继续<strong>非可变租借</strong>出去的。</li>
+<li>借用周期满后，所有者收回读写权限</li>
+<li>借用周期小于被借用者（所有者）的生命周期。</li>
+</ol>
+<blockquote>
+<p>备注：
+借用周期，指的是借用的有效时间段。</p>
+</blockquote>
+<p>下面是一些实例代码：</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    let y = &amp;x;  // 不可变借用给y [ok]
+    let z = &amp;x;  // 不可变借用给z [ok]
+
+    println!(&quot;{:?}, {:?}, {:?}&quot;, x, y, z); // [ok]
+}
+</code></pre></pre>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // x 是内存的所有者(Owner)
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+    let w = &amp;mut x;
+    println!(&quot;{:?}&quot;, w); // [ok]
+    println!(&quot;{:?}&quot;, x); // [err]  因为，资源所有权已经被“可变借用”给了w, 不能再以“不可变”或“可变”借用给x
+}
+</code></pre></pre>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // 源变量x为可变性
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    // 只能有一个可变借用
+    let y = &amp;mut x; // ok
+    // let z = &amp;mut x; //错误
+    y.push(100);
+
+    //ok
+    println!(&quot;{:?}&quot;, y);
+
+    // 错误，可变借用未释放，源变量不可访问
+    println!(&quot;{:?}&quot;, x);
+}
+</code></pre></pre>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    let y = &amp;x;  // 不可变借用给y [ok]
+    let z = &amp;x;  // 不可变借用给z [ok]
+
+    println!(&quot;{:?}, {:?}, {:?}&quot;, x, y, z); // [ok]
+
+    let w = &amp;mut x; //[err] x 已经被借用了，同一时刻，就不能再获得x的任何可变借用。
+    w.push(100);
+}
+</code></pre></pre>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x: Vec&lt;i32&gt; = vec!(1i32, 2, 3);
+
+    // 构建新的作用域
+    {
+        let u = &amp;mut x;  //[ok] x&quot;可变&quot;借用给 ---&gt; 不可变的u
+        u.push(991199);  //[ok] 虽然，u 是不可变的，但是u绑定的资源是可变的，因此，可以修改资源内存
+        println!(&quot;{:?}&quot;, u); // [ok]
+    }// u 在此处销毁，并释放借用，还给x
+
+    let y = &amp;x;      // x&quot;不可变&quot;借用给 ---&gt; 不可变的y [ok]
+    let z = &amp;x;      // x&quot;不可变&quot;借用给 ---&gt; 不可变的z [ok]
+    let mut m = &amp;x;  // x&quot;不可变&quot;借用给 ---&gt; 可变得m [ok]
+
+    println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, x, y, z, m); // [ok]
+
+    // 构建新的作用域
+    {
+        //let w = &amp;mut x; //[err]. x 已经被“不可变”借用，就不能再“可变”借用给其他变量
+        //let w = &amp;mut y; //[err]  y 是&quot;不可变&quot;变量，所以，不能可变借用给其他变量
+        //let w = &amp;mut z; //[err]  z 是“不可变”变量，所以，不能可变借用给其他变量
+        //let w = &amp;mut m; // [ok]
+        let mut w = &amp;mut m;
+        //w.push(100);  // [err], w 借用的真正资源是不可变的, 所以不能修改资源的内存
+        println!(&quot;{:?}&quot;, w); // [ok]
+
+        {
+            //let v = &amp;mut m; // m已经被“可变借用”给了w, 不能再以“不可变”或“可变”借用给其他变量
+            let v = &amp;w; //[ok]
+            let j = &amp;w; //[ok]
+
+            println!(&quot;{:?}, {:?}&quot;, v, j); // [ok]
+
+
+            //let k = &amp;mut w; //[err]  w 已经被“不可变”借用，就不能再“可变”借用给其他变量
+            let mut h = &amp;w; //[ok]
+            println!(&quot;{:?}, {:?}, {:?}&quot;, v, j, h); // [ok]
+
+            {
+                let n = &amp;mut h; //[ok]
+                // 或使用
+                //let mut g = &amp;mut h;
+
+                //println!(&quot;{:?}&quot;, h); // [err] h已经被“可变借用”给了w, 不能再以“不可变”或“可变”借用给其他变量
+
+                //let e = &amp;h; //[err] h已经被“可变借用”给了w, 不能再以“不可变”或“可变”借用给其他变量
+                //let t = &amp;h; //[err] h已经被“可变借用”给了w, 不能再以“不可变”或“可变”借用给其他变量
+
+                println!(&quot;{:?}&quot;, n); // [ok]
+
+            }
+        }
+
+    } // w 在此处销毁，并释放借用，还给 x
+
+    println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, x, y, z, m); // [ok]
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="core/ownership-system/example-ownership.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="core/ownership-system/lifetime.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="core/ownership-system/example-ownership.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="core/ownership-system/lifetime.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

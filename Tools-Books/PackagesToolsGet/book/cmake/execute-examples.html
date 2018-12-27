@@ -9,21 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <base href="../">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -32,11 +31,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "../";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="../vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="../vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="../vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="../vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="../vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="../chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="../cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="../cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="../cmake/execute-examples.html" class="active"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="../cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="../cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="../cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="../chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="../brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="../brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="../brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="../brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="../brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="../brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="../brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="../brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="../brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="../brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="../brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="../brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html" class="active"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> *PETSc</a></li></ol></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -108,7 +105,7 @@
                         <h1 class="menu-title">Packages Tools Get Start</h1> 
 
                         <div class="right-buttons">
-                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
                         </div>
@@ -139,9 +136,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#a可执行文件的配置-cmakeliststxt" id="a可执行文件的配置-cmakeliststxt"><h1>可执行文件的配置 CMakeLists.txt</h1></a>
+                        <a class="header" href="cmake/execute-examples.html#a可执行文件的配置-cmakeliststxt" id="a可执行文件的配置-cmakeliststxt"><h1>可执行文件的配置 CMakeLists.txt</h1></a>
 <p>明确要构建的是一个可执行文件，需要通过<code>add_executable</code>来指定。</p>
-<a class="header" href="#a构建方式" id="a构建方式"><h2>构建方式</h2></a>
+<a class="header" href="cmake/execute-examples.html#a构建方式" id="a构建方式"><h2>构建方式</h2></a>
 <pre><code class="language-bash"># 定位到C++工程目录
 cd ~/linear-algebra
 
@@ -167,7 +164,7 @@ cmake --build ./cmake-build-debug --target linear_algebra -- -j 2
 
 # 以上内容完毕
 </code></pre>
-<a class="header" href="#a最优例子" id="a最优例子"><h2>最优例子</h2></a>
+<a class="header" href="cmake/execute-examples.html#a最优例子" id="a最优例子"><h2>最优例子</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 ####################################################
@@ -236,7 +233,7 @@ add_executable(${PROJECT_NAME} ${DIR_SRCS})
 # Adding the link libraries
 target_link_libraries(${PROJECT_NAME} ${ARMADILLO_LIBRARIES})
 </code></pre>
-<a class="header" href="#a例子-1" id="a例子-1"><h2>例子 1</h2></a>
+<a class="header" href="cmake/execute-examples.html#a例子-1" id="a例子-1"><h2>例子 1</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -288,7 +285,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} armadillo)
 
 </code></pre>
-<a class="header" href="#a例子-2" id="a例子-2"><h2>例子 2</h2></a>
+<a class="header" href="cmake/execute-examples.html#a例子-2" id="a例子-2"><h2>例子 2</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -421,13 +418,13 @@ target_link_libraries(${PROJECT_NAME} armadillo)
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../cmake/CMakeLists-syntax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="cmake/CMakeLists-syntax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../cmake/static-lib-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="cmake/static-lib-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -439,13 +436,13 @@ target_link_libraries(${PROJECT_NAME} armadillo)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../cmake/CMakeLists-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="cmake/CMakeLists-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../cmake/static-lib-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="cmake/static-lib-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -460,14 +457,17 @@ target_link_libraries(${PROJECT_NAME} armadillo)
         
 
         
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

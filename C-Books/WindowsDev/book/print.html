@@ -9,18 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -29,11 +28,9 @@
         
 
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -136,12 +133,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#windows-基础" id="windows-基础"><h1>Windows 基础</h1></a>
+                        <a class="header" href="print.html#windows-基础" id="windows-基础"><h1>Windows 基础</h1></a>
 <p>当前，现在大部分电脑上运行着 Windows 10 操作系统。（2018.12.24）</p>
 <p>根据 Windows 近 30 多年的发展，我们有必要要了解 WIndows 核心编程的相关内容。不论新语言、新技术如何更新迭代。这一段历史基石，对于我们工程师来讲，都是非常必要的。</p>
 <p>我这里，参照的书籍《Windows 游戏编程》华南理工大学出版社发行的，罗林、李俊琴编著。</p>
 <p>2017 年 7 月第一版</p>
-<a class="header" href="#windows-核心三个主要子系统" id="windows-核心三个主要子系统"><h1>Windows 核心三个主要子系统</h1></a>
+<a class="header" href="print.html#windows-核心三个主要子系统" id="windows-核心三个主要子系统"><h1>Windows 核心三个主要子系统</h1></a>
 <p>引用：《Windows 游戏编程》</p>
 <p>Windows 核心主要部分仅仅通过三个动态链接库来实现。</p>
 <p>krnl386.exe
@@ -155,10 +152,10 @@ gdl32.dll</p>
 <li>User: 使用者接口，实现所有窗口运作机制</li>
 <li>GDL: 图形设备接口，允许程序在屏幕和打印机上显示文字和图形</li>
 </ol>
-<a class="header" href="#windows-api" id="windows-api"><h1>Windows API</h1></a>
+<a class="header" href="print.html#windows-api" id="windows-api"><h1>Windows API</h1></a>
 <p>Windows API(application programming interface) 是 Windows 应用程序接口，是针对微软 Windows 操作系统的编程接口。Windows API 中包含了所有应用程序能够使用的系统函数（数量有 1000 个以上），同时办好了相关的数据类型及结构。</p>
 <p>其中，32 位 Windows 操作系统的编程接口称为 Win32 API</p>
-<a class="header" href="#a窗口和消息" id="a窗口和消息"><h1>窗口和消息</h1></a>
+<a class="header" href="print.html#a窗口和消息" id="a窗口和消息"><h1>窗口和消息</h1></a>
 <p>在 Windows 系统中，窗口是 Windows 应用程序基本的操作单元。窗口，更确切地说是由很多控件组成。</p>
 <p>Windows 系统与窗口的的交互，是通过以“信息”的形式传递的。Windows 接收机处理“消息”与窗口进行通信。</p>
 <p>Windows 系统有一套监视消息队列的机制来完成处理消息。</p>
@@ -168,113 +165,113 @@ gdl32.dll</p>
 <li>非队列化消息：由 Windows 直接发送给窗口消息处理程序。</li>
 </ul>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a资源和句柄" id="a资源和句柄"><h1>资源和句柄</h1></a>
-<a class="header" href="#a资源" id="a资源"><h2>资源</h2></a>
+<a class="header" href="print.html#a资源和句柄" id="a资源和句柄"><h1>资源和句柄</h1></a>
+<a class="header" href="print.html#a资源" id="a资源"><h2>资源</h2></a>
 <p>Windows 中，经常用到的图标、光标、菜单、对话框等等，这些都是 Windows 的资源类型。
 资源也是数据。</p>
 <p>Windows 通过资源的处理，将资源与程序的许多组件链接编译到程序的.exe 文件中。</p>
-<a class="header" href="#a句柄-handle" id="a句柄-handle"><h2>句柄 HANDLE</h2></a>
+<a class="header" href="print.html#a句柄-handle" id="a句柄-handle"><h2>句柄 HANDLE</h2></a>
 <p>句柄是一个无符号的唯一整数值。用于标识应用程序中的各种对象、资源。如：窗口、光标、应用程序实例等等。</p>
 <p>Windows 通过句柄来查找相应的对象、资源，用句柄来管理和操作对象和资源。</p>
 <p>具体参照 《Windows 游戏编程》</p>
-<a class="header" href="#a历史遗留windows-的-unicode-编码" id="a历史遗留windows-的-unicode-编码"><h1>历史遗留：Windows 的 Unicode 编码</h1></a>
+<a class="header" href="print.html#a历史遗留windows-的-unicode-编码" id="a历史遗留windows-的-unicode-编码"><h1>历史遗留：Windows 的 Unicode 编码</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#tchar-类型的用途" id="tchar-类型的用途"><h1>TCHAR 类型的用途</h1></a>
+<a class="header" href="print.html#tchar-类型的用途" id="tchar-类型的用途"><h1>TCHAR 类型的用途</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-常用的数据类型" id="windows-常用的数据类型"><h1>Windows 常用的数据类型</h1></a>
+<a class="header" href="print.html#windows-常用的数据类型" id="windows-常用的数据类型"><h1>Windows 常用的数据类型</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-主函数-winmain" id="windows-主函数-winmain"><h1>Windows 主函数 WinMain</h1></a>
+<a class="header" href="print.html#windows-主函数-winmain" id="windows-主函数-winmain"><h1>Windows 主函数 WinMain</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a重要的-windowsh-头文件" id="a重要的-windowsh-头文件"><h1>重要的 windows.h 头文件</h1></a>
+<a class="header" href="print.html#a重要的-windowsh-头文件" id="a重要的-windowsh-头文件"><h1>重要的 windows.h 头文件</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a注册窗口类" id="a注册窗口类"><h1>注册窗口类</h1></a>
+<a class="header" href="print.html#a注册窗口类" id="a注册窗口类"><h1>注册窗口类</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a弹出信息框messagebox" id="a弹出信息框messagebox"><h1>弹出信息框：MessageBox</h1></a>
+<a class="header" href="print.html#a弹出信息框messagebox" id="a弹出信息框messagebox"><h1>弹出信息框：MessageBox</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a创建窗口createwindow" id="a创建窗口createwindow"><h1>创建窗口：CreateWindow</h1></a>
+<a class="header" href="print.html#a创建窗口createwindow" id="a创建窗口createwindow"><h1>创建窗口：CreateWindow</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a消息循环机制" id="a消息循环机制"><h1>消息循环机制</h1></a>
+<a class="header" href="print.html#a消息循环机制" id="a消息循环机制"><h1>消息循环机制</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a获取消息getmessage" id="a获取消息getmessage"><h1>获取消息：GetMessage</h1></a>
+<a class="header" href="print.html#a获取消息getmessage" id="a获取消息getmessage"><h1>获取消息：GetMessage</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a多个窗口消息处理函数" id="a多个窗口消息处理函数"><h1>多个窗口消息处理函数</h1></a>
+<a class="header" href="print.html#a多个窗口消息处理函数" id="a多个窗口消息处理函数"><h1>多个窗口消息处理函数</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#gdi-图形设备接口函数" id="gdi-图形设备接口函数"><h1>GDI 图形设备接口函数</h1></a>
+<a class="header" href="print.html#gdi-图形设备接口函数" id="gdi-图形设备接口函数"><h1>GDI 图形设备接口函数</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#gdi" id="gdi"><h1>GDI+</h1></a>
+<a class="header" href="print.html#gdi" id="gdi"><h1>GDI+</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-绘图和消息机制" id="windows-绘图和消息机制"><h1>Windows 绘图和消息机制</h1></a>
+<a class="header" href="print.html#windows-绘图和消息机制" id="windows-绘图和消息机制"><h1>Windows 绘图和消息机制</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-强制绘制" id="windows-强制绘制"><h1>Windows 强制绘制</h1></a>
+<a class="header" href="print.html#windows-强制绘制" id="windows-强制绘制"><h1>Windows 强制绘制</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-坐标系" id="windows-坐标系"><h1>Windows 坐标系</h1></a>
+<a class="header" href="print.html#windows-坐标系" id="windows-坐标系"><h1>Windows 坐标系</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-常用-gdi-函数" id="windows-常用-gdi-函数"><h1>Windows 常用 GDI 函数</h1></a>
+<a class="header" href="print.html#windows-常用-gdi-函数" id="windows-常用-gdi-函数"><h1>Windows 常用 GDI 函数</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-设备环境也称为设备上下文dc" id="windows-设备环境也称为设备上下文dc"><h1>Windows 设备环境(也称为设备上下文、DC)</h1></a>
+<a class="header" href="print.html#windows-设备环境也称为设备上下文dc" id="windows-设备环境也称为设备上下文dc"><h1>Windows 设备环境(也称为设备上下文、DC)</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-gdi-绘图实例" id="windows-gdi-绘图实例"><h1>Windows GDI 绘图实例</h1></a>
-<a class="header" href="#windows-文本处理gdi-绘图范围" id="windows-文本处理gdi-绘图范围"><h1>Windows 文本处理：GDI 绘图范围</h1></a>
+<a class="header" href="print.html#windows-gdi-绘图实例" id="windows-gdi-绘图实例"><h1>Windows GDI 绘图实例</h1></a>
+<a class="header" href="print.html#windows-文本处理gdi-绘图范围" id="windows-文本处理gdi-绘图范围"><h1>Windows 文本处理：GDI 绘图范围</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-文本字体" id="windows-文本字体"><h1>Windows 文本字体</h1></a>
+<a class="header" href="print.html#windows-文本字体" id="windows-文本字体"><h1>Windows 文本字体</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-位图编程" id="windows-位图编程"><h1>Windows 位图编程</h1></a>
+<a class="header" href="print.html#windows-位图编程" id="windows-位图编程"><h1>Windows 位图编程</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-常用图像文件格式编程" id="windows-常用图像文件格式编程"><h1>Windows 常用图像文件格式编程</h1></a>
+<a class="header" href="print.html#windows-常用图像文件格式编程" id="windows-常用图像文件格式编程"><h1>Windows 常用图像文件格式编程</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-内存设备环境内存-dc" id="windows-内存设备环境内存-dc"><h1>Windows 内存设备环境(内存 DC)</h1></a>
+<a class="header" href="print.html#windows-内存设备环境内存-dc" id="windows-内存设备环境内存-dc"><h1>Windows 内存设备环境(内存 DC)</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a位块及位块传输-bitblt" id="a位块及位块传输-bitblt"><h1>位块及位块传输 BitBlt</h1></a>
+<a class="header" href="print.html#a位块及位块传输-bitblt" id="a位块及位块传输-bitblt"><h1>位块及位块传输 BitBlt</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#stretchblt-复制时拉伸或压缩图像" id="stretchblt-复制时拉伸或压缩图像"><h1>StretchBlt 复制时拉伸或压缩图像</h1></a>
+<a class="header" href="print.html#stretchblt-复制时拉伸或压缩图像" id="stretchblt-复制时拉伸或压缩图像"><h1>StretchBlt 复制时拉伸或压缩图像</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#transparentblt-图像透明显示" id="transparentblt-图像透明显示"><h1>TransparentBlt 图像透明显示</h1></a>
+<a class="header" href="print.html#transparentblt-图像透明显示" id="transparentblt-图像透明显示"><h1>TransparentBlt 图像透明显示</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a双缓冲解决屏幕闪烁问题" id="a双缓冲解决屏幕闪烁问题"><h1>双缓冲,解决屏幕闪烁问题</h1></a>
+<a class="header" href="print.html#a双缓冲解决屏幕闪烁问题" id="a双缓冲解决屏幕闪烁问题"><h1>双缓冲,解决屏幕闪烁问题</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a双缓冲代码陷阱" id="a双缓冲代码陷阱"><h1>双缓冲代码陷阱</h1></a>
+<a class="header" href="print.html#a双缓冲代码陷阱" id="a双缓冲代码陷阱"><h1>双缓冲代码陷阱</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-键盘消息处理" id="windows-键盘消息处理"><h1>Windows 键盘消息处理</h1></a>
+<a class="header" href="print.html#windows-键盘消息处理" id="windows-键盘消息处理"><h1>Windows 键盘消息处理</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a按键-iparam-参数含义" id="a按键-iparam-参数含义"><h1>按键 IParam 参数含义</h1></a>
+<a class="header" href="print.html#a按键-iparam-参数含义" id="a按键-iparam-参数含义"><h1>按键 IParam 参数含义</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-虚拟键码" id="windows-虚拟键码"><h1>Windows 虚拟键码</h1></a>
+<a class="header" href="print.html#windows-虚拟键码" id="windows-虚拟键码"><h1>Windows 虚拟键码</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-鼠标消息处理" id="windows-鼠标消息处理"><h1>Windows 鼠标消息处理</h1></a>
+<a class="header" href="print.html#windows-鼠标消息处理" id="windows-鼠标消息处理"><h1>Windows 鼠标消息处理</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-鼠标消息种类" id="windows-鼠标消息种类"><h1>Windows 鼠标消息种类</h1></a>
+<a class="header" href="print.html#windows-鼠标消息种类" id="windows-鼠标消息种类"><h1>Windows 鼠标消息种类</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-动态鼠标画线" id="windows-动态鼠标画线"><h1>Windows 动态鼠标画线</h1></a>
+<a class="header" href="print.html#windows-动态鼠标画线" id="windows-动态鼠标画线"><h1>Windows 动态鼠标画线</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-鼠标位置检测" id="windows-鼠标位置检测"><h1>Windows 鼠标位置检测</h1></a>
+<a class="header" href="print.html#windows-鼠标位置检测" id="windows-鼠标位置检测"><h1>Windows 鼠标位置检测</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-定时器-wm_timer" id="windows-定时器-wm_timer"><h1>Windows 定时器 WM_TIMER</h1></a>
+<a class="header" href="print.html#windows-定时器-wm_timer" id="windows-定时器-wm_timer"><h1>Windows 定时器 WM_TIMER</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-声音与音效" id="windows-声音与音效"><h1>Windows 声音与音效</h1></a>
+<a class="header" href="print.html#windows-声音与音效" id="windows-声音与音效"><h1>Windows 声音与音效</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-mci-媒体控制接口" id="windows-mci-媒体控制接口"><h1>Windows MCI 媒体控制接口</h1></a>
+<a class="header" href="print.html#windows-mci-媒体控制接口" id="windows-mci-媒体控制接口"><h1>Windows MCI 媒体控制接口</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a哪些是-windows-资源如何使用" id="a哪些是-windows-资源如何使用"><h1>哪些是 Windows 资源，如何使用?</h1></a>
+<a class="header" href="print.html#a哪些是-windows-资源如何使用" id="a哪些是-windows-资源如何使用"><h1>哪些是 Windows 资源，如何使用?</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#windows-2d-游戏框架" id="windows-2d-游戏框架"><h1>Windows 2D 游戏框架</h1></a>
+<a class="header" href="print.html#windows-2d-游戏框架" id="windows-2d-游戏框架"><h1>Windows 2D 游戏框架</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a游戏精灵矩阵变换缩放旋转平移" id="a游戏精灵矩阵变换缩放旋转平移"><h1>游戏精灵矩阵变换：缩放、旋转、平移</h1></a>
+<a class="header" href="print.html#a游戏精灵矩阵变换缩放旋转平移" id="a游戏精灵矩阵变换缩放旋转平移"><h1>游戏精灵矩阵变换：缩放、旋转、平移</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a游戏精灵包围盒计算" id="a游戏精灵包围盒计算"><h1>游戏精灵包围盒计算</h1></a>
+<a class="header" href="print.html#a游戏精灵包围盒计算" id="a游戏精灵包围盒计算"><h1>游戏精灵包围盒计算</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a精灵碰撞检测" id="a精灵碰撞检测"><h1>精灵碰撞检测</h1></a>
+<a class="header" href="print.html#a精灵碰撞检测" id="a精灵碰撞检测"><h1>精灵碰撞检测</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a精灵选中判断" id="a精灵选中判断"><h1>精灵选中判断</h1></a>
+<a class="header" href="print.html#a精灵选中判断" id="a精灵选中判断"><h1>精灵选中判断</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a动画精灵" id="a动画精灵"><h1>动画精灵</h1></a>
+<a class="header" href="print.html#a动画精灵" id="a动画精灵"><h1>动画精灵</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a资源集约管理" id="a资源集约管理"><h1>资源集约管理</h1></a>
+<a class="header" href="print.html#a资源集约管理" id="a资源集约管理"><h1>资源集约管理</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a精灵集约管理" id="a精灵集约管理"><h1>精灵集约管理</h1></a>
+<a class="header" href="print.html#a精灵集约管理" id="a精灵集约管理"><h1>精灵集约管理</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a游戏管家-cgame" id="a游戏管家-cgame"><h1>游戏管家 CGame</h1></a>
+<a class="header" href="print.html#a游戏管家-cgame" id="a游戏管家-cgame"><h1>游戏管家 CGame</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
-<a class="header" href="#a游戏帧管理" id="a游戏帧管理"><h1>游戏帧管理</h1></a>
+<a class="header" href="print.html#a游戏帧管理" id="a游戏帧管理"><h1>游戏帧管理</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
 
                     </main>
@@ -304,6 +301,9 @@ gdl32.dll</p>
 
         
 
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
         
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>

@@ -9,18 +9,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -34,11 +32,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -77,7 +73,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="math_tools.html"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="exponents_logs_roots.html"><strong aria-hidden="true">2.</strong> 关于指数、对数、方根新的解题思路</a></li><li><a href="linear_algebra.html"><strong aria-hidden="true">3.</strong> 解 LinearAlgebra 线性代数方程组</a></li><li><a href="matrix/index.html"><strong aria-hidden="true">4.</strong> 关于矩阵运算</a></li><li><ol class="section"><li><a href="matrix/2d_object_scale.html"><strong aria-hidden="true">4.1.</strong> 2D 图像的缩放矩阵算法思路</a></li><li><a href="matrix/2d_object_rotate.html"><strong aria-hidden="true">4.2.</strong> 2D 图像的旋转矩阵算法思路</a></li><li><a href="matrix/2d_object_translate.html"><strong aria-hidden="true">4.3.</strong> 2D 图像的平移矩阵算法思路</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="math_tools.html" class="active"><strong aria-hidden="true">1.</strong> 数学工具</a></li><li><a href="exponents_logs_roots.html"><strong aria-hidden="true">2.</strong> 关于指数、对数、方根新的解题思路</a></li><li><a href="linear_algebra.html"><strong aria-hidden="true">3.</strong> 解 LinearAlgebra 线性代数方程组</a></li><li><a href="matrix/index.html"><strong aria-hidden="true">4.</strong> 关于矩阵运算</a></li><li><ol class="section"><li><a href="matrix/2d_object_scale.html"><strong aria-hidden="true">4.1.</strong> 2D 图像的缩放矩阵算法思路</a></li><li><a href="matrix/2d_object_rotate.html"><strong aria-hidden="true">4.2.</strong> 2D 图像的旋转矩阵算法思路</a></li><li><a href="matrix/2d_object_translate.html"><strong aria-hidden="true">4.3.</strong> 2D 图像的平移矩阵算法思路</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -141,16 +137,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#texstudio---开源产品" id="texstudio---开源产品"><h1>TeXstudio - 开源产品</h1></a>
-<a class="header" href="#a在线数学学习工具" id="a在线数学学习工具"><h2>在线数学学习工具</h2></a>
-<a class="header" href="#a数学公式编辑工具" id="a数学公式编辑工具"><h2>数学公式编辑工具</h2></a>
+                        <a class="header" href="math_tools.html#texstudio---开源产品" id="texstudio---开源产品"><h1>TeXstudio - 开源产品</h1></a>
+<a class="header" href="math_tools.html#a在线数学学习工具" id="a在线数学学习工具"><h2>在线数学学习工具</h2></a>
+<a class="header" href="math_tools.html#a数学公式编辑工具" id="a数学公式编辑工具"><h2>数学公式编辑工具</h2></a>
 <ul>
 <li><a href="https://www.latex4technics.com/">latex4technics</a></li>
 <li><a href="https://www.mathjax.org">在线 MathJax</a></li>
 <li><a href="http://texstudio.sourceforge.net/">离线 Texstudio</a></li>
 </ul>
-<a class="header" href="#a需要-miktex" id="a需要-miktex"><h2>需要 MikTeX</h2></a>
-<a class="header" href="#a设置环境变量" id="a设置环境变量"><h2>设置环境变量</h2></a>
+<a class="header" href="math_tools.html#a需要-miktex" id="a需要-miktex"><h2>需要 MikTeX</h2></a>
+<a class="header" href="math_tools.html#a设置环境变量" id="a设置环境变量"><h2>设置环境变量</h2></a>
 
                     </main>
 
@@ -158,6 +154,10 @@
                         <!-- Mobile navigation buttons -->
                         
 
+                        
+                            <a rel="next" href="exponents_logs_roots.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -169,6 +169,10 @@
                 
 
                 
+                    <a href="exponents_logs_roots.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </nav>
 
         </div>
@@ -179,6 +183,9 @@
 
         
 
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
         
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>

@@ -9,18 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -34,11 +33,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -141,16 +138,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#linear-algebra-线性代数方程组" id="linear-algebra-线性代数方程组"><h1>Linear Algebra 线性代数方程组</h1></a>
+                        <a class="header" href="linear_algebra.html#linear-algebra-线性代数方程组" id="linear-algebra-线性代数方程组"><h1>Linear Algebra 线性代数方程组</h1></a>
 <p>关于这方面的内容，请参考《线性代数及其应用》原书第 3 版，(美) David C. Lay 编写。</p>
-<a class="header" href="#a线性方程组" id="a线性方程组"><h2>线性方程组</h2></a>
+<a class="header" href="linear_algebra.html#a线性方程组" id="a线性方程组"><h2>线性方程组</h2></a>
 <pre><code class="language-text">    线性代数方程组：
     （1） x + y + z = 6
     （2） 2y + 5z = -4
     （3） 2x + 5y - z = 27
     求解：x，y，z
 </code></pre>
-<a class="header" href="#python-中实际的计算方式" id="python-中实际的计算方式"><h2>Python 中实际的计算方式</h2></a>
+<a class="header" href="linear_algebra.html#python-中实际的计算方式" id="python-中实际的计算方式"><h2>Python 中实际的计算方式</h2></a>
 <ol>
 <li><a href="http://www.sagemath.org">SageMath</a> <strong>“这款开源软件的支持者称 Sage 能够完成从 12 维物体到计算全球变暖效应数学模型中的降雨量的任何事情。”Sage 包含了从线性代数、微积分，到密码学、数值计算、组合数学、群论、图论、数论等各种初高等数学的计算功能。</strong></li>
 <li>numpy &amp;&amp; scipy</li>
@@ -174,9 +171,9 @@ def main():
 if __name__ == '__main__':
     main()
 </code></pre>
-<a class="header" href="#rust" id="rust"><h2>Rust</h2></a>
-<a class="header" href="#go" id="go"><h2>Go</h2></a>
-<a class="header" href="#c-利用第三方库计算方式" id="c-利用第三方库计算方式"><h2>C++ 利用第三方库计算方式</h2></a>
+<a class="header" href="linear_algebra.html#rust" id="rust"><h2>Rust</h2></a>
+<a class="header" href="linear_algebra.html#go" id="go"><h2>Go</h2></a>
+<a class="header" href="linear_algebra.html#c-利用第三方库计算方式" id="c-利用第三方库计算方式"><h2>C++ 利用第三方库计算方式</h2></a>
 <p>C++ 可以使用的第三方库来计算，一般有如下几种：</p>
 <ol>
 <li>
@@ -248,6 +245,9 @@ std::cout &lt;&lt; &quot;The solution is:\n&quot; &lt;&lt; x &lt;&lt; std::endl;
 
         
 
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
         
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>

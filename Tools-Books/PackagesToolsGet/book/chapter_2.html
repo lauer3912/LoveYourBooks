@@ -9,18 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -32,11 +31,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> *PETSc</a></li></ol></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -139,38 +136,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#vcpkg" id="vcpkg"><h1>VCPKG</h1></a>
+                        <a class="header" href="chapter_2.html#vcpkg" id="vcpkg"><h1>VCPKG</h1></a>
 <hr />
-<a class="header" href="#vcpkg用于-windowslinux-和-macos-的-c-包管理器" id="vcpkg用于-windowslinux-和-macos-的-c-包管理器"><h2>vcpkg：用于 Windows、Linux 和 MacOS 的 C++ 包管理器</h2></a>
+<a class="header" href="chapter_2.html#vcpkg用于-windowslinux-和-macos-的-c-包管理器" id="vcpkg用于-windowslinux-和-macos-的-c-包管理器"><h2>vcpkg：用于 Windows、Linux 和 MacOS 的 C++ 包管理器</h2></a>
 <p>vcpkg 是一种命令行包管理器，可极大简化 Windows、Linux 和 MacOS 上第三方库的购置与安装。 如果项目要使用第三方库，建议通过 vcpkg 来安装它们。 vcpkg 同时支持开源和专有库。 已测试 vcpkg Windows 目录中所有库与 Visual Studio 2015 及 Visual Studio 2017 的兼容性。 截至 2018 年 5 月，Windows 目录中已有 900 多个库，Linux/MacOS 目录中有 350 多个库。 C++ 社区正在不断向两个目录添加更多的库。</p>
-<a class="header" href="#a简单而灵活" id="a简单而灵活"><h2>简单而灵活</h2></a>
+<a class="header" href="chapter_2.html#a简单而灵活" id="a简单而灵活"><h2>简单而灵活</h2></a>
 <p>仅通过单个命令就能下载源并生成库。 vcpkg 本身就是一个开源项目，可通过 GitHub 获取。 可凭喜好自定义个人专用克隆。 例如，除在公共目录中找到的内容外，还可指定不同的库或不同版本的库。 可在单台计算机上拥有多个 vcpkg 克隆，每个克隆都可生成自定义库集和/或编译开关等。每个克隆都是一个自包含、x 可复制的环境，它自身的 vcpkg.exe 副本仅可在自己的层次结构中运行。 vcpkg 不会被添加到任何环境变量，并且在 Windows 注册表或 Visual Studio 上也不会有依赖项。</p>
-<a class="header" href="#a源不是二进制文件" id="a源不是二进制文件"><h2>源不是二进制文件</h2></a>
-<p>对于 Windows 目录中的库，vcpkg 会下载源，而不是二进制文件[1]。 它将使用 Visual Studio 2017 或 Visual Studio 2015（如果未安装 Visual Studio 2017）对源进行编译。 在 C++ 中，作为链接到它的应用程序代码，使用相同的编译器及编译器版本来编译任何要用的库至关重要。 通过 vcpkg 可以消除或最大程度减少不匹配二进制文件的存在风险及它可能造成的问题。 对于使用特定编译器版本的标准化团队，可让一位成员使用 vcpkg 下载源并编译一组二进制文件，然后通过导出命令将二进制文件和标头压缩打包，即可与其他团队成员进行共享。 有关详细信息，请参阅下方的<a href="#export_binaries_per_project">导出已编译二进制文件及标头</a>。</p>
+<a class="header" href="chapter_2.html#a源不是二进制文件" id="a源不是二进制文件"><h2>源不是二进制文件</h2></a>
+<p>对于 Windows 目录中的库，vcpkg 会下载源，而不是二进制文件[1]。 它将使用 Visual Studio 2017 或 Visual Studio 2015（如果未安装 Visual Studio 2017）对源进行编译。 在 C++ 中，作为链接到它的应用程序代码，使用相同的编译器及编译器版本来编译任何要用的库至关重要。 通过 vcpkg 可以消除或最大程度减少不匹配二进制文件的存在风险及它可能造成的问题。 对于使用特定编译器版本的标准化团队，可让一位成员使用 vcpkg 下载源并编译一组二进制文件，然后通过导出命令将二进制文件和标头压缩打包，即可与其他团队成员进行共享。 有关详细信息，请参阅下方的<a href="chapter_2.html#export_binaries_per_project">导出已编译二进制文件及标头</a>。</p>
 <p>如果在端口集合中使用专用库创建 vcpkg 克隆，则可以添加一个端口来下载预生成二进制文件和标头，并编写一个 portfile.cmake 文件，轻松将上述文件复制到所需的地方。</p>
 <p>[1] 注意：某些专有库不具有这些源。在这些情况下，vcpkg 将下载可兼容预生成二进制文件。*</p>
 <ul>
-<li><a href="./vcpkg/install.html">如何安装</a></li>
-<li><a href="./vcpkg/simple-commands.html">常用命令</a></li>
-<li><a href="./vcpkg/advanced-commands.html">高级命令</a></li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-mac.html">vcpkg,CMake,Mac</a>
+<li><a href="./vcpkg/install.md">如何安装</a></li>
+<li><a href="./vcpkg/simple-commands.md">常用命令</a></li>
+<li><a href="./vcpkg/advanced-commands.md">高级命令</a></li>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-mac.md">vcpkg,CMake,Mac</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-win.html">vcpkg,CMake,Windows</a>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-win.md">vcpkg,CMake,Windows</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-linux.html">vcpkg,CMake,Linux</a>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-linux.md">vcpkg,CMake,Linux</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-vs2017-on-win.html">vcpkg,VS2017,Windows</a>
+<li><a href="./vcpkg/code-with-vcpkg-vs2017-on-win.md">vcpkg,VS2017,Windows</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
 </ul>
@@ -218,6 +215,9 @@
 
         
 
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
         
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>

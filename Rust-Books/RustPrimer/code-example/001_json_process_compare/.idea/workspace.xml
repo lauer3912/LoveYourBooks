@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/book.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/book.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/src/chapter_2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Mathematics-Books/MyMathBook/src/chapter_2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../C-Books/Qt-Up/src/qmake/create_static_library_on_win.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C-Books/Qt-Up/src/qmake/create_static_library_on_win.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="86" />
-    <option name="y" value="47" />
+    <option name="x" value="190" />
+    <option name="y" value="50" />
     <option name="width" value="1260" />
     <option name="height" value="869" />
   </component>
@@ -217,22 +216,26 @@
       <workItem from="1545288486664" duration="68000" />
       <workItem from="1545288855713" duration="967000" />
       <workItem from="1545289842866" duration="1814000" />
+      <workItem from="1545697567978" duration="48000" />
+      <workItem from="1545697648027" duration="2163000" />
+      <workItem from="1545877437758" duration="1169000" />
+      <workItem from="1545879345345" duration="6849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28858000" />
+    <option name="totallyTimeSpent" value="39087000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="47" width="1260" height="869" extended-state="1" />
+    <frame x="190" y="50" width="1260" height="869" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20283806" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21619366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54841405" weight="0.47626114" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54841405" visible="true" weight="0.47626114" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993804" weight="0.39896372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

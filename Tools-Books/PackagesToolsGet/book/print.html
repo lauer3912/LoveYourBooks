@@ -9,18 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <base href="">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
@@ -32,11 +31,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> *PETSc</a></li></ol></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -139,20 +136,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#choco" id="choco"><h1>Choco</h1></a>
+                        <a class="header" href="print.html#choco" id="choco"><h1>Choco</h1></a>
 <p>The package manager for Windows
 Chocolatey - Software Management Automation</p>
 <p>网址：<a href="https://chocolatey.org">https://chocolatey.org</a></p>
 <p>Welcome to the Chocolatey Community Package Repository! The packages found in this section of the site are provided, maintained, and moderated by the community.</p>
 <p>欢迎来到Chocolatey社区包存储库！网站此部分中的软件包由社区提供，维护和审核。</p>
-<a class="header" href="#a特点" id="a特点"><h2>特点</h2></a>
+<a class="header" href="print.html#a特点" id="a特点"><h2>特点</h2></a>
 <ul>
 <li>Security, consistency, and quality checking 安全性、一致性和质量检查</li>
 <li>Installation testing 经过安装测试过</li>
 <li>Virus checking through VirusTotal 通过了VirusTotal检查病毒</li>
 <li>Human moderators who give final review and sign off 最终通过审核并由负责人签字</li>
 </ul>
-<a class="header" href="#a如何安装" id="a如何安装"><h2>如何安装？</h2></a>
+<a class="header" href="print.html#a如何安装" id="a如何安装"><h2>如何安装？</h2></a>
 <ol>
 <li>First, ensure that you are using an administrative shell - you can also install as a non-admin, check out Non-Administrative Installation.</li>
 <li>Copy the text specific to your command shell - cmd.exe or powershell.exe.</li>
@@ -162,63 +159,63 @@ Chocolatey - Software Management Automation</p>
 </ol>
 <pre><code class="language-cmd">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
 </code></pre>
-<a class="header" href="#a全局设置系统环境变量" id="a全局设置系统环境变量"><h2>全局设置系统环境变量</h2></a>
+<a class="header" href="print.html#a全局设置系统环境变量" id="a全局设置系统环境变量"><h2>全局设置系统环境变量</h2></a>
 <pre><code class="language-cmd">SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
 </code></pre>
 <blockquote>
 <p>需要通过 &quot;系统高级设置&quot; -&gt; &quot;环境变量&quot;  -&gt; 添加到系统环境变量中
 然后，重新启动shell就可以使用了。</p>
 </blockquote>
-<a class="header" href="#a如何更新该工具-" id="a如何更新该工具-"><h2>如何更新该工具 ?</h2></a>
+<a class="header" href="print.html#a如何更新该工具-" id="a如何更新该工具-"><h2>如何更新该工具 ?</h2></a>
 <pre><code class="language-cmd">choco upgrade chocolatey
 </code></pre>
-<a class="header" href="#a如何安装-包-" id="a如何安装-包-"><h2>如何安装 &quot;包&quot; ?</h2></a>
+<a class="header" href="print.html#a如何安装-包-" id="a如何安装-包-"><h2>如何安装 &quot;包&quot; ?</h2></a>
 <pre><code class="language-cmd">choco install firacode
 </code></pre>
-<a class="header" href="#vcpkg" id="vcpkg"><h1>VCPKG</h1></a>
+<a class="header" href="print.html#vcpkg" id="vcpkg"><h1>VCPKG</h1></a>
 <hr />
-<a class="header" href="#vcpkg用于-windowslinux-和-macos-的-c-包管理器" id="vcpkg用于-windowslinux-和-macos-的-c-包管理器"><h2>vcpkg：用于 Windows、Linux 和 MacOS 的 C++ 包管理器</h2></a>
+<a class="header" href="print.html#vcpkg用于-windowslinux-和-macos-的-c-包管理器" id="vcpkg用于-windowslinux-和-macos-的-c-包管理器"><h2>vcpkg：用于 Windows、Linux 和 MacOS 的 C++ 包管理器</h2></a>
 <p>vcpkg 是一种命令行包管理器，可极大简化 Windows、Linux 和 MacOS 上第三方库的购置与安装。 如果项目要使用第三方库，建议通过 vcpkg 来安装它们。 vcpkg 同时支持开源和专有库。 已测试 vcpkg Windows 目录中所有库与 Visual Studio 2015 及 Visual Studio 2017 的兼容性。 截至 2018 年 5 月，Windows 目录中已有 900 多个库，Linux/MacOS 目录中有 350 多个库。 C++ 社区正在不断向两个目录添加更多的库。</p>
-<a class="header" href="#a简单而灵活" id="a简单而灵活"><h2>简单而灵活</h2></a>
+<a class="header" href="print.html#a简单而灵活" id="a简单而灵活"><h2>简单而灵活</h2></a>
 <p>仅通过单个命令就能下载源并生成库。 vcpkg 本身就是一个开源项目，可通过 GitHub 获取。 可凭喜好自定义个人专用克隆。 例如，除在公共目录中找到的内容外，还可指定不同的库或不同版本的库。 可在单台计算机上拥有多个 vcpkg 克隆，每个克隆都可生成自定义库集和/或编译开关等。每个克隆都是一个自包含、x 可复制的环境，它自身的 vcpkg.exe 副本仅可在自己的层次结构中运行。 vcpkg 不会被添加到任何环境变量，并且在 Windows 注册表或 Visual Studio 上也不会有依赖项。</p>
-<a class="header" href="#a源不是二进制文件" id="a源不是二进制文件"><h2>源不是二进制文件</h2></a>
-<p>对于 Windows 目录中的库，vcpkg 会下载源，而不是二进制文件[1]。 它将使用 Visual Studio 2017 或 Visual Studio 2015（如果未安装 Visual Studio 2017）对源进行编译。 在 C++ 中，作为链接到它的应用程序代码，使用相同的编译器及编译器版本来编译任何要用的库至关重要。 通过 vcpkg 可以消除或最大程度减少不匹配二进制文件的存在风险及它可能造成的问题。 对于使用特定编译器版本的标准化团队，可让一位成员使用 vcpkg 下载源并编译一组二进制文件，然后通过导出命令将二进制文件和标头压缩打包，即可与其他团队成员进行共享。 有关详细信息，请参阅下方的<a href="#export_binaries_per_project">导出已编译二进制文件及标头</a>。</p>
+<a class="header" href="print.html#a源不是二进制文件" id="a源不是二进制文件"><h2>源不是二进制文件</h2></a>
+<p>对于 Windows 目录中的库，vcpkg 会下载源，而不是二进制文件[1]。 它将使用 Visual Studio 2017 或 Visual Studio 2015（如果未安装 Visual Studio 2017）对源进行编译。 在 C++ 中，作为链接到它的应用程序代码，使用相同的编译器及编译器版本来编译任何要用的库至关重要。 通过 vcpkg 可以消除或最大程度减少不匹配二进制文件的存在风险及它可能造成的问题。 对于使用特定编译器版本的标准化团队，可让一位成员使用 vcpkg 下载源并编译一组二进制文件，然后通过导出命令将二进制文件和标头压缩打包，即可与其他团队成员进行共享。 有关详细信息，请参阅下方的<a href="print.html#export_binaries_per_project">导出已编译二进制文件及标头</a>。</p>
 <p>如果在端口集合中使用专用库创建 vcpkg 克隆，则可以添加一个端口来下载预生成二进制文件和标头，并编写一个 portfile.cmake 文件，轻松将上述文件复制到所需的地方。</p>
 <p>[1] 注意：某些专有库不具有这些源。在这些情况下，vcpkg 将下载可兼容预生成二进制文件。*</p>
 <ul>
-<li><a href="./vcpkg/install.html">如何安装</a></li>
-<li><a href="./vcpkg/simple-commands.html">常用命令</a></li>
-<li><a href="./vcpkg/advanced-commands.html">高级命令</a></li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-mac.html">vcpkg,CMake,Mac</a>
+<li><a href="./vcpkg/install.md">如何安装</a></li>
+<li><a href="./vcpkg/simple-commands.md">常用命令</a></li>
+<li><a href="./vcpkg/advanced-commands.md">高级命令</a></li>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-mac.md">vcpkg,CMake,Mac</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-win.html">vcpkg,CMake,Windows</a>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-win.md">vcpkg,CMake,Windows</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-cmake-on-linux.html">vcpkg,CMake,Linux</a>
+<li><a href="./vcpkg/code-with-vcpkg-cmake-on-linux.md">vcpkg,CMake,Linux</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
-<li><a href="./vcpkg/code-with-vcpkg-vs2017-on-win.html">vcpkg,VS2017,Windows</a>
+<li><a href="./vcpkg/code-with-vcpkg-vs2017-on-win.md">vcpkg,VS2017,Windows</a>
 <ul>
-<li><a href="./vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html">armadillo</a></li>
+<li><a href="./vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.md">armadillo</a></li>
 </ul>
 </li>
 </ul>
-<a class="header" href="#a如何安装-1" id="a如何安装-1"><h1>如何安装</h1></a>
+<a class="header" href="print.html#a如何安装-1" id="a如何安装-1"><h1>如何安装</h1></a>
 <p>从 GitHub 克隆 vcpkg 存储库： https://github.com/Microsoft/vcpkg. 可凭喜好下载到任意文件夹位置。</p>
 <p>在根文件夹中运行 bootstrapper：</p>
 <ul>
 <li><strong>bootstrap-vcpkg.bat</strong> (Windows)</li>
 <li><strong>./bootstrap-vcpkg.sh</strong> (Linux、MacOS)</li>
 </ul>
-<a class="header" href="#a常用命令" id="a常用命令"><h1>常用命令</h1></a>
-<a class="header" href="#a在列表中搜索可用库" id="a在列表中搜索可用库"><h2>在列表中搜索可用库</h2></a>
+<a class="header" href="print.html#a常用命令" id="a常用命令"><h1>常用命令</h1></a>
+<a class="header" href="print.html#a在列表中搜索可用库" id="a在列表中搜索可用库"><h2>在列表中搜索可用库</h2></a>
 <p>要查看哪些包可用，请在命令提示符中键入：vcpkg search</p>
 <p>此命令枚举 vcpkg/ports 子文件夹中的控件文件。 将出现如下的文件列表：</p>
 <pre><code class="language-cmd">ace       6.4.3   The ADAPTIVE Communication Environment
@@ -235,7 +232,7 @@ atk       2.24.0  GNOME Accessibility Toolkit
 portaudio   19.0.6.00  PortAudio Portable Cross-platform Audio I/O API P...
 taglib      1.11.1-2   TagLib Audio Meta-Data Library
 </code></pre>
-<a class="header" href="#a在本地计算机上安装库" id="a在本地计算机上安装库"><h3>在本地计算机上安装库</h3></a>
+<a class="header" href="print.html#a在本地计算机上安装库" id="a在本地计算机上安装库"><h3>在本地计算机上安装库</h3></a>
 <p>在使用 vcpkg search 获取库的名称后，可使用 vcpkg install 下载库并对其进行编译。 vcpkg 在端口目录中使用库的端口文件。 如果未指定三元组，则 vcpkg 将针对目标平台的默认三元组进行安装和编译：x86-windows、x64-linux.cmake 或 x64-osx.cmake。</p>
 <p>对于 Linux 库，vcpkg 取决于本地计算机上安装的 gcc。 在 MacOS 上，vcpkg 使用 Clang。</p>
 <p>如果端口文件指定了依赖项，vcpkg 还会下载并安装这些依赖项。 下载完成后，vcpkg 使用库所使用的生成系统（版本不限）来生成库。 首选 CMake 和 MSBuild（Windows 上）项目，但同时还支持 MAKE 以及其他任何生成系统。 如果 vcpkg 在本地计算机上找不到指定的生成系统，它会下载并安装一个。</p>
@@ -251,7 +248,7 @@ Additional packages (*) will be installed to complete this operation.
 <pre><code class="language-cmd">cmake .. -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake (Linux/MacOS)
 cmake .. -DCMAKE_TOOLCHAIN_FILE=vcpkg\scripts\buildsystems\vcpkg.cmake (Windows)
 </code></pre>
-<a class="header" href="#a列出已安装的库" id="a列出已安装的库"><h2>列出已安装的库</h2></a>
+<a class="header" href="print.html#a列出已安装的库" id="a列出已安装的库"><h2>列出已安装的库</h2></a>
 <p>在安装某些库以后，可使用 vcpkg list 来查看所获得的内容：</p>
 <pre><code class="language-cmd">&gt; vcpkg list
 
@@ -262,12 +259,12 @@ openssl:x86-windows     1.0.2k-2 OpenSSL is an open source project that provides
 websocketpp:x86-windows 0.7.0    Library that implements RFC6455 The WebSocket Pro...
 zlib:x86-windows        1.2.11   A compression library
 </code></pre>
-<a class="header" href="#a与-visual-studio-windows-集成" id="a与-visual-studio-windows-集成"><h2>与 Visual Studio (Windows) 集成</h2></a>
-<a class="header" href="#a按用户" id="a按用户"><h3>按用户</h3></a>
+<a class="header" href="print.html#a与-visual-studio-windows-集成" id="a与-visual-studio-windows-集成"><h2>与 Visual Studio (Windows) 集成</h2></a>
+<a class="header" href="print.html#a按用户" id="a按用户"><h3>按用户</h3></a>
 <p>运行 vcpkg integrate install 来配置 Visual Studio，以便按用户找到所有 vcpkg 头文件和二进制文件，同时还无需手动编辑 VC++ 目录路径。 如果有多个克隆，则运行此命令的克隆将成为新的默认位置。</p>
 <p>现在，只需键入文件夹/标头就可轻松加入标头，自动完成功能将帮助你完成这一切。 在链接到 lib 或添加项目引用时，无需额外步骤。 下图演示了 Visual Studio 查找 azure-storage-cpp 标头的方法。 vcpkg 将其标头放置在 /installed 子文件夹中，由目标平台予以分区。 下图显示库的 /was 子文件夹中包含文件的列表：</p>
 <p><img src="https://docs.microsoft.com/zh-cn/cpp/media/vcpkg-intellisense.png?view=vs-2017" alt="vcpkg IntelliSense 集成" title="vcpkg 和 IntelliSense" /></p>
-<a class="header" href="#a按项目" id="a按项目"><h3>按项目</h3></a>
+<a class="header" href="print.html#a按项目" id="a按项目"><h3>按项目</h3></a>
 <p>如果需要使用的库的版本与活动 vcpkg 实例中的版本不同，请按以下步骤操作：</p>
 <ol>
 <li>新建 vcpkg 克隆</li>
@@ -275,25 +272,25 @@ zlib:x86-windows        1.2.11   A compression library
 <li>运行 vcpkg install &lt;library&gt;。</li>
 <li>使用 vcpkg integrate project 创建 NuGet 包，它会按项目来引用该库。</li>
 </ol>
-<a class="header" href="#a与-visual-studio-code-linuxmacos-集成" id="a与-visual-studio-code-linuxmacos-集成"><h2>与 Visual Studio Code (Linux/MacOS) 集成</h2></a>
+<a class="header" href="print.html#a与-visual-studio-code-linuxmacos-集成" id="a与-visual-studio-code-linuxmacos-集成"><h2>与 Visual Studio Code (Linux/MacOS) 集成</h2></a>
 <p>运行 vcpkg integrate install，使用 vcpkg 登记的位置在 Linux/MacOS 上配置 Visual Studio Code，并在源文件上启用 IntelliSense。</p>
-<a class="header" href="#a通过-wsl-从-windows-指向-linux" id="a通过-wsl-从-windows-指向-linux"><h2>通过 WSL 从 Windows 指向 Linux</h2></a>
+<a class="header" href="print.html#a通过-wsl-从-windows-指向-linux" id="a通过-wsl-从-windows-指向-linux"><h2>通过 WSL 从 Windows 指向 Linux</h2></a>
 <p>可使用适用于 Linux 的 Windows 子系统 (WSL) 从 Windows 计算机生成 Linux 二进制文件。 按照说明<a href="/windows/wsl/install-win10">在 Windows 10 上设置 WSL</a>，并使用<a href="https://blogs.msdn.microsoft.com/vcblog/2017/02/08/targeting-windows-subsystem-for-linux-from-visual-studio/">适用于 Linux 的 Visual Studio 扩展</a>进行配置。 可将生成的所有 Windows 和 Linux 库放在同一文件夹中，并从 Windows 和 WSL 进行访问。</p>
-<a class="header" href="#a导出已编译的二进制文件和标头" id="a导出已编译的二进制文件和标头"><h2>导出已编译的二进制文件和标头</h2></a>
+<a class="header" href="print.html#a导出已编译的二进制文件和标头" id="a导出已编译的二进制文件和标头"><h2>导出已编译的二进制文件和标头</h2></a>
 <p>让团队中的每个成员都去下载和生成库可能会造成效率低下。 一个团队成员就可完成该工作，然后使用 vcpkg export 创建二进制文件和标头的 zip 文件或 NuGet 包（各种格式均可），将其与其他团队成员进行轻松共享。</p>
-<a class="header" href="#a更新升级已安装的库" id="a更新升级已安装的库"><h2>更新/升级已安装的库</h2></a>
+<a class="header" href="print.html#a更新升级已安装的库" id="a更新升级已安装的库"><h2>更新/升级已安装的库</h2></a>
 <p>公共目录始终与最新版本的库保持一致。 要判断哪个本地库已过期，请使用 vcpkg update。 准备好将端口集合更新为公共目录的最新版本后，运行 vcpkg upgrade 命令以自动下载和重新生成任一或所有已安装的过期库。</p>
 <p>默认情况下，upgrade 命令仅列出过期库；而不会对它们进行升级。 要执行升级操作，请使用 --no-dry-run 选项。</p>
 <pre><code class="language-cmd">  vcpkg upgrade --no-dry-run
 </code></pre>
-<a class="header" href="#a升级选项" id="a升级选项"><h3>升级选项</h3></a>
+<a class="header" href="print.html#a升级选项" id="a升级选项"><h3>升级选项</h3></a>
 <ul>
 <li><strong>--no-dry-run</strong> 执行升级，在没有指定条件的情况下，命令只列出过期的包。</li>
 <li><strong>--keep-going</strong> 继续安装包（即使出现了失败）。</li>
 <li><strong>--triplet &lt;t&gt;</strong> 为非限定的包设置默认的三元组。</li>
 <li><strong>--vcpkg-root &lt;path&gt;</strong> 指定要使用的 vcpkg 目录，而不是使用当前目录或工具目录。</li>
 </ul>
-<a class="header" href="#a升级示例" id="a升级示例"><h3>升级示例</h3></a>
+<a class="header" href="print.html#a升级示例" id="a升级示例"><h3>升级示例</h3></a>
 <p>以下示例演示如何只升级指定的库。 请注意，必要时 vcpgk 会自动拉取依赖项。</p>
 <pre><code class="language-cmd">c:\users\satyan\vcpkg&gt; vcpkg upgrade tiny-dnn:x86-windows zlib
 The following packages are up-to-date:
@@ -306,17 +303,17 @@ The following packages will be rebuilt:
 Additional packages (*) will be modified to complete this operation.
 If you are sure you want to rebuild the above packages, run this command with the --no-dry-run option.
 </code></pre>
-<a class="header" href="#a发布新库" id="a发布新库"><h2>发布新库</h2></a>
+<a class="header" href="print.html#a发布新库" id="a发布新库"><h2>发布新库</h2></a>
 <p>可以在自己的专用端口集合中添加任意库。 要建议适合公共目录的新库，请在 <a href="https://github.com/Microsoft/vcpkg/issues">GitHub vcpkg 问题页</a>上打开一个问题。</p>
-<a class="header" href="#a删除库" id="a删除库"><h2>删除库</h2></a>
+<a class="header" href="print.html#a删除库" id="a删除库"><h2>删除库</h2></a>
 <p>键入 vcpkg remove 可删除已安装的库。 如果存在任何其他依赖于它的库，则系统会提示通过 --recurse 重新运行命令，如执行此操作，则下游的所有库都会被删除。</p>
-<a class="header" href="#a自定义-vcpkg" id="a自定义-vcpkg"><h2>自定义 vcpkg</h2></a>
+<a class="header" href="print.html#a自定义-vcpkg" id="a自定义-vcpkg"><h2>自定义 vcpkg</h2></a>
 <p>可凭自身喜好随意修改 vcpkg 的克隆。 可创建多个 vcpkg 克隆，修改每个克隆中的端口文件，使其包含特定版本的库或指定命令行参数。 例如在某企业中，某组的开发者可能正在使用拥有某一依赖项集的软件，而其他组可能拥有不同的集。 可设置两个 vcpkg 克隆并对其进行修改，以便根据需要来下载不同版本的库和编译开关等。</p>
-<a class="header" href="#a卸载-vcpkg" id="a卸载-vcpkg"><h2>卸载 vcpkg</h2></a>
+<a class="header" href="print.html#a卸载-vcpkg" id="a卸载-vcpkg"><h2>卸载 vcpkg</h2></a>
 <p>只需删除目录。</p>
-<a class="header" href="#a发送关于-vcpkg-反馈" id="a发送关于-vcpkg-反馈"><h2>发送关于 vcpkg 反馈</h2></a>
+<a class="header" href="print.html#a发送关于-vcpkg-反馈" id="a发送关于-vcpkg-反馈"><h2>发送关于 vcpkg 反馈</h2></a>
 <p>使用 vcpkg contact --survey 命令向 Microsoft 发送关于 vcpkg 的反馈，包括 Bug 报告和功能上的建议。</p>
-<a class="header" href="#vcpkg-文件夹层次结构" id="vcpkg-文件夹层次结构"><h2>vcpkg 文件夹层次结构</h2></a>
+<a class="header" href="print.html#vcpkg-文件夹层次结构" id="vcpkg-文件夹层次结构"><h2>vcpkg 文件夹层次结构</h2></a>
 <p>所有 vcpkg 功能和数据都自包含在称为“实例”的单独目录层次结构中。 没有注册表设置或环境变量。 可以在计算机上设置任意数量的 vcpkg 实例，它们彼此互不干扰。</p>
 <p>vcpkg 实例的内容如下：</p>
 <ul>
@@ -330,7 +327,7 @@ If you are sure you want to rebuild the above packages, run this command with th
 <li>toolsrc - vcpkg 和相关组件的 C++ 源代码</li>
 <li>triplets - 包含每个受支持目标平台（如 x86-windows 或 x64-uwp）的设置。</li>
 </ul>
-<a class="header" href="#a命令行参考" id="a命令行参考"><h2>命令行参考</h2></a>
+<a class="header" href="print.html#a命令行参考" id="a命令行参考"><h2>命令行参考</h2></a>
 <table><thead><tr><th> 命令                                         </th><th> 描述                                                </th></tr></thead><tbody>
 <tr><td> <strong>vcpkg search [pat]</strong>                       </td><td> 搜索可安装的包                                      </td></tr>
 <tr><td> <strong>vcpkg install &lt;pkg&gt;...</strong>                  </td><td> 安装包                                              </td></tr>
@@ -350,97 +347,97 @@ If you are sure you want to rebuild the above packages, run this command with th
 <tr><td> <strong>vcpkg version</strong>                            </td><td> 显示版本信息                                        </td></tr>
 <tr><td> <strong>vcpkg contact --survey</strong>                   </td><td> 显示联系信息，以便发送反馈。                        </td></tr>
 </tbody></table>
-<a class="header" href="#a选项" id="a选项"><h3>选项</h3></a>
+<a class="header" href="print.html#a选项" id="a选项"><h3>选项</h3></a>
 <table><thead><tr><th> 选项                     </th><th> 描述                                                                                       </th></tr></thead><tbody>
 <tr><td> <strong>--triplet &lt;t&gt;</strong>       </td><td> 指定目标体系结构三元组。 （默认：<code>%VCPKG_DEFAULT_TRIPLET%</code>，另请参阅“vcpkg help triplet”） </td></tr>
 <tr><td> <strong>--vcpkg-root &lt;path&gt;</strong> </td><td> 指定 vcpkg 根目录（默认：<code>%VCPKG_ROOT%</code>）                                                  </td></tr>
 </tbody></table>
-<a class="header" href="#a高级命令" id="a高级命令"><h1>高级命令</h1></a>
-<a class="header" href="#vcpkgcmakemac" id="vcpkgcmakemac"><h1>vcpkg,CMake,Mac</h1></a>
-<a class="header" href="#armadillo" id="armadillo"><h1>armadillo</h1></a>
-<a class="header" href="#vcpkgcmakewindows" id="vcpkgcmakewindows"><h1>vcpkg,CMake,Windows</h1></a>
-<a class="header" href="#armadillo-1" id="armadillo-1"><h1>armadillo</h1></a>
-<a class="header" href="#vcpkgcmakelinux" id="vcpkgcmakelinux"><h1>vcpkg,CMake,Linux</h1></a>
-<a class="header" href="#armadillo-2" id="armadillo-2"><h1>armadillo</h1></a>
-<a class="header" href="#vcpkgvs2017windows" id="vcpkgvs2017windows"><h1>vcpkg,VS2017,Windows</h1></a>
-<a class="header" href="#armadillo-3" id="armadillo-3"><h1>armadillo</h1></a>
-<a class="header" href="#cmake" id="cmake"><h1>CMake</h1></a>
+<a class="header" href="print.html#a高级命令" id="a高级命令"><h1>高级命令</h1></a>
+<a class="header" href="print.html#vcpkgcmakemac" id="vcpkgcmakemac"><h1>vcpkg,CMake,Mac</h1></a>
+<a class="header" href="print.html#armadillo" id="armadillo"><h1>armadillo</h1></a>
+<a class="header" href="print.html#vcpkgcmakewindows" id="vcpkgcmakewindows"><h1>vcpkg,CMake,Windows</h1></a>
+<a class="header" href="print.html#armadillo-1" id="armadillo-1"><h1>armadillo</h1></a>
+<a class="header" href="print.html#vcpkgcmakelinux" id="vcpkgcmakelinux"><h1>vcpkg,CMake,Linux</h1></a>
+<a class="header" href="print.html#armadillo-2" id="armadillo-2"><h1>armadillo</h1></a>
+<a class="header" href="print.html#vcpkgvs2017windows" id="vcpkgvs2017windows"><h1>vcpkg,VS2017,Windows</h1></a>
+<a class="header" href="print.html#armadillo-3" id="armadillo-3"><h1>armadillo</h1></a>
+<a class="header" href="print.html#cmake" id="cmake"><h1>CMake</h1></a>
 <p>CMake - 跨平台 Makefile 生成工具。</p>
 <ul>
-<li><a href="./cmake/cmake-commands.html">CMake 命令</a></li>
-<li><a href="./cmake/CMakeLists-syntax.html">CMakeLists.txt 语法</a></li>
+<li><a href="./cmake/cmake-commands.md">CMake 命令</a></li>
+<li><a href="./cmake/CMakeLists-syntax.md">CMakeLists.txt 语法</a></li>
 </ul>
-<a class="header" href="#cmake-命令" id="cmake-命令"><h1>CMake 命令</h1></a>
-<a class="header" href="#cmakeliststxt-语法" id="cmakeliststxt-语法"><h1>CMakeLists.txt 语法</h1></a>
-<a class="header" href="#project" id="project"><h2>project</h2></a>
+<a class="header" href="print.html#cmake-命令" id="cmake-命令"><h1>CMake 命令</h1></a>
+<a class="header" href="print.html#cmakeliststxt-语法" id="cmakeliststxt-语法"><h1>CMakeLists.txt 语法</h1></a>
+<a class="header" href="print.html#project" id="project"><h2>project</h2></a>
 <pre><code>语句 : project(&lt;projectname&gt; [languageName1 languageName2 … ] )
 作用 : 指定项目名
 </code></pre>
-<a class="header" href="#cmake_minimum_required" id="cmake_minimum_required"><h2>cmake_minimum_required</h2></a>
+<a class="header" href="print.html#cmake_minimum_required" id="cmake_minimum_required"><h2>cmake_minimum_required</h2></a>
 <pre><code>语句 : cmake_minimum_required(VERSION major[.minor[.patch[.tweak]]] [FATAL_ERROR])
 作用 : 指定cmake需要的最小版本
 </code></pre>
-<a class="header" href="#aux_source_directory" id="aux_source_directory"><h2>aux_source_directory</h2></a>
+<a class="header" href="print.html#aux_source_directory" id="aux_source_directory"><h2>aux_source_directory</h2></a>
 <pre><code>语句 : aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
 作用 : 获取指定目录下的所有文件,保存到variable中,包括 .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp .hxx .in .txx文件
 示例 : aux_source_directory(. var)#获取当前目录中源文件
 </code></pre>
-<a class="header" href="#add_executable" id="add_executable"><h2>add_executable</h2></a>
+<a class="header" href="print.html#add_executable" id="add_executable"><h2>add_executable</h2></a>
 <pre><code>语句 : add_executable(&lt;name&gt; [WIN32] [MACOSX_BUNDLE] [EXCLUDE_FROM_ALL] source1 source2 … sourceN)
 作用 : 将指定文件source编译成可执行文件,命名位name
 示例 : add_executable(hello hello.cpp)
 </code></pre>
-<a class="header" href="#add_library" id="add_library"><h2>add_library</h2></a>
+<a class="header" href="print.html#add_library" id="add_library"><h2>add_library</h2></a>
 <pre><code>语句 : add_library([STATIC | SHARED | MODULE] [EXCLUDE_FROM_ALL] source1 source2 … sourceN)
 作用 : 添加一个名为&lt;name&gt;的库文件，指定STATIC，SHARED，或者MODULE参数用来指定要创建的库的类型。STATIC库是目标文件的归档文件，在链接其它目标的时候使用。SHARED库会被动态链接，在运行时被加载。MODULE库是不会被链接到其它目标中的插件，但是可能会在运行时使用dlopen-系列的函数动态链接。如果没有类型被显式指定，这个选项将会根据变量BUILD_SHARED_LIBS的当前值是否为真决定是STATIC还是SHARED
 示例 : add_library(Lib ${DIR_SRCS})
 </code></pre>
-<a class="header" href="#add_dependencies" id="add_dependencies"><h2>add_dependencies</h2></a>
+<a class="header" href="print.html#add_dependencies" id="add_dependencies"><h2>add_dependencies</h2></a>
 <pre><code>语句 : add_dependencies(target-name depend-target1 depend-target2 …)
 作用 : 用于指定某个目标（可执行文件或者库文件）依赖于其他的目标。这里的目标必须是 add_executable、add_library、add_custom_target 命令创建的目标
 </code></pre>
-<a class="header" href="#add_subdirectory" id="add_subdirectory"><h2>add_subdirectory</h2></a>
+<a class="header" href="print.html#add_subdirectory" id="add_subdirectory"><h2>add_subdirectory</h2></a>
 <pre><code>语句 : add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 作用 : 用于添加一个需要进行构建的子目录
 示例 : add_subdirectory(directory)
 </code></pre>
-<a class="header" href="#target_link_libraries" id="target_link_libraries"><h2>target_link_libraries</h2></a>
+<a class="header" href="print.html#target_link_libraries" id="target_link_libraries"><h2>target_link_libraries</h2></a>
 <pre><code>语句 : target_link_libraries(&lt;target&gt; [item1 [item2 […]]] [[debug|optimized|general] ] …)
 作用 : 用于指定 target 需要链接 item1 item2 …。这里 target 必须已经被创建，链接的 item 可以是已经存在的 target（依赖关系会自动添加）
 示例 : target_link_libraries(Main Lib)
 </code></pre>
-<a class="header" href="#set" id="set"><h2>set</h2></a>
+<a class="header" href="print.html#set" id="set"><h2>set</h2></a>
 <pre><code>语句 : set(&lt;variable&gt; &lt;value&gt; [[CACHE &lt;type&gt; &lt;docstring&gt; [FORCE]] | PARENT_SCOPE])
 作用 : 用于设定变量 variable 的值为 value。variable可以自己定义
 示例 : set(var &quot;${list}_exe&quot;)
 </code></pre>
-<a class="header" href="#unset" id="unset"><h2>unset</h2></a>
+<a class="header" href="print.html#unset" id="unset"><h2>unset</h2></a>
 <pre><code>语句 : unset(&lt;variable&gt; [CACHE])
 
 作用 : 用于移除变量 variable。如果指定了 CACHE 变量将被从 Cache 中移除。
 
 示例 : unset(VAR CACHE)
 </code></pre>
-<a class="header" href="#message" id="message"><h2>message</h2></a>
+<a class="header" href="print.html#message" id="message"><h2>message</h2></a>
 <pre><code>语句 : message([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERROR] “message to display” …)
 作用 : 输出信息
 示例 : message(&quot;hello world&quot;)
 </code></pre>
-<a class="header" href="#include_directories" id="include_directories"><h2>include_directories</h2></a>
+<a class="header" href="print.html#include_directories" id="include_directories"><h2>include_directories</h2></a>
 <pre><code>语句 : include_directories([AFTER|BEFORE] [SYSTEM] dir1 dir2 …)
 作用 : 用于设定目录，这些设定的目录将被编译器用来查找 include 文件
 示例 : include_directories(${PROJECT_SOURCE_DIR}/lib)
 </code></pre>
-<a class="header" href="#find_path" id="find_path"><h2>find_path</h2></a>
+<a class="header" href="print.html#find_path" id="find_path"><h2>find_path</h2></a>
 <pre><code>语句 : find_path(&lt;VAR&gt; name1 [path1 path2 …])
 作用 : 用于查找包含文件 name1 的路径，如果找到则将路径保存在 VAR 中（此路径为一个绝对路径），如果没有找到则结果为 &lt;VAR&gt;-NOTFOUND。默认的情况下，VAR 会被保存在 Cache 中，这时候我们需要清除 VAR 才可以进行下一次查询（使用 unset 命令）
 </code></pre>
-<a class="header" href="#add_definitions" id="add_definitions"><h2>add_definitions</h2></a>
+<a class="header" href="print.html#add_definitions" id="add_definitions"><h2>add_definitions</h2></a>
 <pre><code>语句 : find_library(&lt;VAR&gt; name1 [path1 path2 …])
 作用 : 用于添加编译器命令行标志（选项），通常的情况下我们使用其来添加预处理器定义
 示例 : add_definitions(-D_UNICODE -DUNICODE)
 </code></pre>
-<a class="header" href="#execute_process" id="execute_process"><h2>execute_process</h2></a>
+<a class="header" href="print.html#execute_process" id="execute_process"><h2>execute_process</h2></a>
 <pre><code>语句 : execute_process(COMMAND &lt;cmd1&gt; [args1...]]  [COMMAND &lt;cmd2&gt; [args2...] [...]]
                                         [WORKING_DIRECTORY &lt;directory&gt;]
                                         [TIMEOUT &lt;seconds&gt;]
@@ -457,7 +454,7 @@ If you are sure you want to rebuild the above packages, run this command with th
 作用 : 用于执行一个或者多个外部命令。每一个命令的标准输出通过管道转为下一个命令的标准输入。WORKING_DIRECTORY 用于指定外部命令的工作目录，RESULT_VARIABLE 用于指定一个变量保存外部命令执行的结果，这个结果可能是最后一个执行的外部命令的退出码或者是一个描述错误条件的字符串，OUTPUT_VARIABLE 或者 ERROR_VARIABLE 用于指定一个变量保存标准输出或者标准错误，OUTPUT_QUIET 或者 ERROR_QUIET 用于忽略标准输出和标准错误。
 示例 : execute_process(COMMAND ls)
 </code></pre>
-<a class="header" href="#file" id="file"><h2>file</h2></a>
+<a class="header" href="print.html#file" id="file"><h2>file</h2></a>
 <pre><code>语句 : file(WRITE filename &quot;message to write&quot;... )
 作用 : WRITE选项将会写一条消息到名为filename的文件中。如果文件已经存在，该命令会覆盖已有的文件；如果文件不存在，它将创建该文件。
 
@@ -519,8 +516,8 @@ If you are sure you want to rebuild the above packages, run this command with th
 语句 : file(DOWNLOAD url file [TIMEOUT timeout] [STATUS status] [LOG log] [EXPECTED_MD5 sum] [SHOW_PROGRESS])
 作用 : DOWNLOAD 将给定的URL下载到指定的文件中。如果指定了LOG var选项，下载日志将会被输出到var中。如果指定了STATUS var选项，下载操作的状态会被输出到var中。该状态返回值是一个长度为2的list。list的第一个元素是操作的数字返回值，第二个返回值是错误的字符串值。错误信息如果是数字0，操作中没有发生错误。如果指定了TIMEOUT time选项，在time秒之后，操作会超时退出；time应该是整数。如果指定了EXPECTED_MD5 sum选项，下载操作会认证下载的文件的实际MD5和是否与期望值匹配。如果不匹配，操作将返回一个错误。如果指定了SHOW_PROGRESS选项，进度信息会以状态信息的形式被打印出来，直到操作完成。
 </code></pre>
-<a class="header" href="#cmake-常用语句" id="cmake-常用语句"><h2>cmake 常用语句</h2></a>
-<a class="header" href="#a条件控制" id="a条件控制"><h3>条件控制</h3></a>
+<a class="header" href="print.html#cmake-常用语句" id="cmake-常用语句"><h2>cmake 常用语句</h2></a>
+<a class="header" href="print.html#a条件控制" id="a条件控制"><h3>条件控制</h3></a>
 <pre><code class="language-bash">if(expression)
 # ...
 elseif(expression2)
@@ -534,7 +531,7 @@ endif()
 如果 string 为（不区分大小写）0、OFF、NO、FALSE、N、IGNORE、空字符串、以 -NOTFOUND 结尾的字符串则表示假
 如果 string 不符合上面两种情况，则 string 被认为是一个变量的名字。变量的值为第二条所述的各值则表示假，否则表示真</p>
 <p>===========================================================</p>
-<a class="header" href="#if-中的语句" id="if-中的语句"><h4>if 中的语句</h4></a>
+<a class="header" href="print.html#if-中的语句" id="if-中的语句"><h4>if 中的语句</h4></a>
 <ul>
 <li>
 <p>if(NOT expression) 为真的前提是 expression 为假</p>
@@ -576,22 +573,22 @@ if(variable|string STREQUAL variable|string)
 <p>if(DEFINED variable) 为真的前提是 variable 表示的变量被定义了</p>
 </li>
 </ul>
-<a class="header" href="#a循环结构" id="a循环结构"><h4>循环结构</h4></a>
-<a class="header" href="#foreach-循环" id="foreach-循环"><h5>foreach 循环</h5></a>
+<a class="header" href="print.html#a循环结构" id="a循环结构"><h4>循环结构</h4></a>
+<a class="header" href="print.html#foreach-循环" id="foreach-循环"><h5>foreach 循环</h5></a>
 <pre><code class="language-bash">set(VAR a b c)
 foreach(f ${VAR})
     message(${f})
 endforeach()
 </code></pre>
-<a class="header" href="#while-循环" id="while-循环"><h5>while 循环</h5></a>
+<a class="header" href="print.html#while-循环" id="while-循环"><h5>while 循环</h5></a>
 <pre><code class="language-bash">set(VAR 5)
 while(${VAR} GREATER 0)
     message(${VAR})
     math(EXPR VAR &quot;${VAR} - 1&quot;)
 endwhile()
 </code></pre>
-<a class="header" href="#a宏定义" id="a宏定义"><h5>宏定义</h5></a>
-<a class="header" href="#macro-循环" id="macro-循环"><h6>macro 循环</h6></a>
+<a class="header" href="print.html#a宏定义" id="a宏定义"><h5>宏定义</h5></a>
+<a class="header" href="print.html#macro-循环" id="macro-循环"><h6>macro 循环</h6></a>
 <pre><code class="language-bash"># 定义一个宏 hello
 macro(hello MESSAGE)
     message(${MESSAGE})
@@ -603,7 +600,7 @@ function(hello MESSAGE)
     message(${MESSAGE})
 endfunction()
 </code></pre>
-<a class="header" href="#a函数定义" id="a函数定义"><h6>函数定义</h6></a>
+<a class="header" href="print.html#a函数定义" id="a函数定义"><h6>函数定义</h6></a>
 <pre><code class="language-bash">function(get_func RESULT)
     # RESULT 的值为实参的值，因此需要使用 ${RESULT}
     # 这里使用 PARENT_SCOPE 是因为函数会构建一个局部作用域
@@ -621,7 +618,7 @@ get_macro(V2)
 # 输出 Hello Macro
 message(${V2})
 </code></pre>
-<a class="header" href="#a字符串控制" id="a字符串控制"><h3>字符串控制</h3></a>
+<a class="header" href="print.html#a字符串控制" id="a字符串控制"><h3>字符串控制</h3></a>
 <ul>
 <li>string(REGEX MATCH (regular_expression) (output variable) (input) [(input)...])</li>
 <li>string(REGEX MATCHALL (regular_expression) (output variable) (input) [(input)...])</li>
@@ -640,7 +637,7 @@ message(${V2})
 <li>string(STRIP (string) (output variable))</li>
 <li>string(RANDOM [LENGTH (length)][alphabet (alphabet)] (output variable))</li>
 </ul>
-<a class="header" href="#cmake-常用变量" id="cmake-常用变量"><h3>cmake 常用变量</h3></a>
+<a class="header" href="print.html#cmake-常用变量" id="cmake-常用变量"><h3>cmake 常用变量</h3></a>
 <ol>
 <li>UNIX 如果为真，表示为 UNIX-like 的系统，包括 Apple OS X 和 CygWin</li>
 <li>WIN32 如果为真，表示为 Windows 系统，包括 CygWin</li>
@@ -651,8 +648,8 @@ message(${V2})
 <li>CMAKE_LIBRARY_OUTPUT_DIRECTORY 用于设置 LIBRARY 目标的输出路径</li>
 <li>CMAKE_RUNTIME_OUTPUT_DIRECTORY 用于设置 RUNTIME 目标的输出路径</li>
 </ol>
-<a class="header" href="#a可能会用到的一些命令" id="a可能会用到的一些命令"><h4>可能会用到的一些命令</h4></a>
-<a class="header" href="#get_property-获取一个属性值" id="get_property-获取一个属性值"><h5>get_property 获取一个属性值</h5></a>
+<a class="header" href="print.html#a可能会用到的一些命令" id="a可能会用到的一些命令"><h4>可能会用到的一些命令</h4></a>
+<a class="header" href="print.html#get_property-获取一个属性值" id="get_property-获取一个属性值"><h5>get_property 获取一个属性值</h5></a>
 <p>get_property(<variable>
 &lt;GLOBAL |
 DIRECTORY [dir] |
@@ -677,9 +674,9 @@ PATH|ABSOLUTE|NAME|EXT|NAME_WE|REALPATH
 [CACHE])</p>
 <p>get_cmake_property 获取一个 CMake 实例的属性。
 get_directory_property(<variable> [DIRECTORY <dir>] &lt;prop-name&gt;)</p>
-<a class="header" href="#a可执行文件的配置-cmakeliststxt" id="a可执行文件的配置-cmakeliststxt"><h1>可执行文件的配置 CMakeLists.txt</h1></a>
+<a class="header" href="print.html#a可执行文件的配置-cmakeliststxt" id="a可执行文件的配置-cmakeliststxt"><h1>可执行文件的配置 CMakeLists.txt</h1></a>
 <p>明确要构建的是一个可执行文件，需要通过<code>add_executable</code>来指定。</p>
-<a class="header" href="#a构建方式" id="a构建方式"><h2>构建方式</h2></a>
+<a class="header" href="print.html#a构建方式" id="a构建方式"><h2>构建方式</h2></a>
 <pre><code class="language-bash"># 定位到C++工程目录
 cd ~/linear-algebra
 
@@ -705,7 +702,7 @@ cmake --build ./cmake-build-debug --target linear_algebra -- -j 2
 
 # 以上内容完毕
 </code></pre>
-<a class="header" href="#a最优例子" id="a最优例子"><h2>最优例子</h2></a>
+<a class="header" href="print.html#a最优例子" id="a最优例子"><h2>最优例子</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 ####################################################
@@ -774,7 +771,7 @@ add_executable(${PROJECT_NAME} ${DIR_SRCS})
 # Adding the link libraries
 target_link_libraries(${PROJECT_NAME} ${ARMADILLO_LIBRARIES})
 </code></pre>
-<a class="header" href="#a例子-1" id="a例子-1"><h2>例子 1</h2></a>
+<a class="header" href="print.html#a例子-1" id="a例子-1"><h2>例子 1</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -826,7 +823,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} armadillo)
 
 </code></pre>
-<a class="header" href="#a例子-2" id="a例子-2"><h2>例子 2</h2></a>
+<a class="header" href="print.html#a例子-2" id="a例子-2"><h2>例子 2</h2></a>
 <pre><code class="language-c">cmake_minimum_required(VERSION 3.13)
 
 # https://vcpkg.readthedocs.io/en/latest/users/integration/
@@ -953,23 +950,23 @@ add_executable(${PROJECT_NAME} ./src/main.cpp ./src/ArmadilloHelper.cpp ./src/Ei
 # Adding the link libraries
 target_link_libraries(${PROJECT_NAME} armadillo)
 </code></pre>
-<a class="header" href="#a例子-静态库" id="a例子-静态库"><h1>例子: 静态库</h1></a>
-<a class="header" href="#a例子-动态库" id="a例子-动态库"><h1>例子: 动态库</h1></a>
-<a class="header" href="#a10001-cmake-是如何找到我们程序引用的依赖库和头文件的" id="a10001-cmake-是如何找到我们程序引用的依赖库和头文件的"><h1>10001 cmake 是如何找到我们程序引用的依赖库和头文件的？</h1></a>
-<a class="header" href="#a说明" id="a说明"><h2>说明</h2></a>
+<a class="header" href="print.html#a例子-静态库" id="a例子-静态库"><h1>例子: 静态库</h1></a>
+<a class="header" href="print.html#a例子-动态库" id="a例子-动态库"><h1>例子: 动态库</h1></a>
+<a class="header" href="print.html#a10001-cmake-是如何找到我们程序引用的依赖库和头文件的" id="a10001-cmake-是如何找到我们程序引用的依赖库和头文件的"><h1>10001 cmake 是如何找到我们程序引用的依赖库和头文件的？</h1></a>
+<a class="header" href="print.html#a说明" id="a说明"><h2>说明</h2></a>
 <p>如果你的代码使用了外部库（external libraries），并且你事先不知道这些库的头文件和库文件在当前平台的位置。那么适当的文件夹路径和库的搜索路径就应该被添加到编译命令中去。</p>
-<a class="header" href="#a解决方法" id="a解决方法"><h2>解决方法</h2></a>
+<a class="header" href="print.html#a解决方法" id="a解决方法"><h2>解决方法</h2></a>
 <p><strong>CMake 提供了一个非常棒的 <code>module</code> 查找机制</strong></p>
-<a class="header" href="#a应用场景" id="a应用场景"><h3>应用场景</h3></a>
+<a class="header" href="print.html#a应用场景" id="a应用场景"><h3>应用场景</h3></a>
 <p>假设你要使用 <code>LibXML++</code>库，但是 CMake 没有提供该库的 <code>module</code>。同时，你发现网上有其他人提供了 <code>FindLibXML++.cmake</code>.
 此时你可以下载该文件并把它丢到 <code>CMake module</code> 路径下。</p>
 <p>CMake 本身提供了很多常用库的 module 来帮助你查找该库。使用命令 <code>cmake --help-module-list</code>
 可以查看提供了哪些 module，或者到 module 的存放路径下查看，
 (1)在 ubuntu Linux 上的位置通常在／usr/share/cmake/Modules/下。
 (2)在 MacOS 上的位置一般在 /usr/local/opt/cmake/Modules/</p>
-<a class="header" href="#cmake-的-packagemodule-查找机制" id="cmake-的-packagemodule-查找机制"><h3>CMake 的 package/module 查找机制</h3></a>
+<a class="header" href="print.html#cmake-的-packagemodule-查找机制" id="cmake-的-packagemodule-查找机制"><h3>CMake 的 package/module 查找机制</h3></a>
 <p>想弄清楚这个问题，就不得不提到 CMake 提供的 <code>find_package</code> 命令。</p>
-<a class="header" href="#find_package-介绍" id="find_package-介绍"><h4>FIND_PACKAGE 介绍</h4></a>
+<a class="header" href="print.html#find_package-介绍" id="find_package-介绍"><h4>FIND_PACKAGE 介绍</h4></a>
 <pre><code class="language-c">FIND_PACKAGE( &lt;name&gt; [version] [EXACT] [QUIET] [NO_MODULE] [ [ REQUIRED | COMPONENTS ] [ componets... ] ] )
 </code></pre>
 <p>用来调用预定义在 ${CMAKE_MODULE_PATH} 下的 Find<name>.cmake 模块。
@@ -991,7 +988,7 @@ target_link_libraries(${PROJECT_NAME} armadillo)
 <pre><code class="language-c">FIND_PACKAGE( libdb_cxx REQUIRED)
 # 这条命令执行后，CMake 会到变量 CMAKE_MODULE_PATH 指示的目录中查找文件 Findlibdb_cxx.cmake 并执行。
 </code></pre>
-<a class="header" href="#find_package-是如何工作的" id="find_package-是如何工作的"><h4>FIND_PACKAGE 是如何工作的？</h4></a>
+<a class="header" href="print.html#find_package-是如何工作的" id="find_package-是如何工作的"><h4>FIND_PACKAGE 是如何工作的？</h4></a>
 <p><code>find_package()</code> 命令会在模块路径中寻找 <code>Find&lt;name&gt;.cmake</code> ，这是查找库的一个典型方式。首先 CMake 查看<code>${CMAKE_MODULE_PATH}</code> 中的所有目录，然后再查看它自己的模块目录 <code>&lt;CMAKE_ROOT&gt;/share/cmake-x.y/Modules/</code> 。</p>
 <p>如果没找到这样的文件，会寻找 <code>&lt;Name&gt;Config.cmake</code> 或者 <code>&lt;lower-case-name&gt;-config.cmake</code> ，它们是假定库会安装的文件（但是目前还没有多少库会安装它们）。不做检查，直接包含安装的库的固定值。</p>
 <p>前面的称为模块模式，后面的称为配置模式。配置模式的文件的编写见 <a href="http://vtk.org/Wiki/CMake/Tutorials/How_to_create_a_ProjectConfig.cmake_file">这里的文档</a> 。可能还会用到 <a href="http://vtk.org/Wiki/CMake/Tutorials/Exporting_and_Importing_Targets">importing and exporting targets</a> 这篇文档。</p>
@@ -1126,7 +1123,7 @@ find_library(&lt;VAR&gt; NAMES name)
 </code></pre>
 <p>只要这些调用中的一个成功返回，结果变量就会被设置并且被存储到 cache 中；这样随后的调用都不会再行搜索。如果那找到的库是一个框架，VAR 将会被设置为指向框架“&lt;完整路径&gt;/A.framework” 的完整路径。当一个指向框架的完整路径被用作一个库文件，CMake 将使用-framework A，以及-F&lt;完整路径&gt;这两个选项将框架连接到目标上。</p>
 <p>参见 <code>cmake_policy()</code>命令的文档中关于 <code>NO_POLICY_SCOPE</code> 选项讨论。</p>
-<a class="header" href="#a使用-cmake-自带查找模块的外部库" id="a使用-cmake-自带查找模块的外部库"><h4>使用 cmake 自带查找模块的外部库</h4></a>
+<a class="header" href="print.html#a使用-cmake-自带查找模块的外部库" id="a使用-cmake-自带查找模块的外部库"><h4>使用 cmake 自带查找模块的外部库</h4></a>
 <p>为了能支持各种常见的库和包，CMake 自带了很多模块。可以通过命令 cmake --help-module-list （输入 cmake --help，然后双击 Tab 会有命令提示）得到你的 CMake 支持的模块的列表：</p>
 <pre><code class="language-c">.......
 .......
@@ -1177,7 +1174,7 @@ if (BZIP2_FOUND)
 endif (BZIP2_FOUND)
 </code></pre>
 <p>可以用 cmake 和 <code>make VERBOSE=1</code> 来验证传给编译器和链接器的 flag 是否正确。也可以用 ldd 或者 <code>dependency walker</code> 之类的工具在编译后验证 helloworld 链接的文件。</p>
-<a class="header" href="#a使用-cmake-没有自带-查找模块的外部库" id="a使用-cmake-没有自带-查找模块的外部库"><h4>使用 cmake 没有自带, 查找模块的外部库</h4></a>
+<a class="header" href="print.html#a使用-cmake-没有自带-查找模块的外部库" id="a使用-cmake-没有自带-查找模块的外部库"><h4>使用 cmake 没有自带, 查找模块的外部库</h4></a>
 <p>假设你想要使用 <code>LibXML++</code>库。在写本文时，CMake 还没有一个 <code>libXML++</code>的查找模块。但是可以在网上搜索到一个（ <code>FindLibXML++.cmake</code> ）。在 <code>CMakeLists.txt</code> 中写：</p>
 <pre><code class="language-c">find_package(LibXML++ REQUIRED)
 include_directories(${LibXML++_INCLUDE_DIRS})
@@ -1191,7 +1188,7 @@ set(LIBS ${LIBS} ${LibXML++_LIBRARIES})
 </code></pre>
 <p>把刚才的需要用到的 CMake 模块放到这个文件夹下。</p>
 <p>一般来说就是这样。有些库可能还需要些其他的什么，所以要再看一下 <code>FindSomething.cmake</code> 文件的文档。</p>
-<a class="header" href="#a包含组件的依赖包" id="a包含组件的依赖包"><h4>包含组件的依赖包</h4></a>
+<a class="header" href="print.html#a包含组件的依赖包" id="a包含组件的依赖包"><h4>包含组件的依赖包</h4></a>
 <p>有些库不是一个整体，还包含一些依赖的库或者组件。一个典型的例子是 Qt 库，它其中包含 QtOpenGL 和 QtXml 组件。使用下面的 find_package 命令来使用这些组件：</p>
 <pre><code class="language-c">find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
 </code></pre>
@@ -1210,10 +1207,10 @@ if ( NOT Qt_FOUND OR NOT QtXml_FOUND )
   message(FATAL_ERROR &quot;Package Qt and component QtXml required, but not found!&quot;)
 endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 </code></pre>
-<a class="header" href="#a介绍下-pkg-config" id="a介绍下-pkg-config"><h4>介绍下 pkg-config</h4></a>
+<a class="header" href="print.html#a介绍下-pkg-config" id="a介绍下-pkg-config"><h4>介绍下 pkg-config</h4></a>
 <p>pkg-config 是个用来帮助构建的工具，它基于记录库文件和头文件位置的 .pc 文件。主要用在类 Unix 系统上。可以在 pkg-config 的网站 找到更多的信息。CMake 可以利用 pkg-config，可以在 CMake 的模块目录下的 FindPkgConfig.cmake 文件中找到相关的文档。这在当你处理一个没有 cmake 脚本的库的时候，或者遇到 CMake 的查找脚本失效的情况，非常有帮助。</p>
 <p>但是，直接使用 pkg-config 的结果需要非常小心。一个主要原因是对于 ccmake 手动定义的库路径，可能覆盖到或者发生冲突。此外，也有可能 pkg-config 提供了错误的信息（错误的编辑器等）。对于这些情况，让 CMake 不依赖 pkg-config 做检测，而只用 pkg-config 作为查找路径的提示。</p>
-<a class="header" href="#a编写查找模块" id="a编写查找模块"><h4>编写查找模块</h4></a>
+<a class="header" href="print.html#a编写查找模块" id="a编写查找模块"><h4>编写查找模块</h4></a>
 <p>首先，注意传给 <code>find_package</code> 的名字或者前缀，是用于全部变量的部分文件名和前缀。这很重要，名字必须完全匹配。不幸的是很多情况下，即使是 CMake 自带的模块，也有不匹配的名字，导致各种问题。</p>
 <p>模块的基本操作应该大体按下面的顺序：</p>
 <ul>
@@ -1238,26 +1235,26 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 </li>
 <li>调用 find_package_handle_standard_args() 宏来设置 <name>_FOUND 变量，并打印一条成功或者失败的消息</li>
 </ul>
-<a class="header" href="#a性能和缓存" id="a性能和缓存"><h3>性能和缓存</h3></a>
+<a class="header" href="print.html#a性能和缓存" id="a性能和缓存"><h3>性能和缓存</h3></a>
 <p>CMake 的变量系统要比初看起来的要复杂得多。有些变量做了缓存。做了缓存的变量有内部的（不能用 ccmake 编辑）和外部的（可以被 ccmake 修改）。另外，外部变量只能在 ccmake 的高级模式可见。</p>
 <p>默认情况下，所有变量都是不缓存的。</p>
 <p>为了避免每次执行时都重复检测全部的库，更为了允许用户在 ccmake 中设置 include 目录和库，需要支持缓存。幸运的是，这已经被 find_path 和 find_library 支持，它们可以缓存它们的变量。如果变量已经设置为有效值（比如不是 -NOTFOUND 或者未定义），这些函数将什么也不做，保持旧值。类似地， pkg_check_modules 支持结果的内部缓存，因此不需要每次都再调用 pkg-config。</p>
 <p>另一方面，查找模块的输出值（ <name>_FOUND, <name>_INCLUDE_DIRS 和 <name>_LIBRARIES ）不应该被缓存，否则修改其他缓存的变量就不能改变输出，这显然是不期望的。</p>
-<a class="header" href="#brew" id="brew"><h1>Brew</h1></a>
+<a class="header" href="print.html#brew" id="brew"><h1>Brew</h1></a>
 <p>网址：<a href="https://brew.sh/">https://brew.sh/</a></p>
 <p>内容涵盖如下：</p>
 <ul>
-<li><a href="./brew/install.html">如何安装</a></li>
-<li><a href="./brew/simple-commands.html">常用命令行参考</a></li>
-<li><a href="./brew/advanced-commands.html">高级命令参考</a></li>
-<li><a href="./brew/env.html">环境变量</a></li>
-<li><a href="./brew/code-with-cplus-and-cmake.html">C/C++与 CMake</a></li>
-<li><a href="./brew/code-with-xcode.html">XCode</a></li>
+<li><a href="./brew/install.md">如何安装</a></li>
+<li><a href="./brew/simple-commands.md">常用命令行参考</a></li>
+<li><a href="./brew/advanced-commands.md">高级命令参考</a></li>
+<li><a href="./brew/env.md">环境变量</a></li>
+<li><a href="./brew/code-with-cplus-and-cmake.md">C/C++与 CMake</a></li>
+<li><a href="./brew/code-with-xcode.md">XCode</a></li>
 </ul>
-<a class="header" href="#a快速安装" id="a快速安装"><h1>快速安装</h1></a>
+<a class="header" href="print.html#a快速安装" id="a快速安装"><h1>快速安装</h1></a>
 <pre><code class="language-bash">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
-<a class="header" href="#a常用命令-1" id="a常用命令-1"><h1>常用命令</h1></a>
+<a class="header" href="print.html#a常用命令-1" id="a常用命令-1"><h1>常用命令</h1></a>
 <table><thead><tr><th> 命令                                          </th><th> 描述                                </th></tr></thead><tbody>
 <tr><td> <strong>brew search [TEXT/REGEX/...]</strong>              </td><td> 搜索可安装的公式                    </td></tr>
 <tr><td> <strong>brew info [FORMULA...]</strong>                    </td><td> 获取公式的信息                      </td></tr>
@@ -1279,7 +1276,7 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 <tr><td> <strong>man brew</strong>                                  </td><td> 操作系统 man 方式查看 brew 帮助文档 </td></tr>
 </tbody></table>
 <p>更多信息可以参考 <a href="https://docs.brew.sh/Manpage">https://docs.brew.sh/Manpage</a></p>
-<a class="header" href="#a命令行高级功能" id="a命令行高级功能"><h1>命令行高级功能</h1></a>
+<a class="header" href="print.html#a命令行高级功能" id="a命令行高级功能"><h1>命令行高级功能</h1></a>
 <pre><code class="language-bash">brew --version
 brew command [--verbose|-v] [options] [formula] …
 </code></pre>
@@ -1344,7 +1341,7 @@ brew command [--verbose|-v] [options] [formula] …
 <tr><td>                                                                  </td><td>                                                        </td></tr>
 </tbody></table>
 <p>更多信息可以参考 <a href="https://docs.brew.sh/Manpage">https://docs.brew.sh/Manpage</a></p>
-<a class="header" href="#brew-的环境变量" id="brew-的环境变量"><h1>brew 的环境变量</h1></a>
+<a class="header" href="print.html#brew-的环境变量" id="brew-的环境变量"><h1>brew 的环境变量</h1></a>
 <ul>
 <li><strong>HOMEBREW_ARTIFACT_DOMAIN</strong></li>
 <li><strong>HOMEBREW_AUTO_UPDATE_SECS</strong></li>
@@ -1385,8 +1382,8 @@ brew command [--verbose|-v] [options] [formula] …
 <li><strong>no_proxy</strong></li>
 </ul>
 <p>更多信息可以参考 <a href="https://docs.brew.sh/Manpage">https://docs.brew.sh/Manpage</a></p>
-<a class="header" href="#cc与-cmake" id="cc与-cmake"><h1>C/C++与 CMake</h1></a>
-<a class="header" href="#brew---prefix-库的名称-获取库的路径" id="brew---prefix-库的名称-获取库的路径"><h2>$(brew --prefix 库的名称) 获取库的路径</h2></a>
+<a class="header" href="print.html#cc与-cmake" id="cc与-cmake"><h1>C/C++与 CMake</h1></a>
+<a class="header" href="print.html#brew---prefix-库的名称-获取库的路径" id="brew---prefix-库的名称-获取库的路径"><h2>$(brew --prefix 库的名称) 获取库的路径</h2></a>
 <p>CMakeLists.txt 文件中，可以这样使用</p>
 <pre><code class="language-c"># 添加第三方数学库armadillo
 # 设置armadillo的include及lib路径
@@ -1397,10 +1394,10 @@ endif()
 # 告知依赖 armadillo 库
 find_package(armadillo REQUIRED)
 </code></pre>
-<a class="header" href="#xcode" id="xcode"><h1>XCode</h1></a>
-<a class="header" href="#a常用公式库" id="a常用公式库"><h1>常用公式库</h1></a>
-<a class="header" href="#a数学库" id="a数学库"><h1>数学库</h1></a>
-<a class="header" href="#armadillo-数学库" id="armadillo-数学库"><h1>armadillo 数学库</h1></a>
+<a class="header" href="print.html#xcode" id="xcode"><h1>XCode</h1></a>
+<a class="header" href="print.html#a常用公式库" id="a常用公式库"><h1>常用公式库</h1></a>
+<a class="header" href="print.html#a数学库" id="a数学库"><h1>数学库</h1></a>
+<a class="header" href="print.html#armadillo-数学库" id="armadillo-数学库"><h1>armadillo 数学库</h1></a>
 <p>Armadillo 是一个用于 C ++语言的高质量线性代数库（矩阵数学），旨在实现速度和易用性之间的良好平衡</p>
 <ol>
 <li>Armadillo is a high quality linear algebra library (matrix maths) for the C++ language, aiming towards a good balance between speed and ease of use</li>
@@ -1426,14 +1423,14 @@ find_package(armadillo REQUIRED)
 <li>在许可许可下可用，对开源和专有（闭源）软件都很有用</li>
 <li>可用于机器学习，模式识别，计算机视觉，信号处理，生物信息学，统计学，金融学等</li>
 </ol>
-<a class="header" href="#a网址" id="a网址"><h2>网址</h2></a>
+<a class="header" href="print.html#a网址" id="a网址"><h2>网址</h2></a>
 <p><a href="https://arma.sourceforge.net/">https://arma.sourceforge.net/</a></p>
-<a class="header" href="#a在线文档" id="a在线文档"><h2>在线文档</h2></a>
+<a class="header" href="print.html#a在线文档" id="a在线文档"><h2>在线文档</h2></a>
 <p><a href="http://arma.sourceforge.net/docs.html">http://arma.sourceforge.net/docs.html</a></p>
-<a class="header" href="#a安装" id="a安装"><h2>安装</h2></a>
+<a class="header" href="print.html#a安装" id="a安装"><h2>安装</h2></a>
 <pre><code class="language-bash">brew install armadillo
 </code></pre>
-<a class="header" href="#a使用" id="a使用"><h2>使用</h2></a>
+<a class="header" href="print.html#a使用" id="a使用"><h2>使用</h2></a>
 <pre><code class="language-c"># CMakeLists.txt 文件中的使用
 
 # Use brew? or use vcpkg?
@@ -1446,12 +1443,12 @@ if(${UD_USE_BREW})
 endif()
 
 </code></pre>
-<a class="header" href="#eigen-数学库" id="eigen-数学库"><h1>Eigen 数学库</h1></a>
-<a class="header" href="#a网址-1" id="a网址-1"><h2>网址</h2></a>
+<a class="header" href="print.html#eigen-数学库" id="eigen-数学库"><h1>Eigen 数学库</h1></a>
+<a class="header" href="print.html#a网址-1" id="a网址-1"><h2>网址</h2></a>
 <p><a href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a></p>
-<a class="header" href="#a在线文档-1" id="a在线文档-1"><h2>在线文档</h2></a>
+<a class="header" href="print.html#a在线文档-1" id="a在线文档-1"><h2>在线文档</h2></a>
 <p><a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">http://eigen.tuxfamily.org/index.php?title=Main_Page</a></p>
-<a class="header" href="#a说明-1" id="a说明-1"><h2>说明</h2></a>
+<a class="header" href="print.html#a说明-1" id="a说明-1"><h2>说明</h2></a>
 <p>非常强大的矩阵运算库，我一直在用，大家用了都说好。使用类似 Matlab 的方式操作矩阵，可以在这里查看官方的与 Maltab 的对应关系，个人感觉单纯讲和 Matlab 的对应的话，可能不如 Armadillo 对应的好，但功能绝对强大。Eigen 包含了绝大部分你能用到的矩阵算法，同时提供许多第三方的接口。Eigen 一个重要特点是没有什么依赖的库，本身仅有许多头文件组成，因此非常轻量而易于跨平台。你要做的就是把用到的头文件和你的代码放在一起就可以了。Eigen 的一些特性：</p>
 <ul>
 <li>支持整数、浮点数、复数，使用模板编程，可以为特殊的数据结构提供矩阵操作。比如在用 ceres-solver 进行做优化问题（比如 bundle adjustment）的时候，有时候需要用模板编程写一个目标函数，ceres 可以将模板自动替换为内部的一个可以自动求微分的特殊的 double 类型。而如果要在这个模板函数中进行矩阵计算，使用 Eigen 就会非常方便。</li>
@@ -1464,10 +1461,10 @@ endif()
 <li>更新活跃，用户众多（Google、WilliowGarage 也在用），使用 Eigen 的比较著名的开源项目有 ROS（机器人操作系统）、PCL（点云处理库）、Google Ceres（优化算法）。OpenCV 自带到 Eigen 的接口。</li>
 </ul>
 <p>总体来讲，如果经常做一些比较复杂的矩阵计算的话，或者想要跨平台的话，非常值得一用。</p>
-<a class="header" href="#a安装-1" id="a安装-1"><h2>安装</h2></a>
+<a class="header" href="print.html#a安装-1" id="a安装-1"><h2>安装</h2></a>
 <pre><code class="language-bash">brew install eigen
 </code></pre>
-<a class="header" href="#cmakeliststxt-使用" id="cmakeliststxt-使用"><h2>CMakeLists.txt 使用</h2></a>
+<a class="header" href="print.html#cmakeliststxt-使用" id="cmakeliststxt-使用"><h2>CMakeLists.txt 使用</h2></a>
 <pre><code class="language-c"># CMakeLists.txt 文件中的使用
 
 # Use brew? or use vcpkg?
@@ -1482,7 +1479,7 @@ if(${UD_USE_BREW})
     set(EIGEN_INCLUDE_DIR &quot;$(brew --prefix eigen)/include&quot;)
 endif()
 </code></pre>
-<a class="header" href="#a实例" id="a实例"><h2>实例</h2></a>
+<a class="header" href="print.html#a实例" id="a实例"><h2>实例</h2></a>
 <pre><code class="language-c">#include &lt;iostream&gt;
 #include &lt;eigen3/Eigen/Dense&gt;
 </code></pre>
@@ -1509,20 +1506,20 @@ endif()
 //    3
 //    -2
 </code></pre>
-<a class="header" href="#opencv" id="opencv"><h1>OpenCV</h1></a>
-<a class="header" href="#petsc-数学库" id="petsc-数学库"><h1>PETSc 数学库</h1></a>
-<a class="header" href="#a网址-2" id="a网址-2"><h2>网址</h2></a>
+<a class="header" href="print.html#opencv" id="opencv"><h1>OpenCV</h1></a>
+<a class="header" href="print.html#petsc-数学库" id="petsc-数学库"><h1>PETSc 数学库</h1></a>
+<a class="header" href="print.html#a网址-2" id="a网址-2"><h2>网址</h2></a>
 <p><a href="http://www.mcs.anl.gov/petsc/">http://www.mcs.anl.gov/petsc/</a></p>
-<a class="header" href="#a在线文档-2" id="a在线文档-2"><h2>在线文档</h2></a>
+<a class="header" href="print.html#a在线文档-2" id="a在线文档-2"><h2>在线文档</h2></a>
 <p><a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">http://eigen.tuxfamily.org/index.php?title=Main_Page</a></p>
-<a class="header" href="#a说明-2" id="a说明-2"><h2>说明</h2></a>
+<a class="header" href="print.html#a说明-2" id="a说明-2"><h2>说明</h2></a>
 <p>许可证：Copyright University of Chicago (GPL compatible)</p>
 <p>PETSc(Portable, Extensible Toolkit for Scientific Computation) 是美国能源部 ODE2000 支持开发的 20 多个 ACTS 工具箱之一，由 Argonne 国家实验室开发的可移植可扩展科学计算工具箱，主要用于在分布式存储环境高效求解偏微分方程组及相关问题。PETSc 所有消息传递通信均采用 MPI 标准实现。线性方程组求解器是 PETSc 的核心组件之一，PETSc 几乎提供了所有求解线性方程组的高效求解器，既有串行求解也有并行求解，既有直接法求解也有迭代法求解。对于大规模线性方程组， PETSc 提供了大量基于 Krylov 子空间方法和各种预条件子的成熟而有效的迭代方法，以及其他通用程序和用户程序的接口。PETSc 具有一般库软件所具备的高性能、可移植等优点，而且面向对象技术使得 PETSc 内部功能部件的使用非常方便，接口简单而又适用面广，可以缩短开发周期，减少工作量。。</p>
 <p>PETSc 在网上可一找到很多英文资料，使用也比较广泛。不过在学校实验室的一般的科学计算可能接触的还比较少。推荐一个 YouTube（可能要翻墙）的五集 PETSc 简单入门<a href="http://www.youtube.com/watch?v=ubp_cSibb9I">《PRACE Video Tutorial – PETSc Tutorial》</a>。</p>
-<a class="header" href="#a安装-2" id="a安装-2"><h2>安装</h2></a>
+<a class="header" href="print.html#a安装-2" id="a安装-2"><h2>安装</h2></a>
 <pre><code class="language-bash">brew install petsc
 </code></pre>
-<a class="header" href="#cmakeliststxt-使用-1" id="cmakeliststxt-使用-1"><h2>CMakeLists.txt 使用</h2></a>
+<a class="header" href="print.html#cmakeliststxt-使用-1" id="cmakeliststxt-使用-1"><h2>CMakeLists.txt 使用</h2></a>
 <pre><code class="language-c"># CMakeLists.txt 文件中的使用
 
 # Use brew? or use vcpkg?
@@ -1537,7 +1534,7 @@ if(${UD_USE_BREW})
     set(EIGEN_INCLUDE_DIR &quot;$(brew --prefix eigen)/include&quot;)
 endif()
 </code></pre>
-<a class="header" href="#a实例-1" id="a实例-1"><h2>实例</h2></a>
+<a class="header" href="print.html#a实例-1" id="a实例-1"><h2>实例</h2></a>
 <pre><code class="language-c">#include &lt;iostream&gt;
 #include &lt;eigen3/Eigen/Dense&gt;
 </code></pre>
@@ -1592,6 +1589,9 @@ endif()
 
         
 
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
         
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>

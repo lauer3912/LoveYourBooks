@@ -9,31 +9,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <base href="../">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
 
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "../";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -72,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../base/index.html"><strong aria-hidden="true">1.</strong> Windows 基础</a></li><li><ol class="section"><li><a href="../base/windows_os_base_sub_system.html"><strong aria-hidden="true">1.1.</strong> Windows 核心三个主要子系统</a></li><li><a href="../base/windows_api.html"><strong aria-hidden="true">1.2.</strong> Windows API</a></li><li><a href="../base/windows_control_and_message.html"><strong aria-hidden="true">1.3.</strong> 窗口和消息</a></li><li><a href="../base/windows_resources_and_handle.html"><strong aria-hidden="true">1.4.</strong> 资源和句柄</a></li><li><a href="../base/windows_unicode.html"><strong aria-hidden="true">1.5.</strong> 历史遗留：Windows 的 Unicode 编码</a></li><li><a href="../base/windows_tchar.html"><strong aria-hidden="true">1.6.</strong> TCHAR 类型的用途</a></li><li><a href="../base/windows_data_type_unit_pstr_param.html"><strong aria-hidden="true">1.7.</strong> Windows 常用的数据类型</a></li><li><a href="../base/windows_function_winmain.html"><strong aria-hidden="true">1.8.</strong> Windows 主函数 WinMain</a></li><li><a href="../base/windows_important_file_windows_h.html"><strong aria-hidden="true">1.9.</strong> 重要的 windows.h 头文件</a></li><li><a href="../base/windows_function_register_windows_class.html"><strong aria-hidden="true">1.10.</strong> 注册窗口类</a></li><li><a href="../base/windows_function_message_box.html"><strong aria-hidden="true">1.11.</strong> 弹出信息框：MessageBox</a></li><li><a href="../base/windows_function_create_window.html"><strong aria-hidden="true">1.12.</strong> 创建窗口：CreateWindow</a></li><li><a href="../base/windows_messages_loop.html"><strong aria-hidden="true">1.13.</strong> 消息循环机制</a></li><li><a href="../base/windows_function_get_message.html"><strong aria-hidden="true">1.14.</strong> 获取消息：GetMessage</a></li><li><a href="../base/windows_more_window_proc_functions.html"><strong aria-hidden="true">1.15.</strong> 多个窗口消息处理函数</a></li><li><a href="../base/windows_gdi.html"><strong aria-hidden="true">1.16.</strong> GDI 图形设备接口函数</a></li><li><a href="../base/windows_gdi_plus.html"><strong aria-hidden="true">1.17.</strong> GDI+</a></li><li><a href="../base/windows_draw_and_message_process.html"><strong aria-hidden="true">1.18.</strong> Windows 绘图和消息机制</a></li><li><a href="../base/windows_force_draw.html"><strong aria-hidden="true">1.19.</strong> Windows 强制绘制</a></li><li><a href="../base/windows_coordinates.html"><strong aria-hidden="true">1.20.</strong> Windows 坐标系</a></li><li><a href="../base/windows_common_gdi_functions.html"><strong aria-hidden="true">1.21.</strong> Windows 常用 GDI 函数</a></li><li><a href="../base/windows_gdi_device_content.html"><strong aria-hidden="true">1.22.</strong> Windows 设备环境(也称为设备上下文、DC)</a></li><li><a href="../base/windows_gdi_draw_examples.html"><strong aria-hidden="true">1.23.</strong> Windows GDI 绘图实例</a></li><li><a href="../base/windows_gdi_draw_text_content.html"><strong aria-hidden="true">1.24.</strong> Windows 文本处理：GDI 绘图范围</a></li><li><a href="../base/windows_gdi_text_font.html"><strong aria-hidden="true">1.25.</strong> Windows 文本字体</a></li><li><a href="../base/windows_bitmap_programming.html"><strong aria-hidden="true">1.26.</strong> Windows 位图编程</a></li><li><a href="../base/windows_common_images_programming.html"><strong aria-hidden="true">1.27.</strong> Windows 常用图像文件格式编程</a></li><li><a href="../base/windows_memory_dc.html"><strong aria-hidden="true">1.28.</strong> Windows 内存设备环境(内存 DC)</a></li><li><a href="../base/windows_bitblt.html"><strong aria-hidden="true">1.29.</strong> 位块及位块传输 BitBlt</a></li><li><a href="../base/windows_function_stretchBlt.html"><strong aria-hidden="true">1.30.</strong> StretchBlt 复制时拉伸或压缩图像</a></li><li><a href="../base/windows_function_transparentBlt.html"><strong aria-hidden="true">1.31.</strong> TransparentBlt 图像透明显示</a></li><li><a href="../base/windows_dual_buffering.html"><strong aria-hidden="true">1.32.</strong> 双缓冲,解决屏幕闪烁问题</a></li><li><a href="../base/trap_windows_dual_buffering.html"><strong aria-hidden="true">1.33.</strong> 双缓冲代码陷阱</a></li><li><a href="../base/windows_keyboard_message_processing.html"><strong aria-hidden="true">1.34.</strong> Windows 键盘消息处理</a></li><li><a href="../base/windows_keyboard_IParam.html"><strong aria-hidden="true">1.35.</strong> 按键 IParam 参数含义</a></li><li><a href="../base/windows_virtual_keyboard.html"><strong aria-hidden="true">1.36.</strong> Windows 虚拟键码</a></li><li><a href="../base/windows_mouse_message_processing.html"><strong aria-hidden="true">1.37.</strong> Windows 鼠标消息处理</a></li><li><a href="../base/windows_mouse_message_kinds.html" class="active"><strong aria-hidden="true">1.38.</strong> Windows 鼠标消息种类</a></li><li><a href="../base/windows_dynamic_mouse_draw_line.html"><strong aria-hidden="true">1.39.</strong> Windows 动态鼠标画线</a></li><li><a href="../base/windows_mouse_position_detect.html"><strong aria-hidden="true">1.40.</strong> Windows 鼠标位置检测</a></li><li><a href="../base/windows_wm_timer.html"><strong aria-hidden="true">1.41.</strong> Windows 定时器 WM_TIMER</a></li><li><a href="../base/windows_sounds.html"><strong aria-hidden="true">1.42.</strong> Windows 声音与音效</a></li><li><a href="../base/windows_mci.html"><strong aria-hidden="true">1.43.</strong> Windows MCI 媒体控制接口</a></li><li><a href="../base/windows_how_to_use_window_resources.html"><strong aria-hidden="true">1.44.</strong> 哪些是 Windows 资源，如何使用?</a></li></ol></li><li><a href="../windows_2d_game/index.html"><strong aria-hidden="true">2.</strong> Windows 2D 游戏框架</a></li><li><ol class="section"><li><a href="../windows_2d_game/sprite_calc_matrix_function.html"><strong aria-hidden="true">2.1.</strong> 游戏精灵矩阵变换：缩放、旋转、平移</a></li><li><a href="../windows_2d_game/calc_bounding_by_matrix_function.html"><strong aria-hidden="true">2.2.</strong> 游戏精灵包围盒计算</a></li><li><a href="../windows_2d_game/collision_detection_by_function.html"><strong aria-hidden="true">2.3.</strong> 精灵碰撞检测</a></li><li><a href="../windows_2d_game/selection_by_function.html"><strong aria-hidden="true">2.4.</strong> 精灵选中判断</a></li><li><a href="../windows_2d_game/animation_sprite.html"><strong aria-hidden="true">2.5.</strong> 动画精灵</a></li><li><a href="../windows_2d_game/resource_manager.html"><strong aria-hidden="true">2.6.</strong> 资源集约管理</a></li><li><a href="../windows_2d_game/sprite_manager.html"><strong aria-hidden="true">2.7.</strong> 精灵集约管理</a></li><li><a href="../windows_2d_game/game_class.html"><strong aria-hidden="true">2.8.</strong> 游戏管家 CGame</a></li><li><a href="../windows_2d_game/game_frame.html"><strong aria-hidden="true">2.9.</strong> 游戏帧管理</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="base/index.html"><strong aria-hidden="true">1.</strong> Windows 基础</a></li><li><ol class="section"><li><a href="base/windows_os_base_sub_system.html"><strong aria-hidden="true">1.1.</strong> Windows 核心三个主要子系统</a></li><li><a href="base/windows_api.html"><strong aria-hidden="true">1.2.</strong> Windows API</a></li><li><a href="base/windows_control_and_message.html"><strong aria-hidden="true">1.3.</strong> 窗口和消息</a></li><li><a href="base/windows_resources_and_handle.html"><strong aria-hidden="true">1.4.</strong> 资源和句柄</a></li><li><a href="base/windows_unicode.html"><strong aria-hidden="true">1.5.</strong> 历史遗留：Windows 的 Unicode 编码</a></li><li><a href="base/windows_tchar.html"><strong aria-hidden="true">1.6.</strong> TCHAR 类型的用途</a></li><li><a href="base/windows_data_type_unit_pstr_param.html"><strong aria-hidden="true">1.7.</strong> Windows 常用的数据类型</a></li><li><a href="base/windows_function_winmain.html"><strong aria-hidden="true">1.8.</strong> Windows 主函数 WinMain</a></li><li><a href="base/windows_important_file_windows_h.html"><strong aria-hidden="true">1.9.</strong> 重要的 windows.h 头文件</a></li><li><a href="base/windows_function_register_windows_class.html"><strong aria-hidden="true">1.10.</strong> 注册窗口类</a></li><li><a href="base/windows_function_message_box.html"><strong aria-hidden="true">1.11.</strong> 弹出信息框：MessageBox</a></li><li><a href="base/windows_function_create_window.html"><strong aria-hidden="true">1.12.</strong> 创建窗口：CreateWindow</a></li><li><a href="base/windows_messages_loop.html"><strong aria-hidden="true">1.13.</strong> 消息循环机制</a></li><li><a href="base/windows_function_get_message.html"><strong aria-hidden="true">1.14.</strong> 获取消息：GetMessage</a></li><li><a href="base/windows_more_window_proc_functions.html"><strong aria-hidden="true">1.15.</strong> 多个窗口消息处理函数</a></li><li><a href="base/windows_gdi.html"><strong aria-hidden="true">1.16.</strong> GDI 图形设备接口函数</a></li><li><a href="base/windows_gdi_plus.html"><strong aria-hidden="true">1.17.</strong> GDI+</a></li><li><a href="base/windows_draw_and_message_process.html"><strong aria-hidden="true">1.18.</strong> Windows 绘图和消息机制</a></li><li><a href="base/windows_force_draw.html"><strong aria-hidden="true">1.19.</strong> Windows 强制绘制</a></li><li><a href="base/windows_coordinates.html"><strong aria-hidden="true">1.20.</strong> Windows 坐标系</a></li><li><a href="base/windows_common_gdi_functions.html"><strong aria-hidden="true">1.21.</strong> Windows 常用 GDI 函数</a></li><li><a href="base/windows_gdi_device_content.html"><strong aria-hidden="true">1.22.</strong> Windows 设备环境(也称为设备上下文、DC)</a></li><li><a href="base/windows_gdi_draw_examples.html"><strong aria-hidden="true">1.23.</strong> Windows GDI 绘图实例</a></li><li><a href="base/windows_gdi_draw_text_content.html"><strong aria-hidden="true">1.24.</strong> Windows 文本处理：GDI 绘图范围</a></li><li><a href="base/windows_gdi_text_font.html"><strong aria-hidden="true">1.25.</strong> Windows 文本字体</a></li><li><a href="base/windows_bitmap_programming.html"><strong aria-hidden="true">1.26.</strong> Windows 位图编程</a></li><li><a href="base/windows_common_images_programming.html"><strong aria-hidden="true">1.27.</strong> Windows 常用图像文件格式编程</a></li><li><a href="base/windows_memory_dc.html"><strong aria-hidden="true">1.28.</strong> Windows 内存设备环境(内存 DC)</a></li><li><a href="base/windows_bitblt.html"><strong aria-hidden="true">1.29.</strong> 位块及位块传输 BitBlt</a></li><li><a href="base/windows_function_stretchBlt.html"><strong aria-hidden="true">1.30.</strong> StretchBlt 复制时拉伸或压缩图像</a></li><li><a href="base/windows_function_transparentBlt.html"><strong aria-hidden="true">1.31.</strong> TransparentBlt 图像透明显示</a></li><li><a href="base/windows_dual_buffering.html"><strong aria-hidden="true">1.32.</strong> 双缓冲,解决屏幕闪烁问题</a></li><li><a href="base/trap_windows_dual_buffering.html"><strong aria-hidden="true">1.33.</strong> 双缓冲代码陷阱</a></li><li><a href="base/windows_keyboard_message_processing.html"><strong aria-hidden="true">1.34.</strong> Windows 键盘消息处理</a></li><li><a href="base/windows_keyboard_IParam.html"><strong aria-hidden="true">1.35.</strong> 按键 IParam 参数含义</a></li><li><a href="base/windows_virtual_keyboard.html"><strong aria-hidden="true">1.36.</strong> Windows 虚拟键码</a></li><li><a href="base/windows_mouse_message_processing.html"><strong aria-hidden="true">1.37.</strong> Windows 鼠标消息处理</a></li><li><a href="base/windows_mouse_message_kinds.html" class="active"><strong aria-hidden="true">1.38.</strong> Windows 鼠标消息种类</a></li><li><a href="base/windows_dynamic_mouse_draw_line.html"><strong aria-hidden="true">1.39.</strong> Windows 动态鼠标画线</a></li><li><a href="base/windows_mouse_position_detect.html"><strong aria-hidden="true">1.40.</strong> Windows 鼠标位置检测</a></li><li><a href="base/windows_wm_timer.html"><strong aria-hidden="true">1.41.</strong> Windows 定时器 WM_TIMER</a></li><li><a href="base/windows_sounds.html"><strong aria-hidden="true">1.42.</strong> Windows 声音与音效</a></li><li><a href="base/windows_mci.html"><strong aria-hidden="true">1.43.</strong> Windows MCI 媒体控制接口</a></li><li><a href="base/windows_how_to_use_window_resources.html"><strong aria-hidden="true">1.44.</strong> 哪些是 Windows 资源，如何使用?</a></li></ol></li><li><a href="windows_2d_game/index.html"><strong aria-hidden="true">2.</strong> Windows 2D 游戏框架</a></li><li><ol class="section"><li><a href="windows_2d_game/sprite_calc_matrix_function.html"><strong aria-hidden="true">2.1.</strong> 游戏精灵矩阵变换：缩放、旋转、平移</a></li><li><a href="windows_2d_game/calc_bounding_by_matrix_function.html"><strong aria-hidden="true">2.2.</strong> 游戏精灵包围盒计算</a></li><li><a href="windows_2d_game/collision_detection_by_function.html"><strong aria-hidden="true">2.3.</strong> 精灵碰撞检测</a></li><li><a href="windows_2d_game/selection_by_function.html"><strong aria-hidden="true">2.4.</strong> 精灵选中判断</a></li><li><a href="windows_2d_game/animation_sprite.html"><strong aria-hidden="true">2.5.</strong> 动画精灵</a></li><li><a href="windows_2d_game/resource_manager.html"><strong aria-hidden="true">2.6.</strong> 资源集约管理</a></li><li><a href="windows_2d_game/sprite_manager.html"><strong aria-hidden="true">2.7.</strong> 精灵集约管理</a></li><li><a href="windows_2d_game/game_class.html"><strong aria-hidden="true">2.8.</strong> 游戏管家 CGame</a></li><li><a href="windows_2d_game/game_frame.html"><strong aria-hidden="true">2.9.</strong> 游戏帧管理</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -105,7 +102,7 @@
                         <h1 class="menu-title">Windows OS Dev</h1> 
 
                         <div class="right-buttons">
-                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
                         </div>
@@ -136,7 +133,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#windows-鼠标消息种类" id="windows-鼠标消息种类"><h1>Windows 鼠标消息种类</h1></a>
+                        <a class="header" href="base/windows_mouse_message_kinds.html#windows-鼠标消息种类" id="windows-鼠标消息种类"><h1>Windows 鼠标消息种类</h1></a>
 <p>具体内容：详见《Windows 游戏编程》</p>
 
                     </main>
@@ -144,13 +141,13 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../base/windows_mouse_message_processing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="base/windows_mouse_message_processing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../base/windows_dynamic_mouse_draw_line.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="base/windows_dynamic_mouse_draw_line.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -162,13 +159,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../base/windows_mouse_message_processing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="base/windows_mouse_message_processing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../base/windows_dynamic_mouse_draw_line.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="base/windows_dynamic_mouse_draw_line.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -183,14 +180,17 @@
         
 
         
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

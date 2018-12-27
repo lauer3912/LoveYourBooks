@@ -9,21 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <base href="../../">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -32,11 +31,9 @@
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
+
     </head>
     <body class="light">
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "../../";</script>
-
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../../chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="../../chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="../../vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="../../vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="../../vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="../../vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="../../vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="../../vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="../../vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="../../vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="../../vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="../../vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="../../vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="../../chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="../../cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="../../cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="../../cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="../../cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="../../cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="../../cmake/all-faq/10001.html" class="active"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="../../chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="../../brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="../../brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="../../brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="../../brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="../../brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="../../brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="../../brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="../../brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="../../brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="../../brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> *Eigen</a></li><li><a href="../../brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="../../brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> PETSc</a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Choco Windows 包自动管理</a></li><li><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> vcpkg</a></li><li><ol class="section"><li><a href="vcpkg/install.html"><strong aria-hidden="true">2.1.</strong> 如何安装</a></li><li><a href="vcpkg/simple-commands.html"><strong aria-hidden="true">2.2.</strong> 常用命令</a></li><li><a href="vcpkg/advanced-commands.html"><strong aria-hidden="true">2.3.</strong> 高级命令</a></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-mac.html"><strong aria-hidden="true">2.4.</strong> vcpkg,CMake,Mac</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-mac/armadillo/code.html"><strong aria-hidden="true">2.4.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-win.html"><strong aria-hidden="true">2.5.</strong> vcpkg,CMake,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-win/armadillo/code.html"><strong aria-hidden="true">2.5.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-cmake-on-linux.html"><strong aria-hidden="true">2.6.</strong> vcpkg,CMake,Linux</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-cmake-on-linux/armadillo/code.html"><strong aria-hidden="true">2.6.1.</strong> armadillo</a></li></ol></li><li><a href="vcpkg/code-with-vcpkg-vs2017-on-win.html"><strong aria-hidden="true">2.7.</strong> vcpkg,VS2017,Windows</a></li><li><ol class="section"><li><a href="vcpkg/packages/code-with-vcpkg-vs2017-on-win/armadillo/code.html"><strong aria-hidden="true">2.7.1.</strong> armadillo</a></li></ol></li></ol></li><li><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> CMake</a></li><li><ol class="section"><li><a href="cmake/cmake-commands.html"><strong aria-hidden="true">3.1.</strong> CMake 命令</a></li><li><a href="cmake/CMakeLists-syntax.html"><strong aria-hidden="true">3.2.</strong> CMakeLists.txt 语法</a></li><li><a href="cmake/execute-examples.html"><strong aria-hidden="true">3.3.</strong> 例子: 可执行程序</a></li><li><a href="cmake/static-lib-examples.html"><strong aria-hidden="true">3.4.</strong> 例子: 静态库</a></li><li><a href="cmake/dynamic-lib-examples.html"><strong aria-hidden="true">3.5.</strong> 例子: 动态库</a></li><li><a href="cmake/all-faq/10001.html" class="active"><strong aria-hidden="true">3.6.</strong> 问题:CMake 如何搜索外部库</a></li></ol></li><li><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Brew</a></li><li><ol class="section"><li><a href="brew/install.html"><strong aria-hidden="true">4.1.</strong> 如何安装</a></li><li><a href="brew/simple-commands.html"><strong aria-hidden="true">4.2.</strong> 常用命令行参考</a></li><li><a href="brew/advanced-commands.html"><strong aria-hidden="true">4.3.</strong> 高级命令参考</a></li><li><a href="brew/env.html"><strong aria-hidden="true">4.4.</strong> 环境变量</a></li><li><a href="brew/code-with-cplus-and-cmake.html"><strong aria-hidden="true">4.5.</strong> C/C++与 CMake</a></li><li><a href="brew/code-with-xcode.html"><strong aria-hidden="true">4.6.</strong> XCode</a></li><li><a href="brew/formulas/index.html"><strong aria-hidden="true">4.7.</strong> 常用公式库</a></li><li><ol class="section"><li><a href="brew/formulas/index-maths.html"><strong aria-hidden="true">4.7.1.</strong> 数学库</a></li><li><ol class="section"><li><a href="brew/formulas/armadillo.html"><strong aria-hidden="true">4.7.1.1.</strong> Armadillo</a></li><li><a href="brew/formulas/eigen.html"><strong aria-hidden="true">4.7.1.2.</strong> Eigen</a></li><li><a href="brew/formulas/opencv.html"><strong aria-hidden="true">4.7.1.3.</strong> OpenCV</a></li><li><a href="brew/formulas/petsc.html"><strong aria-hidden="true">4.7.1.4.</strong> *PETSc</a></li></ol></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -108,7 +105,7 @@
                         <h1 class="menu-title">Packages Tools Get Start</h1> 
 
                         <div class="right-buttons">
-                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
                         </div>
@@ -139,21 +136,21 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#a10001-cmake-是如何找到我们程序引用的依赖库和头文件的" id="a10001-cmake-是如何找到我们程序引用的依赖库和头文件的"><h1>10001 cmake 是如何找到我们程序引用的依赖库和头文件的？</h1></a>
-<a class="header" href="#a说明" id="a说明"><h2>说明</h2></a>
+                        <a class="header" href="cmake/all-faq/10001.html#a10001-cmake-是如何找到我们程序引用的依赖库和头文件的" id="a10001-cmake-是如何找到我们程序引用的依赖库和头文件的"><h1>10001 cmake 是如何找到我们程序引用的依赖库和头文件的？</h1></a>
+<a class="header" href="cmake/all-faq/10001.html#a说明" id="a说明"><h2>说明</h2></a>
 <p>如果你的代码使用了外部库（external libraries），并且你事先不知道这些库的头文件和库文件在当前平台的位置。那么适当的文件夹路径和库的搜索路径就应该被添加到编译命令中去。</p>
-<a class="header" href="#a解决方法" id="a解决方法"><h2>解决方法</h2></a>
+<a class="header" href="cmake/all-faq/10001.html#a解决方法" id="a解决方法"><h2>解决方法</h2></a>
 <p><strong>CMake 提供了一个非常棒的 <code>module</code> 查找机制</strong></p>
-<a class="header" href="#a应用场景" id="a应用场景"><h3>应用场景</h3></a>
+<a class="header" href="cmake/all-faq/10001.html#a应用场景" id="a应用场景"><h3>应用场景</h3></a>
 <p>假设你要使用 <code>LibXML++</code>库，但是 CMake 没有提供该库的 <code>module</code>。同时，你发现网上有其他人提供了 <code>FindLibXML++.cmake</code>.
 此时你可以下载该文件并把它丢到 <code>CMake module</code> 路径下。</p>
 <p>CMake 本身提供了很多常用库的 module 来帮助你查找该库。使用命令 <code>cmake --help-module-list</code>
 可以查看提供了哪些 module，或者到 module 的存放路径下查看，
 (1)在 ubuntu Linux 上的位置通常在／usr/share/cmake/Modules/下。
 (2)在 MacOS 上的位置一般在 /usr/local/opt/cmake/Modules/</p>
-<a class="header" href="#cmake-的-packagemodule-查找机制" id="cmake-的-packagemodule-查找机制"><h3>CMake 的 package/module 查找机制</h3></a>
+<a class="header" href="cmake/all-faq/10001.html#cmake-的-packagemodule-查找机制" id="cmake-的-packagemodule-查找机制"><h3>CMake 的 package/module 查找机制</h3></a>
 <p>想弄清楚这个问题，就不得不提到 CMake 提供的 <code>find_package</code> 命令。</p>
-<a class="header" href="#find_package-介绍" id="find_package-介绍"><h4>FIND_PACKAGE 介绍</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#find_package-介绍" id="find_package-介绍"><h4>FIND_PACKAGE 介绍</h4></a>
 <pre><code class="language-c">FIND_PACKAGE( &lt;name&gt; [version] [EXACT] [QUIET] [NO_MODULE] [ [ REQUIRED | COMPONENTS ] [ componets... ] ] )
 </code></pre>
 <p>用来调用预定义在 ${CMAKE_MODULE_PATH} 下的 Find<name>.cmake 模块。
@@ -175,7 +172,7 @@
 <pre><code class="language-c">FIND_PACKAGE( libdb_cxx REQUIRED)
 # 这条命令执行后，CMake 会到变量 CMAKE_MODULE_PATH 指示的目录中查找文件 Findlibdb_cxx.cmake 并执行。
 </code></pre>
-<a class="header" href="#find_package-是如何工作的" id="find_package-是如何工作的"><h4>FIND_PACKAGE 是如何工作的？</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#find_package-是如何工作的" id="find_package-是如何工作的"><h4>FIND_PACKAGE 是如何工作的？</h4></a>
 <p><code>find_package()</code> 命令会在模块路径中寻找 <code>Find&lt;name&gt;.cmake</code> ，这是查找库的一个典型方式。首先 CMake 查看<code>${CMAKE_MODULE_PATH}</code> 中的所有目录，然后再查看它自己的模块目录 <code>&lt;CMAKE_ROOT&gt;/share/cmake-x.y/Modules/</code> 。</p>
 <p>如果没找到这样的文件，会寻找 <code>&lt;Name&gt;Config.cmake</code> 或者 <code>&lt;lower-case-name&gt;-config.cmake</code> ，它们是假定库会安装的文件（但是目前还没有多少库会安装它们）。不做检查，直接包含安装的库的固定值。</p>
 <p>前面的称为模块模式，后面的称为配置模式。配置模式的文件的编写见 <a href="http://vtk.org/Wiki/CMake/Tutorials/How_to_create_a_ProjectConfig.cmake_file">这里的文档</a> 。可能还会用到 <a href="http://vtk.org/Wiki/CMake/Tutorials/Exporting_and_Importing_Targets">importing and exporting targets</a> 这篇文档。</p>
@@ -310,7 +307,7 @@ find_library(&lt;VAR&gt; NAMES name)
 </code></pre>
 <p>只要这些调用中的一个成功返回，结果变量就会被设置并且被存储到 cache 中；这样随后的调用都不会再行搜索。如果那找到的库是一个框架，VAR 将会被设置为指向框架“&lt;完整路径&gt;/A.framework” 的完整路径。当一个指向框架的完整路径被用作一个库文件，CMake 将使用-framework A，以及-F&lt;完整路径&gt;这两个选项将框架连接到目标上。</p>
 <p>参见 <code>cmake_policy()</code>命令的文档中关于 <code>NO_POLICY_SCOPE</code> 选项讨论。</p>
-<a class="header" href="#a使用-cmake-自带查找模块的外部库" id="a使用-cmake-自带查找模块的外部库"><h4>使用 cmake 自带查找模块的外部库</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#a使用-cmake-自带查找模块的外部库" id="a使用-cmake-自带查找模块的外部库"><h4>使用 cmake 自带查找模块的外部库</h4></a>
 <p>为了能支持各种常见的库和包，CMake 自带了很多模块。可以通过命令 cmake --help-module-list （输入 cmake --help，然后双击 Tab 会有命令提示）得到你的 CMake 支持的模块的列表：</p>
 <pre><code class="language-c">.......
 .......
@@ -361,7 +358,7 @@ if (BZIP2_FOUND)
 endif (BZIP2_FOUND)
 </code></pre>
 <p>可以用 cmake 和 <code>make VERBOSE=1</code> 来验证传给编译器和链接器的 flag 是否正确。也可以用 ldd 或者 <code>dependency walker</code> 之类的工具在编译后验证 helloworld 链接的文件。</p>
-<a class="header" href="#a使用-cmake-没有自带-查找模块的外部库" id="a使用-cmake-没有自带-查找模块的外部库"><h4>使用 cmake 没有自带, 查找模块的外部库</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#a使用-cmake-没有自带-查找模块的外部库" id="a使用-cmake-没有自带-查找模块的外部库"><h4>使用 cmake 没有自带, 查找模块的外部库</h4></a>
 <p>假设你想要使用 <code>LibXML++</code>库。在写本文时，CMake 还没有一个 <code>libXML++</code>的查找模块。但是可以在网上搜索到一个（ <code>FindLibXML++.cmake</code> ）。在 <code>CMakeLists.txt</code> 中写：</p>
 <pre><code class="language-c">find_package(LibXML++ REQUIRED)
 include_directories(${LibXML++_INCLUDE_DIRS})
@@ -375,7 +372,7 @@ set(LIBS ${LIBS} ${LibXML++_LIBRARIES})
 </code></pre>
 <p>把刚才的需要用到的 CMake 模块放到这个文件夹下。</p>
 <p>一般来说就是这样。有些库可能还需要些其他的什么，所以要再看一下 <code>FindSomething.cmake</code> 文件的文档。</p>
-<a class="header" href="#a包含组件的依赖包" id="a包含组件的依赖包"><h4>包含组件的依赖包</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#a包含组件的依赖包" id="a包含组件的依赖包"><h4>包含组件的依赖包</h4></a>
 <p>有些库不是一个整体，还包含一些依赖的库或者组件。一个典型的例子是 Qt 库，它其中包含 QtOpenGL 和 QtXml 组件。使用下面的 find_package 命令来使用这些组件：</p>
 <pre><code class="language-c">find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
 </code></pre>
@@ -394,10 +391,10 @@ if ( NOT Qt_FOUND OR NOT QtXml_FOUND )
   message(FATAL_ERROR &quot;Package Qt and component QtXml required, but not found!&quot;)
 endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 </code></pre>
-<a class="header" href="#a介绍下-pkg-config" id="a介绍下-pkg-config"><h4>介绍下 pkg-config</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#a介绍下-pkg-config" id="a介绍下-pkg-config"><h4>介绍下 pkg-config</h4></a>
 <p>pkg-config 是个用来帮助构建的工具，它基于记录库文件和头文件位置的 .pc 文件。主要用在类 Unix 系统上。可以在 pkg-config 的网站 找到更多的信息。CMake 可以利用 pkg-config，可以在 CMake 的模块目录下的 FindPkgConfig.cmake 文件中找到相关的文档。这在当你处理一个没有 cmake 脚本的库的时候，或者遇到 CMake 的查找脚本失效的情况，非常有帮助。</p>
 <p>但是，直接使用 pkg-config 的结果需要非常小心。一个主要原因是对于 ccmake 手动定义的库路径，可能覆盖到或者发生冲突。此外，也有可能 pkg-config 提供了错误的信息（错误的编辑器等）。对于这些情况，让 CMake 不依赖 pkg-config 做检测，而只用 pkg-config 作为查找路径的提示。</p>
-<a class="header" href="#a编写查找模块" id="a编写查找模块"><h4>编写查找模块</h4></a>
+<a class="header" href="cmake/all-faq/10001.html#a编写查找模块" id="a编写查找模块"><h4>编写查找模块</h4></a>
 <p>首先，注意传给 <code>find_package</code> 的名字或者前缀，是用于全部变量的部分文件名和前缀。这很重要，名字必须完全匹配。不幸的是很多情况下，即使是 CMake 自带的模块，也有不匹配的名字，导致各种问题。</p>
 <p>模块的基本操作应该大体按下面的顺序：</p>
 <ul>
@@ -422,7 +419,7 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 </li>
 <li>调用 find_package_handle_standard_args() 宏来设置 <name>_FOUND 变量，并打印一条成功或者失败的消息</li>
 </ul>
-<a class="header" href="#a性能和缓存" id="a性能和缓存"><h3>性能和缓存</h3></a>
+<a class="header" href="cmake/all-faq/10001.html#a性能和缓存" id="a性能和缓存"><h3>性能和缓存</h3></a>
 <p>CMake 的变量系统要比初看起来的要复杂得多。有些变量做了缓存。做了缓存的变量有内部的（不能用 ccmake 编辑）和外部的（可以被 ccmake 修改）。另外，外部变量只能在 ccmake 的高级模式可见。</p>
 <p>默认情况下，所有变量都是不缓存的。</p>
 <p>为了避免每次执行时都重复检测全部的库，更为了允许用户在 ccmake 中设置 include 目录和库，需要支持缓存。幸运的是，这已经被 find_path 和 find_library 支持，它们可以缓存它们的变量。如果变量已经设置为有效值（比如不是 -NOTFOUND 或者未定义），这些函数将什么也不做，保持旧值。类似地， pkg_check_modules 支持结果的内部缓存，因此不需要每次都再调用 pkg-config。</p>
@@ -433,13 +430,13 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../cmake/dynamic-lib-examples.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="cmake/dynamic-lib-examples.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../../chapter_4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="chapter_4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -451,13 +448,13 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../../cmake/dynamic-lib-examples.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="cmake/dynamic-lib-examples.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../../chapter_4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="chapter_4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -472,14 +469,17 @@ endif( NOT Qt_FOUND OR NOT QtXml_FOUND )
         
 
         
-        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
