@@ -26,6 +26,8 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="theme/custom.css">
+        
 
         
         <!-- MathJax -->
@@ -53,7 +55,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
@@ -72,7 +74,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html" class="active"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_linux.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_linux.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html" class="active"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_linux.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_linux.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li><li><a href="qt_skills/index.html"><strong aria-hidden="true">5.</strong> Qt 技巧库</a></li><li><ol class="section"><li><a href="qt_skills/qt-core/intro.html"><strong aria-hidden="true">5.1.</strong> Qt Core</a></li><li><ol class="section"><li><a href="qt_skills/qt-core/q_object_macro.html"><strong aria-hidden="true">5.1.1.</strong> 宏 Q_OBJECT, 应用到所有继承 QObject 的类</a></li><li><a href="qt_skills/qt-core/class_define_use_q_object_macro_must_inheritance_qobject.html"><strong aria-hidden="true">5.1.2.</strong> 使用宏 Q_OBJECT, 类必须继承 QObject 或 QObject 子类</a></li><li><a href="qt_skills/qt-core/q_class_info_macro.html"><strong aria-hidden="true">5.1.3.</strong> 添加类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/get_q_class_info.html"><strong aria-hidden="true">5.1.4.</strong> 获取类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/qobject_rw_properties.html"><strong aria-hidden="true">5.1.5.</strong> 类 Property 属性读写封装</a></li><li><a href="qt_skills/qt-core/qobject_manager_properties.html"><strong aria-hidden="true">5.1.6.</strong> QObject 对象动态增加属性</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaClassInfo.html"><strong aria-hidden="true">5.1.7.</strong> incomplete return type 'QMetaClassInfo'</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaProperty.html"><strong aria-hidden="true">5.1.8.</strong> incomplete return type 'QMetaProperty'</a></li><li><a href="qt_skills/qt-core/qobject_cast.html"><strong aria-hidden="true">5.1.9.</strong> QObject 对象指针类型的动态转换 qobject_cast&lt;&gt;</a></li><li><a href="qt_skills/qt-core/qobject_enums.html"><strong aria-hidden="true">5.1.10.</strong> QObject 对象枚举类型封装</a></li><li><a href="qt_skills/qt-core/class_define_use_general_not_supported.html"><strong aria-hidden="true">5.1.11.</strong> QObject 子类不支持模类定义板泛型</a></li><li><a href="qt_skills/qt-core/multiple_inheritance_with_qobject_be_first.html"><strong aria-hidden="true">5.1.12.</strong> 多继承 QObject 必须放在前面</a></li><li><a href="qt_skills/qt-core/virtual_inheritance_with_qobject_not_supported.html"><strong aria-hidden="true">5.1.13.</strong> 虚拟继承 QObject 不支持</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_have_signals_and_slots.html"><strong aria-hidden="true">5.1.14.</strong> 嵌套类中的类不能有信号和槽机制</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_use_q_object_macro.html"><strong aria-hidden="true">5.1.15.</strong> 嵌套 QObject 子类中的类不能使用宏 Q_OBJECT</a></li><li><a href="qt_skills/qt-core/function_cannot_apply_to_single_and_slot.html"><strong aria-hidden="true">5.1.16.</strong> 函数指针不能作为信号和槽的参数</a></li><li><a href="qt_skills/qt-core/enums_must_be_fully_qualified_for_single_and_slot.html"><strong aria-hidden="true">5.1.17.</strong> 信号和槽中的枚举参数，必须是完全限定</a></li><li><a href="qt_skills/qt-core/order_about_singles_and_slots.html"><strong aria-hidden="true">5.1.18.</strong> 信号和槽被激活的次序说明</a></li><li><a href="qt_skills/qt-core/qvariant.html"><strong aria-hidden="true">5.1.19.</strong> 宏 Q_DECLARE_METATYPE 与 QVariant 如何结合使用？</a></li><li><a href="qt_skills/qt-core/q_declare_metatype.html"><strong aria-hidden="true">5.1.20.</strong> 如何构建自定义 Qt 数据类型？</a></li><li><a href="qt_skills/qt-core/qvariant_save_pointer.html"><strong aria-hidden="true">5.1.21.</strong> 用 QVariant 来保存指针</a></li><li><a href="qt_skills/qt-core/qvariant_can_convert.html"><strong aria-hidden="true">5.1.22.</strong> 判断 QVariant 类型是否可以转换？</a></li><li><a href="qt_skills/qt-core/qt_iterating.html"><strong aria-hidden="true">5.1.23.</strong> Qt 的迭代器接口如何使用？</a></li><li><a href="qt_skills/qt-core/qt_qpointer.html"><strong aria-hidden="true">5.1.24.</strong> 尽量使用保护机制指针 QPointer，增强程序健壮性</a></li><li><a href="qt_skills/qt-core/qt_qobject_cleanup_handler.html"><strong aria-hidden="true">5.1.25.</strong> 监视 QObject 对象的生命周期</a></li><li><a href="qt_skills/qt-core/qt_signal_blocker.html"><strong aria-hidden="true">5.1.26.</strong> 如何暂时阻止发射信号？</a></li></ol></li></ol></li><li><a href="qt_skills/qt-gui/intro.html"><strong aria-hidden="true">6.</strong> Qt GUI</a></li><li><a href="qt_skills/qt-widgets/intro.html"><strong aria-hidden="true">7.</strong> Qt Widgets</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -85,6 +87,11 @@
                             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                                 <i class="fa fa-bars"></i>
                             </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
                             <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                                 <i class="fa fa-paint-brush"></i>
                             </button>
@@ -102,7 +109,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Qt 技能提升</h1> 
+                        <h1 class="menu-title">Qt 技能提升</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -132,6 +139,12 @@
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/qmake/advanced-useful-contents.md");
+                   });
+                   // END - Rust Cookbook customization
                 </script>
 
                 <div id="content" class="content">
@@ -339,20 +352,7 @@ qmake 提供了可以简单执行，但强大测试的内置函数。这些测�
         </div>
 
         
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
 
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         
@@ -373,8 +373,6 @@ qmake 提供了可以简单执行，但强大测试的内置函数。这些测�
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
         
 
     </body>

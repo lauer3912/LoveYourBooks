@@ -6,6 +6,11 @@ title = "Qt 技能提升"
 
 [output.html]
 mathjax-support = true
+theme = "theme"
+additional-css = ["theme/custom.css"]
+
+[output.html.playpen]
+editable = false
 
 [output.html.search]
 limit-results = 20
