@@ -36,11 +36,17 @@
 
   - [Windows 应用商店](./submit_product/appstore_windows.md)
   - [苹果 MacOS 应用 商店](./submit_product/appstore_mac.md)
-
+- [Windows平台技巧](./win_platform/intro.md)
+  - [如何加载动态库？](./win_platform/winbase/load_library.md)
+  - [Windows加载动态库的搜索路径问题](./win_platform/winbase/find_load_library.md)
+  - [LoadLibrary 与 LoadLibraryW 与 LoadLibraryA 的区别](./win_platform/winbase/diff_load_library.md)
+  - [加载动态库出错的错误编码，原因有哪些？](./win_platform/winbase/errors_load_library.md)
+  - [TCHAR 转换成const char*](./win_platform/winbase/tchar_to_const_char.md)
 - [Qt Core 技巧](./qt_skills/qt-core/intro.md)
 
   - [宏 Q_OBJECT, 应用到所有继承 QObject 的类](./qt_skills/qt-core/q_object_macro.md)
   - [使用宏 Q_OBJECT, 类必须继承 QObject 或 QObject 子类](./qt_skills/qt-core/class_define_use_q_object_macro_must_inheritance_qobject.md)
+  - [宏 QT_VERSION 与 QT_VERSION_CHECK 如何使用?](./qt_skills/qt-core/qt_version_macro_and_qt_version_check_macro.md)
   - [添加类 ClassInfo 信息](./qt_skills/qt-core/q_class_info_macro.md)
   - [获取类 ClassInfo 信息](./qt_skills/qt-core/get_q_class_info.md)
   - [类 Property 属性读写封装](./qt_skills/qt-core/qobject_rw_properties.md)
@@ -71,7 +77,10 @@
   - [怎么监视 QObject 对象的生命周期？](./qt_skills/qt-core/qt_qobject_cleanup_handler.md)
   - [如何暂时阻止发射信号？](./qt_skills/qt-core/qt_signal_blocker.md)
   - [如何使用 QDebug 打印调试信息](./qt_skills/qt-core/qt_debug.md)
+  - [二进制数据编辑器需要QByteArray数据类型](./qt_skiils/qt-core/qt_qbytearray.md)
   - [如何获取当前时间?](./qt_skills/qt-core/qt_date_and_time.md)
 
-- [Qt GUI](./qt_skills/qt-gui/intro.md)
-- [Qt Widgets](./qt_skills/qt-widgets/intro.md)
+- [Qt GUI 技巧](./qt_skills/qt-gui/intro.md)
+- [Qt Widgets 技巧](./qt_skills/qt-widgets/intro.md)
+  - [如何为应用添加撤销操作?](./qt_skills/qt-widgets/undo_command.md)
+  - [如何使用消息对话框QMessageBox?](./qt_skills/qt-widgets/message_box.md)
