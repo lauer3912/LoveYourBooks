@@ -19,8 +19,16 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void updateMsg(QString &msg);
+
+
+public slots:
+    void on_get_updateMsg(QString &msg);
+
 private slots:
     void on_showBtn_clicked();
+    void on_loopMsgBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

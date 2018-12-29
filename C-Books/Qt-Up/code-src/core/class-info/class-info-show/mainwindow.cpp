@@ -2,6 +2,7 @@
 
 #include <QMetaClassInfo>
 #include <QMetaProperty>
+#include <QDebug>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -11,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(this, SIGNAL(updateMsg(QString &)), this, SLOT(on_get_updateMsg(QString &)));
 }
 
 MainWindow::~MainWindow()
@@ -41,4 +44,17 @@ void MainWindow::on_showBtn_clicked()
 
         //QMetaClassInfo const &mcinfo = metaObj->classInfo(0);
     }
+}
+
+void MainWindow::on_loopMsgBtn_clicked()
+{
+    qDebug() << "on_loopMsgBtn_clicked";
+
+    QString message = "Hello";
+    emit updateMsg(message);
+}
+
+void MainWindow::on_get_updateMsg(QString& msg) {
+    qDebug() << "on_get_updateMsg: " << msg;
+    emit updateMsg(msg);
 }

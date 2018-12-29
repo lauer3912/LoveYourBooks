@@ -27,6 +27,19 @@
      <string>打印ClassInfo</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="loopMsgBtn">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>114</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>启动循环消息</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

@@ -1,6 +1,4 @@
-# 尽量使用保护机制指针 QPointer，增强程序健壮性
-
-参见：[QPointer](http://doc.qt.io/qt-5/qpointer.html)
+# 尽量使用弱引用计数指针 QWeakPointer
 
 QPointer is a template class that provides guarded pointers to Qt objects and behaves like a normal C++ pointer except that it is automatically set to 0 when the referenced object is destroyed and no "dangling pointers" are produced.
 QSharedPointer class holds a strong reference to a shared pointer.
