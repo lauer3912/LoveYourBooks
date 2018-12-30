@@ -10,3 +10,6 @@
 [submodule "C-Books/Qt-Up/best-projects/x64dbg/qt-x64dbg"]
 	path = C-Books/Qt-Up/best-projects/x64dbg/qt-x64dbg
 	url = https://github.com/x64dbg/x64dbg.git
+[submodule "Go-Books/GoBestProjects/gomods_github/athens"]
+	path = Go-Books/GoBestProjects/gomods_github/athens
+	url = https://github.com/gomods/athens.git
