@@ -13,7 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(this, SIGNAL(updateMsg(QString &)), this, SLOT(on_get_updateMsg(QString &)));
+    // 槽的处理，根据连接的次序，依次执行
+    connect(this, SIGNAL(updateMsg(QString &)), this, SLOT(onGetUpdateMsg(QString &)));
+    connect(this, SIGNAL(updateMsg(QString &)), this, SLOT(onGetUpdateMsg2(QString &)));
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +56,10 @@ void MainWindow::on_loopMsgBtn_clicked()
     emit updateMsg(message);
 }
 
-void MainWindow::on_get_updateMsg(QString& msg) {
-    qDebug() << "on_get_updateMsg: " << msg;
-    emit updateMsg(msg);
+void MainWindow::onGetUpdateMsg(QString& msg) {
+    QObject* sender = this->sender();
+    qDebug() << "[0]on_get_updateMsg: " << msg;
+}
+void MainWindow::onGetUpdateMsg2(QString& msg) {
+    qDebug() << "[1]on_get_updateMsg: " << msg;
 }

@@ -24,7 +24,9 @@ signals:
 
 
 public slots:
-    void on_get_updateMsg(QString &msg);
+    void onGetUpdateMsg(QString &msg);
+    void onGetUpdateMsg2(QString &msg);
+
 
 private slots:
     void on_showBtn_clicked();

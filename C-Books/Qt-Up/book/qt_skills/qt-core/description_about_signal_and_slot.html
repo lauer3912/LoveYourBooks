@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>信号槽的调用流程原理是怎样的？ - Qt 技能提升</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_linux.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_linux.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li><li><a href="win_platform/intro.html"><strong aria-hidden="true">5.</strong> Windows 平台技巧</a></li><li><ol class="section"><li><a href="win_platform/winbase/load_library.html"><strong aria-hidden="true">5.1.</strong> 如何加载动态库？</a></li><li><a href="win_platform/winbase/find_load_library.html"><strong aria-hidden="true">5.2.</strong> Windows 加载动态库的搜索路径问题</a></li><li><a href="win_platform/winbase/diff_load_library.html"><strong aria-hidden="true">5.3.</strong> LoadLibrary 与 LoadLibraryW 与 LoadLibraryA 的区别</a></li><li><a href="win_platform/winbase/errors_load_library.html"><strong aria-hidden="true">5.4.</strong> 加载动态库出错的错误编码，原因有哪些？</a></li><li><a href="win_platform/winbase/tchar_to_const_char.html"><strong aria-hidden="true">5.5.</strong> TCHAR 转换成 const char*</a></li></ol></li><li><a href="qt_skills/qt-core/intro.html"><strong aria-hidden="true">6.</strong> Qt Core 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-core/q_object_macro.html"><strong aria-hidden="true">6.1.</strong> 宏 Q_OBJECT, 应用到所有继承 QObject 的类</a></li><li><a href="qt_skills/qt-core/class_define_use_q_object_macro_must_inheritance_qobject.html"><strong aria-hidden="true">6.2.</strong> 使用宏 Q_OBJECT, 类必须继承 QObject 或 QObject 子类</a></li><li><a href="qt_skills/qt-core/qt_version_macro_and_qt_version_check_macro.html"><strong aria-hidden="true">6.3.</strong> 宏 QT_VERSION 与 QT_VERSION_CHECK 如何使用?</a></li><li><a href="qt_skills/qt-core/q_class_info_macro.html"><strong aria-hidden="true">6.4.</strong> 添加类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/get_q_class_info.html"><strong aria-hidden="true">6.5.</strong> 获取类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/qobject_rw_properties.html"><strong aria-hidden="true">6.6.</strong> 类 Property 属性读写封装</a></li><li><a href="qt_skills/qt-core/qobject_manager_properties.html"><strong aria-hidden="true">6.7.</strong> QObject 对象动态增加属性</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaClassInfo.html"><strong aria-hidden="true">6.8.</strong> incomplete return type 'QMetaClassInfo'</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaProperty.html"><strong aria-hidden="true">6.9.</strong> incomplete return type 'QMetaProperty'</a></li><li><a href="qt_skills/qt-core/qobject_cast.html"><strong aria-hidden="true">6.10.</strong> QObject 对象指针类型的动态转换 qobject_cast&lt;&gt;</a></li><li><a href="qt_skills/qt-core/qobject_enums.html"><strong aria-hidden="true">6.11.</strong> QObject 对象枚举类型封装</a></li><li><a href="qt_skills/qt-core/class_define_use_general_not_supported.html"><strong aria-hidden="true">6.12.</strong> QObject 子类不支持模类定义板泛型</a></li><li><a href="qt_skills/qt-core/multiple_inheritance_with_qobject_be_first.html"><strong aria-hidden="true">6.13.</strong> 多继承 QObject 必须放在前面</a></li><li><a href="qt_skills/qt-core/virtual_inheritance_with_qobject_not_supported.html"><strong aria-hidden="true">6.14.</strong> 虚拟继承 QObject 不支持</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_have_signals_and_slots.html"><strong aria-hidden="true">6.15.</strong> 嵌套类中的类不能有信号和槽机制</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_use_q_object_macro.html"><strong aria-hidden="true">6.16.</strong> 嵌套 QObject 子类中的类不能使用宏 Q_OBJECT</a></li><li><a href="qt_skills/qt-core/function_cannot_apply_to_single_and_slot.html"><strong aria-hidden="true">6.17.</strong> 函数指针不能作为信号和槽的参数</a></li><li><a href="qt_skills/qt-core/enums_must_be_fully_qualified_for_single_and_slot.html"><strong aria-hidden="true">6.18.</strong> 信号和槽中的枚举参数，必须是完全限定</a></li><li><a href="qt_skills/qt-core/order_about_singles_and_slots.html"><strong aria-hidden="true">6.19.</strong> 信号和槽被激活的调用次序是随机的吗？</a></li><li><a href="qt_skills/qt-core/function_pointer_about_singles_and_slots.html"><strong aria-hidden="true">6.20.</strong> 信号和槽可以使用函数指针吗？</a></li><li><a href="qt_skills/qt-core/lambdas_about_singles_and_slots.html"><strong aria-hidden="true">6.21.</strong> 槽支持 C++11 的 lambdas 表达式吗？</a></li><li><a href="qt_skills/qt-core/blocking_queued_connect_about_singles_and_slots.html"><strong aria-hidden="true">6.22.</strong> 什么时候使用 Blocking Queued Connection?</a></li><li><a href="qt_skills/qt-core/how_to_known_how_many_slots_by_signal.html"><strong aria-hidden="true">6.23.</strong> 如何动态获得信号绑定了哪些槽？</a></li><li><a href="qt_skills/qt-core/how_to_get_signal_sender.html"><strong aria-hidden="true">6.24.</strong> 如何获得信号的发送者？</a></li><li><a href="qt_skills/qt-core/how_to_disconnect_signal_and_slot.html"><strong aria-hidden="true">6.25.</strong> 如何断开信号和槽的连接？</a></li><li><a href="qt_skills/qt-core/description_about_signal_and_slot.html" class="active"><strong aria-hidden="true">6.26.</strong> 信号槽的调用流程原理是怎样的？</a></li><li><a href="qt_skills/qt-core/qvariant.html"><strong aria-hidden="true">6.27.</strong> 宏 Q_DECLARE_METATYPE 与 QVariant 如何结合使用？</a></li><li><a href="qt_skills/qt-core/q_declare_metatype.html"><strong aria-hidden="true">6.28.</strong> 如何构建自定义 Qt 数据类型？</a></li><li><a href="qt_skills/qt-core/qvariant_save_pointer.html"><strong aria-hidden="true">6.29.</strong> 用 QVariant 来保存指针</a></li><li><a href="qt_skills/qt-core/qvariant_can_convert.html"><strong aria-hidden="true">6.30.</strong> 判断 QVariant 类型是否可以转换？</a></li><li><a href="qt_skills/qt-core/qt_iterating.html"><strong aria-hidden="true">6.31.</strong> Qt 的迭代器接口如何使用？</a></li><li><a href="qt_skills/qt-core/qt_qpointer.html"><strong aria-hidden="true">6.32.</strong> 如何使用保护机制指针 QPointer，增强程序健壮性？</a></li><li><a href="qt_skills/qt-core/qt_qsharedpointer.html"><strong aria-hidden="true">6.33.</strong> 如何使用强引用计数指针 QSharedPointer？</a></li><li><a href="qt_skills/qt-core/qt_qweakpointer.html"><strong aria-hidden="true">6.34.</strong> 如何使用弱引用计数指针 QWeakPointer？</a></li><li><a href="qt_skills/qt-core/qt_qobject_cleanup_handler.html"><strong aria-hidden="true">6.35.</strong> 怎么监视 QObject 对象的生命周期？</a></li><li><a href="qt_skills/qt-core/qt_signal_blocker.html"><strong aria-hidden="true">6.36.</strong> 如何暂时阻止发射信号？</a></li><li><a href="qt_skills/qt-core/qt_debug.html"><strong aria-hidden="true">6.37.</strong> 如何使用 QDebug 打印调试信息?</a></li><li><a href="qt_skills/qt-core/no_qt_debug.html"><strong aria-hidden="true">6.38.</strong> 如何快速消除 qDeubg()打印的信息?</a></li><li><a href="qt_skills/qt-core/can_use_qt_debug.html"><strong aria-hidden="true">6.39.</strong> 不包含头文件，可以直接使用 qDebug()?</a></li><li><a href="qt_skills/qt-core/custom_type_support_qt_debug.html"><strong aria-hidden="true">6.40.</strong> 如何让你的自定义类型也支持 QDebug 打印?</a></li><li><a href="qt_skiils/qt-core/qt_qbytearray.html"><strong aria-hidden="true">6.41.</strong> 二进制数据编辑器需要 QByteArray 数据类型</a></li><li><a href="qt_skiils/qt-core/diff_qmap_and_qhash.html"><strong aria-hidden="true">6.42.</strong> QMap 与 QHash 有什么区别？</a></li><li><a href="qt_skills/qt-core/qt_date_and_time.html"><strong aria-hidden="true">6.43.</strong> 如何获取当前时间?</a></li><li><a href="qt_skills/qt-core/qt_standard_paths.html"><strong aria-hidden="true">6.44.</strong> 各平台系统标准路径</a></li></ol></li><li><a href="qt_skills/qt-gui/intro.html"><strong aria-hidden="true">7.</strong> Qt GUI 技巧</a></li><li><a href="qt_skills/qt-widgets/intro.html"><strong aria-hidden="true">8.</strong> Qt Widgets 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-widgets/undo_command.html"><strong aria-hidden="true">8.1.</strong> 如何为应用添加撤销操作?</a></li><li><a href="qt_skills/qt-widgets/message_box.html"><strong aria-hidden="true">8.2.</strong> 如何使用消息对话框 QMessageBox?</a></li><li><a href="qt_skills/qt-widgets/diff_frameGeometry_and_geometry.html"><strong aria-hidden="true">8.3.</strong> QWidget 的 frameGeometry 与 geometry 有什么区别？</a></li><li><a href="qt_skills/qt-widgets/setting_qdialog_parent.html"><strong aria-hidden="true">8.4.</strong> 对话框 QDialog 设置了父窗口，会出现什么问题？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_no_effect_others.html"><strong aria-hidden="true">8.5.</strong> 弹出对话框，不影响其他窗口使用，如何做？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_effect_others.html"><strong aria-hidden="true">8.6.</strong> 弹出对话框，阻止应用程序所有窗口输入，如何做？</a></li><li><a href="qt_skills/qt-widgets/model_qdialog_and_no_model_qdialog.html"><strong aria-hidden="true">8.7.</strong> 非模态对话框与模态对话框到底有什么区别？</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Qt 技能提升</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/qt_skills/qt-core/description_about_signal_and_slot.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="qt_skills/qt-core/description_about_signal_and_slot.html#a信号槽的调用流程原理是怎样的" id="a信号槽的调用流程原理是怎样的"><h1>信号槽的调用流程原理是怎样的？</h1></a>
+<p>信号槽的调用流程:</p>
+<ol>
+<li>moc 查找头文件中的 signals，slots，标记出信号和槽</li>
+<li>将信号槽信息存储到类静态变量 staticMetaObject 中，并且按声明顺序进行存放，建立索引。</li>
+<li>当发现有 connect 连接时，将信号槽的索引信息放到一个 map 中，彼此配对。</li>
+<li>当调用 emit 时，调用信号函数，并且传递发送信号的对象指针，元对象指针，信号索引，参数列表到 active 函数</li>
+<li>通过 active 函数找到在 map 中找到所有与信号对应的槽索引</li>
+<li>根据槽索引找到槽函数，执行槽函数。</li>
+</ol>
+<p>示例程序
+新建控制台应用程序，再添加一个新类 SignalsAndSlots3，各自定义一个信号和槽，代码如下：</p>
+<pre><code class="language-cpp">// signalsandslots3.h
+
+class SignalsAndSlots3 : public QObject
+{
+    Q_OBJECT
+public:
+    explicit SignalsAndSlots3(QObject *parent = 0);
+
+signals:
+    void sigPrint(const QString&amp; text);
+
+public slots:
+    void sltPrint(const QString&amp; text);
+};
+</code></pre>
+<pre><code class="language-cpp">//signalsandslots3.cpp
+
+#include &lt;QDebug&gt;
+#include &quot;signalsandslots3.h&quot;
+
+SignalsAndSlots3::SignalsAndSlots3(QObject *parent) : QObject(parent)
+{
+    connect(this, SIGNAL(sigPrint(QString)), this, SLOT(sltPrint(QString)));
+    emit sigPrint(&quot;Hello&quot;);
+}
+
+void SignalsAndSlots3::sltPrint(const QString &amp;text)
+{
+    qDebug() &lt;&lt; text;
+}
+</code></pre>
+<pre><code class="language-cpp">//main.cpp
+
+#include &lt;QCoreApplication&gt;
+#include &quot;signalsandslots3.h&quot;
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    SignalsAndSlots3 s;
+
+    return a.exec();
+}
+</code></pre>
+<p>本节为了说明原理，所以只写了最简单的信号槽。</p>
+<p>编译运行程序，在控制台会输出 Hello 字样。</p>
+<a class="header" href="qt_skills/qt-core/description_about_signal_and_slot.html#makefile-文件" id="makefile-文件"><h2>Makefile 文件</h2></a>
+<p>现在我们打开 Qt 自动生成的 Makefile.Debug 文件。找到下面这一行：</p>
+<p>SOURCES = F:\Study\Qt\Projects\QtShareCode\chapter2\2-3\SignalsAndSlots3\main.cpp <br />
+F:\Study\Qt\Projects\QtShareCode\chapter2\2-3\SignalsAndSlots3\signalsandslots3.cpp debug\moc_signalsandslots3.cpp</p>
+<p>关键看加粗的部分，我们看到 signalsandslots3.cpp 和 moc_signalsandslots3.cpp 作为源文件一起进行编译。</p>
+<p>由此可知，Qt 又额外生成了 moc_signalsandslots3.cpp 文件，其名称为，同名源文件前加上了 moc 前缀。</p>
+<a class="header" href="qt_skills/qt-core/description_about_signal_and_slot.html#moc-预编译器" id="moc-预编译器"><h2>moc 预编译器</h2></a>
+<p>moc(Meta-Object Compiler)元对象预编译器。</p>
+<p>moc 读取一个 c++头文件。如果它找到包含 Q<em>OBJECT 宏的一个或多个类声明，它会生成一个包含这些类的元对象代码的 c++源文件，并且以 moc</em>作为前缀。</p>
+<p>信号和槽机制、运行时类型信息和动态属性系统需要元对象代码。</p>
+<p>由 moc 生成的 c++源文件必须编译并与类的实现联系起来。</p>
+<p>通常，moc 不是手工调用的，而是由构建系统自动调用的，因此它不需要程序员额外的工作。</p>
+<p>2.3.4 Q_OBJECT 宏</p>
+<pre><code class="language-cpp">#define Q_OBJECT \
+public: \
+    Q_OBJECT_CHECK \
+    QT_WARNING_PUSH \
+    Q_OBJECT_NO_OVERRIDE_WARNING \
+    static const QMetaObject staticMetaObject; \
+    virtual const QMetaObject *metaObject() const; \
+    virtual void *qt_metacast(const char *); \
+    virtual int qt_metacall(QMetaObject::Call, int, void **); \
+    QT_TR_FUNCTIONS \
+private: \
+    Q_OBJECT_NO_ATTRIBUTES_WARNING \
+    Q_DECL_HIDDEN_STATIC_METACALL static void qt_static_metacall(QObject *, QMetaObject::Call, int, void **); \
+    QT_WARNING_POP \
+    struct QPrivateSignal {}; \
+    QT_ANNOTATE_CLASS(qt_qobject, &quot;&quot;)
+</code></pre>
+<p>我们 都知道宏会在预编译期被具体的字符串所代替，那么我们在头文件中用到的 Q_OBJECT 宏就会被展开为上面的代码。</p>
+<p>你可以在 signalsandslots3.h 中用上面的代码替换掉 Q_OBJECT ，你会发现还需要实现 Q_OBJECT 扩展后所带来的变量和函数的定义。而这些定义都已经被写入到了 moc_signalsandslots3.cpp 文件中了，这也就是为什么在 Makefile 中需要将 moc_signalsandslots3.cpp 一起编译的原因了。否则，这个类是不完整的，那肯定也是不可能编译通过的。</p>
+<p>2.3.5 moc_signalsandslots3.cpp
+从头文件中得出，我们首先需要定义</p>
+<pre><code class="language-cpp">static const QMetaObject staticMetaObject;
+</code></pre>
+<p>你需要从下往上看代码</p>
+<pre><code class="language-cpp">/*
+6.存储类中的函数及参数信息
+*/
+struct qt_meta_stringdata_SignalsAndSlots3_t {
+    QByteArrayData data[5];//函数加参数共5个
+    char stringdata0[41];//总字符串长41
+};
+</code></pre>
+<pre><code class="language-cpp">/*
+5.切分字符串
+*/
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_SignalsAndSlots3_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+</code></pre>
+<pre><code class="language-cpp">/*
+4.初始化qt_meta_stringdata_SignalsAndSlots3，并且将所有函数拼接成字符串，中间用\0分开
+*/
+static const qt_meta_stringdata_SignalsAndSlots3_t qt_meta_stringdata_SignalsAndSlots3 = {
+    {
+QT_MOC_LITERAL(0, 0, 16), // &quot;SignalsAndSlots3&quot; (索引，偏移量，偏移长度)，类名
+QT_MOC_LITERAL(1, 17, 8), // &quot;sigPrint&quot;
+QT_MOC_LITERAL(2, 26, 0), // &quot;&quot;
+QT_MOC_LITERAL(3, 27, 4), // &quot;text&quot;
+QT_MOC_LITERAL(4, 32, 8) // &quot;sltPrint&quot;
+    },
+    &quot;SignalsAndSlots3\0sigPrint\0\0text\0&quot;//注意这是一行字符串
+    &quot;sltPrint&quot;
+};
+#undef QT_MOC_LITERAL
+</code></pre>
+<pre><code class="language-cpp">/*
+3.存储元对象信息，包括信号和槽机制、运行时类型信息和动态属性系统
+*/
+static const uint qt_meta_data_SignalsAndSlots3[] = {
+
+ // content:
+       7,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       2,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+              1,    1,   24,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+              4,    1,   27,    2, 0x0a /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QString,    3,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::QString,    3,
+
+       0        // eod
+};
+</code></pre>
+<pre><code class="language-cpp">/*
+2.执行对象所对应的信号或槽，或查找槽索引
+*/
+void SignalsAndSlots3::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        SignalsAndSlots3 *_t = static_cast&lt;SignalsAndSlots3 *&gt;(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t-&gt;sigPrint((*reinterpret_cast&lt; const QString(*)&gt;(_a[1]))); break;
+        case 1: _t-&gt;sltPrint((*reinterpret_cast&lt; const QString(*)&gt;(_a[1]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast&lt;int *&gt;(_a[0]);
+        void **func = reinterpret_cast&lt;void **&gt;(_a[1]);
+        {
+            typedef void (SignalsAndSlots3::*_t)(const QString &amp; );
+            if (*reinterpret_cast&lt;_t *&gt;(func) == static_cast&lt;_t&gt;(&amp;SignalsAndSlots3::sigPrint)) {
+                *result = 0;
+                return;
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-cpp">/*
+1.首先初始化静态变量staticMetaObject，并为QMetaObject中的无名结构体赋值
+*/
+const QMetaObject SignalsAndSlots3::staticMetaObject = {
+    { &amp;QObject::staticMetaObject, //静态变量地址
+      qt_meta_stringdata_SignalsAndSlots3.data,
+      qt_meta_data_SignalsAndSlots3,
+      qt_static_metacall, //用于执行对象所对应的信号或槽，或查找槽索引
+      Q_NULLPTR,
+      Q_NULLPTR
+    }
+};
+
+</code></pre>
+<p>从上面的代码中，我们得知 Qt 的元对象系统：信号槽，属性系统，运行时类信息都存储在静态对象 staticMetaObject 中。</p>
+<p>接下来是对另外三个公有接口的定义，在你的代码中也可以直接调用下面的函数哦</p>
+<pre><code class="language-cpp">//获取元对象，可以调用this-&gt;metaObject()-&gt;className();获取类名称
+const QMetaObject *SignalsAndSlots3::metaObject() const
+{
+    return QObject::d_ptr-&gt;metaObject ? QObject::d_ptr-&gt;dynamicMetaObject() : &amp;staticMetaObject;
+}
+
+//这个函数负责将传递来到的类字符串描述，转化为void*
+void *SignalsAndSlots3::qt_metacast(const char *_clname)
+{
+    if (!_clname) return Q_NULLPTR;
+    if (!strcmp(_clname, qt_meta_stringdata_SignalsAndSlots3.stringdata0))
+        return static_cast&lt;void*&gt;(const_cast&lt; SignalsAndSlots3*&gt;(this));
+    return QObject::qt_metacast(_clname);
+}
+
+//调用方法
+int SignalsAndSlots3::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id &lt; 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id &lt; 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id &lt; 2)
+            *reinterpret_cast&lt;int*&gt;(_a[0]) = -1;
+        _id -= 2;
+    }
+    return _id;
+}
+</code></pre>
+<p>接下来，我们发现在头文件中声明的信号，其真正定义是在这里，这也是为什么 signal 不需要我们定义的原因。</p>
+<pre><code class="language-cpp">// SIGNAL 0
+void SignalsAndSlots3::sigPrint(const QString &amp; _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast&lt;void*&gt;(reinterpret_cast&lt;const void*&gt;(&amp;_t1)) };
+    QMetaObject::activate(this, &amp;staticMetaObject, 0, _a);
+}
+
+```cpp
+2.3.6 关键字
+2.3.6.1 signals
+
+```cpp
+# define QT_ANNOTATE_ACCESS_SPECIFIER(x)
+# define Q_SIGNALS public QT_ANNOTATE_ACCESS_SPECIFIER(qt_signal)
+# define signals Q_SIGNALS
+</code></pre>
+<p>看到了吗，如果 signals 被展开的话就是 public，所以所有的信号都是公有的，也不需要像槽一样加 public，protected，private 的限定符。</p>
+<p>2.3.6.2 slots</p>
+<pre><code class="language-cpp"># define QT_ANNOTATE_ACCESS_SPECIFIER(x)
+# define Q_SLOTS QT_ANNOTATE_ACCESS_SPECIFIER(qt_slot)
+# define slots Q_SLOTS
+</code></pre>
+<p>slots 和 signals 一样，只是没有了限定符，所以它是否可以被对象调用，就看需求了。</p>
+<p>2.3.6.3 emit
+它的宏定义：# define emit</p>
+<p>emit 后面也没有字符串！当它被替换的时候，程序其实就是调用了 sigPrint()函数，而不是真正意义上的发送一个信号，有很多初学者都是认为当 emit 的时候，Qt 会发信号，所以才会有很多人问“当 emit 之后，会不会立即执行其后面的代码”。当然，如果想让 emit 后面的代码不需要等槽函数执行完就开始执行的话，可以设置 connect 第 5 个参数。</p>
+<p>Qt 之所以使用# define emit，是因为编译器并不认识 emit 啊，所以把它定义成一个空的宏就可以通过编译啦。</p>
+<p>2.3.7 信号槽的调用流程
+好，通过以上的代码和分享我们来总结一下具体流程。</p>
+<p>moc 查找头文件中的 signals，slots，标记出信号和槽
+将信号槽信息存储到类静态变量 staticMetaObject 中，并且按声明顺序进行存放，建立索引。
+当发现有 connect 连接时，将信号槽的索引信息放到一个 map 中，彼此配对。
+当调用 emit 时，调用信号函数，并且传递发送信号的对象指针，元对象指针，信号索引，参数列表到 active 函数
+通过 active 函数找到在 map 中找到所有与信号对应的槽索引
+根据槽索引找到槽函数，执行槽函数。
+以上，便是信号槽的整个流程，总的来说就是一个“注册-索引”机制，并不存在发送系统信号之类的事情。</p>
+<p>注意，我们本节讲的东西都是以 connect 第五个参数是默认为前提的。</p>
+<p>Qt 通过信号和槽机制，使得程序员在创建类时可以只关注类要做什么，这使得一个类真正具有了独立性。信号槽让它们之间自由的，动态的进行交互，从而使整个系统运行流畅，而你也不需要再插手管理。</p>
+<p>欢迎关注小豆君的微信公众号：小豆君，只要关注，便可加入小豆君为大家创建的 C++\Qt 交流群，方便讨论学习。</p>
+<p>编辑于 2017-12-19
+C++
+Qt（C++ 开发框架）
+编程</p>
+<p>以上，便是信号槽的整个流程，总的来说就是一个“注册-索引”机制，并不存在发送系统信号之类的事情。</p>
+<p>Qt 通过信号和槽机制，使得程序员在创建类时可以只关注类要做什么，这使得一个类真正具有了独立性。信号槽让它们之间自由的，动态的进行交互，从而使整个系统运行流畅，而你也不需要再插手管理。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="qt_skills/qt-core/how_to_disconnect_signal_and_slot.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="qt_skills/qt-core/qvariant.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="qt_skills/qt-core/how_to_disconnect_signal_and_slot.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="qt_skills/qt-core/qvariant.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>
