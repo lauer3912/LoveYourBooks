@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>VCS 学习</title>
+        <title>如何初始子模块？ - VCS 学习</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <base href="">
+        <base href="../">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="official-doc.html"><strong aria-hidden="true">1.</strong> Git 官网中文文档</a></li><li><a href="sub-module/intro.html"><strong aria-hidden="true">2.</strong> 子模块技巧</a></li><li><ol class="section"><li><a href="sub-module/how_to_add_subbmodule.html"><strong aria-hidden="true">2.1.</strong> 如何添加现有的 Git 仓库为工作的仓库的子模块？</a></li><li><a href="sub-module/how_to_init_subbmodule.html"><strong aria-hidden="true">2.2.</strong> 如何初始子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule.html"><strong aria-hidden="true">2.3.</strong> 如何更新子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule_but_no_push.html"><strong aria-hidden="true">2.4.</strong> 子模块想一直保持更新，但是不提交，如何做？</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="official-doc.html"><strong aria-hidden="true">1.</strong> Git 官网中文文档</a></li><li><a href="sub-module/intro.html"><strong aria-hidden="true">2.</strong> 子模块技巧</a></li><li><ol class="section"><li><a href="sub-module/how_to_add_subbmodule.html"><strong aria-hidden="true">2.1.</strong> 如何添加现有的 Git 仓库为工作的仓库的子模块？</a></li><li><a href="sub-module/how_to_init_subbmodule.html" class="active"><strong aria-hidden="true">2.2.</strong> 如何初始子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule.html"><strong aria-hidden="true">2.3.</strong> 如何更新子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule_but_no_push.html"><strong aria-hidden="true">2.4.</strong> 子模块想一直保持更新，但是不提交，如何做？</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -133,30 +133,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="print.html#git-官网中文文档" id="git-官网中文文档"><h1>Git 官网中文文档</h1></a>
-<p>官方文档 <a href="https://git-scm.com/book/zh/v2">https://git-scm.com/book/zh/v2</a></p>
-<a class="header" href="print.html#a子模块技巧" id="a子模块技巧"><h1>子模块技巧</h1></a>
-<a class="header" href="print.html#a如何添加现有的-git-仓库为工作的仓库的子模块" id="a如何添加现有的-git-仓库为工作的仓库的子模块"><h1>如何添加现有的 Git 仓库为工作的仓库的子模块？</h1></a>
-<a class="header" href="print.html#a示例" id="a示例"><h2>示例</h2></a>
+                        <a class="header" href="sub-module/how_to_init_subbmodule.html#a如何初始子模块" id="a如何初始子模块"><h1>如何初始子模块？</h1></a>
+<a class="header" href="sub-module/how_to_init_subbmodule.html#a示例" id="a示例"><h2>示例</h2></a>
 <pre><code class="language-bash">git submodule add https://github.com/gomods/athens.git ./gomods_github/athens
 </code></pre>
 <p><code>git submodule add 子模块路径 存放的本地路径</code></p>
-<a class="header" href="print.html#a如何初始子模块" id="a如何初始子模块"><h1>如何初始子模块？</h1></a>
-<a class="header" href="print.html#a示例-1" id="a示例-1"><h2>示例</h2></a>
-<pre><code class="language-bash">git submodule add https://github.com/gomods/athens.git ./gomods_github/athens
-</code></pre>
-<p><code>git submodule add 子模块路径 存放的本地路径</code></p>
-<a class="header" href="print.html#a如何更新子模块" id="a如何更新子模块"><h1>如何更新子模块？</h1></a>
-<pre><code class="language-bash">git submodule update --remote --merge
-</code></pre>
-<a class="header" href="print.html#a子模块想一直保持更新但是不提交如何做" id="a子模块想一直保持更新但是不提交如何做"><h1>子模块想一直保持更新，但是不提交，如何做？</h1></a>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="sub-module/how_to_add_subbmodule.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="sub-module/how_to_update_subbmodule.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -166,7 +162,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a href="sub-module/how_to_add_subbmodule.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a href="sub-module/how_to_update_subbmodule.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
@@ -194,14 +198,6 @@
         <!-- Custom JS scripts -->
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
         
 
     </body>
