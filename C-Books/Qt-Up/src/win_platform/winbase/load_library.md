@@ -1,6 +1,6 @@
 # 如何加载动态库？
 
-Windows平台使用三个基本的函数可以加载动态库
+Windows 平台使用三个基本的函数可以加载动态库
 
 先看源码 `WinBase.h` 文件：
 
@@ -26,3 +26,8 @@ LoadLibraryW(
 #endif // !UNICODE
 ```
 
+三个基本的函数：
+
+- LoadLibrary
+- LoadLibraryW
+- LoadLibraryA

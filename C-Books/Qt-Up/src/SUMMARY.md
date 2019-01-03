@@ -85,10 +85,10 @@
   - [如何快速消除 qDeubg()打印的信息?](./qt_skills/qt-core/no_qt_debug.md)
   - [不包含头文件，可以直接使用 qDebug()?](./qt_skills/qt-core/can_use_qt_debug.md)
   - [如何让你的自定义类型也支持 QDebug 打印?](./qt_skills/qt-core/custom_type_support_qt_debug.md)
-  - [二进制数据编辑器需要 QByteArray 数据类型](./qt_skiils/qt-core/qt_qbytearray.md)
-  - [QMap 与 QHash 有什么区别？](./qt_skiils/qt-core/diff_qmap_and_qhash.md)
+  - [二进制数据编辑器需要 QByteArray 数据类型](./qt_skills/qt-core/qt_qbytearray.md)
+  - [QMap 与 QHash 有什么区别？](./qt_skills/qt-core/diff_qmap_and_qhash.md)
   - [如何获取当前时间?](./qt_skills/qt-core/qt_date_and_time.md)
-  - [各平台系统标准路径](./qt_skills/qt-core/qt_standard_paths.md)
+  - [各平台系统标准路径、目录](./qt_skills/qt-core/qt_standard_paths.md)
 
 - [Qt GUI 技巧](./qt_skills/qt-gui/intro.md)
 - [Qt Widgets 技巧](./qt_skills/qt-widgets/intro.md)
