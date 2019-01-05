@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Objective-C Primer</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="render/intro.html"><strong aria-hidden="true">1.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">1.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">1.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Objective-C Primer</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/print.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="print.html#a图形绘制部分" id="a图形绘制部分"><h1>图形绘制部分</h1></a>
+<a class="header" href="print.html#a涉及的相关概念和接口" id="a涉及的相关概念和接口"><h1>涉及的相关概念和接口</h1></a>
+<a class="header" href="print.html#transform-变换矩阵" id="transform-变换矩阵"><h2>Transform 变换矩阵</h2></a>
+<a class="header" href="print.html#cgaffinetransform-仿射变换矩阵-用于-view-的-2d-变换" id="cgaffinetransform-仿射变换矩阵-用于-view-的-2d-变换"><h3>CGAffineTransform: 仿射变换矩阵, 用于 View 的 2D 变换</h3></a>
+<a class="header" href="print.html#catransform3d-主要用于-layer为-3d-变换使用" id="catransform3d-主要用于-layer为-3d-变换使用"><h3>CATransform3D: 主要用于 Layer，为 3D 变换使用</h3></a>
+<a class="header" href="print.html#cgaffinetransform-与-catransform3d-相互转换" id="cgaffinetransform-与-catransform3d-相互转换"><h3>CGAffineTransform 与 CATransform3D 相互转换</h3></a>
+<a class="header" href="print.html#a仿射变换矩阵" id="a仿射变换矩阵"><h1>仿射变换矩阵</h1></a>
+<a class="header" href="print.html#transform-变换矩阵-1" id="transform-变换矩阵-1"><h2>Transform 变换矩阵</h2></a>
+<a class="header" href="print.html#cgaffinetransform-仿射变换矩阵-用于-view-的-2d-变换-1" id="cgaffinetransform-仿射变换矩阵-用于-view-的-2d-变换-1"><h3>CGAffineTransform: 仿射变换矩阵, 用于 View 的 2D 变换</h3></a>
+<ol>
+<li>
+<p>矩阵的基本知识：</p>
+<pre><code class="language-Objective-C">// 仿射变换矩阵
+struct CGAffineTransform
+{
+  CGFloat a, b, c, d;
+  CGFloat tx, ty;
+};
+</code></pre>
+<p><strong>应用于二维图形</strong></p>
+<pre><code class="language-Objective-C">// 构建一个仿射变换矩阵
+CGAffineTransform CGAffineTransformMake (CGFloat a,CGFloat b,CGFloat c,CGFloat d,CGFloat tx,CGFloat ty);
+
+// 对于二维图形，存在三个最基本的图形变换操作：（1）平移；（2）缩放；（3）旋转。
+
+// 平移矩阵
+GGAffineTransform CGAffineMakeTranslation(CGFloat tx,CGFloat ty);
+
+// 缩放矩阵
+CGAffineTransform CGAffineTransformMakeScale(CGFloat sx, CGFloat sy);
+
+// 旋转矩阵
+CGAffineTransform CGAffineTransformMakeRotation(CGFloat angle);
+</code></pre>
+<p>为了把二维图形的变化统一在一个坐标系里，引入了齐次坐标的概念，即把一个图形用一个三维矩阵表示，其中第三列总是(0,0,1)，用来作为坐标系的标准。<strong>所以所有的变化都由前两列完成</strong>.参考下图：</p>
+<p>
+M =
+\begin{vmatrix}
+ a&b&0\\c&d&0\\tx&ty&1
+\end{vmatrix}
+<p>
+<p>现在介绍<code>点坐标通过仿射变换后得到新坐标点的</code>运算原理：</p>
+<pre><code class="language-text">例如：
+（1）一个二维点的坐标可以用一个1*3的矩阵表示，如：[X, Y, 1]; /// {X坐标值，Y坐标值，Z坐标值} 由于是二维的，那么第三列的值，用 1 填充。
+（2）按照这样的计算公式计算：[X, Y, 1] * M = [aX + cY + tx, bX + dY + ty, 1];
+（3）那么会得到一个新的点 [aX + cY + tx, bX + dY + ty, 1];
+
+</code></pre>
+<p>引用 <a href="https://www.matongxue.com/madocs/244.html">通俗的解释仿射变换</a></p>
+<p>现在讲讲 <code>平移</code>、<code>缩放</code> <code>旋转</code> 三个矩阵的运算原理。</p>
+<ol>
+<li><code>平移</code> , 使用函数 <code>GGAffineTransform CGAffineMakeTranslation(CGFloat tx,CGFloat ty)</code></li>
+</ol>
+<pre><code class="language-text">平移实际上是对矩阵M中的相关参数，设定了以下规则：
+（1）a = 1；
+（2）d = 1；
+（3）b = 0；
+（4）c = 0；
+所以根据公式：[X, Y, 1] * M = [aX + cY + tx, bX + dY + ty, 1] 计算得到：
+新的点坐标等于 [X + tx, Y + ty, 1]; /// {X坐标值，Y坐标值，Z坐标值}
+要说明的是tx，ty 是指点坐标按照向量(tx, ty) 进行平移。
+例如：tx = -2; ty = 20; 单位是像素。一般说明，点向左平移2个像素，向上平移20个像素。
+
+</code></pre>
+<ol>
+<li><code>缩放</code> , 使用函数 <code>CGAffineTransform CGAffineTransformMakeScale(CGFloat sx, CGFloat sy)</code></li>
+</ol>
+<pre><code class="language-text">缩放实际上是对矩阵M中的相关参数，设定了以下规则：
+（1）b = 0；
+（2）c = 0；
+（3）tx = 0；
+（4）ty = 0；
+所以根据公式：[X, Y, 1] * M = [aX + cY + tx, bX + dY + ty, 1] 计算得到：
+新的点坐标等于 [aX, dY, 1]; /// {X坐标值，Y坐标值，Z坐标值}
+要说明的是a是X坐标的缩放系数，d是Y坐标的缩放系数。也就是说X坐标上的点按照a值比例系数缩放，Y坐标上的点按照d值比例系数缩放。
+</code></pre>
+<ol>
+<li><code>旋转</code> , 使用函数 <code>CGAffineTransform CGAffineTransformMakeRotation(CGFloat angle)</code></li>
+</ol>
+<pre><code class="language-text">缩放实际上是对矩阵M中的相关参数，设定了以下规则：
+（1）a = cosɵ；
+（2）b = sinɵ；
+（3）c = -sinɵ；
+（4）d = cosɵ；
+（5）tx = 0；
+（6）ty = 0；
+所以根据公式：[X, Y, 1] * M = [aX + cY + tx, bX + dY + ty, 1] 计算得到：
+新的点坐标等于 [Xcosɵ - Ysinɵ, Xsinɵ + Ycosɵ,  1]; /// {X坐标值，Y坐标值，Z坐标值}
+要说明的是ɵ就是旋转的角度，逆时针为正，顺时针为负。
+</code></pre>
+</li>
+<li>
+<p>代码示例</p>
+<pre><code class="language-Objective-C">
+/// 图片的缩放旋转
+- (void)transformImageView{
+    CGAffineTransform t = CGAffineTransformMakeScale(scale * previousScale,scale * previousScale);
+    t = CGAffineTransformRotate(t, rotation + previousRotation);
+    self.imageView.transform = t;
+}
+
+/// 1、首先创建了一个变换CGAffineTransform的一个对象 t ，这个变换是用来放缩的，里面的两个参数分别是对宽和高放大或缩小的倍数，这里是以相同比例放缩的。
+/// 2、第二行句是在放缩变化中再加入角度的变换。
+/// 3、最后把变换赋给图片视图的一个属性transform。
+/// 就这么简单就实现了图片的旋转和放缩。
+
+</code></pre>
+</li>
+<li>
+<p>水平翻转 与 垂直翻转</p>
+<pre><code class="language-Objective-C">CGAffineTransformMakeScale (CGFloat sx, CGFloat sy);//创建一个给定比例放缩的变换视图引用了这个变换，那么图片的宽度就会变为  width*sx  ，对应高度变为  hight * sy。
+
+CGAffineTransformMakeScale(-1.0, 1.0);//水平翻转
+CGAffineTransformMakeScale(1.0,-1.0);//垂直翻转
+
+</code></pre>
+</li>
+<li>
+<p>角度旋转 与 弧度旋转</p>
+<pre><code class="language-Objective-C">CGAffineTransform CGAffineTransformMakeRotation ( CGFloat angle); //创建一个旋转角度的变化
+在这里可以看到参数并不是一个角度，但是它是把参数作为一个弧度，
+然后把弧度再转换为角度来处理，其结果就可能是将一个图片视图旋转了多少度。
+
+</code></pre>
+</li>
+<li>
+<p>创建一个平移的变化</p>
+<pre><code class="language-Objective-C">//创建一个平移的变化
+CGAffineTransform CGAffineTransformMakeTranslation (CGFloat tx,CGFloat ty);
+这个就比较好理解了，假设是一个视图，那么它的起始位置 x 会加上tx , y 会加上 ty
+</code></pre>
+</li>
+</ol>
+<a class="header" href="print.html#catransform3d-主要用于-layer为-3d-变换使用-1" id="catransform3d-主要用于-layer为-3d-变换使用-1"><h3>CATransform3D: 主要用于 Layer，为 3D 变换使用</h3></a>
+<a class="header" href="print.html#cgaffinetransform-与-catransform3d-相互转换-1" id="cgaffinetransform-与-catransform3d-相互转换-1"><h3>CGAffineTransform 与 CATransform3D 相互转换</h3></a>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                window.print();
+            })
+        </script>
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
+        
+
+    </body>
+</html>

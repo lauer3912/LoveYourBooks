@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>子模块想一直保持更新，但是不提交，如何做？ - VCS 学习</title>
+        <title>图形绘制部分 - Objective-C Primer</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,14 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
 
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
 
     </head>
@@ -50,7 +57,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
@@ -69,7 +76,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="official-doc.html"><strong aria-hidden="true">1.</strong> Git 官网中文文档</a></li><li><a href="sub-module/intro.html"><strong aria-hidden="true">2.</strong> 子模块技巧</a></li><li><ol class="section"><li><a href="sub-module/how_to_add_subbmodule.html"><strong aria-hidden="true">2.1.</strong> 如何添加现有的 Git 仓库为工作的仓库的子模块？</a></li><li><a href="sub-module/how_to_init_subbmodule.html"><strong aria-hidden="true">2.2.</strong> 如何初始子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule.html"><strong aria-hidden="true">2.3.</strong> 如何更新子模块？</a></li><li><a href="sub-module/how_to_update_subbmodule_but_no_push.html" class="active"><strong aria-hidden="true">2.4.</strong> 子模块想一直保持更新，但是不提交，如何做？</a></li><li><a href="sub-module/how_to_change_subbmodule_config.html"><strong aria-hidden="true">2.5.</strong> 子模块路径错误，如何变更?</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="render/intro.html" class="active"><strong aria-hidden="true">1.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">1.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">1.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -82,6 +89,11 @@
                             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                                 <i class="fa fa-bars"></i>
                             </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
                             <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                                 <i class="fa fa-paint-brush"></i>
                             </button>
@@ -99,7 +111,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">VCS 学习</h1> 
+                        <h1 class="menu-title">Objective-C Primer</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -129,24 +141,26 @@
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/render/intro.md");
+                   });
+                   // END - Rust Cookbook customization
                 </script>
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="sub-module/how_to_update_subbmodule_but_no_push.html#a子模块想一直保持更新但是不提交如何做" id="a子模块想一直保持更新但是不提交如何做"><h1>子模块想一直保持更新，但是不提交，如何做？</h1></a>
+                        <a class="header" href="render/intro.html#a图形绘制部分" id="a图形绘制部分"><h1>图形绘制部分</h1></a>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="sub-module/how_to_update_subbmodule.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
 
                         
-                            <a rel="next" href="sub-module/how_to_change_subbmodule_config.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="render/base/more_base_concept.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -158,19 +172,17 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="sub-module/how_to_update_subbmodule.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
 
                 
-                    <a href="sub-module/how_to_change_subbmodule_config.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="render/base/more_base_concept.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
             </nav>
 
         </div>
+
+        
 
         
 
@@ -193,7 +205,7 @@
 
         <!-- Custom JS scripts -->
         
-
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
         
 
     </body>

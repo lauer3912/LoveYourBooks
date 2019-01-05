@@ -1,0 +1,23 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "Objective-C Primer"
+
+[output.html]
+mathjax-support = true
+theme = "theme"
+additional-css = ["theme/custom.css", "theme/for-math-theme.css"]
+additional-js = ["theme/for-mathjax-config.js"]
+
+[output.html.playpen]
+editable = false
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
