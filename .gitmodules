@@ -13,3 +13,18 @@
 [submodule "Go-Books/GoBestProjects/gomods_github/athens"]
 	path = Go-Books/GoBestProjects/gomods_github/athens
 	url = https://github.com/gomods/athens.git
+[submodule "Dart-Books/Flutter-Books/Flutter-Up/flutter/engine"]
+	path = Dart-Books/Flutter-Books/Flutter-Up/flutter/engine
+	url = https://github.com/flutter/engine.git
+[submodule "C-Books/Objective-C-Primer/best-core/cocos2d/cocos2d-objc"]
+	path = C-Books/Objective-C-Primer/best-core/cocos2d/cocos2d-objc
+	url = https://github.com/cocos2d/cocos2d-objc.git
+[submodule "C-Books/Qt-Up/best-projects/youlanhai/qco-editor/src-code"]
+	path = C-Books/Qt-Up/best-projects/youlanhai/qco-editor/src-code
+	url = https://github.com/youlanhai/qco-editor.git
+[submodule "C-Books/Qt-Up/best-projects/youlanhai/encodeconv"]
+	path = C-Books/Qt-Up/best-projects/youlanhai/encodeconv
+	url = https://github.com/youlanhai/encodeconv.git
+[submodule "C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder"]
+	path = C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder
+	url = https://github.com/cocos2d/CocosBuilder.git
