@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>选择 GCD 还是 NSThread? - Objective-C Primer</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="base/intro.html"><strong aria-hidden="true">1.</strong> 核心价值</a></li><li><ol class="section"><li><a href="base/why_objective_c_is_a_dynamic_language.html"><strong aria-hidden="true">1.1.</strong> Objective-c 是动态语言</a></li><li><a href="base/memory_manage.html"><strong aria-hidden="true">1.2.</strong> 内存管理原理</a></li></ol></li><li><a href="datatype/intro.html"><strong aria-hidden="true">2.</strong> 数据类型</a></li><li><ol class="section"><li><a href="datatype/nsnumber_and_nsvalue_for_c_datatype.html"><strong aria-hidden="true">2.1.</strong> NSNumber 和 NSValue 对基础 C 数据类型的对象化封装</a></li><li><a href="datatype/why_nsstring_use_copy_property.html"><strong aria-hidden="true">2.2.</strong> NSString 为何要用 COPY 属性</a></li></ol></li><li><a href="syntax/intro.html"><strong aria-hidden="true">3.</strong> 语法特点</a></li><li><ol class="section"><li><a href="syntax/concept_strong_and_weak.html"><strong aria-hidden="true">3.1.</strong> @property 的属性 strong 和 weak 如何理解？</a></li><li><a href="syntax/concept_selector_and_sel.html"><strong aria-hidden="true">3.2.</strong> @selector 与 SEL 如何理解？</a></li></ol></li><li><a href="concurrence/intro.html"><strong aria-hidden="true">4.</strong> 并发编程</a></li><li><ol class="section"><li><a href="concurrence/gcd_or_nsthread.html" class="active"><strong aria-hidden="true">4.1.</strong> 选择 GCD 还是 NSThread?</a></li><li><a href="concurrence/gcd.html"><strong aria-hidden="true">4.2.</strong> GCD(Grand Central Dispatch)介绍</a></li></ol></li><li><a href="render/intro.html"><strong aria-hidden="true">5.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">5.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">5.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li><li><a href="render/base/diff_coordinate_system_between_ios_and_quartz2d.html"><strong aria-hidden="true">5.3.</strong> iOS 中 UIKit 坐标系与 Quartz 2D 绘图坐标系的区别</a></li><li><a href="render/base/relations_between_coregraphics_and_quartz2d.html"><strong aria-hidden="true">5.4.</strong> CoreGraphics 与 Quartz 2D 的关系</a></li><li><a href="render/methods/CGContextSaveGState_CGContextRestoreGState.html"><strong aria-hidden="true">5.5.</strong> CGContextSaveGState 与 CGContextRestoreGState 的作用</a></li><li><a href="render/examples/draw_straight_line.html"><strong aria-hidden="true">5.6.</strong> 例子：绘制一条直线</a></li><li><a href="render/examples/draw_arc.html"><strong aria-hidden="true">5.7.</strong> 例子：绘制一条弧线</a></li><li><a href="render/examples/draw_bezier.html"><strong aria-hidden="true">5.8.</strong> 例子：绘制贝兹曲线</a></li><li><a href="render/examples/draw_continuous_curve.html"><strong aria-hidden="true">5.9.</strong> 例子：绘制连续曲线</a></li><li><a href="render/examples/draw_imaginary_line.html"><strong aria-hidden="true">5.10.</strong> 例子：绘制虚线</a></li><li><a href="render/examples/draw_imaginary_curve.html"><strong aria-hidden="true">5.11.</strong> 例子：绘制虚曲线</a></li><li><a href="render/examples/draw_continuous_imaginary_curve.html"><strong aria-hidden="true">5.12.</strong> 例子：绘制连续虚曲线</a></li><li><a href="render/examples/draw_square_with_no_frame.html"><strong aria-hidden="true">5.13.</strong> 例子：绘制没有边框的正方形</a></li><li><a href="render/examples/draw_square_frame.html"><strong aria-hidden="true">5.14.</strong> 例子：绘制正方形边框</a></li><li><a href="render/examples/draw_rounded_rectangle.html"><strong aria-hidden="true">5.15.</strong> 例子：绘制圆角矩形</a></li><li><a href="render/examples/draw_rhombus.html"><strong aria-hidden="true">5.16.</strong> 例子：绘制菱形</a></li><li><a href="render/examples/draw_ellipse.html"><strong aria-hidden="true">5.17.</strong> 例子：绘制椭圆</a></li><li><a href="render/examples/draw_solid_circle.html"><strong aria-hidden="true">5.18.</strong> 例子：绘制实心圆</a></li><li><a href="render/examples/draw_solid_circle_and_solid_rectangle.html"><strong aria-hidden="true">5.19.</strong> 例子：绘制实心矩形和实心圆</a></li><li><a href="render/examples/draw_one_path.html"><strong aria-hidden="true">5.20.</strong> 例子：绘制一段路径</a></li><li><a href="render/examples/draw_irregular_shape.html"><strong aria-hidden="true">5.21.</strong> 例子：绘制不规则形状</a></li><li><a href="render/examples/draw_rectangle_ellipse.html"><strong aria-hidden="true">5.22.</strong> 例子：绘制矩形和椭圆</a></li><li><a href="render/examples/draw_pie.html"><strong aria-hidden="true">5.23.</strong> 例子：绘制饼图</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Objective-C Primer</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/concurrence/gcd_or_nsthread.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="concurrence/gcd_or_nsthread.html#a选择-gcd-还是-nsthread" id="a选择-gcd-还是-nsthread"><h1>选择 GCD 还是 NSThread?</h1></a>
+<p>一直以来使用 GCD 进行并发编程 而不是使用 NSThread 进行线程编程，只是因为 GCD 方便的 API 设计，却并没有仔细想想为什么 NO NSThread?</p>
+<p>备注: 并发编程 更注重于任务的并发，忽略线程的管理；而 线程编程 则应该是两者兼具吧。</p>
+<hr />
+<a class="header" href="concurrence/gcd_or_nsthread.html#gcd" id="gcd"><h2>GCD</h2></a>
+<p>在官方文档介绍里，一直推荐的是使用 GCD 来进行并发编程，而不是使用 NSThread 来进行线程编程。原因有下：</p>
+<ol>
+<li>GCD 提供方便的 API，让我们在进行并发编程时只要关注具体的任务，而无需关注多余的线程管理；</li>
+<li>GCD 帮我们提供了线程管理，我们不需要自己创建、销毁线程，同时通过 GCD 来进行并发编程，系统能够更好的利用线程资源，众所周知线程资源时有限的，在有限的资源下，GCD 能更好的发挥多线程的作用；</li>
+<li>通过 GCD 来进行资源的同步读取来代替锁操作，相对线程锁来说，在某种情况下会更好，具体文档没说明，但却指出了，GCD 代替锁可以减少锁每次的解锁操作都进入系统内核状态，这也是一种资源节省，优化；</li>
+</ol>
+<a class="header" href="concurrence/gcd_or_nsthread.html#nsthread" id="nsthread"><h2>NSThread</h2></a>
+<p>苹果不推荐 NSThread 原因有下：</p>
+<ol>
+<li>线程比较占用内存(用户内存以及内核内存，具体可见下表 1)，如果不是很熟悉线程编程，容易导致资源的浪费；
+| Item | Approximate cost | Notes |
+| ---------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kernel data structures | Approximately 1 KB | This memory is used to store the thread data structures and attributes, much of which is allocated as wired memory and therefore cannot be paged to disk. |
+| Stack space | Stack space 512 KB (secondary threads) 8 MB (OS X main thread) 1 MB (iOS main thread) | The minimum allowed stack size for secondary threads is 16 KB and the stack size must be a multiple of 4 KB. The space for this memory is set aside in your process space at thread creation time, but the actual pages associated with that memory are not created until they are needed. |
+| Creation time | Approximately 90 microseconds | This value reflects the time between the initial call to create the thread and the time at which the thread’s entry point routine began executing. The figures were determined by analyzing the mean and median values generated during thread creation on an Intel-based iMac with a 2 GHz Core Duo processor and 1 GB of RAM running OS X v10.5. |</li>
+<li>如果执行一个短的任务，线程一般执行完就退出了，这时将任务交给 GCD，也许 GCD 会将创建的线程进行重用，避免多余的创建(不管现在有没有重用功能，这都是可以优化的)；</li>
+<li>如果自己创建线程来执行一个长任务，使用 GCD 一样能完成，而且少了线程创建任务；</li>
+<li>如果实现一个类似于 AFN 那样，线程保活，然后不断的执行一些任务呢？ 不好意思，还是不推荐 NSThread, 如果你创建一个线程，并且通过 Runloop 进行保活，但却不能保证该线程一直是满载进行任务操作，这仍然是一种资源浪费，使用 GCD 一样能实现这种效果，而且还不会浪费资源， 可见新版的 AFN 已经使用 GCD 来替代原来的 NSThread 保活，所以不要在线程保活保活了，不能满载的情况下就是资源浪费。</li>
+</ol>
+<a class="header" href="concurrence/gcd_or_nsthread.html#a总结" id="a总结"><h2>总结:</h2></a>
+<p>所以，在平时的编程中如果没有特殊需求，使用 GCD 是最推荐的选择。</p>
+<p>当然还有 <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1">Operation Queues</a> , 它是基于 GCD 进行封装的类， 所以把他们归为一类了。 具体用 GCD 还是 Operation Queues, 看需求而定，Operation Queues 提供了一些 GCD 不太方便实现的功能，而 GCD 则更加快捷方便。</p>
+<p><strong>PThread</strong> ( 题外话 )
+在官方文档中有这样一句话:</p>
+<blockquote>
+<p>For multithreaded applications, Cocoa frameworks use locks and other forms of internal synchronization to ensure they behave correctly. To prevent these locks from degrading performance in the single-threaded case, however, Cocoa does not create them until the application spawns its first new thread using the NSThread class. If you spawn threads using only POSIX thread routines, Cocoa does not receive the notifications it needs to know that your application is now multithreaded. When that happens, operations involving the Cocoa frameworks may destabilize or crash your application.</p>
+</blockquote>
+<blockquote>
+<p>意思大概就是使用 GCD 和 NSThread 创建了线程时，系统会接收到一个通知，来告知 App 进入了多线程状态，这时 Cocoa 框架里的一些懒加载的锁会被初始化，增加锁操作来保证线程安全(文档中有提到在单线程的情况下，App 的 Cocoa 框架的锁都不会创建，这样相对更加高效)， 然而通过 POSIX 来创建线程时，并不会发送一个这样的通知，所以如果你的 App 之前一直是单线程在跑的话，此时进入了多线程状态，而 Cocoa 不知道，依然单着跑，结果就是很容易 crash。</p>
+</blockquote>
+<p>更多详情请看相关资料：</p>
+<ol>
+<li><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1">Threading Programming Guide</a></li>
+<li><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091-CH1-SW1">Concurrency Programming Guide</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="concurrence/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="concurrence/gcd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="concurrence/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="concurrence/gcd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
+        
+
+    </body>
+</html>
