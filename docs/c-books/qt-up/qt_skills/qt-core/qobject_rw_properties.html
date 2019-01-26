@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>类 Property 属性读写封装 - Qt 技能提升</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_linux.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_linux.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li><li><a href="win_platform/intro.html"><strong aria-hidden="true">5.</strong> Windows 平台技巧</a></li><li><ol class="section"><li><a href="win_platform/winbase/load_library.html"><strong aria-hidden="true">5.1.</strong> 如何加载动态库？</a></li><li><a href="win_platform/winbase/find_load_library.html"><strong aria-hidden="true">5.2.</strong> Windows 加载动态库的搜索路径问题</a></li><li><a href="win_platform/winbase/diff_load_library.html"><strong aria-hidden="true">5.3.</strong> LoadLibrary 与 LoadLibraryW 与 LoadLibraryA 的区别</a></li><li><a href="win_platform/winbase/errors_load_library.html"><strong aria-hidden="true">5.4.</strong> 加载动态库出错的错误编码，原因有哪些？</a></li><li><a href="win_platform/winbase/tchar_to_const_char.html"><strong aria-hidden="true">5.5.</strong> TCHAR 转换成 const char*</a></li></ol></li><li><a href="qt_skills/qt-core/intro.html"><strong aria-hidden="true">6.</strong> Qt Core 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-core/q_object_macro.html"><strong aria-hidden="true">6.1.</strong> 宏 Q_OBJECT, 应用到所有继承 QObject 的类</a></li><li><a href="qt_skills/qt-core/class_define_use_q_object_macro_must_inheritance_qobject.html"><strong aria-hidden="true">6.2.</strong> 使用宏 Q_OBJECT, 类必须继承 QObject 或 QObject 子类</a></li><li><a href="qt_skills/qt-core/qt_version_macro_and_qt_version_check_macro.html"><strong aria-hidden="true">6.3.</strong> 宏 QT_VERSION 与 QT_VERSION_CHECK 如何使用?</a></li><li><a href="qt_skills/qt-core/q_class_info_macro.html"><strong aria-hidden="true">6.4.</strong> 添加类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/get_q_class_info.html"><strong aria-hidden="true">6.5.</strong> 获取类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/qobject_rw_properties.html" class="active"><strong aria-hidden="true">6.6.</strong> 类 Property 属性读写封装</a></li><li><a href="qt_skills/qt-core/qobject_manager_properties.html"><strong aria-hidden="true">6.7.</strong> QObject 对象动态增加属性</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaClassInfo.html"><strong aria-hidden="true">6.8.</strong> incomplete return type 'QMetaClassInfo'</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaProperty.html"><strong aria-hidden="true">6.9.</strong> incomplete return type 'QMetaProperty'</a></li><li><a href="qt_skills/qt-core/qobject_cast.html"><strong aria-hidden="true">6.10.</strong> QObject 对象指针类型的动态转换 qobject_cast&lt;&gt;</a></li><li><a href="qt_skills/qt-core/qobject_enums.html"><strong aria-hidden="true">6.11.</strong> QObject 对象枚举类型封装</a></li><li><a href="qt_skills/qt-core/class_define_use_general_not_supported.html"><strong aria-hidden="true">6.12.</strong> QObject 子类不支持模类定义板泛型</a></li><li><a href="qt_skills/qt-core/multiple_inheritance_with_qobject_be_first.html"><strong aria-hidden="true">6.13.</strong> 多继承 QObject 必须放在前面</a></li><li><a href="qt_skills/qt-core/virtual_inheritance_with_qobject_not_supported.html"><strong aria-hidden="true">6.14.</strong> 虚拟继承 QObject 不支持</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_have_signals_and_slots.html"><strong aria-hidden="true">6.15.</strong> 嵌套类中的类不能有信号和槽机制</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_use_q_object_macro.html"><strong aria-hidden="true">6.16.</strong> 嵌套 QObject 子类中的类不能使用宏 Q_OBJECT</a></li><li><a href="qt_skills/qt-core/function_cannot_apply_to_single_and_slot.html"><strong aria-hidden="true">6.17.</strong> 函数指针不能作为信号和槽的参数</a></li><li><a href="qt_skills/qt-core/enums_must_be_fully_qualified_for_single_and_slot.html"><strong aria-hidden="true">6.18.</strong> 信号和槽中的枚举参数，必须是完全限定</a></li><li><a href="qt_skills/qt-core/order_about_singles_and_slots.html"><strong aria-hidden="true">6.19.</strong> 信号和槽被激活的调用次序是随机的吗？</a></li><li><a href="qt_skills/qt-core/function_pointer_about_singles_and_slots.html"><strong aria-hidden="true">6.20.</strong> 信号和槽可以使用函数指针吗？</a></li><li><a href="qt_skills/qt-core/lambdas_about_singles_and_slots.html"><strong aria-hidden="true">6.21.</strong> 槽支持 C++11 的 lambdas 表达式吗？</a></li><li><a href="qt_skills/qt-core/blocking_queued_connect_about_singles_and_slots.html"><strong aria-hidden="true">6.22.</strong> 什么时候使用 Blocking Queued Connection?</a></li><li><a href="qt_skills/qt-core/how_to_known_how_many_slots_by_signal.html"><strong aria-hidden="true">6.23.</strong> 如何动态获得信号绑定了哪些槽？</a></li><li><a href="qt_skills/qt-core/how_to_get_signal_sender.html"><strong aria-hidden="true">6.24.</strong> 如何获得信号的发送者？</a></li><li><a href="qt_skills/qt-core/how_to_disconnect_signal_and_slot.html"><strong aria-hidden="true">6.25.</strong> 如何断开信号和槽的连接？</a></li><li><a href="qt_skills/qt-core/description_about_signal_and_slot.html"><strong aria-hidden="true">6.26.</strong> 信号槽的调用流程原理是怎样的？</a></li><li><a href="qt_skills/qt-core/qvariant.html"><strong aria-hidden="true">6.27.</strong> 宏 Q_DECLARE_METATYPE 与 QVariant 如何结合使用？</a></li><li><a href="qt_skills/qt-core/q_declare_metatype.html"><strong aria-hidden="true">6.28.</strong> 如何构建自定义 Qt 数据类型？</a></li><li><a href="qt_skills/qt-core/qvariant_save_pointer.html"><strong aria-hidden="true">6.29.</strong> 用 QVariant 来保存指针</a></li><li><a href="qt_skills/qt-core/qvariant_can_convert.html"><strong aria-hidden="true">6.30.</strong> 判断 QVariant 类型是否可以转换？</a></li><li><a href="qt_skills/qt-core/qt_iterating.html"><strong aria-hidden="true">6.31.</strong> Qt 的迭代器接口如何使用？</a></li><li><a href="qt_skills/qt-core/qt_qpointer.html"><strong aria-hidden="true">6.32.</strong> 如何使用保护机制指针 QPointer，增强程序健壮性？</a></li><li><a href="qt_skills/qt-core/qt_qsharedpointer.html"><strong aria-hidden="true">6.33.</strong> 如何使用强引用计数指针 QSharedPointer？</a></li><li><a href="qt_skills/qt-core/qt_qweakpointer.html"><strong aria-hidden="true">6.34.</strong> 如何使用弱引用计数指针 QWeakPointer？</a></li><li><a href="qt_skills/qt-core/qt_qobject_cleanup_handler.html"><strong aria-hidden="true">6.35.</strong> 怎么监视 QObject 对象的生命周期？</a></li><li><a href="qt_skills/qt-core/qt_signal_blocker.html"><strong aria-hidden="true">6.36.</strong> 如何暂时阻止发射信号？</a></li><li><a href="qt_skills/qt-core/qt_debug.html"><strong aria-hidden="true">6.37.</strong> 如何使用 QDebug 打印调试信息?</a></li><li><a href="qt_skills/qt-core/no_qt_debug.html"><strong aria-hidden="true">6.38.</strong> 如何快速消除 qDeubg()打印的信息?</a></li><li><a href="qt_skills/qt-core/can_use_qt_debug.html"><strong aria-hidden="true">6.39.</strong> 不包含头文件，可以直接使用 qDebug()?</a></li><li><a href="qt_skills/qt-core/custom_type_support_qt_debug.html"><strong aria-hidden="true">6.40.</strong> 如何让你的自定义类型也支持 QDebug 打印?</a></li><li><a href="qt_skills/qt-core/qt_qbytearray.html"><strong aria-hidden="true">6.41.</strong> 二进制数据编辑器需要 QByteArray 数据类型</a></li><li><a href="qt_skills/qt-core/diff_qmap_and_qhash.html"><strong aria-hidden="true">6.42.</strong> QMap 与 QHash 有什么区别？</a></li><li><a href="qt_skills/qt-core/qt_date_and_time.html"><strong aria-hidden="true">6.43.</strong> 如何获取当前时间?</a></li><li><a href="qt_skills/qt-core/qt_standard_paths.html"><strong aria-hidden="true">6.44.</strong> 各平台系统标准路径、目录</a></li></ol></li><li><a href="qt_skills/qt-gui/intro.html"><strong aria-hidden="true">7.</strong> Qt GUI 技巧</a></li><li><a href="qt_skills/qt-widgets/intro.html"><strong aria-hidden="true">8.</strong> Qt Widgets 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-widgets/undo_command.html"><strong aria-hidden="true">8.1.</strong> 如何为应用添加撤销操作?</a></li><li><a href="qt_skills/qt-widgets/message_box.html"><strong aria-hidden="true">8.2.</strong> 如何使用消息对话框 QMessageBox?</a></li><li><a href="qt_skills/qt-widgets/diff_frameGeometry_and_geometry.html"><strong aria-hidden="true">8.3.</strong> QWidget 的 frameGeometry 与 geometry 有什么区别？</a></li><li><a href="qt_skills/qt-widgets/setting_qdialog_parent.html"><strong aria-hidden="true">8.4.</strong> 对话框 QDialog 设置了父窗口，会出现什么问题？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_no_effect_others.html"><strong aria-hidden="true">8.5.</strong> 弹出对话框，不影响其他窗口使用，如何做？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_effect_others.html"><strong aria-hidden="true">8.6.</strong> 弹出对话框，阻止应用程序所有窗口输入，如何做？</a></li><li><a href="qt_skills/qt-widgets/model_qdialog_and_no_model_qdialog.html"><strong aria-hidden="true">8.7.</strong> 非模态对话框与模态对话框到底有什么区别？</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Qt 技能提升</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/qt_skills/qt-core/qobject_rw_properties.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#qt-类-property-属性读写封装" id="qt-类-property-属性读写封装"><h1>Qt 类 Property 属性读写封装</h1></a>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a简介" id="a简介"><h2>简介</h2></a>
+<p>Qt 提供一个复杂属性系统，类似于其它编译器供应商所提供的（Property System）。然而，作为一个与编译器和平台无关的库，Qt 不依赖于那些非标准的编译器特性，如：_property 或[property]。Qt 的解决方案适用于 Qt 支持平台下的任何标准 C++编译器。它基于元对象系统（Meta Object Sytstem），也通过信号和槽提供对象间通讯机制。</p>
+<p>Qt 的属性系统为 Qt 的类添加了更加实惠的功能。有助于 Qt 对象状态变化，变化通知、封装等等操作。</p>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a声明属性的要求" id="a声明属性的要求"><h2>声明属性的要求</h2></a>
+<p>为了声明一个属性，在继承 QObject 的类中使用 <code>Q_PROPERTY()</code>宏.</p>
+<pre><code class="language-cpp">Q_PROPERTY(type name
+           (READ getFunction [WRITE setFunction] |
+            MEMBER memberName [(READ getFunction | WRITE setFunction)])
+           [RESET resetFunction]
+           [NOTIFY notifySignal]
+           [REVISION int]
+           [DESIGNABLE bool]
+           [SCRIPTABLE bool]
+           [STORED bool]
+           [USER bool]
+           [CONSTANT]
+           [FINAL])
+</code></pre>
+<p>Here are some typical examples of property declarations taken from class QWidget.
+以下是摘自 QWidget 类的典型属性声明的例子：</p>
+<pre><code class="language-cpp">Q_PROPERTY(bool focus READ hasFocus)
+Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled)
+Q_PROPERTY(QCursor cursor READ cursor WRITE setCursor RESET unsetCursor)
+</code></pre>
+<p>下面的示例，展示了如何使用 MEMBER 关键字将类成员变量导出为 Qt 属性。注意：必须被指定一个 NOTIFY 信号以允许 QML 属性绑定。</p>
+<pre><code class="language-cpp">    Q_PROPERTY(QColor color MEMBER m_color NOTIFY colorChanged)
+    Q_PROPERTY(qreal spacing MEMBER m_spacing NOTIFY spacingChanged)
+    Q_PROPERTY(QString text MEMBER m_text NOTIFY textChanged)
+    ...
+signals:
+    void colorChanged();
+    void spacingChanged();
+    void textChanged(const QString &amp;newText);
+
+private:
+    QColor  m_color;
+    qreal   m_spacing;
+    QString m_text;
+</code></pre>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a一个属性的行为就像一个类的数据成员但它有通过元对象系统访问的附加特性" id="a一个属性的行为就像一个类的数据成员但它有通过元对象系统访问的附加特性"><h2>一个属性的行为就像一个类的数据成员，但它有通过元对象系统访问的附加特性。</h2></a>
+<ul>
+<li>如果没有指定 <code>MEMBER</code> 关键字，则需要一个 <code>READ</code> 访问函数。用于读取属性值。理想的情况下，一个 const 函数用于此目的，并且它必须返回属性类型或类型的 const 引用。如：<code>QWidget::focus</code> 是一个只读属性，通过 <code>READ</code> 函数 <code>QWidget::hasFocus()</code>访问。</li>
+<li>一个 <code>WRITE</code> 访问函数是<strong>可选的</strong>，用于设置属性值。它必须返回 <code>void</code> 并且必须接受一个参数，该参数是属性类型，或此类型的指针，引用，例如：<code>QWidget::enabled</code> 具有 <code>WRITE</code> 函数 <code>QWidget::setEnabled()</code>。只读属性不需要 <code>WRITE</code> 函数，例如：<code>QWidget::focus</code> 没有 <code>WRITE</code> 函数</li>
+<li>如果 <code>READ</code> 访问函数没有被指定，则 <code>MEMBER</code> 变量关联是必须的。这使得给定的成员变量可读可写，而不需要创建 <code>READ</code> 和 <code>WRITE</code> 访问函数。如果需要控制变量访问，除了使用 <code>MEMBER</code> 变量关联外，仍然可以使用 <code>READ</code> 和 <code>WRITE</code> 函数（但不要同时使用）</li>
+<li>一个 <code>RESET</code> 函数是<strong>可选的</strong>，用于将属性设置为上下文指定的默认值。例如：<code>QWidget::cursor</code> 有典型的 <code>READ</code> 和 <code>WRITE</code> 函数，<code>QWidget::cursor()</code>和 <code>QWidget::setCursor()</code>，同时也有一个 <code>RESET</code> 函数 <code>QWidget::unsetCursor()</code>，因为没有 <code>QWidget::setCursor()</code>调用将 <code>cursor</code> 属性重置为上下文默认的值。<code>RESET</code> 函数必须返回 <code>void</code> 类型，并且不带任何参数。</li>
+<li>一个 <code>NOTIFY</code> 信号是<strong>可选的</strong>。如果定义了 <code>NOTIFY</code>，则需要在类中指定一个已存在的信号，该信号在属性值改变时发射。<code>MEMBER</code> 变量的 <code>NOTIFY</code> 信号必须是 0 个或一个参数，而且必须与属性的类型相同。参数保存的是属性的新值。<code>NOTIFY</code> 信号应该仅当属性值真正的发生变化时发射，以避免绑定在 <code>QML</code> 不必要的重新评估。例如：当需要一个没有显式 <code>setter</code> 的 <code>MEMBER</code> 属性时，Qt 会自动发射信号。</li>
+<li>一个 <code>REVISION</code> 数字是<strong>可选的</strong>。如果包含了该关键字，它定义了在 API 特定修订中使用的属性和通知器信号（通常是 QML）；如果没有包含，它默认为 <code>0</code>。</li>
+<li><code>DESIGNABLE</code> 属性指定了该属性在 GUI 设计器（如 <code>Qt Designer</code>）的属性编辑器中是否可见。大多数的属性是 <code>DESIGNABLE</code> （默认为 true）。除了 true 或 false，还可以指定 boolean 成员函数。</li>
+<li><code>SCRIPTABLE</code> 属性表明这个属性是否可以被一个脚本引擎操作（默认是 true）。除了 true 或 false，你还可以指定 boolean 成员函数。</li>
+<li><code>STORED</code> 属性表明了该属性是否被认为是自己已存在的或是依赖于其它值。它也表明在保存对象状态时，是否必须保存此属性的值。大多数属性是 STORED（默认为 true）。但是例如：<code>QWidget::minmunWidth()</code>的 <code>STROED</code> 为 false，因为它的值从 <code>QWidget::minimumSize()</code>（类型为 <code>QSize</code>）中的宽度部分取得。</li>
+<li><code>USER</code> 属性指定了在类中属性是否被设计为面向用户或可编辑的。通常情况下，每一个类只有一个 <code>USER</code> 属性（默认为 false）。例如： <code>QAbstractButton::checked</code> 是按钮的用户可编辑属性（checkable）。注意：<code>QItemDelegate</code> 获取和设置 <code>widget</code> 的 <code>USER</code> 属性。</li>
+<li><code>CONSTANT</code> 属性的存在表明属性是一个常量值。对于给定的 object 实例，常量属性的 <code>READ</code> 函数在每次被调用时必须返回相同的值。不同的 object 实例该常量值可能会不同。一个常量属性不能具有 <code>WRITE</code> 函数或 <code>NOYIFY</code> 信号。</li>
+<li><code>FINAL</code> 属性的存在表明属性不能被派生类所重写。在有些情况下，这可以用于效率优化，但不能被 moc 强制执行。必须注意不能重写一个 <code>FINAL</code> 属性。
+<code>READ</code>,<code>WRITE</code>,<code>RESET</code> 函数能被继承，也能是 <code>virtual</code> 的。当多重继承时，它们必须来自第一个继承的类。</li>
+</ul>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a属性类型可以是-qvariant-支持的任意类型或者是用户定义的类型在这个例子中类-qdate-被看作是一个用户定义的类型" id="a属性类型可以是-qvariant-支持的任意类型或者是用户定义的类型在这个例子中类-qdate-被看作是一个用户定义的类型"><h2>属性类型可以是 QVariant 支持的任意类型，或者是用户定义的类型。在这个例子中，类 QDate 被看作是一个用户定义的类型。</h2></a>
+<pre><code class="language-cpp">Q_PROPERTY(QDate date READ getDate WRITE setDate)
+</code></pre>
+<p>因为 <code>QDate</code> 是用户自定义的，必须包含有属性声明的头文件。</p>
+<p>由于历史原因，QMap 和 QList 作为属性类型等同于 <code>QVarinatMap</code> 和 <code>QVarintList</code>.
+For historical reasons, QMap and QList as property types are synonym of QVariantMap and QVariantList.</p>
+<p>对于 QMap、QList 和 QValueList 属性，属性的值是一个 QVariant，它包含整个 list 或 map。</p>
+<p>注意：Q_PROPERTY 字符串不能包含逗号，因为逗号会分割宏的参数。因此，你必须使用 QVarinatMap 作为属性的类型而不是 QMap</p>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a通过元对象系统读写属性" id="a通过元对象系统读写属性"><h2>通过元对象系统读写属性</h2></a>
+<p>一个属性可以使用通用函数 <code>QObject::property()</code>和 <code>QObject::setProperty()</code>进行读写，除了属性名，无需知晓属性所属类的任何细节。</p>
+<p>下面的代码片断中，调用 <code>QAbstractButton::setDown()</code>和 <code>QObject::setProperty()</code>来设置属性“down”。</p>
+<pre><code class="language-cpp">QPushButton *button = new QPushButton;
+QObject *object = button;
+
+button-&gt;setDown(true);
+object-&gt;setProperty(&quot;down&quot;, true);
+</code></pre>
+<blockquote>
+<p>优化建议：
+通过属性的 <code>WRITE</code> 访问属性优于上述两者，因为速度更快并且在编译期间有更好的诊断。
+但以这种方式设置属性你需要在编译期间了解这个类（能够访问其定义）。</p>
+</blockquote>
+<p>通过名称访问属性，能够让你在编译期间访问不了解的类。你可以在运行时期通过 <code>QObject</code>、<code>QMetaObject</code> 和 <code>QMetaProperties</code> 查询类属性。</p>
+<pre><code class="language-cpp">QObject *object = ...
+const QMetaObject *metaobject = object-&gt;metaObject();
+int count = metaobject-&gt;propertyCount();
+for (int i=0; i&lt;count; ++i) {
+    QMetaProperty metaproperty = metaobject-&gt;property(i);
+    const char *name = metaproperty.name();
+    QVariant value = object-&gt;property(name);
+    ...
+}
+</code></pre>
+<p>上面的代码片段中，<code>QMetaObject::property()</code>用于获取在未知类中定义的每个属性的 <code>metadata</code>。
+从 <code>metadata</code> 中获取属性名，并传递给 <code>QObject::property()</code>来获取当前对象的属性值。</p>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a一个简单的例子" id="a一个简单的例子"><h2>一个简单的例子</h2></a>
+<p>假设我们有一个类 <code>MyClass</code>，它从 <code>QObject</code> 派生并且在其 <code>private</code> 区域使用了 <code>Q_OBJECT</code> 宏。
+我们想在 <code>MyClass</code> 类中声明一个属性去保持一个 <code>priority</code> 值的追踪。
+属性名为 <code>priority</code>，它是在 <code>MyClass</code> 中定义的 <code>Priority</code> 枚举类型。</p>
+<p>我们在类的 <code>private</code> 区域使用 <code>Q_PROPERTY()</code>来声明属性。</p>
+<p><code>READ</code> 函数名为 <code>priority</code>，并且包含一个名为 <code>setPriority</code> 的 <code>WRITE</code> 函数。</p>
+<p>枚举类型必须使用 <code>Q_ENUM()</code>宏注册到元对象系统中。</p>
+<p>注册一个枚举类型使得枚举器名可以在调用 <code>QObject::setProperty()</code>时使用。
+我们还必须为 <code>READ</code> 和 <code>WRITE</code> 函数提供我们自己的声明。</p>
+<p><code>MyClass</code> 的声明看起来如下：</p>
+<pre><code class="language-cpp">class MyClass : public QObject
+{
+
+    Q_PROPERTY(Priority priority READ priority WRITE setPriority NOTIFY priorityChanged)
+
+public:
+    MyClass(QObject *parent = nullptr);
+    ~MyClass();
+
+    enum Priority
+    {
+        High,
+        Low,
+        VeryHigh,
+        VeryLow
+    };
+    Q_ENUM(Priority)
+
+    void setPriority(Priority priority) {
+        m_priority = priority;
+        emit priorityChanged(priority);
+    }
+    Priority priority() const { return m_priority; }
+signals:
+    void priorityChanged(Priority);
+
+private:
+    Q_OBJECT
+    Priority m_priority;
+};
+</code></pre>
+<p><code>READ</code> 函数是 <code>const</code> 的并返回属性类型。<code>WRITE</code> 函数返回 <code>void</code> 并有一个属性类型的参数。元对象编译器强制做这些事情。</p>
+<p>给定一个指向 <code>MyClass</code> 实例的指针，或一个指向 <code>QObject</code> 的指针（该指针是 <code>MyClass</code> 的实例），有两种方式设置 <code>priority</code> 属性：</p>
+<pre><code class="language-cpp">MyClass *myinstance = new MyClass;
+QObject *object = myinstance;
+
+myinstance-&gt;setPriority(MyClass::VeryHigh);
+object-&gt;setProperty(&quot;priority&quot;, &quot;VeryHigh&quot;);
+</code></pre>
+<p>在此例子中，声明在 <code>MyClass</code> 中的枚举类型是属性的类型，并使用 <code>Q_ENUM()</code>宏注册在元对象系统中。这使得枚举值可以在调用 <code>setProperty()</code>时做为字符串使用。如果枚举类型在其它类中声明，那么需要使用枚举的全名（如：<code>OtherClass::Priority</code>)，且此类也必须从 QObject 派生，且使用 <code>Q_ENUM()</code>宏注册枚举类型。</p>
+<p>像 <code>Q_ENUMS()</code>宏一样，类似的宏 Q_FLAG()也是可用的，它注册一个枚举类型，但是它把枚举类型作为一个 <code>flags</code> 集合，也就是，值可以用 OR 操作来合并。
+一个 I/O 类可能具有枚举值 Read 和 Write 并且 <code>QObject::setProperty()</code>可以接受 <code>Read | Write</code>。应使用 <code>Q_FLAGS()</code>来注册此枚举类型。</p>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a动态属性" id="a动态属性"><h2>动态属性</h2></a>
+<p>QObject::setProperty()也可以用来在运行时期向一个类的实例添加新的属性。</p>
+<ul>
+<li>当使用一个名称和值调用此函数时，如果 <code>QObject</code> 中一个给定名称的属性已存在，并且如果给定的值与属性的类型兼容，则值就存储到属性中，并返回 true。如果值与属性类型不兼容，属性值则不会改变，并返回 false。</li>
+<li>但是如果 QObject 中一个给定名称的属性不存在（如：并没用 <code>Q_PROPERTY()</code>声明），则一个带有给定名称和值的新属性就被自动添加到 QObject 中，<strong>但是依然会返回 false</strong>。这意味着返回 false 不能用于确定一个属性是否被真的被设置了，除非你预先知道这个属性已经存在于 QObject 中。</li>
+</ul>
+<blockquote>
+<p>注意：
+动态属性是在每一个实例的基础上添加的，也就是，它们被添加到 <code>QObject</code> 中，而不是 <code>QMetaObject</code>。
+可以通过传递一个属性名和一个无效的 <code>QVariant</code> 到 <code>QObject::setProperty()</code>从一个实例中移除属性。默认的 <code>QVariant</code> 构造器会构造一个无效的 <code>QVariant</code>。
+动态属性可用 <code>QObject::property()</code>来查询，就像在编译期使用 <code>Q_PROPERTY()</code>声明的属性一样。</p>
+</blockquote>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a属性和自定义类型" id="a属性和自定义类型"><h2>属性和自定义类型</h2></a>
+<p>通过属性使用的自定义类型需要使用 <code>Q_DECLARE_METATYPE()</code>宏注册，以便它们的值能被保存在 <code>QVariant</code> 对象中。
+这使得它们适用于在类定义中使用 <code>Q_PROPERTY()</code>宏声明的静态属性，以及运行时创建的动态属性。</p>
+<a class="header" href="qt_skills/qt-core/qobject_rw_properties.html#a为类添加附加信息" id="a为类添加附加信息"><h2>为类添加附加信息</h2></a>
+<p>与属性系统相连接的是一个附加宏, <code>Q_CLASSINFO()</code>。用于添加额外的 <code>name-value</code> 对到类的元对象中。例如：</p>
+<pre><code class="language-cpp">Q_CLASSINFO(&quot;Version&quot;, &quot;3.0.0&quot;)
+</code></pre>
+<p>和其它 <code>meta-data</code> 一样，类信息可以在运行时通过 <code>meta-object</code> 访问，详情见 <code>QMetaObject::classInfo()</code> 。</p>
+<p>也可参考 <code>Meta-Object System</code>, <code>Signals and Slots</code>, <code>Q_DECLARE_METATYPE()</code>, <code>QMetaType</code>, <code>QVariant</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="qt_skills/qt-core/get_q_class_info.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="qt_skills/qt-core/qobject_manager_properties.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="qt_skills/qt-core/get_q_class_info.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="qt_skills/qt-core/qobject_manager_properties.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>

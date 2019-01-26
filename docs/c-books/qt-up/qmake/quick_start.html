@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>快速入门 - Qt 技能提升</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="qmake/read.html"><strong aria-hidden="true">1.</strong> QMake</a></li><li><ol class="section"><li><a href="qmake/how_edit_qt_pro_file.html"><strong aria-hidden="true">1.1.</strong> Qt 的 Pro 文件如何编写？</a></li><li><ol class="section"><li><a href="qmake/quick_start.html" class="active"><strong aria-hidden="true">1.1.1.</strong> 快速入门</a></li><li><a href="qmake/pro-projects-template.html"><strong aria-hidden="true">1.1.2.</strong> Pro 工程模板</a></li><li><a href="qmake/advanced-useful-contents.html"><strong aria-hidden="true">1.1.3.</strong> Qmake 高级概念</a></li><li><a href="qmake/qmake-variable-reference.html"><strong aria-hidden="true">1.1.4.</strong> Qmake 变量</a></li><li><a href="qmake/qmake-function-reference.html"><strong aria-hidden="true">1.1.5.</strong> Qmake 函数</a></li><li><a href="qmake/qmake-test-function-reference.html"><strong aria-hidden="true">1.1.6.</strong> Qmake 测试函数</a></li><li><a href="qmake/command_console.html"><strong aria-hidden="true">1.1.7.</strong> Qmake 命令行</a></li><li><a href="qmake/demo1.html"><strong aria-hidden="true">1.1.8.</strong> Pro 文件示例 1</a></li><li><a href="qmake/demo2.html"><strong aria-hidden="true">1.1.9.</strong> Pro 文件示例 2</a></li><li><ol class="section"><li><a href="qmake/create_static_library.html"><strong aria-hidden="true">1.1.9.1.</strong> static library</a></li><li><a href="qmake/create_dynamic_library.html"><strong aria-hidden="true">1.1.9.2.</strong> dynamic library</a></li><li><a href="qmake/create_framework.html"><strong aria-hidden="true">1.1.9.3.</strong> framework</a></li></ol></li><li><a href="qmake/create_plugin.html"><strong aria-hidden="true">1.1.10.</strong> 创建 Plugin</a></li></ol></li><li><a href="qmake/create_static_library_on_mac.html"><strong aria-hidden="true">1.2.</strong> (MacOS)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_mac.html"><strong aria-hidden="true">1.3.</strong> (MacOS)创建动态库?</a></li><li><a href="qmake/create_framework_on_mac.html"><strong aria-hidden="true">1.4.</strong> (MacOS)创建 Framework?</a></li><li><a href="qmake/create_static_library_on_win.html"><strong aria-hidden="true">1.5.</strong> (Windows)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_win.html"><strong aria-hidden="true">1.6.</strong> (Windows)创建动态库?</a></li><li><a href="qmake/create_static_library_on_linux.html"><strong aria-hidden="true">1.7.</strong> (Linux)创建静态库?</a></li><li><a href="qmake/create_dynamic_library_on_linux.html"><strong aria-hidden="true">1.8.</strong> (Linux)创建动态库?</a></li></ol></li><li><a href="dependence/index.html"><strong aria-hidden="true">2.</strong> Qt 库依赖如何导出</a></li><li><ol class="section"><li><a href="dependence/some_libraries.html"><strong aria-hidden="true">2.1.</strong> Qt 库的用途</a></li><li><a href="dependence/some_plugins.html"><strong aria-hidden="true">2.2.</strong> Qt 插件的用途</a></li><li><a href="dependence/export_on_windows.html"><strong aria-hidden="true">2.3.</strong> Qt Windows 开发，导出依赖</a></li><li><a href="dependence/export_on_linux.html"><strong aria-hidden="true">2.4.</strong> Qt Linux 开发，导出依赖</a></li><li><a href="dependence/export_on_mac.html"><strong aria-hidden="true">2.5.</strong> Qt Mac 开发，导出依赖</a></li></ol></li><li><a href="make_setup/index.html"><strong aria-hidden="true">3.</strong> Qt 制作安装包</a></li><li><ol class="section"><li><a href="make_setup/make_package_on_windows.html"><strong aria-hidden="true">3.1.</strong> Qt Windows 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.2.</strong> Qt Linux 安装包制作</a></li><li><a href="make_setup/make_package_on_linux.html"><strong aria-hidden="true">3.3.</strong> Qt Mac 安装包制作</a></li></ol></li><li><a href="submit_product/index.html"><strong aria-hidden="true">4.</strong> Qt 产品提交到应用商店</a></li><li><ol class="section"><li><a href="submit_product/appstore_windows.html"><strong aria-hidden="true">4.1.</strong> Windows 应用商店</a></li><li><a href="submit_product/appstore_mac.html"><strong aria-hidden="true">4.2.</strong> 苹果 MacOS 应用 商店</a></li></ol></li><li><a href="win_platform/intro.html"><strong aria-hidden="true">5.</strong> Windows 平台技巧</a></li><li><ol class="section"><li><a href="win_platform/winbase/load_library.html"><strong aria-hidden="true">5.1.</strong> 如何加载动态库？</a></li><li><a href="win_platform/winbase/find_load_library.html"><strong aria-hidden="true">5.2.</strong> Windows 加载动态库的搜索路径问题</a></li><li><a href="win_platform/winbase/diff_load_library.html"><strong aria-hidden="true">5.3.</strong> LoadLibrary 与 LoadLibraryW 与 LoadLibraryA 的区别</a></li><li><a href="win_platform/winbase/errors_load_library.html"><strong aria-hidden="true">5.4.</strong> 加载动态库出错的错误编码，原因有哪些？</a></li><li><a href="win_platform/winbase/tchar_to_const_char.html"><strong aria-hidden="true">5.5.</strong> TCHAR 转换成 const char*</a></li></ol></li><li><a href="qt_skills/qt-core/intro.html"><strong aria-hidden="true">6.</strong> Qt Core 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-core/q_object_macro.html"><strong aria-hidden="true">6.1.</strong> 宏 Q_OBJECT, 应用到所有继承 QObject 的类</a></li><li><a href="qt_skills/qt-core/class_define_use_q_object_macro_must_inheritance_qobject.html"><strong aria-hidden="true">6.2.</strong> 使用宏 Q_OBJECT, 类必须继承 QObject 或 QObject 子类</a></li><li><a href="qt_skills/qt-core/qt_version_macro_and_qt_version_check_macro.html"><strong aria-hidden="true">6.3.</strong> 宏 QT_VERSION 与 QT_VERSION_CHECK 如何使用?</a></li><li><a href="qt_skills/qt-core/q_class_info_macro.html"><strong aria-hidden="true">6.4.</strong> 添加类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/get_q_class_info.html"><strong aria-hidden="true">6.5.</strong> 获取类 ClassInfo 信息</a></li><li><a href="qt_skills/qt-core/qobject_rw_properties.html"><strong aria-hidden="true">6.6.</strong> 类 Property 属性读写封装</a></li><li><a href="qt_skills/qt-core/qobject_manager_properties.html"><strong aria-hidden="true">6.7.</strong> QObject 对象动态增加属性</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaClassInfo.html"><strong aria-hidden="true">6.8.</strong> incomplete return type 'QMetaClassInfo'</a></li><li><a href="qt_skills/qt-core/incomplete_return_type_of_QMetaProperty.html"><strong aria-hidden="true">6.9.</strong> incomplete return type 'QMetaProperty'</a></li><li><a href="qt_skills/qt-core/qobject_cast.html"><strong aria-hidden="true">6.10.</strong> QObject 对象指针类型的动态转换 qobject_cast&lt;&gt;</a></li><li><a href="qt_skills/qt-core/qobject_enums.html"><strong aria-hidden="true">6.11.</strong> QObject 对象枚举类型封装</a></li><li><a href="qt_skills/qt-core/class_define_use_general_not_supported.html"><strong aria-hidden="true">6.12.</strong> QObject 子类不支持模类定义板泛型</a></li><li><a href="qt_skills/qt-core/multiple_inheritance_with_qobject_be_first.html"><strong aria-hidden="true">6.13.</strong> 多继承 QObject 必须放在前面</a></li><li><a href="qt_skills/qt-core/virtual_inheritance_with_qobject_not_supported.html"><strong aria-hidden="true">6.14.</strong> 虚拟继承 QObject 不支持</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_have_signals_and_slots.html"><strong aria-hidden="true">6.15.</strong> 嵌套类中的类不能有信号和槽机制</a></li><li><a href="qt_skills/qt-core/nested_classes_cannot_use_q_object_macro.html"><strong aria-hidden="true">6.16.</strong> 嵌套 QObject 子类中的类不能使用宏 Q_OBJECT</a></li><li><a href="qt_skills/qt-core/function_cannot_apply_to_single_and_slot.html"><strong aria-hidden="true">6.17.</strong> 函数指针不能作为信号和槽的参数</a></li><li><a href="qt_skills/qt-core/enums_must_be_fully_qualified_for_single_and_slot.html"><strong aria-hidden="true">6.18.</strong> 信号和槽中的枚举参数，必须是完全限定</a></li><li><a href="qt_skills/qt-core/order_about_singles_and_slots.html"><strong aria-hidden="true">6.19.</strong> 信号和槽被激活的调用次序是随机的吗？</a></li><li><a href="qt_skills/qt-core/function_pointer_about_singles_and_slots.html"><strong aria-hidden="true">6.20.</strong> 信号和槽可以使用函数指针吗？</a></li><li><a href="qt_skills/qt-core/lambdas_about_singles_and_slots.html"><strong aria-hidden="true">6.21.</strong> 槽支持 C++11 的 lambdas 表达式吗？</a></li><li><a href="qt_skills/qt-core/blocking_queued_connect_about_singles_and_slots.html"><strong aria-hidden="true">6.22.</strong> 什么时候使用 Blocking Queued Connection?</a></li><li><a href="qt_skills/qt-core/how_to_known_how_many_slots_by_signal.html"><strong aria-hidden="true">6.23.</strong> 如何动态获得信号绑定了哪些槽？</a></li><li><a href="qt_skills/qt-core/how_to_get_signal_sender.html"><strong aria-hidden="true">6.24.</strong> 如何获得信号的发送者？</a></li><li><a href="qt_skills/qt-core/how_to_disconnect_signal_and_slot.html"><strong aria-hidden="true">6.25.</strong> 如何断开信号和槽的连接？</a></li><li><a href="qt_skills/qt-core/description_about_signal_and_slot.html"><strong aria-hidden="true">6.26.</strong> 信号槽的调用流程原理是怎样的？</a></li><li><a href="qt_skills/qt-core/qvariant.html"><strong aria-hidden="true">6.27.</strong> 宏 Q_DECLARE_METATYPE 与 QVariant 如何结合使用？</a></li><li><a href="qt_skills/qt-core/q_declare_metatype.html"><strong aria-hidden="true">6.28.</strong> 如何构建自定义 Qt 数据类型？</a></li><li><a href="qt_skills/qt-core/qvariant_save_pointer.html"><strong aria-hidden="true">6.29.</strong> 用 QVariant 来保存指针</a></li><li><a href="qt_skills/qt-core/qvariant_can_convert.html"><strong aria-hidden="true">6.30.</strong> 判断 QVariant 类型是否可以转换？</a></li><li><a href="qt_skills/qt-core/qt_iterating.html"><strong aria-hidden="true">6.31.</strong> Qt 的迭代器接口如何使用？</a></li><li><a href="qt_skills/qt-core/qt_qpointer.html"><strong aria-hidden="true">6.32.</strong> 如何使用保护机制指针 QPointer，增强程序健壮性？</a></li><li><a href="qt_skills/qt-core/qt_qsharedpointer.html"><strong aria-hidden="true">6.33.</strong> 如何使用强引用计数指针 QSharedPointer？</a></li><li><a href="qt_skills/qt-core/qt_qweakpointer.html"><strong aria-hidden="true">6.34.</strong> 如何使用弱引用计数指针 QWeakPointer？</a></li><li><a href="qt_skills/qt-core/qt_qobject_cleanup_handler.html"><strong aria-hidden="true">6.35.</strong> 怎么监视 QObject 对象的生命周期？</a></li><li><a href="qt_skills/qt-core/qt_signal_blocker.html"><strong aria-hidden="true">6.36.</strong> 如何暂时阻止发射信号？</a></li><li><a href="qt_skills/qt-core/qt_debug.html"><strong aria-hidden="true">6.37.</strong> 如何使用 QDebug 打印调试信息?</a></li><li><a href="qt_skills/qt-core/no_qt_debug.html"><strong aria-hidden="true">6.38.</strong> 如何快速消除 qDeubg()打印的信息?</a></li><li><a href="qt_skills/qt-core/can_use_qt_debug.html"><strong aria-hidden="true">6.39.</strong> 不包含头文件，可以直接使用 qDebug()?</a></li><li><a href="qt_skills/qt-core/custom_type_support_qt_debug.html"><strong aria-hidden="true">6.40.</strong> 如何让你的自定义类型也支持 QDebug 打印?</a></li><li><a href="qt_skills/qt-core/qt_qbytearray.html"><strong aria-hidden="true">6.41.</strong> 二进制数据编辑器需要 QByteArray 数据类型</a></li><li><a href="qt_skills/qt-core/diff_qmap_and_qhash.html"><strong aria-hidden="true">6.42.</strong> QMap 与 QHash 有什么区别？</a></li><li><a href="qt_skills/qt-core/qt_date_and_time.html"><strong aria-hidden="true">6.43.</strong> 如何获取当前时间?</a></li><li><a href="qt_skills/qt-core/qt_standard_paths.html"><strong aria-hidden="true">6.44.</strong> 各平台系统标准路径、目录</a></li></ol></li><li><a href="qt_skills/qt-gui/intro.html"><strong aria-hidden="true">7.</strong> Qt GUI 技巧</a></li><li><a href="qt_skills/qt-widgets/intro.html"><strong aria-hidden="true">8.</strong> Qt Widgets 技巧</a></li><li><ol class="section"><li><a href="qt_skills/qt-widgets/undo_command.html"><strong aria-hidden="true">8.1.</strong> 如何为应用添加撤销操作?</a></li><li><a href="qt_skills/qt-widgets/message_box.html"><strong aria-hidden="true">8.2.</strong> 如何使用消息对话框 QMessageBox?</a></li><li><a href="qt_skills/qt-widgets/diff_frameGeometry_and_geometry.html"><strong aria-hidden="true">8.3.</strong> QWidget 的 frameGeometry 与 geometry 有什么区别？</a></li><li><a href="qt_skills/qt-widgets/setting_qdialog_parent.html"><strong aria-hidden="true">8.4.</strong> 对话框 QDialog 设置了父窗口，会出现什么问题？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_no_effect_others.html"><strong aria-hidden="true">8.5.</strong> 弹出对话框，不影响其他窗口使用，如何做？</a></li><li><a href="qt_skills/qt-widgets/qdialog_show_model_effect_others.html"><strong aria-hidden="true">8.6.</strong> 弹出对话框，阻止应用程序所有窗口输入，如何做？</a></li><li><a href="qt_skills/qt-widgets/model_qdialog_and_no_model_qdialog.html"><strong aria-hidden="true">8.7.</strong> 非模态对话框与模态对话框到底有什么区别？</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Qt 技能提升</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/qmake/quick_start.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="qmake/quick_start.html#a快速入门" id="a快速入门"><h1>快速入门</h1></a>
+<p><a href="http://doc.qt.io/qt-5/qmake-tutorial.html">http://doc.qt.io/qt-5/qmake-tutorial.html</a></p>
+<p>Getting Started</p>
+<p>This tutorial teaches you the basics of qmake. The other topics in this manual contain more detailed information about using qmake.
+Starting Off Simple</p>
+<p>Let's assume that you have just finished a basic implementation of your application, and you have created the following files:</p>
+<pre><code class="language-text">    hello.cpp
+    hello.h
+    main.cpp
+</code></pre>
+<p>You will find these files in the examples/qmake/tutorial directory of the Qt distribution. The only other thing you know about the setup of the application is that it's written in Qt. First, using your favorite plain text editor, create a file called hello.pro in examples/qmake/tutorial. The first thing you need to do is add the lines that tell qmake about the source and header files that are part of your development project.</p>
+<p>We'll add the source files to the project file first. To do this you need to use the SOURCES variable. Just start a new line with SOURCES += and put hello.cpp after it. You should have something like this:</p>
+<pre><code class="language-pro">SOURCES += hello.cpp
+</code></pre>
+<p>We repeat this for each source file in the project, until we end up with the following:</p>
+<pre><code class="language-pro">SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>If you prefer to use a Make-like syntax, with all the files listed in one go you can use the newline escaping like this:</p>
+<pre><code class="language-pro">SOURCES = hello.cpp \
+          main.cpp
+</code></pre>
+<p>Now that the source files are listed in the project file, the header files must be added. These are added in exactly the same way as source files, except that the variable name we use is HEADERS.</p>
+<p>Once you have done this, your project file should look something like this:</p>
+<pre><code class="language-pro">HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>The target name is set automatically. It is the same as the project filename, but with the suffix appropriate for the platform. For example, if the project file is called hello.pro, the target will be hello.exe on Windows and hello on Unix. If you want to use a different name you can set it in the project file:</p>
+<pre><code class="language-pro">TARGET = helloworld
+</code></pre>
+<p>The finished project file should look like this:</p>
+<pre><code class="language-pro">HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>You can now use qmake to generate a Makefile for your application. On the command line, in your project directory, type the following:</p>
+<pre><code class="language-bash">qmake -o Makefile hello.pro
+</code></pre>
+<p>Then type make or nmake depending on the compiler you use.</p>
+<p>For Visual Studio users, qmake can also generate Visual Studio project files. For example:</p>
+<pre><code class="language-bash">qmake -tp vc hello.pro
+</code></pre>
+<p>Making an Application Debuggable</p>
+<p>The release version of an application does not contain any debugging symbols or other debugging information. During development, it is useful to produce a debugging version of the application that has the relevant information. This is easily achieved by adding debug to the CONFIG variable in the project file.</p>
+<p>For example:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>Use qmake as before to generate a Makefile. You will now obtain useful information about your application when running it in a debugging environment.
+Adding Platform-Specific Source Files</p>
+<p>After a few hours of coding, you might have made a start on the platform-specific part of your application, and decided to keep the platform-dependent code separate. So you now have two new files to include into your project file: hellowin.cpp and hellounix.cpp. We cannot just add these to the SOURCES variable since that would place both files in the Makefile. So, what we need to do here is to use a scope which will be processed depending on which platform we are building for.</p>
+<p>A simple scope that adds the platform-dependent file for Windows looks like this:</p>
+<pre><code class="language-pro">win32 {
+    SOURCES += hellowin.cpp
+}
+</code></pre>
+<p>When building for Windows, qmake adds hellowin.cpp to the list of source files. When building for any other platform, qmake simply ignores it. Now all that is left to be done is to create a scope for the Unix-specific file.</p>
+<p>When you have done that, your project file should look something like this:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+</code></pre>
+<p>Use qmake as before to generate a Makefile.
+Stopping qmake If a File Does Not Exist</p>
+<p>You may not want to create a Makefile if a certain file does not exist. We can check if a file exists by using the exists() function. We can stop qmake from processing by using the error() function. This works in the same way as scopes do. Simply replace the scope condition with the function. A check for a file called main.cpp looks like this:</p>
+<pre><code class="language-pro">!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>The ! symbol is used to negate the test. That is, exists( main.cpp ) is true if the file exists, and !exists( main.cpp ) is true if the file does not exist.</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+```pro
+
+Use qmake as before to generate a makefile. If you rename main.cpp temporarily, you will see the message and qmake will stop processing.
+Checking for More than One Condition
+
+Suppose you use Windows and you want to be able to see statement output with qDebug() when you run your application on the command line. To see the output, you must build your application with the appropriate console setting. We can easily put console on the CONFIG line to include this setting in the Makefile on Windows. However, let's say that we only want to add the CONFIG line when we are running on Windows and when debug is already on the CONFIG line. This requires using two nested scopes. First create one scope, then create the other inside it. Put the settings to be processed inside the second scope, like this:
+
+```pro
+win32 {
+    debug {
+        CONFIG += console
+    }
+}
+</code></pre>
+<p>Nested scopes can be joined together using colons, so the final project file looks like this:</p>
+<pre><code class="language-pro">CONFIG += debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+    SOURCES += hellowin.cpp
+}
+unix {
+    SOURCES += hellounix.cpp
+}
+!exists( main.cpp ) {
+    error( &quot;No main.cpp file found&quot; )
+}
+win32:debug {
+    CONFIG += console
+}
+</code></pre>
+<p>That's it! You have now completed the tutorial for qmake, and are ready to write project files for your development projects.</p>
+<p>qmake 教程介绍
+这个教程可以教会你如何使用 qmake。我们建议你看完这个教程之后读一下 qmake 手册。</p>
+<p>开始很简单
+让我们假设你已经完成了你的应用程序的一个基本实现，并且你已经创建了下述文件：</p>
+<p>hello.cpp</p>
+<p>hello.h</p>
+<p>main.cpp</p>
+<p>你可以在 qt/qmake/example 中发现这些文件。你对这个应用程序的配置仅仅知道的另一件事是它是用 Qt 写的。首先，使用你所喜欢的纯文本编辑器，在 qt/qmake/tutorial 中创建一个叫做 hello.pro 的文件。你所要做的第一件事是添加一些行来告诉 qmake 关于你所开发的项目中的源文件和头文件这一部分。</p>
+<p>我们先把源文件添加到项目文件中。为了做到这点，你需要使用 SOURCES 变量。只要用 SOURCES +=来开始一行，并且把 hello.cpp 放到它后面。你需要写成这样：</p>
+<pre><code>SOURCES += hello.cpp
+</code></pre>
+<p>我们对项目中的每一个源文件都这样做，直到结束：</p>
+<pre><code>SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>如果你喜欢使用像 Make 一样风格的语法，你也可以写成这样，一行写一个源文件，并用反斜线结尾，然后再起新的一行：</p>
+<pre><code>SOURCES = hello.cpp \
+      main.cpp
+</code></pre>
+<p>现在源文件已经被列到项目文件中了，头文件也必须添加。添加的方式和源文件一样，除了变量名是 HEADERS。</p>
+<p>当你做完这些时，你的项目文件就像现在这样：</p>
+<pre><code>HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>目标名称是自动设置的，它被设置为和项目文件一样的名称，但是为了适合平台所需要的后缀。举例来说，加入项目文件叫做“hello.pro”，在 Windows 上的目标名称应该是“hello.exe”，在 Unix 上应该是“hello”。如果你想设置一个不同的名字，你可以在项目文件中设置它：</p>
+<pre><code>TARGET = helloworld
+</code></pre>
+<p>最后一步是设置 CONFIG 变量。因为这是一个 Qt 应用程序，我们需要把“qt”放到 CONFIG 这一行中，这样 qmake 才会在连接的时候添加相关的库，并且保证 moc 和 uic 的连编行也被包含到 Makefile 中。</p>
+<p>最终完成的项目文件应该是这样的：</p>
+<pre><code>CONFIG += qt
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>你现在可以使用 qmake 来为你的应用程序生成 Makefile。在你的应用程序目录中，在命令行下输入：</p>
+<pre><code>qmake -o Makefile hello.pro
+</code></pre>
+<p>然后根据你所使用的编译器输入 make 或者 nmake。</p>
+<p>使应用程序可以调试
+应用程序的发布版本不包含任何调试符号或者其它调试信息。在开发过程中，生成一个含有相关信息的应用程序的调试版本是很有用处的。通过在项目文件的 CONFIG 变量中添加“debug”就可以很简单地实现。</p>
+<p>例如：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+</code></pre>
+<p>像前面一样使用 qmake 来生成一个 Makefile 并且你就能够调试你的应用程序了。</p>
+<p>添加特定平台的源文件
+在编了几个小时的程序之后，你也许开始为你的应用程序编写与平台相关的部分，并且决定根据平台的不同编写不同的代码。所以现在你有两个信文件要包含到你的项目文件中－hello_win.cpp 和 hello_x11.cpp。我们不能仅仅把这两个文件放到 SOURCES 变量中，因为那样的话会把这两个文件都加到 Makefile 中。所以我们在这里需要做的是根据 qmake 所运行的平台来使用相应的作用域来进行处理。</p>
+<p>为 Windows 平台添加的依赖平台的文件的简单的作用域看起来就像这样：</p>
+<pre><code>win32 {
+SOURCES += hello_win.cpp
+}
+</code></pre>
+<p>所以如果 qmake 运行在 Windows 上的时候，它就会把 hello_win.cpp 添加到源文件列表中。如果 qmake 运行在其它平台上的时候，它会很简单地把这部分忽略。现在接下来我们要做的就是添加一个 X11 依赖文件的作用域。</p>
+<p>当你做完了这部分，你的项目文件应该和这样差不多：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+</code></pre>
+<p>像前面一样使用 qmake 来生成 Makefile。</p>
+<p>如果一个文件不存在，停止 qmake
+如果某一个文件不存在的时候，你也许不想生成一个 Makefile。我们可以通过使用 exists()函数来检查一个文件是否存在。我们可以通过使用 error()函数把正在运行的 qmake 停下来。这和作用域的工作方式一样。只要很简单地用这个函数来替换作用域条件。对 main.cpp 文件的检查就像这样：</p>
+<pre><code>!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>“!”用来否定这个测试，比如，如果文件存在，exists( main.cpp )是真，如果文件不存在，!exists( main.cpp )是真。</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+</code></pre>
+<p>像前面一样使用 qmake 来生成 Makefile。如果你临时改变 main.cpp 的名称，你会看到信息，并且 qmake 会停止处理。</p>
+<p>检查多于一个的条件
+假设你使用 Windows 并且当你在命令行运行你的应用程序的时候你想能够看到 qDebug()语句。除非你在连编你的程序的时候使用 console 设置，你不会看到输出。我们可以很容易地把 console 添加到 CONFIG 行中，这样在 Windows 下，Makefile 就会有这个设置。但是如果告诉你我们只是想在当我们的应用程序运行在 Windows 下并且当 debug 已经在 CONFIG 行中的时候，添加 console。这需要两个嵌套的作用域；只要生成一个作用域，然后在它里面再生成另一个。把设置放在最里面的作用域里，就像这样：</p>
+<pre><code>win32 {
+debug {
+    CONFIG += console
+}
+}
+</code></pre>
+<p>嵌套的作用域可以使用冒号连接起来，所以最终的项目文件看起来像这样：</p>
+<pre><code>CONFIG += qt debug
+HEADERS += hello.h
+SOURCES += hello.cpp
+SOURCES += main.cpp
+win32 {
+SOURCES += hello_win.cpp
+}
+x11 {
+SOURCES += hello_x11.cpp
+}
+!exists( main.cpp ) {
+error( &quot;No main.cpp file found&quot; )
+}
+win32:debug {
+CONFIG += console
+}
+</code></pre>
+<p>就这些了！你现在已经完成了 qmake 的教程，并且已经准备好为你的开发项目写项目文件了。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="qmake/how_edit_qt_pro_file.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="qmake/pro-projects-template.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="qmake/how_edit_qt_pro_file.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="qmake/pro-projects-template.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>
