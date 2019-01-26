@@ -5,7 +5,7 @@ src = "src"
 title = "C++ Get Primer"
 
 [build]
-build-dir = "book"
+build-dir = "../../docs/c-books/cplusplus-get-primer/"
 create-missing = true
 preprocess = ["links", "index"]
 
