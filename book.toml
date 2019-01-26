@@ -1,0 +1,9 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "Books Index"
+
+[build]
+build-dir = "./docs/index"
+create-missing = true
