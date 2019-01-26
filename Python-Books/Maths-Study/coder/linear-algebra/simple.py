@@ -1,5 +1,6 @@
-from scipy import linalg
 import numpy as np
+from scipy import linalg
+
 
 def main():
     '''
@@ -9,10 +10,12 @@ def main():
     （3） 2x + 5y - z = 27
     求解：
     '''
-    A = np.array([[1,  1,  1],  [0,  2,  5], [2,  5,  -1]])
+
+    A = np.array([[1, 1, 1], [0, 2, 5], [2, 5, -1]])
     B = np.array([6, -4, 27])
     x = linalg.solve(A, B)
     print(x)
+
 
 if __name__ == '__main__':
     main()

@@ -1,13 +1,10 @@
 [book]
-authors = ["Jane"]
+authors = ["Ian sun"]
 multilingual = false
 src = "src"
-title = "Rust Programming Language Primer - Rust 编程语言入门"
+title = "Python3 Man"
 
 [output.html]
 additional-css = ["theme/ferris.css", "theme/edition.css"]
 additional-js = ["theme/ferris.js"]
 mathjax-support = true
-
-[output.html.playpen]
-editable = true
