@@ -4,6 +4,10 @@ multilingual = false
 src = "src"
 title = "Qt 技能提升"
 
+[build]
+build-dir = "../../docs/c-books/qt-up/"
+create-missing = true
+
 [output.html]
 mathjax-support = true
 theme = "theme"
