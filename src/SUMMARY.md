@@ -2,4 +2,4 @@
 
 ## Love Your Books
 
-- [C/C++ 书籍推荐](cplusplus/intro.md)
+- [C/C++/Objective-C 技巧](cplusplus/intro.md)

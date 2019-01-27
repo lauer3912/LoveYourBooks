@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GCD(Grand Central Dispatch)介绍 - Objective-C Primer</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="base/intro.html"><strong aria-hidden="true">1.</strong> 核心价值</a></li><li><ol class="section"><li><a href="base/why_objective_c_is_a_dynamic_language.html"><strong aria-hidden="true">1.1.</strong> Objective-c 是动态语言</a></li><li><a href="base/memory_manage.html"><strong aria-hidden="true">1.2.</strong> 内存管理原理</a></li></ol></li><li><a href="datatype/intro.html"><strong aria-hidden="true">2.</strong> 数据类型</a></li><li><ol class="section"><li><a href="datatype/nsnumber_and_nsvalue_for_c_datatype.html"><strong aria-hidden="true">2.1.</strong> NSNumber 和 NSValue 对基础 C 数据类型的对象化封装</a></li><li><a href="datatype/why_nsstring_use_copy_property.html"><strong aria-hidden="true">2.2.</strong> NSString 为何要用 COPY 属性</a></li></ol></li><li><a href="syntax/intro.html"><strong aria-hidden="true">3.</strong> 语法特点</a></li><li><ol class="section"><li><a href="syntax/concept_strong_and_weak.html"><strong aria-hidden="true">3.1.</strong> @property 的属性 strong 和 weak 如何理解？</a></li><li><a href="syntax/concept_selector_and_sel.html"><strong aria-hidden="true">3.2.</strong> @selector 与 SEL 如何理解？</a></li></ol></li><li><a href="concurrence/intro.html"><strong aria-hidden="true">4.</strong> 并发编程</a></li><li><ol class="section"><li><a href="concurrence/gcd_or_nsthread.html"><strong aria-hidden="true">4.1.</strong> 选择 GCD 还是 NSThread?</a></li><li><a href="concurrence/gcd.html" class="active"><strong aria-hidden="true">4.2.</strong> GCD(Grand Central Dispatch)介绍</a></li><li><a href="concurrence/issue_resource_share.html"><strong aria-hidden="true">4.3.</strong> 容易出错根源问题：资源共享</a></li><li><a href="concurrence/issue_lock.html"><strong aria-hidden="true">4.4.</strong> 容易出错：互斥锁</a></li></ol></li><li><a href="render/intro.html"><strong aria-hidden="true">5.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">5.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">5.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li><li><a href="render/base/diff_coordinate_system_between_ios_and_quartz2d.html"><strong aria-hidden="true">5.3.</strong> iOS 中 UIKit 坐标系与 Quartz 2D 绘图坐标系的区别</a></li><li><a href="render/base/relations_between_coregraphics_and_quartz2d.html"><strong aria-hidden="true">5.4.</strong> CoreGraphics 与 Quartz 2D 的关系</a></li><li><a href="render/methods/CGContextSaveGState_CGContextRestoreGState.html"><strong aria-hidden="true">5.5.</strong> CGContextSaveGState 与 CGContextRestoreGState 的作用</a></li><li><a href="render/examples/draw_straight_line.html"><strong aria-hidden="true">5.6.</strong> 例子：绘制一条直线</a></li><li><a href="render/examples/draw_arc.html"><strong aria-hidden="true">5.7.</strong> 例子：绘制一条弧线</a></li><li><a href="render/examples/draw_bezier.html"><strong aria-hidden="true">5.8.</strong> 例子：绘制贝兹曲线</a></li><li><a href="render/examples/draw_continuous_curve.html"><strong aria-hidden="true">5.9.</strong> 例子：绘制连续曲线</a></li><li><a href="render/examples/draw_imaginary_line.html"><strong aria-hidden="true">5.10.</strong> 例子：绘制虚线</a></li><li><a href="render/examples/draw_imaginary_curve.html"><strong aria-hidden="true">5.11.</strong> 例子：绘制虚曲线</a></li><li><a href="render/examples/draw_continuous_imaginary_curve.html"><strong aria-hidden="true">5.12.</strong> 例子：绘制连续虚曲线</a></li><li><a href="render/examples/draw_square_with_no_frame.html"><strong aria-hidden="true">5.13.</strong> 例子：绘制没有边框的正方形</a></li><li><a href="render/examples/draw_square_frame.html"><strong aria-hidden="true">5.14.</strong> 例子：绘制正方形边框</a></li><li><a href="render/examples/draw_rounded_rectangle.html"><strong aria-hidden="true">5.15.</strong> 例子：绘制圆角矩形</a></li><li><a href="render/examples/draw_rhombus.html"><strong aria-hidden="true">5.16.</strong> 例子：绘制菱形</a></li><li><a href="render/examples/draw_ellipse.html"><strong aria-hidden="true">5.17.</strong> 例子：绘制椭圆</a></li><li><a href="render/examples/draw_solid_circle.html"><strong aria-hidden="true">5.18.</strong> 例子：绘制实心圆</a></li><li><a href="render/examples/draw_solid_circle_and_solid_rectangle.html"><strong aria-hidden="true">5.19.</strong> 例子：绘制实心矩形和实心圆</a></li><li><a href="render/examples/draw_one_path.html"><strong aria-hidden="true">5.20.</strong> 例子：绘制一段路径</a></li><li><a href="render/examples/draw_irregular_shape.html"><strong aria-hidden="true">5.21.</strong> 例子：绘制不规则形状</a></li><li><a href="render/examples/draw_rectangle_ellipse.html"><strong aria-hidden="true">5.22.</strong> 例子：绘制矩形和椭圆</a></li><li><a href="render/examples/draw_pie.html"><strong aria-hidden="true">5.23.</strong> 例子：绘制饼图</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Objective-C Primer</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/concurrence/gcd.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="concurrence/gcd.html#gcdgrand-central-dispatch介绍" id="gcdgrand-central-dispatch介绍"><h1>GCD(Grand Central Dispatch)介绍</h1></a>
+<p>为了让开发者更加容易的使用设备上的多核 CPU，苹果在 OS X 10.6 和 iOS 4 中引入了 <strong>Grand Central Dispatch（GCD）</strong>。</p>
+<p>通过 GCD，开发者不用再直接跟线程打交道了，只需要向队列中添加代码块即可，GCD 在后端管理着一个线程池。GCD 不仅决定着你的代码块将在哪个线程被执行，它还根据可用的系统资源对这些线程进行管理。这样可以将开发者从线程管理的工作中解放出来，通过集中的管理线程，来缓解大量线程被创建的问题。</p>
+<p>GCD 带来的另一个重要改变是，作为开发者可以将工作考虑为一个队列，而不是一堆线程，这种并行的抽象模型更容易掌握和使用。</p>
+<p>GCD 公开有 5 个不同的队列：运行在主线程中的 main queue，3 个不同优先级的后台队列，以及一个优先级更低的后台队列（用于 I/O）。 另外，开发者可以创建自定义队列：串行或者并行队列。自定义队列非常强大，在自定义队列中被调度的所有 block 最终都将被放入到系统的全局队列中和线程池中。</p>
+<p><img src="concurrence/images/gcd_concept.png" alt="" /></p>
+<p>使用不同优先级的若干个队列乍听起来非常直接，不过，我们强烈建议，在绝大多数情况下使用默认的优先级队列就可以了。如果执行的任务需要访问一些共享的资源，那么在不同优先级的队列中调度这些任务很快就会造成不可预期的行为。这样可能会引起程序的完全挂起，因为低优先级的任务阻塞了高优先级任务，使它不能被执行。</p>
+<p>虽然 GCD 是一个低层级的 C API ，但是它使用起来非常的直接。不过这也容易使开发者忘记并发编程中的许多注意事项和陷阱。</p>
+<a class="header" href="concurrence/gcd.html#a并发编程中面临的挑战" id="a并发编程中面临的挑战"><h2>并发编程中面临的挑战</h2></a>
+<p>使用并发编程会带来许多陷阱。只要一旦你做的事情超过了最基本的情况，对于并发执行的多任务之间的相互影响的不同状态的监视就会变得异常困难。 问题往往发生在一些不确定性（不可预见性）的地方，这使得在调试相关并发代码时更加困难。</p>
+<p>关于并发编程的不可预见性有一个非常有名的例子：在 1995 年， NASA (美国宇航局)发送了开拓者号火星探测器，但是当探测器成功着陆在我们红色的邻居星球后不久，任务<code>嘎然而止</code>，火星探测器莫名其妙的不停重启，在计算机领域内，遇到的这种现象被定为为<code>优先级反转</code>，也就是说低优先级的线程一直阻塞着高优先级的线程。稍后我们会看到关于这个问题的更多细节。在这里我们想说明的是，即使拥有丰富的资源和大量优秀工程师的智慧，并发也还是会在不少情况下反咬你你一口。</p>
+<p>//TODO: 底层并发 API</p>
+<a class="header" href="concurrence/gcd.html#operation-queues-操作队列" id="operation-queues-操作队列"><h2>Operation Queues 操作队列</h2></a>
+<p>操作队列（operation queue）是由 GCD 提供的一个队列模型的 Cocoa 抽象。GCD 提供了更加底层的控制，而操作队列则在 GCD 之上实现了一些方便的功能，这些功能对于 app 的开发者来说通常是最好最安全的选择。</p>
+<p><code>NSOperationQueue</code> 有两种不同类型的队列：<code>主队列</code>和<code>自定义队列</code>。主队列运行在主线程之上，而自定义队列在后台执行。在两种类型中，这些队列所处理的任务都使用 <code>NSOperation</code> 的子类来表述。</p>
+<p>你可以通过重写 <code>main</code> 或者 <code>start</code> 方法 来定义自己的 <code>operations</code> 。前一种方法非常简单，开发者不需要管理一些状态属性（例如 <code>isExecuting</code> 和 <code>isFinished</code>），当 <code>main</code> 方法返回的时候，这个 <code>operation</code> 就结束了。这种方式使用起来非常简单，但是灵活性相对重写 <code>start</code> 来说要少一些。</p>
+<pre><code class="language-cpp">@implementation YourOperation
+    - (void)main
+    {
+        // 进行处理 ...
+    }
+@end
+</code></pre>
+<p>如果你希望拥有更多的控制权，以及在一个操作中可以执行异步任务，那么就重写 <code>start</code> 方法：</p>
+<pre><code class="language-cpp">@implementation YourOperation
+    - (void)start
+    {
+        self.isExecuting = YES;
+        self.isFinished = NO;
+        // 开始处理，在结束时应该调用 finished ...
+    }
+
+    - (void)finished
+    {
+        self.isExecuting = NO;
+        self.isFinished = YES;
+    }
+@end
+</code></pre>
+<p>注意：这种情况下，你必须手动管理操作的状态。 为了让操作队列能够捕获到操作的改变，需要将状态的属性以配合 KVO 的方式进行实现。如果你不使用它们默认的 setter 来进行设置的话，你就需要在合适的时候发送合适的 KVO 消息。</p>
+<p>为了能使用操作队列所提供的取消功能，你需要在长时间操作中时不时地检查 <code>isCancelled</code> 属性：</p>
+<pre><code class="language-cpp">- (void)main
+{
+    while (notDone &amp;&amp; !self.isCancelled) {
+        // 进行处理
+    }
+}
+</code></pre>
+<p>当你定义好 operation 类之后，就可以很容易的将一个 operation 添加到队列中：</p>
+<pre><code class="language-cpp">NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+YourOperation *operation = [[YourOperation alloc] init];
+[queue  addOperation:operation];
+</code></pre>
+<p>另外，你也可以将 block 添加到操作队列中。这有时候会非常的方便，比如你希望在主队列中调度一个一次性任务：</p>
+<pre><code class="language-cpp">[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    // 代码...
+}];
+</code></pre>
+<p>虽然通过这种的方式在队列中添加操作会非常方便，但是定义你自己的 <code>NSOperation</code> 子类会在调试时很有帮助。如果你重写 <code>operation</code> 的<code>description</code> 方法，就可以很容易的标示出在某个队列中当前被调度的所有操作 。</p>
+<p>除了提供基本的调度操作或 <code>block</code> 外，操作队列还提供了在 <code>GCD</code> 中不太容易处理好的特性的功能。例如，你可以通过 <code>maxConcurrentOperationCount</code> 属性来控制一个特定队列中可以有多少个操作参与并发执行。将其设置为 1 的话，你将得到一个串行队列，这在以隔离为目的的时候会很有用。</p>
+<p>另外还有一个方便的功能就是根据队列中 <code>operation</code> 的优先级对其进行排序，这不同于 <code>GCD</code> 的队列优先级，它只影响当前队列中所有被调度的 <code>operation</code> 的执行先后。如果你需要进一步在除了 5 个标准的优先级以外对 <code>operation</code> 的执行顺序进行控制的话，还可以在 <code>operation</code> 之间指定依赖关系，如下：</p>
+<pre><code class="language-cpp">[intermediateOperation addDependency:operation1];
+[intermediateOperation addDependency:operation2];
+[finishedOperation addDependency:intermediateOperation];
+</code></pre>
+<p>这些简单的代码可以确保 <code>operation1</code> 和 <code>operation2</code> 在 <code>intermediateOperation</code> 之前执行，当然，也会在 <code>finishOperation</code> 之前被执行。对于需要明确的执行顺序时，操作依赖是非常强大的一个机制。它可以让你创建一些操作组，并确保这些操作组在依赖它们的操作被执行之前执行，或者在并发队列中以串行的方式执行操作。</p>
+<p><strong>从本质上来看，操作队列的性能比 GCD 要低那么一点，不过，大多数情况下这点负面影响可以忽略不计，操作队列是并发编程的首选工具。</strong></p>
+<a class="header" href="concurrence/gcd.html#run-loops-与并发编程有关的循环处理" id="run-loops-与并发编程有关的循环处理"><h2>Run Loops 与并发编程有关的循环处理</h2></a>
+<p>实际上，<code>Run loop</code>并不像 GCD 或者操作队列那样是一种并发机制，因为它并不能并行执行任务。不过在主 <code>dispatch/operation</code> 队列中， <code>run loop</code> 将直接配合任务的执行，它提供了一种异步执行代码的机制。</p>
+<p><code>Run loop</code> 比起操作队列或者 GCD 来说容易使用得多，因为通过 <code>run loop</code> ，你不必处理并发中的复杂情况，就能异步地执行任务。</p>
+<p>一个 <code>run loop</code> 总是绑定到某个特定的线程中。<code>main run loop</code> 是与主线程相关的，在每一个 <code>Cocoa</code> 和 <code>CocoaTouch</code> 程序中，这个 <code>main run loop</code> 都扮演了一个核心角色，它负责处理 UI 事件、计时器，以及其它内核相关事件。无论你什么时候设置计时器、使用 <code>NSURLConnection</code> 或者调用 performSelector:withObject:afterDelay:，其实背后都是 run loop 在处理这些异步任务。</p>
+<p>无论何时你使用 <code>run loop</code> 来执行一个方法的时候，都需要记住一点：<code>run loop</code> 可以运行在不同的模式中，每种模式都定义了一组事件，供 <code>run loop</code> 做出响应。这在对应 <code>main run loop</code> 中暂时性的将某个任务优先执行这种任务上是一种聪明的做法。</p>
+<p>关于这点，在 iOS 中非常典型的一个示例就是滚动。在进行滚动时，run loop 并不是运行在默认模式中的，因此， run loop 此时并不会响应比如滚动前设置的计时器。一旦滚动停止了，run loop 会回到默认模式，并执行添加到队列中的相关事件。如果在滚动时，希望计时器能被触发，需要将其设为 <code>NSRunLoopCommonModes</code> 的模式，并添加到 run loop 中。</p>
+<p>主线程一般来说都已经配置好了 main run loop。然而其他线程默认情况下都没有设置 run loop。你也可以自行为其他线程设置 run loop ，但是一般来说我们很少需要这么做。大多数时间使用 main run loop 会容易得多。如果你需要处理一些很重的工作，但是又不想在主线程里做，你仍然可以在你的代码在 main run loop 中被调用后将工作分配给其他队列。</p>
+<p><strong>备注：</strong></p>
+<blockquote>
+<p>如果你真需要在别的线程中添加一个 run loop ，那么不要忘记在 run loop 中至少添加一个 input source 。如果 run loop 中没有设置好的 input source，那么每次运行这个 run loop ，它都会立即退出。</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="concurrence/gcd_or_nsthread.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="concurrence/issue_resource_share.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="concurrence/gcd_or_nsthread.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="concurrence/issue_resource_share.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
+        
+
+    </body>
+</html>

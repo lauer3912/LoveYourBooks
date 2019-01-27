@@ -4,6 +4,10 @@ multilingual = false
 src = "src"
 title = "Visual Studio 2017 C++ Primer"
 
+[build]
+build-dir = "../../docs/c-books/visualstudio2017-cplusplus-primer/"
+create-missing = true
+
 [output.html]
 additional-css = []
 additional-js = []

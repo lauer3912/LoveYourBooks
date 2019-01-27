@@ -13,7 +13,7 @@
   - [选择 GCD 还是 NSThread?](./concurrence/gcd_or_nsthread.md)
   - [GCD(Grand Central Dispatch)介绍](./concurrence/gcd.md)
   - [容易出错根源问题：资源共享](./concurrence/issue_resource_share.md)
-  - [容易出错：互斥锁](./concurrence/)
+  - [容易出错：互斥锁](./concurrence/issue_lock.md)
 - [图形绘制部分](./render/intro.md)
   - [涉及的相关概念和接口](./render/base/more_base_concept.md)
   - [仿射变换矩阵：平移、旋转、缩放](./render/base/transform.md)

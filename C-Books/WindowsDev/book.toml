@@ -5,6 +5,6 @@ src = "src"
 title = "Windows OS Dev"
 
 [build]
-build-dir = "book"
+build-dir = "../../docs/c-books/window-dev/"
 create-missing = true
 preprocess = ["links", "index"]

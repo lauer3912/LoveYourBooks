@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Books Index</title>
+        <title>核心价值 - Objective-C Primer</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <base href="">
+        <base href="../">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -26,7 +26,14 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
 
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         
 
     </head>
@@ -50,7 +57,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
@@ -69,7 +76,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="cplusplus/intro.html"><strong aria-hidden="true">1.</strong> C/C++/Objective-C 技巧</a></li></ol>
+            <ol class="chapter"><li><a href="base/intro.html" class="active"><strong aria-hidden="true">1.</strong> 核心价值</a></li><li><ol class="section"><li><a href="base/why_objective_c_is_a_dynamic_language.html"><strong aria-hidden="true">1.1.</strong> Objective-c 是动态语言</a></li><li><a href="base/memory_manage.html"><strong aria-hidden="true">1.2.</strong> 内存管理原理</a></li></ol></li><li><a href="datatype/intro.html"><strong aria-hidden="true">2.</strong> 数据类型</a></li><li><ol class="section"><li><a href="datatype/nsnumber_and_nsvalue_for_c_datatype.html"><strong aria-hidden="true">2.1.</strong> NSNumber 和 NSValue 对基础 C 数据类型的对象化封装</a></li><li><a href="datatype/why_nsstring_use_copy_property.html"><strong aria-hidden="true">2.2.</strong> NSString 为何要用 COPY 属性</a></li></ol></li><li><a href="syntax/intro.html"><strong aria-hidden="true">3.</strong> 语法特点</a></li><li><ol class="section"><li><a href="syntax/concept_strong_and_weak.html"><strong aria-hidden="true">3.1.</strong> @property 的属性 strong 和 weak 如何理解？</a></li><li><a href="syntax/concept_selector_and_sel.html"><strong aria-hidden="true">3.2.</strong> @selector 与 SEL 如何理解？</a></li></ol></li><li><a href="concurrence/intro.html"><strong aria-hidden="true">4.</strong> 并发编程</a></li><li><ol class="section"><li><a href="concurrence/gcd_or_nsthread.html"><strong aria-hidden="true">4.1.</strong> 选择 GCD 还是 NSThread?</a></li><li><a href="concurrence/gcd.html"><strong aria-hidden="true">4.2.</strong> GCD(Grand Central Dispatch)介绍</a></li><li><a href="concurrence/issue_resource_share.html"><strong aria-hidden="true">4.3.</strong> 容易出错根源问题：资源共享</a></li><li><a href="concurrence/issue_lock.html"><strong aria-hidden="true">4.4.</strong> 容易出错：互斥锁</a></li></ol></li><li><a href="render/intro.html"><strong aria-hidden="true">5.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">5.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">5.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li><li><a href="render/base/diff_coordinate_system_between_ios_and_quartz2d.html"><strong aria-hidden="true">5.3.</strong> iOS 中 UIKit 坐标系与 Quartz 2D 绘图坐标系的区别</a></li><li><a href="render/base/relations_between_coregraphics_and_quartz2d.html"><strong aria-hidden="true">5.4.</strong> CoreGraphics 与 Quartz 2D 的关系</a></li><li><a href="render/methods/CGContextSaveGState_CGContextRestoreGState.html"><strong aria-hidden="true">5.5.</strong> CGContextSaveGState 与 CGContextRestoreGState 的作用</a></li><li><a href="render/examples/draw_straight_line.html"><strong aria-hidden="true">5.6.</strong> 例子：绘制一条直线</a></li><li><a href="render/examples/draw_arc.html"><strong aria-hidden="true">5.7.</strong> 例子：绘制一条弧线</a></li><li><a href="render/examples/draw_bezier.html"><strong aria-hidden="true">5.8.</strong> 例子：绘制贝兹曲线</a></li><li><a href="render/examples/draw_continuous_curve.html"><strong aria-hidden="true">5.9.</strong> 例子：绘制连续曲线</a></li><li><a href="render/examples/draw_imaginary_line.html"><strong aria-hidden="true">5.10.</strong> 例子：绘制虚线</a></li><li><a href="render/examples/draw_imaginary_curve.html"><strong aria-hidden="true">5.11.</strong> 例子：绘制虚曲线</a></li><li><a href="render/examples/draw_continuous_imaginary_curve.html"><strong aria-hidden="true">5.12.</strong> 例子：绘制连续虚曲线</a></li><li><a href="render/examples/draw_square_with_no_frame.html"><strong aria-hidden="true">5.13.</strong> 例子：绘制没有边框的正方形</a></li><li><a href="render/examples/draw_square_frame.html"><strong aria-hidden="true">5.14.</strong> 例子：绘制正方形边框</a></li><li><a href="render/examples/draw_rounded_rectangle.html"><strong aria-hidden="true">5.15.</strong> 例子：绘制圆角矩形</a></li><li><a href="render/examples/draw_rhombus.html"><strong aria-hidden="true">5.16.</strong> 例子：绘制菱形</a></li><li><a href="render/examples/draw_ellipse.html"><strong aria-hidden="true">5.17.</strong> 例子：绘制椭圆</a></li><li><a href="render/examples/draw_solid_circle.html"><strong aria-hidden="true">5.18.</strong> 例子：绘制实心圆</a></li><li><a href="render/examples/draw_solid_circle_and_solid_rectangle.html"><strong aria-hidden="true">5.19.</strong> 例子：绘制实心矩形和实心圆</a></li><li><a href="render/examples/draw_one_path.html"><strong aria-hidden="true">5.20.</strong> 例子：绘制一段路径</a></li><li><a href="render/examples/draw_irregular_shape.html"><strong aria-hidden="true">5.21.</strong> 例子：绘制不规则形状</a></li><li><a href="render/examples/draw_rectangle_ellipse.html"><strong aria-hidden="true">5.22.</strong> 例子：绘制矩形和椭圆</a></li><li><a href="render/examples/draw_pie.html"><strong aria-hidden="true">5.23.</strong> 例子：绘制饼图</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -82,6 +89,11 @@
                             <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                                 <i class="fa fa-bars"></i>
                             </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
                             <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                                 <i class="fa fa-paint-brush"></i>
                             </button>
@@ -99,7 +111,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Books Index</h1> 
+                        <h1 class="menu-title">Objective-C Primer</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -129,28 +141,17 @@
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/base/intro.md");
+                   });
+                   // END - Rust Cookbook customization
                 </script>
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="print.html#ccobjective-c-技巧推荐" id="ccobjective-c-技巧推荐"><h1>C/C++/Objective-C 技巧推荐</h1></a>
-<p><a href="../books-index/index.html">主页</a></p>
-<a class="header" href="print.html#ccobjective-c" id="ccobjective-c"><h2>C/C++/Objective-C</h2></a>
-<ol>
-<li><a href="../c-books/cplusplus-get-primer/index.html">《C++ Get Primer》</a></li>
-<li><a href="../c-books/qt-up/index.html">《Qt 编程技能提升》</a></li>
-<li><a href="../c-books/objective-c-primer/index.html">《Objective-C Primer》</a></li>
-</ol>
-<a class="header" href="print.html#c开发-ide-技巧" id="c开发-ide-技巧"><h2>C++开发 IDE 技巧</h2></a>
-<ol>
-<li><a href="../c-books/clion-primer/index.html">《CLion Primer》</a></li>
-<li><a href="../c-books/mingw-primer/index.html">《MinGw Primer》</a></li>
-<li><a href="../c-books/visualstudio2017-cplusplus-primer/index.html">《VisualStudio 2017 C++ Primer》</a></li>
-</ol>
-<a class="header" href="print.html#a系统平台开发技巧" id="a系统平台开发技巧"><h2>系统平台开发技巧</h2></a>
-<ol>
-<li><a href="../c-books/window-dev/index.html">《Windows 系统平台开发》</a></li>
-</ol>
+                        <a class="header" href="base/intro.html#a核心价值" id="a核心价值"><h1>核心价值</h1></a>
 
                     </main>
 
@@ -158,6 +159,10 @@
                         <!-- Mobile navigation buttons -->
                         
 
+                        
+                            <a rel="next" href="base/why_objective_c_is_a_dynamic_language.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -169,9 +174,15 @@
                 
 
                 
+                    <a href="base/why_objective_c_is_a_dynamic_language.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </nav>
 
         </div>
+
+        
 
         
 
@@ -194,15 +205,7 @@
 
         <!-- Custom JS scripts -->
         
-
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
         
 
     </body>

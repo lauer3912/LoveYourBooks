@@ -4,6 +4,10 @@ multilingual = false
 src = "src"
 title = "Objective-C Primer"
 
+[build]
+build-dir = "../../docs/c-books/objective-c-primer/"
+create-missing = true
+
 [output.html]
 mathjax-support = true
 theme = "theme"

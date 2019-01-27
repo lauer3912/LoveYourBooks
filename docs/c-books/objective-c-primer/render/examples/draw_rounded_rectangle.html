@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>例子：绘制圆角矩形 - Objective-C Primer</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="../../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+        <link rel="stylesheet" href="theme/for-math-theme.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="base/intro.html"><strong aria-hidden="true">1.</strong> 核心价值</a></li><li><ol class="section"><li><a href="base/why_objective_c_is_a_dynamic_language.html"><strong aria-hidden="true">1.1.</strong> Objective-c 是动态语言</a></li><li><a href="base/memory_manage.html"><strong aria-hidden="true">1.2.</strong> 内存管理原理</a></li></ol></li><li><a href="datatype/intro.html"><strong aria-hidden="true">2.</strong> 数据类型</a></li><li><ol class="section"><li><a href="datatype/nsnumber_and_nsvalue_for_c_datatype.html"><strong aria-hidden="true">2.1.</strong> NSNumber 和 NSValue 对基础 C 数据类型的对象化封装</a></li><li><a href="datatype/why_nsstring_use_copy_property.html"><strong aria-hidden="true">2.2.</strong> NSString 为何要用 COPY 属性</a></li></ol></li><li><a href="syntax/intro.html"><strong aria-hidden="true">3.</strong> 语法特点</a></li><li><ol class="section"><li><a href="syntax/concept_strong_and_weak.html"><strong aria-hidden="true">3.1.</strong> @property 的属性 strong 和 weak 如何理解？</a></li><li><a href="syntax/concept_selector_and_sel.html"><strong aria-hidden="true">3.2.</strong> @selector 与 SEL 如何理解？</a></li></ol></li><li><a href="concurrence/intro.html"><strong aria-hidden="true">4.</strong> 并发编程</a></li><li><ol class="section"><li><a href="concurrence/gcd_or_nsthread.html"><strong aria-hidden="true">4.1.</strong> 选择 GCD 还是 NSThread?</a></li><li><a href="concurrence/gcd.html"><strong aria-hidden="true">4.2.</strong> GCD(Grand Central Dispatch)介绍</a></li><li><a href="concurrence/issue_resource_share.html"><strong aria-hidden="true">4.3.</strong> 容易出错根源问题：资源共享</a></li><li><a href="concurrence/issue_lock.html"><strong aria-hidden="true">4.4.</strong> 容易出错：互斥锁</a></li></ol></li><li><a href="render/intro.html"><strong aria-hidden="true">5.</strong> 图形绘制部分</a></li><li><ol class="section"><li><a href="render/base/more_base_concept.html"><strong aria-hidden="true">5.1.</strong> 涉及的相关概念和接口</a></li><li><a href="render/base/transform.html"><strong aria-hidden="true">5.2.</strong> 仿射变换矩阵：平移、旋转、缩放</a></li><li><a href="render/base/diff_coordinate_system_between_ios_and_quartz2d.html"><strong aria-hidden="true">5.3.</strong> iOS 中 UIKit 坐标系与 Quartz 2D 绘图坐标系的区别</a></li><li><a href="render/base/relations_between_coregraphics_and_quartz2d.html"><strong aria-hidden="true">5.4.</strong> CoreGraphics 与 Quartz 2D 的关系</a></li><li><a href="render/methods/CGContextSaveGState_CGContextRestoreGState.html"><strong aria-hidden="true">5.5.</strong> CGContextSaveGState 与 CGContextRestoreGState 的作用</a></li><li><a href="render/examples/draw_straight_line.html"><strong aria-hidden="true">5.6.</strong> 例子：绘制一条直线</a></li><li><a href="render/examples/draw_arc.html"><strong aria-hidden="true">5.7.</strong> 例子：绘制一条弧线</a></li><li><a href="render/examples/draw_bezier.html"><strong aria-hidden="true">5.8.</strong> 例子：绘制贝兹曲线</a></li><li><a href="render/examples/draw_continuous_curve.html"><strong aria-hidden="true">5.9.</strong> 例子：绘制连续曲线</a></li><li><a href="render/examples/draw_imaginary_line.html"><strong aria-hidden="true">5.10.</strong> 例子：绘制虚线</a></li><li><a href="render/examples/draw_imaginary_curve.html"><strong aria-hidden="true">5.11.</strong> 例子：绘制虚曲线</a></li><li><a href="render/examples/draw_continuous_imaginary_curve.html"><strong aria-hidden="true">5.12.</strong> 例子：绘制连续虚曲线</a></li><li><a href="render/examples/draw_square_with_no_frame.html"><strong aria-hidden="true">5.13.</strong> 例子：绘制没有边框的正方形</a></li><li><a href="render/examples/draw_square_frame.html"><strong aria-hidden="true">5.14.</strong> 例子：绘制正方形边框</a></li><li><a href="render/examples/draw_rounded_rectangle.html" class="active"><strong aria-hidden="true">5.15.</strong> 例子：绘制圆角矩形</a></li><li><a href="render/examples/draw_rhombus.html"><strong aria-hidden="true">5.16.</strong> 例子：绘制菱形</a></li><li><a href="render/examples/draw_ellipse.html"><strong aria-hidden="true">5.17.</strong> 例子：绘制椭圆</a></li><li><a href="render/examples/draw_solid_circle.html"><strong aria-hidden="true">5.18.</strong> 例子：绘制实心圆</a></li><li><a href="render/examples/draw_solid_circle_and_solid_rectangle.html"><strong aria-hidden="true">5.19.</strong> 例子：绘制实心矩形和实心圆</a></li><li><a href="render/examples/draw_one_path.html"><strong aria-hidden="true">5.20.</strong> 例子：绘制一段路径</a></li><li><a href="render/examples/draw_irregular_shape.html"><strong aria-hidden="true">5.21.</strong> 例子：绘制不规则形状</a></li><li><a href="render/examples/draw_rectangle_ellipse.html"><strong aria-hidden="true">5.22.</strong> 例子：绘制矩形和椭圆</a></li><li><a href="render/examples/draw_pie.html"><strong aria-hidden="true">5.23.</strong> 例子：绘制饼图</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Objective-C Primer</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/render/examples/draw_rounded_rectangle.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="render/examples/draw_rounded_rectangle.html#a例子绘制圆角矩形" id="a例子绘制圆角矩形"><h1>例子：绘制圆角矩形</h1></a>
+<hr />
+<a class="header" href="render/examples/draw_rounded_rectangle.html#ios" id="ios"><h2>iOS</h2></a>
+<pre><code class="language-cpp">// 画一个圆角矩形
+CGContextRef contextRef = UIGraphicsGetCurrentContext();
+CGContextSetRGBStrokeColor(contextRef, 1.0f, 1.0f, 1.0f, 1);
+CGContextSetLineWidth(contextRef, 20.0f);
+CGContextAddRect(contextRef, CGRectMake(50.0f, 50.0f, 100.0f, 100.0f));
+CGContextStrokePath(contextRef);
+CGLineJoin lineJoin = kCGLineJoinRound;
+CGContextSetLineJoin(contextRef, lineJoin);
+CGContextStrokePath(contextRef);
+</code></pre>
+<hr />
+<a class="header" href="render/examples/draw_rounded_rectangle.html#macos" id="macos"><h2>macOS</h2></a>
+<pre><code class="language-cpp">
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="render/examples/draw_square_frame.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="render/examples/draw_rhombus.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="render/examples/draw_square_frame.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="render/examples/draw_rhombus.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="for-mathjax-config.js"></script>
+        
+
+    </body>
+</html>
