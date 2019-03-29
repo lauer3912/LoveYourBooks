@@ -18,16 +18,16 @@
     -->
     <machine name="Anlin PC">
         <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_2\MEmu_2.memu" vmname="web-001" vmid="2"
-                appiumCommand="C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe appium -p 4723"
+                appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21523 --v 2"/>
         <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_3\MEmu_3.memu" vmname="web-002" vmid="3"
-                appiumCommand="C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe appium -p 4725"
+                appiumCommand="appium -p 4725"
                 startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21533 --v 3"/>
         <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_4\MEmu_4.memu" vmname="web-003" vmid="4"
-                appiumCommand="C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe appium -p 4727"
+                appiumCommand="appium -p 4727"
                 startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --v 4"/>
         <config enable="false" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_5\MEmu_5.memu" vmname="web-004" vmid="5"
-                appiumCommand="C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe appium -p 4729"
+                appiumCommand="appium -p 4729"
                 startCommand="python run.py --s http://127.0.0.1:4729/wd/hub --d 127.0.0.1:21553 --v 5"/>
                 
     </machine>

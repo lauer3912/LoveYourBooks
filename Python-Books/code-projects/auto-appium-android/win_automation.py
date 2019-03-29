@@ -80,27 +80,8 @@ class VMJob(object):
         print(msg)
         return is_running
 
-    def get_appium_is_running(self):
-        return self._get_proc_is_running('appium', self.appium_cmd_handler)
-
     def get_back_proc_is_running(self):
         return self._get_proc_is_running('PythonRun', self.back_proc)
-
-    async def create_appium_process(self):
-        try:
-            print('call create_appium_process ... vmid=', self.vmid)
-            is_running = self.get_appium_is_running()
-            if not is_running:
-                print('Must create a new process appium handler ... vmid=', self.vmid)
-                print('appium_cmd=', self.appium_cmd)
-                proc = subprocess.Popen(self.appium_cmd,
-                                        shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                        universal_newlines=True)
-                if proc:
-                    self.appium_cmd_handler = proc
-        except Exception as e:
-            print('Error:', e)
-
 
     async def create_sub_process(self):
         print('call create_sub_process ... vmid=', self.vmid)
@@ -143,9 +124,7 @@ class VMJob(object):
                 await sleep(3)
                 print('call adb_devices again ...')
                 await vmsH.adb_devices()
-                print("call create_appium_process")
-                await self.create_appium_process()
-                await sleep(15)
+                await sleep(5)
                 print("call create_sub_process")
                 await self.create_sub_process()
 
@@ -154,14 +133,6 @@ class VMJob(object):
         finally:
             self.startingVM = False
             print("start_back_handler end ...")
-
-    async def stop_all_appium_proc(self):
-        # 尝试terminate
-        try:
-            self.appium_cmd_handler.kill()
-            psutil.Process(self.appium_cmd_handler.pid).terminate()
-        except Exception as err:
-            print('Error:', err)
 
     async def stop_all_back_procs(self):
         # 尝试terminate
@@ -182,8 +153,7 @@ class VMJob(object):
         else:
             self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
 
-    async def free(self):
-        self.stop_all_appium_proc()
+    def free(self):
         self.stop_all_back_procs()
         self.stop_back_handler()
         print('call free .....')
