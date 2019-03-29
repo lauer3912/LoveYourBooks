@@ -85,8 +85,8 @@ class VMJob(object):
                     is_running = True
                 elif len(all_pids) > 0:
                     is_running = False
-            except Exception as e:
-                print("Error:", e)
+            except Exception:
+                logger.exception("Error:")
 
         msg = '[X] [%s] is not running ... vmid=%s' % (proc_name, self.vmid)
         if is_running:
@@ -117,8 +117,8 @@ class VMJob(object):
                                     universal_newlines=True)
             if proc:
                 self.back_proc = proc
-        except Exception as err:
-            logger.info('ERROR:', err)
+        except Exception:
+            logger.exception('ERROR:')
 
     async def start_back_handler(self):
         try:
@@ -142,8 +142,8 @@ class VMJob(object):
                 logger.info("call create_sub_process")
                 await self.create_sub_process()
 
-        except Exception as e:
-            logger.info(e)
+        except Exception:
+            logger.exception("Error:")
         finally:
             self.startingVM = False
             logger.info("start_back_handler end ...")
@@ -153,15 +153,15 @@ class VMJob(object):
         try:
             if self.back_proc:
                 self.back_proc.kill()
-        except Exception as err:
-            logger.exception('Error:', err)
+        except Exception:
+            logger.exception('Error:')
 
         # (2)尝试使用psutil来处理
         try:
             if self.back_proc:
                 psutil.Process(self.back_proc.pid).terminate()
-        except Exception as err:
-            logger.exception('Error:', err)
+        except Exception:
+            logger.exception('Error:')
         finally:
             self.back_proc = None
 
@@ -284,7 +284,7 @@ async def main():
             enable=one_config['enable'] == 'true',
             start_cmd=one_config['startCommand'],
             appium_cmd=one_config['appiumCommand'],
-            max_run_time=random.randint(35, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+            max_run_time=random.randint(120, 480) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
         ))
 
     logger.info("Start working.....")
