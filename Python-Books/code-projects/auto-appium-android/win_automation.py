@@ -63,7 +63,7 @@ class VMJob(object):
         is_running = False
         if proc_handler:
             try:
-                all_pids = psutil.pids()
+                all_pids = await psutil.pids()
                 if all_pids.index(proc_handler.pid) >= 0:
                     is_running = True
                 elif len(all_pids) > 0:
@@ -139,6 +139,7 @@ class VMJob(object):
                 await vmsH.adb_devices()
                 print("call create_appium_process")
                 await self.create_appium_process()
+                await sleep(15)
                 print("call create_sub_process")
                 await self.create_sub_process()
 
@@ -174,8 +175,6 @@ class VMJob(object):
             print('Close VM failed ... vmid=', self.vmid)
         else:
             self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
-
-        self.stop_all_back_procs()
 
     async def free(self):
         await self.stop_all_appium_proc()
