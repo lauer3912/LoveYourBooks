@@ -8,3 +8,6 @@ edition = "2018"
 serde = "1.0.82"
 serde_json = "1.0.33"
 serde_derive = "1.0.82"
+
+[features]
+enable_call_try_use_foo = []

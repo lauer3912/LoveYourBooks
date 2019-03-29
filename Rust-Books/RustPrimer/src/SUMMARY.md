@@ -1,5 +1,8 @@
 # Summary
 
+- [推荐项目](recommend-projects/index.md)
+- [优秀 Rust 第三方库](best-3rd-library/index.md)
+
 - [初识 Rust](1st-glance/README.md)
 - [安装 Rust](install/preface.md)
   - [Linux](install/install_rust_on_linux.md)
