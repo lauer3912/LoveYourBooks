@@ -80,16 +80,16 @@ class VMJob(object):
         print(msg)
         return is_running
 
-    async def get_appium_is_running(self):
-        return await self._get_proc_is_running('appium', self.appium_cmd_handler)
+    def get_appium_is_running(self):
+        return self._get_proc_is_running('appium', self.appium_cmd_handler)
 
-    async def get_back_proc_is_running(self):
-        return await self._get_proc_is_running('PythonRun', self.back_proc)
+    def get_back_proc_is_running(self):
+        return self._get_proc_is_running('PythonRun', self.back_proc)
 
     async def create_appium_process(self):
         try:
             print('call create_appium_process ... vmid=', self.vmid)
-            is_running = await self.get_appium_is_running()
+            is_running = self.get_appium_is_running()
             if not is_running:
                 print('Must create a new process appium handler ... vmid=', self.vmid)
                 print('appium_cmd=', self.appium_cmd)
@@ -183,9 +183,9 @@ class VMJob(object):
             self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
 
     async def free(self):
-        await self.stop_all_appium_proc()
-        await self.stop_all_back_procs()
-        await self.stop_back_handler()
+        self.stop_all_appium_proc()
+        self.stop_all_back_procs()
+        self.stop_back_handler()
         print('call free .....')
 
 
@@ -223,7 +223,7 @@ async def subscriber(name):
             is_running = await vmjob.is_running()
             is_starting = await vmjob.is_starting()
             is_overtime = await vmjob.is_overtime()
-            is_back_proc_running = await vmjob.get_back_proc_is_running()
+            is_back_proc_running = vmjob.get_back_proc_is_running()
 
             print('is_running={},'
                   'is_starting={},'
