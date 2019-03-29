@@ -11,6 +11,19 @@ import signal
 import subprocess
 import sys
 
+app_current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+import logging
+import logging.handlers
+handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'win_auto.log'), maxBytes=1024*1024*5, backupCount=5) # 实例化 handler
+fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
+formatter = logging.Formatter(fmt)   # 实例化 formatter
+handler.setFormatter(formatter)      # 为 handler 添加 formatter
+logger = logging.getLogger('tst')    # 获取名为 tst 的 logger
+logger.addHandler(handler)           # 为 logger 添加 handler
+logger.setLevel(logging.DEBUG)
+
 import psutil
 from curio import run, TaskGroup, Queue, sleep
 
@@ -78,14 +91,14 @@ class VMJob(object):
         msg = '[X] [%s] is not running ... vmid=%s' % (proc_name, self.vmid)
         if is_running:
             msg = '[Y] [%s] is running ... vmid=%s' % (proc_name, self.vmid)
-        print(msg)
+        logger.info(msg)
         return is_running
 
     def get_back_proc_is_running(self):
         return self._get_proc_is_running('PythonRun', self.back_proc)
 
     async def create_sub_process(self):
-        print('call create_sub_process ... vmid=', self.vmid)
+        logger.info('call create_sub_process ... vmid=', self.vmid)
         try:
             self.start_time = Utils.get_now_time()
 
@@ -93,11 +106,11 @@ class VMJob(object):
             if self.get_back_proc_is_running():
                 return
 
-            print('Must create a new process back handler ... vmid=', self.vmid)
+            logger.info('Must create a new process back handler ... vmid=', self.vmid)
 
             # 根据只创建一个后台跟踪的方式
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            print('current dir path = ', current_dir)
+            logger.info('current dir path = ', current_dir)
             proc = subprocess.Popen(self.start_cmd,
                                     cwd=current_dir,
                                     shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -105,48 +118,50 @@ class VMJob(object):
             if proc:
                 self.back_proc = proc
         except Exception as err:
-            print('ERROR:', err)
+            logger.info('ERROR:', err)
 
     async def start_back_handler(self):
         try:
             self.startingVM = True
-            print('call adb_devices')
+            logger.info('call adb_devices')
             await vmsH.adb_devices()
-            print('call vmsH.set_vm_config')
+            logger.info('call vmsH.set_vm_config')
             vmsH.set_vm_config(self.vmid)
-            print("call vmsH.start_vm(self.vmid)")
+            logger.info("call vmsH.start_vm(self.vmid)")
             await vmsH.start_vm(self.vmid)
             await sleep(10)
             is_running = await self.is_vm_running()
             if not is_running:
                 self.startingVM = False
-                print('Start vm failed ... vmid=', self.vmid)
+                logger.info('Start vm failed ... vmid=', self.vmid)
             else:
                 await sleep(3)
-                print('call adb_devices again ...')
+                logger.info('call adb_devices again ...')
                 await vmsH.adb_devices()
                 await sleep(5)
-                print("call create_sub_process")
+                logger.info("call create_sub_process")
                 await self.create_sub_process()
 
         except Exception as e:
-            print(e)
+            logger.info(e)
         finally:
             self.startingVM = False
-            print("start_back_handler end ...")
+            logger.info("start_back_handler end ...")
 
     def stop_all_back_procs(self):
         # (1)尝试terminate
         try:
-            self.back_proc.kill()
+            if self.back_proc:
+                self.back_proc.kill()
         except Exception as err:
-            print('Error:', err)
+            logger.exception('Error:', err)
 
         # (2)尝试使用psutil来处理
         try:
-            psutil.Process(self.back_proc.pid).terminate()
+            if self.back_proc:
+                psutil.Process(self.back_proc.pid).terminate()
         except Exception as err:
-            print('Error:', err)
+            logger.exception('Error:', err)
         finally:
             self.back_proc = None
 
@@ -157,14 +172,14 @@ class VMJob(object):
         is_running = await self.is_vm_running()
         if is_running:
             self.startingVM = False
-            print('Close VM failed ... vmid=', self.vmid)
+            logger.info('Close VM failed ... vmid=', self.vmid)
         else:
             self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
 
     def free(self):
         self.stop_all_back_procs()
         self.stop_back_handler()
-        print('call free .....')
+        logger.info('call free .....')
 
 
 # 定义队列及关键共享数据
@@ -192,18 +207,18 @@ async def subscriber(name):
     try:
         async for msg in queue:
             vmjob = msg
-            print(name, 'got', vmjob.vmid, vmjob.vmname)
+            logger.info(name, 'got', vmjob.vmid, vmjob.vmname)
 
             if not vmjob.enable:
                 continue
-            print(name, 'watching', vmjob.vmid, vmjob.vmname)
+            logger.info(name, 'watching', vmjob.vmid, vmjob.vmname)
 
             is_vm_running = await vmjob.is_vm_running()
             is_vm_starting = await vmjob.is_vm_starting()
             is_job_overtime = await vmjob.is_job_overtime()
             is_back_proc_running = vmjob.get_back_proc_is_running()
 
-            print('is_vm_running={},'
+            logger.info('is_vm_running={},'
                   'is_vm_starting={},'
                   'is_job_overtime={}, '
                   'is_back_proc_running={}'.format(is_vm_running, is_vm_starting, is_job_overtime, is_back_proc_running))
@@ -213,11 +228,11 @@ async def subscriber(name):
                     await vmjob.start_back_handler()
             elif is_vm_running:
                 if is_job_overtime:
-                    print("VMJOB is overtime ....")
+                    logger.info("VMJOB is overtime ....")
                     vmjob.stop_all_back_procs()
                     await vmjob.stop_back_handler()
                 else:
-                    print('VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
+                    logger.info('VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
                                                                                           vmjob.max_run_time))
             # 检测后台正在运行
             if not is_back_proc_running:
@@ -242,20 +257,20 @@ async def producer():
 
 
 def exit_callback():
-    print('exit is done')
+    logger.info('exit is done')
     for vmjob in app_vmjob_list:
         vmjob.free()
-    print('exit ....')
+    logger.info('exit ....')
 
 
 def keyboardInterruptHandler(signal, frame):
-    print("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    logger.info("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
     exit_callback()
     exit(0)
 
 
 async def main():
-    print("Start make_stop_flag_file_first.....")
+    logger.info("Start make_stop_flag_file_first.....")
     await sleep(5)
     # 重新加载vms 的配置文件
     await vmsH.reload_vms_config_info()
@@ -272,7 +287,7 @@ async def main():
             max_run_time=random.randint(35, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
         ))
 
-    print("Start working.....")
+    logger.info("Start working.....")
     async with TaskGroup() as g:
         await g.spawn(dispatcher)
         # await g.spawn(subscriber, 'child1')
