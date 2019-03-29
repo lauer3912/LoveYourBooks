@@ -220,37 +220,6 @@ async def subscriber(name):
 # A sample producer task
 async def producer():
     while True:
-        # 重新加载vms 的配置文件
-        await vmsH.reload_vms_config_info()
-
-        # 动态获取VMS的配置内容
-        for one_config in vmsH.get_vms_configs():
-
-            # 查找vmjob是否已经存在
-            already_added_vmjob = None
-            for one_vmjob in app_vmjob_list:
-                if one_vmjob.vmid == one_config['vmid']:
-                    already_added_vmjob = one_vmjob
-                    break
-
-            if already_added_vmjob:  # 存在直接修改内部参数值
-                already_added_vmjob.vmname = one_config['vmname']
-                already_added_vmjob.config_path = one_config['path']
-                already_added_vmjob.enable = one_config['enable'] == 'true'
-                already_added_vmjob.start_cmd = one_config['startCommand']
-            else:  # 不存在，新建
-                app_vmjob_list.add(VMJob(
-                    vmid=one_config['vmid'],
-                    vmname=one_config['vmname'],
-                    config_path=one_config['path'],
-                    enable=one_config['enable'] == 'true',
-                    start_cmd=one_config['startCommand'],
-                    appium_cmd=one_config['appiumCommand'],
-                    max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
-                ))
-
-        await sleep(30)
-
         # 准备发送相关的VMJOB数据
         for vmjob in app_vmjob_list:
             if not vmjob.enable:
@@ -258,6 +227,8 @@ async def producer():
 
             await publish(vmjob)
             await sleep(5)
+
+        await sleep(15)
 
 
 def exit_callback():
@@ -305,7 +276,21 @@ async def main():
     print("Start make_stop_flag_file_first.....")
     await make_stop_flag_file_first()
     await sleep(5)
+    # 重新加载vms 的配置文件
+    await vmsH.reload_vms_config_info()
+    # 动态获取VMS的配置内容
     app_vmjob_list.clear()
+    for one_config in vmsH.get_vms_configs():
+        app_vmjob_list.add(VMJob(
+            vmid=one_config['vmid'],
+            vmname=one_config['vmname'],
+            config_path=one_config['path'],
+            enable=one_config['enable'] == 'true',
+            start_cmd=one_config['startCommand'],
+            appium_cmd=one_config['appiumCommand'],
+            max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+        ))
+
     print("Start working.....")
     async with TaskGroup() as g:
         await g.spawn(dispatcher)
