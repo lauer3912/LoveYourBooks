@@ -6,8 +6,8 @@ import random
 import signal
 import subprocess
 import sys
-import psutil
 
+import psutil
 from curio import run, TaskGroup, Queue, sleep
 
 # libs
@@ -21,7 +21,7 @@ vmsH = VMSModifyHandler()
 
 
 class VMJob(object):
-    def __init__(self, vmid, vmname, config_path, enable, start_cmd, max_run_time):
+    def __init__(self, vmid, vmname, config_path, enable, start_cmd, appium_cmd, max_run_time):
         object.__init__(self)
         self.vmid = vmid
         self.vmname = vmname
@@ -29,6 +29,8 @@ class VMJob(object):
         self.enable = enable
         self.start_cmd = start_cmd
         self.start_time = Utils.get_now_time()
+        self.appium_cmd = appium_cmd
+        self.appium_cmd_handler = None
         self.max_run_time = max_run_time
         self.back_proc = None
         self.startingVM = False
@@ -57,23 +59,42 @@ class VMJob(object):
 
         return False
 
-    async def get_back_proc_is_running(self):
+    async def _get_proc_is_running(self, proc_name, proc_handler):
         is_running = False
-
-        if self.back_proc:
+        if proc_handler:
             try:
                 all_pids = psutil.pids()
-                if all_pids.index(self.back_proc.pid) >= 0:
+                if all_pids.index(proc_handler.pid) >= 0:
                     is_running = True
+                elif len(all_pids) > 0:
+                    is_running = False
             except Exception as e:
                 print("Error:", e)
 
-        msg = '[X] back process is not running ... vmid=%s' % self.vmid
+        msg = '[X] [%s] is not running ... vmid=%s' % (proc_name, self.vmid)
         if is_running:
-            msg = '[Y] back process is running ... vmid=%s' % self.vmid
+            msg = '[Y] [%s] is running ... vmid=%s' % (proc_name, self.vmid)
         print(msg)
-
         return is_running
+
+    async def get_appium_is_running(self):
+        return self._get_proc_is_running('appium', self.appium_cmd_handler)
+
+    async def get_back_proc_is_running(self):
+        return self._get_proc_is_running('PythonRun', self.back_proc)
+
+    async def create_appium_process(self):
+        try:
+            print('call create_appium_process ... vmid=', self.vmid)
+            is_running = self.get_appium_is_running()
+            if not is_running:
+                print('Must create a new process appium handler ... vmid=', self.vmid)
+                proc = subprocess.Popen(self.appium_cmd,
+                                        shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                        universal_newlines=True)
+                self.appium_cmd_handler = proc
+        except Exception as e:
+            print('Error:', e)
 
     async def create_sub_process(self):
         print('call create_sub_process ... vmid=', self.vmid)
@@ -81,7 +102,7 @@ class VMJob(object):
             self.start_time = Utils.get_now_time()
 
             # 后台进程正在运行中，只记录一个
-            if self.get_back_proc_is_running() == True:
+            if self.get_back_proc_is_running():
                 return
 
             print('Must create a new process back handler ... vmid=', self.vmid)
@@ -116,6 +137,8 @@ class VMJob(object):
                 await sleep(3)
                 print('call adb_devices again ...')
                 await vmsH.adb_devices()
+                print("call create_appium_process")
+                await self.create_appium_process()
                 print("call create_sub_process")
                 await self.create_sub_process()
 
@@ -125,11 +148,19 @@ class VMJob(object):
             self.startingVM = False
             print("start_back_handler end ...")
 
+    async def stop_all_appium_proc(self):
+        # 尝试terminate
+        try:
+            self.appium_cmd_handler.kill()
+            psutil.Process(self.appium_cmd_handler.pid).terminate()
+        except Exception as err:
+            print('Error:', err)
+
     async def stop_all_back_procs(self):
         # 尝试terminate
         try:
-            psutil.Process(self.back_proc.pid).terminate()
             self.back_proc.kill()
+            psutil.Process(self.back_proc.pid).terminate()
         except Exception as err:
             print('Error:', err)
 
@@ -142,9 +173,15 @@ class VMJob(object):
             self.startingVM = False
             print('Close VM failed ... vmid=', self.vmid)
         else:
-            self.start_time = Utils.get_now_time() * 10 # 表示不会被重新启动
+            self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
 
         self.stop_all_back_procs()
+
+    async def free(self):
+        await self.stop_all_appium_proc()
+        await self.stop_all_back_procs()
+        await self.stop_back_handler()
+        print('call free .....')
 
 
 # 定义队列及关键共享数据
@@ -188,7 +225,6 @@ async def subscriber(name):
                   'is_overtime={}, '
                   'is_back_proc_running={}'.format(is_running, is_starting, is_overtime, is_back_proc_running))
 
-
             if not is_running:
                 if not is_starting:
                     await vmjob.start_back_handler()
@@ -209,22 +245,52 @@ async def subscriber(name):
 # A sample producer task
 async def producer():
     while True:
-        await sleep(15)
+        await sleep(30)
+
+        # 重新加载vms 的配置文件
+        await vmsH.reload_vms_config_info()
+
+        # 动态获取VMS的配置内容
+        for one_config in vmsH.get_vms_configs():
+
+            # 查找vmjob是否已经存在
+            already_added_vmjob = None
+            for one_vmjob in vmjob_list:
+                if one_vmjob.vmid == one_config['vmid']:
+                    already_added_vmjob = one_vmjob
+                    break
+
+            if already_added_vmjob:  # 存在直接修改内部参数值
+                already_added_vmjob.vmname = one_config['vmname']
+                already_added_vmjob.config_path = one_config['path']
+                already_added_vmjob.enable = one_config['enable'] == 'true'
+                already_added_vmjob.start_cmd = one_config['startCommand']
+            else:  # 不存在，新建
+                vmjob_list.add(VMJob(
+                    vmid=one_config['vmid'],
+                    vmname=one_config['vmname'],
+                    config_path=one_config['path'],
+                    enable=one_config['enable'] == 'true',
+                    start_cmd=one_config['startCommand'],
+                    appium_cmd=one_config['appiumCommand'],
+                    max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+                ))
+
+        # 准备发送相关的VMJOB数据
         for vmjob in vmjob_list:
             if not vmjob.enable:
                 continue
 
             await publish(vmjob)
-            await sleep(5)
+            await sleep(10)
 
 
 async def exit_callback():
     print('exit is done')
     for vmjob in vmjob_list:
-        is_running = await vmjob.is_running()
-        if is_running:
-            await vmjob.stop_all_back_procs()
-            await vmjob.stop_back_handler()
+        await vmjob.free()
+        await sleep(0.1)
+    print('exit ....')
 
 
 def keyboardInterruptHandler(signal, frame):
@@ -234,18 +300,7 @@ def keyboardInterruptHandler(signal, frame):
 
 
 async def main():
-    # 重新加载vms 的配置文件
-    await vmsH.reload_vms_config_info()
     vmjob_list.clear()
-    for one_config in vmsH.get_vms_configs():
-        vmjob_list.add(VMJob(
-            vmid=one_config['vmid'],
-            vmname=one_config['vmname'],
-            config_path=one_config['path'],
-            enable=one_config['enable'] == 'true',
-            start_cmd=one_config['startCommand'],
-            max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
-        ))
     print("Start working.....")
     async with TaskGroup() as g:
         await g.spawn(dispatcher)

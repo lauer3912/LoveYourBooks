@@ -54,6 +54,7 @@ class VMSModifyHandler(object):
                     config_vmname = one_config.getAttribute('vmname')
                     config_vmid = one_config.getAttribute('vmid')
                     config_start_cmd = one_config.getAttribute('startCommand')
+                    config_appium_cmd = one_config.getAttribute('appiumCommand')
 
                     self.configs.append({
                         'vmid': config_vmid,
@@ -61,6 +62,7 @@ class VMSModifyHandler(object):
                         'enable': config_enable,
                         'path': config_path,
                         'startCommand': config_start_cmd,
+                        'appiumCommand': config_appium_cmd,
                     })
 
                     if not config_enable or config_enable != 'true':
