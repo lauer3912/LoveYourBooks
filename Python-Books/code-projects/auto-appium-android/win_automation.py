@@ -186,7 +186,7 @@ class VMJob(object):
 # 定义队列及关键共享数据
 messages = Queue()
 subscribers = set()
-app_vmjob_list = set()
+app_vmjob_list = []
 
 
 # Dispatch task that forwards incoming messages to subscribers
@@ -296,9 +296,9 @@ async def main():
     # 重新加载vms 的配置文件
     await vmsH.reload_vms_config_info()
     # 动态获取VMS的配置内容
-    app_vmjob_list.clear()
+    app_vmjob_list = []
     for one_config in vmsH.get_vms_configs():
-        app_vmjob_list.update(
+        app_vmjob_list.append(
             VMJob(
             vmid=one_config['vmid'],
             vmname=one_config['vmname'],
