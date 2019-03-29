@@ -2,6 +2,7 @@
 # PYTHON_VERSION=3.6
 
 import locale
+
 print(locale.getdefaultlocale())
 
 import os
@@ -13,12 +14,14 @@ import sys
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
 import logging.handlers
-handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'win_auto.log'), maxBytes=1024*1024*5, backupCount=5) # 实例化 handler
+
+handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'win_auto.log'), maxBytes=1024 * 1024 * 5,
+                                               backupCount=5)  # 实例化 handler
 fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
-formatter = logging.Formatter(fmt)   # 实例化 formatter
-handler.setFormatter(formatter)      # 为 handler 添加 formatter
-logger = logging.getLogger('tst')    # 获取名为 tst 的 logger
-logger.addHandler(handler)           # 为 logger 添加 handler
+formatter = logging.Formatter(fmt)  # 实例化 formatter
+handler.setFormatter(formatter)  # 为 handler 添加 formatter
+logger = logging.getLogger('tst')  # 获取名为 tst 的 logger
+logger.addHandler(handler)  # 为 logger 添加 handler
 logger.setLevel(logging.DEBUG)
 
 import psutil
@@ -31,7 +34,7 @@ from libs.vmsmodify import VMSModifyHandler
 print("The python path is '%s'" % sys.executable)
 
 # 定义vmsH
-vmsH = VMSModifyHandler()
+vmsH = VMSModifyHandler(logger=logger)
 
 
 class VMJob(object):
@@ -107,7 +110,7 @@ class VMJob(object):
 
             # 根据只创建一个后台跟踪的方式
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            logger.info('current dir path = ', current_dir)
+            logger.info('current dir path = {}'.format(current_dir))
             proc = subprocess.Popen(self.start_cmd,
                                     cwd=current_dir,
                                     shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -217,9 +220,10 @@ async def subscriber(name):
             is_back_proc_running = vmjob.get_back_proc_is_running()
 
             logger.info('is_vm_running={},'
-                  'is_vm_starting={},'
-                  'is_job_overtime={}, '
-                  'is_back_proc_running={}'.format(is_vm_running, is_vm_starting, is_job_overtime, is_back_proc_running))
+                        'is_vm_starting={},'
+                        'is_job_overtime={}, '
+                        'is_back_proc_running={}'.format(is_vm_running, is_vm_starting, is_job_overtime,
+                                                         is_back_proc_running))
 
             if not is_vm_running:
                 if not is_vm_starting:
@@ -230,8 +234,9 @@ async def subscriber(name):
                     vmjob.stop_all_back_procs()
                     await vmjob.stop_back_handler()
                 else:
-                    logger.info('VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
-                                                                                          vmjob.max_run_time))
+                    logger.info(
+                        'VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
+                                                                                        vmjob.max_run_time))
             # 检测后台正在运行
             if not is_back_proc_running:
                 await vmjob.create_sub_process()

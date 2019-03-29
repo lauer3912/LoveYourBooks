@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import locale
+
 print(locale.getdefaultlocale())
 
 import argparse
@@ -7,7 +8,6 @@ import os
 import random
 import signal
 import sys
-import threading
 import time
 
 from appium import webdriver
@@ -30,13 +30,16 @@ app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 日志
 import logging.handlers
-handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'vmid-{}-run.log'.format(app_args.vmid)), maxBytes=1024*1024*5, backupCount=5) # 实例化 handler
+
+handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'vmid-{}-run.log'.format(app_args.vmid)),
+                                               maxBytes=1024 * 1024 * 5, backupCount=5)  # 实例化 handler
 fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
-formatter = logging.Formatter(fmt)   # 实例化 formatter
-handler.setFormatter(formatter)      # 为 handler 添加 formatter
-logger = logging.getLogger('tst')    # 获取名为 tst 的 logger
-logger.addHandler(handler)           # 为 logger 添加 handler
+formatter = logging.Formatter(fmt)  # 实例化 formatter
+handler.setFormatter(formatter)  # 为 handler 添加 formatter
+logger = logging.getLogger('tst')  # 获取名为 tst 的 logger
+logger.addHandler(handler)  # 为 logger 添加 handler
 logger.setLevel(logging.DEBUG)
+
 
 class RunningHelper(object):
     @staticmethod

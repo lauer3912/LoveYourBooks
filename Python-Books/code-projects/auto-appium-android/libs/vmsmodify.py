@@ -5,22 +5,30 @@
 """
 import os
 import subprocess
-from pprint import pprint
 import xml.dom.minidom
-from xml import etree
 
 from .utils import Utils
 
 
 class VMSModifyHandler(object):
 
-    def __init__(self):
+    def __init__(self, logger):
+        self.logger = logger
         self.config_dir = os.path.dirname(os.path.abspath(__file__))
         self.config_xml_file = os.path.join(self.config_dir, 'vms.config.xml')
-        print('The VMS Config XML Path: ', self.config_xml_file)
+        self.print('The VMS Config XML Path: {}'.format(self.config_xml_file))
 
         self.vmcmd = 'C:\Program Files\Microvirt\MEmu\memuc.exe'
         self.configs = []  # config xml element
+
+    def print(self, msg, is_exception=False):
+        if self.logger:
+            if is_exception:
+                self.logger.exception('Error:')
+            else:
+                self.logger.info(msg)
+        else:
+            print(msg)
 
     def get_vms_configs(self):
         return self.configs
@@ -39,10 +47,10 @@ class VMSModifyHandler(object):
         for one_machine in machines:
             if one_machine.hasAttribute('name'):
                 machine_name = one_machine.getAttribute('name')
-                print("Reading the '%s' machine config information." % machine_name)
+                self.print("Reading the '%s' machine config information." % machine_name)
 
             configs = one_machine.getElementsByTagName('config')
-            print("The config information count = %d" % len(configs))
+            self.print("The config information count = %d" % len(configs))
 
             # 根据每一个config来处理内容
             for one_config in configs:
@@ -70,7 +78,7 @@ class VMSModifyHandler(object):
 
     def modify_all_vms(self):
         if len(self.configs) == 0:
-            print("The vms config file is invalid, please run reload_vms_config_info() function first.")
+            self.print("The vms config file is invalid, please run reload_vms_config_info() function first.")
             return
 
         for one_config in self.configs:
@@ -84,11 +92,11 @@ class VMSModifyHandler(object):
 
             # 判断配置是否是文件，并且具有可读写操作
             if os.path.isfile(config_path):
-                print("vmid=%s, vmname=%s, vmsfile=%s" % (config_vmid, config_vmname, config_path))
+                self.print("vmid=%s, vmname=%s, vmsfile=%s" % (config_vmid, config_vmname, config_path))
                 VMSModifyHandler.rebuild(config_path)
 
     def set_vm_config(self, vmid):
-        print('start setting vm new config...')
+        self.print('start setting vm new config...')
         new_gps_pos = Utils.generate_new_pos()
         config_info = {
             'macaddress': ":".join(Utils.generate_new_mac_address_list()).upper(),
@@ -97,30 +105,33 @@ class VMSModifyHandler(object):
             'longitude': str(new_gps_pos['longitude']),
             'simserial': str(Utils.generate_new_simserial()),
             'imei': str(Utils.generate_new_imei()),
-        
-            #'bssid': Utils.generate_new_bssid().upper(),
-            #'cellid': Utils.generate_new_cellid(),
-            #'ssid': Utils.generate_new_wifi_id(),
+
+            # 'bssid': Utils.generate_new_bssid().upper(),
+            # 'cellid': Utils.generate_new_cellid(),
+            # 'ssid': Utils.generate_new_wifi_id(),
 
         }
         for key in config_info.keys():
             value = config_info[key]
-            obj = subprocess.Popen([self.vmcmd, 'setconfig', '-i', vmid, key, value], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+            obj = subprocess.Popen([self.vmcmd, 'setconfig', '-i', vmid, key, value], stdin=subprocess.PIPE,
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
             cmd_out = obj.stdout.read()
             obj.stdout.close()
-            print(cmd_out)
+            self.print(cmd_out)
 
-        print('setting vm new config over ...')
+        self.print('setting vm new config over ...')
 
     async def adb_devices(self):
-        obj = subprocess.Popen(['adb','devices'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        obj = subprocess.Popen(['adb', 'devices'], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, universal_newlines=True)
         cmd_out = obj.stdout.read()
         obj.stdout.close()
-        print('CMD: adb devices')
-        print(cmd_out)
+        self.print('CMD: adb devices')
+        self.print(cmd_out)
 
     async def start_vm(self, vmid):
-        obj = subprocess.Popen([self.vmcmd, 'start', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        obj = subprocess.Popen([self.vmcmd, 'start', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, universal_newlines=True)
         cmd_out = obj.stdout.read()
         obj.stdout.close()
 
@@ -130,7 +141,8 @@ class VMSModifyHandler(object):
         return False
 
     async def stop_vm(self, vmid):
-        obj = subprocess.Popen([self.vmcmd, 'stop', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        obj = subprocess.Popen([self.vmcmd, 'stop', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, universal_newlines=True)
         cmd_out = obj.stdout.read()
         obj.stdout.close()
 
@@ -140,7 +152,8 @@ class VMSModifyHandler(object):
         return False
 
     async def vm_is_running(self, vmid):
-        obj = subprocess.Popen([self.vmcmd, 'isvmrunning', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        obj = subprocess.Popen([self.vmcmd, 'isvmrunning', '-i', vmid], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, universal_newlines=True)
         cmd_out = obj.stdout.read()
         obj.stdout.close()
 
@@ -148,7 +161,6 @@ class VMSModifyHandler(object):
             return True
 
         return False
-
 
     @staticmethod
     def rebuild(vms_file=''):
