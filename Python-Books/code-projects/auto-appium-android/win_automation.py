@@ -288,7 +288,7 @@ async def main():
             enable=one_config['enable'] == 'true',
             start_cmd=one_config['startCommand'],
             appium_cmd=one_config['appiumCommand'],
-            max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+            max_run_time=random.randint(35, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
         ))
 
     print("Start working.....")
