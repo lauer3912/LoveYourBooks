@@ -66,7 +66,7 @@ class VMJob(object):
         is_running = False
         if proc_handler:
             try:
-                all_pids = await psutil.pids()
+                all_pids = psutil.pids()
                 if all_pids.index(proc_handler.pid) >= 0:
                     is_running = True
                 elif len(all_pids) > 0:
