@@ -11,5 +11,5 @@ members = [
 ]
 
 [dependencies]
-caller_for_serde_json = { path = "./caller_for_serde_json", version = "0.1.0"}
+caller_for_serde_json = { path = "./caller_for_serde_json", version = "0.1.0", features = ["enable_call_try_use_foo"]}
 caller-for-rustc-serialize = { path = "./caller-for-rustc-serialize", as = "caller-std-json"}

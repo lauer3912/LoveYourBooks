@@ -3,14 +3,245 @@
   <component name="ChangeListManager">
     <list default="true" id="ce3baf1d-fe09-42a2-b072-5aa70cc3063e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" beforeDir="false" afterPath="$PROJECT_DIR$/../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Go-Books/GoPrimer/src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Go-Books/GoPrimer/src/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maths-Study/coder/linear-algebra/simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/Maths-Study/coder/linear-algebra/simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/ferris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/ferris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/1st-glance/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/1st-glance/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/db/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/db/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/json_data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/json_data/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/mysite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/mysite/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/action/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/any/any.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/any/any.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/appendix/glossary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/appendix/glossary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/attribute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/rustc-option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/attr-and-compiler-arg/rustc-option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-detailed-cfg/cargo-detailed-cfg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-detailed-cfg/cargo-detailed-cfg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-io/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-io/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-projects-manager/cargo-projects-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/cargo-projects-manager/cargo-projects-manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/as_argument_return_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/as_argument_return_value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/implementation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/implementation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/syntax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/closure/syntax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/coding-style/style.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/coding-style/style.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/hashmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/hashmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/string.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/string.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/vec.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/collections/vec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/comments/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/comments/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/message-passing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/message-passing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/parallel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/parallel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/share-memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/share-memory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/synchronize.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/synchronize.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/thread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/concurrency-parallel-thread/thread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/const-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/const-function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/const-value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/const-value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/constants/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/binary_tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/binary_tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/graph.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/graph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/linked_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/linked_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/priority_queue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/priority_queue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/queue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/queue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/data-structure/stack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/enums/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/enums/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/option-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/option-result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/error-handling/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/calling-ffi-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/calling-ffi-function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/compiling-rust-to-lib.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/compiling-rust-to-lib.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ffi/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/condition/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/condition/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/loop/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/loop/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/flow-control/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/format/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/format/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/arguement.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/arguement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/higher_order_function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/higher_order_function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/return_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/return_value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/statement_expression.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/function/statement_expression.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic-data-struct.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic-data-struct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic-function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/what-is-generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/generic-program/what-is-generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/heap-stack/heap-stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/heap-stack/heap-stack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/heap-stack/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/heap-stack/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/asref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/asref.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/borrow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/borrow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/cow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/cow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/deref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/deref.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/into.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/into.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/intoborrow/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/file-io.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/file-io.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/io.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/io.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/output.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/io/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/iterator/iterator.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/iterator/iterator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/iterator/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/iterator/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_Self.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_Self.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_abstract.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_abstract.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_as.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_as.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_async.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_async.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_become.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_become.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_box.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_break.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_break.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_const.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_const.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_continue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_continue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_crate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_crate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_do.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_do.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_dyn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_dyn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_else.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_else.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_enum.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_enum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_extern.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_extern.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_false.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_false.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_final.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_fn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_fn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_for.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_for.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_if.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_if.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_impl.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_impl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_let.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_let.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_loop.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_loop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_macro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_match.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_match.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_mod.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_mod.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_move.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_move.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_mut.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_mut.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_override.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_override.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_priv.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_priv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_pub.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_pub.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_ref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_ref.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_return.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_return.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_self_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_self_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_static.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_static.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_struct.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_struct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_super.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_super.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_trait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_true.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_true.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_try.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_try.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_typeof.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_typeof.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_unsafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_unsafe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_virtual.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_virtual.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_where.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_where.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_while.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_while.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_yield.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/k_yield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/keywords/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/macro/macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/macro/macro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/marker/sendsync.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/marker/sendsync.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/match.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/match.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/pattern.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/match/pattern.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/module.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/module.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/prelude.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/prelude.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/pub-restricted.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/module/pub-restricted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/oo-design-patterns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/oo-design-patterns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/trait-object.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/trait-object.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/trait/trait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/what-is-oo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/oop/what-is-oo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/as.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/as.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/overloading/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/overloading/operator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/operator/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/borrowing_reference.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/borrowing_reference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/example-ownership.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/example-ownership.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/lifetime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/lifetime.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/what-is-ownership.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/ownership-system/what-is-ownership.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/safe/safety.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/safe/safety.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/mutex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/mutex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/rcarc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/smart-pointers/rcarc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/fs-and-path.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/fs-and-path.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/net.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/net.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/process.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/std/process.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/structs/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/structs/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/bench.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/bench.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/threearchtest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/testing/threearchtest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/array.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/array.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/bool.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/bool.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/char.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/char.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/compound-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/compound-types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/float.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/float.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/fn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/fn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/integer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/integer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/macro-kernel-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/macro-kernel-types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/primitives-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/primitives-types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/raw-point.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/raw-point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/ref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/ref.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/tuple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/tuple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/unit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/type/unit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/raw-pointer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/raw-pointer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/unsafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/unsafe-rawpointer/unsafe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/bindings.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/bindings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/mutability.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/mutability.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/scope.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/scope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/what-is-variable.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/core/variable/what-is-variable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/atom.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/atom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/before.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/before.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/emacs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/emacs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/intellij-idea.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/intellij-idea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/spacemacs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/spacemacs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/sublime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/sublime.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/vim.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/vim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/visualstudio.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/visualstudio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/vscode.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/editors/vscode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/ferris.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/ferris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_linux.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_linux.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_mac_os.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_mac_os.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_windows.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/install_rust_on_windows.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/preface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/rustup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/rustup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/use_mirrors_quickly.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/install/use_mirrors_quickly.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/print.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/extern_crate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/extern_crate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_allow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_allow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_cfg_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_cfg_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_derive_copy_and_clone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_derive_copy_and_clone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_derive_trail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_derive_trail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_inline.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_inline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_stable.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_stable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/meta_program_macro_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/point_static.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/problems/point_static.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/comments-document.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/comments-document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/control-flow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/control-flow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/data-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/data-types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/function-method.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/function-method.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/io-stream.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/io-stream.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/let.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/let.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/quickstart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/quickstart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/rust-travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/rust-travel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/struct-enum.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/struct-enum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/trait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/vector-string.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/quickstart/vector-string.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/book/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/001_json_process_compare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/001_json_process_compare.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/src/use_macro.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/caller_for_serde_json/src/use_macro.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/code-example/001_json_process_compare/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/src/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rust-Books/RustPrimer/src/problems/meta_program_macro_cfg_test.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/RustPrimer/src/problems/meta_program_macro_cfg_test.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rust-Books/rust-cookbook-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/rust-cookbook-by-nursery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/rust-reference-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/rust-reference-by-nursery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rust-Books/rust-reference-by-offial" beforeDir="false" afterPath="$PROJECT_DIR$/../Rust-Books/rust-reference-by-offial" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +250,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Books$simple.coverage" NAME="simple Coverage Results" MODIFIED="1547190678096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Maths-Study/coder/linear-algebra" />
+    <SUITE FILE_PATH="coverage/Python_Books$simple.coverage" NAME="simple Coverage Results" MODIFIED="1548591095859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Maths-Study/coder/linear-algebra" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Maths-Study/coder/linear-algebra/simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="396">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -35,7 +266,35 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Maths-Study/coder/keras-examples/matplotlib-test-data/gen-data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Maths-Study/coder/keras-examples/official/addition_rnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" selection-start-column="23" selection-end-line="1" />
+              <folding>
+                <element signature="e#1023#1060#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -44,12 +303,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Maths-Study/coder/linear-algebra/simple.py" />
+        <option value="$PROJECT_DIR$/Maths-Study/coder/keras-examples/official/addition_rnn.py" />
+        <option value="$PROJECT_DIR$/Maths-Study/coder/keras-examples/matplotlib-test-data/gen-data.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/pycharm.vmoptions" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="149" />
-    <option name="y" value="30" />
+    <option name="x" value="78" />
+    <option name="y" value="78" />
     <option name="width" value="1379" />
     <option name="height" value="882" />
   </component>
@@ -72,6 +334,24 @@
             <path>
               <item name="Python-Books" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python-Books" type="462c0819:PsiDirectoryNode" />
+              <item name="Maths-Study" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Books" type="462c0819:PsiDirectoryNode" />
+              <item name="Maths-Study" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Books" type="462c0819:PsiDirectoryNode" />
+              <item name="Maths-Study" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="keras-examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Books" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Books" type="462c0819:PsiDirectoryNode" />
               <item name="Python3-Man" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -89,12 +369,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="Python-Books" is-module-sdk="true">
-        <option name="useSoftWraps" value="true" />
         <option name="myUseModuleSdk" value="true" />
         <option name="myModuleName" value="Python-Books" />
       </console-settings>
@@ -112,7 +391,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.gen-data">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Python-Books" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,10 +414,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="gen-data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python-Books" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Maths-Study/coder/keras-examples/matplotlib-test-data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Maths-Study/coder/keras-examples/matplotlib-test-data/gen-data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Books" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Maths-Study/coder/linear-algebra" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -156,6 +460,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gen-data" />
         <item itemvalue="Python.simple" />
       </list>
     </recent_temporary>
@@ -175,15 +480,27 @@
       <workItem from="1548205761718" duration="103000" />
       <workItem from="1548208550760" duration="300000" />
       <workItem from="1548209737448" duration="406000" />
+      <workItem from="1548590732280" duration="238000" />
+      <workItem from="1548590990987" duration="3447000" />
+      <workItem from="1548599053789" duration="3847000" />
+      <workItem from="1549942942265" duration="25000" />
+      <workItem from="1549942987439" duration="256000" />
+      <workItem from="1549943272033" duration="201000" />
+      <workItem from="1550646053243" duration="232000" />
+      <workItem from="1551161246474" duration="40000" />
+      <workItem from="1551180536789" duration="595000" />
+      <workItem from="1552444698234" duration="90000" />
+      <workItem from="1552531139492" duration="357000" />
+      <workItem from="1553403459596" duration="48000" />
+      <workItem from="1553434801491" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3440000" />
+    <option name="totallyTimeSpent" value="12827000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="30" width="1379" height="882" extended-state="0" />
-    <editor active="true" />
+    <frame x="78" y="78" width="1379" height="882" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26103216" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -199,13 +516,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50037396" side_tool="true" weight="0.32985657" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49962604" visible="true" weight="0.32985657" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32985657" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49962604" visible="true" weight="0.32985657" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" x="0" y="0" width="294" height="682" id="Documentation" order="4" side_tool="true" weight="0.32984293" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.50389105" visible="true" weight="0.32984293" />
+      <window_info anchor="right" x="0" y="0" width="294" height="682" id="Documentation" order="4" sideWeight="0.49610895" side_tool="true" visible="true" weight="0.32984293" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
   </component>
@@ -213,13 +530,37 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Maths-Study/coder/linear-algebra/simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="396">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Maths-Study/coder/keras-examples/official/addition_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-column="23" selection-end-line="1" />
+          <folding>
+            <element signature="e#1023#1060#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Maths-Study/coder/keras-examples/matplotlib-test-data/gen-data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
         </state>
       </provider>
     </entry>

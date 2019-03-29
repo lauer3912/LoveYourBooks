@@ -10,6 +10,7 @@ extern crate caller_for_serde_json;
 
 // Note: The old name of the crate is "caller-for-rustc-serialize"
 // Auto converted to "caller_for_rustc_serialize" by rust compiler.
+#[macro_use]
 extern crate caller_for_rustc_serialize as caller_std_json;
 
 fn main() {
@@ -18,6 +19,8 @@ fn main() {
     caller_for_serde_json::sample::run_example();
     caller_for_serde_json::value_json::main();
     caller_for_serde_json::use_macro::main();
+    caller_for_serde_json::say_hello!("Dodo");
+    caller_for_serde_json::use_macro::try_use_foo();
 
     caller_std_json::lib_test();
 }
