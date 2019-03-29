@@ -59,6 +59,7 @@ class SysExitWatcher(threading.Thread):
 
 
 watching_thread = SysExitWatcher(vmid=app_args.vmid)
+watching_thread.remove_stop_flag_file()
 watching_thread.start()
 
 
