@@ -2,6 +2,7 @@
 # PYTHON_VERSION=3.6
 
 import locale
+
 print(locale.getdefaultlocale())
 
 import os
@@ -135,12 +136,19 @@ class VMJob(object):
             print("start_back_handler end ...")
 
     def stop_all_back_procs(self):
-        # 尝试terminate
+        # (1)尝试terminate
         try:
             self.back_proc.kill()
+        except Exception as err:
+            print('Error:', err)
+
+        # (2)尝试使用psutil来处理
+        try:
             psutil.Process(self.back_proc.pid).terminate()
         except Exception as err:
             print('Error:', err)
+        finally:
+            self.back_proc = None
 
     async def stop_back_handler(self):
         await sleep(1)
@@ -205,7 +213,9 @@ async def subscriber(name):
                     await vmjob.start_back_handler()
             elif is_running:
                 if is_overtime:
+                    print("VMJOB is overtime ....")
                     await vmjob.stop_back_handler()
+                    vmjob.stop_all_back_procs()
                 else:
                     print('VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
                                                                                           vmjob.max_run_time))
