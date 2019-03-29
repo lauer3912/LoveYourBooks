@@ -92,9 +92,11 @@ class VMJob(object):
                 proc = subprocess.Popen(self.appium_cmd,
                                         shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                         universal_newlines=True)
-                self.appium_cmd_handler = proc
+                if proc:
+                    self.appium_cmd_handler = proc
         except Exception as e:
             print('Error:', e)
+
 
     async def create_sub_process(self):
         print('call create_sub_process ... vmid=', self.vmid)
@@ -114,8 +116,8 @@ class VMJob(object):
                                     cwd=current_dir,
                                     shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                     universal_newlines=True)
-            self.back_proc = proc
-
+            if proc:
+                self.back_proc = proc
         except Exception as err:
             print('ERROR:', err)
 
