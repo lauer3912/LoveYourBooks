@@ -25,7 +25,7 @@ logger.addHandler(handler)  # 为 logger 添加 handler
 logger.setLevel(logging.DEBUG)
 
 import psutil
-from curio import run, TaskGroup, Queue, sleep
+from curio import Kernel, TaskGroup, Queue, sleep
 
 # libs
 from libs.utils import Utils
@@ -323,4 +323,5 @@ async def main():
 if __name__ == '__main__':
     sys.exitfunc = exit_callback
     signal.signal(signal.SIGINT, keyboardInterruptHandler)
-    run(main)
+    with Kernel() as kernel:
+        kernel.run(main, shutdown=True)
