@@ -314,4 +314,4 @@ async def main():
 if __name__ == '__main__':
     sys.exitfunc = exit_callback
     signal.signal(signal.SIGINT, keyboardInterruptHandler)
-    run(main, shutdown=True)
+    run(main)
