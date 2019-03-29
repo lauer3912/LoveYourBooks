@@ -186,7 +186,7 @@ class VMJob(object):
 # 定义队列及关键共享数据
 messages = Queue()
 subscribers = set()
-app_vmjob_list = []
+app_vmjob_list = set()
 
 
 # Dispatch task that forwards incoming messages to subscribers
@@ -296,17 +296,16 @@ async def main():
     # 重新加载vms 的配置文件
     await vmsH.reload_vms_config_info()
     # 动态获取VMS的配置内容
-    app_vmjob_list = []
+    app_vmjob_list.clear()
     for one_config in vmsH.get_vms_configs():
-        app_vmjob_list.append(
-            VMJob(
+        app_vmjob_list.add(VMJob(
             vmid=one_config['vmid'],
             vmname=one_config['vmname'],
             config_path=one_config['path'],
             enable=one_config['enable'] == 'true',
             start_cmd=one_config['startCommand'],
             appium_cmd=one_config['appiumCommand'],
-            max_run_time=random.randint(10, 35) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+            max_run_time=random.randint(10, 35) * 60 * 1000,  # 60 * 5 * 1000 # 毫秒
         ))
 
     logger.info("Start working.....")
