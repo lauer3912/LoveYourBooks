@@ -16,7 +16,7 @@
     ** appium -p 4727
     ** appium -p 4729
     -->
-    <machine name="Anlin PC">
+    <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80">
         <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_2\MEmu_2.memu" vmname="web-001" vmid="2"
                 appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21523 --v 2"/>
@@ -31,7 +31,10 @@
                 startCommand="python run.py --s http://127.0.0.1:4729/wd/hub --d 127.0.0.1:21553 --v 5"/>
                 
     </machine>
-    <machine name="Ian Server PC">
+    <machine name="Ian Server PC" macAddress="">
+
+    </machine>
+    <machine name="Lucy PC" macAddress="70:5a:0f:40:2a:c6">
 
     </machine>
 </machines>

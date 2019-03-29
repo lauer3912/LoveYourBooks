@@ -6,6 +6,7 @@
 import os
 import subprocess
 import xml.dom.minidom
+import uuid
 
 from .utils import Utils
 
@@ -30,6 +31,11 @@ class VMSModifyHandler(object):
         else:
             print(msg)
 
+    @staticmethod
+    def get_local_mac_address():
+        mac = uuid.UUID(int=uuid.getnode()).hex[-12:]
+        return ":".join([mac[e:e + 2] for e in range(0, 11, 2)])
+
     def get_vms_configs(self):
         return self.configs
 
@@ -47,7 +53,8 @@ class VMSModifyHandler(object):
         for one_machine in machines:
             if one_machine.hasAttribute('name'):
                 machine_name = one_machine.getAttribute('name')
-                self.print("Reading the '%s' machine config information." % machine_name)
+                machine_mac_address = one_machine.getAttribute('macAddress')
+                self.print("Reading the '{0} - {1}' machine config information.".format(machine_name, machine_mac_address))
 
             configs = one_machine.getElementsByTagName('config')
             self.print("The config information count = %d" % len(configs))
@@ -65,6 +72,7 @@ class VMSModifyHandler(object):
                     config_appium_cmd = one_config.getAttribute('appiumCommand')
 
                     self.configs.append({
+                        'macAddress': machine_mac_address,
                         'vmid': config_vmid,
                         'vmname': config_vmname,
                         'enable': config_enable,
