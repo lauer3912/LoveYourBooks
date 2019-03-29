@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import locale
+print(locale.getdefaultlocale())
+
 import argparse
 import os
 import random
@@ -25,26 +28,26 @@ app_parser.add_argument('--v', dest='vmid', action='store', default=0,
 app_args = app_parser.parse_args()
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
-#
-# # Use thread to watching the exit signal
-# class SysExitWatcher(threading.Thread):
-#     def __init__(self, vmid):
-#         threading.Thread.__init__(self)
-#         self.vmid = vmid
-#
-#     def run(self):
-#         print('The SysExitWatcher thread is running ....')
-#         while True:
-#             time.sleep(2)
-#             stop_file = os.path.join(app_current_dir, 'vmid-{}-stop.flag'.format(self.vmid))
-#             # print(stop_file)
-#             if os.path.isfile(stop_file):
-#                 print('sys.exit()')
-#                 sys.exit(0)
-#
-#
-# watching_thread = SysExitWatcher(vmid=app_args.vmid)
-# watching_thread.start()
+
+# Use thread to watching the exit signal
+class SysExitWatcher(threading.Thread):
+    def __init__(self, vmid):
+        threading.Thread.__init__(self)
+        self.vmid = vmid
+
+    def run(self):
+        print('The SysExitWatcher thread is running ....')
+        while True:
+            time.sleep(2)
+            stop_file = os.path.join(app_current_dir, 'vmid-{}-stop.flag'.format(self.vmid))
+            # print(stop_file)
+            if os.path.isfile(stop_file):
+                print('sys.exit()')
+                sys.exit(0)
+
+
+watching_thread = SysExitWatcher(vmid=app_args.vmid)
+watching_thread.start()
 
 
 class RunningHelper(object):
