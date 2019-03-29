@@ -39,16 +39,16 @@ class VMJob(object):
         self.back_proc = None
         self.startingVM = False
 
-    async def is_running(self):
+    async def is_vm_running(self):
         is_runnig = await vmsH.vm_is_running(self.vmid)
         return is_runnig
 
-    async def is_starting(self):
+    async def is_vm_starting(self):
         return self.startingVM
 
-    async def is_overtime(self):
-        is_running = await self.is_running()
-        is_starting = await self.is_starting()
+    async def is_job_overtime(self):
+        is_running = await self.is_vm_running()
+        is_starting = await self.is_vm_starting()
         if not is_running or is_starting:
             return False
 
@@ -63,7 +63,7 @@ class VMJob(object):
 
         return False
 
-    def _get_proc_is_running(self, proc_name, proc_handler):
+    def _get_proc_is_running(self, proc_name, proc_handler=None):
         is_running = False
         if proc_handler:
             try:
@@ -117,7 +117,7 @@ class VMJob(object):
             print("call vmsH.start_vm(self.vmid)")
             await vmsH.start_vm(self.vmid)
             await sleep(10)
-            is_running = await self.is_running()
+            is_running = await self.is_vm_running()
             if not is_running:
                 self.startingVM = False
                 print('Start vm failed ... vmid=', self.vmid)
@@ -154,7 +154,7 @@ class VMJob(object):
         await sleep(1)
         await vmsH.stop_vm(self.vmid)
         await sleep(5)
-        is_running = await self.is_running()
+        is_running = await self.is_vm_running()
         if is_running:
             self.startingVM = False
             print('Close VM failed ... vmid=', self.vmid)
@@ -198,24 +198,24 @@ async def subscriber(name):
                 continue
             print(name, 'watching', vmjob.vmid, vmjob.vmname)
 
-            is_running = await vmjob.is_running()
-            is_starting = await vmjob.is_starting()
-            is_overtime = await vmjob.is_overtime()
+            is_vm_running = await vmjob.is_vm_running()
+            is_vm_starting = await vmjob.is_vm_starting()
+            is_job_overtime = await vmjob.is_job_overtime()
             is_back_proc_running = vmjob.get_back_proc_is_running()
 
-            print('is_running={},'
-                  'is_starting={},'
-                  'is_overtime={}, '
-                  'is_back_proc_running={}'.format(is_running, is_starting, is_overtime, is_back_proc_running))
+            print('is_vm_running={},'
+                  'is_vm_starting={},'
+                  'is_job_overtime={}, '
+                  'is_back_proc_running={}'.format(is_vm_running, is_vm_starting, is_job_overtime, is_back_proc_running))
 
-            if not is_running:
-                if not is_starting:
+            if not is_vm_running:
+                if not is_vm_starting:
                     await vmjob.start_back_handler()
-            elif is_running:
-                if is_overtime:
+            elif is_vm_running:
+                if is_job_overtime:
                     print("VMJOB is overtime ....")
-                    await vmjob.stop_back_handler()
                     vmjob.stop_all_back_procs()
+                    await vmjob.stop_back_handler()
                 else:
                     print('VM-IS-RUNNING  vmid={}, vmname={}, max_run_time={} ms.'.format(vmjob.vmid, vmjob.vmname,
                                                                                           vmjob.max_run_time))
