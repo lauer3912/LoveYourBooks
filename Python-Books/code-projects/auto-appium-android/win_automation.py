@@ -2,7 +2,6 @@
 # PYTHON_VERSION=3.6
 
 import locale
-
 print(locale.getdefaultlocale())
 
 import os
@@ -13,8 +12,6 @@ import sys
 
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
-
-import logging
 import logging.handlers
 handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'win_auto.log'), maxBytes=1024*1024*5, backupCount=5) # 实例化 handler
 fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
@@ -98,7 +95,7 @@ class VMJob(object):
         return self._get_proc_is_running('PythonRun', self.back_proc)
 
     async def create_sub_process(self):
-        logger.info('call create_sub_process ... vmid=', self.vmid)
+        logger.info('call create_sub_process ... vmid={}'.format(self.vmid))
         try:
             self.start_time = Utils.get_now_time()
 
@@ -106,7 +103,7 @@ class VMJob(object):
             if self.get_back_proc_is_running():
                 return
 
-            logger.info('Must create a new process back handler ... vmid=', self.vmid)
+            logger.info('Must create a new process back handler ... vmid={}'.format(self.vmid))
 
             # 根据只创建一个后台跟踪的方式
             current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -133,7 +130,7 @@ class VMJob(object):
             is_running = await self.is_vm_running()
             if not is_running:
                 self.startingVM = False
-                logger.info('Start vm failed ... vmid=', self.vmid)
+                logger.info('Start vm failed ... vmid={}'.format(self.vmid))
             else:
                 await sleep(3)
                 logger.info('call adb_devices again ...')
@@ -172,7 +169,7 @@ class VMJob(object):
         is_running = await self.is_vm_running()
         if is_running:
             self.startingVM = False
-            logger.info('Close VM failed ... vmid=', self.vmid)
+            logger.info('Close VM failed ... vmid={}'.format(self.vmid))
         else:
             self.start_time = Utils.get_now_time() * 10  # 表示不会被重新启动
 
@@ -207,11 +204,12 @@ async def subscriber(name):
     try:
         async for msg in queue:
             vmjob = msg
-            logger.info(name, 'got', vmjob.vmid, vmjob.vmname)
+            logger.info("{} got vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
 
             if not vmjob.enable:
                 continue
-            logger.info(name, 'watching', vmjob.vmid, vmjob.vmname)
+
+            logger.info("{} watching vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
 
             is_vm_running = await vmjob.is_vm_running()
             is_vm_starting = await vmjob.is_vm_starting()
@@ -284,7 +282,7 @@ async def main():
             enable=one_config['enable'] == 'true',
             start_cmd=one_config['startCommand'],
             appium_cmd=one_config['appiumCommand'],
-            max_run_time=random.randint(120, 480) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+            max_run_time=random.randint(15, 35) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
         ))
 
     logger.info("Start working.....")

@@ -28,6 +28,16 @@ app_parser.add_argument('--v', dest='vmid', action='store', default=0,
 app_args = app_parser.parse_args()
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
+# 日志
+import logging.handlers
+handler = logging.handlers.RotatingFileHandler(os.path.join(app_current_dir, 'vmid-{}-run.log'.format(app_args.vmid)), maxBytes=1024*1024*5, backupCount=5) # 实例化 handler
+fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
+formatter = logging.Formatter(fmt)   # 实例化 formatter
+handler.setFormatter(formatter)      # 为 handler 添加 formatter
+logger = logging.getLogger('tst')    # 获取名为 tst 的 logger
+logger.addHandler(handler)           # 为 logger 添加 handler
+logger.setLevel(logging.DEBUG)
+
 class RunningHelper(object):
     @staticmethod
     def get_flag_file(vmid):
@@ -39,16 +49,16 @@ class RunningHelper(object):
         if not os.path.isfile(flag_file):
             try:
                 open(flag_file, "w+").close()
-            except Exception as err:
-                print(err)
+            except Exception:
+                logger.exception("Error:")
 
     @staticmethod
     def remove_can_stop_vm_flag_file(flag_file):
         if os.path.isfile(flag_file):
             try:
                 os.remove(flag_file)
-            except Exception as err:
-                print(err)
+            except Exception:
+                logger.exception("Error:")
 
 
 # 全局配置
@@ -80,8 +90,8 @@ def sys_exit(message):
     """
     系统退出
     """
-    print(message)
-    print("The system is about to exit ...")
+    logger.info(message)
+    logger.info("The system is about to exit ...")
     exit(0)
 
 
@@ -91,8 +101,8 @@ def siample_touch(driver):
         eye1.press(x=random.randint(100, 150),
                    y=random.randint(100, 150)).release()
         time.sleep(1)
-    except Exception as err:
-        print(err)
+    except Exception:
+        logger.exception("Error:")
     finally:
         pass
 
@@ -105,13 +115,13 @@ def auto_scroll_page(driver):
     """
     自动从上到下滚动，处理页面滑动问题
     """
-    print("Start Auto Scroll")
+    logger.info("Start Auto Scroll")
     total_width = driver.execute_script("return document.body.offsetWidth")
     total_height = driver.execute_script(
         "return document.body.parentNode.scrollHeight")
     viewport_width = driver.execute_script("return document.body.clientWidth")
     viewport_height = driver.execute_script("return window.innerHeight")
-    print("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+    logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
         total_width, total_height, viewport_width, viewport_height))
 
     rectangles = []
@@ -130,7 +140,7 @@ def auto_scroll_page(driver):
             if top_width > total_width:
                 top_width = total_width
 
-            print("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+            logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
             rectangles.append((ii, i, top_width, top_height))
 
             ii = ii + viewport_width
@@ -143,7 +153,7 @@ def auto_scroll_page(driver):
     for rectangle in rectangles:
         if not previous is None:
             driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
-            print("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
+            logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
             time.sleep(round(random.uniform(0.2, 1.6), 2))
 
         if rectangle[1] + viewport_height > total_height:
@@ -154,7 +164,7 @@ def auto_scroll_page(driver):
         part = part + 1
         previous = rectangle
 
-    print("Finishing chrome full page scroll workaround...")
+    logger.info("Finishing chrome full page scroll workaround...")
     return True
 
 
@@ -201,15 +211,15 @@ def starup(want_open_url):
         # hGFjNk5R
         # EUONFNPKASP5WXYVCEVOUEA
 
-        print("Starting webdriver ...")
-        print("remote server address : %s" % app_args.remote_server)
+        logger.info("Starting webdriver ...")
+        logger.info("remote server address : %s" % app_args.remote_server)
 
         globals_drivers[now_driver_id] = webdriver.Remote(app_args.remote_server, desired_caps)
 
-        print("Open %s" % want_open_url)
+        logger.info("Open %s" % want_open_url)
 
         global_config['run_to_get_urls_count'] = global_config['run_to_get_urls_count'] + 1
-        print("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
+        logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
         max_page_load_timeout = random.randint(90, 120)
@@ -224,16 +234,16 @@ def starup(want_open_url):
             RunningHelper.remove_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
             # 执行打开网页
             globals_drivers[now_driver_id].get(want_open_url)
-        except Exception as e:
-            print(e)
-            print('time out after %d seconds when loading page' % max_page_load_timeout)
+        except Exception:
+            logger.exception("Error:")
+            logger.info('time out after %d seconds when loading page' % max_page_load_timeout)
 
             try:
-                print('call window.stop()')
+                logger.info('call window.stop()')
                 globals_drivers[now_driver_id].execute_script(
                     'window.stop()')  # 当页面加载时间超过设定时间，通过执行Javascript来stop加载，即可执行后续动作
-            except Exception as jsErr:
-                print(jsErr)
+            except Exception:
+                logger.exception("Error:")
 
         # print(u"正在获取当前环境 ...")
         # 获取当前上下文环境
@@ -241,12 +251,12 @@ def starup(want_open_url):
         # contexts = driver.contexts
 
         # 可以滚动一下
-        print("The Web page is ready, ready, you can scroll ...")
+        logger.info("The Web page is ready, ready, you can scroll ...")
         siample_touch(globals_drivers[now_driver_id])
         auto_scroll_page(globals_drivers[now_driver_id])
 
         # 休息一会
-        print("Take a break first, let the Web page itself quiet...")
+        logger.info("Take a break first, let the Web page itself quiet...")
         min_sleep_secs = random.randint(75, 180)
         time.sleep(min_sleep_secs)
 
@@ -254,7 +264,7 @@ def starup(want_open_url):
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
 
         # 浏览完成后，可以关闭了
-        print("After browsing is complete, you can close the page...")
+        logger.info("After browsing is complete, you can close the page...")
 
         # print(contexts)
         # print(current_context)
@@ -272,15 +282,15 @@ def starup(want_open_url):
         # search_box.send_keys('hello toby')
         has_error = False
         global_config['run_count'] = global_config['run_count'] + 1
-    except Exception as e:
-        print(e)
+    except Exception:
+        logger.exception("Error:")
         has_error = True
     finally:
-        print("pages that are currently open count = %d" % global_config['run_count'])
+        logger.info("pages that are currently open count = %d" % global_config['run_count'])
         try:
             globals_drivers[now_driver_id].quit()
-        except Exception as e:
-            print(e)
+        except Exception:
+            logger.exception("Error:")
         if has_error:
             # 重新开启刷屏处理
             time.sleep(random.randint(10, 15))
@@ -304,19 +314,19 @@ def browser_boot():
         for index in range(len(all_urls)):
             sort_indexs.append(index)
 
-        print("Now process the web page count： %d" % len(sort_indexs))
+        logger.info("Now process the web page count： %d" % len(sort_indexs))
 
         # 让列表乱序处理
         random.shuffle(sort_indexs)
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
             starup(cur_url)
-            print("Prepare the next web page url ... index=%d" % cur_index)
+            logger.info("Prepare the next web page url ... index=%d" % cur_index)
             time.sleep(random.randint(6, 12))
 
 
 def keyboardInterruptHandler(signal, frame):
-    print("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    logger.info("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
     exit(0)
 
 
@@ -324,7 +334,7 @@ if __name__ == "__main__":
     try:
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         browser_boot()
-    except Exception as e:
-        print(e)
+    except Exception:
+        logger.exception("Error:")
     finally:
         exit(0)
