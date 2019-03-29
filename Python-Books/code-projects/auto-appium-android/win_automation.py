@@ -192,7 +192,7 @@ class VMJob(object):
 # 定义队列及关键共享数据
 messages = Queue()
 subscribers = set()
-vmjob_list = set()
+app_vmjob_list = set()
 
 
 # Dispatch task that forwards incoming messages to subscribers
@@ -250,8 +250,6 @@ async def subscriber(name):
 # A sample producer task
 async def producer():
     while True:
-        await sleep(30)
-
         # 重新加载vms 的配置文件
         await vmsH.reload_vms_config_info()
 
@@ -260,7 +258,7 @@ async def producer():
 
             # 查找vmjob是否已经存在
             already_added_vmjob = None
-            for one_vmjob in vmjob_list:
+            for one_vmjob in app_vmjob_list:
                 if one_vmjob.vmid == one_config['vmid']:
                     already_added_vmjob = one_vmjob
                     break
@@ -271,7 +269,7 @@ async def producer():
                 already_added_vmjob.enable = one_config['enable'] == 'true'
                 already_added_vmjob.start_cmd = one_config['startCommand']
             else:  # 不存在，新建
-                vmjob_list.add(VMJob(
+                app_vmjob_list.add(VMJob(
                     vmid=one_config['vmid'],
                     vmname=one_config['vmname'],
                     config_path=one_config['path'],
@@ -281,18 +279,20 @@ async def producer():
                     max_run_time=random.randint(15, 60) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
                 ))
 
+        await sleep(30)
+
         # 准备发送相关的VMJOB数据
-        for vmjob in vmjob_list:
+        for vmjob in app_vmjob_list:
             if not vmjob.enable:
                 continue
 
             await publish(vmjob)
-            await sleep(10)
+            await sleep(5)
 
 
 def exit_callback():
     print('exit is done')
-    for vmjob in vmjob_list:
+    for vmjob in app_vmjob_list:
         vmjob.free()
     print('exit ....')
 
@@ -335,7 +335,7 @@ async def main():
     print("Start make_stop_flag_file_first.....")
     await make_stop_flag_file_first()
     await sleep(5)
-    vmjob_list.clear()
+    app_vmjob_list.clear()
     print("Start working.....")
     async with TaskGroup() as g:
         await g.spawn(dispatcher)
