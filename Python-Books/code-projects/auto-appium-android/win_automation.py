@@ -290,11 +290,10 @@ async def producer():
             await sleep(10)
 
 
-async def exit_callback():
+def exit_callback():
     print('exit is done')
     for vmjob in vmjob_list:
-        await vmjob.free()
-        await sleep(0.1)
+        vmjob.free()
     print('exit ....')
 
 
