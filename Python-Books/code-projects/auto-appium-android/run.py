@@ -35,15 +35,27 @@ class SysExitWatcher(threading.Thread):
         threading.Thread.__init__(self)
         self.vmid = vmid
 
+    def get_stop_flag_file(self):
+        return os.path.join(app_current_dir, 'vmid-{}-stop.flag'.format(self.vmid))
+
+    def remove_stop_flag_file(self):
+        stop_file = self.get_stop_flag_file()
+        if os.path.isfile(stop_file):
+            try:
+                os.remove(stop_file)
+            except Exception as e:
+                print("Error:", e)
+
     def run(self):
         print('The SysExitWatcher thread is running ....')
         while True:
-            time.sleep(2)
-            stop_file = os.path.join(app_current_dir, 'vmid-{}-stop.flag'.format(self.vmid))
+            stop_file = self.get_stop_flag_file()
             # print(stop_file)
             if os.path.isfile(stop_file):
                 print('sys.exit()')
                 sys.exit(0)
+
+            time.sleep(5)
 
 
 watching_thread = SysExitWatcher(vmid=app_args.vmid)
