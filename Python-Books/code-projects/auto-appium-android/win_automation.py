@@ -51,6 +51,7 @@ class VMJob(object):
         self.max_run_time = max_run_time
         self.back_proc = None
         self.startingVM = False
+        self.busy = False
 
     async def is_vm_running(self):
         is_runnig = await vmsH.vm_is_running(self.vmid)
@@ -206,14 +207,28 @@ async def subscriber(name):
     subscribers.add(queue)
     try:
         async for msg in queue:
-            vmjob = msg
-            logger.info("{} got vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
+            cur_vmjob_id = msg
 
+            # 先查找对应的vmjob
+            vmjob = None
+            for iter_vmjob in app_vmjob_list:
+                if iter_vmjob.vmid == cur_vmjob_id:
+                    vmjob = iter_vmjob
+                    break
+
+            if vmjob is None:
+                continue
+            logger.info("{} got vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
             if not vmjob.enable:
                 continue
-
             logger.info("{} watching vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
 
+            # 这里设置一个快捷判断状态的处理 标明VMJOB 正在处理中
+            if vmjob.busy:
+                continue
+            vmjob.busy = True  # 表明vmjob现在很忙
+
+            # 获取相关状态进行处理
             is_vm_running = await vmjob.is_vm_running()
             is_vm_starting = await vmjob.is_vm_starting()
             is_job_overtime = await vmjob.is_job_overtime()
@@ -241,6 +256,9 @@ async def subscriber(name):
             if not is_back_proc_running:
                 await vmjob.create_sub_process()
 
+            # 将vmjob状态赋值为空闲
+            vmjob.busy = False
+
     finally:
         subscribers.discard(queue)
 
@@ -253,7 +271,7 @@ async def producer():
             if not vmjob.enable:
                 continue
 
-            await publish(vmjob)
+            await publish(vmjob.id)
             await sleep(5)
 
         await sleep(15)
@@ -280,14 +298,15 @@ async def main():
     # 动态获取VMS的配置内容
     app_vmjob_list.clear()
     for one_config in vmsH.get_vms_configs():
-        app_vmjob_list.add(VMJob(
+        app_vmjob_list.update(
+            VMJob(
             vmid=one_config['vmid'],
             vmname=one_config['vmname'],
             config_path=one_config['path'],
             enable=one_config['enable'] == 'true',
             start_cmd=one_config['startCommand'],
             appium_cmd=one_config['appiumCommand'],
-            max_run_time=random.randint(15, 35) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
+            max_run_time=random.randint(10, 35) * 60 * 1000  # 60 * 5 * 1000 # 毫秒
         ))
 
     logger.info("Start working.....")
