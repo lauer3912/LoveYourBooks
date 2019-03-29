@@ -28,41 +28,6 @@ app_parser.add_argument('--v', dest='vmid', action='store', default=0,
 app_args = app_parser.parse_args()
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
-
-# Use thread to watching the exit signal
-class SysExitWatcher(threading.Thread):
-    def __init__(self, vmid):
-        threading.Thread.__init__(self)
-        self.vmid = vmid
-
-    def get_stop_flag_file(self):
-        return os.path.join(app_current_dir, 'vmid-{}-stop.flag'.format(self.vmid))
-
-    def remove_stop_flag_file(self):
-        stop_file = self.get_stop_flag_file()
-        if os.path.isfile(stop_file):
-            try:
-                os.remove(stop_file)
-            except Exception as e:
-                print("Error:", e)
-
-    def run(self):
-        print('The SysExitWatcher thread is running ....')
-        while True:
-            stop_file = self.get_stop_flag_file()
-            # print(stop_file)
-            if os.path.isfile(stop_file):
-                print('sys.exit()')
-                sys.exit(0)
-
-            time.sleep(5)
-
-
-watching_thread = SysExitWatcher(vmid=app_args.vmid)
-watching_thread.remove_stop_flag_file()
-watching_thread.start()
-
-
 class RunningHelper(object):
     @staticmethod
     def get_flag_file(vmid):
@@ -116,11 +81,8 @@ def sys_exit(message):
     系统退出
     """
     print(message)
-
     print("The system is about to exit ...")
-    time.sleep(random.randint(3, 5))
-
-    sys.exit(0)
+    exit(0)
 
 
 def siample_touch(driver):

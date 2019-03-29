@@ -134,7 +134,7 @@ class VMJob(object):
             self.startingVM = False
             print("start_back_handler end ...")
 
-    async def stop_all_back_procs(self):
+    def stop_all_back_procs(self):
         # 尝试terminate
         try:
             self.back_proc.kill()
@@ -244,37 +244,8 @@ def keyboardInterruptHandler(signal, frame):
     exit(0)
 
 
-async def make_stop_flag_file_first():
-    # 当前路径
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # 加载配置
-    await vmsH.reload_vms_config_info()
-
-    all_configs = vmsH.get_vms_configs()
-
-    # 生成配置
-    for one_config in all_configs:
-        vmid = one_config.get('vmid')
-        vmname = one_config.get('vmname')
-        config_path = one_config.get('path')
-        enable = one_config.get('enable') == 'true'
-
-        if enable:
-            stop_file = os.path.join(current_dir, 'vmid-{}-stop.flag'.format(vmid))
-            print(stop_file)
-
-            if not os.path.exists(stop_file):
-                try:
-                    print('make stop file:', stop_file)
-                    open(stop_file, "w+").close()
-                except Exception as err:
-                    print('Error:', err)
-
-
 async def main():
     print("Start make_stop_flag_file_first.....")
-    await make_stop_flag_file_first()
     await sleep(5)
     # 重新加载vms 的配置文件
     await vmsH.reload_vms_config_info()
