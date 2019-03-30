@@ -38,11 +38,10 @@ vmsH = VMSModifyHandler(logger=logger)
 
 
 class VMJob(object):
-    def __init__(self, vmid, vmname, config_path, enable, start_cmd, appium_cmd, max_run_time):
+    def __init__(self, vmid, vmname, enable, start_cmd, appium_cmd, max_run_time):
         object.__init__(self)
         self.vmid = vmid
         self.vmname = vmname
-        self.config_path = config_path
         self.enable = enable
         self.start_cmd = start_cmd
         self.start_time = Utils.get_now_time()
@@ -295,7 +294,6 @@ async def main():
             app_vmjob_list.add(VMJob(
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
-                config_path=one_config['path'],
                 enable=one_config['enable'] == 'true',
                 start_cmd=one_config['startCommand'],
                 appium_cmd=one_config['appiumCommand'],
