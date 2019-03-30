@@ -225,7 +225,7 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(90, 120)
+        max_page_load_timeout = random.randint(60, 120)
         max_script_timeout = 30
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
