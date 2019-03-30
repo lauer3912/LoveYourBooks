@@ -62,7 +62,6 @@ class VMSModifyHandler(object):
             # 根据每一个config来处理内容
             for one_config in configs:
                 if one_config.hasAttribute('enable') and \
-                        one_config.hasAttribute('path') and \
                         one_config.hasAttribute('vmname'):
                     config_enable = one_config.getAttribute('enable')
                     config_vmname = one_config.getAttribute('vmname')

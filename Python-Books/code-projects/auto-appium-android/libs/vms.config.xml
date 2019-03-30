@@ -17,16 +17,16 @@
     ** appium -p 4729
     -->
     <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80">
-        <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_2\MEmu_2.memu" vmname="web-001" vmid="2"
+        <config enable="true" vmname="web-001" vmid="2"
                 appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21523 --v 2"/>
-        <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_3\MEmu_3.memu" vmname="web-002" vmid="3"
+        <config enable="true" vmname="web-002" vmid="3"
                 appiumCommand="appium -p 4725"
                 startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21533 --v 3"/>
-        <config enable="true" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_4\MEmu_4.memu" vmname="web-003" vmid="4"
+        <config enable="true" vmname="web-003" vmid="4"
                 appiumCommand="appium -p 4727"
                 startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --v 4"/>
-        <config enable="false" path="C:\Program Files\Microvirt\MEmu\MemuHyperv VMs\MEmu_5\MEmu_5.memu" vmname="web-004" vmid="5"
+        <config enable="false" vmname="web-004" vmid="5"
                 appiumCommand="appium -p 4729"
                 startCommand="python run.py --s http://127.0.0.1:4729/wd/hub --d 127.0.0.1:21553 --v 5"/>
                 
