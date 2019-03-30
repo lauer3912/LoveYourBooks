@@ -5,8 +5,8 @@
 """
 import os
 import subprocess
-import xml.dom.minidom
 import uuid
+import xml.dom.minidom
 
 from .utils import Utils
 
@@ -18,9 +18,15 @@ class VMSModifyHandler(object):
         self.config_dir = os.path.dirname(os.path.abspath(__file__))
         self.config_xml_file = os.path.join(self.config_dir, 'vms.config.xml')
         self.print('The VMS Config XML Path: {}'.format(self.config_xml_file))
-
-        self.vmcmd = 'C:\Program Files\Microvirt\MEmu\memuc.exe'
         self.configs = []  # config xml element
+
+        for maybe_path in [
+            'C:\Program Files\Microvirt\MEmu\memuc.exe',
+            'D:\VMSMicrovirt\MEmu\memuc.exe'
+        ]:
+            if os.path.exists(maybe_path):
+                self.vmcmd = maybe_path
+                break
 
     def print(self, msg, is_exception=False):
         if self.logger:
@@ -54,7 +60,8 @@ class VMSModifyHandler(object):
             if one_machine.hasAttribute('name'):
                 machine_name = one_machine.getAttribute('name')
                 machine_mac_address = one_machine.getAttribute('macAddress')
-                self.print("Reading the '{0} - {1}' machine config information.".format(machine_name, machine_mac_address))
+                self.print(
+                    "Reading the '{0} - {1}' machine config information.".format(machine_name, machine_mac_address))
 
             configs = one_machine.getElementsByTagName('config')
             self.print("The config information count = %d" % len(configs))
