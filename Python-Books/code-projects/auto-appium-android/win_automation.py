@@ -300,7 +300,7 @@ async def main():
                 max_run_time=random.randint(10, 35) * 60 * 1000,  # 60 * 5 * 1000 # 毫秒
             ))
 
-    logger.info("Start working.....")
+    logger.info("Start working..... vmjob count = {0}".format(len(app_vmjob_list)))
     async with TaskGroup() as g:
         await g.spawn(dispatcher)
         # await g.spawn(subscriber, 'child1')
