@@ -70,8 +70,8 @@ class VMJob(object):
         # 判断时候有VM可以停止的标记文件
         current_dir = os.path.dirname(os.path.abspath(__file__))
         flag_file = os.path.join(current_dir, 'can-stop-vmid-{}-f.flag'.format(self.vmid))
-
-        if running_time >= self.max_run_time and os.path.exists(flag_file):
+        if running_time >= self.max_run_time \
+                and os.path.exists(flag_file):
             return True
 
         return False

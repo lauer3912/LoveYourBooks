@@ -41,5 +41,8 @@
         <config enable="true" vmname="US-2" vmid="1"
                 appiumCommand="appium -p 4725"
                 startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21513 --v 1"/>
+        <config enable="true" vmname="US-3" vmid="2"
+                appiumCommand="appium -p 4727"
+                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21523 --v 2"/>
     </machine>
 </machines>
