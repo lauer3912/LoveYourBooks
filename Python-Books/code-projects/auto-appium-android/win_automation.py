@@ -10,6 +10,7 @@ import random
 import signal
 import subprocess
 import sys
+import time
 
 app_current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -278,6 +279,30 @@ def keyboardInterruptHandler(signal, frame):
     exit(0)
 
 
+def get_best_max_run_time():
+    """
+    获取美国区合适的处理模拟器启动的时间
+    :return:
+    """
+    cur_time = time.localtime()
+    cur_time_hour = cur_time.tm_hour
+
+    # 凌晨的情况，对应美国区的下午
+    if cur_time_hour in range[0, 8]:
+        return random.randint(10, 15) * 60 * 1000
+
+    # 上午的情况，对应为美国区的晚上
+    if cur_time_hour in range[9, 17]:
+        return random.randint(15, 25) * 60 * 1000
+
+    # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
+    if cur_time_hour in range[18, 23]:
+        return random.randint(8, 15) * 60 * 1000
+
+    # 普通情况下
+    return random.randint(10, 35) * 60 * 1000
+
+
 async def main():
     logger.info("Start make_stop_flag_file_first.....")
     await sleep(5)
@@ -297,7 +322,7 @@ async def main():
                 enable=one_config['enable'] == 'true',
                 start_cmd=one_config['startCommand'],
                 appium_cmd=one_config['appiumCommand'],
-                max_run_time=random.randint(10, 35) * 60 * 1000,  # 60 * 5 * 1000 # 毫秒
+                max_run_time=get_best_max_run_time(),  # 60 * 5 * 1000 # 毫秒
             ))
 
     if len(app_vmjob_list) == 0:
