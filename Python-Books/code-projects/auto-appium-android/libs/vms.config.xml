@@ -35,6 +35,11 @@
 
     </machine>
     <machine name="Lucy PC" macAddress="70:5a:0f:40:2a:c6">
-
+        <config enable="true" vmname="US" vmid="0"
+                appiumCommand="appium -p 4723"
+                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --v 0"/>
+        <config enable="true" vmname="US-2" vmid="1"
+                appiumCommand="appium -p 4725"
+                startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21513 --v 1"/>
     </machine>
 </machines>
