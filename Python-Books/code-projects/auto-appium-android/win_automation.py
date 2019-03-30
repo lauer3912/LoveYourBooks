@@ -289,18 +289,18 @@ def get_best_max_run_time():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 8):
-        return random.randint(10, 15) * 60 * 1000
+        return random.randint(15, 30) * 60 * 1000
 
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(9, 17):
-        return random.randint(15, 25) * 60 * 1000
+        return random.randint(20, 30) * 60 * 1000
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 23):
-        return random.randint(8, 15) * 60 * 1000
+        return random.randint(13, 20) * 60 * 1000
 
     # 普通情况下
-    return random.randint(10, 35) * 60 * 1000
+    return random.randint(15, 35) * 60 * 1000
 
 
 async def main():
