@@ -289,7 +289,9 @@ async def main():
 
     local_mac_address = VMSModifyHandler.get_local_mac_address()
     for one_config in vmsH.get_vms_configs():
-        if local_mac_address == one_config['macAddress']:  # 只让本地的生效
+        config_mac_address = one_config['macAddress']
+        logger.info('localMacAddress={0}, configMacAddress={1}'.format(local_mac_address, config_mac_address))
+        if local_mac_address == config_mac_address:  # 只让本地的生效
             app_vmjob_list.add(VMJob(
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
@@ -299,6 +301,10 @@ async def main():
                 appium_cmd=one_config['appiumCommand'],
                 max_run_time=random.randint(10, 35) * 60 * 1000,  # 60 * 5 * 1000 # 毫秒
             ))
+
+    if len(app_vmjob_list) == 0:
+        logger.info('No have vmjob ...')
+        exit(9)
 
     logger.info("Start working..... vmjob count = {0}".format(len(app_vmjob_list)))
     async with TaskGroup() as g:
