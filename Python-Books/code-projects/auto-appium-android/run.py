@@ -290,9 +290,10 @@ def auto_click_ads(driver):
                     logger.info("link_elements = {}".format(count_link_elements))
 
                     if count_link_elements != 0:
-                        ads_element = link_elements[random.randint(0, count_link_elements)]
+                        ads_element = link_elements[random.randint(0, count_link_elements-1)]
                         logger.info("click ads")
                         ads_element.click()
+                        time.sleep(random.randint(10, 20))
 
 
 
@@ -403,7 +404,7 @@ def starup(want_open_url):
         # 可以尝试点击广告了
         logger.info("Try click some ads element...")
         auto_click_ads(globals_drivers[now_driver_id])
-        time.sleep(10)
+
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
