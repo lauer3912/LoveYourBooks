@@ -280,9 +280,13 @@ def _common_ads_try_move_and_click(driver):
                 break
 
         if will_click_ads_ele:
-            actions = ActionChains(driver)
-            actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
-            actions.perform()
+
+            try:
+                actions = ActionChains(driver)
+                actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
+                actions.perform()
+            except Exception:
+                logger.exception("Error:")
 
             try:
                 x = will_click_ads_ele.get('x')
@@ -293,10 +297,13 @@ def _common_ads_try_move_and_click(driver):
             except Exception:
                 logger.exception("Error:")
 
-            logger.info("click ads")
-            will_click_ads_ele.click()
-            time.sleep(random.randint(10, 30))
-            had_click_ads = True
+            try:
+                logger.info("click ads")
+                will_click_ads_ele.click()
+                time.sleep(random.randint(10, 30))
+                had_click_ads = True
+            except Exception:
+                logger.exception("Error:")
         else:
             logger.info("No found the visual ads element")
 
