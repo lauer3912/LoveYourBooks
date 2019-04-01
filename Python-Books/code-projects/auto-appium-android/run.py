@@ -15,7 +15,6 @@ import time
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
-
 print("The Python path used = %s" % sys.executable)
 
 # 创建解析步骤
@@ -112,6 +111,7 @@ def siample_touch(driver):
     finally:
         pass
 
+
 def auto_scroll_page(driver):
     """
     自动从上到下滚动，处理页面滑动问题
@@ -170,6 +170,7 @@ def auto_scroll_page(driver):
     except Exception:
         logger.exception("Error:")
 
+
 def random_scroll_up(driver):
     """
     随机往上滚动
@@ -220,6 +221,7 @@ def random_scroll_up(driver):
     except Exception:
         logger.exception("Error:")
 
+
 def get_enable_click_ads():
     """
     检测是否可以点击广告
@@ -245,8 +247,73 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    # return random.randint(0, 1) == 1 and time_enable
-    return True
+    return round(random.uniform(0.2, 0.9), 2) > 0.3 and time_enable
+
+
+def _common_ads_try_move_and_click(driver):
+    had_click_ads = False
+
+    # 在这个frame中定位到谷歌广告
+    # 找 a 元素，target="_blank" 类似的元素
+    link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
+    count_link_elements = len(link_elements)
+
+    logger.info("link_elements = {}".format(count_link_elements))
+
+    if count_link_elements != 0:
+        # 检查是否可见
+        sort_indexs = []
+        for index in range(count_link_elements):
+            sort_indexs.append(index)
+        # 让列表乱序处理
+        random.shuffle(sort_indexs)
+
+        # 随机找到可见的元素，再进行点击
+        will_click_ads_ele = None
+        for cur_index in sort_indexs:
+            one_ads_element = link_elements[cur_index]
+            if one_ads_element.is_displayed():
+                will_click_ads_ele = one_ads_element
+                break
+
+        if will_click_ads_ele:
+            actions = ActionChains(driver)
+            actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
+            actions.perform()
+
+            try:
+                x = will_click_ads_ele.get('x')
+                y = will_click_ads_ele.get('y')
+
+                logger.info("ads element x={}, y={}".format(x, y))
+                driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
+            except Exception:
+                logger.exception("Error:")
+
+            logger.info("click ads")
+            will_click_ads_ele.click()
+            time.sleep(random.randint(10, 30))
+            had_click_ads = True
+        else:
+            logger.info("No found the visual ads element")
+
+    return had_click_ads
+
+
+def _reunion_ads_try_find(driver, layer):
+    driver.implicitly_wait(25)
+    ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
+    all_ads_count = len(ads_iframe_elements)
+    logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
+
+    for index_layer1_frame in range(all_ads_count):
+        driver.switch_to.frame(ads_iframe_elements[index_layer1_frame])
+        had_click_ads = _common_ads_try_move_and_click(driver)
+        if had_click_ads:
+            return layer
+        else:
+            layer += 1
+            _reunion_ads_try_find(driver, layer)
 
 
 def auto_click_ads(driver):
@@ -255,79 +322,13 @@ def auto_click_ads(driver):
         logger.info("Disable click ads...")
         return
 
+    layer = 0
     try:
         # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
-        driver.implicitly_wait(25)
-
-        ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
-        all_ads_count = len(ads_iframe_elements)
-        logger.info("ads_iframe_elements = {}".format(all_ads_count))
-
-        if all_ads_count != 0:
-            # 切换到随机的iframe - 第2层
-            driver.switch_to.frame(ads_iframe_elements[random.randint(0, all_ads_count-1)])
-            layer_2_ads_elements = driver.find_elements_by_xpath('//iframe')
-            layer_2_ads_count = len(layer_2_ads_elements)
-
-            logger.info("layer_2_ads_elements = {}".format(layer_2_ads_count))
-
-            if layer_2_ads_count != 0:
-                # 切换到随机的iframe - 第3层
-                driver.switch_to.frame(layer_2_ads_elements[random.randint(0, layer_2_ads_count-1)])
-                layer_3_ads_elements = driver.find_elements_by_xpath('//iframe')
-                layer_3_ads_count = len(layer_3_ads_elements)
-
-                logger.info("layer_3_ads_elements = {}".format(layer_3_ads_count))
-
-                if layer_3_ads_count != 0:
-                    # 在这个frame中定位到谷歌广告
-                    # 找 a 元素，target="_blank" 类似的元素
-                    link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
-                    count_link_elements = len(link_elements)
-
-                    logger.info("link_elements = {}".format(count_link_elements))
-
-                    if count_link_elements != 0:
-                        # 检查是否可见
-                        sort_indexs = []
-                        for index in range(count_link_elements):
-                            sort_indexs.append(index)
-                        # 让列表乱序处理
-                        random.shuffle(sort_indexs)
-
-                        # 随机找到可见的元素，再进行点击
-                        will_click_ads_ele = None
-                        for cur_index in sort_indexs:
-                            one_ads_element = link_elements[cur_index]
-                            if one_ads_element.is_displayed():
-                                will_click_ads_ele = one_ads_element
-                                break
-
-                        if will_click_ads_ele:
-                            actions = ActionChains(driver)
-                            actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
-                            actions.perform()
-
-                            try:
-                                x = will_click_ads_ele.get('x')
-                                y = will_click_ads_ele.get('y')
-
-                                logger.info("ads element x={}, y={}".format(x, y))
-                                driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
-                            except Exception:
-                                logger.exception("Error:")
-
-                            logger.info("click ads")
-                            will_click_ads_ele.click()
-                            time.sleep(random.randint(10, 30))
-                        else:
-                            logger.info("No found the visual ads element")
-
-
-
+        layer = _reunion_ads_try_find(driver, layer)
     except Exception:
         logger.exception("Error:")
-        for i in range(1, 5):
+        for i in range(layer):
             driver.switch_to.parent_frame()
         driver.switch_to.default_content()
 
@@ -432,7 +433,6 @@ def starup(want_open_url):
         # 可以尝试点击广告了
         logger.info("Try click some ads element...")
         auto_click_ads(globals_drivers[now_driver_id])
-
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
