@@ -205,12 +205,13 @@ def random_scroll_up(driver):
 
     # 随机回滚的位置
     all_rectangle_count = len(rectangles)
-    cur_index = all_rectangle_count
+    cur_index = 0
     max_rectangle_count = random.randint(0, all_rectangle_count)
+    rectangles.reverse()
     for rectangle in rectangles:
         if cur_index <= max_rectangle_count:
             break
-        cur_index -= 1
+        cur_index += 1
 
         driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
         logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
@@ -249,6 +250,7 @@ def get_enable_click_ads():
 
 
 def auto_click_ads(driver):
+    logger.info("Trying click ads...")
     if not get_enable_click_ads():
         return
 
@@ -256,10 +258,9 @@ def auto_click_ads(driver):
         # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
         driver.implicitly_wait(25)
 
-        # //*[@id="aswift_2"]
-        # // ins
         ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
         all_ads_count = len(ads_iframe_elements)
+        logger.info("ads_iframe_elements = {}".format(all_ads_count))
 
         if all_ads_count != 0:
             # 切换到随机的iframe - 第2层
@@ -267,17 +268,24 @@ def auto_click_ads(driver):
             layer_2_ads_elements = driver.find_elements_by_xpath('//iframe')
             layer_2_ads_count = len(layer_2_ads_elements)
 
+            logger.info("layer_2_ads_elements = {}".format(layer_2_ads_count))
+
             if layer_2_ads_count != 0:
                 # 切换到随机的iframe - 第3层
                 driver.switch_to.frame(layer_2_ads_elements[random.randint(0, layer_2_ads_count-1)])
                 layer_3_ads_elements = driver.find_elements_by_xpath('//iframe')
                 layer_3_ads_count = len(layer_3_ads_elements)
 
+                logger.info("layer_3_ads_elements = {}".format(layer_3_ads_count))
+
                 if layer_3_ads_count != 0:
                     # 在这个frame中定位到谷歌广告
                     # 找 a 元素，target="_blank" 类似的元素
                     link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
                     count_link_elements = len(link_elements)
+
+                    logger.info("link_elements = {}".format(count_link_elements))
+
                     if count_link_elements != 0:
                         ads_element = link_elements[random.randint(0, count_link_elements)]
                         logger.info("click ads")
