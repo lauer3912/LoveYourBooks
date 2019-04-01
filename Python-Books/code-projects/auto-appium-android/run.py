@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import locale
 
+from selenium.webdriver import ActionChains
+
 print(locale.getdefaultlocale())
 
 import argparse
@@ -109,11 +111,6 @@ def siample_touch(driver):
         logger.exception("Error:")
     finally:
         pass
-
-
-def auto_up_scroll_page(driver):
-    pass
-
 
 def auto_scroll_page(driver):
     """
@@ -248,8 +245,8 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    # return random.randint(0, 1) == 1 and time_enable
-    return True
+    return random.randint(0, 1) == 1 and time_enable
+    # return True
 
 
 def auto_click_ads(driver):
@@ -290,10 +287,40 @@ def auto_click_ads(driver):
                     logger.info("link_elements = {}".format(count_link_elements))
 
                     if count_link_elements != 0:
-                        ads_element = link_elements[random.randint(0, count_link_elements-1)]
-                        logger.info("click ads")
-                        ads_element.click()
-                        time.sleep(random.randint(10, 20))
+                        # 检查是否可见
+                        sort_indexs = []
+                        for index in range(count_link_elements):
+                            sort_indexs.append(index)
+                        # 让列表乱序处理
+                        random.shuffle(sort_indexs)
+
+                        # 随机找到可见的元素，再进行点击
+                        will_click_ads_ele = None
+                        for cur_index in sort_indexs:
+                            one_ads_element = link_elements[cur_index]
+                            if one_ads_element.is_displayed():
+                                will_click_ads_ele = one_ads_element
+                                break
+
+                        if will_click_ads_ele:
+                            actions = ActionChains(driver)
+                            actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
+                            actions.perform()
+
+                            try:
+                                x = will_click_ads_ele.get('x')
+                                y = will_click_ads_ele.get('y')
+
+                                logger.info("ads element x={}, y={}".format(x, y))
+                                driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
+                            except Exception:
+                                logger.exception("Error:")
+
+                            logger.info("click ads")
+                            will_click_ads_ele.click()
+                            time.sleep(random.randint(10, 30))
+                        else:
+                            logger.info("No found the visual ads element")
 
 
 
