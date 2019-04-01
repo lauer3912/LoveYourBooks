@@ -177,6 +177,9 @@ def random_scroll_up(driver):
     :return:
     """
     try:
+        if round(random.uniform(0.2, 0.9), 2) < 0.5:
+            return
+
         logger.info("Start random_scroll_up")
         total_width = driver.execute_script("return document.body.offsetWidth")
         total_height = driver.execute_script(
