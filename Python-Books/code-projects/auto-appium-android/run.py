@@ -171,6 +171,88 @@ def auto_scroll_page(driver):
     return True
 
 
+def random_scroll_up(driver):
+    """
+    随机往上滚动
+    :return:
+    """
+    logger.info("Start Auto Scroll")
+    total_width = driver.execute_script("return document.body.offsetWidth")
+    total_height = driver.execute_script(
+        "return document.body.parentNode.scrollHeight")
+    viewport_width = driver.execute_script("return document.body.clientWidth")
+    viewport_height = driver.execute_script("return window.innerHeight")
+    logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+        total_width, total_height, viewport_width, viewport_height))
+
+    # 先记录所有区间
+    rectangles = []
+    i = 0
+    while i < total_height:
+        ii = 0
+        top_height = i + viewport_height
+        if top_height > total_height:
+            top_height = total_height
+        while ii < total_width:
+            top_width = ii + viewport_width
+            if top_width > total_width:
+                top_width = total_width
+            logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+            rectangles.append((ii, i, top_width, top_height))
+            ii = ii + viewport_width
+        i = i + viewport_height
+
+    # 随机回滚的位置
+    all_rectangle_count = len(rectangles)
+    cur_index = 0
+    max_rectangle_count = random.randint(0, all_rectangle_count)
+    for rectangle in rectangles.reverse():
+        if cur_index >= max_rectangle_count:
+            break
+        cur_index += 1
+
+        driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
+        logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
+        time.sleep(round(random.uniform(0.2, 1.6), 2))
+
+    logger.info("Finishing chrome random page scroll workaround...")
+
+
+def get_enable_click_ads():
+    """
+    检测是否可以点击广告
+    （1）时间允许
+    （2）随机告知是否可以
+    :return:
+    """
+
+    # Step1: 检测时间是否在范围内
+    time_enable = False
+    cur_time = time.localtime()
+    cur_time_hour = int(cur_time.tm_hour)
+    # 上午的情况，对应为美国区的晚上
+    if cur_time_hour in range(9, 17):
+        time_enable = False
+
+    # 凌晨的情况，对应美国区的下午
+    if cur_time_hour in range(0, 8):
+        time_enable = True
+
+    # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
+    if cur_time_hour in range(18, 23):
+        time_enable = True
+
+    # Step2: 获取随机范围
+    return random.randint(0, 1) == 1 and time_enable
+
+
+def auto_click_ads(driver):
+    if not get_enable_click_ads():
+        return
+
+    # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
+
+
 def starup(want_open_url):
     has_error = False
     now_driver_id = get_random_driver_id()
@@ -258,9 +340,14 @@ def starup(want_open_url):
         siample_touch(globals_drivers[now_driver_id])
         auto_scroll_page(globals_drivers[now_driver_id])
 
+        # 随机回滚一下
+        min_sleep_secs = random.randint(2, 10)
+        time.sleep(min_sleep_secs)
+        random_scroll_up(globals_drivers[now_driver_id])
+
         # 休息一会
         logger.info("Take a break first, let the Web page itself quiet...")
-        min_sleep_secs = random.randint(75, 180)
+        min_sleep_secs = random.randint(70, 160)
         time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
