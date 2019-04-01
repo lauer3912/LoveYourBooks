@@ -205,12 +205,12 @@ def random_scroll_up(driver):
 
     # 随机回滚的位置
     all_rectangle_count = len(rectangles)
-    cur_index = 0
+    cur_index = all_rectangle_count
     max_rectangle_count = random.randint(0, all_rectangle_count)
-    for rectangle in rectangles.reverse():
-        if cur_index >= max_rectangle_count:
+    for rectangle in rectangles:
+        if cur_index <= max_rectangle_count:
             break
-        cur_index += 1
+        cur_index -= 1
 
         driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
         logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
