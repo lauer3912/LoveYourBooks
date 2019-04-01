@@ -250,7 +250,8 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    return round(random.uniform(0.2, 0.9), 2) > 0.3 and time_enable
+    # return round(random.uniform(0.2, 0.9), 2) > 0.3 and time_enable
+    return time_enable
 
 
 def _common_ads_try_move_and_click(driver):
@@ -311,7 +312,7 @@ def _common_ads_try_move_and_click(driver):
 
 
 def _reunion_ads_try_find(driver, layer):
-    driver.implicitly_wait(25)
+    # driver.implicitly_wait(5)
     ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
     all_ads_count = len(ads_iframe_elements)
     logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
