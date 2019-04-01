@@ -208,13 +208,13 @@ def random_scroll_up(driver):
         max_rectangle_count = random.randint(0, all_rectangle_count)
         rectangles.reverse()
         for rectangle in rectangles:
-            if cur_index <= max_rectangle_count:
+            if cur_index >= max_rectangle_count:
                 break
             cur_index += 1
 
             driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
             logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
-            time.sleep(round(random.uniform(0.2, 1.6), 2))
+            time.sleep(round(random.uniform(0.2, 0.6), 2))
 
         logger.info("Finishing chrome random page scroll workaround...")
     except Exception:
@@ -245,13 +245,14 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    return random.randint(0, 1) == 1 and time_enable
-    # return True
+    # return random.randint(0, 1) == 1 and time_enable
+    return True
 
 
 def auto_click_ads(driver):
     logger.info("Trying click ads...")
     if not get_enable_click_ads():
+        logger.info("Disable click ads...")
         return
 
     try:
@@ -385,7 +386,7 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(60, 120)
+        max_page_load_timeout = random.randint(50, 90)
         max_script_timeout = 30
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
