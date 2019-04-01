@@ -119,106 +119,109 @@ def auto_scroll_page(driver):
     """
     自动从上到下滚动，处理页面滑动问题
     """
-    logger.info("Start Auto Scroll")
-    total_width = driver.execute_script("return document.body.offsetWidth")
-    total_height = driver.execute_script(
-        "return document.body.parentNode.scrollHeight")
-    viewport_width = driver.execute_script("return document.body.clientWidth")
-    viewport_height = driver.execute_script("return window.innerHeight")
-    logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
-        total_width, total_height, viewport_width, viewport_height))
+    try:
+        logger.info("Start Auto Scroll")
+        total_width = driver.execute_script("return document.body.offsetWidth")
+        total_height = driver.execute_script(
+            "return document.body.parentNode.scrollHeight")
+        viewport_width = driver.execute_script("return document.body.clientWidth")
+        viewport_height = driver.execute_script("return window.innerHeight")
+        logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+            total_width, total_height, viewport_width, viewport_height))
 
-    rectangles = []
+        rectangles = []
 
-    i = 0
-    while i < total_height:
-        ii = 0
-        top_height = i + viewport_height
+        i = 0
+        while i < total_height:
+            ii = 0
+            top_height = i + viewport_height
 
-        if top_height > total_height:
-            top_height = total_height
+            if top_height > total_height:
+                top_height = total_height
 
-        while ii < total_width:
-            top_width = ii + viewport_width
+            while ii < total_width:
+                top_width = ii + viewport_width
 
-            if top_width > total_width:
-                top_width = total_width
+                if top_width > total_width:
+                    top_width = total_width
 
-            logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
-            rectangles.append((ii, i, top_width, top_height))
+                logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+                rectangles.append((ii, i, top_width, top_height))
 
-            ii = ii + viewport_width
+                ii = ii + viewport_width
 
-        i = i + viewport_height
+            i = i + viewport_height
 
-    previous = None
-    part = 0
+        previous = None
+        part = 0
+        for rectangle in rectangles:
+            if not previous is None:
+                driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
+                logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
+                time.sleep(round(random.uniform(0.2, 1.6), 2))
 
-    for rectangle in rectangles:
-        if not previous is None:
-            driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
-            logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
-            time.sleep(round(random.uniform(0.2, 1.6), 2))
+            if rectangle[1] + viewport_height > total_height:
+                offset = (rectangle[0], total_height - viewport_height)
+            else:
+                offset = (rectangle[0], rectangle[1])
 
-        if rectangle[1] + viewport_height > total_height:
-            offset = (rectangle[0], total_height - viewport_height)
-        else:
-            offset = (rectangle[0], rectangle[1])
+            part = part + 1
+            previous = rectangle
 
-        part = part + 1
-        previous = rectangle
-
-    logger.info("Finishing chrome full page scroll workaround...")
-    return True
-
+        logger.info("Finishing chrome full page scroll workaround...")
+        return True
+    except Exception:
+        logger.exception("Error:")
 
 def random_scroll_up(driver):
     """
     随机往上滚动
     :return:
     """
-    logger.info("Start random_scroll_up")
-    total_width = driver.execute_script("return document.body.offsetWidth")
-    total_height = driver.execute_script(
-        "return document.body.parentNode.scrollHeight")
-    viewport_width = driver.execute_script("return document.body.clientWidth")
-    viewport_height = driver.execute_script("return window.innerHeight")
-    logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
-        total_width, total_height, viewport_width, viewport_height))
+    try:
+        logger.info("Start random_scroll_up")
+        total_width = driver.execute_script("return document.body.offsetWidth")
+        total_height = driver.execute_script(
+            "return document.body.parentNode.scrollHeight")
+        viewport_width = driver.execute_script("return document.body.clientWidth")
+        viewport_height = driver.execute_script("return window.innerHeight")
+        logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+            total_width, total_height, viewport_width, viewport_height))
 
-    # 先记录所有区间
-    rectangles = []
-    i = 0
-    while i < total_height:
-        ii = 0
-        top_height = i + viewport_height
-        if top_height > total_height:
-            top_height = total_height
-        while ii < total_width:
-            top_width = ii + viewport_width
-            if top_width > total_width:
-                top_width = total_width
-            logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
-            rectangles.append((ii, i, top_width, top_height))
-            ii = ii + viewport_width
-        i = i + viewport_height
+        # 先记录所有区间
+        rectangles = []
+        i = 0
+        while i < total_height:
+            ii = 0
+            top_height = i + viewport_height
+            if top_height > total_height:
+                top_height = total_height
+            while ii < total_width:
+                top_width = ii + viewport_width
+                if top_width > total_width:
+                    top_width = total_width
+                logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+                rectangles.append((ii, i, top_width, top_height))
+                ii = ii + viewport_width
+            i = i + viewport_height
 
-    # 随机回滚的位置
-    all_rectangle_count = len(rectangles)
-    cur_index = 0
-    max_rectangle_count = random.randint(0, all_rectangle_count)
-    rectangles.reverse()
-    for rectangle in rectangles:
-        if cur_index <= max_rectangle_count:
-            break
-        cur_index += 1
+        # 随机回滚的位置
+        all_rectangle_count = len(rectangles)
+        cur_index = 0
+        max_rectangle_count = random.randint(0, all_rectangle_count)
+        rectangles.reverse()
+        for rectangle in rectangles:
+            if cur_index <= max_rectangle_count:
+                break
+            cur_index += 1
 
-        driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
-        logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
-        time.sleep(round(random.uniform(0.2, 1.6), 2))
+            driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
+            logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
+            time.sleep(round(random.uniform(0.2, 1.6), 2))
 
-    logger.info("Finishing chrome random page scroll workaround...")
-
+        logger.info("Finishing chrome random page scroll workaround...")
+    except Exception:
+        logger.exception("Error:")
 
 def get_enable_click_ads():
     """
