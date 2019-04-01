@@ -13,6 +13,7 @@ import time
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
+
 print("The Python path used = %s" % sys.executable)
 
 # 创建解析步骤
@@ -176,7 +177,7 @@ def random_scroll_up(driver):
     随机往上滚动
     :return:
     """
-    logger.info("Start Auto Scroll")
+    logger.info("Start random_scroll_up")
     total_width = driver.execute_script("return document.body.offsetWidth")
     total_height = driver.execute_script(
         "return document.body.parentNode.scrollHeight")
@@ -243,14 +244,52 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    return random.randint(0, 1) == 1 and time_enable
+    # return random.randint(0, 1) == 1 and time_enable
+    return True
 
 
 def auto_click_ads(driver):
     if not get_enable_click_ads():
         return
 
-    # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
+    try:
+        # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
+        driver.implicitly_wait(25)
+
+        # //*[@id="aswift_2"]
+        # // ins
+        ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
+        all_ads_count = len(ads_iframe_elements)
+
+        if all_ads_count != 0:
+            # 切换到随机的iframe - 第2层
+            driver.switch_to.frame(ads_iframe_elements[random.randint(0, all_ads_count-1)])
+            layer_2_ads_elements = driver.find_elements_by_xpath('//iframe')
+            layer_2_ads_count = len(layer_2_ads_elements)
+
+            if layer_2_ads_count != 0:
+                # 切换到随机的iframe - 第3层
+                driver.switch_to.frame(layer_2_ads_elements[random.randint(0, layer_2_ads_count-1)])
+                layer_3_ads_elements = driver.find_elements_by_xpath('//iframe')
+                layer_3_ads_count = len(layer_3_ads_elements)
+
+                if layer_3_ads_count != 0:
+                    # 在这个frame中定位到谷歌广告
+                    # 找 a 元素，target="_blank" 类似的元素
+                    link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
+                    count_link_elements = len(link_elements)
+                    if count_link_elements != 0:
+                        ads_element = link_elements[random.randint(0, count_link_elements)]
+                        logger.info("click ads")
+                        ads_element.click()
+
+
+
+    except Exception:
+        logger.exception("Error:")
+        for i in range(1, 5):
+            driver.switch_to.parent_frame()
+        driver.switch_to.default_content()
 
 
 def starup(want_open_url):
@@ -347,8 +386,13 @@ def starup(want_open_url):
 
         # 休息一会
         logger.info("Take a break first, let the Web page itself quiet...")
-        min_sleep_secs = random.randint(70, 160)
+        min_sleep_secs = random.randint(60, 150)
         time.sleep(min_sleep_secs)
+
+        # 可以尝试点击广告了
+        logger.info("Try click some ads element...")
+        auto_click_ads(globals_drivers[now_driver_id])
+        time.sleep(10)
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
