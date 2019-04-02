@@ -316,7 +316,8 @@ def _reunion_ads_try_find(driver, layer):
     for index in range(all_ads_count):
         sort_index_list.append(index)
     # 让列表乱序处理
-    random.shuffle(sort_index_list)
+    # random.shuffle(sort_index_list)
+    sort_index_list.reverse()
 
     for index_frame in sort_index_list:
         ele_iframe = ads_iframe_elements[index_frame]
@@ -460,14 +461,18 @@ def starup(want_open_url):
         auto_scroll_page(globals_drivers[now_driver_id])
 
         # 随机回滚一下
-        min_sleep_secs = random.randint(2, 10)
-        time.sleep(min_sleep_secs)
-        random_scroll_up(globals_drivers[now_driver_id])
+        cfg_enable_scroll_up = False
+        if cfg_enable_scroll_up:
+            min_sleep_secs = random.randint(2, 10)
+            time.sleep(min_sleep_secs)
+            random_scroll_up(globals_drivers[now_driver_id])
 
         # 休息一会
-        logger.info("Take a break first, let the Web page itself quiet...")
-        min_sleep_secs = random.randint(60, 150)
-        time.sleep(min_sleep_secs)
+        cfg_enable_web_wait = False
+        if cfg_enable_web_wait:
+            logger.info("Take a break first, let the Web page itself quiet...")
+            min_sleep_secs = random.randint(60, 150)
+            time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
         logger.info("Try click some ads element...")
