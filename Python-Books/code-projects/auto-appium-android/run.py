@@ -276,13 +276,13 @@ def _common_ads_try_move_and_click(driver):
                 logger.info("Try click a ads element ...")
                 one_ads_element.click()
                 had_click_ads = True
-                time.sleep(random.randint(10, 30))
+                time.sleep(random.randint(15, 30))
             except Exception:
                 logger.exception("Error:")
                 try:
                     one_ads_element.click()
                     had_click_ads = True
-                    time.sleep(random.randint(10, 30))
+                    time.sleep(random.randint(15, 30))
                 except:
                     pass
 
@@ -441,7 +441,7 @@ def starup(want_open_url):
         cfg_enable_web_wait = True
         if cfg_enable_web_wait:
             logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(10, 30)
+            min_sleep_secs = random.randint(15, 30)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
@@ -451,13 +451,13 @@ def starup(want_open_url):
         cfg_enable_web_wait_after_ads = True
         if cfg_enable_web_wait_after_ads:
             logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(15, 60)
+            min_sleep_secs = random.randint(15, 30)
             time.sleep(min_sleep_secs)
 
         # 随机回滚一下
         cfg_enable_scroll_up = True
         if cfg_enable_scroll_up:
-            min_sleep_secs = random.randint(2, 5)
+            min_sleep_secs = random.randint(3, 5)
             time.sleep(min_sleep_secs)
             random_scroll_up(globals_drivers[now_driver_id])
 
