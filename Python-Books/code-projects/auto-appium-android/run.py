@@ -281,12 +281,6 @@ def _common_ads_try_move_and_click(driver):
 
         if will_click_ads_ele:
             try:
-                action = TouchAction(driver)
-                action.tap(will_click_ads_ele).perform()
-            except Exception:
-                logger.exception("Error:")
-
-            try:
                 x = will_click_ads_ele.get('x')
                 y = will_click_ads_ele.get('y')
 
@@ -296,7 +290,7 @@ def _common_ads_try_move_and_click(driver):
                 logger.exception("Error:")
 
             try:
-                logger.info("click ads")
+                logger.info("click ads: call element click")
                 will_click_ads_ele.click()
                 time.sleep(random.randint(10, 30))
                 had_click_ads = True
@@ -314,7 +308,14 @@ def _reunion_ads_try_find(driver, layer):
     all_ads_count = len(ads_iframe_elements)
     logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
 
-    for index_frame in range(all_ads_count):
+    # 检查是否可见
+    sort_index_list = []
+    for index in range(all_ads_count):
+        sort_index_list.append(index)
+    # 让列表乱序处理
+    random.shuffle(sort_index_list)
+
+    for index_frame in sort_index_list:
         ele_iframe = ads_iframe_elements[index_frame]
 
         try:
@@ -327,10 +328,13 @@ def _reunion_ads_try_find(driver, layer):
                 is_displayed
             ))
 
-            if is_displayed:
+            if not is_displayed:
                 try:
-                    action = TouchAction(driver)
-                    action.tap(ele_iframe).perform()
+                    x = ele_iframe.get('x')
+                    y = ele_iframe.get('y')
+
+                    logger.info("ads element x={}, y={}".format(x, y))
+                    driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
                 except Exception:
                     logger.exception("Error:")
         except Exception:
