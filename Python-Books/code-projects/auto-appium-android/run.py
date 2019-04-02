@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import locale
 
-from selenium.webdriver import ActionChains
-
 print(locale.getdefaultlocale())
 
 import argparse
@@ -100,7 +98,7 @@ def sys_exit(message):
     exit(0)
 
 
-def siample_touch(driver):
+def sample_touch(driver):
     try:
         eye1 = TouchAction(driver)
         eye1.press(x=random.randint(100, 150),
@@ -282,11 +280,9 @@ def _common_ads_try_move_and_click(driver):
                 break
 
         if will_click_ads_ele:
-
             try:
-                actions = ActionChains(driver)
-                actions.move_to_element_with_offset(will_click_ads_ele, 10, 10)
-                actions.perform()
+                action = TouchAction(driver)
+                action.tap(will_click_ads_ele).perform()
             except Exception:
                 logger.exception("Error:")
 
@@ -318,12 +314,25 @@ def _reunion_ads_try_find(driver, layer):
     all_ads_count = len(ads_iframe_elements)
     logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
 
-    for index_layer1_frame in range(all_ads_count):
-        ele_iframe = ads_iframe_elements[index_layer1_frame]
+    for index_frame in range(all_ads_count):
+        ele_iframe = ads_iframe_elements[index_frame]
+
         try:
-            actions = ActionChains(driver)
-            actions.move_to_element_with_offset(ele_iframe, 10, 10)
-            actions.perform()
+            location = ele_iframe.location_in_view
+            is_displayed = ele_iframe.is_displayed()
+            logger.info("layer={}, index_frame={}, location={}, is_displayed={}".format(
+                layer,
+                index_frame,
+                location,
+                is_displayed
+            ))
+
+            if is_displayed:
+                try:
+                    action = TouchAction(driver)
+                    action.tap(ele_iframe).perform()
+                except Exception:
+                    logger.exception("Error:")
         except Exception:
             logger.exception("Error:")
 
@@ -438,7 +447,7 @@ def starup(want_open_url):
 
         # 可以滚动一下
         logger.info("The Web page is ready, ready, you can scroll ...")
-        siample_touch(globals_drivers[now_driver_id])
+        sample_touch(globals_drivers[now_driver_id])
         auto_scroll_page(globals_drivers[now_driver_id])
 
         # 随机回滚一下
