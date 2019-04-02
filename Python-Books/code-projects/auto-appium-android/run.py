@@ -251,7 +251,8 @@ def get_enable_click_ads():
 
     # Step2: 获取随机范围
     # return round(random.uniform(0.2, 0.9), 2) > 0.3 and time_enable
-    return time_enable
+    return True
+    # return time_enable
 
 
 def _common_ads_try_move_and_click(driver):
@@ -318,7 +319,15 @@ def _reunion_ads_try_find(driver, layer):
     logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
 
     for index_layer1_frame in range(all_ads_count):
-        driver.switch_to.frame(ads_iframe_elements[index_layer1_frame])
+        ele_iframe = ads_iframe_elements[index_layer1_frame]
+        try:
+            actions = ActionChains(driver)
+            actions.move_to_element_with_offset(ele_iframe, 10, 10)
+            actions.perform()
+        except Exception:
+            logger.exception("Error:")
+
+        driver.switch_to.frame(ele_iframe)
         had_click_ads = _common_ads_try_move_and_click(driver)
         if had_click_ads:
             return layer
