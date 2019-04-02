@@ -302,14 +302,17 @@ def _reunion_ads_try_find(driver, layer):
     sort_index_list.reverse()
 
     for index_frame in sort_index_list:
-        ele_iframe = ads_iframe_elements[index_frame]
-        driver.switch_to.frame(ele_iframe)
-        had_click_ads = _common_ads_try_move_and_click(driver)
-        if had_click_ads:
-            return layer
-        else:
-            layer += 1
-            _reunion_ads_try_find(driver, layer)
+        try:
+            ele_iframe = ads_iframe_elements[index_frame]
+            driver.switch_to.frame(ele_iframe)
+            had_click_ads = _common_ads_try_move_and_click(driver)
+            if had_click_ads:
+                return layer
+            else:
+                layer += 1
+                _reunion_ads_try_find(driver, layer)
+        except Exception:
+            logger.exception("Error:")
 
 
 def auto_click_ads(driver):
@@ -428,12 +431,18 @@ def starup(want_open_url):
         cfg_enable_web_wait = False
         if cfg_enable_web_wait:
             logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(60, 150)
+            min_sleep_secs = random.randint(30, 75)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
         logger.info("Try click some ads element...")
         auto_click_ads(globals_drivers[now_driver_id])
+
+        cfg_enable_web_wait_after_ads = True
+        if cfg_enable_web_wait_after_ads:
+            logger.info("点击广告后，需要等待一会...")
+            min_sleep_secs = random.randint(30, 75)
+            time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
