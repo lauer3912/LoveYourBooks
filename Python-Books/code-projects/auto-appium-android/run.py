@@ -207,7 +207,7 @@ def random_scroll_up(driver):
         # 随机回滚的位置
         all_rectangle_count = len(rectangles)
         cur_index = 0
-        max_rectangle_count = random.randint(0, all_rectangle_count)
+        max_rectangle_count = max(0, random.randint(0, all_rectangle_count) - 1)
         rectangles.reverse()
         for rectangle in rectangles:
             if cur_index >= max_rectangle_count:
@@ -248,15 +248,15 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    # return round(random.uniform(0.2, 0.9), 2) > 0.3 and time_enable
-    return True
-    # return time_enable
+    return round(random.uniform(0.2, 10), 2) >= 2 and time_enable
 
 
 def _common_ads_try_move_and_click(driver):
     # 在这个frame中定位到谷歌广告
     # 找 a 元素，target="_blank" 类似的元素
-    link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
+    # href= https://www.googleadservices.com/pagead/aclk?
+    # link_elements = driver.find_elements_by_xpath("//a[contains(@href, 'googleadservices') and @target='_blank']")
+    link_elements = driver.find_elements_by_xpath("//a")
     count_link_elements = len(link_elements)
 
     logger.info("link_elements = {}".format(count_link_elements))
@@ -279,6 +279,13 @@ def _common_ads_try_move_and_click(driver):
                 time.sleep(random.randint(10, 30))
             except Exception:
                 logger.exception("Error:")
+                try:
+                    one_ads_element.click()
+                    had_click_ads = True
+                    time.sleep(random.randint(10, 30))
+                except:
+                    pass
+
                 continue
             finally:
                 if had_click_ads:
@@ -297,16 +304,26 @@ def _reunion_ads_try_find(driver, layer):
     sort_index_list = []
     for index in range(all_ads_count):
         sort_index_list.append(index)
-    # 让列表乱序处理
-    # random.shuffle(sort_index_list)
     sort_index_list.reverse()
 
     for index_frame in sort_index_list:
         try:
             ele_iframe = ads_iframe_elements[index_frame]
+
+            is_displayed = False
+            rect = {'height': 0, 'width': 0, 'x': 0, 'y': 0}
+            try:
+                is_displayed = ele_iframe.is_displayed()
+                rect = ele_iframe.rect
+            except Exception:
+                logger.exception("Error:")
+            finally:
+                logger.info("iframe: is_displayed={} rect={}...".format(is_displayed, rect))
+
             driver.switch_to.frame(ele_iframe)
             had_click_ads = _common_ads_try_move_and_click(driver)
             if had_click_ads:
+                logger.info('had_click_ads = True')
                 return layer
             else:
                 layer += 1
@@ -387,8 +404,8 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(120, 180)
-        max_script_timeout = random.randint(60, 90)
+        max_page_load_timeout = random.randint(120, 150)
+        max_script_timeout = random.randint(45, 60)
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
@@ -420,18 +437,11 @@ def starup(want_open_url):
         sample_touch(globals_drivers[now_driver_id])
         auto_scroll_page(globals_drivers[now_driver_id])
 
-        # 随机回滚一下
-        cfg_enable_scroll_up = False
-        if cfg_enable_scroll_up:
-            min_sleep_secs = random.randint(2, 10)
-            time.sleep(min_sleep_secs)
-            random_scroll_up(globals_drivers[now_driver_id])
-
         # 休息一会
-        cfg_enable_web_wait = False
+        cfg_enable_web_wait = True
         if cfg_enable_web_wait:
             logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(30, 75)
+            min_sleep_secs = random.randint(10, 30)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
@@ -441,8 +451,15 @@ def starup(want_open_url):
         cfg_enable_web_wait_after_ads = True
         if cfg_enable_web_wait_after_ads:
             logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(30, 75)
+            min_sleep_secs = random.randint(15, 60)
             time.sleep(min_sleep_secs)
+
+        # 随机回滚一下
+        cfg_enable_scroll_up = True
+        if cfg_enable_scroll_up:
+            min_sleep_secs = random.randint(2, 5)
+            time.sleep(min_sleep_secs)
+            random_scroll_up(globals_drivers[now_driver_id])
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
