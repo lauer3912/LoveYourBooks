@@ -445,8 +445,10 @@ def starup(want_open_url):
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
-        logger.info("Try click some ads element...")
-        auto_click_ads(globals_drivers[now_driver_id])
+        cfg_enable_click_ads = False
+        if cfg_enable_click_ads:
+            logger.info("Try click some ads element...")
+            auto_click_ads(globals_drivers[now_driver_id])
 
         cfg_enable_web_wait_after_ads = True
         if cfg_enable_web_wait_after_ads:
