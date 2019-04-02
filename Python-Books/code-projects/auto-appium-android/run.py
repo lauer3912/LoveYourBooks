@@ -342,6 +342,7 @@ def auto_click_ads(driver):
         logger.info("Disable click ads...")
         return
 
+    logger.info("Enable click ads...")
     layer = 0
     try:
         # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
@@ -407,8 +408,8 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(50, 90)
-        max_script_timeout = 30
+        max_page_load_timeout = random.randint(120, 180)
+        max_script_timeout = random.randint(60, 90)
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
