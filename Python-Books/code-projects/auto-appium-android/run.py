@@ -285,15 +285,17 @@ def _common_ads_try_move_and_click(driver):
                 y = will_click_ads_ele.get('y')
 
                 logger.info("ads element x={}, y={}".format(x, y))
-                driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
+                driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
             except Exception:
                 logger.exception("Error:")
 
             try:
-                logger.info("click ads: call element click")
-                will_click_ads_ele.click()
-                time.sleep(random.randint(10, 30))
-                had_click_ads = True
+                # No found the visual ads element
+                if will_click_ads_ele.is_displayed():
+                    logger.info("click ads: call element click")
+                    will_click_ads_ele.click()
+                    time.sleep(random.randint(10, 30))
+                    had_click_ads = True
             except Exception:
                 logger.exception("Error:")
         else:
@@ -319,24 +321,22 @@ def _reunion_ads_try_find(driver, layer):
         ele_iframe = ads_iframe_elements[index_frame]
 
         try:
-            location = ele_iframe.location_in_view
             is_displayed = ele_iframe.is_displayed()
-            logger.info("layer={}, index_frame={}, location={}, is_displayed={}".format(
+            logger.info("layer={}, index_frame={}, is_displayed={}".format(
                 layer,
                 index_frame,
-                location,
                 is_displayed
             ))
 
-            if not is_displayed:
-                try:
-                    x = ele_iframe.get('x')
-                    y = ele_iframe.get('y')
+            try:
+                x = ele_iframe.get('x')
+                y = ele_iframe.get('y')
 
-                    logger.info("ads element x={}, y={}".format(x, y))
-                    driver.execute_script("window.scrollTo({0}, {1})".format(x, y))
-                except Exception:
-                    logger.exception("Error:")
+                logger.info("ads element x={}, y={}".format(x, y))
+                driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
+            except Exception:
+                logger.exception("Error:")
+
         except Exception:
             logger.exception("Error:")
 
