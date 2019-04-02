@@ -280,12 +280,14 @@ def _common_ads_try_move_and_click(driver):
                 break
 
         if will_click_ads_ele:
+            logger.info("Found a ads element ...")
             try:
-                x = will_click_ads_ele.get('x')
-                y = will_click_ads_ele.get('y')
+                if will_click_ads_ele.is_displayed():
+                    x = will_click_ads_ele.get('x')
+                    y = will_click_ads_ele.get('y')
 
-                logger.info("ads element x={}, y={}".format(x, y))
-                driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
+                    logger.info("ads element x={}, y={}".format(x, y))
+                    driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
             except Exception:
                 logger.exception("Error:")
 
@@ -294,12 +296,11 @@ def _common_ads_try_move_and_click(driver):
                 if will_click_ads_ele.is_displayed():
                     logger.info("click ads: call element click")
                     will_click_ads_ele.click()
+
                     time.sleep(random.randint(10, 30))
                     had_click_ads = True
             except Exception:
                 logger.exception("Error:")
-        else:
-            logger.info("No found the visual ads element")
 
     return had_click_ads
 
@@ -320,6 +321,7 @@ def _reunion_ads_try_find(driver, layer):
     for index_frame in sort_index_list:
         ele_iframe = ads_iframe_elements[index_frame]
 
+        is_displayed = False
         try:
             is_displayed = ele_iframe.is_displayed()
             logger.info("layer={}, index_frame={}, is_displayed={}".format(
@@ -329,24 +331,27 @@ def _reunion_ads_try_find(driver, layer):
             ))
 
             try:
-                x = ele_iframe.get('x')
-                y = ele_iframe.get('y')
+                if is_displayed:
+                    x = ele_iframe.get('x')
+                    y = ele_iframe.get('y')
 
-                logger.info("ads element x={}, y={}".format(x, y))
-                driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
+                    logger.info("ads element x={}, y={}".format(x, y))
+                    driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
             except Exception:
                 logger.exception("Error:")
 
         except Exception:
             logger.exception("Error:")
 
-        driver.switch_to.frame(ele_iframe)
-        had_click_ads = _common_ads_try_move_and_click(driver)
-        if had_click_ads:
-            return layer
-        else:
-            layer += 1
-            _reunion_ads_try_find(driver, layer)
+        # 只有页面有显示的情况下
+        if is_displayed:
+            driver.switch_to.frame(ele_iframe)
+            had_click_ads = _common_ads_try_move_and_click(driver)
+            if had_click_ads:
+                return layer
+            else:
+                layer += 1
+                _reunion_ads_try_find(driver, layer)
 
 
 def auto_click_ads(driver):
