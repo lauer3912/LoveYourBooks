@@ -254,15 +254,12 @@ def get_enable_click_ads():
 
 
 def _common_ads_try_move_and_click(driver):
-    had_click_ads = False
-
     # 在这个frame中定位到谷歌广告
     # 找 a 元素，target="_blank" 类似的元素
     link_elements = driver.find_elements_by_xpath('//a[@target="_blank"]')
     count_link_elements = len(link_elements)
 
     logger.info("link_elements = {}".format(count_link_elements))
-
     if count_link_elements != 0:
         # 检查是否可见
         sort_indexs = []
@@ -272,37 +269,22 @@ def _common_ads_try_move_and_click(driver):
         random.shuffle(sort_indexs)
 
         # 随机找到可见的元素，再进行点击
-        will_click_ads_ele = None
         for cur_index in sort_indexs:
             one_ads_element = link_elements[cur_index]
-            if one_ads_element.is_displayed():
-                will_click_ads_ele = one_ads_element
-                break
-
-        if will_click_ads_ele:
-            logger.info("Found a ads element ...")
+            had_click_ads = False
             try:
-                if will_click_ads_ele.is_displayed():
-                    x = will_click_ads_ele.get('x')
-                    y = will_click_ads_ele.get('y')
-
-                    logger.info("ads element x={}, y={}".format(x, y))
-                    driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
+                logger.info("Try click a ads element ...")
+                one_ads_element.click()
+                had_click_ads = True
+                time.sleep(random.randint(10, 30))
             except Exception:
                 logger.exception("Error:")
+                continue
+            finally:
+                if had_click_ads:
+                    return True
 
-            try:
-                # No found the visual ads element
-                if will_click_ads_ele.is_displayed():
-                    logger.info("click ads: call element click")
-                    will_click_ads_ele.click()
-
-                    time.sleep(random.randint(10, 30))
-                    had_click_ads = True
-            except Exception:
-                logger.exception("Error:")
-
-    return had_click_ads
+    return False
 
 
 def _reunion_ads_try_find(driver, layer):
@@ -321,38 +303,13 @@ def _reunion_ads_try_find(driver, layer):
 
     for index_frame in sort_index_list:
         ele_iframe = ads_iframe_elements[index_frame]
-
-        is_displayed = False
-        try:
-            is_displayed = ele_iframe.is_displayed()
-            logger.info("layer={}, index_frame={}, is_displayed={}".format(
-                layer,
-                index_frame,
-                is_displayed
-            ))
-
-            try:
-                if is_displayed:
-                    x = ele_iframe.get('x')
-                    y = ele_iframe.get('y')
-
-                    logger.info("ads element x={}, y={}".format(x, y))
-                    driver.execute_script("window.scrollTo({0}, {1})".format(0, y))
-            except Exception:
-                logger.exception("Error:")
-
-        except Exception:
-            logger.exception("Error:")
-
-        # 只有页面有显示的情况下
-        if is_displayed:
-            driver.switch_to.frame(ele_iframe)
-            had_click_ads = _common_ads_try_move_and_click(driver)
-            if had_click_ads:
-                return layer
-            else:
-                layer += 1
-                _reunion_ads_try_find(driver, layer)
+        driver.switch_to.frame(ele_iframe)
+        had_click_ads = _common_ads_try_move_and_click(driver)
+        if had_click_ads:
+            return layer
+        else:
+            layer += 1
+            _reunion_ads_try_find(driver, layer)
 
 
 def auto_click_ads(driver):
