@@ -251,87 +251,6 @@ def get_enable_click_ads():
     return round(random.uniform(0.2, 10), 2) >= 2 and time_enable
 
 
-def _common_ads_try_move_and_click(driver):
-    # 在这个frame中定位到谷歌广告
-    # 找 a 元素，target="_blank" 类似的元素
-    # href= https://www.googleadservices.com/pagead/aclk?
-    # link_elements = driver.find_elements_by_xpath("//a[contains(@href, 'googleadservices') and @target='_blank']")
-    link_elements = driver.find_elements_by_xpath("//a")
-    count_link_elements = len(link_elements)
-
-    logger.info("link_elements = {}".format(count_link_elements))
-    if count_link_elements != 0:
-        # 检查是否可见
-        sort_indexs = []
-        for index in range(count_link_elements):
-            sort_indexs.append(index)
-        # 让列表乱序处理
-        random.shuffle(sort_indexs)
-
-        # 随机找到可见的元素，再进行点击
-        for cur_index in sort_indexs:
-            one_ads_element = link_elements[cur_index]
-            had_click_ads = False
-            try:
-                logger.info("Try click a ads element ...")
-                one_ads_element.click()
-                had_click_ads = True
-                time.sleep(random.randint(15, 30))
-            except Exception:
-                logger.exception("Error:")
-                try:
-                    one_ads_element.click()
-                    had_click_ads = True
-                    time.sleep(random.randint(15, 30))
-                except:
-                    pass
-
-                continue
-            finally:
-                if had_click_ads:
-                    return True
-
-    return False
-
-
-def _reunion_ads_try_find(driver, layer):
-    # driver.implicitly_wait(5)
-    ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
-    all_ads_count = len(ads_iframe_elements)
-    logger.info("layer = {}, ads_iframe_elements = {}".format(layer, all_ads_count))
-
-    # 检查是否可见
-    sort_index_list = []
-    for index in range(all_ads_count):
-        sort_index_list.append(index)
-    sort_index_list.reverse()
-
-    for index_frame in sort_index_list:
-        try:
-            ele_iframe = ads_iframe_elements[index_frame]
-
-            is_displayed = False
-            rect = {'height': 0, 'width': 0, 'x': 0, 'y': 0}
-            try:
-                is_displayed = ele_iframe.is_displayed()
-                rect = ele_iframe.rect
-            except Exception:
-                logger.exception("Error:")
-            finally:
-                logger.info("iframe: is_displayed={} rect={}...".format(is_displayed, rect))
-
-            driver.switch_to.frame(ele_iframe)
-            had_click_ads = _common_ads_try_move_and_click(driver)
-            if had_click_ads:
-                logger.info('had_click_ads = True')
-                return layer
-            else:
-                layer += 1
-                _reunion_ads_try_find(driver, layer)
-        except Exception:
-            logger.exception("Error:")
-
-
 def auto_click_ads(driver):
     logger.info("Trying click ads...")
     if not get_enable_click_ads():
@@ -339,15 +258,24 @@ def auto_click_ads(driver):
         return
 
     logger.info("Enable click ads...")
-    layer = 0
-    try:
-        # 获取广告的元素有哪些？然后随机找到一个元素，并且在可视范围内，然后点击
-        layer = _reunion_ads_try_find(driver, layer)
-    except Exception:
-        logger.exception("Error:")
-        for i in range(layer):
-            driver.switch_to.parent_frame()
-        driver.switch_to.default_content()
+
+    # 随机点击5个点
+    ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
+    all_ads_count = len(ads_iframe_elements)
+    if all_ads_count > 0:
+        max_width = 810
+        max_height = 1440
+        offset = 50
+
+        # 模拟出n个点，循环点击一下
+        max_pos_count = random.randint(5, 10)
+        for i in range(max_pos_count):
+            pos_x = random.randint(offset, max_width - offset)
+            pos_y = random.randint(offset, max_height - offset)
+            tap_positions = [(pos_x, pos_y)]
+
+            time.sleep(random.randint(3, 5))
+            driver.tap(tap_positions, 500)
 
 
 def starup(want_open_url):
