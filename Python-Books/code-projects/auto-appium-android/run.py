@@ -270,7 +270,7 @@ def _try_tap_one_element(driver, cfg):
         action.perform().release()
         return True
     except Exception:
-        logger.exception("_try_tap_one_element - Error:")
+        pass
 
     return False
 
@@ -298,7 +298,6 @@ def auto_click_ads(driver):
                             logger.info("[Yes] click ads...")
                             break
                 except Exception:
-                    logger.exception("Error:")
                     continue
 
             # viewport_width = driver.execute_script("return document.body.clientWidth")
@@ -376,7 +375,7 @@ def starup(want_open_url):
             size = cur_driver.get_window_size()
             logger.info("Device Size = {}".format(size))
         except Exception:
-            logger.error('Error:')
+            pass
 
         logger.info("Open %s" % want_open_url)
 
@@ -384,8 +383,8 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(90, 120)
-        max_script_timeout = random.randint(30, 60)
+        max_page_load_timeout = random.randint(75, 90)
+        max_script_timeout = random.randint(30, 75)
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
@@ -427,10 +426,10 @@ def starup(want_open_url):
             random_scroll_up(globals_drivers[now_driver_id])
 
         # 休息一会
-        cfg_enable_web_wait = random.randint(0, 1)
+        cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(30, 60)
+            min_sleep_secs = random.randint(20, 50)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
@@ -442,7 +441,7 @@ def starup(want_open_url):
         cfg_enable_web_wait_after_ads = random.randint(0, 1)
         if cfg_enable_web_wait_after_ads == 1 and cfg_enable_click_ads == 1:
             logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(30, 60)
+            min_sleep_secs = random.randint(20, 50)
             time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
