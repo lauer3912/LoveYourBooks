@@ -12,6 +12,7 @@ import time
 
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
+from appium.webdriver.extensions.action_helpers import ActionHelpers
 
 print("The Python path used = %s" % sys.executable)
 
@@ -264,19 +265,22 @@ def auto_click_ads(driver):
         ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
         all_ads_count = len(ads_iframe_elements)
         if all_ads_count > 0:
-            max_width = 810
-            max_height = 1440
-            offset = 100
+            viewport_width = driver.execute_script("return document.body.clientWidth")
+            viewport_height = driver.execute_script("return window.innerHeight")
+            offset_x = 20
+            offset_y = 20
 
             # 模拟出n个点，循环点击一下
             max_pos_count = random.randint(5, 10)
             for i in range(max_pos_count):
-                pos_x = random.randint(offset, max_width - offset)
-                pos_y = random.randint(offset, max_height - offset)
-                tap_positions = [(pos_x, pos_y)]
-
+                pos_x = random.randint(offset_x, viewport_width - offset_x)
+                pos_y = random.randint(offset_y, viewport_height - offset_y)
                 time.sleep(random.randint(3, 5))
-                driver.tap(tap_positions, 500)
+
+                # 点击
+                action = TouchAction(driver)
+                action.tap(x=pos_x, y=pos_y)
+                action.perform()
     except Exception:
         logger.exception("Error:")
 
