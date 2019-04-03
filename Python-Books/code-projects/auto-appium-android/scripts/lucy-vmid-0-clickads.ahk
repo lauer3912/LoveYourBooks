@@ -24,6 +24,9 @@ WheelUpOrDown()
         }
 }
 
+; Active the window 
+Click %ads_X_min%, 178
+
 ; Click the top ads
 ClickAds(ads_X_min, ads_X_max, 172, 215)
 
@@ -34,8 +37,8 @@ ClickAds(ads_X_min, ads_X_max, 534, 720)
 ClickAds(ads_X_min, ads_X_max, 900, 952)
 
 ; WheelUp or WheelDown
-WheelUpOrDown()
+;WheelUpOrDown()
 
 ; Exit
-Exit
+;Exit
 
