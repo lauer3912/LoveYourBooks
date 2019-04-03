@@ -259,7 +259,7 @@ def auto_click_ads():
         logger.info("Trying click ads...")
         if not get_enable_click_ads():
             logger.info("Disable click ads...")
-            return
+            return 0
         logger.info("Enable click ads...")
 
         proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file],
@@ -269,9 +269,12 @@ def auto_click_ads():
         cmd_out = proc.stdout.read()
         proc.stdout.close()
         logger.info(cmd_out)
+        return 1
 
     except Exception:
         logger.exception("Error:")
+
+    return 0
 
 
 def starup(want_open_url):
@@ -387,14 +390,10 @@ def starup(want_open_url):
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
-        cfg_enable_click_ads = 1
-        cfg_enable_web_wait_after_ads = random.randint(0, 1)
-        if cfg_enable_click_ads == 1:
-            logger.info("尝试点击广告，现在还有成功实现该功能...")
-            auto_click_ads()
-            cfg_enable_web_wait_after_ads = 1
+        logger.info("尝试点击广告...")
+        cfg_enable_web_wait_after_ads = auto_click_ads()
 
-        if cfg_enable_web_wait_after_ads == 1 and cfg_enable_click_ads == 1:
+        if cfg_enable_web_wait_after_ads == 1:
             logger.info("点击广告后，需要等待一会...")
             min_sleep_secs = random.randint(40, 60)
             time.sleep(min_sleep_secs)
@@ -403,7 +402,7 @@ def starup(want_open_url):
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
 
         # 浏览完成后，可以关闭了
-        logger.info("After browsing is complete, you can close the page...")
+        logger.info("浏览网页完成，即将关闭该网页...")
 
         # print(contexts)
         # print(current_context)
