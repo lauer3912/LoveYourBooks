@@ -414,7 +414,7 @@ def starup(want_open_url):
         # 可以滚动一下
         cfg_enable_auto_scroll = True
         if cfg_enable_auto_scroll:
-            logger.info("The Web page is ready, ready, you can scroll ...")
+            logger.info("网页已经加载完成，可以从上到下滚动了 ...")
             sample_touch(globals_drivers[now_driver_id])
             auto_scroll_page(globals_drivers[now_driver_id])
 
@@ -423,19 +423,20 @@ def starup(want_open_url):
         if cfg_enable_scroll_up == 1:
             min_sleep_secs = random.randint(3, 5)
             time.sleep(min_sleep_secs)
+            logger.info("现在可以向上滚动页面了 ...")
             random_scroll_up(globals_drivers[now_driver_id])
 
         # 休息一会
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
-            logger.info("Take a break first, let the Web page itself quiet...")
+            logger.info("让网页自己先安静一下...")
             min_sleep_secs = random.randint(60, 90)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
         cfg_enable_click_ads = random.randint(0, 1)
         if cfg_enable_click_ads == 1:
-            logger.info("Try click some ads element...")
+            logger.info("尝试点击广告，现在还有成功实现该功能...")
             auto_click_ads(globals_drivers[now_driver_id])
 
         cfg_enable_web_wait_after_ads = random.randint(0, 1)
