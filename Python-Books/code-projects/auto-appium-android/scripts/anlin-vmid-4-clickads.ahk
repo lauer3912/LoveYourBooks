@@ -8,7 +8,7 @@ ClickAds(x_min:=0, x_max:=0, y_min:=0, y_max:=0)
 {
     Random, x, %x_min%, %x_max%
     Random, y, %y_min%, %y_max%
-    Click %x%, %y%, 2
+    Click %x%, %y%
     Sleep, 2000
 }
 
