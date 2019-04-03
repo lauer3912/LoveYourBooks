@@ -429,7 +429,7 @@ def starup(want_open_url):
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(20, 50)
+            min_sleep_secs = random.randint(60, 90)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
