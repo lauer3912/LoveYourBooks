@@ -236,15 +236,15 @@ def get_enable_click_ads():
     cur_time = time.localtime()
     cur_time_hour = int(cur_time.tm_hour)
     # 上午的情况，对应为美国区的晚上
-    if cur_time_hour in range(9, 18):
+    if cur_time_hour in range(10, 16):
         time_enable = False
 
     # 凌晨的情况，对应美国区的下午
-    if cur_time_hour in range(0, 9):
+    if cur_time_hour in range(0, 10):
         time_enable = True
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
-    if cur_time_hour in range(18, 25):
+    if cur_time_hour in range(16, 25):
         time_enable = True
 
     # Step2: 获取随机范围
@@ -404,8 +404,8 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(60, 90)
-        max_script_timeout = random.randint(15, 30)
+        max_page_load_timeout = random.randint(90, 120)
+        max_script_timeout = random.randint(30, 60)
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
@@ -433,35 +433,37 @@ def starup(want_open_url):
         # contexts = driver.contexts
 
         # 可以滚动一下
-        logger.info("The Web page is ready, ready, you can scroll ...")
-        sample_touch(globals_drivers[now_driver_id])
-        auto_scroll_page(globals_drivers[now_driver_id])
-
-        # 休息一会
-        cfg_enable_web_wait = True
-        if cfg_enable_web_wait:
-            logger.info("Take a break first, let the Web page itself quiet...")
-            min_sleep_secs = random.randint(15, 30)
-            time.sleep(min_sleep_secs)
-
-        # 可以尝试点击广告了
-        cfg_enable_click_ads = False
-        if cfg_enable_click_ads:
-            logger.info("Try click some ads element...")
-            auto_click_ads(globals_drivers[now_driver_id])
-
-        cfg_enable_web_wait_after_ads = True
-        if cfg_enable_web_wait_after_ads:
-            logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(15, 30)
-            time.sleep(min_sleep_secs)
+        cfg_enable_auto_scroll = True
+        if cfg_enable_auto_scroll:
+            logger.info("The Web page is ready, ready, you can scroll ...")
+            sample_touch(globals_drivers[now_driver_id])
+            auto_scroll_page(globals_drivers[now_driver_id])
 
         # 随机回滚一下
-        cfg_enable_scroll_up = True
-        if cfg_enable_scroll_up:
+        cfg_enable_scroll_up = random.randint(0, 1)
+        if cfg_enable_scroll_up == 1:
             min_sleep_secs = random.randint(3, 5)
             time.sleep(min_sleep_secs)
             random_scroll_up(globals_drivers[now_driver_id])
+
+        # 休息一会
+        cfg_enable_web_wait = random.randint(0, 1)
+        if cfg_enable_web_wait == 1:
+            logger.info("Take a break first, let the Web page itself quiet...")
+            min_sleep_secs = random.randint(30, 60)
+            time.sleep(min_sleep_secs)
+
+        # 可以尝试点击广告了
+        cfg_enable_click_ads = random.randint(0, 1)
+        if cfg_enable_click_ads == 1:
+            logger.info("Try click some ads element...")
+            auto_click_ads(globals_drivers[now_driver_id])
+
+        cfg_enable_web_wait_after_ads = random.randint(0, 1)
+        if cfg_enable_web_wait_after_ads == 1 and cfg_enable_click_ads == 1:
+            logger.info("点击广告后，需要等待一会...")
+            min_sleep_secs = random.randint(30, 60)
+            time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
