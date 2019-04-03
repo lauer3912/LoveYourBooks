@@ -295,6 +295,7 @@ def auto_click_ads(driver):
                         b = _try_tap_one_element(driver, {'ele': cur_iframe_ele, 'x': 5, 'y': 5})
 
                         if a or b:
+                            logger.info("[Yes] click ads...")
                             break
                 except Exception:
                     logger.exception("Error:")
