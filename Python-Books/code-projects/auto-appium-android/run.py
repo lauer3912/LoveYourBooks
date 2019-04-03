@@ -252,30 +252,33 @@ def get_enable_click_ads():
 
 
 def auto_click_ads(driver):
-    logger.info("Trying click ads...")
-    if not get_enable_click_ads():
-        logger.info("Disable click ads...")
-        return
+    try:
+        logger.info("Trying click ads...")
+        if not get_enable_click_ads():
+            logger.info("Disable click ads...")
+            return
 
-    logger.info("Enable click ads...")
+        logger.info("Enable click ads...")
 
-    # 随机点击5个点
-    ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
-    all_ads_count = len(ads_iframe_elements)
-    if all_ads_count > 0:
-        max_width = 810
-        max_height = 1440
-        offset = 50
+        # 随机点击5个点
+        ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
+        all_ads_count = len(ads_iframe_elements)
+        if all_ads_count > 0:
+            max_width = 810
+            max_height = 1440
+            offset = 100
 
-        # 模拟出n个点，循环点击一下
-        max_pos_count = random.randint(5, 10)
-        for i in range(max_pos_count):
-            pos_x = random.randint(offset, max_width - offset)
-            pos_y = random.randint(offset, max_height - offset)
-            tap_positions = [(pos_x, pos_y)]
+            # 模拟出n个点，循环点击一下
+            max_pos_count = random.randint(5, 10)
+            for i in range(max_pos_count):
+                pos_x = random.randint(offset, max_width - offset)
+                pos_y = random.randint(offset, max_height - offset)
+                tap_positions = [(pos_x, pos_y)]
 
-            time.sleep(random.randint(3, 5))
-            driver.tap(tap_positions, 500)
+                time.sleep(random.randint(3, 5))
+                driver.tap(tap_positions, 500)
+    except Exception:
+        logger.exception("Error:")
 
 
 def starup(want_open_url):
