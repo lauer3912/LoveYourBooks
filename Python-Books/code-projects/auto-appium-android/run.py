@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import locale
+import subprocess
 
 print(locale.getdefaultlocale())
 
@@ -9,6 +10,7 @@ import random
 import signal
 import sys
 import time
+import psutil
 
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
@@ -21,6 +23,8 @@ app_parser.add_argument('--s', dest='remote_server', action='store', default='ht
                         help='The Appium server')
 app_parser.add_argument('--d', dest='dest_device', action='store', default='127.0.0.1:21523',
                         help='The device, Use: adb devices to list')
+app_parser.add_argument('--a', dest='auto_ahk_file', action='store', default='',
+                        help='Assign the auto hot key file')
 app_parser.add_argument('--v', dest='vmid', action='store', default=0,
                         help='Assign the vms id')
 
@@ -78,7 +82,6 @@ globals_drivers = {}
 def get_now_time():
     millis = int(round(time.time() * 1000))
     return millis
-
 
 def get_random_driver_id():
     """
@@ -251,72 +254,22 @@ def get_enable_click_ads():
     return round(random.uniform(0.2, 10), 2) >= 2 and time_enable
 
 
-def _try_tap_one_control(driver, cfg):
-    try:
-        action = TouchAction(driver)
-        action.tap(x=cfg['x'], y=cfg['y'])
-        action.perform().release()
-        return True
-    except Exception:
-        logger.exception("_try_tap_one_control - Error:")
-
-    return False
-
-
-def _try_tap_one_element(driver, cfg):
-    try:
-        action = TouchAction(driver)
-        action.tap(element=cfg['ele'], x=cfg['x'], y=cfg['y'])
-        action.perform().release()
-        return True
-    except Exception:
-        pass
-
-    return False
-
-
-def auto_click_ads(driver):
+def auto_click_ads():
     try:
         logger.info("Trying click ads...")
         if not get_enable_click_ads():
             logger.info("Disable click ads...")
             return
-
         logger.info("Enable click ads...")
 
-        ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
-        all_ads_count = len(ads_iframe_elements)
-        if all_ads_count > 0:
-            for index in range(all_ads_count):
-                try:
-                    cur_iframe_ele = ads_iframe_elements[index]
-                    if cur_iframe_ele.is_displayed():
-                        a = _try_tap_one_control(driver, {'x': 5, 'y': 5})
-                        b = _try_tap_one_element(driver, {'ele': cur_iframe_ele, 'x': 5, 'y': 5})
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file],
+                                cwd=os.path.join(app_current_dir, 'scripts'),
+                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                universal_newlines=True)
+        cmd_out = proc.stdout.read()
+        proc.stdout.close()
+        logger.info(cmd_out)
 
-                        if a or b:
-                            logger.info("[Yes] click ads...")
-                            break
-                except Exception:
-                    continue
-
-            # viewport_width = driver.execute_script("return document.body.clientWidth")
-            # viewport_height = driver.execute_script("return window.innerHeight")
-            # offset_x = 20
-            # offset_y = 20
-            #
-            # webview_toolbar_height = 1280 - 946
-            # # 模拟出n个点，循环点击一下
-            # max_pos_count = random.randint(5, 10)
-            # for i in range(max_pos_count):
-            #     pos_x = random.randint(offset_x, viewport_width - offset_x)
-            #     pos_y = random.randint(offset_y, viewport_height - offset_y)
-            #     time.sleep(random.randint(3, 5))
-            #
-            #     # 点击
-            #     action = TouchAction(driver)
-            #     action.tap(x=pos_x, y=pos_y)
-            #     action.perform()
     except Exception:
         logger.exception("Error:")
 
@@ -435,14 +388,15 @@ def starup(want_open_url):
 
         # 可以尝试点击广告了
         cfg_enable_click_ads = random.randint(0, 1)
+        cfg_enable_web_wait_after_ads = random.randint(0, 1)
         if cfg_enable_click_ads == 1:
             logger.info("尝试点击广告，现在还有成功实现该功能...")
-            auto_click_ads(globals_drivers[now_driver_id])
+            auto_click_ads()
+            cfg_enable_web_wait_after_ads = 1
 
-        cfg_enable_web_wait_after_ads = random.randint(0, 1)
         if cfg_enable_web_wait_after_ads == 1 and cfg_enable_click_ads == 1:
             logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(20, 50)
+            min_sleep_secs = random.randint(25, 35)
             time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
