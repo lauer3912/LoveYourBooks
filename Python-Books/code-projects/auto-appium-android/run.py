@@ -12,7 +12,6 @@ import time
 
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
-from appium.webdriver.extensions.action_helpers import ActionHelpers
 
 print("The Python path used = %s" % sys.executable)
 
@@ -237,11 +236,11 @@ def get_enable_click_ads():
     cur_time = time.localtime()
     cur_time_hour = int(cur_time.tm_hour)
     # 上午的情况，对应为美国区的晚上
-    if cur_time_hour in range(10, 16):
+    if cur_time_hour in range(13, 16):
         time_enable = False
 
     # 凌晨的情况，对应美国区的下午
-    if cur_time_hour in range(0, 10):
+    if cur_time_hour in range(0, 13):
         time_enable = True
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
@@ -250,6 +249,30 @@ def get_enable_click_ads():
 
     # Step2: 获取随机范围
     return round(random.uniform(0.2, 10), 2) >= 2 and time_enable
+
+
+def _try_tap_one_control(driver, cfg):
+    try:
+        action = TouchAction(driver)
+        action.tap(x=cfg['x'], y=cfg['y'])
+        action.perform().release()
+        return True
+    except Exception:
+        logger.exception("_try_tap_one_control - Error:")
+
+    return False
+
+
+def _try_tap_one_element(driver, cfg):
+    try:
+        action = TouchAction(driver)
+        action.tap(element=cfg['ele'], x=cfg['x'], y=cfg['y'])
+        action.perform().release()
+        return True
+    except Exception:
+        logger.exception("_try_tap_one_element - Error:")
+
+    return False
 
 
 def auto_click_ads(driver):
@@ -261,27 +284,39 @@ def auto_click_ads(driver):
 
         logger.info("Enable click ads...")
 
-        # 随机点击5个点
         ads_iframe_elements = driver.find_elements_by_xpath('//iframe')
         all_ads_count = len(ads_iframe_elements)
         if all_ads_count > 0:
-            viewport_width = driver.execute_script("return document.body.clientWidth")
-            viewport_height = driver.execute_script("return window.innerHeight")
-            offset_x = 20
-            offset_y = 20
+            for index in range(all_ads_count):
+                try:
+                    cur_iframe_ele = ads_iframe_elements[index]
+                    if cur_iframe_ele.is_displayed():
+                        a = _try_tap_one_control(driver, {'x': 5, 'y': 5})
+                        b = _try_tap_one_element(driver, {'ele': cur_iframe_ele, 'x': 5, 'y': 5})
 
-            webview_toolbar_height = 1280 - 946
-            # 模拟出n个点，循环点击一下
-            max_pos_count = random.randint(5, 10)
-            for i in range(max_pos_count):
-                pos_x = random.randint(offset_x, viewport_width - offset_x)
-                pos_y = random.randint(offset_y, viewport_height - offset_y)
-                time.sleep(random.randint(3, 5))
+                        if a or b:
+                            break
+                except Exception:
+                    logger.exception("Error:")
+                    continue
 
-                # 点击
-                action = TouchAction(driver)
-                action.tap(x=pos_x, y=pos_y)
-                action.perform()
+            # viewport_width = driver.execute_script("return document.body.clientWidth")
+            # viewport_height = driver.execute_script("return window.innerHeight")
+            # offset_x = 20
+            # offset_y = 20
+            #
+            # webview_toolbar_height = 1280 - 946
+            # # 模拟出n个点，循环点击一下
+            # max_pos_count = random.randint(5, 10)
+            # for i in range(max_pos_count):
+            #     pos_x = random.randint(offset_x, viewport_width - offset_x)
+            #     pos_y = random.randint(offset_y, viewport_height - offset_y)
+            #     time.sleep(random.randint(3, 5))
+            #
+            #     # 点击
+            #     action = TouchAction(driver)
+            #     action.tap(x=pos_x, y=pos_y)
+            #     action.perform()
     except Exception:
         logger.exception("Error:")
 
@@ -333,6 +368,14 @@ def starup(want_open_url):
         logger.info("remote server address : %s" % app_args.remote_server)
 
         globals_drivers[now_driver_id] = webdriver.Remote(app_args.remote_server, desired_caps)
+        cur_driver = globals_drivers[now_driver_id]
+
+        # 获取屏幕的size
+        try:
+            size = cur_driver.get_window_size()
+            logger.info("Device Size = {}".format(size))
+        except Exception:
+            logger.error('Error:')
 
         logger.info("Open %s" % want_open_url)
 
