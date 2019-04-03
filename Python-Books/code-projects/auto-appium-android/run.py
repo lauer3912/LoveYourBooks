@@ -270,6 +270,7 @@ def auto_click_ads(driver):
             offset_x = 20
             offset_y = 20
 
+            webview_toolbar_height = 1280 - 946
             # 模拟出n个点，循环点击一下
             max_pos_count = random.randint(5, 10)
             for i in range(max_pos_count):
