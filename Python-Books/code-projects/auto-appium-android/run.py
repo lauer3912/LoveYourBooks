@@ -251,7 +251,7 @@ def get_enable_click_ads():
         time_enable = True
 
     # Step2: 获取随机范围
-    return round(random.uniform(0.2, 10), 2) >= 2 and time_enable
+    return time_enable
 
 
 def auto_click_ads():
@@ -387,16 +387,16 @@ def starup(want_open_url):
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
-        cfg_enable_click_ads = random.randint(0, 1)
+        cfg_enable_click_ads = (round(random.uniform(0.2, 10), 2) >= 2)
         cfg_enable_web_wait_after_ads = random.randint(0, 1)
-        if cfg_enable_click_ads == 1:
+        if cfg_enable_click_ads:
             logger.info("尝试点击广告，现在还有成功实现该功能...")
             auto_click_ads()
             cfg_enable_web_wait_after_ads = 1
 
         if cfg_enable_web_wait_after_ads == 1 and cfg_enable_click_ads == 1:
             logger.info("点击广告后，需要等待一会...")
-            min_sleep_secs = random.randint(25, 35)
+            min_sleep_secs = random.randint(40, 60)
             time.sleep(min_sleep_secs)
 
         # 创建可以关闭VM的标记文件
