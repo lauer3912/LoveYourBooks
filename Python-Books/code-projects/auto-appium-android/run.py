@@ -249,11 +249,11 @@ def get_enable_click_ads():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
-        time_enable = True
+        time_enable = True and round(random.uniform(0.2, 10), 2) >= 2
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(16, 25):
-        time_enable = True
+        time_enable = True and round(random.uniform(0.2, 10), 2) >= 3
 
     # Step2: 获取随机范围
     return time_enable
