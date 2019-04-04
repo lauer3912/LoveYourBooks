@@ -82,8 +82,6 @@ class VMSModifyHandler(object):
                         'win_scaling_percent2': one_config.getAttribute('win_scaling_percent2'),
                         'resolution_width': one_config.getAttribute('resolution_width'),
                         'resolution_height': one_config.getAttribute('resolution_height'),
-                        'start_window_mode': one_config.getAttribute('start_window_mode'),
-                        'phone_layout': one_config.getAttribute('phone_layout')
                     }
 
                     self.configs.append({
