@@ -414,6 +414,14 @@ def starup(want_open_url):
         max_page_load_timeout = random.randint(180, 300)  # 加大支持timeout的时间, 让浏览更逼真
         max_script_timeout = random.randint(60, 90)       # 加大支持脚本执行的timeout时间，让浏览更逼真
 
+        # 是否开启快速浏览模式
+        # 快速浏览模式，将降低很多指标参数，不点击广告等等
+        enable_quick_browser_mode = round(random.uniform(0.2, 10), 2) <= 5
+        if enable_quick_browser_mode:
+            max_page_load_timeout = random.randint(60, 90)
+            max_script_timeout = 30
+
+        # 设置加载及延时时间控制
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
 
@@ -441,35 +449,45 @@ def starup(want_open_url):
         # 随机回滚一下
         cfg_enable_scroll_up = random.randint(0, 1)
         if cfg_enable_scroll_up == 1:
-            min_sleep_secs = random.randint(3, 5)
-            time.sleep(min_sleep_secs)
+            time.sleep(random.randint(3, 5))
             logger.info("现在可以向上滚动页面了 ...")
             start_auto_scroll_up_or_down()
 
-        # 休息一会
+        # 让网页自己休息一会
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            min_sleep_secs = random.randint(20, 30)
+            min_sleep_secs = random.randint(15, 35)
             time.sleep(min_sleep_secs)
 
-        # 可以尝试点击广告了
-        logger.info("尝试点击广告...")
-        cfg_enable_web_wait_after_ads = auto_click_ads()
-
-        if cfg_enable_web_wait_after_ads == 1:
-            logger.info("点击广告后，需要等待一会...")
-            time.sleep(10)
+        # 判断是否为快速浏览模式
+        if enable_quick_browser_mode:
             start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(5)
+                time.sleep(3)
                 start_auto_scroll_up_or_down()
-            min_sleep_secs = random.randint(30, 60)
-            time.sleep(min_sleep_secs)
+            time.sleep(random.randint(3, 15))
+        # 非快速浏览模式，可以尝试点击广告
+        else:
+            # 可以尝试点击广告了
+            logger.info("尝试点击广告...")
+            cfg_enable_web_wait_after_ads = auto_click_ads()
 
-        # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
-        auto_click_ads()
-        time.sleep(random.randint(15, 90))
+            if cfg_enable_web_wait_after_ads == 1:
+                logger.info("点击广告后，需要等待一会...")
+                time.sleep(10)
+                start_auto_scroll_up_or_down()
+                if random.randint(0, 1) == 1:
+                    time.sleep(5)
+                    start_auto_scroll_up_or_down()
+                min_sleep_secs = random.randint(30, 60)
+                time.sleep(min_sleep_secs)
+
+            # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
+            auto_click_ads()
+            time.sleep(random.randint(15, 90))
+
+        # 自动关闭标签页面
         auto_close_tab_page()
         time.sleep(random.randint(2, 5))
 
