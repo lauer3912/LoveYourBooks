@@ -23,7 +23,7 @@ app_parser.add_argument('--s', dest='remote_server', action='store', default='ht
                         help='The Appium server')
 app_parser.add_argument('--d', dest='dest_device', action='store', default='127.0.0.1:21523',
                         help='The device, Use: adb devices to list')
-app_parser.add_argument('--a', dest='auto_ahk_file', action='store', default='',
+app_parser.add_argument('--a', dest='auto_ahk_file_prex', action='store', default='',
                         help='Assign the auto hot key file')
 app_parser.add_argument('--v', dest='vmid', action='store', default=0,
                         help='Assign the vms id')
@@ -262,7 +262,7 @@ def auto_click_ads():
             return 0
         logger.info("Enable click ads...")
 
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file],
+        proc = subprocess.Popen(['AutoHotkey', '{}-clickads.ahk'.format(app_args.auto_ahk_file_prex)],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 universal_newlines=True)
@@ -276,6 +276,22 @@ def auto_click_ads():
 
     return 0
 
+def auto_close_tab_page():
+    try:
+        logger.info("Trying auto_close_tab_page...")
+        proc = subprocess.Popen(['AutoHotkey', '{}-closetab.ahk'.format(app_args.auto_ahk_file_prex)],
+                                cwd=os.path.join(app_current_dir, 'scripts'),
+                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                universal_newlines=True)
+        cmd_out = proc.stdout.read()
+        proc.stdout.close()
+        logger.info(cmd_out)
+        return 1
+
+    except Exception:
+        logger.exception("Error:")
+
+    return 0
 
 def starup(want_open_url):
     has_error = False
@@ -399,8 +415,14 @@ def starup(want_open_url):
             random_scroll_up(globals_drivers[now_driver_id])
             if random.randint(0, 1) == 1:
                 random_scroll_up(globals_drivers[now_driver_id])
-            min_sleep_secs = random.randint(30, 120)
+            min_sleep_secs = random.randint(20, 50)
             time.sleep(min_sleep_secs)
+
+        # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
+        auto_click_ads()
+        time.sleep(random.randint(1, 3))
+        auto_close_tab_page()
+        time.sleep(random.randint(2, 5))
 
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))

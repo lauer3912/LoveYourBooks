@@ -19,16 +19,16 @@
     <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80">
         <config enable="true" vmname="web-001" vmid="2"
                 appiumCommand="appium -p 4723"
-                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21523 --a anlin-vmid-2-clickads.ahk --v 2"/>
+                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21523 --a anlin-vmid-2 --v 2"/>
         <config enable="true" vmname="web-002" vmid="3"
                 appiumCommand="appium -p 4725"
-                startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21533 --a anlin-vmid-3-clickads.ahk --v 3"/>
+                startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21533 --a anlin-vmid-3 --v 3"/>
         <config enable="true" vmname="web-003" vmid="4"
                 appiumCommand="appium -p 4727"
-                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --a anlin-vmid-4-clickads.ahk --v 4"/>
+                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --a anlin-vmid-4 --v 4"/>
         <config enable="false" vmname="web-004" vmid="5"
                 appiumCommand="appium -p 4729"
-                startCommand="python run.py --s http://127.0.0.1:4729/wd/hub --d 127.0.0.1:21553 --a anlin-vmid-5-clickads.ahk --v 5"/>
+                startCommand="python run.py --s http://127.0.0.1:4729/wd/hub --d 127.0.0.1:21553 --a anlin-vmid-5 --v 5"/>
                 
     </machine>
     <machine name="Ian Server PC" macAddress="">
@@ -37,12 +37,12 @@
     <machine name="Lucy PC" macAddress="70:5a:0f:40:2a:c6">
         <config enable="true" vmname="US" vmid="0"
                 appiumCommand="appium -p 4723"
-                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a lucy-vmid-0-clickads.ahk --v 0"/>
+                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a lucy-vmid-0 --v 0"/>
         <config enable="true" vmname="US-2" vmid="1"
                 appiumCommand="appium -p 4725"
-                startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21513 --a lucy-vmid-1-clickads.ahk --v 1"/>
+                startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21513 --a lucy-vmid-1 --v 1"/>
         <config enable="true" vmname="US-3" vmid="2"
                 appiumCommand="appium -p 4727"
-                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21523 --a lucy-vmid-2-clickads.ahk --v 2"/>
+                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21523 --a lucy-vmid-2 --v 2"/>
     </machine>
 </machines>
