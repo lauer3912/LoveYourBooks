@@ -138,6 +138,7 @@ class VMJob(object):
             if not is_running:
                 self.startingVM = False
                 logger.info('Start vm failed ... vmid={}'.format(self.vmid))
+                await self.stop_back_handler(force=True)
             else:
                 await sleep(3)
                 logger.info('call adb_devices again ...')
@@ -169,12 +170,17 @@ class VMJob(object):
         finally:
             self.back_proc = None
 
-    async def stop_back_handler(self):
+    async def stop_back_handler(self, force=False):
+        """
+        关闭VM
+        :param force: 是否强制关闭，默认：非强制
+        :return:
+        """
         await sleep(1)
         await vmsH.stop_vm(self.vmid)
         await sleep(5)
         is_running = await self.is_vm_running()
-        if is_running:
+        if is_running or force:
             self.startingVM = False
             logger.info('Close VM failed ... vmid={}'.format(self.vmid))
         else:
@@ -182,7 +188,7 @@ class VMJob(object):
 
     def free(self):
         self.stop_all_back_procs()
-        self.stop_back_handler()
+        self.stop_back_handler(force=True)
         logger.info('call free .....')
 
 
