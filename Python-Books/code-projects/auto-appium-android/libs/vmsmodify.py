@@ -139,7 +139,6 @@ class VMSModifyHandler(object):
             value = extend_info[key]
             config_info[key] = value
 
-
         for key in config_info.keys():
             value = config_info[key]
             obj = subprocess.Popen([self.vmcmd, 'setconfig', '-i', vmid, key, value], stdin=subprocess.PIPE,
