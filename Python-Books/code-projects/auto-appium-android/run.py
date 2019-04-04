@@ -10,7 +10,6 @@ import random
 import signal
 import sys
 import time
-import psutil
 
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
@@ -82,6 +81,7 @@ globals_drivers = {}
 def get_now_time():
     millis = int(round(time.time() * 1000))
     return millis
+
 
 def get_random_driver_id():
     """
@@ -254,6 +254,24 @@ def get_enable_click_ads():
     return time_enable
 
 
+def start_vpn():
+    try:
+        logger.info("Trying auto_close_tab_page...")
+        proc = subprocess.Popen(['AutoHotkey', '{}-runvpn.ahk'.format(app_args.auto_ahk_file_prex)],
+                                cwd=os.path.join(app_current_dir, 'scripts'),
+                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                universal_newlines=True)
+        cmd_out = proc.stdout.read()
+        proc.stdout.close()
+        logger.info(cmd_out)
+        return 1
+
+    except Exception:
+        logger.exception("Error:")
+
+    return 0
+
+
 def auto_click_ads():
     try:
         logger.info("Trying click ads...")
@@ -276,6 +294,7 @@ def auto_click_ads():
 
     return 0
 
+
 def auto_close_tab_page():
     try:
         logger.info("Trying auto_close_tab_page...")
@@ -292,6 +311,7 @@ def auto_close_tab_page():
         logger.exception("Error:")
 
     return 0
+
 
 def starup(want_open_url):
     has_error = False
@@ -497,6 +517,7 @@ def keyboardInterruptHandler(signal, frame):
 if __name__ == "__main__":
     try:
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
+        start_vpn()
         browser_boot()
     except Exception:
         logger.exception("Error:")
