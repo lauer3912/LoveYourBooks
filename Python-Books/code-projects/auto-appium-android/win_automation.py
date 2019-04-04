@@ -102,12 +102,14 @@ class VMJob(object):
     async def create_sub_process(self):
         logger.info('call create_sub_process ... vmid={}'.format(self.vmid))
         try:
-            self.start_time = Utils.get_now_time()
-
-            # 后台进程正在运行中，只记录一个
+            # 后台进程正在运行中，关闭掉
             if self.get_back_proc_is_running():
-                return
+                logger.info('Found back_proc is running, must check stop it ... vmid={}'.format(self.vmid))
+                if (Utils.get_now_time() - self.start_time) < 10 * 1000:
+                    return  # 如果当前时间和最开始的启动时间只是差10秒钟，那么直接返回，不关闭后台进程
+                self.stop_all_back_procs()
 
+            self.start_time = Utils.get_now_time()
             logger.info('Must create a new process back handler ... vmid={}'.format(self.vmid))
 
             # 根据只创建一个后台跟踪的方式
