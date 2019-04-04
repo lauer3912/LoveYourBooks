@@ -50,4 +50,4 @@ ClickAds(ads_X_min, ads_X_max, 900, 952)
 MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 ; Exit
-;Exit
+Exit
