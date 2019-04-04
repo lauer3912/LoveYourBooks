@@ -2,6 +2,8 @@
 import locale
 import subprocess
 
+import psutil
+
 print(locale.getdefaultlocale())
 
 import argparse
@@ -76,6 +78,7 @@ global_config = {
 }
 
 globals_drivers = {}
+all_sub_process = []
 
 
 def get_now_time():
@@ -259,12 +262,10 @@ def start_vpn():
         logger.info("Trying auto_close_tab_page...")
         proc = subprocess.Popen(['AutoHotkey', '{}-runvpn.ahk'.format(app_args.auto_ahk_file_prex)],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
-                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                universal_newlines=True)
-        proc.communicate()
-        cmd_out = proc.stdout.read()
-        proc.stdout.close()
-        logger.info(cmd_out)
+                                shell=True)
+        all_sub_process.append(proc)
+        proc.wait()
+        logger.info(proc.returncode)
         return 1
 
     except Exception:
@@ -283,12 +284,10 @@ def auto_click_ads():
 
         proc = subprocess.Popen(['AutoHotkey', '{}-clickads.ahk'.format(app_args.auto_ahk_file_prex)],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
-                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                universal_newlines=True)
-        proc.communicate()
-        cmd_out = proc.stdout.read()
-        proc.stdout.close()
-        logger.info(cmd_out)
+                                shell=True)
+        all_sub_process.append(proc)
+        proc.wait()
+        logger.info(proc.returncode)
         return 1
 
     except Exception:
@@ -302,12 +301,10 @@ def auto_close_tab_page():
         logger.info("Trying auto_close_tab_page...")
         proc = subprocess.Popen(['AutoHotkey', '{}-closetab.ahk'.format(app_args.auto_ahk_file_prex)],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
-                                shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                universal_newlines=True)
-        proc.communicate()
-        cmd_out = proc.stdout.read()
-        proc.stdout.close()
-        logger.info(cmd_out)
+                                shell=True)
+        all_sub_process.append(proc)
+        proc.wait()
+        logger.info(proc.returncode)
         return 1
 
     except Exception:
@@ -512,13 +509,38 @@ def browser_boot():
             time.sleep(random.randint(6, 12))
 
 
+def stop_all_back_procs(proc_list):
+    for proc in proc_list:
+        # (1)尝试terminate
+        try:
+            if proc:
+                proc.kill()
+        except Exception:
+            logger.exception('Error:')
+
+        # (2)尝试使用psutil来处理
+        try:
+            if proc:
+                psutil.Process(proc.pid).terminate()
+        except Exception:
+            logger.exception('Error:')
+
+
 def keyboardInterruptHandler(signal, frame):
     logger.info("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+
     exit(0)
+
+
+def exit_callback():
+    logger.info('exit is done')
+    stop_all_back_procs(all_sub_process)
+    logger.info('exit ....')
 
 
 if __name__ == "__main__":
     try:
+        sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         start_vpn()
         time.sleep(50)
@@ -526,4 +548,5 @@ if __name__ == "__main__":
     except Exception:
         logger.exception("Error:")
     finally:
+        stop_all_back_procs(all_sub_process)
         exit(0)
