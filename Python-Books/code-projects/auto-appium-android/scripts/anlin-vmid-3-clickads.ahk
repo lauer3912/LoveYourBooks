@@ -22,6 +22,12 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
         Random, sleep_time, 200, 1500
 
         Click %x%, %y%, 0
+
+        Random, want_click, 0, 10
+        if (%want_click% > 5) {
+            Click %x%, %y%
+        }
+
         Sleep, %sleep_time%
     }
 }
