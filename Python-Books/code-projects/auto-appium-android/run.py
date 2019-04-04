@@ -521,7 +521,7 @@ if __name__ == "__main__":
     try:
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         start_vpn()
-        time.sleep(30)
+        time.sleep(50)
         browser_boot()
     except Exception:
         logger.exception("Error:")
