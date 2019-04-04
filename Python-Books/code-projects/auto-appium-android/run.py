@@ -469,7 +469,7 @@ def starup(want_open_url):
 
         # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
         auto_click_ads()
-        time.sleep(random.randint(25, 90))
+        time.sleep(random.randint(15, 90))
         auto_close_tab_page()
         time.sleep(random.randint(2, 5))
 
