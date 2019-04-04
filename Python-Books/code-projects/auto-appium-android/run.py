@@ -260,8 +260,8 @@ def get_enable_click_ads():
 def start_scroll_up_to_down():
     try:
         logger.info("Trying start_scroll_up_to_down...")
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'scrolluptodown.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts'),
+        proc = subprocess.Popen(['AutoHotkey', 'scrolluptodown.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
         proc.wait()
@@ -277,8 +277,8 @@ def start_scroll_up_to_down():
 def start_auto_scroll_up_or_down():
     try:
         logger.info("Trying start_auto_scroll_up_or_down...")
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'scrollupordown.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts'),
+        proc = subprocess.Popen(['AutoHotkey', 'scrollupordown.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
         proc.wait()
@@ -294,8 +294,8 @@ def start_auto_scroll_up_or_down():
 def start_vpn():
     try:
         logger.info("Trying start_vpn...")
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'runvpn.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts'),
+        proc = subprocess.Popen(['AutoHotkey', 'runvpn.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
         proc.wait()
@@ -316,8 +316,8 @@ def auto_click_ads():
             return 0
         logger.info("Enable click ads...")
 
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'clickads.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts'),
+        proc = subprocess.Popen(['AutoHotkey', 'clickads.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
         proc.wait()
@@ -333,8 +333,8 @@ def auto_click_ads():
 def auto_close_tab_page():
     try:
         logger.info("Trying auto_close_tab_page...")
-        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'closetab.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts'),
+        proc = subprocess.Popen(['AutoHotkey', 'closetab.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
         proc.wait()
@@ -530,24 +530,6 @@ def browser_boot():
         random.shuffle(sort_indexs)
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
-            
-            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://techidaily.com/&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC">
-            
-            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://seesrc.com/&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB"
-            
-            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://gmagon.com/&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB"
-
-            google_prex_maps = {
-                'techidaily.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC',
-                'seesrc.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB',
-                'gmagon.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB'
-            }
-
-            for key in google_prex_maps.keys():
-                if cur_url.find(key) > -1:
-                    fmt_value = google_prex_maps[key]
-                    cur_url = fmt_value.format(cur_url)
-
             starup(cur_url)
             logger.info("Prepare the next web page url ... index=%d" % cur_index)
             time.sleep(random.randint(6, 12))
