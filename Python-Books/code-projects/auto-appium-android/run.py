@@ -261,6 +261,7 @@ def start_vpn():
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 universal_newlines=True)
+        proc.wait()
         cmd_out = proc.stdout.read()
         proc.stdout.close()
         logger.info(cmd_out)
@@ -284,6 +285,7 @@ def auto_click_ads():
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 universal_newlines=True)
+        proc.wait()
         cmd_out = proc.stdout.read()
         proc.stdout.close()
         logger.info(cmd_out)
@@ -302,6 +304,7 @@ def auto_close_tab_page():
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 universal_newlines=True)
+        proc.wait()
         cmd_out = proc.stdout.read()
         proc.stdout.close()
         logger.info(cmd_out)
