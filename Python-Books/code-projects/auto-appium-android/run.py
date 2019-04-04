@@ -511,8 +511,7 @@ def starup(want_open_url):
 
 
 def browser_boot():
-    with open("urls.txt", "r+") as fhandler:
-
+    with open("urls.txt", "r") as fhandler:
         all_urls = []
         while True:
             file_url = fhandler.readline()
@@ -570,7 +569,6 @@ if __name__ == "__main__":
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         start_vpn()
-        time.sleep(30)
         browser_boot()
     except Exception:
         logger.exception("Error:")
