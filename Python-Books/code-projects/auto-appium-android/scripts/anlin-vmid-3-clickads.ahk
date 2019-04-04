@@ -12,18 +12,36 @@ ClickAds(x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     Sleep, 2000
 }
 
-; Active the window 
-;Click %ads_X_min%, 178
+MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
+{
+    Random, loop_times, 2, %max_times%
+    Loop, %loop_times%
+    {
+        Random, x, %x_min%, %x_max%
+        Random, y, %y_min%, %y_max%
+        Random, sleep_time, 200, 1500
+
+        Click %x%, %y%, 0
+        Sleep, %sleep_time%
+    }
+}
+
+; Active the window
+ClickAds(ads_X_min, ads_X_max, 172, 900)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 
 ; Click the top ads
 ClickAds(ads_X_min, ads_X_max, 172, 215)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 ; Click the mid ads
 ClickAds(ads_X_min, ads_X_max, 534, 720)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 ; Click the bottom ads
 ClickAds(ads_X_min, ads_X_max, 900, 952)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 ; Exit
 ;Exit
