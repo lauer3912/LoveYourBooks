@@ -543,7 +543,7 @@ if __name__ == "__main__":
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         start_vpn()
-        time.sleep(50)
+        time.sleep(30)
         browser_boot()
     except Exception:
         logger.exception("Error:")
