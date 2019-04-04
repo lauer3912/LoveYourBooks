@@ -530,6 +530,13 @@ def browser_boot():
         random.shuffle(sort_indexs)
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
+            
+            # <a href="https://techidaily.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://techidaily.com/&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC"><h3 class="LC20lb">Techidaily - Enjoy life easier but more creative!</h3><br><div class="TbwUpd"><cite class="iUh30">https://techidaily.com/</cite></div></a>
+            
+            # <a href="https://seesrc.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://seesrc.com/&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB"><h3 class="LC20lb">SeeSRC.com - We love to share, We love to try</h3><br><div class="TbwUpd"><cite class="iUh30">https://seesrc.com/</cite></div></a>
+            
+            # <a href="https://gmagon.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://gmagon.com/&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB"><h3 class="LC20lb">GMagon: Online Windows/Mac/Linux Software Vendor</h3><br><div class="TbwUpd"><cite class="iUh30">https://gmagon.com/</cite></div></a>
+            
             cur_url = 'https://google.com/url?sa=t&url={}&usg=AFQjCNHejwhPeR5sVWA-xGcAwx71OwG6tw'.format(cur_url)
             starup(cur_url)
             logger.info("Prepare the next web page url ... index=%d" % cur_index)
