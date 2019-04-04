@@ -5,6 +5,11 @@ tab_y_pos := 93
 
 Click %tab_x_pos%, %tab_y_pos%
 
+;鼠标需要移动到中间位置
+end_x_post := %tab_x_pos% + 50
+end_y_post := %tab_y_pos% + 100
+Click %end_x_post%, %end_y_post%, 0
+
 ; Exit
 Exit
 

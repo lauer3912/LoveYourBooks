@@ -104,129 +104,131 @@ def sys_exit(message):
     exit(0)
 
 
-def sample_touch(driver):
-    try:
-        eye1 = TouchAction(driver)
-        eye1.press(x=random.randint(100, 150),
-                   y=random.randint(100, 150)).release()
-        time.sleep(1)
-    except Exception:
-        logger.exception("Error:")
-    finally:
-        pass
+class OldToolHelper(object):
+    @staticmethod
+    def sample_touch(driver):
+        try:
+            eye1 = TouchAction(driver)
+            eye1.press(x=random.randint(100, 150),
+                       y=random.randint(100, 150)).release()
+            time.sleep(1)
+        except Exception:
+            logger.exception("Error:")
+        finally:
+            pass
 
+    @staticmethod
+    def auto_scroll_page(driver):
+        """
+        自动从上到下滚动，处理页面滑动问题
+        """
+        try:
+            logger.info("Start Auto Scroll")
+            total_width = driver.execute_script("return document.body.offsetWidth")
+            total_height = driver.execute_script(
+                "return document.body.parentNode.scrollHeight")
+            viewport_width = driver.execute_script("return document.body.clientWidth")
+            viewport_height = driver.execute_script("return window.innerHeight")
+            logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+                total_width, total_height, viewport_width, viewport_height))
 
-def auto_scroll_page(driver):
-    """
-    自动从上到下滚动，处理页面滑动问题
-    """
-    try:
-        logger.info("Start Auto Scroll")
-        total_width = driver.execute_script("return document.body.offsetWidth")
-        total_height = driver.execute_script(
-            "return document.body.parentNode.scrollHeight")
-        viewport_width = driver.execute_script("return document.body.clientWidth")
-        viewport_height = driver.execute_script("return window.innerHeight")
-        logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
-            total_width, total_height, viewport_width, viewport_height))
+            rectangles = []
 
-        rectangles = []
+            i = 0
+            while i < total_height:
+                ii = 0
+                top_height = i + viewport_height
 
-        i = 0
-        while i < total_height:
-            ii = 0
-            top_height = i + viewport_height
+                if top_height > total_height:
+                    top_height = total_height
 
-            if top_height > total_height:
-                top_height = total_height
+                while ii < total_width:
+                    top_width = ii + viewport_width
 
-            while ii < total_width:
-                top_width = ii + viewport_width
+                    if top_width > total_width:
+                        top_width = total_width
 
-                if top_width > total_width:
-                    top_width = total_width
+                    logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+                    rectangles.append((ii, i, top_width, top_height))
 
-                logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
-                rectangles.append((ii, i, top_width, top_height))
+                    ii = ii + viewport_width
 
-                ii = ii + viewport_width
+                i = i + viewport_height
 
-            i = i + viewport_height
+            previous = None
+            part = 0
+            for rectangle in rectangles:
+                if not previous is None:
+                    driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
+                    logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
+                    time.sleep(round(random.uniform(0.2, 1.6), 2))
 
-        previous = None
-        part = 0
-        for rectangle in rectangles:
-            if not previous is None:
+                if rectangle[1] + viewport_height > total_height:
+                    offset = (rectangle[0], total_height - viewport_height)
+                else:
+                    offset = (rectangle[0], rectangle[1])
+
+                part = part + 1
+                previous = rectangle
+
+            logger.info("Finishing chrome full page scroll workaround...")
+            return True
+        except Exception:
+            logger.exception("Error:")
+
+    @staticmethod
+    def random_scroll_up(driver):
+        """
+        随机往上滚动
+        :return:
+        """
+        try:
+            if round(random.uniform(0.2, 0.9), 2) < 0.5:
+                return
+
+            logger.info("Start random_scroll_up")
+            total_width = driver.execute_script("return document.body.offsetWidth")
+            total_height = driver.execute_script(
+                "return document.body.parentNode.scrollHeight")
+            viewport_width = driver.execute_script("return document.body.clientWidth")
+            viewport_height = driver.execute_script("return window.innerHeight")
+            logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
+                total_width, total_height, viewport_width, viewport_height))
+
+            # 先记录所有区间
+            rectangles = []
+            i = 0
+            while i < total_height:
+                ii = 0
+                top_height = i + viewport_height
+                if top_height > total_height:
+                    top_height = total_height
+                while ii < total_width:
+                    top_width = ii + viewport_width
+                    if top_width > total_width:
+                        top_width = total_width
+                    logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
+                    rectangles.append((ii, i, top_width, top_height))
+                    ii = ii + viewport_width
+                i = i + viewport_height
+
+            # 随机回滚的位置
+            all_rectangle_count = len(rectangles)
+            cur_index = 0
+            max_rectangle_count = max(0, random.randint(0, all_rectangle_count) - 1)
+            rectangles.reverse()
+            for rectangle in rectangles:
+                if cur_index >= max_rectangle_count:
+                    break
+                cur_index += 1
+
                 driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
                 logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
-                time.sleep(round(random.uniform(0.2, 1.6), 2))
+                time.sleep(round(random.uniform(0.2, 0.6), 2))
 
-            if rectangle[1] + viewport_height > total_height:
-                offset = (rectangle[0], total_height - viewport_height)
-            else:
-                offset = (rectangle[0], rectangle[1])
-
-            part = part + 1
-            previous = rectangle
-
-        logger.info("Finishing chrome full page scroll workaround...")
-        return True
-    except Exception:
-        logger.exception("Error:")
-
-
-def random_scroll_up(driver):
-    """
-    随机往上滚动
-    :return:
-    """
-    try:
-        if round(random.uniform(0.2, 0.9), 2) < 0.5:
-            return
-
-        logger.info("Start random_scroll_up")
-        total_width = driver.execute_script("return document.body.offsetWidth")
-        total_height = driver.execute_script(
-            "return document.body.parentNode.scrollHeight")
-        viewport_width = driver.execute_script("return document.body.clientWidth")
-        viewport_height = driver.execute_script("return window.innerHeight")
-        logger.info("Total: ({0}, {1}), Viewport: ({2},{3})".format(
-            total_width, total_height, viewport_width, viewport_height))
-
-        # 先记录所有区间
-        rectangles = []
-        i = 0
-        while i < total_height:
-            ii = 0
-            top_height = i + viewport_height
-            if top_height > total_height:
-                top_height = total_height
-            while ii < total_width:
-                top_width = ii + viewport_width
-                if top_width > total_width:
-                    top_width = total_width
-                logger.info("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
-                rectangles.append((ii, i, top_width, top_height))
-                ii = ii + viewport_width
-            i = i + viewport_height
-
-        # 随机回滚的位置
-        all_rectangle_count = len(rectangles)
-        cur_index = 0
-        max_rectangle_count = max(0, random.randint(0, all_rectangle_count) - 1)
-        rectangles.reverse()
-        for rectangle in rectangles:
-            if cur_index >= max_rectangle_count:
-                break
-            cur_index += 1
-
-            driver.execute_script("window.scrollTo({0}, {1})".format(rectangle[0], rectangle[1]))
-            logger.info("Scrolled To ({0},{1})".format(rectangle[0], rectangle[1]))
-            time.sleep(round(random.uniform(0.2, 0.6), 2))
-
-        logger.info("Finishing chrome random page scroll workaround...")
-    except Exception:
-        logger.exception("Error:")
+            logger.info("Finishing chrome random page scroll workaround...")
+        except Exception:
+            logger.exception("Error:")
 
 
 def get_enable_click_ads():
@@ -409,8 +411,8 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(120, 180)
-        max_script_timeout = random.randint(30, 75)
+        max_page_load_timeout = random.randint(180, 300)  # 加大支持timeout的时间, 让浏览更逼真
+        max_script_timeout = random.randint(60, 90)       # 加大支持脚本执行的timeout时间，让浏览更逼真
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
         globals_drivers[now_driver_id].set_script_timeout(max_script_timeout)
@@ -448,7 +450,7 @@ def starup(want_open_url):
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            min_sleep_secs = random.randint(15, 30)
+            min_sleep_secs = random.randint(20, 30)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
@@ -467,7 +469,7 @@ def starup(want_open_url):
 
         # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
         auto_click_ads()
-        time.sleep(random.randint(10, 20))
+        time.sleep(random.randint(25, 90))
         auto_close_tab_page()
         time.sleep(random.randint(2, 5))
 
@@ -477,20 +479,6 @@ def starup(want_open_url):
         # 浏览完成后，可以关闭了
         logger.info("浏览网页完成，即将关闭该网页...")
 
-        # print(contexts)
-        # print(current_context)
-
-        # # 切换上下文
-        # driver.switch_to.context("NATIVE_APP")
-
-        # at = driver.current_context
-
-        # print(at)
-
-        # driver.find_element_by_id('com.android.browser:id/search_box_collapsed').click()
-        # search_box = driver.find_element_by_id('com.android.browser:id/search_view')
-        # search_box.click()
-        # search_box.send_keys('hello toby')
         has_error = False
         global_config['run_count'] = global_config['run_count'] + 1
     except Exception:
