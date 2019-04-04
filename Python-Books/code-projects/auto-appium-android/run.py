@@ -257,10 +257,44 @@ def get_enable_click_ads():
     return time_enable
 
 
+def start_scroll_up_to_down():
+    try:
+        logger.info("Trying start_scroll_up_to_down...")
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'scrolluptodown.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts'),
+                                shell=True)
+        all_sub_process.append(proc)
+        proc.wait()
+        logger.info(proc.returncode)
+        return 1
+
+    except Exception:
+        logger.exception("Error:")
+
+    return 0
+
+
+def start_auto_scroll_up_or_down():
+    try:
+        logger.info("Trying start_auto_scroll_up_or_down...")
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'scrollupordown.ahk'],
+                                cwd=os.path.join(app_current_dir, 'scripts'),
+                                shell=True)
+        all_sub_process.append(proc)
+        proc.wait()
+        logger.info(proc.returncode)
+        return 1
+
+    except Exception:
+        logger.exception("Error:")
+
+    return 0
+
+
 def start_vpn():
     try:
-        logger.info("Trying auto_close_tab_page...")
-        proc = subprocess.Popen(['AutoHotkey', '{}-runvpn.ahk'.format(app_args.auto_ahk_file_prex)],
+        logger.info("Trying start_vpn...")
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'runvpn.ahk'],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=True)
         all_sub_process.append(proc)
@@ -282,7 +316,7 @@ def auto_click_ads():
             return 0
         logger.info("Enable click ads...")
 
-        proc = subprocess.Popen(['AutoHotkey', '{}-clickads.ahk'.format(app_args.auto_ahk_file_prex)],
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'clickads.ahk'],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=True)
         all_sub_process.append(proc)
@@ -299,7 +333,7 @@ def auto_click_ads():
 def auto_close_tab_page():
     try:
         logger.info("Trying auto_close_tab_page...")
-        proc = subprocess.Popen(['AutoHotkey', '{}-closetab.ahk'.format(app_args.auto_ahk_file_prex)],
+        proc = subprocess.Popen(['AutoHotkey', app_args.auto_ahk_file_prex, 'closetab.ahk'],
                                 cwd=os.path.join(app_current_dir, 'scripts'),
                                 shell=True)
         all_sub_process.append(proc)
@@ -391,13 +425,6 @@ def starup(want_open_url):
             logger.exception("Error:")
             logger.info('time out after %d seconds when loading page' % max_page_load_timeout)
 
-            try:
-                logger.info('call window.stop()')
-                globals_drivers[now_driver_id].execute_script(
-                    'window.stop()')  # 当页面加载时间超过设定时间，通过执行Javascript来stop加载，即可执行后续动作
-            except Exception:
-                logger.exception("Error:")
-
         # print(u"正在获取当前环境 ...")
         # 获取当前上下文环境
         # current_context = driver.current_context
@@ -407,8 +434,7 @@ def starup(want_open_url):
         cfg_enable_auto_scroll = True
         if cfg_enable_auto_scroll:
             logger.info("网页已经加载完成，可以从上到下滚动了 ...")
-            sample_touch(globals_drivers[now_driver_id])
-            auto_scroll_page(globals_drivers[now_driver_id])
+            start_scroll_up_to_down()
 
         # 随机回滚一下
         cfg_enable_scroll_up = random.randint(0, 1)
@@ -416,7 +442,7 @@ def starup(want_open_url):
             min_sleep_secs = random.randint(3, 5)
             time.sleep(min_sleep_secs)
             logger.info("现在可以向上滚动页面了 ...")
-            random_scroll_up(globals_drivers[now_driver_id])
+            start_auto_scroll_up_or_down()
 
         # 休息一会
         cfg_enable_web_wait = 1
@@ -432,9 +458,9 @@ def starup(want_open_url):
         if cfg_enable_web_wait_after_ads == 1:
             logger.info("点击广告后，需要等待一会...")
             time.sleep(10)
-            random_scroll_up(globals_drivers[now_driver_id])
+            start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                random_scroll_up(globals_drivers[now_driver_id])
+                start_auto_scroll_up_or_down()
             min_sleep_secs = random.randint(20, 50)
             time.sleep(min_sleep_secs)
 
@@ -504,6 +530,7 @@ def browser_boot():
         random.shuffle(sort_indexs)
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
+            cur_url = 'https://google.com/url?sa=t&url={}&usg=AFQjCNHejwhPeR5sVWA-xGcAwx71OwG6tw'.format(cur_url)
             starup(cur_url)
             logger.info("Prepare the next web page url ... index=%d" % cur_index)
             time.sleep(random.randint(6, 12))
