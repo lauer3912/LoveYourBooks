@@ -21,8 +21,6 @@ Loop, %loop_times%
        }
    }
    
-
-
    Random, sleepTime, 300, 5000
    Sleep, %sleepTime%
 }

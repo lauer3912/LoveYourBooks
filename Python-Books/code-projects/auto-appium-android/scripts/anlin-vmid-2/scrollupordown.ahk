@@ -20,8 +20,6 @@ Loop, %loop_times%
           Click WheelDown, %drag_x%, %drag_y%
        }
    }
-   
-
 
    Random, sleepTime, 300, 5000
    Sleep, %sleepTime%

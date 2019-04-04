@@ -8,18 +8,20 @@ Random, loop_times, 5, 10
 Loop, %loop_times%
 {
    Random, drag_x, %pos_x_min%, %pos_x_max%
-
-   Random, start_y, %pos_y_bottom% - 20, %pos_y_bottom%
-   Random, end_y,   %pos_y_top%, %pos_y_top% + 50
-
+   Random, drag_y, %pos_y_top%, %pos_y_bottom%
    Random, want_up, 0, 10
-   if (%want_up% > 5) {
-      MouseClickDrag, L, drag_x, start_y, drag_x, end_y
-   } else {
-      MouseClickDrag, L, drag_x, end_y, drag_x, start_y
+   Random, wheel_times, 1, 10
+
+   Loop, %wheel_times%
+   {
+       if (%want_up% > 5) {
+          Click WheelUp, %drag_x%, %drag_y%
+       } else {
+          Click WheelDown, %drag_x%, %drag_y%
+       }
    }
 
-   Random, sleepTime, 1000, 6000
+   Random, sleepTime, 300, 5000
    Sleep, %sleepTime%
 }
 
