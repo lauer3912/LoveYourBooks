@@ -531,13 +531,23 @@ def browser_boot():
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
             
-            # <a href="https://techidaily.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://techidaily.com/&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC"><h3 class="LC20lb">Techidaily - Enjoy life easier but more creative!</h3><br><div class="TbwUpd"><cite class="iUh30">https://techidaily.com/</cite></div></a>
+            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://techidaily.com/&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC">
             
-            # <a href="https://seesrc.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://seesrc.com/&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB"><h3 class="LC20lb">SeeSRC.com - We love to share, We love to try</h3><br><div class="TbwUpd"><cite class="iUh30">https://seesrc.com/</cite></div></a>
+            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://seesrc.com/&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB"
             
-            # <a href="https://gmagon.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://gmagon.com/&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB"><h3 class="LC20lb">GMagon: Online Windows/Mac/Linux Software Vendor</h3><br><div class="TbwUpd"><cite class="iUh30">https://gmagon.com/</cite></div></a>
-            
-            cur_url = 'https://google.com/url?sa=t&url={}&usg=AFQjCNHejwhPeR5sVWA-xGcAwx71OwG6tw'.format(cur_url)
+            # "/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://gmagon.com/&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB"
+
+            google_prex_maps = {
+                'techidaily.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwi4mIaFu7XhAhWBrJ4KHZSjAc8QFjAAegQIBhAC',
+                'seesrc.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwj124nTu7XhAhUHnZ4KHfkcCOAQFjAAegQIAxAB',
+                'gmagon.com': 'https://www.google.com/url?sa=t&amp;url={}&amp;ved=2ahUKEwiugdftu7XhAhWSjp4KHZKECkMQFjAAegQIBBAB'
+            }
+
+            for key in google_prex_maps.keys():
+                if cur_url.find(key) > -1:
+                    fmt_value = google_prex_maps[key]
+                    cur_url = fmt_value.format(cur_url)
+
             starup(cur_url)
             logger.info("Prepare the next web page url ... index=%d" % cur_index)
             time.sleep(random.randint(6, 12))
