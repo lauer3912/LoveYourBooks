@@ -1,7 +1,7 @@
 CoordMode, Mouse
 pos_x_min := 20
 pos_x_max := 520
-pos_y_top := 172
+pos_y_top := 220
 pos_y_bottom := 940
 
 Random, loop_times, 5, 10
