@@ -39,7 +39,7 @@ vmsH = VMSModifyHandler(logger=logger)
 
 
 class VMJob(object):
-    def __init__(self, vmid, vmname, enable, start_cmd, appium_cmd, max_run_time):
+    def __init__(self, vmid, vmname, enable, start_cmd, appium_cmd, max_run_time, extend_vm_info):
         object.__init__(self)
         self.vmid = vmid
         self.vmname = vmname
@@ -49,6 +49,7 @@ class VMJob(object):
         self.appium_cmd = appium_cmd
         self.appium_cmd_handler = None
         self.max_run_time = max_run_time
+        self.extend_vm_info = extend_vm_info
         self.back_proc = None
         self.startingVM = False
         self.busy = False
@@ -127,7 +128,7 @@ class VMJob(object):
             logger.info('call adb_devices')
             await vmsH.adb_devices()
             logger.info('call vmsH.set_vm_config')
-            vmsH.set_vm_config(self.vmid)
+            vmsH.set_vm_config(self.vmid, self.extend_vm_info)
             logger.info("call vmsH.start_vm(self.vmid)")
             await vmsH.start_vm(self.vmid)
             await sleep(10)
@@ -323,6 +324,7 @@ async def main():
                 start_cmd=one_config['startCommand'],
                 appium_cmd=one_config['appiumCommand'],
                 max_run_time=get_best_max_run_time(),  # 60 * 5 * 1000 # 毫秒
+                extend_vm_info=one_config['extend_vm_info']
             ))
 
     if len(app_vmjob_list) == 0:

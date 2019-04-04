@@ -76,6 +76,16 @@ class VMSModifyHandler(object):
                     config_start_cmd = one_config.getAttribute('startCommand')
                     config_appium_cmd = one_config.getAttribute('appiumCommand')
 
+                    extend_vm_info = {
+                        'win_x': one_config.getAttribute('win_x'),
+                        'win_y': one_config.getAttribute('win_y'),
+                        'win_scaling_percent2': one_config.getAttribute('win_scaling_percent2'),
+                        'resolution_width': one_config.getAttribute('resolution_width'),
+                        'resolution_height': one_config.getAttribute('resolution_height'),
+                        'start_window_mode': one_config.getAttribute('start_window_mode'),
+                        'phone_layout': one_config.getAttribute('phone_layout')
+                    }
+
                     self.configs.append({
                         'macAddress': machine_mac_address,
                         'vmid': config_vmid,
@@ -83,6 +93,7 @@ class VMSModifyHandler(object):
                         'enable': config_enable,
                         'startCommand': config_start_cmd,
                         'appiumCommand': config_appium_cmd,
+                        'extend_vm_info': extend_vm_info
                     })
 
                     if not config_enable or config_enable != 'true':
@@ -107,7 +118,7 @@ class VMSModifyHandler(object):
                 self.print("vmid=%s, vmname=%s, vmsfile=%s" % (config_vmid, config_vmname, config_path))
                 VMSModifyHandler.rebuild(config_path)
 
-    def set_vm_config(self, vmid):
+    def set_vm_config(self, vmid, extend_info):
         self.print('start setting vm new config...')
         new_gps_pos = Utils.generate_new_pos()
         config_info = {
@@ -121,8 +132,14 @@ class VMSModifyHandler(object):
             # 'bssid': Utils.generate_new_bssid().upper(),
             # 'cellid': Utils.generate_new_cellid(),
             # 'ssid': Utils.generate_new_wifi_id(),
-
         }
+
+        # 兼容扩展属性
+        for key in extend_info.keys():
+            value = extend_info[key]
+            config_info[key] = value
+
+
         for key in config_info.keys():
             value = config_info[key]
             obj = subprocess.Popen([self.vmcmd, 'setconfig', '-i', vmid, key, value], stdin=subprocess.PIPE,

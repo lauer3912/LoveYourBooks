@@ -409,7 +409,7 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(75, 90)
+        max_page_load_timeout = random.randint(120, 180)
         max_script_timeout = random.randint(30, 75)
 
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
@@ -448,7 +448,7 @@ def starup(want_open_url):
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            min_sleep_secs = random.randint(60, 90)
+            min_sleep_secs = random.randint(15, 30)
             time.sleep(min_sleep_secs)
 
         # 可以尝试点击广告了
@@ -460,13 +460,14 @@ def starup(want_open_url):
             time.sleep(10)
             start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
+                time.sleep(5)
                 start_auto_scroll_up_or_down()
-            min_sleep_secs = random.randint(20, 50)
+            min_sleep_secs = random.randint(30, 60)
             time.sleep(min_sleep_secs)
 
         # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
         auto_click_ads()
-        time.sleep(random.randint(1, 3))
+        time.sleep(random.randint(10, 20))
         auto_close_tab_page()
         time.sleep(random.randint(2, 5))
 
