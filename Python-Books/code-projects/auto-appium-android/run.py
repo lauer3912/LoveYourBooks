@@ -419,7 +419,7 @@ def starup(want_open_url):
         enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(1, 5)
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
-            max_page_load_timeout = random.randint(90, 180)
+            max_page_load_timeout = random.randint(90, 150)
             max_script_timeout = random.randint(30, 60)
 
         # 设置加载及延时时间控制
