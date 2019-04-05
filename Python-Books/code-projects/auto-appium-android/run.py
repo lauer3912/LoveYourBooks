@@ -416,7 +416,7 @@ def starup(want_open_url):
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = round(random.uniform(0.2, 10), 2) <= 5
+        enable_quick_browser_mode = round(random.uniform(0.2, 10), 2) <= 6
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(60, 90)
@@ -537,9 +537,13 @@ def browser_boot():
         random.shuffle(sort_indexs)
         for cur_index in sort_indexs:
             cur_url = all_urls[cur_index]
-            starup(cur_url)
-            logger.info("Prepare the next web page url ... index=%d" % cur_index)
-            time.sleep(random.randint(6, 12))
+            cur_url = cur_url.strip()
+            if cur_url != '':
+                starup(cur_url)
+                logger.info("Prepare the next web page url ... index=%d" % cur_index)
+                time.sleep(random.randint(6, 12))
+            else:
+                continue
 
 
 def stop_all_back_procs(proc_list):
