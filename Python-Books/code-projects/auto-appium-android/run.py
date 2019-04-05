@@ -411,16 +411,16 @@ def starup(want_open_url):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(180, 300)  # 加大支持timeout的时间, 让浏览更逼真
-        max_script_timeout = random.randint(60, 90)       # 加大支持脚本执行的timeout时间，让浏览更逼真
+        max_page_load_timeout = random.randint(180, 360)  # 加大支持timeout的时间, 让浏览更逼真
+        max_script_timeout = random.randint(60, 120)       # 加大支持脚本执行的timeout时间，让浏览更逼真
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = round(random.uniform(0.2, 10), 2) <= random.randint(2, 5)
+        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(1, 5)
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
-            max_page_load_timeout = random.randint(60, 90)
-            max_script_timeout = 30
+            max_page_load_timeout = random.randint(90, 180)
+            max_script_timeout = random.randint(30, 60)
 
         # 设置加载及延时时间控制
         globals_drivers[now_driver_id].set_page_load_timeout(max_page_load_timeout)
