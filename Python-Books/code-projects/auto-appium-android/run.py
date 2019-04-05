@@ -244,16 +244,16 @@ def get_enable_click_ads():
     cur_time = time.localtime()
     cur_time_hour = int(cur_time.tm_hour)
     # 上午的情况，对应为美国区的晚上
-    if cur_time_hour in range(11, 16):
-        time_enable = round(random.uniform(0.2, 10), 2) <= 4
+    if cur_time_hour in range(11, 18):
+        time_enable = round(random.uniform(0.2, 10), 2) <= 1
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
-        time_enable = True and round(random.uniform(0.2, 10), 2) >= 2
+        time_enable = True and round(random.uniform(0.2, 12), 2) >= 2
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
-    if cur_time_hour in range(16, 25):
-        time_enable = True and round(random.uniform(0.2, 10), 2) >= 3
+    if cur_time_hour in range(18, 25):
+        time_enable = True and round(random.uniform(0.2, 12), 2) >= 3
 
     # Step2: 获取随机范围
     return time_enable
@@ -416,7 +416,7 @@ def starup(want_open_url):
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(1, 5)
+        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(5, 6)
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -486,7 +486,10 @@ def starup(want_open_url):
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
             auto_click_ads()
-            time.sleep(random.randint(15, 90))
+            time.sleep(random.randint(15, 30))
+            auto_click_ads()
+            time.sleep(random.randint(3, 10))
+            start_auto_scroll_up_or_down()
 
         # 自动关闭标签页面
         auto_close_tab_page()
