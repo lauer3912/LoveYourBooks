@@ -537,7 +537,7 @@ def get_enable_quick_browser_mode():
     if cur_time_hour in range(13, 15):  # 美国凌晨 1 - 3
         percent_no_click = 85
     if cur_time_hour in range(15, 17):  # 美国凌晨 3 - 5
-        percent_no_click = 95
+        percent_no_click = 92
     if cur_time_hour in range(17, 18):  # 美国凌晨 5 - 6
         percent_no_click = 90
     if cur_time_hour in range(18, 19):  # 美国上午 6 - 7
