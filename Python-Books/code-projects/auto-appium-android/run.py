@@ -416,7 +416,7 @@ def starup(want_open_url):
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(5, 6)
+        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(6, 8)
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -468,6 +468,8 @@ def starup(want_open_url):
                 time.sleep(3)
                 start_auto_scroll_up_or_down()
             time.sleep(random.randint(3, 15))
+            start_auto_scroll_up_or_down()
+            time.sleep(random.randint(30, 50))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
