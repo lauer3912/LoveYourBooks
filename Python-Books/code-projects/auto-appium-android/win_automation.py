@@ -262,9 +262,28 @@ async def subscriber(name):
         subscribers.discard(queue)
 
 
+def git_pull_update():
+    logger.info('call git_pull_update')
+    try:
+        # 根据只创建一个后台跟踪的方式
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        logger.info('current dir path = {}'.format(current_dir))
+        proc = subprocess.Popen(['git', 'pull'],
+                                cwd=current_dir,
+                                shell=True,
+                                universal_newlines=True)
+        proc.wait()
+    except Exception:
+        logger.exception('ERROR:')
+
+
 # A sample producer task
 async def producer():
     while True:
+        # 先更新一下，看看子模块是否有更新
+        git_pull_update()
+        await sleep(5)
+
         # 准备发送相关的VMJOB数据
         for vmjob in app_vmjob_list:
             if not vmjob.enable:
