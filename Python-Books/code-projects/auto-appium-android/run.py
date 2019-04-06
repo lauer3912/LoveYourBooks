@@ -416,7 +416,7 @@ def starup(want_open_url):
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(8, 10)
+        enable_quick_browser_mode = get_enable_quick_browser_mode()
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -520,6 +520,65 @@ def starup(want_open_url):
             browser_boot()
         if global_config['run_count'] > global_config['max_urls_count']:
             sys_exit("The number of pages opened has reached the maximum requirement")
+
+
+def get_enable_quick_browser_mode():
+    """
+    查看是否需要启动快速浏览模式
+    :return:
+    """
+    cur_time = time.localtime()
+    cur_time_hour = int(cur_time.tm_hour)
+
+    # 美国区时间对应表, 影响系数处理
+    percent_no_click = 50  # 点击广告的不可能性的百分50
+    if cur_time_hour in range(12, 13):  # 美国凌晨 0 - 1
+        percent_no_click = 70
+    if cur_time_hour in range(13, 15):  # 美国凌晨 1 - 3
+        percent_no_click = 85
+    if cur_time_hour in range(15, 17):  # 美国凌晨 3 - 5
+        percent_no_click = 95
+    if cur_time_hour in range(17, 18):  # 美国凌晨 5 - 6
+        percent_no_click = 90
+    if cur_time_hour in range(18, 19):  # 美国上午 6 - 7
+        percent_no_click = 85
+    if cur_time_hour in range(19, 20):  # 美国上午 7 - 8
+        percent_no_click = 60
+    if cur_time_hour in range(20, 21):  # 美国上午 8 - 9
+        percent_no_click = 55
+    if cur_time_hour in range(21, 22):  # 美国上午 9 - 10
+        percent_no_click = 45
+    if cur_time_hour in range(22, 23):  # 美国上午 10 - 11
+        percent_no_click = 35
+    if cur_time_hour in range(23, 25):  # 美国上午 11 - 12
+        percent_no_click = 40
+    if cur_time_hour in range(0, 1):  # 美国中午 12 - 下午1点
+        percent_no_click = 40
+    if cur_time_hour in range(1, 2):  # 美国下午1点 - 2点
+        percent_no_click = 30
+    if cur_time_hour in range(2, 3):  # 美国下午2点 - 3点
+        percent_no_click = 30
+    if cur_time_hour in range(3, 4):  # 美国下午3点 - 4点
+        percent_no_click = 35
+    if cur_time_hour in range(4, 5):  # 美国下午4点 - 5点
+        percent_no_click = 40
+    if cur_time_hour in range(5, 6):  # 美国下午5点 - 6点
+        percent_no_click = 70
+    if cur_time_hour in range(6, 7):  # 美国晚上6点 - 7点
+        percent_no_click = 65
+    if cur_time_hour in range(7, 8):  # 美国晚上7点 - 8点
+        percent_no_click = 55
+    if cur_time_hour in range(8, 9):  # 美国晚上8点 - 9点
+        percent_no_click = 40
+    if cur_time_hour in range(9, 10):  # 美国晚上9点 - 10点
+        percent_no_click = 30
+    if cur_time_hour in range(10, 11):  # 美国晚上10点 - 11点
+        percent_no_click = 35
+    if cur_time_hour in range(10, 11):  # 美国晚上11点 - 12点
+        percent_no_click = 50
+
+    adjusting_coefficient = 1.05  # 调节系数
+    return round(random.uniform(0, 100), 2) >= percent_no_click*adjusting_coefficient
 
 
 def browser_boot():
