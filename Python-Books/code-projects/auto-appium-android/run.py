@@ -577,7 +577,7 @@ def get_enable_quick_browser_mode():
     if cur_time_hour in range(10, 11):  # 美国晚上11点 - 12点
         percent_no_click = 50
 
-    adjusting_coefficient = round(random.uniform(1, 2), 2)  # 调节系数随机
+    adjusting_coefficient = round(random.uniform(1, 1.5), 2)  # 调节系数随机
     return round(random.uniform(0, 100), 2) >= percent_no_click*adjusting_coefficient
 
 
