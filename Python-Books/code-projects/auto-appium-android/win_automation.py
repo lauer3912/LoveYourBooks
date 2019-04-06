@@ -279,10 +279,14 @@ def git_pull_update():
 
 # A sample producer task
 async def producer():
+    num_git_pull_check = 0
     while True:
         # 先更新一下，看看子模块是否有更新
-        git_pull_update()
-        await sleep(5)
+        if num_git_pull_check == 0 or num_git_pull_check > 12:  # 首次及3分钟后，检查更新
+            git_pull_update()
+            await sleep(5)
+            num_git_pull_check = 0
+        num_git_pull_check += 1
 
         # 准备发送相关的VMJOB数据
         for vmjob in app_vmjob_list:
