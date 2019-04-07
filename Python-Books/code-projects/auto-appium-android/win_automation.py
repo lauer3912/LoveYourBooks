@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # PYTHON_VERSION=3.6
-
+import datetime
 import locale
 
 print(locale.getdefaultlocale())
@@ -265,6 +265,7 @@ async def subscriber(name):
 def git_pull_update():
     logger.info('call git_pull_update')
     try:
+        print(datetime.datetime.now().strftime('%b-%d-%y %H:%M:%S'))
         # 根据只创建一个后台跟踪的方式
         current_dir = os.path.dirname(os.path.abspath(__file__))
         logger.info('current dir path = {}'.format(current_dir))

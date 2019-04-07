@@ -412,7 +412,7 @@ def starup(want_open_url):
 
         # 设置加载时间超时处理
         max_page_load_timeout = random.randint(180, 360)  # 加大支持timeout的时间, 让浏览更逼真
-        max_script_timeout = random.randint(60, 120)       # 加大支持脚本执行的timeout时间，让浏览更逼真
+        max_script_timeout = random.randint(60, 120)  # 加大支持脚本执行的timeout时间，让浏览更逼真
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
@@ -533,52 +533,56 @@ def get_enable_quick_browser_mode():
     # 美国区时间对应表, 影响系数处理
     percent_no_click = 50  # 点击广告的不可能性的百分50
     if cur_time_hour in range(12, 13):  # 美国凌晨 0 - 1
-        percent_no_click = 70
+        percent_no_click = round(random.uniform(65, 70), 2)
     if cur_time_hour in range(13, 15):  # 美国凌晨 1 - 3
-        percent_no_click = 85
+        percent_no_click = round(random.uniform(80, 85), 2)
     if cur_time_hour in range(15, 17):  # 美国凌晨 3 - 5
-        percent_no_click = 92
+        percent_no_click = round(random.uniform(90, 95), 2)
     if cur_time_hour in range(17, 18):  # 美国凌晨 5 - 6
-        percent_no_click = 90
+        percent_no_click = round(random.uniform(85, 90), 2)
     if cur_time_hour in range(18, 19):  # 美国上午 6 - 7
-        percent_no_click = 85
+        percent_no_click = round(random.uniform(80, 85), 2)
     if cur_time_hour in range(19, 20):  # 美国上午 7 - 8
-        percent_no_click = 60
+        percent_no_click = round(random.uniform(55, 60), 2)
     if cur_time_hour in range(20, 21):  # 美国上午 8 - 9
-        percent_no_click = 55
+        percent_no_click = round(random.uniform(50, 55), 2)
     if cur_time_hour in range(21, 22):  # 美国上午 9 - 10
-        percent_no_click = 45
+        percent_no_click = round(random.uniform(40, 45), 2)
     if cur_time_hour in range(22, 23):  # 美国上午 10 - 11
-        percent_no_click = 35
+        percent_no_click = round(random.uniform(30, 35), 2)
     if cur_time_hour in range(23, 25):  # 美国上午 11 - 12
-        percent_no_click = 40
+        percent_no_click = round(random.uniform(35, 40), 2)
     if cur_time_hour in range(0, 1):  # 美国中午 12 - 下午1点
-        percent_no_click = 40
+        percent_no_click = round(random.uniform(35, 40), 2)
     if cur_time_hour in range(1, 2):  # 美国下午1点 - 2点
-        percent_no_click = 30
+        percent_no_click = round(random.uniform(25, 30), 2)
     if cur_time_hour in range(2, 3):  # 美国下午2点 - 3点
-        percent_no_click = 30
+        percent_no_click = round(random.uniform(25, 30), 2)
     if cur_time_hour in range(3, 4):  # 美国下午3点 - 4点
-        percent_no_click = 35
+        percent_no_click = round(random.uniform(30, 35), 2)
     if cur_time_hour in range(4, 5):  # 美国下午4点 - 5点
-        percent_no_click = 40
+        percent_no_click = round(random.uniform(35, 40), 2)
     if cur_time_hour in range(5, 6):  # 美国下午5点 - 6点
-        percent_no_click = 70
+        percent_no_click = round(random.uniform(65, 70), 2)
     if cur_time_hour in range(6, 7):  # 美国晚上6点 - 7点
-        percent_no_click = 65
+        percent_no_click = round(random.uniform(60, 65), 2)
     if cur_time_hour in range(7, 8):  # 美国晚上7点 - 8点
-        percent_no_click = 55
+        percent_no_click = round(random.uniform(50, 55), 2)
     if cur_time_hour in range(8, 9):  # 美国晚上8点 - 9点
-        percent_no_click = 40
+        percent_no_click = round(random.uniform(35, 40), 2)
     if cur_time_hour in range(9, 10):  # 美国晚上9点 - 10点
-        percent_no_click = 30
+        percent_no_click = round(random.uniform(25, 30), 2)
     if cur_time_hour in range(10, 11):  # 美国晚上10点 - 11点
-        percent_no_click = 35
+        percent_no_click = round(random.uniform(30, 35), 2)
     if cur_time_hour in range(10, 11):  # 美国晚上11点 - 12点
-        percent_no_click = 50
+        percent_no_click = round(random.uniform(40, 60), 2)
 
     adjusting_coefficient = 1  # round(random.uniform(0.5, 2), 2)  # 调节系数随机, 增强可变性
-    return round(random.uniform(0, 100), 2) >= percent_no_click*adjusting_coefficient
+    cur_percent = round(random.uniform(0, 100), 2)
+    enable_quick_browser_mode = cur_percent >= percent_no_click * adjusting_coefficient
+    logger.info('参数: enable_quick_browser_mode={}, cur_percent={}, percent_no_click={}, adjusting_coefficient={}'.format(
+        enable_quick_browser_mode, cur_percent, percent_no_click, adjusting_coefficient))
+    return enable_quick_browser_mode
 
 
 def browser_boot():
