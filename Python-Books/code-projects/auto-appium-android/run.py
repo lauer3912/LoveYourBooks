@@ -462,7 +462,7 @@ def starup(want_open_url, app_args):
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            min_sleep_secs = random.randint(15, 35)
+            min_sleep_secs = random.randint(15, 50)
             time.sleep(min_sleep_secs)
 
         # 判断是否为快速浏览模式
@@ -473,7 +473,7 @@ def starup(want_open_url, app_args):
                 start_auto_scroll_up_or_down()
             time.sleep(random.randint(3, 15))
             start_auto_scroll_up_or_down()
-            time.sleep(random.randint(30, 50))
+            time.sleep(random.randint(30, 90))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
