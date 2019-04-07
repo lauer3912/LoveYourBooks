@@ -15,9 +15,10 @@ Loop, %loop_times%
    Loop, %wheel_times%
    {
       Click WheelDown, %drag_x%, %drag_y%
+      Sleep, 200
    }
 
-   Random, sleepTime, 300, 3000
+   Random, sleep_time, 500, 5000
    Sleep, %sleepTime%
 }
 
