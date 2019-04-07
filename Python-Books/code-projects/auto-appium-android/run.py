@@ -247,7 +247,7 @@ def get_enable_click_ads():
     cur_time_hour = int(cur_time.tm_hour)
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(11, 18):
-        time_enable = round(random.uniform(0.2, 10), 2) <= 1
+        time_enable = round(random.uniform(0.2, 10), 2) <= 6
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
