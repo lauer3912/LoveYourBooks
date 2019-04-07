@@ -276,6 +276,8 @@ def git_pull_update():
         proc.wait()
     except Exception:
         logger.exception('ERROR:')
+    finally:
+        print("-------------------------------------------------")
 
 
 # A sample producer task
