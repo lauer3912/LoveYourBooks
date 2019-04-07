@@ -80,6 +80,8 @@ global_config = {
 globals_drivers = {}
 all_sub_process = []
 
+global_use_buildin_vpn = random.randint(0, 1) == 1  # 是否使用VM中内置的VPN
+
 
 def get_now_time():
     millis = int(round(time.time() * 1000))
@@ -417,7 +419,8 @@ def starup(want_open_url, app_args):
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
         # enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(3, 6)
-        enable_quick_browser_mode = False
+        enable_quick_browser_mode = (not global_use_buildin_vpn) or (
+                    round(random.uniform(0.1, 12), 2) <= random.randint(6, 8))
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -585,7 +588,8 @@ if __name__ == "__main__":
     try:
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
-        start_vpn()
+        if global_use_buildin_vpn:
+            start_vpn()
         browser_boot(app_args)
     except Exception:
         logger.exception("Error:")
