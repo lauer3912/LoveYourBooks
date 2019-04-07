@@ -19,7 +19,7 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     {
         Random, x, %x_min%, %x_max%
         Random, y, %y_min%, %y_max%
-        Random, sleep_time, 300, 3000
+        Random, sleep_time, 1000, 5000
 
         Click %x%, %y%, 0
 
