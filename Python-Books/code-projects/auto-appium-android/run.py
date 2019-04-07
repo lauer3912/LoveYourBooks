@@ -495,6 +495,7 @@ def starup(want_open_url, app_args):
             time.sleep(random.randint(15, 30))
             start_auto_scroll_up_or_down()
             auto_click_ads()
+            start_auto_scroll_up_or_down()
             time.sleep(random.randint(60, 90))
 
 
