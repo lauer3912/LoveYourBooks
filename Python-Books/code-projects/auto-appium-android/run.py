@@ -80,7 +80,7 @@ global_config = {
 globals_drivers = {}
 all_sub_process = []
 
-global_use_buildin_vpn = random.randint(0, 1) == 1  # 是否使用VM中内置的VPN
+global_use_buildin_vpn = round(random.uniform(2, 20), 2) >= 2.40  # 是否使用VM中内置的VPN
 
 
 def get_now_time():
