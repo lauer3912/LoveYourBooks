@@ -349,7 +349,7 @@ def auto_close_tab_page():
     return 0
 
 
-def starup(want_open_url):
+def starup(want_open_url, app_args):
     has_error = False
     now_driver_id = get_random_driver_id()
     try:
@@ -416,7 +416,7 @@ def starup(want_open_url):
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
-        enable_quick_browser_mode = get_enable_quick_browser_mode()
+        enable_quick_browser_mode = get_enable_quick_browser_mode(app_args)
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -517,12 +517,12 @@ def starup(want_open_url):
         if has_error:
             # 重新开启刷屏处理
             time.sleep(random.randint(10, 15))
-            browser_boot()
+            browser_boot(app_args)
         if global_config['run_count'] > global_config['max_urls_count']:
             sys_exit("The number of pages opened has reached the maximum requirement")
 
 
-def get_enable_quick_browser_mode():
+def get_enable_quick_browser_mode(app_args):
     """
     查看是否需要启动快速浏览模式
     :return:
@@ -580,13 +580,16 @@ def get_enable_quick_browser_mode():
     adjusting_coefficient = 1  # round(random.uniform(0.5, 2), 2)  # 调节系数随机, 增强可变性
     cur_percent = round(random.uniform(0, 100), 2)
     enable_quick_browser_mode = cur_percent >= percent_no_click * adjusting_coefficient
-    logger.info('参数: enable_quick_browser_mode={}, cur_percent={}, percent_no_click={}, adjusting_coefficient={}'.format(
-        enable_quick_browser_mode, cur_percent, percent_no_click, adjusting_coefficient))
-    #return enable_quick_browser_mode
+    print('app_args.vmid={}, '
+          '参数: enable_quick_browser_mode={}, '
+          'cur_percent={}, '
+          'percent_no_click={}, adjusting_coefficient={}'.format(
+        app_args.vmid, enable_quick_browser_mode, cur_percent, percent_no_click, adjusting_coefficient))
+    # return enable_quick_browser_mode
     return False
 
 
-def browser_boot():
+def browser_boot(app_args):
     with open("urls.txt", "r") as fhandler:
         all_urls = []
         while True:
@@ -608,7 +611,7 @@ def browser_boot():
             cur_url = all_urls[cur_index]
             cur_url = cur_url.strip()
             if cur_url != '':
-                starup(cur_url)
+                starup(cur_url, app_args)
                 logger.info("Prepare the next web page url ... index=%d" % cur_index)
                 time.sleep(random.randint(6, 12))
             else:
@@ -649,7 +652,7 @@ if __name__ == "__main__":
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
         start_vpn()
-        browser_boot()
+        browser_boot(app_args)
     except Exception:
         logger.exception("Error:")
     finally:
