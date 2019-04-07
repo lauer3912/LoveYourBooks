@@ -369,7 +369,8 @@ def starup(want_open_url, app_args):
             'clearSystemFiles': True,
             'avdLaunchTimeout': 60000,
             'avdReadyTimeout': 60000,
-            # 'noReset': True,
+            # 'noReset': False,
+            'gpsEnabled': True,
             # 'appActivity': 'BrowserActivity',
             'newCommandTimeout': 60000,
             'autoWebviewTimeout': 60000,
@@ -473,7 +474,7 @@ def starup(want_open_url, app_args):
                 start_auto_scroll_up_or_down()
             time.sleep(random.randint(3, 15))
             start_auto_scroll_up_or_down()
-            time.sleep(random.randint(30, 90))
+            time.sleep(random.randint(60, 90))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
@@ -494,9 +495,9 @@ def starup(want_open_url, app_args):
             auto_click_ads()
             time.sleep(random.randint(15, 30))
             start_auto_scroll_up_or_down()
+            time.sleep(random.randint(60, 90))
             auto_click_ads()
             start_auto_scroll_up_or_down()
-            time.sleep(random.randint(60, 90))
 
 
         # 自动关闭标签页面
