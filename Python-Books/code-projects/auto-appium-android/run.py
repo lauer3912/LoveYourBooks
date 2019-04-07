@@ -582,7 +582,8 @@ def get_enable_quick_browser_mode():
     enable_quick_browser_mode = cur_percent >= percent_no_click * adjusting_coefficient
     logger.info('参数: enable_quick_browser_mode={}, cur_percent={}, percent_no_click={}, adjusting_coefficient={}'.format(
         enable_quick_browser_mode, cur_percent, percent_no_click, adjusting_coefficient))
-    return enable_quick_browser_mode
+    #return enable_quick_browser_mode
+    return False
 
 
 def browser_boot():
