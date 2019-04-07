@@ -31,22 +31,29 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     }
 }
 
-; Active the window
-ClickAds(ads_X_min, ads_X_max, 172, 900)
-MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+Loop, 5 {
+    Random, best_index, 1, 7
+    if (%best_index% >= 5) {
+        ; Active the window
+        ClickAds(ads_X_min, ads_X_max, 172, 900)
+        MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+    } else if (%best_index% >= 4) {
+        ; Click the top ads
+        ClickAds(ads_X_min, ads_X_max, 172, 215)
+        MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+    } else if (%best_index% >= 3) {
+        ; Click the mid ads
+        ClickAds(ads_X_min, ads_X_max, 534, 720)
+        MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+    } else if (%best_index% >= 2) {
+        ; Click the bottom ads
+        ClickAds(ads_X_min, ads_X_max, 900, 952)
+        MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+    } else {
+        MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
+    }
+}
 
-
-; Click the top ads
-ClickAds(ads_X_min, ads_X_max, 172, 215)
-MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
-
-; Click the mid ads
-ClickAds(ads_X_min, ads_X_max, 534, 720)
-MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
-
-; Click the bottom ads
-ClickAds(ads_X_min, ads_X_max, 900, 952)
-MoveMouse(10, ads_X_min, ads_X_max, 172, 900)
 
 ; Exit
 Exit
