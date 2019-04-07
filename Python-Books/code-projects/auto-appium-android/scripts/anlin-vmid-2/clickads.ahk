@@ -9,7 +9,8 @@ ClickAds(x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     Random, x, %x_min%, %x_max%
     Random, y, %y_min%, %y_max%
     Click %x%, %y%
-    Sleep, 20000
+    Random, sleep_time, 1000, 20000
+Sleep, %sleep_time%
 }
 
 MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
@@ -19,7 +20,7 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     {
         Random, x, %x_min%, %x_max%
         Random, y, %y_min%, %y_max%
-        Random, sleep_time, 1500, 10000
+        Random, sleep_time, 500, 7000
 
         Click %x%, %y%, 0
 
