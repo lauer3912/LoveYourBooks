@@ -472,9 +472,12 @@ def starup(want_open_url, app_args):
             if random.randint(0, 1) == 1:
                 time.sleep(3)
                 start_auto_scroll_up_or_down()
-            time.sleep(random.randint(3, 15))
-            start_auto_scroll_up_or_down()
-            time.sleep(random.randint(60, 90))
+            if random.randint(0, 1) == 1:
+                time.sleep(random.randint(3, 15))
+            if random.randint(0, 1) == 1:
+                start_auto_scroll_up_or_down()
+            if random.randint(0, 1) == 1:
+                time.sleep(random.randint(60, 90))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
@@ -492,17 +495,23 @@ def starup(want_open_url, app_args):
                 time.sleep(min_sleep_secs)
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
-            auto_click_ads()
-            time.sleep(random.randint(15, 30))
-            start_auto_scroll_up_or_down()
-            time.sleep(random.randint(60, 90))
-            auto_click_ads()
-            start_auto_scroll_up_or_down()
+            if random.randint(0, 1) == 1:
+                auto_click_ads()
+            if random.randint(0, 1) == 1:
+                time.sleep(random.randint(15, 30))
+            if random.randint(0, 1) == 1:
+                start_auto_scroll_up_or_down()
+            if random.randint(0, 1) == 1:
+                time.sleep(random.randint(60, 90))
+            if random.randint(0, 1) == 1:
+                auto_click_ads()
+                start_auto_scroll_up_or_down()
 
 
         # 自动关闭标签页面
         auto_close_tab_page()
-        time.sleep(random.randint(2, 5))
+        if random.randint(0, 1) == 1:
+            time.sleep(random.randint(2, 5))
 
         # 关闭后台进程
         stop_all_back_procs(all_sub_process)
