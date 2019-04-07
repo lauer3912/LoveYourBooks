@@ -307,8 +307,38 @@ def exit_callback():
     logger.info('exit ....')
 
 
+def find_process_id_by_name(process_name):
+    """
+    Get a list of all the PIDs of a all the running process whose name contains the given string process name
+    :param process_name:
+    :return:
+    """
+
+    list_of_process_objects = []
+    for proc in psutil.process_iter():
+        try:
+            pinfo = proc.as_dict(attrs=['pid', 'name', 'create_time'])
+            if process_name.lower() in pinfo['name'].lower():
+                list_of_process_objects.append(pinfo)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+        except Exception:
+            pass
+    return list_of_process_objects
+
+
+def close_all_ahk_process():
+    list_of_process_objects = find_process_id_by_name('AutoHotkey')
+    for proc in list_of_process_objects:
+        try:
+            psutil.Process(proc['pid']).terminate()
+        except Exception:
+            pass
+
+
 def keyboardInterruptHandler(signal, frame):
     logger.info("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    close_all_ahk_process()
     exit_callback()
     exit(0)
 

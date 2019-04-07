@@ -503,6 +503,9 @@ def starup(want_open_url, app_args):
         auto_close_tab_page()
         time.sleep(random.randint(2, 5))
 
+        # 关闭后台进程
+        stop_all_back_procs(all_sub_process)
+
         # 创建可以关闭VM的标记文件
         RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
 
