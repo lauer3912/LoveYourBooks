@@ -74,7 +74,7 @@ class VMJob(object):
         flag_file = os.path.join(current_dir, 'can-stop-vmid-{}-f.flag'.format(self.vmid))
 
         run_overtime_case1 = running_time >= self.max_run_time and os.path.exists(flag_file)
-        run_overtime_case2 = (running_time - self.max_run_time) >= 2 * 60 * 1000  # 严重超时2分钟
+        run_overtime_case2 = (running_time - self.max_run_time) >= 8 * 60 * 1000  # 严重超时8分钟
         if run_overtime_case1 or run_overtime_case2:
             return True
 
