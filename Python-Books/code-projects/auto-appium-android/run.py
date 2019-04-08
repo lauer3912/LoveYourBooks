@@ -515,9 +515,6 @@ def starup(want_open_url, app_args):
         # 关闭后台进程
         stop_all_back_procs(all_sub_process)
 
-        # 创建可以关闭VM的标记文件
-        RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
-
         # 浏览完成后，可以关闭了
         logger.info("浏览网页完成，即将关闭该网页...")
 
@@ -530,6 +527,8 @@ def starup(want_open_url, app_args):
         logger.info("pages that are currently open count = %d" % global_config['run_count'])
         try:
             globals_drivers[now_driver_id].quit()
+            # 创建可以关闭VM的标记文件
+            RunningHelper.create_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
         except Exception:
             logger.exception("Error:")
         if has_error:
