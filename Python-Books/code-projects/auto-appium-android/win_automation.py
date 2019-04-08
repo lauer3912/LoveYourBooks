@@ -285,7 +285,7 @@ async def producer():
     num_git_pull_check = 0
     while True:
         # 先更新一下，看看子模块是否有更新
-        if num_git_pull_check > 4:  # 首次及1分钟后，检查更新
+        if num_git_pull_check > 12:  # 首次及1分钟后，检查更新
             git_pull_update()
             num_git_pull_check = 0
         num_git_pull_check += 1
@@ -297,7 +297,7 @@ async def producer():
 
             await publish(vmjob)
 
-        await sleep(15)
+        await sleep(5)
 
 
 def exit_callback():
