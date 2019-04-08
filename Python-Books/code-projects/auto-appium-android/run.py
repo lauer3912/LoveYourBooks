@@ -421,7 +421,7 @@ def starup(want_open_url, app_args):
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
         # enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(3, 6)
         enable_quick_browser_mode = (not global_use_buildin_vpn) or (
-                    round(random.uniform(1, 12), 2) <= random.randint(3, 6))
+                    round(random.uniform(1, 12), 2) <= random.randint(1, 5))
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(90, 150)
@@ -491,18 +491,18 @@ def starup(want_open_url, app_args):
                 if random.randint(0, 1) == 1:
                     time.sleep(5)
                     start_auto_scroll_up_or_down()
-                min_sleep_secs = random.randint(5, 60)
+                min_sleep_secs = random.randint(1, 30)
                 time.sleep(min_sleep_secs)
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
             if random.randint(0, 1) == 1:
                 auto_click_ads()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(5, 30))
+                time.sleep(random.randint(1, 30))
             if random.randint(0, 1) == 1:
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(10, 45))
+                time.sleep(random.randint(1, 30))
             if random.randint(0, 1) == 1:
                 auto_click_ads()
                 start_auto_scroll_up_or_down()
