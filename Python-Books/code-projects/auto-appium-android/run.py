@@ -463,7 +463,7 @@ def starup(want_open_url, app_args):
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            min_sleep_secs = random.randint(15, 50)
+            min_sleep_secs = random.randint(5, 30)
             time.sleep(min_sleep_secs)
 
         # 判断是否为快速浏览模式
@@ -477,7 +477,7 @@ def starup(want_open_url, app_args):
             if random.randint(0, 1) == 1:
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(60, 90))
+                time.sleep(random.randint(5, 40))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
@@ -491,18 +491,18 @@ def starup(want_open_url, app_args):
                 if random.randint(0, 1) == 1:
                     time.sleep(5)
                     start_auto_scroll_up_or_down()
-                min_sleep_secs = random.randint(30, 60)
+                min_sleep_secs = random.randint(5, 60)
                 time.sleep(min_sleep_secs)
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
             if random.randint(0, 1) == 1:
                 auto_click_ads()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(15, 30))
+                time.sleep(random.randint(5, 30))
             if random.randint(0, 1) == 1:
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(60, 90))
+                time.sleep(random.randint(10, 45))
             if random.randint(0, 1) == 1:
                 auto_click_ads()
                 start_auto_scroll_up_or_down()
