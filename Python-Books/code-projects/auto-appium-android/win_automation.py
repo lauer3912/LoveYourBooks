@@ -135,11 +135,19 @@ class VMJob(object):
             vmsH.set_vm_config(self.vmid, self.extend_vm_info)
             logger.info("call vmsH.start_vm(self.vmid)")
             await vmsH.start_vm(self.vmid)
-            await sleep(10)
+
+            tmp_vm_start_time = Utils.get_now_time()
+            tmp_vm_max_start_use_time = 60*1000  # 最大的运行检测时间
+            while Utils.get_now_time() - tmp_vm_start_time <= tmp_vm_max_start_use_time:
+                await sleep(2)
+                is_running = await self.is_vm_running()
+                if is_running:
+                    break
+
+            # 再次判断是否正在运行
             is_running = await self.is_vm_running()
             if not is_running:
                 self.startingVM = False
-                logger.info('Start vm failed ... vmid={}'.format(self.vmid))
                 await self.stop_back_handler(force=True)
             else:
                 await sleep(3)
