@@ -1,6 +1,6 @@
 CoordMode, Mouse
 
-tab_x_pos := 1376
+tab_x_pos := 1380
 tab_y_pos := 93
 vm_offest := 1164
 
