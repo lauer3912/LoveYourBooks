@@ -25,4 +25,4 @@ ClickAds(ads_X_min, ads_X_max, 534, 720)
 
 
 ; Click the bottom ads
-ClickAds(ads_X_min, ads_X_max, 900, 952)
+ClickAds(ads_X_min, ads_X_max, 800, 850)
