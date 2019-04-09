@@ -421,8 +421,8 @@ def starup(want_open_url, app_args):
         logger.info("This is already an attempt to open a Web page = %d " % (global_config['run_to_get_urls_count']))
 
         # 设置加载时间超时处理
-        max_page_load_timeout = random.randint(180, 360)  # 加大支持timeout的时间, 让浏览更逼真
-        max_script_timeout = random.randint(60, 120)  # 加大支持脚本执行的timeout时间，让浏览更逼真
+        max_page_load_timeout = random.randint(90, 180)  # 加大支持timeout的时间, 让浏览更逼真
+        max_script_timeout = random.randint(60, 90)  # 加大支持脚本执行的timeout时间，让浏览更逼真
 
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
@@ -431,7 +431,7 @@ def starup(want_open_url, app_args):
                     round(random.uniform(1, 12), 2) <= random.randint(1, 5))
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
-            max_page_load_timeout = random.randint(90, 150)
+            max_page_load_timeout = random.randint(60, 90)
             max_script_timeout = random.randint(30, 60)
 
         # 设置加载及延时时间控制
