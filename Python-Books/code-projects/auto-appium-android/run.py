@@ -480,8 +480,6 @@ def starup(want_open_url, app_args):
                 time.sleep(3)
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(3, 15))
-            if random.randint(0, 1) == 1:
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
                 time.sleep(random.randint(5, 40))
@@ -504,15 +502,13 @@ def starup(want_open_url, app_args):
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
             if random.randint(0, 1) == 1:
                 auto_click_ads()
-            if random.randint(0, 1) == 1:
-                time.sleep(random.randint(1, 30))
-            if random.randint(0, 1) == 1:
                 start_auto_scroll_up_or_down()
             if random.randint(0, 1) == 1:
-                time.sleep(random.randint(1, 30))
+                time.sleep(random.randint(1, 10))
             if random.randint(0, 1) == 1:
                 auto_click_ads()
                 start_auto_scroll_up_or_down()
+                auto_click_ads()
 
         # 自动关闭标签页面
         auto_close_tab_page()
