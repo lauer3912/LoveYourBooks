@@ -12,8 +12,10 @@
     ** cmd终端。
     ** 执行 "C:\Program Files\Microvirt\MEmu\memuc.exe" listvms 获取
     ** 更多关于 memuc 的处理，请参考： "C:\Program Files\Microvirt\MEmu\memuc.exe" -help
+    ** appium -p 4723
     ** appium -p 4725
     ** appium -p 4727
+    **
     ** appium -p 4729
     -->
     <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80">
