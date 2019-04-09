@@ -4,7 +4,7 @@ pos_x_max := 520
 pos_y_top := 220
 pos_y_bottom := 850
 
-Random, loop_times, 2, 8
+Random, loop_times, 3, 5
 Loop, %loop_times%
 {
    Random, drag_x, %pos_x_min%, %pos_x_max%
@@ -18,7 +18,7 @@ Loop, %loop_times%
       Sleep, 2000
    }
 
-   Random, sleep_time, 200, 1500
+   Random, sleep_time, 500, 3000
    Sleep, %sleepTime%
 }
 
