@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Java Base Study</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="build_tools.html"><strong aria-hidden="true">1.</strong> 构建工具</a></li><li><ol class="section"><li><a href="what_is_ant.html"><strong aria-hidden="true">1.1.</strong> 什么是 Ant?</a></li><li><a href="what_is_maven.html"><strong aria-hidden="true">1.2.</strong> 什么是 Maven?</a></li><li><a href="what_is_gradle.html"><strong aria-hidden="true">1.3.</strong> 什么是 Gradle?</a></li><li><a href="2019-Maven-vs-Gradle.html"><strong aria-hidden="true">1.4.</strong> 2019 Maven vs Gradle</a></li></ol></li><li><a href="baseon_jvm_languages.html"><strong aria-hidden="true">2.</strong> 基于JVM的编程语言</a></li><li><ol class="section"><li><a href="what_is_groovy.html"><strong aria-hidden="true">2.1.</strong> 什么是 Groovy?</a></li><li><a href="what_is_scala.html"><strong aria-hidden="true">2.2.</strong> 什么是 Scala?</a></li></ol></li><li><a href="popular_web_servers.html"><strong aria-hidden="true">3.</strong> 流行服务器</a></li><li><ol class="section"><li><a href="web-server-tomcat.html"><strong aria-hidden="true">3.1.</strong> Tomcat</a></li></ol></li><li><a href="search_maven_org.html"><strong aria-hidden="true">4.</strong> Java开源包管理网站</a></li><li><a href="popular_frameworks.html"><strong aria-hidden="true">5.</strong> 流行Framework</a></li><li><ol class="section"><li><a href="framework-spring.html"><strong aria-hidden="true">5.1.</strong> Spring</a></li><li><a href="framework-spring-mvc.html"><strong aria-hidden="true">5.2.</strong> Spring MVC</a></li><li><a href="framework-spring-boot.html"><strong aria-hidden="true">5.3.</strong> Spring Boot</a></li><li><a href="framework-spring-cloud.html"><strong aria-hidden="true">5.4.</strong> Spring Cloud</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- START - Rust Cookbook customization -->
+                            <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit" aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                                <i class="fa fa-edit">Edit</i>
+                            </button>
+                            <!-- END - Rust Cookbook customization -->
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Java Base Study</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+
+                   // START - Rust Cookbook customization
+                   document.getElementById("edit-button").addEventListener("click", function(){
+                       var editWindow = window.open("https://github.com/rust-lang-nursery/rust-cookbook/edit/master/src/print.md");
+                   });
+                   // END - Rust Cookbook customization
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="print.html#a构建工具" id="a构建工具"><h1>构建工具</h1></a>
+<a class="header" href="print.html#a什么是-ant" id="a什么是-ant"><h1>什么是 Ant?</h1></a>
+<a class="header" href="print.html#a什么是-maven" id="a什么是-maven"><h1>什么是 Maven?</h1></a>
+<p>Maven 是最流行的 Java 项目构建系统。</p>
+<p>目前，绝大多数开发人员都把 Ant 当作 Java 编程项目的标准构建工具。遗憾的是，Ant 的项目管理工具（作为 make 的替代工具）不能满足绝大多数开发人员的需要。通过检查 Ant 构建文件，很难发现项目的相关性信息和其它元信息（如开发人员／拥有者、版本或站点主页）。</p>
+<p>Maven 除了以程序构建能力为特色之外，还提供 Ant 所缺少的高级项目管理工具。由于 Maven 的缺省构建规则有较高的可重用性，所以常常用两三行 Maven 构建脚本就可以构建简单的项目，而使用 Ant 则需要十几行。事实上，由于 Maven 的面向项目的方法，许多 Apache Jakarta 项目现在使用 Maven，而且公司项目采用 Maven 的比例在持续增长。</p>
+<p>Maven vs Ant</p>
+<p>那么，Maven 和 Ant 有什么不同呢？在回答这个问题以前，我要强调一点：Maven 和 Ant 针对构建问题的两个不同方面。Ant 为 Java 技术开发项目提供跨平台构建任务。Maven 本身描述项目的高级方面，它从 Ant 借用了绝大多数构建任务。因此，由于 Maven 和 Ant 代表两个差异很大的工具，所以我将只说明这两个工具的等同组件之间的区别，如表 1 所示。</p>
+<p>表 1. Maven vs Ant</p>
+<table><thead><tr><th>              </th><th> Maven                                </th><th> Ant       </th></tr></thead><tbody>
+<tr><td> 标准构建文件 </td><td> project.xml 和 maven.xml             </td><td> build.xml </td></tr>
+<tr><td> 特性处理顺序 </td><td> ${maven.home}/bin/driver.properties </td></tr>
+</tbody></table>
+<p>${project.home}/project.properties<br />
+${project.home}/build.properties<br />
+${user.home}/build.properties
+通过 -D 命令行选项定义的系统特性 | 通过 -D 命令行选项定义的系统特性 由 任务装入的特性 |
+| 构建规则 | 构建规则更为动态（类似于编程语言）；它们是基于 Jelly 的可执行 XML。 | 构建规则或多或少是静态的，除非使用 |</p>
+<p>相关开发环境下的 Maven 插件：http://mevenide.codehaus.org/</p>
+<blockquote>
+<p>Maven 是一个项目管理工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。当你使用 Maven 的时候，你用一个明确定义的项目对象模型来描述你的项目，然后 Maven 可以应用横切的逻辑，这些逻辑来自一组共享的（或者自定义的）插件。
+Maven 有一个生命周期，当你运行 mvn install 的时候被调用。这条命令告诉 Maven 执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个 JAR 文件这样的工作。
+此外，Maven 能够很方便的帮你管理项目报告，生成站点，管理 JAR 文件，等等。</p>
+</blockquote>
+<a class="header" href="print.html#a什么是-gradle" id="a什么是-gradle"><h1>什么是 Gradle?</h1></a>
+<p>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化构建开源工具。它使用一种基于Groovy的特定领域语言(DSL)来声明项目设置，抛弃了基于XML的各种繁琐配置。
+面向Java应用为主。当前其支持的语言限于Java、Groovy、Kotlin和Scala，计划未来将支持更多的语言。</p>
+<a class="header" href="print.html#a2019-maven-vs-gradle" id="a2019-maven-vs-gradle"><h1>2019 Maven vs Gradle</h1></a>
+<ol>
+<li>灵活性
+谷歌采用gradle构建andriod不是因为构建脚本就是代码，而是因为gradle是可扩展的。比如gradle允许调用C/C++进行native 开发。另外，gradle可以扩展到其他生态圈，比如可以嵌入其他系统，因为gradle提供了一套tooling api。
+Gradle和maven都遵循约定大于配置，但是maven的模型比较僵硬，一些个性化配置很难实现甚至不可能。</li>
+</ol>
+<ol start="2">
+<li>
+<p>性能
+加快build速度对项目发布很重要，gradle和maven都采用了并行编译，并行依赖处理等方案。gradle的最大不同是避免不需要的工作和渐进性。主要采用以下三点：</p>
+<ul>
+<li>a. 渐进性
+gradle 记录任务的输入和输出，仅仅运行必须的，尽可能仅仅处理更高的文件</li>
+<li>b. 利用cache
+gradle对于相同的输入，重用其他gradle build输出的cache，对于跨机器的构建也可以。</li>
+<li>c. Daemon进程
+gradle长期运行一个进程把build信息保存在内存</li>
+</ul>
+</li>
+</ol>
+<p>3 . 用户体验
+gradle提供了Kotlin-based DSL 提升用户体验。而且gradle提供了一种交互式UIbuild scans，可以进行debug，优化build性能
+4.依赖管理
+两者都提供了内置的依赖管理机制，都能本地缓存依赖或者远程下载。
+maven 重写依赖仅仅允许修改版本，但是gradle提供了 “依赖选择”和“替代机制”（声明一次，整个工程都生效），替换机制可以利用多个project生成复合build。</p>
+<p>下面的例子拒绝1.5 version</p>
+<p>Example 25.64. Component selection rule</p>
+<pre><code class="language-java">build.gradle
+
+configurations {
+    rejectConfig {
+        resolutionStrategy {
+            componentSelection {
+                // Accept the highest version matching the requested version that isn't '1.5'
+                all { ComponentSelection selection -&gt;
+                    if (selection.candidate.group == 'org.sample' &amp;&amp; selection.candidate.module == 'api' &amp;&amp; selection.candidate.version == '1.5') {
+                        selection.reject(&quot;version 1.5 is broken for 'org.sample:api'&quot;)
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    rejectConfig &quot;org.sample:api:1.+&quot;
+}
+
+</code></pre>
+<p>替代机制如下，用groovy替代groovy-all，用log4j-over-slf4j替代log4j</p>
+<p>Example 25.53. Changing dependency group and/or name at the resolution</p>
+<pre><code class="language-java">build.gradle
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details -&gt;
+        if (details.requested.name == 'groovy-all') {
+            //prefer 'groovy' over 'groovy-all':
+            details.useTarget group: details.requested.group, name: 'groovy', version: details.requested.version
+        }
+        if (details.requested.name == 'log4j') {
+            //prefer 'log4j-over-slf4j' over 'log4j', with fixed version:
+            details.useTarget &quot;org.slf4j:log4j-over-slf4j:1.7.10&quot;
+        }
+    }
+}
+
+</code></pre>
+<a class="header" href="print.html#a基于jvm的编程语言" id="a基于jvm的编程语言"><h1>基于JVM的编程语言</h1></a>
+<a class="header" href="print.html#a什么是-groovy" id="a什么是-groovy"><h1>什么是 Groovy?</h1></a>
+<p>Groovy是一种基于JVM（Java虚拟机）的敏捷开发语言，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与 Java 代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy 可以使用其他 Java 语言编写的库。</p>
+<p>https://baike.baidu.com/item/Groovy</p>
+<p>2019年记录： 最新版本为 2.5  最近还在持续发展，会发布3.0 支持JDK11</p>
+<a class="header" href="print.html#a什么是-scala" id="a什么是-scala"><h1>什么是 Scala?</h1></a>
+<p>Scala是一门多范式的编程语言，一种类似java的编程语言 [1]  ，设计初衷是实现可伸缩的语言 [2]  、并集成面向对象编程和函数式编程的各种特性。</p>
+<a class="header" href="print.html#a特点" id="a特点"><h2>特点</h2></a>
+<ul>
+<li>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。</li>
+<li>Scala 运行在Java虚拟机上，并兼容现有的Java程序。</li>
+<li>Scala 源代码被编译成Java字节码，所以它可以运行于JVM之上，并可以调用现有的Java类库。</li>
+</ul>
+<a class="header" href="print.html#a版本最新记录" id="a版本最新记录"><h2>版本最新记录</h2></a>
+<p>https://github.com/scala/scala/releases</p>
+<ul>
+<li>2019-02-19 记录到 https://scala-lang.org/ 官方网站最新版本为 2.12.8 发布于 2018.11.04  </li>
+</ul>
+<a class="header" href="print.html#a流行服务器" id="a流行服务器"><h1>流行服务器</h1></a>
+<a class="header" href="print.html#tomcat" id="tomcat"><h1>Tomcat</h1></a>
+<a class="header" href="print.html#a发音说明" id="a发音说明"><h2>发音说明</h2></a>
+<p>Apache Tomcat</p>
+<a class="header" href="print.html#a服务器介绍" id="a服务器介绍"><h2>服务器介绍</h2></a>
+<p>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。
+目前tomcat最新版本是9.0.16 (2019-02-20)</p>
+<a class="header" href="print.html#tomcat-9016-安装" id="tomcat-9016-安装"><h2>Tomcat 9.0.16 安装</h2></a>
+<p>官方网址：<a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></p>
+<p><img src="./images/tomact-9.0.16-download-page.png" alt="" /></p>
+<p>说明：</p>
+<blockquote>
+<ol>
+<li><strong>Binary Distributions</strong>和<strong>Source Code Distributions</strong>: 分别是二进制版本和源代码包。</li>
+<li><strong>Core</strong>: 是Tomcat正式的二进制发布版本，一般做开发或学习的时应该下载Core下的对应安装包。</li>
+<li><strong>Deployer</strong>: 是基于Tomcat的web应用的发布器，就是在把写好的JavaEE应用发布到Tomcat的时候可以使用Deployer来动态的发布。所以它不是真正的Tomcat二进制版本，它只是一个用以发布基于Tomcat的Web应用的发布工具而已</li>
+</ol>
+</blockquote>
+<a class="header" href="print.html#step-1" id="step-1"><h3>Step 1</h3></a>
+<ol>
+<li>我们此处下载core下面的zip或tar.gz压缩包即可。</li>
+<li>将下载好的tomcat安装包，防止到指定的路径，此处笔者放置在新建目录tomcat下。</li>
+</ol>
+<pre><code class="language-text">/Users/用户名/apache/tomcat/9.x/
+</code></pre>
+<a class="header" href="print.html#step-2" id="step-2"><h3>Step 2</h3></a>
+<p>解压缩 <code>apache-tomcat-9.0.16.zip</code> , 此时tomcat9解压目录为:</p>
+<pre><code class="language-text">/Users/用户名/apache/tomcat/9.x/apache-tomcat-9.0.16/
+</code></pre>
+<a class="header" href="print.html#step-3" id="step-3"><h3>Step 3</h3></a>
+<p>打开terminal终端，进入tomcat9解压缩目录</p>
+<pre><code class="language-shell">&gt; cd /Users/用户名/apache/tomcat/9.x/apache-tomcat-9.0.16/
+</code></pre>
+<p>进入<code>bin</code>目录：</p>
+<pre><code class="language-text">&gt; cd /Users/用户名/apache/tomcat/9.x/apache-tomcat-9.0.16/bin/
+</code></pre>
+<p>执行 <code>startup.sh</code> 尝试启动tomcat。</p>
+<pre><code class="language-shell">&gt; ./startup.sh
+</code></pre>
+<p>如果出现以下提示：<code>Permission denied</code>, 说明权限异常。</p>
+<pre><code class="language-shell">-bash: ./startup.sh: Permission denied
+</code></pre>
+<p>解决方案：给Tomcat启动命令校本赋予权限</p>
+<pre><code class="language-shell">&gt; sudo chmod 755 /Users/用户名/apache/tomcat/9.x/apache-tomcat-9.0.16/bin/*.sh
+</code></pre>
+<p>然后，再次执行启动脚本。</p>
+<pre><code class="language-shell">&gt; ./startup.sh
+</code></pre>
+<p>打开浏览器，访问 <a href="http://localhost:8080/">http://localhost:8080/</a>, 如果出现如下页面即表示Tomcat成功启动。</p>
+<p><img src="./images/tomact-9.0.16-start-on-mac.png" alt="" /></p>
+<a class="header" href="print.html#java开源包管理网站" id="java开源包管理网站"><h1>Java开源包管理网站</h1></a>
+<a class="header" href="print.html#a流行framework" id="a流行framework"><h1>流行Framework</h1></a>
+<a class="header" href="print.html#spring" id="spring"><h1>Spring</h1></a>
+<a class="header" href="print.html#spring-mvc" id="spring-mvc"><h1>Spring MVC</h1></a>
+<p>Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建 Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用Spring进行WEB开发时，可以选择使用Spring的Spring MVC框架或集成其他MVC开发框架，如Struts1(现在一般不用)，Struts 2(一般老项目使用)等。</p>
+<a class="header" href="print.html#a框架" id="a框架"><h2>框架</h2></a>
+<p>通过策略接口，Spring 框架是高度可配置的，而且包含多种视图技术，例如 JavaServer Pages（JSP）技术、Velocity、Tiles、iText和POI。Spring MVC 框架并不知道使用的视图，所以不会强迫开发者只使用 JSP 技术。Spring MVC 分离了控制器、模型对象、过滤器以及处理程序对象的角色，这种分离让它们更容易进行定制。</p>
+<a class="header" href="print.html#a优点" id="a优点"><h2>优点</h2></a>
+<p>Lifecycle for overriding binding, validation, etc，易于同其它View框架（Tiles等）无缝集成，采用IOC便于测试。
+它是一个典型的教科书式的mvc构架，而不像struts等都是变种或者不是完全基于mvc系统的框架，对于初学者或者想了解mvc的人来说我觉得 spring是最好的，它的实现就是教科书！第二它和tapestry一样是一个纯正的servlet系统，这也是它和tapestry相比 struts所具有的优势。而且框架本身有代码，看起来容易理解。</p>
+<a class="header" href="print.html#a单元测试" id="a单元测试"><h2>单元测试</h2></a>
+<p>关于Spring MVC Controller 层的单元测试
+测试准备工作：
+1、搭建测试Web环境</p>
+<pre><code class="language-java">@RunWith(UnitilsJUnit4TestClassRunner.class)
+@SpringApplicationContext({
+&quot;classpath:*.xml&quot;,&quot;file:src/main/webapp/WEB-INF/spring-configuration/*.xml&quot;,
+&quot;file:src/main/webapp/WEB-INF/*.xml&quot;
+})
+</code></pre>
+<p>2、注入Controller 类</p>
+<pre><code class="language-java">@Controller
+BeanControllercontroller;
+</code></pre>
+<p>3、编写测试数据
+测试数据的文件名一定要与测试类的文件名相同，比如测试数据BeanControllerTest.xml ，测试类 BeanControllerTest。</p>
+<p>4、注入测试数据</p>
+<pre><code class="language-java">@Test
+@DataSet
+publicvoidtestBean(){}
+</code></pre>
+<a class="header" href="print.html#a常用注解" id="a常用注解"><h2>常用注解</h2></a>
+<p>MVC已经是现代Web开发中的一个很重要的部分，下面介绍一下Spring MVC的一些使用心得。
+之前的项目比较简单，多是用JSP 、Servlet + JDBC 直接搞定，在项目中尝试用 Struts(Struts MVC)+Spring+Hibernate, 严格按照分层概念驱动项目开发，因项目需求一直不断变化，功能不断扩充、增强，技术构建也几经改变到目前有个稳定的应用，体会了很多感受，这次先对 Spring MVC 层进行一些个人总结。
+MVC作为WEB项目开发的核心环节，正如三个单词的分解那样，C（控制器）将V（视图、用户客户端）与M（javaBean:封装数据）分开构成了MVC ，这边不去讨论项目中是否应用MVC ，也不针对MVC的实现原理进行讲解，而是探讨实践中如何从应用SSH, 到Struts(Struts MVC)+Spring+Hibernate的演化过程。
+先看 Struts 如何与 Spring 结合处理一次简单的请求响应代码，前台可以设为用 AJAX 调用：</p>
+<a class="header" href="print.html#spring-boot" id="spring-boot"><h1>Spring Boot</h1></a>
+<p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</p>
+<a class="header" href="print.html#a特点-1" id="a特点-1"><h2>特点</h2></a>
+<ol>
+<li>创建独立的Spring应用程序</li>
+<li>嵌入的Tomcat，无需部署WAR文件</li>
+<li>简化Maven配置</li>
+<li>自动配置Spring</li>
+<li>提供生产就绪型功能，如指标，健康检查和外部配置</li>
+<li>绝对没有代码生成并且对XML也没有配置要求 [1]</li>
+</ol>
+<a class="header" href="print.html#a安装步骤" id="a安装步骤"><h2>安装步骤</h2></a>
+<p>从最根本上来讲，Spring Boot就是一些库的集合，它能够被任意项目的构建系统所使用。简便起见，该框架也提供了命令行界面，它可以用来运行和测试Boot应用。框架的发布版本，包括集成的CLI（命令行界面），可以在Spring仓库中手动下载和安装。一种更为简便的方式是使用Groovy环境管理器（Groovy enVironment Manager，GVM），它会处理Boot版本的安装和管理。Boot及其CLI可以通过GVM的命令行gvm install springboot进行安装。在OS X上安装Boot可以使用Homebrew包管理器。为了完成安装，首先要使用brew tap pivotal/tap切换到Pivotal仓库中，然后执行brew install springboot命令。
+要进行打包和分发的工程会依赖于像Maven或Gradle这样的构建系统。为了简化依赖图，Boot的功能是模块化的，通过导入Boot所谓的“starter”模块，可以将许多的依赖添加到工程之中。为了更容易地管理依赖版本和使用默认配置，框架提供了一个parent POM，工程可以继承它。</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0  http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;  
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  
+  &lt;groupId&gt;com.example&lt;/groupId&gt;  
+  &lt;artifactId&gt;myproject&lt;/artifactId&gt;  
+  &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;  
+  &lt;!-- Inherit defaults from Spring Boot --&gt;  
+  &lt;parent&gt; 
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;  
+    &lt;version&gt;1.0.0.RC1&lt;/version&gt; 
+  &lt;/parent&gt;  
+  &lt;!-- Add typical dependencies for a web application --&gt;  
+  &lt;dependencies&gt; 
+    &lt;dependency&gt; 
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
+      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; 
+    &lt;/dependency&gt;  
+    &lt;dependency&gt; 
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
+      &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt; 
+    &lt;/dependency&gt; 
+  &lt;/dependencies&gt;  
+  &lt;repositories&gt; 
+    &lt;repository&gt; 
+      &lt;id&gt;spring-snapshots&lt;/id&gt;  
+      &lt;url&gt;http://repo.spring.io/libs-snapshot&lt;/url&gt; 
+    &lt;/repository&gt; 
+  &lt;/repositories&gt;  
+  &lt;pluginRepositories&gt; 
+    &lt;pluginRepository&gt; 
+      &lt;id&gt;spring-snapshots&lt;/id&gt;  
+      &lt;url&gt;http://repo.spring.io/libs-snapshot&lt;/url&gt; 
+    &lt;/pluginRepository&gt; 
+  &lt;/pluginRepositories&gt;  
+  &lt;build&gt; 
+    &lt;plugins&gt; 
+      &lt;plugin&gt; 
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
+        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; 
+      &lt;/plugin&gt; 
+    &lt;/plugins&gt; 
+  &lt;/build&gt;
+&lt;/project&gt;
+
+</code></pre>
+<a class="header" href="print.html#spring-cloud" id="spring-cloud"><h1>Spring Cloud</h1></a>
+<p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring Cloud并没有重复制造轮子，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。</p>
+<a class="header" href="print.html#spring-cloud组成" id="spring-cloud组成"><h2>Spring Cloud组成</h2></a>
+<p>Spring Cloud的子项目，大致可分成两类，一类是对现有成熟框架”Spring Boot化”的封装和抽象，也是数量最多的项目；第二类是开发了一部分分布式系统的基础设施的实现，如Spring Cloud Stream扮演的就是kafka, ActiveMQ这样的角色。对于我们想快速实践微服务的开发者来说，第一类子项目就已经足够使用，如：</p>
+<ul>
+<li><strong>Spring Cloud Netflix</strong> : 是对Netflix开发的一套分布式服务框架的封装，包括服务的发现和注册，负载均衡、断路器、REST客户端、请求路由等。</li>
+<li><strong>Spring Cloud Config</strong> : 将配置信息中央化保存, 配置Spring Cloud Bus可以实现动态修改配置文件</li>
+<li><strong>Spring Cloud Bus</strong> : 分布式消息队列，是对Kafka, MQ的封装</li>
+<li><strong>Spring Cloud Security</strong> : 对Spring Security的封装，并能配合Netflix使用</li>
+<li><strong>Spring Cloud Zookeeper</strong> : 对Zookeeper的封装，使之能配置其它Spring Cloud的子项目使用</li>
+<li><strong>Spring Cloud Eureka</strong> : Spring Cloud Eureka 是 Spring Cloud Netflix 微服务套件中的一部分，它基于Netflix Eureka 做了二次封装，主要负责完成微服务架构中的服务治理功能。</li>
+</ul>
+<a class="header" href="print.html#spring-cloud前景" id="spring-cloud前景"><h2>Spring Cloud前景</h2></a>
+<p>Spring Cloud对于中小型互联网公司来说是一种福音，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来越来越“云”化的软件开发风格中立有一席之地，尤其是在目前五花八门的分布式解决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当年Servlet规范的诞生，有效推进服务端软件系统技术水平的进步。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                window.print();
+            })
+        </script>
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>

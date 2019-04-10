@@ -12,246 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../code-happay/leetcode-cn/problems/two-sum/c++/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Python-Books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Python-Books/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/1st-glance/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/1st-glance/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/action/db/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/action/db/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/action/json_data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/action/json_data/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/action/mysite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/action/mysite/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/action/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/action/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/any/any.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/any/any.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/appendix/glossary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/appendix/glossary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/attribute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/rustc-option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/attr-and-compiler-arg/rustc-option.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/cargo-detailed-cfg/cargo-detailed-cfg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/cargo-detailed-cfg/cargo-detailed-cfg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/cargo-io/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/cargo-io/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/cargo-projects-manager/cargo-projects-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/cargo-projects-manager/cargo-projects-manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/closure/as_argument_return_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/closure/as_argument_return_value.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/closure/implementation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/closure/implementation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/closure/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/closure/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/closure/syntax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/closure/syntax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/coding-style/style.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/coding-style/style.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/collections/hashmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/collections/hashmap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/collections/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/collections/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/collections/string.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/collections/string.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/collections/vec.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/collections/vec.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/comments/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/comments/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/message-passing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/message-passing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/parallel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/parallel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/share-memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/share-memory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/synchronize.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/synchronize.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/thread.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/concurrency-parallel-thread/thread.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/constants/const-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/constants/const-function.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/constants/const-value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/constants/const-value.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/constants/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/constants/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/binary_tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/binary_tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/graph.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/graph.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/linked_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/linked_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/priority_queue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/priority_queue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/queue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/queue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/data-structure/stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/data-structure/stack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/enums/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/enums/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/error-handling/option-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/error-handling/option-result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/error-handling/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/error-handling/option.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/error-handling/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/error-handling/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ffi/calling-ffi-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ffi/calling-ffi-function.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ffi/compiling-rust-to-lib.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ffi/compiling-rust-to-lib.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ffi/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ffi/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/flow-control/condition/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/flow-control/condition/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/flow-control/loop/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/flow-control/loop/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/flow-control/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/flow-control/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/format/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/format/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/function/arguement.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/function/arguement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/function/higher_order_function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/function/higher_order_function.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/function/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/function/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/function/return_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/function/return_value.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/function/statement_expression.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/function/statement_expression.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/generic-program/generic-data-struct.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/generic-program/generic-data-struct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/generic-program/generic-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/generic-program/generic-function.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/generic-program/generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/generic-program/generic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/generic-program/what-is-generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/generic-program/what-is-generic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/heap-stack/heap-stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/heap-stack/heap-stack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/heap-stack/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/heap-stack/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/asref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/asref.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/borrow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/borrow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/cow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/cow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/deref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/deref.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/into.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/into.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/intoborrow/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/intoborrow/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/io/file-io.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/io/file-io.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/io/io.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/io/io.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/io/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/io/output.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/io/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/io/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/iterator/iterator.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/iterator/iterator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/iterator/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/iterator/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_Self.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_Self.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_abstract.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_abstract.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_as.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_as.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_async.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_async.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_become.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_become.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_box.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_box.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_break.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_break.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_const.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_const.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_continue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_continue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_crate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_crate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_do.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_do.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_dyn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_dyn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_else.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_else.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_enum.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_enum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_extern.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_extern.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_false.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_false.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_final.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_fn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_fn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_for.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_for.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_if.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_if.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_impl.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_impl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_let.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_let.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_loop.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_loop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_macro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_match.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_match.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_mod.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_mod.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_move.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_move.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_mut.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_mut.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_override.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_override.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_priv.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_priv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_pub.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_pub.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_ref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_ref.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_return.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_return.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_self_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_self_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_static.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_static.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_struct.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_struct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_super.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_super.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_trait.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_true.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_true.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_try.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_try.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_typeof.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_typeof.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_unsafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_unsafe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_virtual.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_virtual.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_where.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_where.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_while.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_while.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/k_yield.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/k_yield.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/keywords/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/keywords/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/macro/macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/macro/macro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/marker/sendsync.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/marker/sendsync.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/match/match.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/match/match.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/match/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/match/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/match/pattern.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/match/pattern.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/module/module.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/module/module.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/module/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/module/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/module/prelude.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/module/prelude.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/module/pub-restricted.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/module/pub-restricted.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/oo-design-patterns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/oo-design-patterns.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/trait/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/trait/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/trait/trait-object.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/trait/trait-object.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/trait/trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/trait/trait.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/oop/what-is-oo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/oop/what-is-oo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/operator/as.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/operator/as.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/operator/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/operator/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/operator/overloading/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/operator/overloading/operator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/operator/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/operator/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ownership-system/borrowing_reference.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ownership-system/borrowing_reference.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ownership-system/example-ownership.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ownership-system/example-ownership.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ownership-system/lifetime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ownership-system/lifetime.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ownership-system/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ownership-system/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/ownership-system/what-is-ownership.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/ownership-system/what-is-ownership.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/safe/safety.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/safe/safety.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/smart-pointers/cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/smart-pointers/cell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/smart-pointers/mutex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/smart-pointers/mutex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/smart-pointers/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/smart-pointers/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/smart-pointers/rcarc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/smart-pointers/rcarc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/std/fs-and-path.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/std/fs-and-path.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/std/net.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/std/net.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/std/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/std/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/std/process.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/std/process.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/structs/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/structs/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/testing/bench.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/testing/bench.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/testing/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/testing/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/testing/threearchtest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/testing/threearchtest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/array.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/array.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/bool.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/bool.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/char.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/char.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/compound-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/compound-types.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/float.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/float.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/fn.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/fn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/integer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/integer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/macro-kernel-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/macro-kernel-types.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/primitives-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/primitives-types.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/raw-point.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/raw-point.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/ref.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/ref.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/tuple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/tuple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/type/unit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/type/unit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/raw-pointer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/raw-pointer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/unsafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/unsafe-rawpointer/unsafe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/variable/bindings.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/variable/bindings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/variable/mutability.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/variable/mutability.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/variable/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/variable/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/variable/scope.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/variable/scope.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/core/variable/what-is-variable.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/core/variable/what-is-variable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/atom.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/atom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/before.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/before.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/emacs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/emacs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/intellij-idea.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/intellij-idea.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/spacemacs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/spacemacs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/sublime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/sublime.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/vim.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/vim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/visualstudio.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/visualstudio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/editors/vscode.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/editors/vscode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/ferris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/ferris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/install_rust_on_linux.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/install_rust_on_linux.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/install_rust_on_mac_os.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/install_rust_on_mac_os.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/install_rust_on_windows.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/install_rust_on_windows.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/preface.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/preface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/rustup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/rustup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/install/use_mirrors_quickly.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/install/use_mirrors_quickly.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/print.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/extern_crate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/extern_crate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/intro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_allow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_allow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_cfg_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_cfg_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_derive_copy_and_clone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_derive_copy_and_clone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_derive_trail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_derive_trail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_inline.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_inline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_stable.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_stable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/meta_program_macro_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/meta_program_macro_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/problems/point_static.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/problems/point_static.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/comments-document.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/comments-document.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/control-flow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/control-flow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/data-types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/data-types.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/function-method.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/function-method.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/io-stream.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/io-stream.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/let.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/let.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/quickstart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/quickstart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/rust-travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/rust-travel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/struct-enum.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/struct-enum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/trait.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/trait.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/quickstart/vector-string.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/quickstart/vector-string.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../book/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/001_json_process_compare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/001_json_process_compare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caller_for_serde_json/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/caller_for_serde_json/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caller_for_serde_json/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/caller_for_serde_json/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs" beforeDir="false" afterPath="$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rust-cookbook-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-cookbook-by-nursery" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rust-reference-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-reference-by-nursery" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../rust-reference-by-offial" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-reference-by-offial" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -269,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="396">
               <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
             </state>
           </provider>
@@ -278,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="198">
               <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
             </state>
           </provider>
@@ -287,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$APPLICATION_CONFIG_DIR$/clion.vmoptions">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="220">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -296,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/lib.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="550">
               <caret line="25" column="17" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="17" />
             </state>
           </provider>
@@ -305,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cargo.toml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="286">
               <caret line="13" column="21" selection-start-line="13" selection-end-line="13" selection-end-column="21" />
             </state>
           </provider>
@@ -314,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="726">
               <caret line="33" column="40" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="40" />
             </state>
           </provider>
@@ -323,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_json-1.0.33/src/macros.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="1518">
               <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
             </state>
           </provider>
@@ -366,12 +130,13 @@
         <option value="$PROJECT_DIR$/Cargo.toml" />
         <option value="$PROJECT_DIR$/caller_for_serde_json/Cargo.toml" />
         <option value="$PROJECT_DIR$/caller_for_serde_json/src/sample.rs" />
+        <option value="$APPLICATION_CONFIG_DIR$/clion.vmoptions" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="177" />
-    <option name="y" value="23" />
+    <option name="x" value="233" />
+    <option name="y" value="47" />
     <option name="width" value="1257" />
     <option name="height" value="873" />
   </component>
@@ -381,7 +146,20 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="001_json_process_compare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="001_json_process_compare" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -404,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.001_json_process_compare">
+  <component name="RunManager" selected="Application.001_json_process_compare">
     <configuration name="001_json_process_compare" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="001_json_process_compare" TARGET_NAME="001_json_process_compare" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="001_json_process_compare" RUN_TARGET_NAME="001_json_process_compare">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -431,9 +209,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.001_json_process_compare" />
       <item itemvalue="Cargo Command.Run json_process_compare" />
       <item itemvalue="Cargo Command.run" />
-      <item itemvalue="CMake Application.001_json_process_compare" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -473,17 +251,22 @@
       <workItem from="1553782037961" duration="80000" />
       <workItem from="1553782218319" duration="416000" />
       <workItem from="1553784888614" duration="1058000" />
+      <workItem from="1554003564894" duration="252000" />
+      <workItem from="1554003951213" duration="803000" />
+      <workItem from="1554816476696" duration="257000" />
+      <workItem from="1554816848551" duration="69000" />
+      <workItem from="1554816956134" duration="384000" />
+      <workItem from="1554872481763" duration="601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53924000" />
+    <option name="totallyTimeSpent" value="56290000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="177" y="23" width="1257" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="233" y="47" width="1257" height="873" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21076234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21069959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" weight="0.32998997" />
@@ -497,12 +280,12 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.46726456" side_tool="true" weight="0.3306011" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.47736627" side_tool="true" weight="0.32744566" />
       <window_info anchor="bottom" id="Reviews" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Tail" order="13" />
       <window_info anchor="bottom" id="DB Execution Console" order="14" />
-      <window_info active="true" anchor="bottom" id="CMake" order="15" sideWeight="0.5215215" visible="true" weight="0.33423913" />
+      <window_info anchor="bottom" id="CMake" order="15" sideWeight="0.52263373" weight="0.3265306" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -658,50 +441,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="396">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="550">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Cargo.toml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="286">
           <caret line="13" column="21" selection-start-line="13" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/use_macro.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="726">
           <caret line="33" column="40" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_json-1.0.33/src/macros.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1518">
           <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/clion.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="220">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>

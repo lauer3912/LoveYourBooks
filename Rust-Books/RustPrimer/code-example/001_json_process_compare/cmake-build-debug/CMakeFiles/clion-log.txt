@@ -1,0 +1,7 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ian/GitHub/lauer3912/LoveYourBooks/Rust-Books/RustPrimer/code-example/001_json_process_compare
+-- Configuring done
+CMake Error: Cannot determine link language for target "001_json_process_compare".
+CMake Error: CMake can not determine linker language for target: 001_json_process_compare
+-- Generating done
+-- Build files have been written to: /Users/ian/GitHub/lauer3912/LoveYourBooks/Rust-Books/RustPrimer/code-example/001_json_process_compare/cmake-build-debug
+Unable to determine product file path for target 001_json_process_compare. Running and debugging will be unavailable.

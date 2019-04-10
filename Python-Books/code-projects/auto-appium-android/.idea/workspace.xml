@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="506dda84-92de-40ff-b298-b743cfcdaed3" name="Default Changelist" comment="最后一次优化">
+      <change afterPath="$PROJECT_DIR$/../../../code-happay/leetcode-cn/problems/two-sum/c++/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" beforeDir="false" afterPath="$PROJECT_DIR$/../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Rust-Books/RustPrimer/code-example/001_json_process_compare/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/auto_appium_android$win_automation.coverage" NAME="win_automation Coverage Results" MODIFIED="1554261865522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="418" selection-start-line="418" selection-end-line="418" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/scrollupordown.ahk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/runvpn.ahk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/scrolluptodown.ahk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/closetab.ahk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/clickads.ahk">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Sleep, 1000</find>
+      <find>Sleep, 15*1000</find>
+      <find>Random, wheel_times, 1, 12</find>
+      <find>Random, loop_times, 5, 15</find>
+      <find>Random, sleep_time, 1000, 3000</find>
+      <find>Random, loop_times, 2, 10</find>
+      <find>Random, sleep_time, 1500, 10000</find>
+      <find>Sleep, 20000</find>
+      <find>stop_all_back_procs</find>
+      <find>generate_new_simserial</find>
+      <find>start_time</find>
+      <find>is_job_overtime</find>
+      <find>Random, sleep_time, 3000, 7000</find>
+      <find>Random, sleep_time, 500, 7000</find>
+      <find>Random, sleep_time, 300, 2000</find>
+      <find>remove_can_stop_vm_flag_file</find>
+      <find>pos_y_bottom := 940</find>
+      <find>, 900)</find>
+      <find>900, 952)</find>
+      <find>tab_x_pos := 1376</find>
+      <find>Random, sleep_time, 300, 3000</find>
+      <find>Random, sleep_time, 200, 1500</find>
+      <find>Random, loop_times, 2, 8</find>
+      <find>MoveMouse(10,</find>
+      <find>Random, sleep_time, 500, 5000</find>
+      <find>Random, sleep_time, 500, 2500</find>
+      <find>Random, sleep_time, 600, 3000</find>
+      <find>Random, sleep_time, 500, 3000</find>
+      <find>Sleep, 10*1000</find>
+      <find>Sleep, 25*1000</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>MoveMouse(10,</replace>
+      <replace>Click %tab_x_pos%, %tab_y_pos%</replace>
+      <replace>Random, sleep_time, 1000, 5000</replace>
+      <replace>Random, sleep_time, 1500, 10000</replace>
+      <replace>Random, sleep_time, 1000, 3000</replace>
+      <replace>Sleep, 1000</replace>
+      <replace>Sleep, 2000</replace>
+      <replace>Random, wheel_times, 1, 5</replace>
+      <replace>Random, loop_times, 2, 10</replace>
+      <replace>Random, sleep_time, 300, 2000</replace>
+      <replace>Random, loop_times, 2, 8</replace>
+      <replace>Random, sleep_time, 500, 7000</replace>
+      <replace>Sleep, 20000</replace>
+      <replace>https://</replace>
+      <replace>Random, sleep_time, 300, 3000</replace>
+      <replace>Random, sleep_time, 500, 2500</replace>
+      <replace>Random, sleep_time, 200, 1500</replace>
+      <replace>pos_y_bottom := 850</replace>
+      <replace>, 850)</replace>
+      <replace>800, 850)</replace>
+      <replace>tab_x_pos := 1380</replace>
+      <replace>Random, sleep_time, 500, 5000</replace>
+      <replace>Random, sleep_time, 500, 3000</replace>
+      <replace>Random, loop_times, 3, 5</replace>
+      <replace>MoveMouse(5,</replace>
+      <replace>Random, sleep_time, 600, 5000</replace>
+      <replace>Random, sleep_time, 600, 2500</replace>
+      <replace>Random, sleep_time, 600, 3000</replace>
+      <replace>Sleep, 15*1000</replace>
+      <replace>Sleep, 25*1000</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/scripts</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="dh'w" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2-closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3-closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4-closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2-runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3-runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4-runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2-clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/libs/vmsmodify.py" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3/runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4/runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2/runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1/runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0/runvpn.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/urls.txt" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2/scrolluptodown.ahk" />
+        <option value="$PROJECT_DIR$/libs/utils.py" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2/closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-3/closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-0/closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-1/closetab.ahk" />
+        <option value="$PROJECT_DIR$/scripts/lucy-vmid-2/closetab.ahk" />
+        <option value="$PROJECT_DIR$/win_automation.py" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-4/closetab.ahk" />
+        <option value="$PROJECT_DIR$/libs/vms.config.xml" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2/clickads.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2/scrollupordown.ahk" />
+        <option value="$PROJECT_DIR$/scripts/anlin-vmid-2/runvpn.ahk" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="57" />
+    <option name="y" value="27" />
+    <option name="width" value="1508" />
+    <option name="height" value="978" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="auto-appium-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auto-appium-android" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-2" />
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-1" />
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-0" />
+      <recent name="$PROJECT_DIR$/scripts/anlin-vmid-4" />
+      <recent name="$PROJECT_DIR$/scripts/anlin-vmid-3" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-0" />
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-1" />
+      <recent name="$PROJECT_DIR$/scripts/lucy-vmid-2" />
+      <recent name="$PROJECT_DIR$/scripts/anlin-vmid-4" />
+      <recent name="$PROJECT_DIR$/scripts/anlin-vmid-3" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="win_automation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="auto-appium-android" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/win_automation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.win_automation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="506dda84-92de-40ff-b298-b743cfcdaed3" name="Default Changelist" comment="" />
+      <created>1553838662735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553838662735</updated>
+      <workItem from="1553838663964" duration="10760000" />
+      <workItem from="1553873269574" duration="11162000" />
+      <workItem from="1553936648772" duration="283000" />
+      <workItem from="1553945129261" duration="3558000" />
+      <workItem from="1554112828254" duration="11019000" />
+      <workItem from="1554132558511" duration="10390000" />
+      <workItem from="1554202548863" duration="4678000" />
+      <workItem from="1554253609418" duration="4392000" />
+      <workItem from="1554294768990" duration="5406000" />
+      <workItem from="1554335263891" duration="28711000" />
+      <workItem from="1554507533470" duration="13656000" />
+      <workItem from="1554603153531" duration="11584000" />
+      <workItem from="1554631336182" duration="377000" />
+      <workItem from="1554637411376" duration="7765000" />
+      <workItem from="1554725481145" duration="199000" />
+      <workItem from="1554726376433" duration="308000" />
+      <workItem from="1554764849015" duration="138000" />
+      <workItem from="1554767968770" duration="36000" />
+      <workItem from="1554768342422" duration="600000" />
+      <workItem from="1554769370009" duration="3357000" />
+      <workItem from="1554782778310" duration="1683000" />
+      <workItem from="1554798857254" duration="582000" />
+      <workItem from="1554860296594" duration="214000" />
+      <workItem from="1554872326626" duration="109000" />
+      <workItem from="1554877787836" duration="278000" />
+    </task>
+    <task id="LOCAL-00139" summary="代码优化：随机生成点击广告的随机代码部分">
+      <created>1554606085347</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1554606085347</updated>
+    </task>
+    <task id="LOCAL-00140" summary="代码优化：随机生成点击广告的随机代码部分">
+      <created>1554606165848</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1554606165850</updated>
+    </task>
+    <task id="LOCAL-00141" summary="Test: 代码测试">
+      <created>1554606823382</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1554606823382</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Test: 代码测试">
+      <created>1554606868368</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1554606868368</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Test：代码回退">
+      <created>1554607138210</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1554607138210</updated>
+    </task>
+    <task id="LOCAL-00144" summary="优化：更新点击的等待时间">
+      <created>1554608919663</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1554608919663</updated>
+    </task>
+    <task id="LOCAL-00145" summary="测试代码：快速点击">
+      <created>1554608969452</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1554608969452</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Test: 至少要让广告可以被点击到">
+      <created>1554609758702</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1554609758702</updated>
+    </task>
+    <task id="LOCAL-00147" summary="测试代码：让鼠标慢点节奏">
+      <created>1554610429802</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1554610429802</updated>
+    </task>
+    <task id="LOCAL-00148" summary="优化：添加混淆主站点">
+      <created>1554611617445</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1554611617445</updated>
+    </task>
+    <task id="LOCAL-00149" summary="特征点变更：可以不使用VM内置的VPN，采用快速浏览模式">
+      <created>1554619398641</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1554619398642</updated>
+    </task>
+    <task id="LOCAL-00150" summary="优化：Google特征量捕捉">
+      <created>1554619640758</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1554619640758</updated>
+    </task>
+    <task id="LOCAL-00151" summary="优化代码">
+      <created>1554620192638</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1554620192638</updated>
+    </task>
+    <task id="LOCAL-00152" summary="特征点变更：可以不使用VM内置的VPN，采用快速浏览模式">
+      <created>1554620624912</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1554620624912</updated>
+    </task>
+    <task id="LOCAL-00153" summary="特征点变更：可以不使用VM内置的VPN，采用快速浏览模式">
+      <created>1554621048533</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1554621048533</updated>
+    </task>
+    <task id="LOCAL-00154" summary="VPN优化：使用稳定的网络环境">
+      <created>1554621609280</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1554621609280</updated>
+    </task>
+    <task id="LOCAL-00155" summary="优化">
+      <created>1554622405511</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1554622405511</updated>
+    </task>
+    <task id="LOCAL-00156" summary="优化">
+      <created>1554622665721</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1554622665721</updated>
+    </task>
+    <task id="LOCAL-00157" summary="特征点被检测">
+      <created>1554622722403</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1554622722404</updated>
+    </task>
+    <task id="LOCAL-00158" summary="特征点被检测">
+      <created>1554623065707</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1554623065707</updated>
+    </task>
+    <task id="LOCAL-00159" summary="特征点被检测">
+      <created>1554623295636</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1554623295636</updated>
+    </task>
+    <task id="LOCAL-00160" summary="调整快速新建客户端的工作">
+      <created>1554623514337</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1554623514337</updated>
+    </task>
+    <task id="LOCAL-00161" summary="调整快速新建客户端的工作">
+      <created>1554623605833</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1554623605833</updated>
+    </task>
+    <task id="LOCAL-00162" summary="调整快速新建客户端的工作">
+      <created>1554624874158</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1554624874158</updated>
+    </task>
+    <task id="LOCAL-00163" summary="空出时间给与点击广告">
+      <created>1554639034292</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1554639034293</updated>
+    </task>
+    <task id="LOCAL-00164" summary="最后一次优化">
+      <created>1554679430675</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1554679430676</updated>
+    </task>
+    <task id="LOCAL-00165" summary="上午点击的可能性增大">
+      <created>1554679729881</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1554679729882</updated>
+    </task>
+    <task id="LOCAL-00166" summary="先保证浏览优先策略">
+      <created>1554689401531</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1554689401531</updated>
+    </task>
+    <task id="LOCAL-00167" summary="最后一次优化">
+      <created>1554700413194</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1554700413194</updated>
+    </task>
+    <task id="LOCAL-00168" summary="关闭点击快速">
+      <created>1554706291599</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706291599</updated>
+    </task>
+    <task id="LOCAL-00169" summary="Quick and Slowly">
+      <created>1554706846410</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706846410</updated>
+    </task>
+    <task id="LOCAL-00170" summary="Quick and Slowly">
+      <created>1554706942600</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1554706942600</updated>
+    </task>
+    <task id="LOCAL-00171" summary="Quick and Slowly">
+      <created>1554707275884</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1554707275884</updated>
+    </task>
+    <task id="LOCAL-00172" summary="设置严重超时时间">
+      <created>1554708986401</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1554708986401</updated>
+    </task>
+    <task id="LOCAL-00173" summary="最后一次优化">
+      <created>1554710952137</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1554710952137</updated>
+    </task>
+    <task id="LOCAL-00174" summary="针对不可变情况，最后一次优化处理">
+      <created>1554714394856</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1554714394856</updated>
+    </task>
+    <task id="LOCAL-00175" summary="改变代码处理流程，加快">
+      <created>1554725669320</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1554725669320</updated>
+    </task>
+    <task id="LOCAL-00176" summary="2019-0409-调快一个等级">
+      <created>1554764949446</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1554764949447</updated>
+    </task>
+    <task id="LOCAL-00177" summary="2019-0409-调快一个等级">
+      <created>1554768457680</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1554768457681</updated>
+    </task>
+    <task id="LOCAL-00178" summary="优化VM启动的等待时间">
+      <created>1554770190073</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1554770190073</updated>
+    </task>
+    <task id="LOCAL-00179" summary="轻量化日志文件">
+      <created>1554773551003</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1554773551003</updated>
+    </task>
+    <task id="LOCAL-00180" summary="快速浏览模式，缩短时间">
+      <created>1554777372062</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1554777372062</updated>
+    </task>
+    <task id="LOCAL-00181" summary="点击随机加大力度">
+      <created>1554777547339</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1554777547339</updated>
+    </task>
+    <task id="LOCAL-00182" summary="修复：特别容易点击安装软件，尝试降低Y的值">
+      <created>1554777999216</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1554777999216</updated>
+    </task>
+    <task id="LOCAL-00183" summary="调整位置">
+      <created>1554778421089</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1554778421089</updated>
+    </task>
+    <task id="LOCAL-00184" summary="最后一次优化">
+      <created>1554793193682</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1554793193682</updated>
+    </task>
+    <task id="LOCAL-00185" summary="速度慢一慢">
+      <created>1554795493381</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1554795493381</updated>
+    </task>
+    <task id="LOCAL-00186" summary="再一次平衡处理">
+      <created>1554798987216</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1554798987217</updated>
+    </task>
+    <task id="LOCAL-00187" summary="将500增加600毫秒，适度放慢一些">
+      <created>1554878018132</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1554878018135</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="131245000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="57" y="27" width="1508" height="978" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.45147678" visible="true" weight="0.22169168" />
+      <window_info id="Structure" order="1" sideWeight="0.5485232" side_tool="true" visible="true" weight="0.22169168" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32908458" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32968536" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994528" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.45075318" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32908458" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47740442" visible="true" weight="0.18758526" />
+      <window_info id="Structure" order="1" sideWeight="0.5225956" side_tool="true" weight="0.18758526" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32908458" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32968536" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994528" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.43800697" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="优化代码" />
+    <MESSAGE value="特征点变更：可以不使用VM内置的VPN，采用快速浏览模式" />
+    <MESSAGE value="VPN优化：使用稳定的网络环境" />
+    <MESSAGE value="优化" />
+    <MESSAGE value="特征点被检测" />
+    <MESSAGE value="调整快速新建客户端的工作" />
+    <MESSAGE value="空出时间给与点击广告" />
+    <MESSAGE value="上午点击的可能性增大" />
+    <MESSAGE value="先保证浏览优先策略" />
+    <MESSAGE value="关闭点击快速" />
+    <MESSAGE value="Quick and Slowly" />
+    <MESSAGE value="设置严重超时时间" />
+    <MESSAGE value="针对不可变情况，最后一次优化处理" />
+    <MESSAGE value="改变代码处理流程，加快" />
+    <MESSAGE value="2019-0409-调快一个等级" />
+    <MESSAGE value="优化VM启动的等待时间" />
+    <MESSAGE value="轻量化日志文件" />
+    <MESSAGE value="快速浏览模式，缩短时间" />
+    <MESSAGE value="点击随机加大力度" />
+    <MESSAGE value="修复：特别容易点击安装软件，尝试降低Y的值" />
+    <MESSAGE value="调整位置" />
+    <MESSAGE value="最后一次优化" />
+    <MESSAGE value="速度慢一慢" />
+    <MESSAGE value="再一次平衡处理" />
+    <MESSAGE value="将500增加600毫秒，适度放慢一些" />
+    <option name="LAST_COMMIT_MESSAGE" value="将500增加600毫秒，适度放慢一些" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/make_stop.py" />
+    <entry file="file://$PROJECT_DIR$/win_auto,log" />
+    <entry file="file://$PROJECT_DIR$/win_auto.log" />
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="1515" selection-start-line="1515" selection-end-line="1515" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/logging/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="118" column="51" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/curio/kernel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <caret line="791" column="4" selection-start-line="791" selection-start-column="4" selection-end-line="791" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/appium/webdriver/common/multi_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/selenium/webdriver/common/action_chains.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="279" column="35" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/appium/webdriver/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/appium/webdriver/extensions/search_context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11638">
+          <caret line="539" column="8" selection-start-line="539" selection-start-column="8" selection-end-line="539" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/appium/webdriver/common/touch_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="e#1016#1027#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/appium/webdriver/extensions/action_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/python_stubs/210111422/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="4770" column="8" selection-start-line="4770" selection-start-column="8" selection-end-line="4770" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-1/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-2/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-3/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-4/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-2/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-1/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-0/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-0/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-2/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="57" selection-start-line="57" selection-end-line="70" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-1/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-0/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-4/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-3/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-3/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-4/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-4/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-0/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-1/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-2/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urls.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16192">
+          <caret line="736" column="23" selection-start-line="736" selection-start-column="23" selection-end-line="736" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/vmsmodify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2662">
+          <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+          <folding>
+            <element signature="e#70#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-3/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1562">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-3/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-0/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-1/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/lucy-vmid-2/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/vms.config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-4/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/win_automation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="18" selection-start-line="18" selection-end-line="23" selection-end-column="12" />
+          <folding>
+            <element signature="e#45#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="418" selection-start-line="418" selection-end-line="418" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/scrolluptodown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/closetab.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/clickads.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/scrollupordown.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/anlin-vmid-2/runvpn.ahk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

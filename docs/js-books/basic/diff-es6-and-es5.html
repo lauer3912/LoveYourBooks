@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ES6 与 ES5 的区别 - JavaScript Basic</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="what-is-ajax.html"><strong aria-hidden="true">1.</strong> 什么是 AJAX?</a></li><li><a href="diff-es6-and-es5.html" class="active"><strong aria-hidden="true">2.</strong> ES6 与 ES5 的区别</a></li><li><a href="promise-and-settimeout.html"><strong aria-hidden="true">3.</strong> Promise 与 setTimout 谁先执行？</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">JavaScript Basic</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="diff-es6-and-es5.html#es6-与-es5-的区别" id="es6-与-es5-的区别"><h1>ES6 与 ES5 的区别</h1></a>
+<blockquote>
+<p>JavaScript 简介
+JavaScript 一种动态类型、弱类型、基于原型的客户端脚本语言，用来给 HTML 网页增加动态功能。
+JavaScript 由三部分组成：
+ECMAScript（核心）+DOM（文档对象模型）+BOM（浏览器对象模型）
+ECMAScript 作为核心，规定了语言的组成部分：语法、类型、语句、关键字、保留字、操作符、对象
+DOM 把整个页面映射为一个多层节点结果，开发人员可借助 DOM 提供的 API，轻松地删除、添加、替换或修改任何节点。
+BOM 支持可以访问和操作浏览器窗口的浏览器对象模型，开发人员可以控制浏览器显示的页面以外的部分
+ES5 简介
+ECMAScript 第五个版本，增加了以下特性
+1、strict 模式
+2、Array 的 every、some、forEach、filter、indexOf、lastIndexOf、isArray、map、reduce、reduceRight 等方法
+3、Object 方法
+ES6
+ECMAScript 第六个版本，增加的新特性：
+1、块级作用域 关键字 let，常量 const
+2、对象字面量的属性赋值简写
+3、赋值解构
+4、函数参数-默认值、参数打包、数组展开（Default、Rest、Spread）
+5、箭头函数 Arrow functions
+简化了代码形式，默认 return 表达式结果
+自动绑定语义 this，即定义函数时的 this。
+6、字符串模板 Template strings
+7、Iterators（迭代器）+for..of
+迭代器的 next 方法，调用会返回：
+（1）返回迭代对象的一个元素：{done:false, value:elem}
+（2）如果已经达到迭代对象的末端：{done:true, value:retVal}
+8、生成器（Generators）
+9、Class，有 constructor、extends、super
+10、Modules
+（1）具有 CommonJS 的精简语法、唯一导出出口（single exports）和循环依赖（cyclic dependencies）的特点
+（2）类似 AMD，支持异步加载和可配置的模块加载
+11、四种集合类型，Map+Set+WeakMap+WeakSet
+12、一些新的 API
+Math+Number+String+Array+Object APIs
+13、Proxies
+使用代理（Proxy）监听对象的操作，包括 get、set、has、deleteProperty、apply、construct、getOwnPropertyDescriptor、defineProperty、getPrototypeOf、setPrototypeOf、enumerate、ownKeys、preventExtensions、isExtensible。
+14、Symbols
+一种基本类型，通过调用 symbol 函数产生，接收一个可选的名字参数，该函数返回的 symbol 是唯一的。
+15、Promises
+是处理异步操作的对象，使用了 Promise 对象之后可以用一种链式调用的方式来组织代码，让代码更直观</p>
+</blockquote>
+<a class="header" href="diff-es6-and-es5.html#a主要区别" id="a主要区别"><h2>主要区别</h2></a>
+<ol>
+<li>ES6 新增了 let 命名</li>
+<li>ES6 新增了 const 常量命名</li>
+<li>ES6 新增了 块级作用域</li>
+<li>ES6 新增了 箭头函数</li>
+<li>ES6 新增了 class、extends、supper 关键字</li>
+<li>ES6 新增了 变量的解构赋值</li>
+<li>ES6 新增了 模板字符串（反引号）</li>
+<li>ES6 新增了 模板中可以嵌套函数</li>
+<li>ES6 新增了 函数参数的默认值</li>
+<li>ES6 新增了 rest 语法</li>
+</ol>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-let-命名" id="es6-新增了-let-命名"><h2>ES6 新增了 let 命名</h2></a>
+<blockquote>
+<p>ES6 新增了 let 命令，用来声明变量。它的用法类似于 var，但是所声明的变量，只在 let 命令所在的代码块内有效。
+let 不像 var 存在变量提升，即变量一定要声明之后才能使用</p>
+</blockquote>
+<pre><code class="language-js">{
+  var a = 1;
+  let b = 1;
+}
+a;
+b; // error
+</code></pre>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-const-常量命名" id="es6-新增了-const-常量命名"><h2>ES6 新增了 const 常量命名</h2></a>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-块级作用域" id="es6-新增了-块级作用域"><h2>ES6 新增了 块级作用域</h2></a>
+<blockquote>
+<p>ES5 只有全局作用域和函数作用域，没有块级作用域</p>
+</blockquote>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-箭头函数" id="es6-新增了-箭头函数"><h2>ES6 新增了 箭头函数</h2></a>
+<blockquote>
+<p>这个恐怕是 ES6 最最常用的一个新特性了，用它来写 function 比原来的写法要简洁清晰很多:</p>
+</blockquote>
+<pre><code class="language-js">function(i){ return i + 1; } //ES5
+(i) =&gt; i + 1 //ES6
+</code></pre>
+<p>简直是简单的不像话对吧...
+如果方程比较复杂，则需要用{}把代码包起来：</p>
+<pre><code class="language-js">function(x, y) {
+    x++;
+    y--;
+    return x + y;
+}
+(x, y) =&gt; {x++; y--; return x+y}
+</code></pre>
+<p>除了看上去更简洁以外，arrow function 还有一项超级无敌的功能！
+长期以来，JavaScript 语言的 this 对象一直是一个令人头痛的问题，在对象方法中使用 this，必须非常小心。例如：</p>
+<pre><code class="language-js">class Animal {
+  constructor() {
+    this.type = &quot;animal&quot;;
+  }
+  says(say) {
+    setTimeout(function() {
+      console.log(this.type + &quot; says &quot; + say); /// error
+    }, 1000);
+  }
+}
+
+var animal = new Animal();
+animal.says(&quot;hi&quot;); //undefined says hi
+</code></pre>
+<p>运行上面的代码会报错，这是因为 setTimeout 中的 this 指向的是全局对象。所以为了让它能够正确的运行，传统的解决方法有两种：</p>
+<p>1.传统方法：第一种是将 this 传给 self,再用 self 来指代 this</p>
+<pre><code class="language-js">   says(say){
+       var self = this;
+       setTimeout(function(){
+           console.log(self.type + ' says ' + say)
+       }, 1000)
+</code></pre>
+<p>2.传统方法：第二种方法是用 bind(this),即</p>
+<pre><code class="language-js">   says(say){
+       setTimeout(function(){
+           console.log(this.type + ' says ' + say)
+       }.bind(this), 1000)
+</code></pre>
+<p>但现在我们有了箭头函数，就不需要这么麻烦了：</p>
+<pre><code class="language-js">class Animal {
+  constructor() {
+    this.type = &quot;animal&quot;;
+  }
+  says(say) {
+    setTimeout(() =&gt; {
+      console.log(this.type + &quot; says &quot; + say);
+    }, 1000);
+  }
+}
+var animal = new Animal();
+animal.says(&quot;hi&quot;); //animal says hi
+</code></pre>
+<p>当我们使用箭头函数时，函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。
+并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，它的 this 是继承外面的，因此内部的 this 就是外层代码块的 this。</p>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-classextendssupper-关键字" id="es6-新增了-classextendssupper-关键字"><h2>ES6 新增了 class、extends、supper 关键字</h2></a>
+<blockquote>
+<p>这三个特性涉及了 ES5 中最令人头疼的的几个部分：原型、构造函数，继承...你还在为它们复杂难懂的语法而烦恼吗？你还在为指针到底指向哪里而纠结万分吗？有了 ES6 我们不再烦恼！ES6 提供了更接近传统语言的写法，引入了 Class（类）这个概念。新的 class 写法让对象原型的写法更加清晰、更像面向对象编程的语法，也更加通俗易懂。</p>
+</blockquote>
+<pre><code class="language-js">class Animal {
+  constructor() {
+    this.type = &quot;animal&quot;;
+  }
+  says(say) {
+    console.log(this.type + &quot; says &quot; + say);
+  }
+}
+
+let animal = new Animal();
+animal.says(&quot;hello&quot;); //animal says hello
+
+class Cat extends Animal {
+  constructor() {
+    super();
+    this.type = &quot;cat&quot;;
+  }
+}
+
+let cat = new Cat();
+cat.says(&quot;hello&quot;); //cat says hello
+</code></pre>
+<p>上面代码首先用 class 定义了一个“类”，可以看到里面有一个 constructor 方法，这就是构造方法，而 this 关键字则代表实例对象。简单地说，constructor 内定义的方法和属性是实例对象自己的，而 constructor 外定义的方法和属性则是所有实例对象可以共享的。</p>
+<p>Class 之间可以通过 extends 关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。上面定义了一个 Cat 类，该类通过 extends 关键字，继承了 Animal 类的所有属性和方法。</p>
+<p>super 关键字，它指代父类的实例（即父类的 this 对象）。子类必须在 constructor 方法中调用 super 方法，否则新建实例时会报错。这是因为子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。如果不调用 super 方法，子类就得不到 this 对象。</p>
+<p>ES6 的继承机制，实质是先创造父类的实例对象 this（所以必须先调用 super 方法），然后再用子类的构造函数修改 this。</p>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-变量的解构赋值" id="es6-新增了-变量的解构赋值"><h2>ES6 新增了 变量的解构赋值</h2></a>
+<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）</p>
+<pre><code class="language-js">let [a, b, c] = [1, 2, 3];
+</code></pre>
+<p>看下面的例子：
+ES5 的写法</p>
+<pre><code class="language-js">let cat = &quot;ken&quot;;
+let dog = &quot;lili&quot;;
+let zoo = { cat: cat, dog: dog };
+console.log(zoo); //Object {cat: &quot;ken&quot;, dog: &quot;lili&quot;}
+</code></pre>
+<p>ES6 的写法</p>
+<pre><code class="language-js">let cat = &quot;ken&quot;;
+let dog = &quot;lili&quot;;
+let zoo = { cat, dog };
+console.log(zoo); //Object {cat: &quot;ken&quot;, dog: &quot;lili&quot;}
+</code></pre>
+<p>反过来可以这么写：</p>
+<pre><code class="language-js">let dog = { type: &quot;animal&quot;, many: 2 };
+let { type, many } = dog;
+console.log(type, many); //animal 2
+</code></pre>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-模板字符串反引号" id="es6-新增了-模板字符串反引号"><h2>ES6 新增了 模板字符串（反引号）</h2></a>
+<pre><code class="language-js">$(&quot;#list&quot;).html(`
+&lt;ul&gt;
+  &lt;li&gt;first&lt;/li&gt;
+  &lt;li&gt;second&lt;/li&gt;
+&lt;/ul&gt;
+`);
+</code></pre>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-模板中可以嵌套函数" id="es6-新增了-模板中可以嵌套函数"><h2>ES6 新增了 模板中可以嵌套函数</h2></a>
+<blockquote>
+<p>模板中可以嵌套函数</p>
+</blockquote>
+<pre><code class="language-js">function fn() {
+  return &quot;Hello World&quot;;
+}
+
+`foo ${fn()} bar`;
+// foo Hello World bar
+</code></pre>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-函数参数的默认值" id="es6-新增了-函数参数的默认值"><h2>ES6 新增了 函数参数的默认值</h2></a>
+<p>default 很简单，意思就是默认值。大家可以看下面的例子，调用 animal()方法时忘了传参数，传统的做法就是加上这一句 type = type || 'cat' 来指定默认值。</p>
+<blockquote>
+<p>ES5</p>
+</blockquote>
+<pre><code class="language-js">function log(x, y) {
+  y = y || &quot;World&quot;;
+  console.log(x, y);
+}
+
+log(&quot;Hello&quot;); // Hello World
+log(&quot;Hello&quot;, &quot;China&quot;); // Hello China
+log(&quot;Hello&quot;, &quot;&quot;); // Hello World
+
+function animal(type) {
+  type = type || &quot;cat&quot;;
+  console.log(type);
+}
+animal();
+</code></pre>
+<blockquote>
+<p>ES6</p>
+</blockquote>
+<pre><code class="language-js">function log(x, y = &quot;World&quot;) {
+  console.log(x, y);
+}
+log(&quot;Hello&quot;); // Hello World
+log(&quot;Hello&quot;, &quot;China&quot;); // Hello China
+log(&quot;Hello&quot;, &quot;&quot;); // Hello
+
+function animal(type = &quot;cat&quot;) {
+  console.log(type);
+}
+animal();
+</code></pre>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-rest-语法" id="es6-新增了-rest-语法"><h2>ES6 新增了 rest 语法</h2></a>
+<pre><code class="language-js">function animals(...types) {
+  console.log(types);
+}
+animals(&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;); //[&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;]
+</code></pre>
+<p>而如果不用 ES6 的话，我们则得使用 ES5 的 arguments。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="what-is-ajax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="promise-and-settimeout.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="what-is-ajax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="promise-and-settimeout.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="searchindex.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

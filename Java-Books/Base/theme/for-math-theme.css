@@ -1,0 +1,7 @@
+.CustomMathTextLeftAlgin_Display li {
+  list-style-type: decimal;
+  min-height: 64px;
+}
+.CustomMathTextLeftAlgin_Display .MathJax_Display {
+  text-align: left !important;
+}

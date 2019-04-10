@@ -1,0 +1,9 @@
+[book]
+authors = ["Ian sun"]
+multilingual = false
+src = "src"
+title = "JavaScript Basic"
+
+[build]
+build-dir = "../../docs/js-books/basic/"
+create-missing = true
