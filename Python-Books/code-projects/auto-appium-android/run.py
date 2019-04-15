@@ -427,8 +427,7 @@ def starup(want_open_url, app_args):
         # 是否开启快速浏览模式
         # 快速浏览模式，将降低很多指标参数，不点击广告等等
         # enable_quick_browser_mode = round(random.uniform(0.1, 12), 2) <= random.randint(3, 6)
-        enable_quick_browser_mode = (not global_use_buildin_vpn) or (
-                    round(random.uniform(0.5, 12), 2) <= random.randint(6, 8))
+        enable_quick_browser_mode = get_enable_quick_browser_mode()
         if enable_quick_browser_mode:
             logger.info("开启快速浏览模式 ....")
             max_page_load_timeout = random.randint(60, 90)
@@ -540,6 +539,28 @@ def starup(want_open_url, app_args):
             browser_boot(app_args)
         if global_config['run_count'] > global_config['max_urls_count']:
             sys_exit("The number of pages opened has reached the maximum requirement")
+
+
+def get_enable_quick_browser_mode():
+    # Step1: 检测时间是否在范围内
+    time_enable_ads_browser = False
+    cur_time = time.localtime()
+    cur_time_hour = int(cur_time.tm_hour)
+    # 上午的情况，对应为美国区的晚上
+    if cur_time_hour in range(11, 18):
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 4.8
+
+    # 凌晨的情况，对应美国区的下午
+    if cur_time_hour in range(0, 11):
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 1
+
+    # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
+    if cur_time_hour in range(18, 25):
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 1.8
+
+    # Step2: 获取随机范围
+    enable_quick_browser_mode = not time_enable_ads_browser
+    return enable_quick_browser_mode
 
 
 def browser_boot(app_args):
