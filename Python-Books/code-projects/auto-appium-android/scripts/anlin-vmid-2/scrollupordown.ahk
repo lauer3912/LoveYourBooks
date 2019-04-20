@@ -10,7 +10,7 @@ Loop, %loop_times%
    Random, drag_x, %pos_x_min%, %pos_x_max%
    Random, drag_y, %pos_y_top%, %pos_y_bottom%
    Random, want_up, 0, 10
-   Random, wheel_times, 1, 5
+   Random, wheel_times, 3, 10
    
    Loop, %wheel_times%
    {
@@ -21,7 +21,7 @@ Loop, %loop_times%
        }
    }
 
-   Random, sleep_time, 600, 3000
+   Random, sleep_time, 500, 5000
    Sleep, %sleepTime%
 }
 
