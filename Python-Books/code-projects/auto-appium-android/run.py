@@ -486,7 +486,7 @@ def starup(want_open_url, app_args):
             if round(random.uniform(1, 12), 2) >= 5:
                 start_auto_scroll_up_or_down()
             if round(random.uniform(1, 12), 2) >= 5:
-                time.sleep(random.randint(5, 40))
+                time.sleep(random.randint(5, 25))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
@@ -560,15 +560,15 @@ def get_enable_quick_browser_mode():
     cur_time_hour = int(cur_time.tm_hour)
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(11, 18):
-        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 3
+        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 7
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 1.5
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 6
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 1.5
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 7
 
     # Step2: 获取随机范围
     enable_quick_browser_mode = not time_enable_ads_browser
