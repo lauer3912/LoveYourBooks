@@ -19,7 +19,7 @@ Loop, %loop_times%
       Sleep, 2000
    }
 
-   Random, sleep_time, 300, 1800
+   Random, sleep_time, 1000, 3000
    Sleep, %sleepTime%
 }
 

@@ -23,7 +23,7 @@ Loop, %loop_times%
        }
    }
    
-   Random, sleep_time, 300, 1800
+   Random, sleep_time, 1000, 3000
    Sleep, %sleepTime%
 }
 

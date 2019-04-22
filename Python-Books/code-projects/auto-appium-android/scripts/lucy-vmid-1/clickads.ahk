@@ -19,7 +19,7 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     {
         Random, x, %x_min%, %x_max%
         Random, y, %y_min%, %y_max%
-        Random, sleep_time, 500, 1800
+        Random, sleep_time, 1000, 3000
 
         Click %x%, %y%, 0
 
@@ -32,7 +32,7 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     }
 }
 
-Loop, 2 {
+Loop, 3 {
     Random, best_index, 1, 7
     if (%best_index% >= 5) {
         ; Active the window
