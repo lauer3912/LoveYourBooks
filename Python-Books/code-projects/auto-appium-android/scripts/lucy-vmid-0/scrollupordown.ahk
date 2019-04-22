@@ -11,7 +11,7 @@ Loop, %loop_times%
    Random, drag_x, %pos_x_min%, %pos_x_max%
    Random, drag_y, %pos_y_top%, %pos_y_bottom%
 
-   Random, wheel_times, 1, 5
+   Random, wheel_times, 1, 3
    
    Loop, %wheel_times%
    {
@@ -23,7 +23,7 @@ Loop, %loop_times%
        }
    }
    
-   Random, sleep_time, 300, 2000
+   Random, sleep_time, 300, 1800
    Sleep, %sleepTime%
 }
 

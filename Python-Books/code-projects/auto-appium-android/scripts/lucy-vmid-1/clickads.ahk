@@ -32,7 +32,7 @@ MoveMouse(max_times:=5, x_min:=0, x_max:=0, y_min:=0, y_max:=0)
     }
 }
 
-Loop, 7 {
+Loop, 2 {
     Random, best_index, 1, 7
     if (%best_index% >= 5) {
         ; Active the window
