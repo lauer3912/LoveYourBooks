@@ -392,11 +392,24 @@ async def main():
     app_vmjob_list.clear()
 
     local_mac_address = VMSModifyHandler.get_local_mac_address()
+
+    had_record_mac_address_list = []
     for one_config in vmsH.get_vms_configs():
         config_mac_address = one_config['macAddress']
         logger.info('localMacAddress={0}, configMacAddress={1}'.format(local_mac_address, config_mac_address))
-        if local_mac_address == config_mac_address \
-                or config_mac_address == '':  # 只让本地的生效, 和 mac地址为空的情况
+        if config_mac_address != '':
+            had_record_mac_address_list.append(config_mac_address)
+
+    for one_config in vmsH.get_vms_configs():
+        config_mac_address = one_config['macAddress']
+
+        enable_add = False
+        if had_record_mac_address_list.index(local_mac_address) > -1:
+            enable_add = (local_mac_address == config_mac_address)
+        elif config_mac_address == '':
+            enable_add = True
+
+        if enable_add:
             app_vmjob_list.add(VMJob(
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
