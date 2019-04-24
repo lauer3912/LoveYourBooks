@@ -71,4 +71,13 @@
                 appiumCommand="appium -p 4727"
                 startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21523 --a lucy-vmid-2 --v 2"/>
     </machine>
+    <machine name="VM from Lucy PC" macAddress="">
+        <config enable="true" vmname="US" vmid="0"
+                win_x="18" win_y="20"
+                win_scaling_percent2="63.703704"
+                resolution_width="810" resolution_height="1440"
+
+                appiumCommand="appium -p 4723"
+                startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a lucy-vmid-0 --v 0"/>
+    </machine>
 </machines>

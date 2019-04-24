@@ -395,7 +395,8 @@ async def main():
     for one_config in vmsH.get_vms_configs():
         config_mac_address = one_config['macAddress']
         logger.info('localMacAddress={0}, configMacAddress={1}'.format(local_mac_address, config_mac_address))
-        if local_mac_address == config_mac_address:  # 只让本地的生效
+        if local_mac_address == config_mac_address \
+                or config_mac_address == '':  # 只让本地的生效, 和 mac地址为空的情况
             app_vmjob_list.add(VMJob(
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
