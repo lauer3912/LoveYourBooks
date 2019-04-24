@@ -404,7 +404,7 @@ async def main():
         config_mac_address = one_config['macAddress']
 
         enable_add = False
-        if had_record_mac_address_list.index(local_mac_address) > -1:
+        if local_mac_address in had_record_mac_address_list:
             enable_add = (local_mac_address == config_mac_address)
         elif config_mac_address == '':
             enable_add = True
