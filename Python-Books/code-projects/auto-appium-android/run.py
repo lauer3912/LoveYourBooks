@@ -554,7 +554,6 @@ def starup(want_open_url, app_args):
             logger.exception("Error:")
         if has_error:
             # 重新开启刷屏处理
-            time.sleep(random.randint(10, 15))
             browser_boot(app_args)
         if global_config['run_count'] > global_config['max_urls_count']:
             sys_exit("The number of pages opened has reached the maximum requirement")
@@ -583,6 +582,12 @@ def get_enable_quick_browser_mode():
 
 
 def browser_boot(app_args):
+    # must check vm is running
+    vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+    while not vm_is_running:
+        vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+        time.sleep(2)
+
     with open("urls.txt", "r") as fhandler:
         all_urls = []
         while True:
@@ -604,6 +609,12 @@ def browser_boot(app_args):
             cur_url = all_urls[cur_index]
             cur_url = cur_url.strip()
             if cur_url != '':
+                # must check vm is running
+                vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+                while not vm_is_running:
+                    vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+                    time.sleep(2)
+
                 starup(cur_url, app_args)
                 logger.info("Prepare the next web page url ... index=%d" % cur_index)
                 time.sleep(random.randint(6, 12))
