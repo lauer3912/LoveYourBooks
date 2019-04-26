@@ -16,6 +16,8 @@ import time
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
+from libs.vmsmodify import VMSModifyHandler
+
 print("The Python path used = %s" % sys.executable)
 
 # 创建解析步骤
@@ -52,12 +54,17 @@ logger = logging.getLogger('tst')  # 获取名为 tst 的 logger
 logger.addHandler(handler)  # 为 logger 添加 handler
 logger.setLevel(logging.DEBUG)
 
+vmsH = VMSModifyHandler(logger=logger)
 
 class RunningHelper(object):
     @staticmethod
     def get_flag_file(vmid):
         flag_file = os.path.join(app_current_dir, 'can-stop-vmid-{}-f.flag'.format(vmid))
         return flag_file
+
+    @staticmethod
+    def is_vm_is_running(vmid):
+        return vmsH.vm_is_running(vmid)
 
     @staticmethod
     def create_can_stop_vm_flag_file(flag_file):
@@ -637,6 +644,13 @@ if __name__ == "__main__":
     try:
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
+
+        # must check vm is running
+        vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+        while not vm_is_running:
+            vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+            time.sleep(2)
+
         if global_use_buildin_vpn:
             start_vpn()
         browser_boot(app_args)
