@@ -645,6 +645,9 @@ if __name__ == "__main__":
         sys.exitfunc = exit_callback
         signal.signal(signal.SIGINT, keyboardInterruptHandler)
 
+        # 移除可以停止的标志文件
+        RunningHelper.remove_can_stop_vm_flag_file(RunningHelper.get_flag_file(app_args.vmid))
+
         # must check vm is running
         vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
         while not vm_is_running:
