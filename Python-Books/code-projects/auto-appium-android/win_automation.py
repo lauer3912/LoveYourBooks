@@ -143,7 +143,7 @@ class VMJob(object):
             await vmsH.start_vm(self.vmid)
 
             tmp_vm_start_time = Utils.get_now_time()
-            tmp_vm_max_start_use_time = 60*1000  # 最大的运行检测时间
+            tmp_vm_max_start_use_time = 300*1000  # 最大的运行检测时间
             while Utils.get_now_time() - tmp_vm_start_time <= tmp_vm_max_start_use_time:
                 await sleep(2)
                 is_running = await self.is_vm_running()
