@@ -237,6 +237,7 @@ async def subscriber(name):
             if not vmjob.enable:
                 continue
             logger.info("{} watching vmid={} vmname={}".format(name, vmjob.vmid, vmjob.vmname))
+            await sleep(5)
 
             # 这里设置一个快捷判断状态的处理 标明VMJOB 正在处理中
             if vmjob.busy:
@@ -301,7 +302,7 @@ async def producer():
     num_git_pull_check = 0
     while True:
         # 先更新一下，看看子模块是否有更新
-        if num_git_pull_check > 12:  # 首次及1分钟后，检查更新
+        if num_git_pull_check > 5:  # 首次及1分钟后，检查更新
             git_pull_update()
             num_git_pull_check = 0
         num_git_pull_check += 1
@@ -369,18 +370,18 @@ def get_best_max_run_time():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 8):
-        return random.randint(5, 6) * 60 * 1000
+        return random.randint(15, 25) * 60 * 1000
 
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(9, 17):
-        return random.randint(4, 6) * 60 * 1000
+        return random.randint(10, 15) * 60 * 1000
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        return random.randint(3, 7) * 60 * 1000
+        return random.randint(10, 20) * 60 * 1000
 
     # 普通情况下
-    return random.randint(4, 7) * 60 * 1000
+    return random.randint(25, 30) * 60 * 1000
 
 
 async def main():
