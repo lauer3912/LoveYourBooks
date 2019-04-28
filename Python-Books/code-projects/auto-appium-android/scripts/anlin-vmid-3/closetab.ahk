@@ -84,6 +84,7 @@ ClearCache(vm_offest)
 
 ;鼠标需要移动到中间位置
 Click %tab_x_pos%, 500, 0
+Sleep, 1200
 
 ;Exit
 Exit

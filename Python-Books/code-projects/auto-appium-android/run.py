@@ -463,37 +463,33 @@ def starup(want_open_url, app_args):
         cfg_enable_auto_scroll = True
         if cfg_enable_auto_scroll:
             logger.info("网页已经加载完成，可以从上到下滚动了 ...")
-            if round(random.uniform(1, 12), 2) >= 5:
-                start_scroll_up_to_down()
+            start_scroll_up_to_down()
 
         # 随机回滚一下
-        cfg_enable_scroll_up = True and round(random.uniform(1, 12), 2) >= 5
+        cfg_enable_scroll_up = True and round(random.uniform(1, 12), 2) >= 3
         if cfg_enable_scroll_up == 1:
             time.sleep(random.randint(3, 5))
             logger.info("现在可以向上滚动页面了 ...")
-            if round(random.uniform(1, 12), 2) >= 5:
-                start_auto_scroll_up_or_down()
+            start_auto_scroll_up_or_down()
 
         # 让网页自己休息一会
         cfg_enable_web_wait = 1
         if cfg_enable_web_wait == 1:
             logger.info("让网页自己先安静一下...")
-            if round(random.uniform(1, 12), 2) >= 5:
-                min_sleep_secs = random.randint(5, 30)
-                time.sleep(min_sleep_secs)
+            min_sleep_secs = random.randint(5, 30)
+            time.sleep(min_sleep_secs)
 
         # 判断是否为快速浏览模式
         if enable_quick_browser_mode:
+            start_auto_scroll_up_or_down()
+            time.sleep(3)
+
             if round(random.uniform(1, 12), 2) >= 5:
                 start_auto_scroll_up_or_down()
-            if round(random.uniform(1, 12), 2) >= 5:
-                if round(random.uniform(1, 12), 2) >= 5:
-                    time.sleep(3)
-                start_auto_scroll_up_or_down()
-            if round(random.uniform(1, 12), 2) >= 5:
-                start_auto_scroll_up_or_down()
-            if round(random.uniform(1, 12), 2) >= 5:
-                time.sleep(random.randint(5, 25))
+                time.sleep(3)
+
+            start_auto_scroll_up_or_down()
+            time.sleep(random.randint(5, 25))
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
@@ -504,28 +500,35 @@ def starup(want_open_url, app_args):
                 logger.info("点击广告后，需要等待一会...")
                 if round(random.uniform(1, 12), 2) >= 5:
                     time.sleep(10)
-                if round(random.uniform(1, 12), 2) >= 5:
-                    start_auto_scroll_up_or_down()
+
+                start_auto_scroll_up_or_down()
+
                 if round(random.uniform(1, 12), 2) >= 5:
                     time.sleep(5)
-                if round(random.uniform(1, 12), 2) >= 5:
                     start_auto_scroll_up_or_down()
+
                 if round(random.uniform(1, 12), 2) >= 5:
-                    min_sleep_secs = random.randint(1, 30)
+                    min_sleep_secs = random.randint(15, 30)
                     time.sleep(min_sleep_secs)
+                    start_auto_scroll_up_or_down()
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
-            if round(random.uniform(1, 12), 2) >= 5:
-                auto_click_ads()
-            if round(random.uniform(1, 12), 2) >= 5:
-                start_auto_scroll_up_or_down()
+            auto_click_ads()
+            start_auto_scroll_up_or_down()
+
             if round(random.uniform(1, 12), 2) >= 5:
                 time.sleep(random.randint(1, 10))
+
             if round(random.uniform(1, 12), 2) >= 5:
+                time.sleep(random.randint(1, 10))
                 auto_click_ads()
+
             if round(random.uniform(1, 12), 2) >= 5:
+                time.sleep(random.randint(1, 10))
                 start_auto_scroll_up_or_down()
+
             if round(random.uniform(1, 12), 2) >= 5:
+                time.sleep(random.randint(1, 10))
                 auto_click_ads()
 
         # 自动关闭标签页面

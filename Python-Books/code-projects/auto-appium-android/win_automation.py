@@ -311,10 +311,11 @@ async def producer():
         for vmjob in app_vmjob_list:
             if not vmjob.enable:
                 continue
-
             await publish(vmjob)
+            await sleep(10)  # 每隔10秒再发布，让系统稳定下来
 
-        await sleep(5)
+        # 需要系统等待30秒，再发送，不能太快
+        await sleep(30)
 
 
 def exit_callback():

@@ -22,12 +22,15 @@ Sleep, 35*1000
 
 ;点击显示桌面窗口
 Click %desktop_btn_x%, %desktop_btn_y%
+Sleep, 3*1000
 
 ;回到hi vpn点
 Click %vpn_x_pos%, %vpn_y_pos%, 0
+Sleep, 3*1000
 
 ;点击Chrome图标
 Click %chrome_x%, %chrome_y%, 2
+Sleep, 5*1000
 
 
 ; Exit
