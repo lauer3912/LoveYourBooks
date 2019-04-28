@@ -29,7 +29,7 @@ Click %vpn_x_pos%, %vpn_y_pos%, 0
 Sleep, 3*1000
 
 ;点击Chrome图标
-Click %chrome_x%, %chrome_y%, 2
+Click %chrome_x%, %chrome_y%, 0
 Sleep, 5*1000
 
 
