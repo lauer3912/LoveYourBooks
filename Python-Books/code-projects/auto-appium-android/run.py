@@ -491,6 +491,8 @@ def starup(want_open_url, app_args):
 
             start_auto_scroll_up_or_down()
             time.sleep(random.randint(5, 25))
+            auto_click_ads()
+
         # 非快速浏览模式，可以尝试点击广告
         else:
             # 可以尝试点击广告了
