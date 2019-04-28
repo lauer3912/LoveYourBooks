@@ -591,6 +591,7 @@ def browser_boot(app_args):
         vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
         time.sleep(2)
 
+    sort_indexs = []
     with open("urls.txt", "r") as fhandler:
         all_urls = []
         while True:
@@ -600,29 +601,28 @@ def browser_boot(app_args):
             format_url = file_url.replace('\n', '')
             all_urls.append(format_url)
 
-        sort_indexs = []
         for index in range(len(all_urls)):
             sort_indexs.append(index)
 
         logger.info("Now process the web page count： %d" % len(sort_indexs))
 
-        # 让列表乱序处理
-        random.shuffle(sort_indexs)
-        for cur_index in sort_indexs:
-            cur_url = all_urls[cur_index]
-            cur_url = cur_url.strip()
-            if cur_url != '':
-                # must check vm is running
+    # 让列表乱序处理
+    random.shuffle(sort_indexs)
+    for cur_index in sort_indexs:
+        cur_url = all_urls[cur_index]
+        cur_url = cur_url.strip()
+        if cur_url != '':
+            # must check vm is running
+            vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
+            while not vm_is_running:
                 vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
-                while not vm_is_running:
-                    vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
-                    time.sleep(2)
+                time.sleep(2)
 
-                starup(cur_url, app_args)
-                logger.info("Prepare the next web page url ... index=%d" % cur_index)
-                time.sleep(random.randint(6, 12))
-            else:
-                continue
+            starup(cur_url, app_args)
+            logger.info("Prepare the next web page url ... index=%d" % cur_index)
+            time.sleep(random.randint(6, 12))
+        else:
+            continue
 
 
 def stop_all_back_procs(proc_list):
