@@ -56,6 +56,7 @@ logger.setLevel(logging.DEBUG)
 
 vmsH = VMSModifyHandler(logger=logger)
 
+
 class RunningHelper(object):
     @staticmethod
     def get_flag_file(vmid):
@@ -275,94 +276,50 @@ def get_enable_click_ads():
     return time_enable
 
 
-def start_scroll_up_to_down():
+def common_process_call(loginfo='', commandList=[]):
+    '''
+    公共调用子进程函数
+    :param loginfo:
+    :param commandList:
+    :return:
+    '''
     try:
-        logger.info("Trying start_scroll_up_to_down...")
-        proc = subprocess.Popen(['AutoHotkey', 'scrolluptodown.ahk'],
+        proc = subprocess.Popen(commandList,
                                 cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
                                 shell=True)
         all_sub_process.append(proc)
-        proc.wait()
-        logger.info(proc.returncode)
+        return_code = proc.wait()
+        logger.info(return_code)
+        stdout = proc.communicate()
+        logger.info(stdout)
         return 1
 
     except Exception:
         logger.exception("Error:")
+    finally:
+        time.sleep(5)
 
     return 0
+
+
+def start_scroll_up_to_down():
+    return common_process_call("Trying start_scroll_up_to_down...", ['AutoHotkey', 'scrolluptodown.ahk'])
 
 
 def start_auto_scroll_up_or_down():
-    try:
-        logger.info("Trying start_auto_scroll_up_or_down...")
-        proc = subprocess.Popen(['AutoHotkey', 'scrollupordown.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
-                                shell=True)
-        all_sub_process.append(proc)
-        proc.wait()
-        logger.info(proc.returncode)
-        return 1
-
-    except Exception:
-        logger.exception("Error:")
-
-    return 0
+    return common_process_call("Trying start_auto_scroll_up_or_down...", ['AutoHotkey', 'scrollupordown.ahk'])
 
 
 def start_vpn():
-    try:
-        logger.info("Trying start_vpn...")
-        proc = subprocess.Popen(['AutoHotkey', 'runvpn.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
-                                shell=True)
-        all_sub_process.append(proc)
-        proc.wait()
-        logger.info(proc.returncode)
-        return 1
-
-    except Exception:
-        logger.exception("Error:")
-
-    return 0
+    return common_process_call("Trying start_vpn...", ['AutoHotkey', 'runvpn.ahk'])
 
 
 def auto_click_ads():
-    try:
-        logger.info("Trying click ads...")
-        if not get_enable_click_ads():
-            logger.info("Disable click ads...")
-            return 0
-        logger.info("Enable click ads...")
-
-        proc = subprocess.Popen(['AutoHotkey', 'clickads.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
-                                shell=True)
-        all_sub_process.append(proc)
-        proc.wait()
-        logger.info(proc.returncode)
-        return 1
-
-    except Exception:
-        logger.exception("Error:")
-
-    return 0
+    return common_process_call("Trying click ads...", ['AutoHotkey', 'clickads.ahk'])
 
 
 def auto_close_tab_page():
-    try:
-        logger.info("Trying auto_close_tab_page...")
-        proc = subprocess.Popen(['AutoHotkey', 'closetab.ahk'],
-                                cwd=os.path.join(app_current_dir, 'scripts', app_args.auto_ahk_file_prex),
-                                shell=True)
-        all_sub_process.append(proc)
-        proc.wait()
-        logger.info(proc.returncode)
-        return 1
-
-    except Exception:
-        logger.exception("Error:")
-
-    return 0
+    return common_process_call("Trying auto_close_tab_page...", ['AutoHotkey', 'closetab.ahk'])
 
 
 def starup(want_open_url, app_args):
@@ -497,7 +454,8 @@ def starup(want_open_url, app_args):
         else:
             # 可以尝试点击广告了
             logger.info("尝试点击广告...")
-            cfg_enable_web_wait_after_ads = auto_click_ads()
+            auto_click_ads()
+            cfg_enable_web_wait_after_ads = 1
 
             if cfg_enable_web_wait_after_ads == 1:
                 logger.info("点击广告后，需要等待一会...")
