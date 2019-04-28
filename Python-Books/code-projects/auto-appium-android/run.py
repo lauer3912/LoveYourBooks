@@ -464,6 +464,7 @@ def starup(want_open_url, app_args):
         if cfg_enable_auto_scroll:
             logger.info("网页已经加载完成，可以从上到下滚动了 ...")
             start_scroll_up_to_down()
+            time.sleep(random.randint(15, 30))
 
         # 随机回滚一下
         cfg_enable_scroll_up = True and round(random.uniform(1, 12), 2) >= 3
