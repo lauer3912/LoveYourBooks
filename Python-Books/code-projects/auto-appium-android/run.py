@@ -290,8 +290,6 @@ def common_process_call(loginfo='', commandList=[]):
         all_sub_process.append(proc)
         return_code = proc.wait()
         logger.info(return_code)
-        stdout = proc.communicate()
-        logger.info(stdout)
         return 1
 
     except Exception:
@@ -425,7 +423,7 @@ def starup(want_open_url, app_args):
 
         # 随机回滚一下
         cfg_enable_scroll_up = True and round(random.uniform(1, 12), 2) >= 3
-        if cfg_enable_scroll_up == 1:
+        if cfg_enable_scroll_up:
             time.sleep(random.randint(3, 5))
             logger.info("现在可以向上滚动页面了 ...")
             start_auto_scroll_up_or_down()
@@ -454,6 +452,7 @@ def starup(want_open_url, app_args):
         else:
             # 可以尝试点击广告了
             logger.info("尝试点击广告...")
+            start_auto_scroll_up_or_down()
             auto_click_ads()
             cfg_enable_web_wait_after_ads = 1
 
@@ -467,6 +466,7 @@ def starup(want_open_url, app_args):
                 if round(random.uniform(1, 12), 2) >= 5:
                     time.sleep(5)
                     start_auto_scroll_up_or_down()
+                    auto_click_ads()
 
                 if round(random.uniform(1, 12), 2) >= 5:
                     min_sleep_secs = random.randint(15, 30)
@@ -474,23 +474,24 @@ def starup(want_open_url, app_args):
                     start_auto_scroll_up_or_down()
 
             # 停顿后，可以执行点击操作广告工作，也可以点击关闭标签的操作
-            auto_click_ads()
-            start_auto_scroll_up_or_down()
-
-            if round(random.uniform(1, 12), 2) >= 5:
-                time.sleep(random.randint(1, 10))
-
-            if round(random.uniform(1, 12), 2) >= 5:
+            if round(random.uniform(1, 12), 2) >= 3:
                 time.sleep(random.randint(1, 10))
                 auto_click_ads()
+                start_auto_scroll_up_or_down()
+
+            if round(random.uniform(1, 12), 2) >= 4:
+                time.sleep(random.randint(1, 10))
+                auto_click_ads()
+                start_auto_scroll_up_or_down()
 
             if round(random.uniform(1, 12), 2) >= 5:
                 time.sleep(random.randint(1, 10))
                 start_auto_scroll_up_or_down()
 
-            if round(random.uniform(1, 12), 2) >= 5:
+            if round(random.uniform(1, 12), 2) >= 6:
                 time.sleep(random.randint(1, 10))
                 auto_click_ads()
+                start_auto_scroll_up_or_down()
 
         # 自动关闭标签页面
         auto_close_tab_page()
