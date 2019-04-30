@@ -22,8 +22,7 @@ if os.path.isfile(log_file_path):
         os.remove(log_file_path)
     except:
         pass
-handler = logging.handlers.RotatingFileHandler(log_file_path, maxBytes=1024 * 1024 * 100,
-                                               backupCount=1)  # 实例化 handler
+handler = logging.StreamHandler()
 fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'
 formatter = logging.Formatter(fmt)  # 实例化 formatter
 handler.setFormatter(formatter)  # 为 handler 添加 formatter
