@@ -1,8 +1,8 @@
 CoordMode, Mouse
 
-tab_x_pos := 218
+tab_x_pos := 1380
 tab_y_pos := 93
-vm_offest := 0
+vm_offest := 1164
 
 ;关闭标签
 fnc_close_tab(x_pos, y_pos)

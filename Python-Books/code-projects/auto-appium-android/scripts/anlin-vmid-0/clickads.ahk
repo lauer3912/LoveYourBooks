@@ -1,7 +1,7 @@
 CoordMode, Mouse
 
-ads_X_min := 1190
-ads_X_max := 1680
+ads_X_min := 20
+ads_X_max := 520
 
 
 ClickAds(x_min:=0, x_max:=0, y_min:=0, y_max:=0)
@@ -68,3 +68,4 @@ Loop, 3 {
 
 ; Exit
 Exit
+

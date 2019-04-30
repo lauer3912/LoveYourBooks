@@ -1,6 +1,6 @@
 CoordMode, Mouse
-pos_x_min := 20
-pos_x_max := 520
+pos_x_min := 1190
+pos_x_max := 1680
 pos_y_top := 220
 pos_y_bottom := 850
 

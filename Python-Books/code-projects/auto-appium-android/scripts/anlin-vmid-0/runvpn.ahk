@@ -1,15 +1,15 @@
 CoordMode, Mouse
 
-vpn_x_pos := 1248
+vpn_x_pos := 88
 vpn_y_pos := 384
 
-btn_connect_x := 1436
+btn_connect_x := 274
 btn_connect_y := 918
 
-desktop_btn_x := 1176
+desktop_btn_x := 554
 desktop_btn_y := 884
 
-chrome_x := 1344
+chrome_x := 184
 chrome_y := 196
 
 ;启动hi vpn
