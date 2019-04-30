@@ -328,7 +328,7 @@ def starup(want_open_url, app_args):
             'platformName': 'Android',
             'platformVersion': '5.1.1',
             'deviceName': app_args.dest_device,
-            "udid": app_args.dest_device,  # "127.0.0.1:21533",
+            "udid": app_args.dest_device,  # "127.0.0.1:21533", 查看：设备通讯端口，adb devices。  https://www.cnblogs.com/Nefeltari/p/5603163.html
             'unicodeKeyboard': True,
             'resetKeyboard': True,
             'browserName': 'Chrome',
