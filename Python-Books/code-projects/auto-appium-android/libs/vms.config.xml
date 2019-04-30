@@ -39,7 +39,7 @@
                 resolution_width="810" resolution_height="1440"
 
                 appiumCommand="appium -p 4727"
-                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --a anlin-vmid-2 --v 3 "/>
+                startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21543 --a anlin-vmid-3 --v 3 "/>
 
     </machine>
     <machine name="Ian Server PC" macAddress="">
