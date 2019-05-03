@@ -548,11 +548,11 @@ def get_enable_quick_browser_mode():
         time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 2
 
     # 中国凌晨的情况，美国中午到下午
-    if cur_time_hour in range(0, 12):
+    elif cur_time_hour in range(0, 12):
         time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 1.5
 
     # 中国下午的情况，美国凌晨到上午
-    if cur_time_hour in range(12, 18):
+    elif cur_time_hour in range(12, 18):
         time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 9
 
     try:
