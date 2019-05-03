@@ -23,14 +23,16 @@
                 win_x="18" win_y="20"
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
-                
+
+                enable_ads="true"
                 appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a anlin-vmid-0 --v 0"/>
         <config enable="true" vmname="web-21523" vmid="2"
                 win_x="598" win_y="20"
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
-                
+
+                enable_ads="true"
                 appiumCommand="appium -p 4725"
                 startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21523 --a anlin-vmid-1 --v 2"/>
         <config enable="true" vmname="web-21533" vmid="3"
@@ -38,6 +40,7 @@
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
 
+                enable_ads="true"
                 appiumCommand="appium -p 4727"
                 startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21533 --a anlin-vmid-2 --v 3 "/>
 
@@ -50,21 +53,24 @@
                 win_x="18" win_y="20"
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
-                
+
+                enable_ads="false"
                 appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a lucy-vmid-0 --v 0"/>
         <config enable="true" vmname="US-2" vmid="1"
                 win_x="598" win_y="20"
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
-                
+
+                enable_ads="false"
                 appiumCommand="appium -p 4725"
                 startCommand="python run.py --s http://127.0.0.1:4725/wd/hub --d 127.0.0.1:21513 --a lucy-vmid-1 --v 1"/>
         <config enable="true" vmname="US-3" vmid="2"
                 win_x="1180" win_y="20"
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
-                
+
+                enable_ads="false"
                 appiumCommand="appium -p 4727"
                 startCommand="python run.py --s http://127.0.0.1:4727/wd/hub --d 127.0.0.1:21523 --a lucy-vmid-2 --v 2"/>
     </machine>
@@ -74,6 +80,7 @@
                 win_scaling_percent2="63.703704"
                 resolution_width="810" resolution_height="1440"
 
+                enable_ads="false"
                 appiumCommand="appium -p 4723"
                 startCommand="python run.py --s http://127.0.0.1:4723/wd/hub --d 127.0.0.1:21503 --a lucy-vmid-0 --v 0"/>
     </machine>

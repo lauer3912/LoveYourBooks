@@ -73,6 +73,7 @@ class VMSModifyHandler(object):
                     config_enable = one_config.getAttribute('enable')
                     config_vmname = one_config.getAttribute('vmname')
                     config_vmid = one_config.getAttribute('vmid')
+                    config_enable_ads = one_config.getAttribute('enable_ads')
                     config_start_cmd = one_config.getAttribute('startCommand')
                     config_appium_cmd = one_config.getAttribute('appiumCommand')
 
@@ -89,6 +90,7 @@ class VMSModifyHandler(object):
                         'vmid': config_vmid,
                         'vmname': config_vmname,
                         'enable': config_enable,
+                        'enable_ads': config_enable_ads,
                         'startCommand': config_start_cmd,
                         'appiumCommand': config_appium_cmd,
                         'extend_vm_info': extend_vm_info
