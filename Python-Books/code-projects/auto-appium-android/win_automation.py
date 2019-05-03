@@ -377,15 +377,15 @@ def get_best_max_run_time():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 8):
-        return random.randint(30, 50) * 60 * 1000
+        return random.randint(15, 30) * 60 * 1000
 
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(9, 17):
-        return random.randint(15, 25) * 60 * 1000
+        return random.randint(10, 25) * 60 * 1000
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        return random.randint(25, 40) * 60 * 1000
+        return random.randint(15, 30) * 60 * 1000
 
     # 普通情况下
     return random.randint(30, 48) * 60 * 1000
@@ -406,15 +406,18 @@ async def main():
         config_mac_address = one_config['macAddress']
         logger.info('localMacAddress={0}, configMacAddress={1}'.format(local_mac_address, config_mac_address))
         if config_mac_address != '':
-            had_record_mac_address_list.append(config_mac_address)
+
+            # config_mac_address 现在接受多mac地址情况
+            all_config_mac_address = config_mac_address.split(';')
+            for iter_mac_address in all_config_mac_address:
+                if iter_mac_address != '':
+                    had_record_mac_address_list.append(iter_mac_address)
 
     for one_config in vmsH.get_vms_configs():
         config_mac_address = one_config['macAddress']
 
         enable_add = False
-        if local_mac_address in had_record_mac_address_list:
-            enable_add = (local_mac_address == config_mac_address)
-        elif config_mac_address == '':
+        if local_mac_address in had_record_mac_address_list or config_mac_address == '':
             enable_add = True
 
         if enable_add:

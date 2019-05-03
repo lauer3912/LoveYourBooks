@@ -18,7 +18,7 @@
     **
     ** appium -p 4729
     -->
-    <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80">
+    <machine name="Anlin PC" macAddress="70:5a:0f:3d:ba:80;50:3e:aa:aa:bb:d8">
         <config enable="true" vmname="web-21503" vmid="0"
                 win_x="18" win_y="20"
                 win_scaling_percent2="63.703704"
