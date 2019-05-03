@@ -542,17 +542,18 @@ def get_enable_quick_browser_mode():
     time_enable_ads_browser = False
     cur_time = time.localtime()
     cur_time_hour = int(cur_time.tm_hour)
-    # 上午的情况，对应为美国区的晚上
-    if cur_time_hour in range(11, 18):
-        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 9
 
-    # 凌晨的情况，对应美国区的下午
-    if cur_time_hour in range(0, 11):
-        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 1.5
-
-    # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
+    # 中国晚上的情况，美国区的上午到中午
     if cur_time_hour in range(18, 25):
         time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 2
+
+    # 中国凌晨的情况，美国中午到下午
+    if cur_time_hour in range(0, 12):
+        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 1.5
+
+    # 中国下午的情况，美国凌晨到上午
+    if cur_time_hour in range(12, 18):
+        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 9
 
     try:
         if not app_args.enable_ads:  # 如果系统要求不能使用点击广告，启动快速浏览模式
