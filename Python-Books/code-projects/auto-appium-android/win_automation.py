@@ -413,7 +413,7 @@ async def main():
                 if iter_mac_address != '':
                     had_record_mac_address_list.append(iter_mac_address)
 
-    logger.info('had_record_mac_address_list = {0}'.format(had_record_mac_address_list.join(';')))
+    logger.info('had_record_mac_address_list = {0}'.format(had_record_mac_address_list))
 
     for one_config in vmsH.get_vms_configs():
         config_mac_address = one_config['macAddress']
