@@ -391,6 +391,18 @@ def get_best_max_run_time():
     return random.randint(30, 48) * 60 * 1000
 
 
+def find_in_record_mac_address_list(config_mac_address, had_record_mac_address_list):
+    in_list = False
+    all_config_mac_address = config_mac_address.split(';')
+    for iter_mac_address in all_config_mac_address:
+        if iter_mac_address != '':
+            if iter_mac_address in had_record_mac_address_list:
+                in_list = True
+                break
+
+    return in_list
+
+
 async def main():
     logger.info("Start make_stop_flag_file_first.....")
     await sleep(5)
@@ -406,12 +418,13 @@ async def main():
         config_mac_address = one_config['macAddress']
         logger.info('localMacAddress={0}, configMacAddress={1}'.format(local_mac_address, config_mac_address))
         if config_mac_address != '':
-
             # config_mac_address 现在接受多mac地址情况
             all_config_mac_address = config_mac_address.split(';')
             for iter_mac_address in all_config_mac_address:
                 if iter_mac_address != '':
-                    had_record_mac_address_list.append(iter_mac_address)
+                    if iter_mac_address not in had_record_mac_address_list \
+                            and iter_mac_address == local_mac_address:
+                        had_record_mac_address_list.append(iter_mac_address)
 
     logger.info('had_record_mac_address_list = {0}'.format(had_record_mac_address_list))
 
@@ -420,7 +433,7 @@ async def main():
 
         enable_add = False
         if local_mac_address in had_record_mac_address_list:
-            enable_add = True
+            enable_add = find_in_record_mac_address_list(config_mac_address, had_record_mac_address_list)
         elif config_mac_address == '':
             enable_add = local_mac_address not in had_record_mac_address_list
 
@@ -450,6 +463,7 @@ async def main():
         ptask = await g.spawn(producer)
         await ptask.join()
         await g.cancel_remaining()
+
 
 
 if __name__ == '__main__':
