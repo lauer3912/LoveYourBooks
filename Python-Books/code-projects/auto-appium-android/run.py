@@ -455,6 +455,9 @@ def starup(want_open_url, app_args):
                 start_auto_scroll_up_or_down()
                 time.sleep(3)
 
+            if app_args.enalbe_ads:  # 如果可以点击
+                auto_click_ads()
+
             start_auto_scroll_up_or_down()
             time.sleep(random.randint(5, 25))
 
