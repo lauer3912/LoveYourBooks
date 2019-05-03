@@ -44,11 +44,12 @@ vmsH = VMSModifyHandler(logger=logger)
 
 
 class VMJob(object):
-    def __init__(self, vmid, vmname, enable, start_cmd, appium_cmd, max_run_time, extend_vm_info):
+    def __init__(self, vmid, vmname, enable, enable_ads, start_cmd, appium_cmd, max_run_time, extend_vm_info):
         object.__init__(self)
         self.vmid = vmid
         self.vmname = vmname
         self.enable = enable
+        self.enable_ads = enable_ads
         self.start_cmd = start_cmd
         self.start_time = Utils.get_now_time()
         self.appium_cmd = appium_cmd
@@ -122,7 +123,13 @@ class VMJob(object):
             # 根据只创建一个后台跟踪的方式
             current_dir = os.path.dirname(os.path.abspath(__file__))
             logger.info('current dir path = {}'.format(current_dir))
-            proc = subprocess.Popen(self.start_cmd,
+
+            enable_ads_flag = '0'
+            if self.enable_ads:
+                enable_ads_flag = '1'
+            cmd = "{0} --enableads {1}".format(self.start_cmd, enable_ads_flag)
+            logger.info('cmd = {}'.format(cmd))
+            proc = subprocess.Popen(cmd,
                                     cwd=current_dir,
                                     shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                     universal_newlines=True)
@@ -415,6 +422,7 @@ async def main():
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
                 enable=one_config['enable'] == 'true',
+                enable_ads=one_config['enable_ads'] == 'true',
                 start_cmd=one_config['startCommand'],
                 appium_cmd=one_config['appiumCommand'],
                 max_run_time=get_best_max_run_time(),  # 60 * 5 * 1000 # 毫秒

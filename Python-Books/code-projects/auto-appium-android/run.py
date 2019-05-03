@@ -20,6 +20,15 @@ from libs.vmsmodify import VMSModifyHandler
 
 print("The Python path used = %s" % sys.executable)
 
+def str2bool(v):
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Unsupported value encountered.')
+
+
 # 创建解析步骤
 app_parser = argparse.ArgumentParser(description='Process some args.')
 app_parser.add_argument('--s', dest='remote_server', action='store', default='http://127.0.0.1:4723/wd/hub',
@@ -30,6 +39,8 @@ app_parser.add_argument('--a', dest='auto_ahk_file_prex', action='store', defaul
                         help='Assign the auto hot key file')
 app_parser.add_argument('--v', dest='vmid', action='store', default=0,
                         help='Assign the vms id')
+app_parser.add_argument('--enableads', dest='enable_ads', action='store', type=str2bool,
+    nargs='?', help='enable click ads')
 
 # 解析参数步骤
 app_args = app_parser.parse_args()
@@ -534,11 +545,17 @@ def get_enable_quick_browser_mode():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 8
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 3
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 7
+        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 3
+
+    try:
+        if not app_args.enable_ads:  # 如果系统要求不能使用点击广告，启动快速浏览模式
+            return True
+    finally:
+        pass
 
     # Step2: 获取随机范围
     enable_quick_browser_mode = not time_enable_ads_browser
@@ -546,12 +563,6 @@ def get_enable_quick_browser_mode():
 
 
 def browser_boot(app_args):
-    # must check vm is running
-    vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
-    while not vm_is_running:
-        vm_is_running = RunningHelper.is_vm_is_running(app_args.vmid)
-        time.sleep(2)
-
     sort_indexs = []
     with open("urls.txt", "r") as fhandler:
         all_urls = []
