@@ -548,11 +548,11 @@ def get_enable_quick_browser_mode():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 11):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 3
+        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 1.5
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        time_enable_ads_browser = True and round(random.uniform(0.2, 12), 2) >= 3
+        time_enable_ads_browser = True and round(random.uniform(1, 12), 2) >= 2
 
     try:
         if not app_args.enable_ads:  # 如果系统要求不能使用点击广告，启动快速浏览模式
