@@ -318,10 +318,10 @@ async def producer():
             if not vmjob.enable:
                 continue
             await publish(vmjob)
-            await sleep(10)  # 每隔10秒再发布，让系统稳定下来
+            await sleep(5)  # 每隔10秒再发布，让系统稳定下来
 
         # 需要系统等待30秒，再发送，不能太快
-        await sleep(30)
+        await sleep(10)
 
 
 def exit_callback():
@@ -413,14 +413,19 @@ async def main():
                 if iter_mac_address != '':
                     had_record_mac_address_list.append(iter_mac_address)
 
+    logger.info('had_record_mac_address_list = {0}'.format(had_record_mac_address_list.join(';')))
+
     for one_config in vmsH.get_vms_configs():
         config_mac_address = one_config['macAddress']
 
         enable_add = False
-        if local_mac_address in had_record_mac_address_list or config_mac_address == '':
+        if local_mac_address in had_record_mac_address_list:
             enable_add = True
+        elif config_mac_address == '':
+            enable_add = local_mac_address not in had_record_mac_address_list
 
         if enable_add:
+            logger.info('call app_vmjob_list.add function')
             app_vmjob_list.add(VMJob(
                 vmid=one_config['vmid'],
                 vmname=one_config['vmname'],
