@@ -65,6 +65,18 @@ Loop, 3 {
     }
 }
 
+; Click the top ads
+ClickAds(ads_X_min, ads_X_max, 172, 215)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 850)
+
+; Click the mid ads
+ClickAds(ads_X_min, ads_X_max, 534, 720)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 850)
+
+; Click the bottom ads
+ClickAds(ads_X_min, ads_X_max, 800, 850)
+MoveMouse(10, ads_X_min, ads_X_max, 172, 850)
+
 
 
 ; Exit
