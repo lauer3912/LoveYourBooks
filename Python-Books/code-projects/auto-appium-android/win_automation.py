@@ -124,9 +124,9 @@ class VMJob(object):
             current_dir = os.path.dirname(os.path.abspath(__file__))
             logger.info('current dir path = {}'.format(current_dir))
 
-            enable_ads_flag = '0'
+            enable_ads_flag = 'false'
             if self.enable_ads:
-                enable_ads_flag = '1'
+                enable_ads_flag = 'true'
             cmd = "{0} --enableads {1}".format(self.start_cmd, enable_ads_flag)
             logger.info('cmd = {}'.format(cmd))
             proc = subprocess.Popen(cmd,
@@ -377,18 +377,18 @@ def get_best_max_run_time():
 
     # 凌晨的情况，对应美国区的下午
     if cur_time_hour in range(0, 8):
-        return random.randint(3, 10) * 60 * 1000
+        return random.randint(25, 30) * 60 * 1000
 
     # 上午的情况，对应为美国区的晚上
     if cur_time_hour in range(9, 17):
-        return random.randint(3, 12) * 60 * 1000
+        return random.randint(15, 25) * 60 * 1000
 
     # 下午晚上可以点击少量广告的情况下，对应美国区的上午到中午时段
     if cur_time_hour in range(18, 25):
-        return random.randint(3, 15) * 60 * 1000
+        return random.randint(25, 35) * 60 * 1000
 
     # 普通情况下
-    return random.randint(3, 8) * 60 * 1000
+    return random.randint(30, 48) * 60 * 1000
 
 
 async def main():
