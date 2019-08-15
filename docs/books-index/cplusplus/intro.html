@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="cplusplus/intro.html" class="active"><strong aria-hidden="true">1.</strong> C/C++/Objective-C 技巧</a></li></ol>
+            <ol class="chapter"><li><a href="correct_words.html"><strong aria-hidden="true">1.</strong> 相关术语正确发音</a></li><li><a href="cplusplus/intro.html" class="active"><strong aria-hidden="true">2.</strong> C/C++/Objective-C 技巧</a></li><li><a href="javascript/intro.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li><a href="dart/intro.html"><strong aria-hidden="true">4.</strong> Dart</a></li><li><a href="java/intro.html"><strong aria-hidden="true">5.</strong> Java</a></li><li><a href="python/intro.html"><strong aria-hidden="true">6.</strong> Python</a></li><li><a href="rust/intro.html"><strong aria-hidden="true">7.</strong> Rust</a></li><li><a href="go/intro.html"><strong aria-hidden="true">8.</strong> Go</a></li><li><a href="delphi/intro.html"><strong aria-hidden="true">9.</strong> Delphi</a></li><li><a href="database/intro.html"><strong aria-hidden="true">10.</strong> Database</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -137,7 +137,7 @@
 <p><a href="../books-index/index.html">主页</a></p>
 <a class="header" href="cplusplus/intro.html#ccobjective-c" id="ccobjective-c"><h2>C/C++/Objective-C</h2></a>
 <ol>
-<li><a href="../c-books/cplusplus-get-primer/index.html">《C++ Get Primer》</a></li>
+<li><a href="../c-books/cplusplus-get-primer/index.html">《C++ 关键特性》</a></li>
 <li><a href="../c-books/qt-up/index.html">《Qt 编程技能提升》</a></li>
 <li><a href="../c-books/objective-c-primer/index.html">《Objective-C Primer》</a></li>
 </ol>
@@ -157,7 +157,15 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="correct_words.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="javascript/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -167,12 +175,35 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a href="correct_words.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a href="javascript/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

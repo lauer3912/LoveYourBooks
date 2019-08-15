@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="what-is-ajax.html"><strong aria-hidden="true">1.</strong> 什么是 AJAX?</a></li><li><a href="diff-es6-and-es5.html" class="active"><strong aria-hidden="true">2.</strong> ES6 与 ES5 的区别</a></li><li><a href="promise-and-settimeout.html"><strong aria-hidden="true">3.</strong> Promise 与 setTimout 谁先执行？</a></li></ol>
+            <ol class="chapter"><li><a href="what-is-ajax.html"><strong aria-hidden="true">1.</strong> 什么是 AJAX?</a></li><li><a href="diff-es6-and-es5.html" class="active"><strong aria-hidden="true">2.</strong> ES6 与 ES5 的区别</a></li><li><a href="promise-and-settimeout.html"><strong aria-hidden="true">3.</strong> Promise 与 setTimout 谁先执行？</a></li><li><a href="js-base-thread-machine.html"><strong aria-hidden="true">4.</strong> JavaScript 的线程机制是什么样的？</a></li><li><a href="nodejs-base-thread-event-loop.html"><strong aria-hidden="true">5.</strong> Node.js 单线程事件循环机制是什么样的？</a></li><li><a href="what-is-mvvm.html"><strong aria-hidden="true">6.</strong> 什么是双向绑定？</a></li><li><a href="why-mvvm-friendliness-seo.html"><strong aria-hidden="true">7.</strong> 为什么说 MVVM 对 SEO 是不友好的？</a></li><li><a href="what-is-pwa.html"><strong aria-hidden="true">8.</strong> 什么是 PWA？</a></li><li><a href="how-vue-do-data-getter-setter.html"><strong aria-hidden="true">9.</strong> Vue 实现的关键：数据劫取是怎么做到的？</a></li><li><a href="vue-base-and-mvvm.html"><strong aria-hidden="true">10.</strong> Vue 原理及如何实现双向绑定 MVVM</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -188,6 +188,7 @@ Math+Number+String+Array+Object APIs
 <li>ES6 新增了 模板中可以嵌套函数</li>
 <li>ES6 新增了 函数参数的默认值</li>
 <li>ES6 新增了 rest 语法</li>
+<li>ES6 新增了 本地模块导入导出</li>
 </ol>
 <a class="header" href="diff-es6-and-es5.html#es6-新增了-let-命名" id="es6-新增了-let-命名"><h2>ES6 新增了 let 命名</h2></a>
 <blockquote>
@@ -381,6 +382,34 @@ animal();
 animals(&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;); //[&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;]
 </code></pre>
 <p>而如果不用 ES6 的话，我们则得使用 ES5 的 arguments。</p>
+<a class="header" href="diff-es6-and-es5.html#es6-新增了-本地模块导入导出" id="es6-新增了-本地模块导入导出"><h2>ES6 新增了 本地模块导入导出</h2></a>
+<p>众所周知，在 ES6 以前 JavaScript 并不支持本地的模块。人们想出了 AMD，RequireJS，CommonJS 以及其它解决方法。现在 ES6 中可以用模块 import 和 export 操作了。在 ES5 中，你可以在 <script></script>中直接写可以运行的代码（简称 IIFE），或者一些库像 AMD。然而在 ES6 中，你可以用 export 导入你的类。下面举个例子，在 ES5 中,module.js 有 port 变量和 getAccounts 方法:</p>
+<pre><code class="language-js"> module.exports = {
+   port: 3000,
+   getAccounts: function() {
+     ...
+   }
+ }
+</code></pre>
+<p>在 ES5 中，main.js 需要依赖 require(‘module’) 导入 module.js：</p>
+<pre><code class="language-js">// ES5
+var service = require(‘module.js‘);
+console.log(service.port); // 3000
+</code></pre>
+<p>但在 ES6 中，我们将用 export and import。例如，这是我们用 ES6 写的 module.js 文件库：</p>
+<pre><code class="language-js"> export var port = 3000;
+ export function getAccounts(url) {
+   ...
+ }
+</code></pre>
+<p>如果用 ES6 来导入到文件 main.js 中，我们需用 import {name} from ‘my-module’语法，例如：</p>
+<pre><code class="language-js">import {port, getAccounts} from ‘module‘;
+console.log(port); // 3000
+</code></pre>
+<p>或者我们可以在 main.js 中把整个模块导入, 并命名为 service：</p>
+<pre><code class="language-js">import * as service from ‘module‘;
+console.log(service.port); // 3000
+</code></pre>
 
                     </main>
 

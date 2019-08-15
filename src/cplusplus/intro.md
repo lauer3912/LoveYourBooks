@@ -4,7 +4,7 @@
 
 ## C/C++/Objective-C
 
-1. [《C++ Get Primer》](../c-books/cplusplus-get-primer/index.html)
+1. [《C++ 关键特性》](../c-books/cplusplus-get-primer/index.html)
 1. [《Qt 编程技能提升》](../c-books/qt-up/index.html)
 1. [《Objective-C Primer》](../c-books/objective-c-primer/index.html)
 

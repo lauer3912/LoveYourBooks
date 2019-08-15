@@ -74,7 +74,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 语法规范</a></li><li><ol class="section"><li><a href="reference/keyword_override.html"><strong aria-hidden="true">1.1.</strong> C++11 关键字 override 的作用</a></li><li><a href="reference/keyword_final.html"><strong aria-hidden="true">1.2.</strong> C++11 关键字 final 的作用</a></li><li><a href="reference/keyword_nullptr.html"><strong aria-hidden="true">1.3.</strong> C++11 关键字 nullptr 的作用</a></li></ol></li><li><a href="solutions/index.html"><strong aria-hidden="true">2.</strong> 常见问题解决方案</a></li><li><ol class="section"><li><a href="solutions/syntax/10001.html"><strong aria-hidden="true">2.1.</strong> 命名空间冲突</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 语法规范</a></li><li><ol class="section"><li><a href="reference/keyword_override.html"><strong aria-hidden="true">1.1.</strong> C++11 关键字 override 的作用</a></li><li><a href="reference/keyword_final.html"><strong aria-hidden="true">1.2.</strong> C++11 关键字 final 的作用</a></li><li><a href="reference/keyword_nullptr.html"><strong aria-hidden="true">1.3.</strong> C++11 关键字 nullptr 的作用</a></li></ol></li><li><a href="solutions/index.html"><strong aria-hidden="true">2.</strong> 常见问题解决方案</a></li><li><ol class="section"><li><a href="solutions/syntax/10001.html"><strong aria-hidden="true">2.1.</strong> 命名空间冲突</a></li></ol></li><li><a href="questions/intro.html"><strong aria-hidden="true">3.</strong> 题库</a></li><li><ol class="section"><li><a href="questions/how-slove-cplus-atomic-variable-in-threads.html"><strong aria-hidden="true">3.1.</strong> C++11 原子变量,是如何解决多线程下共享变量的问题</a></li><li><a href="questions/small-pointer.html"><strong aria-hidden="true">3.2.</strong> C++11 智能指针</a></li><li><a href="questions/what-is-left-value-and-right-value.html"><strong aria-hidden="true">3.3.</strong> C++11 什么是左值和右值</a></li><li><a href="questions/what-is-srs-model.html"><strong aria-hidden="true">3.4.</strong> C++11 SRS 线程模型</a></li><li><a href="questions/how-to-do-data-synchronize-in-multiple-threads.html"><strong aria-hidden="true">3.5.</strong> C++11 多线程如何实现数据同步</a></li></ol></li><li><a href="3rd-library/av/intro.html"><strong aria-hidden="true">4.</strong> 音视频处理</a></li><li><ol class="section"><li><a href="3rd-library/av/basic/how-to-capture-audio-and-video.html"><strong aria-hidden="true">4.1.</strong> 如何采集音频和摄像头视频？</a></li><li><a href="3rd-library/av/x264/how-to-do-quickly-program-codes.html"><strong aria-hidden="true">4.2.</strong> X264 编码器，如何调整及快速编码</a></li><li><a href="3rd-library/av/ffmpeg/how-to-use-multiple-filter-for-avfilter.html"><strong aria-hidden="true">4.3.</strong> FFmpeg avfilter 多路 filter 如何提升性能</a></li></ol></li><li><a href="3rd-library/transport-protocol/intro.html"><strong aria-hidden="true">5.</strong> 传输协议</a></li><li><ol class="section"><li><a href="3rd-library/transport-protocol/rtmp/what-is-rtmp.html"><strong aria-hidden="true">5.1.</strong> 什么是 RTMP 协议</a></li><li><a href="3rd-library/transport-protocol/rtmp/how-librtmp-work.html"><strong aria-hidden="true">5.2.</strong> librtmp rtmp 握手</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -243,6 +243,40 @@ auto result3 = lockAndCall(f3, f3m, nullptr);    // fine
 <p>nullptr，作为 ptr 传给 f1 或 f2 时，被推断为 std::nullptr_t ； 作为 ptr 传给 f3 时，std::nullptr_t 会隐式的转换成 Widget*，确保了参数类型的一致</p>
 <a class="header" href="print.html#a常见问题解决方案" id="a常见问题解决方案"><h1>常见问题解决方案</h1></a>
 <a class="header" href="print.html#a命名空间冲突" id="a命名空间冲突"><h1>命名空间冲突</h1></a>
+<a class="header" href="print.html#a题库" id="a题库"><h1>题库</h1></a>
+<a class="header" href="print.html#c11-原子变量是如何解决多线程下共享变量的问题" id="c11-原子变量是如何解决多线程下共享变量的问题"><h1>C++11 原子变量,是如何解决多线程下共享变量的问题</h1></a>
+<a class="header" href="print.html#a多线程下共享变量的问题经典现象" id="a多线程下共享变量的问题经典现象"><h2>多线程下共享变量的问题经典现象</h2></a>
+<ul>
+<li>著名的 i++问题</li>
+<li>指令重排问题</li>
+</ul>
+<a class="header" href="print.html#a最著名的-i-问题" id="a最著名的-i-问题"><h3>最著名的 i++ 问题</h3></a>
+<a class="header" href="print.html#c11-智能指针" id="c11-智能指针"><h1>C++11 智能指针</h1></a>
+<a class="header" href="print.html#c11-什么是左值和右值" id="c11-什么是左值和右值"><h1>C++11 什么是左值和右值</h1></a>
+<a class="header" href="print.html#c11-srs-线程模型" id="c11-srs-线程模型"><h1>C++11 SRS 线程模型</h1></a>
+<a class="header" href="print.html#c11-多线程如何实现数据同步" id="c11-多线程如何实现数据同步"><h1>C++11 多线程如何实现数据同步</h1></a>
+<a class="header" href="print.html#a音视频处理" id="a音视频处理"><h1>音视频处理</h1></a>
+<a class="header" href="print.html#a如何采集音频和摄像头视频" id="a如何采集音频和摄像头视频"><h1>如何采集音频和摄像头视频？</h1></a>
+<a class="header" href="print.html#x264-编码器如何调整及快速编码" id="x264-编码器如何调整及快速编码"><h1>X264 编码器，如何调整及快速编码</h1></a>
+<a class="header" href="print.html#ffmpeg-avfilter-多路-filter-如何提升性能" id="ffmpeg-avfilter-多路-filter-如何提升性能"><h1>FFmpeg avfilter 多路 filter 如何提升性能</h1></a>
+<a class="header" href="print.html#a传输协议" id="a传输协议"><h1>传输协议</h1></a>
+<a class="header" href="print.html#a什么是-rtmp-协议" id="a什么是-rtmp-协议"><h1>什么是 RTMP 协议</h1></a>
+<p>RTMP（Real Time Messaging Protocol）是专门用来传输音视频数据的流媒体协议，最初由 Macromedia 公司创建，后来归 Adobe 公司所有，是一种私有协议，主要用来联系 Flash Player 和 RtmpServer，如 FMS, Red5, crtmpserver 等。RTMP 协议可用于实现直播、点播应用，通过 FMLE（Flash Media Live Encoder）推送音视频数据至 RtmpServer，可实现摄像头实时直播。不过，毕竟 FMLE 应用范围有限，想要把它嵌入到自己的程序中，还是要自己来实现 RTMP 协议的推送。本人实现了一个 RTMPLiveEncoder，通过采集摄像头视频和麦克风音频，并进行 H.264 和 AAC 编码，然后发送到 FMS 和 crtmpserver 上，实现实时直播，可以通过 flash player 正常观看，目前效果良好，延迟时间在 2 秒左右。本文就介绍一下 RTMPLiveEncoder 的主要思路和关键点，以期对需要这方面技术的朋友有所帮助。</p>
+<a class="header" href="print.html#a技术分析" id="a技术分析"><h2>技术分析</h2></a>
+<p>要实现 <code>RTMPLiveEncoder</code>，需要以下四种关键技术：</p>
+<ol>
+<li>采集摄像头视频和麦克风音频</li>
+<li>实时 H264 编码和 AAC 编码</li>
+<li>视频和音频数据封装为可被流媒体服务器识别的可播放流</li>
+<li>RTMP 协议实现报文发送</li>
+</ol>
+<a class="header" href="print.html#a采集摄像头视频和麦克风音频" id="a采集摄像头视频和麦克风音频"><h3>采集摄像头视频和麦克风音频</h3></a>
+<a class="header" href="print.html#a实时-h264-编码和-aac-编码" id="a实时-h264-编码和-aac-编码"><h3>实时 H264 编码和 AAC 编码</h3></a>
+<a class="header" href="print.html#a视频和音频数据封装为可被流媒体服务器识别的可播放流" id="a视频和音频数据封装为可被流媒体服务器识别的可播放流"><h3>视频和音频数据封装为可被流媒体服务器识别的可播放流</h3></a>
+<a class="header" href="print.html#rtmp-协议实现报文发送" id="rtmp-协议实现报文发送"><h3>RTMP 协议实现报文发送</h3></a>
+<p>参见：http://www.cnblogs.com/haibindev/archive/2011/12/29/2305712.html</p>
+<a class="header" href="print.html#librtmp-rtmp-握手" id="librtmp-rtmp-握手"><h1>librtmp rtmp 握手</h1></a>
+<p>参见：https://suncle.me/2018/03/09/rtmp%E8%A7%84%E8%8C%831-0/</p>
 
                     </main>
 

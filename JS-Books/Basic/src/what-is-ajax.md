@@ -7,9 +7,9 @@
 
 ## 发音
 
-美[ˈeˌdʒæks]英[ˈeɪˌdʒæks]
-abbr.一种网页开发技术(Asynchronous Javascript + XML)
-n.希腊神话勇士艾杰克斯
+- 美[ˈeˌdʒæks]英[ˈeɪˌdʒæks]
+- abbr.一种网页开发技术(Asynchronous Javascript + XML)
+- n.希腊神话勇士艾杰克斯
 
 ## 什么是 AJAX ？
 

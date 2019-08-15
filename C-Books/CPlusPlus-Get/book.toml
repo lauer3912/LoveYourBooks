@@ -7,7 +7,7 @@ title = "C++ Get Primer"
 [build]
 build-dir = "../../docs/c-books/cplusplus-get-primer/"
 create-missing = true
-preprocess = ["links", "index"]
+# preprocess = ["links", "index"]
 
 [output.html]
 additional-css = ["for-math-theme.css"]

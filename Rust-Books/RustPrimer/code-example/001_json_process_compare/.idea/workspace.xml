@@ -10,12 +10,54 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="38842fd7-d4c4-440a-a89c-769ee84fa475" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../code-happay/leetcode-cn/problems/two-sum/c++/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../C-Books/CPlusPlus-Get/book.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C-Books/CPlusPlus-Get/book.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../C-Books/CPlusPlus-Get/src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C-Books/CPlusPlus-Get/src/SUMMARY.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C-Books/Objective-C-Primer/best-core/cocos2d/CocosBuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Go-Books/GoPrimer/code-run/learngo/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/promise-and-settimeout.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/promise-and-settimeout.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/what-is-ajax.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../JS-Books/Basic/src/what-is-ajax.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python-Books/code-projects/auto-appium-android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Python-Books/code-projects/auto-appium-android/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/001_json_process_compare.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/001_json_process_compare.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/001_json_process_compare.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/001_json_process_compare.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rust-cookbook-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-cookbook-by-nursery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rust-reference-by-nursery" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-reference-by-nursery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../rust-reference-by-offial" beforeDir="false" afterPath="$PROJECT_DIR$/../../../rust-reference-by-offial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/books-index/cplusplus/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/books-index/cplusplus/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/books-index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/books-index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/books-index/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/books-index/print.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/books-index/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/books-index/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/print.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_final.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_nullptr.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_nullptr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_override.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/reference/keyword_override.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/solutions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/solutions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/solutions/syntax/10001.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/c-books/cplusplus-get-primer/solutions/syntax/10001.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/diff-es6-and-es5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/diff-es6-and-es5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/print.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/promise-and-settimeout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/promise-and-settimeout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../docs/js-books/basic/what-is-ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../docs/js-books/basic/what-is-ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/cplusplus/intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/cplusplus/intro.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,20 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/clion.vmoptions">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="22">
+              <caret line="1" column="38" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -134,9 +167,12 @@
       </list>
     </option>
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="mcMQxfSR" />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="233" />
-    <option name="y" value="47" />
+    <option name="x" value="133" />
+    <option name="y" value="24" />
     <option name="width" value="1257" />
     <option name="height" value="873" />
   </component>
@@ -214,6 +250,10 @@
       <item itemvalue="Cargo Command.run" />
     </list>
   </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -256,17 +296,31 @@
       <workItem from="1554816476696" duration="257000" />
       <workItem from="1554816848551" duration="69000" />
       <workItem from="1554816956134" duration="384000" />
-      <workItem from="1554872481763" duration="601000" />
+      <workItem from="1554872481763" duration="704000" />
+      <workItem from="1555814868584" duration="196000" />
+      <workItem from="1555815137416" duration="420000" />
+      <workItem from="1555815629784" duration="234000" />
+      <workItem from="1556448850881" duration="155000" />
+      <workItem from="1556449572914" duration="86000" />
+      <workItem from="1556630576437" duration="553000" />
+      <workItem from="1556631520121" duration="277000" />
+      <workItem from="1560868544837" duration="676000" />
+      <workItem from="1561122969756" duration="624000" />
+      <workItem from="1561124213238" duration="302000" />
+      <workItem from="1561124637695" duration="124000" />
+      <workItem from="1561644786162" duration="622000" />
+      <workItem from="1561645996672" duration="205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56290000" />
+    <option name="totallyTimeSpent" value="60867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="233" y="47" width="1257" height="873" extended-state="0" />
+    <frame x="133" y="24" width="1257" height="873" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21069959" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25679013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" weight="0.32998997" />
@@ -280,12 +334,12 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.47736627" side_tool="true" weight="0.32744566" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.48806584" side_tool="true" visible="true" weight="0.3111413" />
       <window_info anchor="bottom" id="Reviews" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Tail" order="13" />
       <window_info anchor="bottom" id="DB Execution Console" order="14" />
-      <window_info anchor="bottom" id="CMake" order="15" sideWeight="0.52263373" weight="0.3265306" />
+      <window_info anchor="bottom" id="CMake" order="15" sideWeight="0.51193416" visible="true" weight="0.3111413" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -439,17 +493,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/clion.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -481,10 +535,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/clion.vmoptions">
+    <entry file="file://$PROJECT_DIR$/caller_for_serde_json/src/sample.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="22">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
