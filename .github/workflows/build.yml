@@ -1,0 +1,26 @@
+# 更多文档参见：https://docs.github.com/cn/actions/quickstart
+
+name: build-actions
+on: [push]
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  # 构建
+  build:
+    name: Rust ${{ matrix.rust }} on ${{ matrix.os }}
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 安装 mdbook 最新版本
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+        # run: cargo install mdbook
+      - name: 构建
+        run: mdbook build
+      - name: 部署 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: book
+
