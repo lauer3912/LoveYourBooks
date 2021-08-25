@@ -1,7 +1,6 @@
 # Summary
 
-[书籍索引](https://lauer3912.github.io/book-index/)
-
+[简介](index.md)
 ## 编程语言
 
 - [相关术语正确发音](./correct_words.md)
